@@ -1,0 +1,38 @@
+{
+  "pages": [
+   
+    "pages/home/home",
+    "pages/articleDetail/articleDetail",
+    "pages/exchangeGift/exchangeGift",
+    "pages/giftDetail/giftDetail",
+    "pages/signIn/signIn",
+    "pages/earnPoints/earnPoints",
+    "pages/game/game",
+    "pages/managerDetail/managerDetail",
+    "pages/manager/manager",
+    "pages/myOrder/myOrder",
+    "pages/orderDetail/orderDetail",
+    "pages/myIntegral/myIntegral",
+    "pages/miniTest/miniTest",
+    "pages/testQuestions/testQuestions",
+    "pages/center/center",
+    "pages/miniJournal/miniJournal",
+    "pages/allGifts/allGifts",
+    "pages/auth/auth",
+    "pages/personalData/personalData"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#19adf1",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 0
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false
+}

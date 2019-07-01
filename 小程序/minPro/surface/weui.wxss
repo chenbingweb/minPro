@@ -1,0 +1,159 @@
+/*
+.address_infor
+{
+  width:750rpx;
+  height:512rpx;
+  background-color:#fff;
+ 
+}
+.address_infor
+{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 40rpx;
+}
+.box
+{
+  width:750rpx;
+  height:90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.title
+{
+  width:122rpx;
+  margin-left:30rpx;
+  font-size:30rpx;
+  line-height: 80rpx;
+}
+
+.input_infor
+{
+  width: 384rpx;
+  height:60rpx;
+  padding-left:60rpx;
+  font-size:30rpx;
+}
+.textarea_style
+{
+  width: 520rpx;
+  margin-left: 50rpx;
+  font-size: 30rpx;
+  border:2rpx solid transparent;
+  display: table;
+  padding-top:20rpx;
+}
+.textarea
+{
+  height: 110rpx;
+  padding: 0;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  width: 100%;
+}
+.line
+{
+  width:730rpx;
+  border-bottom:1rpx solid #EEEEEE;
+  position:absolute;
+  right: 0rpx;
+  bottom:0rpx;
+}
+.input-placeholder
+{
+  font-size:30rpx;
+  color:#B2B2B2;
+}
+.control
+{
+  margin-top:60rpx;
+}
+.address_detail
+{
+  height:152rpx;
+  align-items:flex-start;
+
+}
+.address_title_x
+{
+  line-height: 0;
+  position:relative;
+  top:20rpx;
+
+}
+.item
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.address_box
+{
+  justify-content: space-between;
+}
+.save
+{
+  height: 88rpx;
+  width:750rpx;
+  margin-bottom: 30rpx;
+}
+.do_save
+{
+  width:690rpx;
+  margin: 0 auto;
+  line-height: 90rpx;
+  background-color:#E64643;
+  color:white;
+  font-size: 36rpx;
+  
+}
+.do_delete
+{
+  width:690rpx;
+  margin: 0 auto;
+  line-height: 90rpx;
+  background-color:#FBFAFC;
+  color:#353535;
+  font-size: 36rpx;
+}
+.picker_box
+{
+  width:560rpx;
+height:80rpx;
+line-height:80rpx;
+
+}
+.picker
+{
+  font-size: 30rpx;
+  margin-left: 60rpx;
+}
+.picker_color
+{
+  color:#B2B2B2;
+}
+
+.opint
+{
+  width:76rpx;
+  height:86rpx;
+  position:absolute;
+  right:10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.opint::after
+{
+  content: "";
+  display:inline-block;
+  width:20rpx;
+  height:20rpx;
+  border-top:6rpx solid #c7c7cc;
+  border-right:6rpx solid #c7c7cc;
+  transform: rotateZ(45deg);
+}
+*/
