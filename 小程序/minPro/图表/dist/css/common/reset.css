@@ -1,0 +1,109 @@
+@charset 'utf-8';
+/* CSS reset */
+*{-webkit-overflow-scrolling: touch;}     /*IOS滑动卡顿处理*/
+html{color:#333;background:#FFF;font-family:PingFangHK-Light,"微软雅黑",Arial,'Microsoft YaHei';font-size: 14px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,strong{padding:0;margin:0;font-family:,PingFangHK-Ligh,"微软雅黑",Arial,'Microsoft YaHei';}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+a{text-decoration:none; color:#333; outline:none;
+-webkit-tap-highlight-color: rgba(255, 255, 255, 0);/*取消a标签在移动端点击时的蓝色*/
+-webkit-user-select: none;
+-moz-user-focus: none;
+-moz-user-select: none;}
+var,em,strong{font-style:normal;}
+img {max-width: 100%;margin: 0;}
+address,caption,cite,code,dfn,em,th,var, optgroup{font-style:inherit;font-weight:inherit;}
+li{list-style:none;}
+caption,th{text-align:center;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+input,button,textarea,select,optgroup,option{font-family:inherit; font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{font-size:100%;}
+input,button,select,textarea{outline:none;}
+iframe, video, img{vertical-align: top;}/*去除iframe默认边距*/
+select, input, option{border:none;-webkit-appearance:none;}
+input[type="radio"]{-webkit-appearance:radio;display: none;}
+input[type="checkbox"]{-webkit-appearance:checkbox;display: none;}
+input[type="submit"] {display:none;}
+select, input {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}/*禁止苹果自带优化增加黑色遮盖层*/
+textarea{resize:none;}/*禁止拉伸*/
+.textVer {-webkit-writing-mode: tb-rl;-ms-writing-mode: tb-rl;writing-mode: tb-rl;}
+.text1l {overflow:hidden;width:100%;white-space: nowrap;text-overflow: ellipsis;}
+.text2l {content:"";display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;-moz-line-clamp:2;-ms-line-clamp:2;line-clamp:2;overflow: hidden;}
+.text3l {content:"";display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:3;-moz-line-clamp:3;-ms-line-clamp:3;line-clamp:3;overflow: hidden;} 
+.fl {float: left;} .fr {float: right;} 
+.dn {display:none;} .db{display:block;} 
+.tr{text-align: right;} .tl {text-align: left;} .tc {text-align: center;} 
+.cp {cursor:pointer;}  
+.pr {position: relative;} .pa{position: absolute;} .pf {position: fixed;}  
+.oh {overflow: hidden;}
+.tableCell {
+  display:table-cell;
+  vertical-align: middle;
+}
+.iconcenter{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.float {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.fleft{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+}
+.clearfix:after {content:""; display:block; height:0; clear:both;visibility:hidden; }
+.clearfix {*zoom:1;}
+/* 设置滚动条的样式 */
+.RemoveScrollbar::-webkit-scrollbar {width: 0px;height: 0px;}
+/* 滚动槽 */
+.RemoveScrollbar::-webkit-scrollbar-track {height: 0;}
+/*清除IOS overflow:scroll与overflow:auto 的滚动卡顿*/
+.RemoveRollCar{-webkit-overflow-scrolling: touch;}
+/*遮罩层*/
+.mask {position: fixed;left: 0;top: 0; width: 100%;height: 100%;background:rgba(0,0,0,0.6);z-index: 99999; }
+.iconcenter{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;}
+.float {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;}
+/*--清除谷歌浏览器下的 search 叉*/
+input::-webkit-search-cancel-button{
+  display: none;
+}
+/*--清除IE下的 search 叉号*/
+input[type=search]::-ms-clear{
+  display: none;
+}
+.page_wrap
+{
+  margin: 0 auto;
+  min-width: 1360px;
+  /* min-width: 1304px; */
+}
+.wrap
+{
+  margin: 0 auto;
+  min-width: 1360px;
+}

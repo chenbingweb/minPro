@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>首页</title>
+        <meta charset="utf-8" />
+        <meta name="keywords" content=", " />
+        <meta name="description" content="" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="renderer" content="webkit" />
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/common/swiper.min.css" />
+        <link rel="stylesheet" href="./css/common/reset.css" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <script type="text/javascript" src="./js/commJs/jquery-1.8.3.min.js"></script>
+        <script src="./js/commJs/anime.min.js"></script>
+        <script type="text/javascript" src="./js/commJs/swiper.min.js"></script>
+        <script src="./js/highchart/comm/hightstock.js"></script> 
+        <script src="./js/highchart/comm/map.js"></script> 
+        <script src="./js/highchart/comm/drilldown.js"></script>
+        <script src="./js/highchart/comm/treemap.js"></script>
+        <script src="./js/highchart/comm/wordCloud.js"></script>
+    </head>
+
+    <body>
+        <!-- swiper-no-swiping -->
+        <div class="swiper-container swiper-no-swiping" id="content">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide " id="index">
+                    <!--  -->
+                    <div class="pie_box">
+                        <p>覆盖销售平台/平台店铺分布</p>
+                        <div class="pie_box_1">
+                            <div class="pie_left" id="pie_1"></div>
+                            <div class="pie_right">
+                                <ul id="custom_bar">
+                                    <!-- <li class="bar_box">
+                                        <span>京东</span>
+                                        <span class="process">
+                                            <span class="p_bar"></span>
+                                        </span>
+                                        <span>23</span>
+                                    </li>-->
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bar_box_9">
+                        <p>热销行业</p>
+                        <div id="bar_1"></div>
+                    </div>
+                    <div class="tree_box_9">
+                        <p>热销品牌</p>
+                        <div id="tree"></div>
+                    </div>
+                    <div class="areas">
+                        <div class="p">
+                            <span>城市热销</span>
+                            <div class="hot_city">
+                                <div class="tip_box">
+                                    <span class="tip_1" style="background:#a361da"></span>
+                                    <span>销售额</span>
+                                </div>
+                                <div class="tip_box">
+                                    <span class="tip_1" style="background:#589dfa"></span>
+                                    <span>销售量</span>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div id="area"></div>
+                    </div>
+                     <!-- 店铺排行 -->
+                     <div class="shop_range">
+                        <p>店铺排行</p>
+                        <div id="range">
+                            <div class="range_title">
+                                <span>排名</span>
+                                <span>地区</span>
+                                <span>店铺名称</span>
+                                <span>销售额(月)</span>
+                                <span>增长</span>
+                            </div>
+                            <ul class="range_data">
+                                <!-- <li class="rang_li">
+                                    <span class="rang_1">1</span>
+                                    <span>日照</span>
+                                    <span>XXX农产品自营店</span>
+                                    <span>232323</span>
+                                    <span class="range_down"></span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 商城参数 -->
+                    <div class="words">
+                        <p>热门商品参数</p>
+                        <div id="words" style="transform:scale(1.2)"></div>
+                    </div>
+                   
+                    <!-- <div id="world" style="background:#0d1b5c"></div> -->
+                    <!-- 地图 -->
+                    <div id="map_box">
+                        <!-- 数据展示 -->
+                        <div class="map_data_title">
+                            <div class="total_data">
+                                <span class="title_2">总销售量(月)</span>
+                                <div class="num_rmb"></div>
+                                <div id="num"></div>
+                            </div>
+                            <div class="num_3_box">
+                                <div>
+                                    <p class="num_item" data-num="12232">0</p>
+                                    <p class="num_title">销售量(月)</p>
+                                </div>
+                                <div>
+                                    <p class="num_item" data-num="32232">0</p>
+                                    <p class="num_title">商品数量(个)</p>
+                                </div>
+                                <div>
+                                    <p class="num_item" data-num="15232">0</p>
+                                    <p class="num_title">门店数(个)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map_box"></div>
+                        <div class="map_bottom_box">
+                            <div>
+                                <div class="circle_1 circle">
+                                    <p >￥<span class="num_item"  data-num="821330">0</span> </p>
+                                    <p>(万元)</p>
+                                </div>
+                                <p class="bottom_item_name">扶持金额</p>
+                            </div>
+                             <div>
+                                <div class="circle_2 circle">
+                                        <p class="num_item" data-num="234">0</p>
+                                        <p>(个)</p>
+                                </div>
+                                <p class="bottom_item_name">扶持店铺数</p>
+                            </div>
+                             <div>
+                                <div class="circle_3 circle">
+                                    <p class="num_item"  data-num="13">0</p>
+                                    <p>(个)</p>
+                                </div>
+                                <p class="bottom_item_name">店铺覆盖行业</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    
+
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+            </div>
+            <div class="header">
+                <ul class="nav_item f_l">
+                    <li data-index="2">行业</li>
+                    <li data-index="3">品牌</li>
+                    <li data-index="4">地域</li>
+                </ul>
+                <ul class="nav_item f_r">
+                    <li data-index="5">店铺</li>
+                    <li data-index="6">商品</li>
+                    <li data-index="7">扶持</li>
+                </ul>
+                <div class="title_box">
+                    <p class="title" id="home_index" data-index="1">广东省中山市电商作战平台</p>
+<!--                    
+                    <p class="tip">总销售量(月)</p> -->
+                </div>
+            </div>
+        </div>
+        
+        
+        <script src="js/highchart/tables/Bar.js"></script>
+        <script src="js/highchart/tables/Pie.js"></script>
+        <script src="js/highchart/tables/Line.js"></script>
+        <script src="js/highchart//tables/num.js"></script>
+        <script src="js/highchart/tables/map.js"></script>
+        <script src="js//highchart/tables/tree.js"></script>
+        <script src="./js/highchart/tables/areaspline.js"></script>
+        <script src="./js/highchart/tables/area.js"></script>
+        <script src="./js/highchart/tables/custom.js"></script>
+        <script src="./js/highchart/tables/customMap.js"></script>
+        <script src="./js/highchart/tables/wordcloud.js"></script>
+        <script src="./js/highchart/tables/range.js"></script>
+       
+        <script>
+            $(function(){
+        
+                var currentMap = new _CustomMap('.map_box')
+               
+                var mySwiper = new Swiper ('.swiper-container', {
+                    // direction: 'vertical', // 垂直切换选项
+                    loop: true, // 循环模式选项 
+                }) 
+                //返回首页
+                $('#home_index').click(function(){
+                   var index=parseInt($(this).attr('data-index'));
+                   mySwiper.slideTo(index)
+                   currentMap.reLoad()
+                //    window.location.reload()
+                })
+                $('.header .nav_item.f_l>li').click(function(e){
+                    $('.header .nav_item.f_r>li').removeClass('active')
+                    $(this).addClass('active').siblings().removeClass('active')
+                    var index=parseInt($(this).attr('data-index'));
+                   
+                    mySwiper.slideTo(index)
+                    return false
+                })
+                $('.header .nav_item.f_r>li').click(function(e){
+                    $('.header .nav_item.f_l>li').removeClass('active')
+                    $(this).addClass('active').siblings().removeClass('active')
+                    var index=parseInt($(this).attr('data-index'));
+             
+                   mySwiper.slideTo(index)
+                    return false
+                })
+
+            })
+        </script>
+    </body>
+
+</html>
