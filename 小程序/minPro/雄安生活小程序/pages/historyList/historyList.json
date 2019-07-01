@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "支付历史",
+    "usingComponents": {
+      "paging": "/components/paging/paging"
+    }
+}

@@ -1,0 +1,94 @@
+/* pages/testList/testList.wxss */
+page
+{
+  padding-bottom: 100rpx;
+  height: 100%;
+}
+.test_bg
+{
+  width: 750rpx;
+  height: 522rpx;
+  
+}
+.mark_content
+{
+  width: 470rpx;
+  min-height: 100rpx;
+  border-radius: 10rpx;
+  background-color: rgba(255,255,255,0.62);
+  position: absolute;
+  top:58rpx;
+  right: 25rpx;
+  box-sizing: border-box;
+  padding: 25rpx;
+  font-size: 26rpx;
+  color:#333;
+}
+.question_list
+{
+  width: 700rpx;
+  margin: 0 auto;
+  position: relative;
+  top:-34rpx;
+  background-color: white;
+}
+
+/*  */
+.q_item
+{
+  width:700rpx;
+  height: 400rpx;
+  margin-bottom: 35rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.info_box
+{
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.q_title
+{
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.info_1
+{
+  font-size: 30rpx;
+  color:#333;
+  font-weight: 600;
+  letter-spacing: 6rpx;
+  font-style:italic;
+  width: 420rpx;
+  position: relative;
+}
+.info_2
+{
+  font-size: 48rpx;
+  color:#1fa9f2;
+  font-weight: 600;
+}
+.line
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.btn_box
+{
+  width: 216rpx;
+  height: 58rpx;
+  margin-top: 20rpx;
+}
+.button_btn
+{
+  text-align: center;
+  line-height: 58rpx;
+  color:white;
+  font-size: 30rpx;
+}
+.test_page
+{
+  padding-bottom: 50rpx;
+}

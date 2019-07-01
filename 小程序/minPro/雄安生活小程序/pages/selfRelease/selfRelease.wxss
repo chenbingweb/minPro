@@ -1,0 +1,73 @@
+/* pages/selfRelease/selfRelease.wxss */
+page
+{
+   background-color: #f4f4f4
+}
+.user_header
+{
+  width: 750rpx;
+  height: 185rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  margin-bottom: 10rpx;
+}
+.item
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  background-color: white;
+}
+.item_title
+{
+  width: 120rpx;
+  margin-right: 30rpx;
+}
+.input_style
+{
+  height: 110rpx;
+  width: 510rpx;
+}
+.switch
+{
+  transform: scale(0.76)
+}
+/*提交  */
+.submit_box
+{
+  width: 750rpx;
+   height: 340rpx; 
+  background-color: white;
+  /* position: absolute;
+  top:660rpx;
+  left: 0;
+  bottom: 0;
+  right: 0; */
+}
+.disclaimer
+{
+  height: 103rpx;
+  width:750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+}
+/*提交  */
+.submit
+{
+  width: 618rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius: 45rpx;
+  overflow: hidden;
+  margin-top: 60rpx;
+}
+.btn_next
+{
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 36rpx;
+}

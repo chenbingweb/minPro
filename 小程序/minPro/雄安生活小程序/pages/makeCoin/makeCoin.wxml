@@ -1,0 +1,100 @@
+
+<view class="fixed">
+  <!--头部  -->
+  <view class="header_box relative">
+    <view class="icon_box">
+      <image src="../../images/make_coin_bg.png" style="width:750rpx;height:211rpx;"></image>
+    </view>
+    <!--  -->
+    <view class="absolute">
+      <view class="account_title">账户目前雄心数</view>
+      <view class="account_coin">
+        <text>{{taskLists.amount?taskLists.amount:0}}</text>
+        <text style="font-size:24rpx;">币</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{taskLists.taskList.length}}">
+    <view class="item_box flex_between" wx:key="task_{{index}}" wx:for="{{taskLists.taskList}}">
+      <view class="inline_flex">
+        <view class="icon_box">
+          <image src="../../images/make_coin_icon.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view class="info_share" style="width:460rpx">
+          <view class="one_line">{{item.name}}</view>
+          <view style="color:#666666;font-size:28rpx;">雄心币+{{item.price}}</view>
+        </view>
+      </view>
+      <view wx:if="{{item.btnname=='去分享'||item.btnname=='去邀请'}}" class="item_share_btn relative {{item.status?'do':''}}">
+      {{item.btnname}}
+        <button wx:if="{{!item.status}}" class="login_btn" bindtap="shareBtn" data-share="{{item.id}}"  open-type="share"></button>
+        <button  wx:else class="login_btn" bindtap="toNav" data-share="{{item.id}}"></button>
+      </view>
+      <view bindtap="toNav" data-share="{{index==3?'':item.id}}" data-btn="{{item.btnname}}" wx:else class="item_share_btn {{index==3?'':(item.status?'do':'')}}" >{{item.btnname}}</view>
+    </view>
+
+   <!-- <view class="item_box flex_between" wx:key="task_{{index}}" wx:for="{{[taskList.taskList]}}">
+      <view class="inline_flex">
+        <view class="icon_box">
+          <image src="../../images/make_coin_icon.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view class="info_share">
+          <view>分享微信群</view>
+          <view style="color:#666666;font-size:28rpx;">雄心币+3</view>
+        </view>
+      </view>
+      <view class="item_share_btn">去分享</view>
+    </view>
+     <view class="item_box flex_between">
+      <view class="inline_flex">
+        <view class="icon_box">
+          <image src="../../images/make_coin_icon.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view class="info_share">
+          <view>邀请好友</view>
+          <view style="color:#666666;font-size:28rpx;">雄心币+3</view>
+        </view>
+      </view>
+      <view class="item_share_btn">去邀请</view>
+    </view>
+    <view class="item_box flex_between">
+      <view class="inline_flex">
+        <view class="icon_box">
+          <image src="../../images/make_coin_icon.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view class="info_share">
+          <view>完善联系方式</view>
+          <view style="color:#666666;font-size:28rpx;">雄心币+3</view>
+        </view>
+      </view>
+      <view class="item_share_btn">去完善</view>
+    </view>
+    <view class="item_box flex_between">
+      <view class="inline_flex">
+        <view class="icon_box">
+          <image src="../../images/make_coin_icon.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view class="info_share">
+          <view>首次发布</view>
+          <view style="color:#666666;font-size:28rpx;">雄心币+3</view>
+        </view>
+      </view>
+      <view class="item_share_btn do">已发布</view>
+    </view>
+    <view class="item_box flex_between">
+      <view class="inline_flex">
+        <view class="icon_box">
+          <image src="../../images/make_coin_icon.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view class="info_share">
+          <view>首次注册</view>
+          <view style="color:#666666;font-size:28rpx;">雄心币+3</view>
+        </view>
+      </view>
+      <view class="item_share_btn">去注册</view>
+    </view> -->
+  </view>
+  <view wx:else class="no_info">
+    暂无数据
+  </view>
+</view>

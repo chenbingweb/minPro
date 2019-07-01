@@ -1,0 +1,65 @@
+/* pages/middleExamine/middleExamine.wxss */
+
+.item
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+}
+.input_style
+{
+  height: 110rpx;
+  width: 460rpx;
+}
+.item_title
+{
+  width: 180rpx;
+  margin-right: 30rpx;
+}
+.up_box
+{
+  width: 700rpx;
+  height: 370rpx;
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  flex-direction: column;
+}
+/*提交  */
+.submit
+{
+  width: 618rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius: 45rpx;
+  overflow: hidden;
+  /* margin-top: 240rpx; */
+  margin-top:128rpx;
+}
+.btn_next
+{
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 36rpx;
+}
+.check
+{
+  width: 160rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+  position: relative;
+  overflow: hidden;
+  color:white;
+  font-size:22rpx;
+  text-align: center;
+  line-height: 48rpx;
+}
+.cancel_btn
+{
+  position: absolute;
+  top:-10rpx;
+  right: -10rpx;
+}

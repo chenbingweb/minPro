@@ -1,0 +1,105 @@
+/* pages/shops/shops.wxss */
+.shop_list
+{
+  /* position: absolute;
+  top:128rpx;
+  left: 0;
+  right:0;
+  bottom: 0; */
+  width: 750rpx;
+  height:73vh;
+  margin:0 auto;
+  position: relative;
+}
+.shop_page
+{
+  background-color: #f5f5f5;
+  overflow-y: scroll;
+}
+.examing
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 90rpx;
+  background-color: #5293e1;
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size:30rpx;
+}
+.address_detail
+{
+  height: 90rpx;
+}
+.shop_item
+{
+  width: 750rpx;
+  height: 300rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  display: flex;
+   justify-content: space-between; 
+  /* align-items: center; */
+  flex-direction: column;
+  padding-top: 20rpx;
+}
+.img_style
+{
+  width:280rpx;
+  height:190rpx;
+  border-radius: 10rpx;
+}
+.address_name
+{
+  color:#c1c2c2;
+  font-size: 22rpx;
+  margin-left: 12rpx;
+}
+.ticket_box
+{
+  padding-left: 32rpx;
+}
+.shop_name
+{
+  font-size: 32rpx;
+  color:#000;
+  font-weight: bold;
+}
+.ticket_info
+{
+  font-size: 24rpx;
+  color:#f33f50;
+
+}
+.tip
+{
+  width: 92rpx;
+  height: 30rpx;
+  background-color: #f43c4d;
+  line-height: 30rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top:0;
+  font-size: 20rpx;
+  color:white;
+}
+.filter
+{
+  height: 100rpx;
+  background-color: white;
+  box-sizing: border-box;
+ color:#333333;
+ font-size: 28rpx;
+ border-bottom: 2rpx solid #eeece9;
+}
+.filter_child
+{
+  width: 50%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+
+}

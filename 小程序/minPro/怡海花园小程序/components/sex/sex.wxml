@@ -1,0 +1,22 @@
+<radio-group class="radio_group" bindchange="radioChange">
+  <label for="woman" class="radio">
+    <view class="icon_box">
+      <image wx:if="{{checked}}" src="./selected.png" style="width:18rpx;height:18rpx"></image>
+      <image wx:else src="./no_selected.png" style="width:18rpx;height:18rpx"></image>
+    </view>
+    <view style="padding-left:10rpx">
+      女
+    </view>
+    <radio id="woman" hidden value="0" />
+  </label>
+  <label for="man" class="radio" style="margin-left:26rpx;">
+    <view class="icon_box">
+      <image wx:if="{{!checked}}" src="./selected.png" style="width:18rpx;height:18rpx"></image>
+      <image wx:else src="./no_selected.png" style="width:18rpx;height:18rpx"></image>
+    </view>
+    <view style="padding-left:10rpx">
+      男
+    </view>
+    <radio id="man" hidden value="1" />
+  </label>
+</radio-group>

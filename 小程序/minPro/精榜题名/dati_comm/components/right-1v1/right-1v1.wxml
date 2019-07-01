@@ -1,0 +1,27 @@
+<view class="right_box">
+  <!-- 获取分数比 -->
+  <view class="process" style="height:{{progress*600}}rpx;" wx:if="{{showprocess}}"></view>
+  <view class="flex_start bg">
+    <view class="icon_box">
+      <image src="./img/right_2.png" style="width:86rpx;height:191rpx"></image>
+    </view>
+    <view class="icon_box">
+      <image src="./img/right_1.png" style="width:272rpx;height:191rpx"></image>
+    </view>
+   
+  </view>
+  <!-- 头像 -->
+  <view class="icon_box photo">
+    <view class="user_info">
+      <view class="fen">{{score}}</view>
+      <view class="one_line">{{playRight.name}}</view>
+    </view>
+    <view class="icon_box" style="position:relative">
+      <image src="../../../imgs/fight/photo_bg.png" style="width:128rpx;height:136rpx;"></image>
+      <!-- 玩家头像 -->
+      <image src="{{playRight.icon}}" class="photo_img"></image>
+    </view>
+  
+  </view>
+
+</view>

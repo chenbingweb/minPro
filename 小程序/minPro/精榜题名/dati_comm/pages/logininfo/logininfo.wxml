@@ -1,0 +1,31 @@
+<!-- <image class='bg-img' src="../../../imgs/newhome/bg.png"></image>
+<image src='../../imgs/logininfo/login_tip.png' class='tip-img'></image> -->
+<view class='logininfo' wx:if="{{false}}">
+  <!--授权登录 领取 -->
+  <!-- <view class='login_1'>
+    <view class="laba">
+      <image src="../../imgs/logininfo/laba.png" style='width:59rpx;height:52rpx'></image>
+    </view>
+    <view class="login">授权登录</view>
+    <view class="linqu">领取</view>
+  </view>
+
+  <view class='login_2'>
+    <image src="../../imgs/logininfo/xsjl.png" style='width:549rpx;height:96rpx'></image>
+  </view>
+  <view class='login_3'>
+    <view class='texta'> 快来与微信好友一起畅玩</view>
+  </view>
+  <view class='login_4'>
+    <image src="../../imgs/logininfo/qiu.png" style='width:481rpx;height:449rpx'></image>
+  </view> -->
+  
+  <view class='login_5'>
+    <button bindgetuserinfo='logina' open-type="getUserInfo" style="position:absolute;opacity:0;width:476rpx;height:122rpx"></button>
+
+    <image src="../../imgs/logininfo/login.png" style='width:476rpx;height:122rpx'> </image>
+  </view>
+</view>
+<view class="fixed">
+  <ticket-tip authorize="{{true}}"/>
+</view>

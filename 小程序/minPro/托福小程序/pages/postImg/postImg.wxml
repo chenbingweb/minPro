@@ -1,0 +1,18 @@
+ 
+ <!-- bind:fighting="OnFight" bindback="OnBack" -->
+ <view style="height:{{height}}" bindlongtap="onSave">
+   <painter showBtn="{{true}}"  bindsaveHB="OnSaveHB" palette="{{template}}" bind:imgOK="onImgOK" />
+ </view>
+
+ <view class="btns_1 flex_center" style="bottom:{{bottom}}rpx">
+  <view class="btn_item" bindtap="onNavIndex">返回首页</view>
+  <view class="btn_item" wx:if="{{mode!='study' }}" bindtap="onReviewOld">
+    <text wx:if="{{!is_review_complete}}">继续复习旧词</text>
+    <text wx:if="{{is_review_complete}}">再次复习旧词</text>
+  </view>
+   
+    <view class="btn_item" wx:else bindtap="onReviewOld">开始背单词</view>
+   <view class="btn_item" bindtap="onSave">保存打卡海报</view>
+  <!-- <view class="btn_item" bindtap="onSave">分享朋友圈有有奖</view> -->
+ </view>
+

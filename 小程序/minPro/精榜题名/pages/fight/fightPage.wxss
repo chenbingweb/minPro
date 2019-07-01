@@ -1,0 +1,344 @@
+/* pages/fight/fightPage.wxss */
+@import './fight.wxss';
+@import './fighting.wxss';
+@import './fight_3v3.wxss';
+page
+{
+  width:100%;
+  height:100%;
+}
+
+
+/*选择1*/
+
+.friend_fight .enter_1
+{
+  animation:Anima_1 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0ms;
+}
+.friend_fight .enter_2
+{
+  animation:Anima_1 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 100ms; */
+}
+.friend_fight .enter_3
+{
+  animation:Anima_1 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 200ms; */
+}
+.friend_fight .enter_4
+{
+  animation:Anima_1 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 300ms; */
+}
+
+.friend_fight .outer_1
+{
+  animation:Anima_2_2 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 0ms; */
+}
+.friend_fight .outer_2
+{
+  animation:Anima_2_2 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 100ms; */
+}
+.friend_fight .outer_3
+{
+  animation:Anima_2_2 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 200ms; */
+}
+.friend_fight .outer_4
+{
+  animation:Anima_2_2 0.2s linear;
+  animation-fill-mode:forwards;
+  /* animation-delay: 300ms; */
+}
+
+.friend_fight .Clickd
+{
+  animation:Anima_Click 0.1s linear;
+  animation-fill-mode:forwards; 
+}
+
+.friend_fight .UnClickd
+{
+  animation:Anima_UnClick 0.1s linear;
+  animation-fill-mode:forwards; 
+}
+
+.friend_fight .Hide
+{
+  animation:Anima_Hide 0s linear;
+  animation-fill-mode:forwards;
+}
+
+
+@keyframes Anima_Hide {
+  0% {
+   
+    /* left:134rpx */
+     
+     transform: scale(0)
+  }
+  100%
+  {
+     /* left:1000rpx; */
+     transform: scale(0) 
+  }
+}
+
+
+@keyframes Anima_UnClick {
+  0% {
+   
+    /* left:134rpx */
+     
+     transform: scale(0.95)
+  }
+  100%
+  {
+     /* left:1000rpx; */
+     transform: scale(1) 
+  }
+}
+
+
+@keyframes Anima_Click {
+  0% {
+   
+    /* left:134rpx */
+     transform: scale(1)
+  }
+  100%
+  {
+     /* left:1000rpx; */
+      transform: scale(0.95)
+  }
+}
+
+
+@keyframes Anima_1 {
+  0% {
+    /* left:-3000rpx; */
+      transform: scale(0);
+      opacity: 0;
+  }
+  100%
+  {
+      /* left:134rpx */
+       transform: scale(1);
+       opacity: 1;
+  }
+}
+
+@keyframes Anima_2_2 {
+  0% {
+   
+    /* left:134rpx */
+     transform: scale(1);
+     opacity: 1;
+  }
+  100%
+  {
+     /* left:1000rpx; */
+      transform: scale(0);
+      opacity: 0;
+  }
+}
+
+/*最后一题动画提示  */
+.friend_fight .Anima_Succ
+{
+  animation:AniSucc 1s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 300ms;
+}
+
+@keyframes AniSucc {
+  0% {
+    transform:scale(2);
+    opacity: 0
+  }
+  20%
+  {
+     transform:scale(1);
+     opacity: 0.5;
+  }
+   25%
+  {
+     opacity: 1;
+    transform:scale(1.1);
+  }
+  40%
+  {
+    transform:scale(1);
+  }
+  85%
+  {
+    opacity: 1
+  }
+  100%
+  {
+   opacity: 0
+  }
+}
+
+
+/*文字淡入淡出  */
+.friend_fight .style_out_in
+{
+  animation:Anima_out 0.1s linear;
+  animation-fill-mode:forwards;
+
+}
+
+@keyframes Anima_out {
+  0% {
+    opacity: 0
+  }
+  100%
+  {
+     opacity: 1
+  }
+}
+
+/*左头像显示动画  */
+.friend_fight .left_animation
+{
+  animation:Anima_left 0.3s linear;
+  animation-fill-mode:forwards;
+  
+}
+@keyframes Anima_left {
+  0% {
+   
+    left:-400rpx;
+  }
+  100%
+  {
+      left:16rpx;
+      
+  }
+}
+
+/*右头像显示动画  */
+.friend_fight .right_animation
+{
+  animation:Anima_right 0.3s linear;
+  animation-fill-mode:forwards;
+  
+}
+@keyframes Anima_right {
+  0% {
+   
+    right:-400rpx;
+  }
+  100%
+  {
+      right:16rpx;
+      
+  }
+}
+
+/*左进度 */
+.friend_fight .left_process
+{
+  animation:Anima_left_pro 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0.3s
+}
+@keyframes Anima_left_pro {
+  0% {
+   
+    left:-400rpx;
+  }
+  100%
+  {
+      left:30rpx;
+      
+  }
+}
+/*右进度 */
+.friend_fight .right_process
+{
+  animation:Anima_right_pro 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0.3s
+}
+@keyframes Anima_right_pro {
+  0% {
+   
+    right:-400rpx;
+  }
+  100%
+  {
+      right:30rpx;
+      
+  }
+}
+/*	题目板渐显 动画 */
+.friend_fight .question_animation
+{
+  animation:Anima_question 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0
+}
+@keyframes Anima_question {
+  0% {
+   
+   opacity: 0;
+   height: 0;
+  }
+  100%
+  {
+    opacity: 1;
+    height: 545rpx; 
+  }
+}
+/* 右分数放大 */
+.friend_fight .rightScaleAni
+{
+  animation:Anima_Scale 0.1s linear;
+  /* animation-fill-mode:forwards; */
+  animation-delay:0
+}
+@keyframes Anima_Scale {
+  0% {
+    transform: scale(3) 
+  
+  }
+  100%
+  {
+     transform: scale(1) 
+  }
+}
+
+/*头像左右晃动  */
+.friend_fight .move_head
+{
+  animation:Anima_move 0.1s  infinite ;
+  animation-iteration-count:4;
+animation-direction:alternate;
+  /* animation-fill-mode:forwards;
+  animation-delay:0 */
+}
+@keyframes Anima_move {
+  0% {
+    left:13rpx;
+  }
+  50%{
+
+    left:16rpx;
+  }
+  100%
+  {
+    left:19rpx;
+  }
+}

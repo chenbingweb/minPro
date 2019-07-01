@@ -1,0 +1,195 @@
+<import src="../../dati_comm/template/Grid3.wxml" />
+<template name="fightOver">
+  <!--left:{{data.wndPosX}}rpx;  -->
+  <view class="fixed fightOver" style="opacity:{{data.wndAlpha}};">
+    <!--游戏背景图  -->
+    <view class="icon_box fight_over_bg" bindtap="OnBackClick">
+      <image src="../../imgs/comm/fight_bg.png"></image>
+    </view>
+    <view class="f_o_over {{data.Ani_Fight_show}}">
+      <!--我的战绩  -->
+      <view class="my_result result_box">
+        <view class="icon_box result_bg rotate">
+          <image src="/imgs/fight/succ_bg.png"></image>
+        </view>
+        <!--我的头像  -->
+        <view class="user_box {{data.app_user_header_opacity_1v1}}">
+          <view class="user_ph">
+            <view class="icon_box">
+              <image src="{{data.leftPly[0].icon}}" class="user_photo"></image>
+            </view>
+             <!--头框  --> 
+            <view class="new_frame" wx:if="{{data.leftPly[0].icon&&data.leftPly[0].k}}">
+              <image  src="{{data.leftPly[0].k}}" style="width:100%;height:100%"></image>
+            </view>
+
+            <!--VIP图标-->
+            <view class="new_vip" wx:if="{{data.leftPly[0].icon&&data.leftPly[0].hf==1}}">
+              <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+          </view>
+          <view class="user_name one_line">
+            {{data.leftPly[0].name}}
+          </view>
+        </view>
+
+      </view>
+      <!--好友战绩  -->
+      <view class="friend_result result_box">
+        <view class="icon_box result_bg rotate">
+
+          <image src="/imgs/fight/succ_bg.png"></image>
+        </view>
+        <view class="user_box friend_right {{data.app_user_header_opacity_1v1}}">
+          <view class="user_ph" style="border-color:#c42564">
+            <view class="icon_box">
+              <image src="{{data.rightPly[0].icon}}" class="user_photo" style="border:6rpx solid #c42564;"></image>
+            </view>
+            <!--头框  --> 
+            <view class="new_frame" wx:if="{{data.rightPly[0].icon&&data.rightPly[0].k}}">
+              <image  src="{{data.rightPly[0].k}}" style="width:100%;height:100%"></image>
+            </view>
+            
+            <!--vip图标  -->
+             <view class="new_vip" wx:if="{{data.rightPly[0].icon&&data.rightPly[0].hf==1}}">
+              <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+          </view>
+          <view class="user_name one_line">
+            {{data.rightPly[0].name}}
+          </view>
+        </view>
+        <!--没有好友  -->
+        <view class="user_box friend_right" wx:if="{{false}}">
+          <view class="user_ph no_people" style="border-color:#c42564">
+            ?
+          </view>
+          <view class="user_name one_line">
+            ????
+          </view>
+        </view>
+      </view>
+      <view style="position:absolute;width:750rpx;top:0;left:0">
+        <!-- 胜利提示 -->
+        <view class="success_tip icon_box {{data.app_tip_opacity_scale_1v1}}" wx:if="{{data.winv}}">
+          <image src="../../imgs/fightOver/succ_tip.png" style="width:611rpx;height:264rpx"></image>
+        </view>
+        <!--绝杀  -->
+        <view class="success_tip icon_box" wx:if="{{false}}">
+          <image src="../../imgs/comm/js_img.png" style="width:611rpx;height:264rpx"></image>
+        </view>
+        <!-- 失败提示 -->
+        <view class="success_tip icon_box {{data.app_tip_opacity_scale_1v1}}" wx:if="{{!data.winv}}">
+          <image src="../../imgs/comm/zjzl.png" style="width:611rpx;height:264rpx"></image>
+        </view>
+      </view>
+       <view style="position:absolute;width:750rpx;left:0;top:0rpx">
+        <!--我的对战分数  -->
+        <view class="player_results my {{data.app_user_score_opacity_1v1}}">
+          <view class="item">
+            <view>{{data.leftfen}}
+              <text>分</text>
+            </view>
+            <!-- <view class="num">连续答对
+              <text style="color:#ffa913;padding:0 8rpx">{{data.leftliandui}}</text>题</view> -->
+          </view>
+        </view>
+        <!--好友积分  -->
+        <view class="player_results friend_player {{data.app_user_score_opacity_1v1}}">
+          <view class="item" style="position:relative;left:50rpx;text-align:left">
+            <view>{{data.rightfen}}
+              <text>分</text>
+            </view>
+            <!-- <view class="num friend_num">连续答对
+              <text style="color:#ffa913;padding:0 8rpx">{{data.rightliandui}}</text>题</view> -->
+          </view>
+        </view>
+       </view>  
+
+
+      <!--获得学分 -->
+      <view wx-if="{{data.mode!=7&&data.mode!=6}}" class="user_zs use_item {{data.app_user_xf_1v1_an}}">
+        <template is="Grid3" data="{{grid:data.use_bg}}"></template>
+        <view class="icon_box xf_img">
+          <image src="../../imgs/comm/xf.png"></image>
+        </view>
+        <view class="use_xf">{{data.xuefen}}</view>
+      </view>
+      <!--获得金币  -->
+      <view wx-if="{{data.mode!=7&&data.mode!=6}}" class="user_xf use_item {{data.app_user_coin_1v1_an}}">
+        <template is="Grid3" data="{{grid:data.use_bg}}"></template>
+        <view class="icon_box xf_img">
+          <image src="../../imgs/comm/coin.png"></image>
+        </view>
+        <view class="use_xf">{{data.money}}</view>
+      </view>
+
+
+      <!--再来一局  -->
+      <view style="transform: scale({{data.btnReFightScale}});transition:{{data.seconds}}ms" class="play_too play_item {{data.app_repeat_an}}" bindtouchstart="OnReFightTouchStart" bindtouchend="OnReFightTouchEnd" bindtap="OnReFightClick">
+        再来一局
+      </view>
+
+      <!--返回首页和再来一局 
+      <view class="index_btns">
+        <view class="back_index" bindtap="OnClick" data-page="{{data.wndname}}"  data-evt="OnBackClick">
+            返回首页
+        </view> -->
+      <!--再来一局 
+        <view class="refight bg_color" bindtap="OnClick" data-page="{{data.wndname}}"  data-evt="OnReFightClick">
+          再来一局
+        </view> 
+      </view>-->
+      <!--炫耀成绩  -->
+      <view style="transform: scale({{data.btnJiexiScale}});transition:{{data.seconds}}ms" class="share_result play_item {{data.app_jx_an}}" bindtouchstart="OnJiexiTouchStart" bindtouchend="OnJiexiTouchEnd" bindtap="OnJiexiClick">
+        <view class="icon_box xy_img" wx:if="{{false}}">
+          <image src="../../imgs/comm/coin.png"></image>
+        </view>
+        <view class="text_btn">
+          查看解析
+        </view>
+        <!-- <button class="share_button" open-type="share" ></button> -->
+      </view>
+      <!--分享到微信群  0.1-->
+      <view class="share_qun" wx:if="{{false}}">
+        <view>分享到微信群,可获得</view>
+        <view class="icon_box" style="margin:0 10rpx">
+          <image src="../../imgs/comm/coin.png" style="width:52rpx;height:52rpx"></image>
+        </view>
+        <view>{{data.FXMoney}}</view>
+      </view>
+      <!--上拉更精彩-->
+      <view class="to_up" wx:if="{{true}}" bindtap="OnJiexiClick" wx:if="{{false}}">
+        <view class="icon_box img_180">
+          <image src="../../imgs/fightOver/up.png" style="width:78rpx;height:33rpx"></image>
+        </view>
+        <view class="icon_box up_2 img_180">
+          <image src="../../imgs/fightOver/up.png" style="width:78rpx;height:33rpx"></image>
+        </view>
+        <view class="text">查看解析</view>
+      </view>
+      <!--返回  -->
+      <view class="back_home icon_box" bindtap="OnBackClick" wx:if="{{false}}">
+        <image src="../../imgs/shope/back.png" style="width:76rpx;height:76rpx"></image>
+      </view>
+      <!--2.0分享  -->
+      <view class="share_img_btn {{data.app_share_btn_an}}">
+        <view class="icon_box btn_bg_img">
+          <image src="../../imgs/fightOver/share_btn.png" style="width:166rpx;height:266rpx"></image>
+        </view>
+        <view class="box_img">
+          <view class="icon_box coin_pox" wx:if="{{data.showShareReward}}">
+            <image src="../../imgs/comm/coin.png" style="width:36rpx;height:36rpx"></image>
+          </view>
+          <view class="box_text" wx:if="{{data.showShareReward}}">
+            {{"炫耀成绩获得"+data.FXMoney}}
+          </view>
+          <view class="box_text_center" wx:if="{{!data.showShareReward}}">
+            {{"炫耀成绩"}}
+          </view>
+        </view>
+        <button class="share_button" open-type="share"></button>
+      </view>
+    </view>
+  </view>
+</template>

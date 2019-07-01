@@ -1,0 +1,97 @@
+/* pages/signUp/signUp.wxss */
+page
+{
+
+  background-color: #f5f5f5;
+
+}
+.theme_info
+{
+  width: 678rpx;
+  height: 188rpx;
+  background-color: white;
+  margin: 0 auto;
+  color:#060606;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+
+}
+.box
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+}
+.theme_box
+{
+  padding-top: 20rpx;
+}
+.title_box
+{
+  color:#333;
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+  padding: 36rpx 0;
+}
+.title_box::after
+{
+  content: "";
+  display: block;
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #d3e1f3;
+  margin: 0 auto;
+  margin-top: 25rpx;
+}
+.item
+{
+  width: 678rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  background-color: #f0f5fa;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+    color:#333;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.time
+{
+  color:#575656;
+  font-size: 24rpx;
+  font-weight: normal;
+}
+.examing
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 90rpx;
+  background-color: #5293e1;
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size:30rpx;
+}
+.input_item
+{
+  height: 96rpx;
+  width: 533rpx;
+  font-weight: normal;
+}
+.examing
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 90rpx;
+  background-color: #5293e1;
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size:30rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

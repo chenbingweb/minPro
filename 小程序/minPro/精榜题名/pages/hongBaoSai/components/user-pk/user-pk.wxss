@@ -1,0 +1,52 @@
+/* pages/hongBaoSai/components/user-pk/user-pk.wxss */
+.user_box
+{
+  width: 750rpx;
+  height: 125rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img
+{
+  width: 58rpx;
+  height: 58rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.relative
+{
+  position: relative;
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.tip
+{
+  width: 80rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  border:2rpx solid #b33f40;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 34rpx;
+  background-color: #220502;
+  color:#ffe984;
+  margin-top: 8rpx;
+}
+.item
+{
+  margin-right: 8rpx;
+}
+user_box:last-child
+{
+    margin-right:0
+}

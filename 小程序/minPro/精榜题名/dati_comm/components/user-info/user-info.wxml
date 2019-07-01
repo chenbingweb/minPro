@@ -1,0 +1,257 @@
+<view class="user_info">
+  <view class="user" wx:if="{{false}}">
+    <!-- 背景拖 -->
+    <view class="icon_box">
+      <image src="./img/user_box.png" style="width:750rpx;height:133rpx"></image>
+    </view>
+    <!-- 头像 -->
+    <view class="user_photo">
+      <!-- 头像背景 -->
+      <view class="photo_box" >
+        <view class="icon_box">
+          <image src="./img/user_photo_bg.png" style="width:127rpx;height:127rpx"></image>
+        </view>
+        <!-- 用户头像 -->
+        <view class="photo_img">
+          <open-data type="userAvatarUrl" style="width:106rpx;height:106rpx;border-radius:50%"></open-data>
+        </view>
+      </view>
+      <!-- 用户名 -->
+      <view class="user_name">
+        <view class="icon_box">
+          <image src="./img/uer_name_box.png" style="width:151rpx;height:37rpx;"></image>
+        </view>
+        <view class="user_name_nick">{{name}}</view>
+      </view>
+
+    </view>
+    <!-- 等级信息 -->
+    <view class="leve_info">
+      <!-- 切磋等级 -->
+      <view class="qc_level">
+        <view class="icon_box">
+          <image src="./img/xz_bg.png" style="width:137rpx;height:49rpx;"></image>
+        </view>
+        <view class="leve_qc_text">{{qc_levle[qcLevel]}}</view>
+        <view class="qc_icon icon_box">
+          <image src="{{LevelIcon}}" style="width:62rpx;height:54rpx"></image>
+        </view>
+      </view>
+      <!-- 赶考等级 -->
+      <view class="gk_level">
+        <!-- 背景图 -->
+        <view class="icon_box">
+          <image src="./img/level_bg.png" style="width:178rpx;height:49rpx"></image>
+        </view>
+         <view class="qc_icon icon_box" style="left:-6rpx;">
+          <image src="../../imgs/ch/1.png" style="width:62rpx;height:54rpx"></image>
+        </view>
+        <!-- 赶考星级 -->
+        <view class="gk_star">
+          <view class="icon_box pos" style="left:{{50+(13*index)}}rpx;z-index:{{index*4}}" wx:for="{{StarNum}}" wx:key="index1_{{index}}">
+            <image src="./img/star.png" style="width:32rpx;height:31rpx;"></image>
+          </view>
+          <view class="icon_box pos" style="left:{{50+(13*(8-index-1))}}rpx;z-inde:-9" wx:for="{{noStarNum}}" wx:key="no_{{index}}">
+             <image src="../../../imgs/fightOver/no_star.png" style="width:32rpx;height:31rpx;"></image>
+          </view>
+          
+        </view>
+      </view>
+      <!-- 金币 -->
+      <view class="coin_level">
+        <!-- 背景图 -->
+        <view class="icon_box">
+          <image src="./img/level_bg.png" style="width:178rpx;height:49rpx"></image>
+        </view>
+        <!-- 金币数量 -->
+        <view class="coin_num">
+          {{money}}
+        </view>
+        <!-- 金币 -->
+        <view class="icon_box coin_box">
+          <image src="./img/coin.png" style="width:46rpx;height:48rpx"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+    <!-- 消息 wx:if="{{msg!==''}}"-->
+  <view class="msg_box" bindtransitionend="onTransitionend2"  wx:if="{{MsgList.length}}" 
+    style="transition: all 1s linear ; {{MsgList.length?'opacity:1; ':'opacity:0;bottom:-100rpx;'}}">
+      <view class="gb icon_box">
+          <image src="./img/msg_icon.png" style="width:51rpx;height:44rpx"></image>
+    </view>
+    <swiper wx:if="{{false}}" bindchange="OnChange" current="{{current}}" style="width:400rpx;height:48rpx" circular vertical indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" circular interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{MsgList}}" wx:key="t_{{index}}">
+        <swiper-item>
+          <view class="flex_start">
+           
+            <view class="text" style="height:50rpx;">
+              {{item.msg}}
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <swiper style="width:400rpx;height:48rpx" circular vertical indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{[1,2,2,2,3]}}" wx:key="t_{{index}}">
+        <swiper-item>
+          <view class="flex_start msg_box_child">
+            <view class="gb icon_box">
+              <image src="./img/msg_icon.png" style="width:51rpx;height:44rpx"></image>
+            </view>
+            <view class="text">
+              {{item}}
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <!-- <view class="flex_start msg_box_child" bindtransitionend="onTransitionend" style="{{msg!==''?'transition: left 6s linear;left:-550rpx':'left:460rpx'}}">
+      <view class="gb icon_box">
+        <image src="./img/msg_icon.png" style="width:51rpx;height:44rpx"></image>
+      </view>
+      <view class="text">
+        {{msg}}
+      </view>
+    </view> -->
+    <view class="flex_start " wx:if="{{false}}">
+      <!-- <view class="gb icon_box">
+        <image src="./img/msg_icon.png" style="width:51rpx;height:44rpx"></image>
+      </view> -->
+      <view class="text msg_box_child"  bindtransitionend="onTransitionend" style="transition: all 1s linear;{{msg!==''?'transform:scale(1)':'transform:scale(0)'}}">
+        {{msg}}
+      </view>
+    </view>
+    <view class="flex_start msg" bindtransitionend="onTransitionend" style="{{msg?'transition: transform 1s linear ; transform: translateY(-40rpx)':'transform:translateY(8rpx)'}}">
+      <view class="text msg_box_child" >{{A}}</view>
+      <view class="text msg_box_child">{{B}}</view>
+    </view>
+  </view>
+  <!-- 用户信息 -->
+  <view class="u_user_bottom">
+    <!-- 背景 -->
+    <view class="u_icon_box">
+      <image src="./img/db_bg.png" style="width:750rpx;height:126rpx;"></image>
+    </view>
+    <!--   用户信息 -->
+    <view class="u_absolute">
+      <!--头像 -->
+      <view class="u_photo_box" bindtap="OnToCenter">
+        <view class="u_icon_box u_relative">
+          <image src="./img/photo_bg_1.png" style="width:141rpx;height:150rpx;"></image>
+          <!-- 用户头像 -->
+          <view class="photo_img">
+            <open-data type="userAvatarUrl" style="width:100rpx;height:100rpx;border-radius:50%"></open-data>
+          </view>
+        </view>
+        
+        <!-- 用户名 -->
+        <view class="u_icon_box u_db">
+          <image src="./img/db.png" style="width:162rpx;height:50rpx;"></image>
+          
+          <view class="u_absolute one_line u_name">
+              {{name}}
+          </view>
+        </view>
+      </view>
+      <!-- 切磋等级 -->
+      <view class="u_qc_level u_bg_db">
+        <!-- 等级图片 -->
+        <view class="u_icon_box u_qc_icon">
+          <image src="{{LevelIcon}}" style="width:54rpx;height:60rpx;"></image>
+          <!-- <view class="u_absolute u_level_title text_bg">V{{qcLevel}}</view> -->
+        </view>
+        <!-- 当前等级 -->
+        <view class="u_absolute u_current_level">
+        {{qc_levle[qcLevel-1]}}
+        </view>
+      </view>
+      <!-- 赶考等级 -->
+      <view class="u_gk_level u_bg_db">
+        <!-- 等级图片 -->
+        <view class="u_icon_box u_qc_icon" style="left:-6rpx;">
+          <image src="{{gankaoIcon}}" style="width:50rpx;height:60rpx;"></image>
+        </view>
+        <!-- 当前等级 -->
+        <view class="u_absolute u_current_level">
+          <view class="u_icon_box u_pos" style="left:{{50+(13*index)}}rpx;z-index:{{index*4}};z-index:1" wx:for="{{StarNum}}" wx:key="index1_{{index}}">
+          <image src="./img/star.png" style="width:32rpx;height:31rpx;"></image>
+          </view>
+          <view class="u_icon_box u_pos" style="left:{{50+(13*(8-index-1))}}rpx;z-inde:-9" wx:for="{{noStarNum}}" wx:key="no_{{index}}">
+            <image src="../../../imgs/fightOver/no_star.png" style="width:32rpx;height:31rpx;"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 金币 -->
+      <view class="u_coin_level u_bg_db">
+        <!-- 等级图片 -->
+        <view class="u_icon_box u_qc_icon" style="top:54.8%;">
+          <image src="./img/coin_2.png" style="width:52rpx;height:56rpx"></image>
+        </view>
+        <!-- 当前等级 -->
+        <view class="u_absolute u_current_level">
+         {{money}}
+        </view>
+      </view>
+      <!-- 帮助 -->
+      <view class="u_icon_box u_help" bindtap="OnOpen">
+        <image src="./img/help.png" style="width:57rpx;height:57rpx"></image>
+      </view>
+    </view>
+    <!-- -->
+  </view>
+
+  <!-- 帮助提示 -->
+  <view class="box_bg" wx:if="{{showExplain}}" style="opacity:{{opacity}}">
+    <view class="help_tip">
+      <db/>
+      <!-- 标题 -->
+      <view class="title">
+        <view class="icon_box">
+          <image src="../nav-item/img/ren_wu_bg.png" style="height:154rpx;width: 524rpx;"></image>
+        </view>
+        <view class="title_text">
+          <image src="./img/help_titile.png" style="height:86rpx;width:317rpx;"></image>
+        </view>
+      </view>
+      <!-- 帮助文档 -->
+      <scroll-view scroll-y class="game_explain">
+
+        <!-- 首页的问好弹窗内容 -->
+        <view class='game_explain_content' wx:if="{{nowPage == 'home'}}">
+          <view>欢迎大侠来到切磋赛，切磋赛主要目的是以文会友，玩法有1V1和3V3切磋模式 玩法规则
+          </view>
+          <view>1V1</view>
+          <view>1、 大侠进入1V1切磋场，可以邀请一名好友与其对战；</view>
+          <view>2、 每场对战5道题，每题时间10秒，回答正确且用时越短得分越高，得分高的一方获胜，获胜者得到相应的金币奖励；</view>
+          <view>3、 每场消耗100两，大侠入场银两大于或等于入场费可进行比赛；中途退出，银两不给予退还哦。</view>
+          <view></view>
+          <view>3V3</view>
+          <view>1、 大侠进入3V3切磋场，大侠最多可以邀请2位好友一起开黑进行比赛；</view>
+          <view>2、 大侠邀请好友数量小于2人，也可点击开始切磋赛，系统会随机匹配其他大侠与你并肩作战答题哦；</view>
+          <view>3、 3V3切磋赛中，每场每位大侠依次答题，上一个大侠答错，下一个大侠继续作答；上一个大侠答对，则其他大侠可以不用作答，最终按照答题时间和正确率进行积分，分数高的团队获胜；</view>
+          <view>4、 3V3切磋赛入场费600两，胜利方将会瓜分失败方的入场费。</view>
+          <view>5、 切磋达到一定场次，可以获得称号；</view>
+        </view>
+        <!-- 赶考的问好弹窗内容 -->
+        <view class='game_explain_content' wx:if="{{nowPage == 'gankao'}}">
+          <view>各位大侠，欢迎来到赶考赛，祝愿你在这里功成名就：
+          </view>
+          <view>入门条件：支付银两</view>
+          <view>玩法规则</view>
+          <view>1、 赶考段位总共14级，每个段位会对应不同的等级， 大侠获得段位的所有等级即可进入下一个段位，并获得称号，直到宰相段位不再升级;</view>
+          <view>2、 每局比赛5道题，每题时间10秒，回答正确且用时越短得分越高，得分高的一方获胜，获胜者得到对应的金币奖励。</view>
+          <view>3、 赶考入场费会根据不同等级交付相对应的入场费，大侠入场银两大于或等于入场费可进行比赛；中途退出，银两不给予退还。</view>
+        </view>
+        <!-- 金叶子提示 -->
+        <view class='game_explain_content' wx:if="{{nowPage == 'shop'}}">
+          <text>金叶子——此道具会在赶考中对应等级中出现并获得，根据活的要求获得足够多的金叶子，就可以获得“伟东云学堂”送出的豪华大礼包，你可以关注“伟东云学堂”的公众账号，随时关注活动动态；</text>
+        </view>
+      </scroll-view>
+      <!-- 关闭按钮 -->
+      <view class="close" bindtap="OnClose" data-close="showShare">
+         <image src="../nav-item/img/close.png" style="width:72rpx;height:72rpx"></image>
+      </view>
+    </view>
+  </view>
+</view>

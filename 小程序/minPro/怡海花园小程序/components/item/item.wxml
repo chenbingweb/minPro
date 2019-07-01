@@ -1,0 +1,13 @@
+  <view class="temp_list_box" bindtap="onToDetail" data-item="{{item.id}}" data-url="{{item.video_url}}">
+    <view class="icon_box relative">
+      <image mode="aspectFill" src="{{item.img_url}}" style="width:216rpx;height:120rpx"></image>
+       <view bindtap="onPlayMusic" data-aid="{{item.id}}"  data-audio="{{item.audio_url}}" class="icon_box absolute" wx:if="{{item.audio_url!=''}}">
+        <image wx:if="{{!item.playFlag}}" mode="aspectFit" src="../../images/play.png" style="width:100rpx;height:100rpx"></image>
+        <image wx:else mode="aspectFit" src="../../images/pause.png" style="width:100rpx;height:100rpx"></image>
+      </view> 
+    </view>
+    <view style="margin-left:26rpx">
+      <view class="temp_title">{{item.name}}</view>
+      <view class="temp_counts">{{item.times}}次查看</view>
+    </view>
+  </view>

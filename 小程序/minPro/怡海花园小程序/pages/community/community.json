@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "物业服务",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  "usingComponents": {
+    "paging": "/components/paging/paging",
+    "swiper-base": "/components/swiper-base/swiper-base"
+  }
+}

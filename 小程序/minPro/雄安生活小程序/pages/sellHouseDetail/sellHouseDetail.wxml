@@ -1,0 +1,165 @@
+<import src="../../temp/temp.wxml" /> 
+  <nav-back 
+    userName="{{collectType=='middle'?'中介热线':houseDetail.username}}" 
+    bid="{{houseDetail.id}}"
+    collectType="{{collectType}}"
+    userphone="{{houseDetail.userphone}}"/>
+  <!--fixed  -->
+<view class=" fx_box RemoveRollCar">
+  <!--头部  -->
+  <view class="header_box">
+    <view class="icon_box">
+     <swiper-base height="388" imgsData="{{houseDetail.img_url}}" hiddenDots="true" baseSet="{{baseSet}}"/>
+      <!-- <image mode="aspectFill" src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:750rpx;height:387rpx"></image> -->
+    </view>
+    <!--楼房信息  -->
+    <view class="house_detail">
+      <view class="flex_between price">
+        <view style="font-size:32rpx">{{houseDetail.name}}</view>
+        <view  wx:if="{{src!='rent'}}">
+          <text  style="color:#e60012;font-size:36rpx">{{houseDetail.amount}}</text>元/m²
+        </view>
+        <!--租房   -->
+        <view wx:else>
+          <text style="color:#e60012;font-size:36rpx">{{houseDetail.amount}}</text>元/月
+        </view>
+      </view>
+      <view class="address two_line">{{houseDetail.address}}</view>
+     
+      <view class="flex_between" style=" align-items: stretch">
+         <view class="house_type" style="width:70%"> {{houseDetail.tag}}</view>
+        <view  style="color:#d3d3d3">{{houseDetail.create_at_time}}</view>
+      </view>
+    </view>
+  </view>
+  <!--房屋信息  -->
+  <view class="house_info">
+    <view class="flex_start info_item">
+      <view class="one_chilid flex_start">
+        <view class="title_1">发布</view>
+        <view class="title_2">{{houseDetail.create_at}}</view>
+      </view>
+      <view class="flex_start">
+        <view class="title_1">朝向</view>
+        <view class="title_2">{{houseDetail.direction}}</view>
+      </view>
+    </view>
+    <view class="flex_start info_item">
+      <!-- <view class="one_chilid flex_start">
+        <view class="title_1">小区</view>
+        <view class="title_2">{{houseDetail.village}}</view>
+      </view> -->
+       <view class="one_chilid flex_start">
+        <view class="title_1">面积</view>
+        <view class="title_2">{{houseDetail.acreage}}m²</view>
+      </view>
+      <view class="flex_start">
+        <view class="title_1">看房</view>
+        <view class="title_2">{{houseDetail.lookat}}</view>
+      </view>
+    </view>
+    <!-- <view class="flex_start info_item" wx:if="{{false}}">
+      <view class="one_chilid flex_start">
+        <view class="title_1">车位</view>
+        <view class="title_2">{{houseDetail.parking}}</view>
+      </view>
+      <view class="flex_start">
+        <view class="title_1">用电</view>
+        <view class="title_2">{{houseDetail.electric}}</view>
+      </view>
+    </view> -->
+    <view class="flex_start info_item" style="border-bottom:0">
+       <!-- <view class="one_chilid flex_start">
+        <view class="title_1">用水</view>
+        <view class="title_2">{{houseDetail.water}}</view>
+      </view>  -->
+      <view class="flex_start one_chilid" >
+        <view class="title_1">户型</view>
+        <view class="title_2">{{houseDetail.door}}</view>
+      </view>
+    </view>
+  </view>
+  <!--房源介绍  -->
+  <view class="house_resource">
+    <view style="padding:0 25rpx;padding-top:30rpx;padding-bottom:20rpx;">房源介绍</view>
+    <!--租房  -->
+    <view class="flex_start rent_box" wx:if="{{src=='rent'}}">
+      <view class="rent_item flex_center" wx:for="{{arrList}}" wx:if="{{item.selected}}" wx:key="index_{{index}}">
+            <view class="icon_box">
+              <image style="width:59rpx;height:50rpx" src="{{item.img}}"></image>
+            </view>
+            <view style="padding-top:8rpx;">{{item.name}}</view>
+        </view>
+      <!-- <view class="rent_item flex_center">
+          <view class="icon_box">
+            <image style="width:59rpx;height:50rpx" src="../../images/tv.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">电视</view>
+      </view>
+      <view class="rent_item flex_center">
+          <view class="icon_box">
+            <image style="width:31rpx;height:50rpx" src="../../images/bx.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">冰箱</view>
+      </view>
+       <view class="rent_item flex_center">
+          <view class="icon_box">
+            <image style="width:41rpx;height:50rpx" src="../../images/xyj.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">洗衣机</view>
+      </view>
+        <view class="rent_item flex_center">
+          <view class="icon_box">
+            <image style="width:60rpx;height:50rpx" src="../../images/bed.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">床</view>
+      </view>
+        <view class="rent_item flex_center">
+          <view class="icon_box">
+            <image style="width:66rpx;height:38rpx" src="../../images/kt.png"></image>
+          </view>
+          <view style="padding-top:20rpx;">空调</view>
+      </view>
+        <view class="rent_item flex_center">
+          <view class="icon_box" >
+            <image style="width:57rpx;height:50rpx" src="../../images/pc.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">电脑</view>
+      </view>
+        <view class="rent_item flex_center">
+          <view class="icon_box" >
+            <image style="width:50rpx;height:50rpx" src="../../images/yyj.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">抽烟机</view>
+      </view>
+      <view class="rent_item flex_center">
+          <view class="icon_box" >
+            <image style="width:50rpx;height:50rpx" src="../../images/shafa.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">沙发</view>
+      </view>
+      <view class="rent_item flex_center">
+          <view class="icon_box" >
+            <image style="width:67rpx;height:50rpx" src="../../images/wife.png"></image>
+          </view>
+          <view style="padding-top:8rpx;">无线</view>
+      </view> -->
+    </view>
+    <view class="content" >
+     {{houseDetail.detail}}
+    </view>
+  </view>
+  <!--其他推荐  -->
+  <view class="others">
+    <view>
+       其他推荐
+    </view>
+    <view style="line-height:40rpx">
+      <template is="recomment" data="{{nav:true, imgUrl:imgUrl,recomData:houseDetail.otherRecomm}}"/>
+    </view>
+    
+  </view>
+
+</view>
+
+  <!-- <template is="nav_back"/> -->

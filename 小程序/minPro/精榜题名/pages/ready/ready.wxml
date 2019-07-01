@@ -1,0 +1,246 @@
+<import src="../../dati_comm/template/Grid3.wxml"/> 
+<import src="../../template/leftUser.wxml"/> 
+<import src="../../template/rightUser.wxml"/> 
+<template name="ready">
+  <view class="fixed ready" style="left:{{data.wndPosX}}rpx;opacity:{{data.wndAlpha}};" >
+    <!--3v3 左  连续胜利 多少局-->
+    <view class="icon_box left_num" wx:if="{{false}}">
+      <image src="../../imgs/fight/succ_num.png" style="width:234rpx;height:52rpx"></image>
+      <view class="item_text">连续胜利<text style="color:#f73b02;font-size:34rpx ;font-weight: bold;">12</text>局</view>
+    </view>
+     <!--3v3 右  连续胜利 多少局-->
+    <view class="icon_box right_num" wx:if="{{false}}">
+      <image class="rota" src="../../imgs/fight/succ_num.png" style="width:234rpx;height:52rpx"></image>
+      <view class="item_text">连续胜利<text style="color:#f73b02;font-size:34rpx ;font-weight: bold;">12</text>局</view>
+    </view>
+
+    <!--背景图  -->
+    <view class="icon_box fight_bg" >
+       <image src="../../imgs/comm/fight_bg.png"></image>
+    </view>
+    <!--挑战人员1 正在战斗添加 class类名：succ 等待中，不需要-->
+    <view class="play_user" style="top:{{data.leftPly.length>1?0:''}}rpx">
+     
+      <!--游戏等待，玩家显示  -->
+      <view class="play_user_bg icon_box" wx:if="{{false}}">
+          <image src="../../imgs/fight/user_bg.png"></image>
+      </view>
+      <!--3V3对战背景  -->
+      <view class="icon_box group_bg" wx:if="{{false}}">
+        <image src="../../imgs/fight/succ_bg.png" style="width:375rpx;height:590rpx"></image>
+      </view>
+      <!--1v1 匹配成功 VS图 -->
+      <view class="icon_box match_succ_vs top_VS" style="z-index:999;padding-top:42rpx;top:-300rpx" wx:if="{{data.PlyCount==1}}">
+          <image style="width:169rpx;height:133rpx" src="../../imgs/fight/vs.png"></image>
+      </view>
+      
+
+      <!--3v3 匹配成功 VS图 -->
+      <view class="icon_box match_succ_vs {{data.top_VS}}" style="z-index:999;padding-top:180rpx;top:-350rpx" wx:if="{{data.PlyCount==3}}">
+          <image style="width:169rpx;height:133rpx" src="../../imgs/fight/vs.png"></image>
+      </view>
+
+      <!-- 1v1 成功匹配到好友背景图  left_Anz（向左动画）{{data.rightPly[0].icon!=null?'left_An':''}}-->
+      <view class="left_play_bgm icon_box  left_An" style="top:30rpx;left:-3000rpx" wx:if="{{data.PlyCount==1}}" >
+       <image src="../../imgs/fight/l_p_bg.png" style="width:420rpx;height:178rpx"></image>
+       <!--左 连续胜利 多少局  -->
+        <view class="succ_num icon_box" wx:if="{{false}}">
+          <image src="../../imgs/fight/succ_num.png" style="width:234rpx;height:52rpx"></image>
+          <view class="item_text">连续胜利<text style="color:#f73b02;font-size:34rpx ;font-weight: bold;">12</text>局</view>
+        </view> 
+      </view>
+      <!--左边 1 3v3 top:90 1v1 top:50 1-->
+      <template is="leftUser"  data="{{top:data.PlyCount==3?90:50,plr:data.leftPly[0]}}"  wx:if="{{data.leftPly[0].v}}"></template>
+ 
+      <!-- 3v3 成功匹配到好友背景图  -->
+      <view class="left_play_bgm icon_box  Ani_DB_Show_left_self" style="top:70rpx;" wx:if="{{data.PlyCount==3}}" >
+        <image src="../../imgs/fight/l_p_bg_3v3.png" style="width:255rpx;height:183rpx"></image>
+      </view>
+      <!--左边 2-->
+      <template is="leftUser" data="{{top:86 +220,plr:data.leftPly[1],PlyCount:data.PlyCount}}"  wx:if="{{data.leftPly[1].v}}"></template>
+      <!-- 3v3 成功匹配到好友背景图  -->
+      <view class="left_play_bgm icon_box Ani_DB_Show_left {{data.leftPly[1].icon?'Ani_DB_Show_left_ok':''}}" style="top:{{70+210}}rpx;"  wx:if="{{data.PlyCount==3}}">
+        <image src="../../imgs/fight/l_p_bg_3v3.png" style="width:255rpx;height:183rpx"></image>
+      </view>
+      <!--左边 3-->
+      <template is="leftUser" data="{{top:76+220*2,plr:data.leftPly[2],PlyCount:data.PlyCount}}"  wx:if="{{data.leftPly[2].v}}"></template>
+      <!-- 3v3 成功匹配到好友背景图  -->
+      <view class="left_play_bgm icon_box Ani_DB_Show_left {{data.leftPly[2].icon?'Ani_DB_Show_left_ok':''}}" style="top:{{70+210*2}}rpx;"  wx:if="{{data.PlyCount==3}}">
+        <image src="../../imgs/fight/l_p_bg_3v3.png" style="width:255rpx;height:183rpx"></image>
+      </view>
+
+    </view>
+
+    <!--好友加入头像-->
+    <view class="friend" style="top:{{data.rightPly.length>1?0:''}}rpx">
+      <view wx:if="{{false}}" class="friend_bg icon_box" wx:if="{{true}}">
+          <image src="../../imgs/fight/user_bg.png"></image>
+       </view>
+      <!--3V3对战背景  -->
+      <view class="icon_box group_bg_right" wx:if="{{false}}">
+        <image src="../../imgs/fight/succ_bg.png" style="width:375rpx;height:590rpx"></image>
+        
+      </view>
+       <!-- 1v1 成功匹配到好友背景图  wx:if="{{item.icon}}" {{data.rightPly[0].icon!=null?'right_An':''}} -->
+      <view class="right_play_bgm icon_box Ani_DB_Show_right_ok" style="top:100rpx;right:-3000rpx" wx:if="{{data.PlyCount==1}}" >
+          <image src="../../imgs/fight/r_p_bg.png" style="width:420rpx;height:178rpx"></image>
+          <!--右 连续胜利 多少局  -->
+        <view class="succ_num_right icon_box" wx:if="{{false}}">      
+          <image src="../../imgs/fight/succ_num.png" style="width:234rpx;height:52rpx"></image>
+          <view class="item_text">连续胜利<text style="color:#f73b02;font-size:34rpx ;font-weight: bold;">12</text>局</view>
+        </view>     
+      </view>
+
+      <!--右_1 1v1 top:120 3v3 top:90-->
+      <template is="rightUser" data="{{ply:data.rightPly[0],top:data.PlyCount==3?90:120,waiteHeater:data.waiteHeater,waittxtv:data.waittxtv,label:data.PlyCount==1,PlyCount:data.PlyCount,s:0}}" wx:if="{{data.rightPly[0].v}}">
+      </template>
+
+
+       <!-- 3v3 成功匹配到好友背景图  -->
+      <view class="right_play_bgm icon_box Ani_DB_Show_right" style="top:70rpx;" wx:if="{{data.PlyCount==3}}">
+        <image animation="{{data.ra1}}" src="../../imgs/fight/r_p_bg_3v3.png" style="width:255rpx;height:183rpx"></image>
+      </view> 
+
+       <!--右_2 1v1-->
+      <template is="rightUser" data="{{ply:data.rightPly[1],top:86 +220,label:data.PlyCount==1,PlyCount:data.PlyCount,s:0.1}}" wx:if="{{data.rightPly[1].v}}"></template>
+            
+       <!-- 3v3 成功匹配到好友背景图  -->
+      <view class="right_play_bgm icon_box Ani_DB_Show_right" style="top:{{70+210}}rpx;"  wx:if="{{data.PlyCount==3}}">
+        <image animation="{{data.ra2}}" src="../../imgs/fight/r_p_bg_3v3.png" style="width:255rpx;height:183rpx"></image>
+      </view>   
+        <!--右_3 1v1-->
+      <template is="rightUser" data="{{ply:data.rightPly[2],top:76+220*2,label:data.PlyCount==1,PlyCount:data.PlyCount,s:0.2}}" wx:if="{{data.rightPly[2].v}}">
+      </template>
+       <!-- 3v3 成功匹配到好友背景图  -->
+      <view class="right_play_bgm icon_box Ani_DB_Show_right" style="top:{{70+210*2}}rpx;" wx:if="{{data.PlyCount==3}}">
+        <image animation="{{data.ra3}}" src="../../imgs/fight/r_p_bg_3v3.png" style="width:255rpx;height:183rpx"></image>
+      </view>
+     
+    </view>
+  
+    <!--提示信息 1V1 -->
+    <view wx:if="{{data.PlyCount==1}}" >
+    <!--等待中-->
+    <view class="font_wait"  wx:if="{{data.waittxtv}}">
+      <view class="icon_box text_wait">
+         <image src="../../imgs/fight/waing_gif.gif" style="width:249rpx;height:94rpx"></image> 
+        <!--  data.show=true //显示 data.show=false//隐藏-->
+        <!-- <waite-img srcArr="{{data.srcArr}}" show="{{data.waittxtv}}" time="300"> </waite-img> -->
+      </view>
+      <!--等待中遮罩动画  -->
+      <view class="waiting_mark" wx:if="{{false}}">
+        <image src="../../imgs/fight/read_mark.png" style="width:343rpx;height:97rpx"></image>
+      </view>
+    </view>
+     <!--3V3 组队 等待中-->
+    <view class="font_wait"  wx:if="{{false}}">
+      <view class="icon_box text_wait">
+        <image src="../../imgs/fight/read_group.png" style="width:329rpx;height:88rpx"></image>
+      </view>
+    </view>
+    <!--匹配中.  -->
+    <view class="font_wait"  >
+      <view class="icon_box text_wait" wx:if="{{false}}">
+        <image src="../../imgs/fight/matching.png" style="width:246rpx;height:88rpx"></image>
+      </view>
+    </view>
+    <!--准备备战
+    <view class="font_wait" wx:if="{{data.readytxtv}}">
+      <view class="icon_box text_wait">
+        <image src="../../imgs/fight/ready.png"></image>
+      </view>
+    </view>-->
+     <!--挑战开始   Fight_Start_Ani动画-->
+    <view class="font_wait font_start Fight_Start_Ani" wx:if="{{data.startv}}" style="top:250rpx;z-index:10">
+      <view class="icon_box text_start">
+        <image src="../../imgs/fight/start.png" style="width:513rpx;height:226rpx"></image>
+      </view>
+    </view>
+</view>
+    <!--提示信息 3V3 -->
+    <view  wx:if="{{data.PlyCount==3}}">
+    <!--等待中-->
+    <view class="font_wait {{!data.waittxtv?' Fight_Waite_Out_Ani':''}}" style="top:335rpx"  wx:if="{{data.waittxtv}}">
+      <view class="icon_box text_wait">
+         <image src="../../imgs/fight/waing_gif.gif" style="width:210rpx;height:80rpx"></image> 
+      </view>
+    </view>
+     <!--3V3 组队 等待中
+    <view class="font_wait"  wx:if="{{false}}">
+      <view class="icon_box text_wait">
+        <image src="../../imgs/fight/read_group.png" style="width:329rpx;height:88rpx"></image>
+      </view>
+    </view>-->
+    <!--匹配中. 
+    <view class="font_wait"  >
+      <view class="icon_box text_wait" wx:if="{{false}}">
+        <image src="../../imgs/fight/matching.png" style="width:246rpx;height:88rpx"></image>
+      </view>
+    </view> -->
+    <!--准备备战 
+    <view class="font_wait " style="top:335rpx;z-index:100;" wx:if="{{data.readytxtv}}">
+      <view class="icon_box text_wait">
+        <image src="../../imgs/fight/ready.png"></image>
+      </view>
+    </view>-->
+     <!--挑战开始 "  -->
+    <view class="font_wait font_start Fight_Start_Ani" wx:if="{{data.startv}}"  style="top:250rpx;z-index:10">
+      <view class="icon_box text_start">
+        <image src="../../imgs/fight/start.png" style="width:513rpx;height:226rpx"></image>
+      </view>
+    </view>
+    </view>
+
+    <!--1V1 提示 data.PlyCount==3 -->
+    <view class="tip"   wx:if="{{data.startv&&data.PlyCount!=3}}">共5回合，每题10秒回答时间</view>
+    <!--3V3 提示  -->
+    <view class="tip" style="top:740rpx"  wx:if="{{data.startv&&data.PlyCount==3}}">共9回合，每题10秒回答时间</view>
+<!--{{data.items}}  wx:for="{{data.items}}" wx:key="item_{{index}}"  wx:if="{{true}}"-->
+    <!--tips提示  -->
+    <view class="tips" style="top:300rpx"  ><view class="tipsa">{{data.items.Notes}}</view></view>
+     
+    <!--邀请好友 1V1-->
+    <view class="visited_friend_box" wx:if="{{false}}">
+      <view class="visi_btn"  >
+        <text>邀请好友</text>  
+        <view class="icon icon_box">
+          <image src="../../imgs/fight/visit_icon.png"></image>
+        </view>
+      </view>
+      <view class="give_up" wx:if="{{data.fangqiv}}">
+        <text  bindtap="OnFangqiClick">放弃</text>
+      </view>
+      <button open-type="share" class="share_button"  wx:if="{{data.yqhaoyou}}" data-page="{{data.wndname}}" data-id="yaoqing" ></button>
+    </view>
+     <!--邀请好友 top:710rpx; 3V3-->
+    <view class="visited_friend_box" style="844rpx" wx:if="{{true}}">
+      <view class="visi_btn"   wx:if="{{data.yqhaoyou}}">
+        <text>邀请好友</text>  
+        <view class="icon icon_box">
+          <image src="../../imgs/fight/visit_icon.png"></image>
+        </view>
+      </view>
+      <view class="give_up" wx:if="{{data.fangqiv}}">
+        <text  bindtap="OnFangqiClick">放弃</text>
+      </view>
+      <button open-type="share" class="share_button"  wx:if="{{data.yqhaoyou}}" data-page="{{data.wndname}}" data-id="yaoqing" ></button>
+    </view>
+
+    <!--开始挑战 -->
+     <view class="visited_friend_box" style="top:836rpx" wx:if="{{data.showStart}}" bindtap="OnStartClick" >
+      <view class="visi_btn start_fight_btn" style="background-color:{{false?'#ccc':''}};">
+        <text>开始对战</text>  
+        <view class="icon icon_box">
+          <image src="../../imgs/fight/start_fight.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 开始对战 -->
+    <view class="start_fight_box" bindtap="OnStartFight">
+      开始游戏
+    </view>
+  
+    <!--1v1好友对战提示 
+    <view class="note_1v1"  wx:if="{{data.PlyCount==1}}">每天前十次好友对战可免费获得金币</view> -->
+  </view>
+</template>

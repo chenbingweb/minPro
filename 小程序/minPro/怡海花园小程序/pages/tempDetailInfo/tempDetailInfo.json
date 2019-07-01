@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "详情",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  "usingComponents": {
+    "reply": "/components/reply/reply",
+    "paging": "/components/paging/paging",
+    "share-dz": "/components/share-dz/share-dz"
+  }
+}

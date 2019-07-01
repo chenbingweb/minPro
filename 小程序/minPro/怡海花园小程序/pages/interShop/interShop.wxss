@@ -1,0 +1,22 @@
+/* pages/interShop/interShop.wxss */
+page
+{
+  background-color: #f5f5f5;
+}
+.box
+{
+  background-color: white;
+  width: 750rpx;
+  box-sizing: border-box;
+  
+}
+.item
+{
+  height: 90rpx;
+  border-bottom: 2rpx solid #f5f5f5;
+  color:#333333;
+  font-size: 30rpx;
+  padding: 0 36rpx;
+    box-sizing: border-box;
+    width: 750rpx;
+}

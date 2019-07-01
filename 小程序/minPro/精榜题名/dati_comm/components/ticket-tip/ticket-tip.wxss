@@ -1,0 +1,227 @@
+.bg_color
+{
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s;
+}
+.box
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 375rpx);
+  width: 584rpx;
+  height: 760rpx;
+}
+.absolute
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.left
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+
+}
+.header
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  width:293rpx;
+  height: 44rpx;
+}
+.body
+{
+  position: absolute;
+  right: 0;
+  top:44rpx;
+  width:269rpx;
+  height: 537rpx;
+}
+.bottom
+{
+  position: absolute;
+  right: 0;
+  top:calc(44rpx + 537rpx);
+  width:269rpx;
+  height: 180rpx;
+  
+}
+.rotate_180
+{
+  transform-origin:100% 0;
+  transform:rotateY(180deg) translateX(0rpx) ;
+}
+.midd_db
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+}
+.m_color
+{
+  width: 250rpx;
+  height: 540rpx;
+  position: absolute;
+  right: 0;
+  top:44rpx;
+  background-color: #f5d6a9;
+  box-sizing: border-box;
+  border-top:6rpx solid #ff3d40;
+  border-left:6rpx solid #ff3d40;
+  overflow: hidden;
+}
+.mid_top
+{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  left: 0;
+  top:0;
+  padding-top:21rpx;
+  background-color:#f00811;
+
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.mid_top::after
+{
+  content:"";
+  display:block;
+  position:absolute;
+  width:770rpx;
+  height:519rpx;
+  border-radius:50%;
+  left:95%;
+  transform:translateX(-50%);
+  background-color:#f5d6a9;
+  top:260rpx;
+  border:4rpx solid #490000;
+}
+.title_box
+{
+  width: 195rpx;
+  height: 90rpx;
+  position: absolute;
+  right: 0;
+  top:-16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  top:-26rpx;
+  transform: translateX(-50%);
+}
+.red_package
+{
+  position: absolute;
+  width: 394rpx;
+  height: 355rpx;
+  left: 50%;
+  top:170rpx;
+  transform: translateX(-50%);
+}
+.left_1
+{
+  position: absolute;
+  width: 123rpx;
+  height: 134rpx;
+  left: 50rpx;
+  top:40rpx;
+}
+.left_2
+{
+  position: absolute;
+  width: 138rpx;
+  height: 50rpx;
+  left: 190rpx;
+  top:58rpx;
+}
+.left_3
+{
+  position: absolute;
+  width: 137rpx;
+  height: 39rpx;
+  left: 190rpx;
+  top:115rpx;
+}
+.btn
+{
+  position: absolute;
+  left: 50%;
+  top:580rpx;
+  transform: translateX(-50%);
+}
+.close
+{
+  position: absolute;
+  right: 6rpx;
+  top:-10rpx;
+}
+.tick_box_position
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+}
+.one_key
+{
+  background-color: #81ba41;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 420rpx;
+  height: 102rpx;
+  text-align: center;
+  line-height: 102rpx;
+  color:#fff;
+  font-size: 36rpx;
+  font-weight: bold;
+  border-radius: 52rpx;
+}
+.login
+{
+   position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.by
+{
+  position: absolute;
+  left: 48rpx;
+  top:539rpx;
+}
+.by_180
+{
+    transform-origin:245rpx 0;
+  transform:rotateY(180deg) translateX(0rpx) ;
+}

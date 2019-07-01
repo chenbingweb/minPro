@@ -1,0 +1,122 @@
+/* pages/buildDetail/buildDetail.wxss */
+@import '../../temp/temp.wxss';
+page
+{
+  background-color: #f4f4f4;
+  height: 100%;
+}
+.bulid_page
+{
+  overflow: scroll;
+   padding-bottom: 100rpx; 
+  
+}
+.build_info
+{
+  width: 750rpx;
+  min-height: 188rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 34rpx 25rpx;
+  margin-bottom: 10rpx;
+}
+.build_name
+{
+  color:#333;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+.build_place
+{
+  /* line-height: 60rpx; */
+  color:#666;
+  font-size: 28rpx;
+  margin-bottom: 18rpx;
+}
+.label
+{
+  color:#666666;
+  font-size: 24rpx;
+    line-height: 24rpx;
+}
+.label_item
+{
+  color:#666;
+  font-size: 28rpx;
+  min-width:74rpx;
+  height: 40rpx;
+  background-color: #f4f4f4;
+  text-align: center;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+}
+ /* <!--楼盘开发信息  --> */
+ .build_box_info
+{
+  background-color: white;
+  color:#666666;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+} 
+.build_item_info
+{
+  height: 83rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+}
+.build_item_info>view:nth-of-type(1)
+{
+  width: 114rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*主力户型  */
+.house_type
+{
+  width: 750rpx;
+  height: 375rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding:  0 25rpx;
+  margin-bottom: 10rpx;
+}
+
+.house_type_title,.news_title
+{
+  height: 90rpx;
+  width: 700rpx;
+  margin: 0 auto;
+  color:#333;
+  font-size: 30rpx;
+  line-height: 90rpx;
+}
+.house_type_item
+{
+  color:#333;
+  font-size: 28rpx;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.house_type_item:last-child
+{
+  margin-right: 0rpx;
+}
+/*最新消息  */
+.news
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  background-color: white;
+  
+}
+
+.content_box
+{
+  color:#666666;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}

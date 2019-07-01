@@ -1,0 +1,85 @@
+<import src="../../temp/temp.wxml" />
+<view class="fixed">
+  <view class="tip_box flex_center">
+    <view class="icon_box" style="margin-bottom:30rpx">
+      <image src="../../images/succ_tip.png" style="width:127rpx;height:127rpx"></image>
+    </view>
+    <view class="f_30_333">发布成功获得{{getCoin}}个雄心币</view>
+  </view>
+  <!--boss招聘发布成功后推荐  -->
+  <view class="recomment" wx:if="{{src=='bossrelease'}}">
+    <view class="f_30_333 re_title">推荐人才</view>
+    <view class="page_box">
+      <paging dataObj="{{dataObj}}" bindpageData="pageData">
+        <view slot="list">
+          <template is="recomentSelf" data="{{arr:selfList}}" />
+        </view>
+      </paging>
+    </view>
+  </view>
+  <!--职位推荐  -->
+  <view class="recomment" wx:if="{{src=='selfRelease'}}">
+    <view class="f_30_333 re_title">推荐职位</view>
+    <view class="page_box">
+      <paging  dataObj="{{dataObj}}" bindpageData="pageData">
+        <view slot="list">
+          <navigator url="../jobDetail/jobDetail?id={{item.id}}" class="other_jobs" wx:for="{{jobList}}" wx:key="item_{{index}}">
+            <view class="flex_between job_info_font">
+              <view>{{item.category}}</view>
+              <!-- <view>视觉</view> -->
+              <view style="color:#fed545;font-size:28rpx;">{{item.pay_start}}k-{{item.pay_end}}k</view>
+              <!-- <view style="color:#fed545;font-size:28rpx;">2k-3k</view> -->
+            </view>
+            <view class="flex_start fuli_box">
+              <view class="inline_flex" style="margin-right:30rpx" wx:if="{{false}}">
+                <view class="icon_box">
+                  <image src="../../images/job_local.png" style="width:22rpx;height:25rpx"></image>
+                </view>
+                 <!-- <view style="padding-left:10rpx;">北京</view>  -->
+                <view style="padding-left:10rpx;">{{item.area}}</view>
+              </view>
+              <view class="inline_flex" style="margin-right:30rpx">
+                <view class="icon_box">
+                  <image src="../../images/baoxian.png" style="width:24rpx;height:25rpx"></image>
+                </view>
+                <view style="padding-left:10rpx;">{{item.tag[0]}}</view>
+                <!-- <view style="padding-left:10rpx;">添加</view> -->
+              </view>
+              <view class="inline_flex" style="margin-right:30rpx" >
+                <view class="icon_box">
+                  <image src="../../images/job_local.png" style="width:29rpx;height:25rpx"></image>
+                </view>
+                <!-- <view style="padding-left:10rpx;">2-4年</view> -->
+                <view style="padding-left:10rpx;">{{item.year_start}}-{{item.year_end}}年</view>
+              </view>
+            </view>
+          </navigator>
+
+        </view>
+      </paging>
+    </view>
+  </view>
+  <!--资讯发布成功后推荐  -->
+  <view class="recomment" wx:if="{{src=='info'}}">
+    <view class="f_30_333 re_title">推荐信息</view>
+    <view class="page_box">
+      <paging
+        dataObj="{{dataObj}}" bindpageData="pageData"
+      >
+        <view slot="list">
+          <view>
+            <navigator url="../infoRelDetail/infoRelDetail?id={{item.id}}" class="flex_start info_item" wx:for="{{infoList}}" wx:key="key_{{index}}">
+              <view class="icon_box">
+                <image mode="aspectFill" style="width:270rpx;height:216rpx" src="{{imgUrl+item.img_url[0]}}"></image>
+              </view>
+              <view class="info_child">
+                <view class="f_30_333" style="line-height:60rpx">{{item.title}}</view>
+                <view class="f_28_666 ">{{item.detail}}</view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </paging>
+    </view>
+  </view>
+</view>

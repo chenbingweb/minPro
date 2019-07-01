@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  "usingComponents": {
+    "search": "/components/search/search",
+    "paging": "/components/paging/paging",
+    "release-nav": "/components/release-nav/release-nav",
+    "box-tab":"/components/box-tab/box-tab"
+  }
+}

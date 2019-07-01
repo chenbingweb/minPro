@@ -1,0 +1,9 @@
+/* pages/historyList/historyList.wxss */
+.item_list
+{
+  width: 750rpx;
+  height: 108rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+}

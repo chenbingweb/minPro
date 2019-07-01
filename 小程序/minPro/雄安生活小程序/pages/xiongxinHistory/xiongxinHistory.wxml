@@ -1,0 +1,50 @@
+<view class="fixed">
+  <paging dataObj="{{dataObj}}" bindpageData="pageData">
+    <view slot="list" class="list">
+      <view class="item_list flex_between f_30_333" wx:for="{{list}}" wx:key="list_{{index}}">
+        <view>
+          {{item.name}}
+        </view>
+        <view>
+         {{(item.type=='income'?'+':'-')+item.amount}}雄心币
+        </view>
+      </view>
+  
+    </view>
+  </paging>
+
+  <!-- <view class="list">
+    <view class="item_list flex_between f_30_333">
+      <view>
+        注册
+      </view>
+      <view>
+        +10雄心币
+      </view>
+    </view>
+    <view class="item_list flex_between f_30_333">
+      <view>
+        分享
+      </view>
+      <view>
+        +10雄心币
+      </view>
+    </view>
+    <view class="item_list flex_between f_30_333">
+      <view>
+        首次发布
+      </view>
+      <view>
+        +10雄心币
+      </view>
+    </view>
+    <view class="item_list flex_between f_30_333">
+      <view>
+        购买雄心
+      </view>
+      <view>
+        +10雄心币
+      </view>
+    </view>
+  </view> -->
+</view>

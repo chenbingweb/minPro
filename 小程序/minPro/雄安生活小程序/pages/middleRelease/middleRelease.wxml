@@ -1,0 +1,380 @@
+<view>
+  <form class="send_box" bindsubmit="formSubmit" report-submit>
+    <!--上传图片upload_phote.png  -->
+    <view class="up_box flex_center">
+      <view class="icon_box" wx:if="{{buildImg.length!=0}}">
+        <view class="upload_photo flex_start" style="{{buildImg.length!=0?'padding-bottom:0':''}}">
+          <view class="icon_box up_box_1 relative" style="background:white" wx:for="{{buildImg}}" wx:key="p_{{index}}">
+            <image bindtap="delPhoto" data-index="{{index}}" src="../../images/del.png" style="position:absolute;right:0;top:-10rpx;width:50rpx;height:50rpx;"></image>
+            <image src="{{item}}" style="width:224rpx;height:224rpx"></image>
+          </view>
+          <view wx:if="{{showUpdateBtn}}" class="up_box_1 flex_center" bindtap="selectPhoto">
+            <view class="icon_box">
+              <image src="../../images/upload_phote.png" style="width:106rpx;height:87rpx;"></image>
+            </view>
+            <view class="f_30_999" style="margin-top:12rpx;">
+              添加照片
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else bindtap="selectPhoto" class="flex_center up_box" style="height:387rpx;">
+        <view class="icon_box">
+          <image src="../../images/upload_phote.png" style="width:106rpx;height:87rpx;"></image>
+        </view>
+        <view class="f_30_999" style="margin-top:26rpx;">
+          添加照片
+        </view>
+      </view>
+    </view>
+    <!--资讯发布  -->
+    <view wx:if="{{isInfo}}" style="margin-bottom:10rpx">
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          标题
+        </view>
+        <view style="color:#999">
+          <input name="title" class="input_style" placeholder="请输入标题"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          内容
+        </view>
+        <view style="color:#999">
+          <input name="detail" class="input_style" placeholder="请输入内容"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          区域
+        </view>
+        <picker bindchange="areaChange" range="{{areaList}}" range-key="name" value="{{areaListIndex}}" style="color:#999">
+          <input disabled class="input_style select_style" value='{{areaList[areaListIndex].name}}' placeholder="请选择"></input>
+          <input disabled hidden name="area" class="input_style select_style" value='{{areaList[areaListIndex].id}}' placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          分类
+        </view>
+        <picker style="color:#999" range="{{infoList}}" bindchange="infoClassEvent" value="{{infoClassIndex}}" range-key="name">
+          <input disabled class="input_style" value="{{infoList[infoClassIndex].name}}" placeholder="请选择"></input>
+          <input disabled name="category_id" hidden class="input_style" value="{{infoList[infoClassIndex].id}}" placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          电话
+        </view>
+        <view style="color:#999">
+          <input name="userphone" type="number" class="input_style" placeholder="请输入电话"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 " style="border-bottom:none">
+        <view class="item_title">
+          联系人
+        </view>
+        <view style="color:#999">
+          <input name="username" class="input_style" placeholder="请输入联系人"></input>
+        </view>
+      </view>
+    </view>
+    <!--非资讯  -->
+    <view wx:else>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          名称
+        </view>
+        <view style="color:#999">
+          <input name="name" class="input_style" placeholder="请输入名称"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          区域
+        </view>
+        <picker bindchange="areaChange" range="{{areaList}}" range-key="name" value="{{areaListIndex}}" style="color:#999">
+          <input disabled class="input_style select_style" value='{{areaList[areaListIndex].name}}' placeholder="请选择"></input>
+          <input disabled hidden name="area" class="input_style select_style" value='{{areaList[areaListIndex].id}}' placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          地址
+        </view>
+        <view style="color:#999">
+          <input name="address" class="input_style" placeholder="请输入地址"></input>
+        </view>
+      </view>
+
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          价格
+        </view>
+        <view style="color:#999">
+          <input name="amount" type="digit" class="input_style" placeholder="请输入价格"></input>
+        </view>
+        <!-- <picker wx:if="{{isPersonal}}" mode="selector" style="color:#999">
+          <input disabled class="input_style select_style" value='' placeholder="请选择"></input>
+        </picker>
+        <picker wx:else mode="selector" style="color:#999">
+          <input disabled class="input_style select_style" value='' placeholder="请选择"></input>
+        </picker> 
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view> -->
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          楼层
+        </view>
+        <view style="color:#999">
+          <input type="number" name="floor" class="input_style" placeholder="请输入楼层"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          总楼层
+        </view>
+        <view style="color:#999">
+          <input type="number" name="total_floor" class="input_style" placeholder="请输入总楼层"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          户型
+        </view>
+        <picker bindchange="changeHouseDoor" value="{{doorIndex}}" range="{{houseTypeList}}" range-key="name" style="color:#999">
+
+          <view style="line-height:110rpx" class="input_style">{{houseTypeList[doorIndex].name==''?'请选择户型':houseTypeList[doorIndex].name}}</view>
+          <input hidden name="door" value="{{houseTypeList[doorIndex].name=='请选择'?'':houseTypeList[doorIndex].name}}" disabled class="input_style" placeholder="请选择户型"></input>
+
+        </picker>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          面积
+        </view>
+        <view style="color:#999">
+          <input name="acreage" type="number" class="input_style" placeholder="请输入面积"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          朝向
+        </view>
+        <view style="color:#999">
+          <input name="direction" class="input_style" placeholder="请输入朝向"></input>
+        </view>
+      </view>
+      <!-- wx:if="{{!isPersonal}}"  -->
+      <view class="company item flex_start f_30_333 " wx:if="{{false}}">
+        <view class="item_title">
+          车位
+        </view>
+        <view style="color:#999">
+          <input name="parking" class="input_style" placeholder="请输入车位数量"></input>
+        </view>
+      </view>
+      <!-- wx:if="{{!isPersonal}}"  -->
+      <view class="company item flex_start f_30_333 " wx:if="{{false}}">
+        <view class="item_title">
+          用水
+        </view>
+        <view style="color:#999">
+          <input name="water" class="input_style" placeholder="请输入水费单价"></input>
+        </view>
+      </view>
+      <!-- wx:if="{{!isPersonal}}"  -->
+      <view class="company item flex_start f_30_333 "  wx:if="{{false}}">
+        <view class="item_title">
+          用电
+        </view>
+        <view style="color:#999">
+          <input name="electric" class="input_style" placeholder="请输入电费单价"></input>
+        </view>
+      </view>
+      <!-- wx:if="{{!isPersonal}}"  -->
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          看房
+        </view>
+        <view style="color:#999">
+          <input name="lookat" class="input_style" placeholder="请输入看房时间"></input>
+        </view>
+      </view>
+      <!-- wx:if="{{!isPersonal}}"  -->
+      <view class="company item flex_start f_30_333 "  wx:if="{{false}}">
+        <view class="item_title">
+          小区
+        </view>
+        <view style="color:#999">
+          <input name="village" class="input_style" placeholder="请输入小区"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          类型
+        </view>
+        <picker bindchange="categoryChange" mode="selector" value="{{categoryIndex}}" range="{{categoryArr}}" range-key="name" style="color:#999">
+          <input disabled class="input_style select_style" value="{{categoryArr[categoryIndex].name}}" placeholder="请选择"></input>
+          <input hidden name="category" class="input_style select_style" value="{{categoryArr[categoryIndex].value}}"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+  
+      <view wx:if="{{isPersonal}}" class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          联系人
+        </view>
+        <view style="color:#999">
+          <input name="username" class="input_style" placeholder="请输入联系人"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 " style="border:none;">
+        <view class="item_title">
+          手机号
+        </view>
+        <view style="color:#999">
+          <input name="userphone" type="number" class="input_style" placeholder="请输入手机号码"></input>
+        </view>
+      </view>
+    </view>
+    <!--标签选择  -->
+    <view class="label_select" wx:if="{{!isInfo}}">
+      <view class="f_30_333 label_title">
+        可选标签
+      </view>
+      <checkbox-group bindchange="labelChange" name="tag" class="inline_flex label_box">
+        <label class="label_item {{item.selected?'selected_label':''}}" wx:for="{{lableList}}" wx:key="label_{{index}}">
+          {{item.name}}
+          <checkbox hidden value="{{item.id}}" checked="{{item.checked}}" />
+        </label>
+        <!-- <view class="label_item add_btn">添加</view> -->
+      </checkbox-group>
+    </view>
+    <!--房屋介绍  -->
+    <view wx:if="{{!isInfo}}" class="company item flex_start f_30_333 " style="border:none;border-bottom:2rpx solid #e3e3e3;">
+      <view class="item_title">
+        房屋介绍
+      </view>
+      <view style="color:#999">
+        <input name="detail" class="input_style" placeholder="请输入房屋介绍"></input>
+      </view>
+    </view>
+        <view>
+        <checkbox-group bindchange="checkboxChange" class="flex_start rent_box" wx:if="{{categoryArr[categoryIndex].value=='lease'}}">
+          <label for="arr_{{index}}" class="rent_item flex_center relative" wx:for="{{selectArr}}" wx:key="arr_{{index}}">
+            <view class="icon_box">
+              <image style="width:67rpx;height:50rpx" src="{{item.img}}"></image>
+            </view>
+            <view style="padding-top:8rpx;">{{item.name}}</view>
+            <checkbox id="arr_{{index}}" value="{{item.id}}" hidden checked="{{item.selected}}"/>
+            <view class="icon_box check_pos">
+              <image wx:if="{{item.selected}}" src="../../images/single_yes.png" style="width:25rpx;height:25rpx"></image>
+               <image wx:else src="../../images/single_no.png" style="width:25rpx;height:25rpx"></image>
+            </view>
+          </label>
+          <!-- <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:59rpx;height:50rpx" src="../../images/tv.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">电视</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:31rpx;height:50rpx" src="../../images/bx.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">冰箱</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:41rpx;height:50rpx" src="../../images/xyj.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">洗衣机</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:60rpx;height:50rpx" src="../../images/bed.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">床</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:66rpx;height:38rpx" src="../../images/kt.png"></image>
+            </view>
+            <view style="padding-top:20rpx;">空调</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:57rpx;height:50rpx" src="../../images/pc.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">电脑</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:50rpx;height:50rpx" src="../../images/yyj.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">抽烟机</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:50rpx;height:50rpx" src="../../images/shafa.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">沙发</view>
+          </view>
+          <view class="rent_item flex_center">
+            <view class="icon_box">
+              <image style="width:67rpx;height:50rpx" src="../../images/wife.png"></image>
+            </view>
+            <view style="padding-top:8rpx;">无线</view>
+          </view> -->
+        </checkbox-group>
+      </view>
+    <!--是否顶置  -->
+    <view class="company item flex_between f_30_333 margin_bottom_10" style="border:none">
+      <view class="flex_start">
+        <view class="item_title">
+          是否置顶
+        </view>
+        <view style="color:#999">
+          <view class="set_top">置顶需支付{{price}}个雄心币</view>
+        </view>
+      </view>
+      <switch class="switch" color="#fed545" bindchange="switchEvent" />
+      <input hidden name="is_top" value="{{isTop}}"></input>
+    </view>
+    <!--提交  -->
+    <view class="submit_box">
+      <view class="disclaimer flex_start">
+
+        <switch class="switch" id="isRead" checked="{{isRead}}" type="checkbox" color="#fed545" bindchange="switchMZEvent" />
+        <label for="isRead" class="f_30_999">
+          <text>我已认真阅读并同意</text>
+        </label>
+        <text class="f_30_999" style="color:#3ea2ef">《免责声明》</text>
+
+      </view>
+      <view class="submit relative">
+        <view class="icon_box ">
+          <image src="../../images/phone_btn.png" style="width: 618rpx;height: 90rpx;"></image>
+        </view>
+        <view class="absolute btn_next">提交</view>
+        <button form-type="submit" class="login_btn"></button>
+      </view>
+    </view>
+
+  </form>
+</view>

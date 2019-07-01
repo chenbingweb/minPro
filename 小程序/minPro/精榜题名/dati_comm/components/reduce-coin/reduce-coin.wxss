@@ -1,0 +1,37 @@
+/* dati_comm/components/reduce-coin/reduce-coin.wxss */
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coin_container
+{
+  width: 80rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.coin_num
+{
+  color:#f6e04d;
+  font-size: 30rpx;
+  position: absolute;
+  left:0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  text-align: center;
+  font-weight: bold;
+  transform: translateY(12rpx) scale(0.8);
+  opacity: 1;
+  transition: all 1s;
+}
+.hid_coin
+{
+  transform: translateY(-50rpx) scale(0);
+   opacity: 0;
+}

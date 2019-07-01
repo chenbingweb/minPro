@@ -1,0 +1,174 @@
+.bottom_bg
+{
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.fz
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.ball_1
+{
+  width:1327rpx;
+  height:1000rpx;
+  border-radius:47%;
+  background-color:#ffe8d0;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-899rpx;
+
+}
+.ball_1 image{
+  width:143px;
+  height:27px;
+  margin-top:41rpx;
+  transform:translateX(205%);
+}
+.ball_left,.ball_middle,.ball_right
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 257rpx;
+}
+.ball_2
+{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background-color: #99a886;
+  position: absolute;
+  left:-18rpx;
+  bottom: 49rpx;
+
+}
+.ball_3
+{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background-color: #adbfa5;
+  position: absolute;
+  left:-52rpx;
+  bottom: 11rpx;
+
+}
+.ball_4
+{
+  width: 224rpx;
+  height: 224rpx;
+  border-radius: 50%;
+  background-color: #cad2c2;
+  position: absolute;
+  left:-83rpx;
+  bottom: -20rpx;
+
+}
+.ball_5
+{
+  width: 330rpx;
+  height: 330rpx;
+  border-radius: 50%;
+  background-color: #cfdcc7;
+  position: absolute;
+  left:-137rpx;
+  bottom: -73rpx;
+
+}
+.ball_2_m
+{
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background-color: #aaa0db;
+  position: absolute;
+  left:410rpx;
+  bottom: 81rpx;
+
+}
+.ball_3_m
+{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #d6d1ef;
+  position: absolute;
+  left:387rpx;
+  bottom: 60rpx;
+
+}
+.ball_4_m
+{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background-color: #ded8ef;
+  position: absolute;
+  left:367rpx;
+  bottom: 40rpx;
+
+}
+.ball_5_m
+{
+  width: 205rpx;
+  height: 205rpx;
+  border-radius: 50%;
+  background-color: #e5e1ef;
+  position: absolute;
+  left:334rpx;
+  bottom: 7rpx;
+
+}
+.ball_2_r
+{
+  width: 91rpx;
+  height: 91rpx;
+  border-radius: 50%;
+  background-color: #99a886;
+  position: absolute;
+  left:690rpx;
+  bottom: 77rpx;
+
+}
+.ball_3_r
+{
+  width: 163rpx;
+  height: 163rpx;
+  border-radius: 50%;
+  background-color: #adbfa5;
+  position: absolute;
+  left:653rpx;
+  bottom: 40rpx;
+
+}
+.ball_4_r
+{
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 50%;
+  background-color: #cad2c2;
+  position: absolute;
+  left:620rpx;
+  bottom: 7rpx;
+
+}
+.ball_5_r
+{
+  width: 337rpx;
+  height: 337rpx;
+  border-radius: 50%;
+  background-color: #cfdcc7;
+  position: absolute;
+  left:566rpx;
+  bottom: -47rpx;
+
+}

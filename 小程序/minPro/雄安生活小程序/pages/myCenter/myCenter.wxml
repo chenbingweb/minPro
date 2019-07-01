@@ -1,0 +1,121 @@
+<!--pages/myCenter/myCenter.wxml-->
+<nav-bar/>
+<view>
+
+  <view class="user_header flex_start">
+    <view class="icon_box">
+      <image wx:if="{{userInfo}}" mode="aspectFill" style="width:122rpx;height:122rpx;border-radius:50%" src="{{userInfo.avatarUrl}}"></image>
+      <view wx:else style="width:122rpx;height:122rpx;border-radius:50%;overflow:hidden">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </view>
+    <view style="padding-left:26rpx;">
+      <view class="inline_flex f_30_333">
+        <view wx:if="{{userInfo}}" class="one_line" style="max-width:300rpx;padding-right:10rpx">{{userInfo.nickName}}</view>
+        <view wx:else style="max-width:300rpx;padding-right:10rpx">
+          <open-data class="one_line" type="userNickName"></open-data>
+        </view>
+        <view class="icon_box">
+          <image wx:if="{{userInfo.gender!=1}}" src="../../images/woman.png" style="width:32rpx;height:30rpx"></image>
+          <image wx:else src="../../images/man.png" style="width:32rpx;height:30rpx"></image>
+        </view>
+      </view>
+      <view class="f_28_666" hidden>编辑个人信息</view>
+    </view>
+  </view>
+
+  <!-- 选项列表 -->
+  <view>
+    <!--个人信息  -->
+    <navigator url="../personInfo/personInfo?src=center">
+      <view class="center_item flex_between">
+        <view class="f_30_333 inline_flex">
+          <view class="icon_box">
+            <image src="../../images/center_1.png" style="width:28rpx;height:30rpx"></image>
+          </view>
+          <view style="padding-left:20rpx">
+            个人信息
+          </view>
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../releaseHistory/releaseHistory">
+      <view class="center_item flex_between">
+        <view class="f_30_333 inline_flex">
+          <view class="icon_box">
+            <image src="../../images/center_2.png" style="width:28rpx;height:30rpx"></image>
+          </view>
+          <view style="padding-left:20rpx">
+            发布历史
+          </view>
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../historyList/historyList?src=pay">
+      <view class="center_item flex_between">
+        <view class="f_30_333 inline_flex">
+          <view class="icon_box">
+            <image src="../../images/center_3.png" style="width:28rpx;height:30rpx"></image>
+          </view>
+          <view style="padding-left:20rpx">
+            支付历史
+          </view>
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../xiongxinHistory/xiongxinHistory">
+      <view class="center_item flex_between">
+        <view class="f_30_333 inline_flex">
+          <view class="icon_box">
+            <image src="../../images/center_4.png" style="width:28rpx;height:30rpx"></image>
+          </view>
+          <view style="padding-left:20rpx">
+            雄心历史
+          </view>
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../myCollection/myCollection">
+      <view class="center_item flex_between">
+        <view class="f_30_333 inline_flex">
+          <view class="icon_box">
+            <image src="../../images/center_5.png" style="width:28rpx;height:30rpx"></image>
+          </view>
+          <view style="padding-left:20rpx">
+            我的收藏
+          </view>
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../aboutMe/aboutMe">
+      <view class="center_item flex_between">
+        <view class="f_30_333 inline_flex">
+          <view class="icon_box">
+            <image src="../../images/center_6.png" style="width:28rpx;height:30rpx"></image>
+          </view>
+          <view style="padding-left:20rpx">
+            关于我们
+          </view>
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

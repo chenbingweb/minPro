@@ -1,0 +1,36 @@
+<template name="leave" >
+  <view class="fixed leave" style="left:{{data.wndPosX}}rpx;opacity:{{data.wndAlpha}};"  wx:if="{{data.display}}">
+    <!--背景图片  -->
+    <view class="leave_bg">
+      <view class="icon_box">
+        <image src="../../imgs/comm/fight_bg.png"></image>
+      </view>
+    </view>
+     <!--logo-->
+    <view class="logo">
+      <view clss="icon_box">
+        <image src="../../imgs/leave/logo.png" style="width:530rpx;height:212rpx;"></image>
+      </view>
+    </view>
+    <!--文字描述  -->
+    <view class="desc">
+      <view>好友已经离开了对战</view>
+      <view>你可以邀请其他好友或者挑战话题王</view>
+    </view>
+    <!--邀请好友 按钮 -->
+    <view class="visit_friend btns">
+      <view class="visit_btn btn">
+        邀请好友
+        <view class="icon_box visit_icon">
+          <image src="../../imgs/comm/visit_icon.png" style="width:58rpx;height:58rpx"></image>
+        </view>
+      </view> 
+    </view>
+    <!-- 挑战话题王 -->
+    <view class="btns challenge">
+      <view class="visit_btn btn">
+        挑战话题王
+      </view> 
+    </view>
+  </view>
+</template>

@@ -1,0 +1,37 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="fixed_1"  wx:if="{{showPanel }}">
+  <view class="close_mark" catchtap="onClose">
+    </view>
+  <view class="word_detail">
+    
+    <!-- 单词 -->
+    <view class="flex_between word_name">
+      <view class="words_line flex_start">
+         <view class="f_60_000 text_eg" style="padding-bottom:30rpx;">{{panelDetail.name}}</view>
+        <view class="yb_word">{{panelDetail.phonetic}}</view>
+      </view>
+       <play-sound wx:if="{{panelDetail.audio_url!=''}}" source="{{panelDetail.audio_url}}"/>
+      <!-- <view class="flex_center">
+        <image src="../../images/sound.png" style="width:68rpx;height:66rpx;"></image>
+      </view> -->
+    </view>
+    <!-- 翻译 -->
+    <view class="fy_word">
+      <text class='text_eg'>{{panelDetail.meaning}}</text>
+    </view>
+    <!-- 记忆 -->
+    <view class="fy_word"  hidden="{{isLock}}"  wx:if="{{panelDetail.root!=''}}">
+      <text class="f_30_666">{{panelDetail.root}}</text>
+    </view>
+    <!-- 例子 -->
+    <view  class="fy_word" style="border:none">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      <!-- <text class="f_30_666">{{panelDetail.instance}}</text> -->
+    </view>
+    <!-- 关闭 -->
+    <view class="close_btn flex_center" catchtap="onClose">
+      <image src="../../images/cancel.png" style="width:70rpx;height:70rpx;"></image>
+    </view>
+  </view>
+ 
+</view>

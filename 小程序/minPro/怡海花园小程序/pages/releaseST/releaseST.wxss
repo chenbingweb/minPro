@@ -1,0 +1,98 @@
+/* pages/releaseST/releaseST.wxss */
+page
+{
+  background-color: #f5f5f5;
+  padding-bottom: 50rpx;
+}
+.add_btn
+{
+  width: 750rpx;
+  height: 480rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+  
+}
+.title
+{
+  color:#8f8f8f;
+  font-size: 26rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.add_content
+{
+  width: 750rpx;
+  height: 433rpx;
+  background-color: white;
+}
+.content_title
+{
+  line-height: 114rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  color:#3f3f3f;
+  font-size: 34rpx;
+}
+.textarea
+{
+  width: 678rpx;
+  height: 220rpx;
+  color:#999999;
+  font-size: 26rpx;
+  display: block;
+  margin: 0 auto;
+}
+.font_num
+{
+  color:#3f3f3f;
+  font-size: 22rpx;
+  text-align: right;
+  width: 678rpx;
+  margin: 0 auto;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+.submit
+{
+  width: 678rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  background: #5293e1;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color:#ffffff;
+  border-radius: 10rpx;
+  margin-top: 90rpx;
+}
+
+/*图  */
+.img_box
+{
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 20rpx 36rpx;
+  flex-wrap: wrap;
+  
+}
+
+.img
+{
+ margin-right: 30rpx;
+}
+.img:nth-of-type(3n)
+{
+  margin-right: 0rpx;
+}
+.input_title
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  color:#3f3f3f;
+  font-size: 34rpx;
+}

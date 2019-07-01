@@ -1,0 +1,30 @@
+<view class="fixed" wx:if="{{showSucc}}">
+ <light/>
+  <view class="succ_tip">
+    <!-- 底板 -->
+    <db/>
+    <!-- 胜利标题 -->
+    <view class="icon_box title">
+      <image src="./imgs/succ.png" style="width:565rpx;height:228rpx"></image>
+    </view>
+    <!-- 当前完成关数 -->
+    <view class="num_bg">恭喜完成第{{gk}}层挑战</view>
+    <view class="num">恭喜完成第{{gk}}层挑战</view>
+    <!-- 金币图片 -->
+    <view class="icon_box coin">
+       <image src="./imgs/coin_bg.png" style="width:201rpx;height:233rpx"></image>
+    </view>
+    <!-- 获取金币数量 -->
+    <view class="coin_num">
+      +{{score}}
+    </view>
+    <!-- 继续挑战 -->
+    <view class="go_on icon_box" bindtap="OnGoOnFight">
+      <image src="./imgs/go_on.png" style="width:376rpx;height:119rpx"></image>
+    </view>
+  </view>
+   <!-- 返回 -->
+    <view class="back_btn icon_box" bindtap="OnBack" style="top:calc(50vh + 433rpx);">
+      <image src="../fight-fail-tip/imgs/back.png" style="width:110rpx;height:119rpx;"></image>
+    </view>
+</view>

@@ -1,0 +1,61 @@
+/* pages/theme/theme.wxss */
+.theme_page
+{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.list_body
+{
+  position: absolute;
+  top:128rpx;
+  left: 0;
+  right: 0;
+  bottom: 110rpx;
+}
+.list_box
+{
+  width: 678rpx;
+  height: 260rpx;
+  border-bottom: 2rpx solid #ebf0f2;
+  margin: 0 auto;
+}
+.title
+{
+  color:#060606;
+  font-size: 28rpx;
+  height: 66rpx;
+}
+.status
+{
+  width: 84rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color:white;
+  font-size: 22rpx;
+  background-color: #5293e1;
+  border-radius: 6rpx;
+}
+.address
+{
+  color:#575656;
+  font-size: 22rpx;
+ 
+}
+.info
+{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 214rpx;
+}
+/* .list_body
+{
+  width: 678rpx;
+  height: 260rpx;
+  border-bottom: 2rpx solid #ebf0f2;
+  margin: 0 auto;
+} */

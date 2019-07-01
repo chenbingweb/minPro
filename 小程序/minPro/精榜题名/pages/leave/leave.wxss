@@ -1,0 +1,64 @@
+.leave .leave_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+.leave .leave_bg image
+{
+  width: 750rpx;
+  height: 100vh;
+}
+.leave .logo
+{
+  position: absolute;
+  top:116rpx;
+  left:110rpx;
+}
+/*描述  */
+.leave .desc
+{
+  position: absolute;
+  font-size: 32rpx;
+  color:#ffffff;
+  line-height: 60rpx;
+  width: 530rpx;
+  text-align: center;
+  top:373rpx;
+  left:110rpx;
+}
+/*邀请  */
+.leave .btns
+{
+  width: 412rpx;
+  height: 102rpx;
+  position: absolute;
+  left:169rpx;
+   color:white;
+  border-radius: 51rpx;
+  text-align: center;
+  line-height: 102rpx;
+  font-weight: bold;
+  letter-spacing:6rpx;
+}
+.leave .visit_friend 
+{
+  background-color: #3dd152;
+  font-size: 36rpx;
+ 
+  top:554rpx;
+}
+.leave .visit_friend  .visit_icon
+{
+  position: absolute;
+  right: 35rpx;
+  top:25rpx;
+}
+/*挑战  */
+.leave .challenge
+{
+  background-color: #f59c3d;
+  top:693rpx;
+}

@@ -1,0 +1,11 @@
+<view class="photo_box">
+  <view class="icon_box">
+    <image src="./img/tou_bg.png" style="width:164rpx;height:175rpx"></image>
+    <image wx:if="{{play.icon}}" src="{{play.icon}}" class="user_photo"></image>
+    <image wx:else src="./img/ready_waiting.gif"  class="user_photo"></image>
+  </view>
+  <view class="icon_box nama_box">
+    <image src="./img/name_box.png" style="width:190rpx;height:61rpx"></image>
+    <view class="name_info one_line">{{play.name}}</view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="box">
+  <navigator url="../shopInfo/shopInfo" class="item flex_between">
+    <view class="title">
+      商户信息
+    </view>
+    <view class="icon_box">
+      <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+    </view>
+  </navigator>
+  <navigator url="../shopCoupon/shopCoupon" class="item flex_between">
+    <view class="title">
+      我的优惠券
+    </view>
+    <view class="icon_box">
+      <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+    </view>
+  </navigator>
+  <navigator url="../manageUsedCoupon/manageUsedCoupon" class="item flex_between" style="border:none">
+    <view class="title">
+      核销卡券
+    </view>
+    <view class="icon_box">
+      <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+    </view>
+  </navigator>
+</view>

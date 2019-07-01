@@ -1,0 +1,83 @@
+<view class="nav_bar_component" style="{{ showReleaseBox?'pointer-events: all':'pointer-events: none'}}">
+  <view class="nav_box">
+  <!--bindtap="selectNav"   -->
+    <view class="nav_item relative {{index==1?'navPos':''}}" bindtap="selectNav" id="{{item.nid||index}}" wx:for="{{navBar}}" wx:key="nav_{{index}}">
+    
+      <view wx:if="{{index!=1}}" >
+        <view class="icon_box {{index==1?'img_box':''}}">
+          <image class="nav_img" style="width:{{item.width}}rpx;height:{{item.height}}rpx" src="{{item.selected?item.icon_s:item.icon}}"></image>
+        </view>
+        <view style="text-align:center;color:{{item.selected?color:''}};padding-top:6rpx;" class="{{item.selected?'select_nav':''}}{{index==1?'tip_font':''}}">
+          {{item.name}}
+        </view>   
+           <!-- <button class="login_btn" open-type="getUserInfo" bindgetuserinfo="selectNav"  id="{{item.nid||index}}"></button> -->
+      </view>
+      <view wx:else style="position:relative"  bindtap="showSelectTab">
+      <!--bindtap="showSelectTab"  -->
+        <view class="icon_box {{index==1?'img_box':''}}">
+          <image class="nav_img" style="width:{{item.width}}rpx;height:{{item.height}}rpx" src="{{item.selected?item.icon_s:item.icon}}"></image>
+        </view>
+        <view style="text-align:center;color:{{item.selected?color:''}};padding-top:6rpx;" class="{{item.selected?'select_nav':''}}{{index==1?'tip_font':''}}">
+          {{item.name}}
+        </view>
+        <!-- <button class="login_btn" open-type="getUserInfo" bindgetuserinfo="showSelectTab"></button> -->
+      </view>
+      
+    </view>
+
+  </view>
+
+
+</view>
+  <!--发布选择 catchtap="closeEvent"-->
+  <view class="mark_box " catchtap="closeEvent" wx:if="{{showReleaseBox}}" >
+      <!--发布  -->
+      <view class="release_box">
+          <view class="release_items">
+            <!-- 二手市场 -->
+            <navigator url="../releaseST/releaseST" class="release_child">
+              <view class="icon_box">
+                <image src="../../images/er_shou_release.png" style="width:114rpx;height:114rpx"></image>
+              </view>
+              <view class="title_child">
+                二手物品
+              </view>
+            </navigator>
+              <!-- 话题贴 -->
+            <navigator url="../releaseST/releaseST" class="release_child">
+              <view class="icon_box">
+                <image src="../../images/tie_release.png" style="width:114rpx;height:114rpx"></image>
+              </view>
+              <view class="title_child">
+                话题贴
+              </view>
+            </navigator>
+              <!-- 活动 -->
+            <navigator url="../releaseTheme/releaseTheme" class="release_child">
+              <view class="icon_box">
+                <image src="../../images/theme_release.png" style="width:114rpx;height:114rpx"></image>
+              </view>
+              <view class="title_child">
+                活动
+              </view>
+            </navigator>
+          </view>
+          <!--关闭  -->
+          <view class="icon_box" bindtap="closeEvent">
+            <view class="icon_box">
+                <image src="../../images/close_release.png" style="width:25rpx;height:25rpx"></image>
+            </view>
+          </view>
+      </view>
+      <!-- 天气 -->
+      <view >
+        <view class="weather_box">
+            <view class="day">18</view>
+            <view class="month">
+              <view>周五</view>
+              <view>12/6</view>
+            </view>
+        </view>
+        <view class="month wp">北京：晴 26℃</view>
+      </view>
+  </view>

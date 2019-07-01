@@ -1,0 +1,132 @@
+/* pages/signPage/signPage.wxss */
+.sign_header
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 387rpx;
+  position: relative;
+  box-sizing: border-box;
+
+}
+.sign_box
+{
+   padding-top: 45rpx;
+}
+.sign_title
+{
+  width: 750rpx;
+  text-align: center;
+  color:#ffffff;
+  font-size: 28rpx;
+}
+.xiong_coin
+{
+  text-align: center;
+  font-size: 50rpx;
+  color:white;
+
+}
+/*签到天数  */
+.sign_days
+{
+  width: 700rpx;
+  height: 145rpx;
+  background-color: rgba(255, 255, 255,0.2);
+  margin: 0 auto;
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.day_item
+{
+  color:white;
+  font-size: 28rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100rpx;
+  padding-top:54rpx;
+}
+.item_img
+{
+  position: absolute;
+  top:0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.line
+{
+  width: 64rpx;
+  height: 11rpx;
+  box-sizing: border-box;
+  background-color: #ffe401;
+  border-top:2rpx solid black;
+  border-bottom:2rpx solid black;
+  position: absolute;
+  left: 55rpx;
+  top:18rpx;
+}
+.no_sign
+{
+  border-color:#9e9e9e;
+  background-color: #fff59e;
+}
+.line_mark
+{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.62);
+  left: 0;
+  top:0;
+  right: 0;
+  bottom:0;
+  border-radius: 50%;
+}
+/*签到记录  */
+.sign_list_box
+{
+  position: absolute;
+  left: 0;
+  top:387rpx;
+  right: 0;
+  bottom: 0;
+}
+.sign_title_2
+{
+  width: 750rpx;
+  height: 103rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color:#333;
+  font-size: 36rpx;
+  text-align: left;
+  line-height:103rpx;
+  border-bottom: 2rpx solid #ececec;
+}
+.sign_list_container
+{
+  position:absolute;
+  left: 0;
+  top:103rpx;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+}
+.sign_item
+{
+  height: 84rpx;
+  width: 750rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#666666;
+  font-size: 28rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #e3e3e3;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}

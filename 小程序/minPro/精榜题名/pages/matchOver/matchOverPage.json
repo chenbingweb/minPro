@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "fight-bottom": "/dati_comm/components/fight-bottom/fight-bottom",
+    "user-grade": "/dati_comm/components/user-grade/user-grade",
+    "time": "/dati_comm/components/time/time",
+    "right-3v3": "/dati_comm/components/right-3v3/right-3v3",
+    "left-3v3": "/dati_comm/components/left-3v3/left-3v3",
+    "right-1v1": "/dati_comm/components/right-1v1/right-1v1",
+    "left-1v1": "/dati_comm/components/left-1v1/left-1v1",
+    "level-succ": "/dati_comm/components/level-succ/level-succ"
+  }
+}

@@ -1,0 +1,11 @@
+<view class="db_box">
+  <view class="top {{index==1?'rota_x_180':''}}" wx:for="{{[1,2]}}" wx:key="b_{{index}}">
+    <view class="child_1 {{index==1?'rota_y_180':''}}" wx:for="{{[1,2]}}" wx:key="r_{{index}}">
+       <image class="r" src="./img/b_1.png"></image>
+       <image class="t" src="./img/b_2.png"></image>
+      <image class="l" src="./img/b_3.png"></image>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,26 @@
+<view class="flex_start">
+  <view class="item_control flex_center relative">
+    <view class="icon_box">
+      <image src="../../images/share_icon.png" style="width:25rpx;height:24rpx"></image>
+    </view>
+    <view style="padding-left:15rpx;">
+      分享
+    </view>
+  </view>
+  <view class="item_control flex_center relative">
+    <view class="icon_box">
+      <image src="../../images/evalue_icon.png" style="width:24rpx;height:24rpx"></image>
+    </view>
+    <view style="padding-left:15rpx;">
+      评价
+    </view>
+  </view>
+  <view class="item_control flex_center relative">
+    <view class="icon_box">
+      <image src="../../images/dz_icon.png" style="width:25rpx;height:25rpx"></image>
+    </view>
+    <view style="padding-left:15rpx;">
+      9
+    </view>
+  </view>
+</view>

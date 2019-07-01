@@ -1,0 +1,2 @@
+<import src="./analysis.wxml"/>
+<template is="analysis" data="{{data:data}}"></template>

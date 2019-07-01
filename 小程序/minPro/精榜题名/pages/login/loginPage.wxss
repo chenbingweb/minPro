@@ -1,0 +1,85 @@
+/* pages/login/loginPage.wxss */
+/* @import "./login.wxss"; */
+.login
+{
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: #f9f9f9;
+  padding-top: 100rpx;
+  overflow: hidden;
+}
+.login .bottom_icon
+{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left:-246rpx;
+}
+.login .logo_pic
+{
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
+
+.login .ld_txt
+{
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
+
+
+.login .logo_pic_2
+{
+  margin:  0 auto;
+
+}
+.login .gif
+{
+   position: absolute;
+}
+.login .gj
+{
+
+  height: 98rpx;
+ bottom:240rpx;
+left:456rpx;
+
+}
+.login .gj_2
+{
+  bottom:0rpx;
+  left:50%;
+  margin-left: -220rpx;
+  /* width: 419rpx; */
+}
+.login .gj_3
+{
+  bottom:153rpx;
+ left:50%;
+  width: 85rpx;
+   margin-left: -22rpx;
+}
+.login .gj_4
+{
+  bottom:81rpx;
+  left:50%;
+  margin-left:-128rpx;
+} 
+.login .gj_5
+{
+  bottom:103rpx;
+  left:50%;
+  margin-left:-193rpx;
+
+} 
+.login .gj_6
+{
+  bottom:357rpx;
+left:50%;
+margin-left:-64rpx;
+
+
+} 

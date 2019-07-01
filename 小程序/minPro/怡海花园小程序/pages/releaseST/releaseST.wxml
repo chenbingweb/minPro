@@ -1,0 +1,30 @@
+<view class="add_btn flex_center relative">
+  <view wx:if="{{false}}">
+    <view class="icon_box">
+      <image style="width:162rpx;height:162rpx;" src="../../images/add_re_img.png"></image>
+    </view>
+    <view class="title">添加照片</view>
+  </view>
+  <view wx:else class="absolute flex_start img_box">
+    <view class="icon_box img" wx:for="{{[1,2,3,4,5]}}">
+      <image mode="aspectFill" src="../../images/img/1.jpg" style="width:200rpx;height:200rpx;border-radius:10rpx;"></image>
+    </view>
+    <view class="icon_box img">
+      <image mode="aspectFill" src="../../images/add_re_img.png" style="width:200rpx;height:200rpx;border-radius:10rpx;"></image>
+    </view>
+  </view>
+</view>
+<view class="input_title flex_start">
+  <view style="padding-right:30rpx">标题</view><input placeholder="请输入标题"></input>
+</view>
+<!--添加内容  -->
+<view class="add_content">
+  <view class="content_title">发布内容</view>
+  <textarea class="textarea" placeholder="请输入发布内容" maxlength="500"></textarea>
+  <view class="font_num">500字</view>
+</view>
+<!--提交  -->
+<view class="relative submit">
+  提交
+  <button form-type="submit" class="btn_login"></button>
+</view>

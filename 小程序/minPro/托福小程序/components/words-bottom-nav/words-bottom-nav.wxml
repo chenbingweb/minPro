@@ -1,0 +1,6 @@
+<view class="nav_box" style="bottom:{{islongP}}rpx">
+  <view class="nav_items">
+    <slot name="list"></slot>
+   
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view  scroll-y="{{true}}" class="scroll_1">
+
+  <view >
+    <view class="words flex_between">
+      <view class=" wors_l">
+        <view class="f_60_000 text_eg">{{wordDetail.name}}</view>
+        <view class="f_28_666">{{wordDetail.phonetic}}</view>
+      </view>
+      <play-sound class="player" wx:if="{{wordDetail.audio_url}}" source="{{imgUrl+wordDetail.audio_url}}"/>
+      <!-- <view class="icon_box play">
+        <image src="../../images/sound.png" style="width:68rpx;height:66rpx;"></image>
+      </view> -->
+    </view>
+    <view class='flex_start witch_box' wx:if="{{wordDetail.extend!=''}}">
+      <view class="f_30_000">GRE/GMAT专用英译</view>
+      <switch bindchange="onSwitch" class="switch" color="#009688"></switch>
+    </view>
+    <!-- 单词解释 flex_between flex_center-->
+    <view class="explain_box ">
+      <view class="left_1 " >
+        <text class="text_eg">{{wordDetail.meaning}}
+        <!-- n.地区，位置，地点，发生地\n\r n.地区，位置，地点，发生地\n\rn.地区，位置，地点，发生地\n\r -->
+        </text>
+        <!-- <view>n.地区，位置，地点，发生地</view>
+        <view>n.地区，位置，地点，发生地</view>
+        <view>n.地区，位置，地点，发生地</view> -->
+      </view>
+      <view class="collect_box" bindtap="onCollect" data-wid="{{wordDetail.id}}">
+        <view class="icon_box">
+            <image src="../../images/{{isCollect?'is_collect.png':'no_collect.png'}}" style="width:67rpx;height:65rpx;"></image>
+        </view>
+        <view class="f_34_000" style="text-align:center">生词本</view>
+      </view>
+    </view>
+    <!-- 专用英译 -->
+    <view class="f_34_000 example" wx:if="{{isShow}}">
+      <text> {{wordDetail.extend}}</text>
+    
+    </view>
+    <!-- 词根助记 -->
+    <view class="zj" hidden="{{isLock}}" wx:if="{{wordDetail.root!==''}}">
+      <view class="f_30_666 header_title">词根词源 | 助记拓展</view>
+      <view class="zf_detail">
+        <text class="f_34_000">{{wordDetail.root}}</text>
+        <!-- <view ><text class="f_34_000">loc</text>=place，地方</view>
+        <view><text class="f_34_000">ity</text>=state，完成状态</view> -->
+      </view>
+    </view>
+    <!-- 词根提示 -->
+    <view wx:if="{{isLock}}" class="lock_tip flex_center">
+      <view class="flex_center tip_content">
+        <view>同学你好，备考辛苦了^_^</view>
+        <view>你的"词根词源|助记拓展"5天试用已到期</view>
+        <view>免费解锁"词根词源|助记拓展"全功能</view>
+        <view>烦请联系小助手微信：Alice_Beat</view>
+         <view>或截屏识别二维码</view>
+      </view>
+      
+      <view class='icon_box'>
+        <image src="../../images/qrcode.jpg" style="width:247rpx;height:247rpx"></image>
+      </view>
+    </view>
+
+    <!-- 经典例句 -->
+    <view class="zj" wx:if="{{wordDetail.instance!=''}}">
+      <view class="f_30_666 header_title">经典例句</view>
+      <view class="cj_detail">
+       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        <!-- <text>{{wordDetail.instance}}</text> -->
+      </view>
+    </view>
+    
+  </view>
+</view>

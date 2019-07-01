@@ -1,0 +1,31 @@
+<view class="relative" style="width:344rpx;height:390rpx;">
+     <!-- 进度条 -->
+  <!-- 获取分数比 wx:if="{{showprocess}}"-->
+  <view class="process"  wx:if="{{showprocess}}" style="height:{{progress*600}}rpx;" ></view>
+    <!-- 当前分数 -->
+  <view class="fen" wx:if="{{showprocess}}">
+    {{score}}
+  </view>
+  <view class="box">
+    <view class="item" wx:for="{{plays}}" wx:key="item_{{index}}">
+      <view class="photo_info">
+        <view class="info_box" wx:if="{{item.name}}">
+          <view class="grade">用户等级</view>
+          <view class="one_line">{{item.name}}</view>
+        </view>
+        <view wx:else class="info_box">
+          <view class="grade">等待中</view>
+          <view class="one_line">...</view>
+        </view>
+        <view class="icon_box relative">
+          <image src="./imgs/photo_bg.png" style="width:105rpx;height:104rpx"></image>
+          <!-- 用户头像 -->
+          <image wx:if="{{item.name!='...'}}" src="{{item.icon}}" class="user_photo" style="width:75rpx;height:75rpx"></image>
+          <!-- 等待头像 -->
+          <view wx:else class="wait_photo">?</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,66 @@
+<import src="../dati_comm/template/Grid9.wxml"/> 
+<import src="../dati_comm/template/Grid3.wxml"/> 
+<template name="qualify">
+  <view class="qualify_box">
+    <!--排位地板  -->
+    <view class='p_db'>
+
+        <template is="Grid9" data="{{grid:data.p_class_db}}"/>
+        <!--字体地板  -->
+        <view class="font_db">
+          <template is="Grid3" data="{{grid:data.p_title_db}}"/>
+        </view>
+        <!--背景光效  -->
+        <view class="bjgx"><image src="../../imgs/comm/bjgx.png" style="width:390rpx;height:381rpx"></image></view>
+        <!-- 排位icon图标 -->
+        <view class="icon_box p_w_icon" wx:if="{{true}}">
+          <image style="width:323rpx;height:323rpx;" src="../../imgs/comm/p_{{it.Level1}}.png"></image>
+        </view>
+        <!--锦旗  -->
+        <view class="flag_box">
+          <view class="flag_db">
+              <!-- <template is="Grid3" data="{{grid:data.p_flah_db}}"/>  -->
+              <image src="../../imgs/comm/flag_1.png" style="width:388rpx;height:137rpx"> </image> 
+              
+          </view>
+          <view class="start_evel_box">
+              <view class="icon_box" wx:for="{{it.xing}}"  wx:key="xing_{{it.Level1}}_{{it.Level2}}_{{index}}" >
+                <image src="../../imgs/comm/yellow_start.png" style="width:72rpx;height:75rpx"></image>
+              </view>
+              <view class="icon_box" wx:for="{{it.kongxing}}"  wx:key="kxing_{{it.Level1}}_{{it.Level2}}_{{index}}"  >
+                <image src="../../imgs/comm/green_start.png" style="width:72rpx;height:75rpx "></image>
+              </view>
+          </view>
+        </view>
+        <!--学分  -->
+        <view class="xue_fen_box">
+          <view class="img_box">
+            <view class="icon_box" style="position:absolute;left:0;top:40rpx;right:0;">
+              <!-- <image src="../../imgs/match/xf_db.png" style="width:74rpx;height:74rpx"></image> -->
+              <image src="../../imgs/comm/coin_db.png" style="width:207rpx;height:52rpx;margin-left: 150rpx;"></image>
+            </view>
+         
+          <view class="icon_box" style="position:absolute;;top:20rpx;right:115rpx;">
+              <image src="../../imgs/comm/coin.png" style="width:52rpx;height:52rpx;margin-top: 20rpx;"></image>
+            </view>
+          </view>
+            <view class="xue_fen_text">
+            {{it.menpiao}}
+            </view>
+        </view>
+    </view>
+    <!--段位名称  -->
+    <view class="font_box">
+      <!--段位名称 图片 -->
+       <view class="icon_box font_type"  wx:if="{{true}}" >
+        <image style="width:133rpx;height:38rpx;margin-top:790rpx; margin-left: 80rpx " src="../../imgs/comm/q_{{it.Level1}}.png"></image>
+      </view>
+      <!--段位等级 罗马数字 -->
+       <view class="icon_box" wx:if="{{true}}" style="padding-left:10rpx;">
+        <image style="width:29rpx;height:30rpx;margin-top:790rpx; margin-left: -4rpx" src="../../imgs/comm/v_{{it.Level2}}.png"></image>
+      </view>
+   
+    </view>
+  </view>
+
+</template>

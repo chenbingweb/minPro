@@ -1,0 +1,294 @@
+<!--引入模板-->
+<!-- <import src="../../temp/userheader.wxml" />-->
+<import src="../../temp/temp.wxml" />
+<nav-bar bindreleaseEvent="releaseEvent" showReleaseBox="{{showReleaseBox}}" />
+<view class="index_page">
+  <!--轮播图  -->
+  <view class="swiper_box relative">
+    <swiper-base height="386" imgsData="{{banner}}" baseSet="{{baseSet}}" />
+    <!--搜索  -->
+    <view class="search_btn_box">
+      <view class="local_box">
+        <view class="icon_box">
+          <image src="../../images/local.png" style="width:33rpx;height:40rpx"></image>
+        </view>
+        <picker range="{{areaList}}" range-key="name" bindchange="selectPicker" value="{{areaIndex}}">
+          <view style="padding-left:10rpx">{{areaList[areaIndex].name}}</view>
+        </picker>
+
+      </view>
+      <!--搜索框  -->
+      <navigator url="../search/search">
+        <view class="search_input_box">
+          <view class="icon_box icon_img">
+            <image src="../../images/searc_icon.png" style="width:29rpx;height:28rpx"></image>
+          </view>
+          <input disabled placeholder-class="input_placeholder" placeholder="找工作 找房子 买卖二手" class="input_btn" />
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!--签到 雄心币 赚钱  -->
+  <view class="nav_box"> 
+    <!--签到  -->
+    <navigator url="../signPage/signPage">
+      <view class="sign_btn">
+        <view class="icon_box">
+          <image src="../../images/sign_btn.png" style="width:40rpx;height:40rpx"></image>
+        </view>
+        <view>签到</view>
+      </view>
+    </navigator>
+    <!--雄心币  -->
+    <view class="xiong_coin_btn" bindtap="toMyWealth">
+      <view class="inline_flex my_coin_box">
+        <view class="icon_box" style="margin-right:10rpx">
+          <image src="../../images/my_coin.png" style="width:29rpx;height:29rpx"></image>
+        </view>
+        <view>
+          余额
+        </view>
+      </view>
+      <view class="my_coin_num">
+        {{amount}}
+      </view>
+      <view class="inline_flex">
+        <view style="padding-right:10rpx">雄心币</view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right.png" style="width:14rpx;height:25rpx"></image>
+        </view>
+      </view>
+    </view>
+    <!--赚钱  -->
+    <navigator url="../makeCoin/makeCoin">
+      <view class="sign_btn" style="width:108rpx;">
+        <view class="icon_box">
+          <image src="../../images/make_money_btn.png" style="width:36rpx;height:40rpx"></image>
+        </view>
+        <view>赚钱</view>
+      </view>
+    </navigator>
+  </view>
+  <!--选项 -->
+  <view class="select_item">
+    <navigator url="../sellBuld/sellBuld">
+      <view class="item_box">
+        <view class="icon_box" style="margin-bottom:17rpx;">
+          <image src="../../images/sell_room.png" style="width:85rpx;height:70rpx"></image>
+        </view>
+        <view>售楼直销</view>
+      </view>
+    </navigator>
+    <navigator url="../houseMidd/houseMidd?src=midd">
+      <view class="item_box">
+        <view class="icon_box" style="margin-bottom:17rpx;">
+          <image src="../../images/zhong_jie_icon.png" style="width:49rpx;height:70rpx"></image>
+        </view>
+        <view>房产中介</view>
+      </view>
+    </navigator>
+    <navigator url="../houseMidd/houseMidd?src=person">
+      <view class="item_box">
+        <view class="icon_box" style="margin-bottom:17rpx;">
+          <image src="../../images/person_source.png" style="width:71rpx;height:70rpx"></image>
+        </view>
+        <view>个人房源</view>
+      </view>
+    </navigator>
+    <navigator url="../bossList/bossList">
+      <view class="item_box">
+        <view class="icon_box" style="margin-bottom:17rpx;">
+          <image src="../../images/boss_icon.png" style="width:73rpx;height:70rpx"></image>
+        </view>
+        <view>BOSS招聘</view>
+      </view>
+    </navigator>
+    <navigator url="../ownServices/ownServices">
+      <view class="item_box">
+        <view class="icon_box" style="margin-bottom:17rpx;">
+          <image src="../../images/tui_jian.png" style="width:76rpx;height:70rpx"></image>
+        </view>
+        <view>毛遂自荐</view>
+      </view>
+    </navigator>
+    <navigator url="../inforRelease/inforRelease">
+      <view class="item_box">
+        <view class="icon_box" style="margin-bottom:17rpx;">
+          <image src="../../images/zi_xun.png" style="width:73rpx;height:70rpx"></image>
+        </view>
+        <view>资讯发布</view>
+      </view>
+    </navigator>
+  </view>
+  <!-- 推荐楼盘 -->
+  <view class="recommont_buld_box" style="{{recom_building.length==0?'height: 240rpx;':''}}">
+    <!--标题  -->
+    <view class="recommont_title_box">
+      <view class="title">推荐楼盘</view>
+    </view>
+    <view class="no_info" wx:if="{{recom_building.length==0}}">
+      没有数据
+    </view>
+    <!-- -->
+    <scroll-view wx:else class="scroll_view" scroll-x>
+      <view class="scroll_view_box">
+        <navigator url="../buildDetail/buildDetail?id={{item.id}}" wx:for="{{recom_building}}" wx:key="item_{{index}}">
+          <view class="icon_box bulid_img relative">
+            <image mode="aspectFill" src="{{imgUrl+item.img_url}}" style="width:700rpx;height:364rpx"></image>
+            <view class="tip">
+                {{item.name}}
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 推荐房源 -->
+  <view class="recommont_buld_box" style="{{recom_housing.length==0?'height: 240rpx;':''}}">
+    <!--标题  -->
+    <view class="recommont_title_box">
+      <view class="title">推荐房源</view>
+    </view>
+    <view class="no_info" wx:if="{{recom_housing.length==0}}">
+      没有数据
+    </view>
+    <template wx:else is="recomment" data="{{recomData:recom_housing,imgUrl:imgUrl,nav:true}}" />
+    <!-- 
+    <scroll-view class="scroll_view" scroll-x>
+      <view class="scroll_view_box">
+        <navigator url="../buildDetail/buildDetail" class="icon_box recommont_source" wx:for="{{[1,2,2,3]}}" wx:key="item_{{index}}">
+          <view class="icon_box">
+            <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:484rpx;height:219rpx"></image>
+          </view>
+          <view class="info_box">
+            <view class="inline_flex item_info">
+              <view> 和平花园领域小区</view>
+              <view>
+                <text style="color:#e60012;font-size:36rpx">4000</text>/月</view>
+            </view>
+            <view class="child_1">1室 | 昌平县城</view>
+          </view>
+        </navigator>
+      </view>
+
+    </scroll-view>-->
+  </view>
+  <!-- 推荐资讯 -->
+  <view class="recommont_zixun recommont_buld_box">
+    <!--标题  -->
+    <view class="recommont_title_box" style="padding:0 11rpx;">
+      <view class="title">推荐资讯</view>
+      <view class="refresh_box" bindtap="changeInfo">
+        <view class="icon_box" style="height:31rpx;margin-right:10rpx">
+          <image src="../../images/refresh.png" style="width:40rpx;height:31rpx"></image>
+        </view>
+        <view>换一批</view>
+      </view>
+    </view>
+    <!--  -->
+    <view class="view_box">
+      <navigator url="../inforRelease/inforRelease?id={{item.id}}&src=index" data-id="{{item.id}}" class="zi_xun_box" wx:for="{{recomInfo}}" wx:key="info_{{index}}">
+        <view class="icon_box">
+          <image src="{{imgUrl+item.img_url}}" style="width:50rpx;height:62rpx"></image>
+        </view>
+        <view style="text-align:center;padding-top:14rpx">{{item.name}}</view>
+      </navigator>
+      <!--<view class="zi_xun_box">
+        <view class="icon_box">
+          <image src="../../images/bian_ming_info.png" style="width:50rpx;height:62rpx"></image>
+        </view>
+        <view style="text-align:center;padding-top:14rpx">便民信息</view>
+      </view>
+      <view class="zi_xun_box">
+        <view class="icon_box">
+          <image src="../../images/er_shou.png" style="width:50rpx;height:62rpx"></image>
+        </view>
+        <view style="text-align:center;padding-top:14rpx">二手信息</view>
+      </view>
+      <view class="zi_xun_box">
+        <view class="icon_box">
+          <image src="../../images/maker.png" style="width:50rpx;height:62rpx"></image>
+        </view>
+        <view style="text-align:center;padding-top:14rpx">收放加工</view>
+      </view>
+      <view class="zi_xun_box">
+        <view class="icon_box">
+          <image src="../../images/xunren.png" style="width:50rpx;height:62rpx"></image>
+        </view>
+        <view style="text-align:center;padding-top:14rpx">寻人启事</view>
+      </view> -->
+    </view>
+
+  </view>
+  <!-- 推荐职业-->
+  <view class="recommont_buld_box" style="height:auto;padding-left:0;padding-right:0">
+    <!--标题  -->
+    <view class="recommont_title_box" style="padding:0 25rpx">
+      <view class="title">推荐职业</view>
+    </view>
+    <view>
+      <!--选项卡切换  -->
+      <view class="select_nav ">
+        <view style="border-radius:30rpx 0rpx 0rpx 30rpx;border-right:none" class="{{tabSelectFlag? 'select_nav_selected':''}} nav_item" bindtap="selectTab" data-tab="recom_job">
+          Boss招聘
+        </view>
+        <view bindtap="selectTab" data-tab="recom_resume" style="border-radius:0 30rpx 30rpx 0;border-left:none" class="nav_item {{!tabSelectFlag? 'select_nav_selected':''}}">
+          毛遂自荐
+        </view>
+      </view>
+      <!--毛遂自荐 -->
+      <view wx:if="{{!tabSelectFlag}}">
+        <navigator url="../workDetail/workDetail?sid={{item.id}}" class="item_zhi_ye" data-pid="{{item.id}}" wx:for="{{recomJob.recom_resume}}" wx:key="index_{{index}}">
+          <view class="left_box icon_box">
+            <image src="{{item.head_img}}" style="width:125rpx;height:125rpx"></image>
+          </view>
+          <view class="right_box">
+            <view class="inline_flex" style="width:540rpx;">
+              <view>{{item.category}}
+                <text style="color:#666;">{{item.name}}</text>
+              </view>
+              <view style="color:#fed545">{{item.pay_start}}K-{{item.pay_end}}k</view>
+            </view>
+            <view class="one_line" style="color:#666;font-size:28rpx;width:540rpx;">
+              {{item.info}}
+            </view>
+            <view class="inline_flex label_box">
+              <view class="label_item">{{item.year}}年</view>
+              <view class="label_item">{{item.education}}</view>
+              <!-- <view class="label" wx:for="{{item.tag}}" wx:key="{{index}}_a" wx:for-item="child">{{child}}</view>
+           -->
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <!--boss招聘  -->
+      <view wx:else>
+        <navigator url="../jobDetail/jobDetail?id={{item.id}}" class="list_item" data-jid="{{item.id}}" wx:for="{{recomJob.recom_job}}" wx:key="{{index}}_b">
+          <view class="flex_start">
+            <view class="icon_box" style="margin-right:10rpx">
+              <image src="{{item.head_img}}" style="width:80rpx;height:80rpx;border-radius:50%"></image>
+            </view>
+            <view style="width:590rpx">
+              <view class="job_box">
+                <view class="job_name inline_flex">
+                  <view>{{item.category}}</view>
+                  <view class="top" wx:if="{{false}}">置顶</view>
+                </view>
+                <view class="money">{{item.pay_start}}K-{{item.pay_end}}k</view>
+              </view>
+              <!--地址  -->
+              <view class="company_name">
+                {{item.address}}
+              </view>
+            </view>
+          </view>
+          <view class="flex_start" style="flex-wrap:wrap;">
+
+            <view class="label_item" style="margin-top:10rpx;" wx:for="{{item.tag}}" wx:key="{{index}}_a" wx:for-item="child">{{child}}</view>
+
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

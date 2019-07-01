@@ -1,0 +1,127 @@
+/* pages/hongBaoSai/pages/hbsOver/hbsOver.wxss */
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:62rpx;
+}
+.succ_tip
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.tip_box
+{
+  width: 630rpx;
+  height: 657rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.title_tip
+{
+  position: absolute;
+  left: 50%;
+  top:-150rpx;
+  transform: translateX(-50%);
+}
+.succ_bg
+{
+  position: absolute;
+  left: 50%;
+  top:20rpx;
+  transform: translateX(-50%);
+}
+.tip_person
+{
+  position: absolute;
+  left: 50%;
+  top:326rpx;
+  transform: translateX(-50%);
+}
+.money
+{
+   position: absolute;
+  left: 50%;
+  top:440rpx;
+  transform: translateX(-50%);
+}
+.text
+{
+  font-size: 32rpx;
+  color:#ffdd71;
+  text-align: center;
+  line-height: 76rpx;
+  font-weight: bold;
+}
+.text_2
+{
+   font-size: 32rpx;
+  color:#ffdd71;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.back_1
+{
+  position: absolute;
+  left: 50%;
+  bottom:-160rpx;
+  transform: translateX(-50%);
+}
+.fail_tip
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.fail_box
+{
+  width: 588rpx;
+  height: 454rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.title_3
+{
+ position: absolute;
+  left: 50%;
+  top:-100rpx;
+  transform: translateX(-50%);
+}
+.tip_3
+{
+  position: absolute;
+  left: 50%;
+  top:180rpx;
+  transform: translateX(-50%);
+ color:#333;
+  font-size: 60rpx;
+  font-weight:bold;
+  text-align: center;
+}
+.tip_4
+{
+  position: absolute;
+  left: 50%;
+  top:280rpx;
+  transform: translateX(-50%);
+  color:#333;
+  font-size: 30rpx;
+  font-weight:bold;
+  text-align: center;
+}

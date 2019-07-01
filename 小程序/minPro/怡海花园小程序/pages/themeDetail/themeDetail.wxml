@@ -1,0 +1,50 @@
+<view class="theme_page">
+  <!--轮播图  -->
+  <swiper-base imgsData="{{imgsData}}" baseSet="{{baseSet}}" width="750" height="430" />
+  <view class="theme_box">
+    <!--线下举办  -->
+    <view class="box">
+      <view class="title_box ">
+        线下举办
+      </view>
+      <view class="item flex_between">
+        <view>报名时间</view>
+        <view class="time">2018-06-16 16:00-2018-07-02 18:00</view>
+      </view>
+      <view class="item flex_between" style="background-color:white">
+        <view>活动时间</view>
+        <view class="time">2018-06-16 16:00-2018-07-02 18:00</view>
+      </view>
+      <view class="item flex_between">
+        <view>报名地址</view>
+        <view class="time">北京大兴</view>
+      </view>
+      <view class="item flex_between" style="background-color:white">
+        <view>报名情况</view>
+        <view class="time">10人</view>
+      </view>
+    </view>
+    <!--活动详情  -->
+    <view class="box" style="border-top:2rpx solid #efefef;">
+      <view class="title_box ">
+        活动详情
+      </view>
+      <view style="color:#5e5d5d;font-size:28rpx">
+        <text>羽毛球是一项室内、室外都可以进行的体育运动。依据参与的人数，可以分为单打与双打，及新兴的3打3。羽毛球拍由：拍面、拍杆、拍柄及拍框与拍杆的接头构成。</text>
+      </view>
+    </view>
+    <!--活动内容 -->
+    <view class="box" style="margin-bottom:30rpx">
+      <view class="title_box ">
+        活动内容
+      </view>
+      <view style="color:#5e5d5d;font-size:28rpx">
+        <text>羽毛球是一项室内、室外都可以进行的体育运动。依据参与的人数，可以分为单打与双打，及新兴的3打3。羽毛球拍由：拍面、拍杆、拍柄及拍框与拍杆的接头构成。</text>
+      </view>
+    </view>
+    <!--参加  -->
+    <view class="examing" bindtap="onToSignUp">
+      我要报名
+    </view>
+  </view>
+</view>

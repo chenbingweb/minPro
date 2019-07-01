@@ -1,0 +1,96 @@
+/* pages/subPackages/pages/tiXianTip/tiXianTip.wxss */
+page
+{
+    background-image:linear-gradient(180deg,#500206,#571909);
+}
+.bg_180
+{
+  /* transform-origin: 0 100%; */
+  transform: rotateY(180deg);
+  transform-origin:49.9% 0;
+
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:104rpx;
+}
+.msg_title
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 500rpx);
+}
+.TX_tip
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 205rpx);
+}
+.tip_icon
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:-76rpx;
+}
+.text_tip
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:230rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color:#fff;
+  width: 100%;
+}
+.back_btn
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 120rpx);
+}
+.scroll_view
+{
+  width: 610rpx;
+  height: 980rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+   top:calc(50vh - 410rpx);
+}
+.tip_item
+{
+  margin-bottom: 50rpx;
+}
+.tip_time
+{
+  width: 370rpx;
+  height: 50rpx;
+  background-color: #5c2817;
+  border-radius: 25rpx 25rpx 0 0;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50rpx;
+  color:#fff;
+  font-size: 24rpx;
+
+}
+.msg_content
+{
+  width: 600rpx;
+  margin: 0 auto;
+  border:6rpx solid #5c2817;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  padding: 30rpx 40rpx;
+  background-color: #f1d7af;
+  font-size: 26rpx;
+  color:#333333;
+}

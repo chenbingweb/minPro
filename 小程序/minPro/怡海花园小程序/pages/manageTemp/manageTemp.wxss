@@ -1,0 +1,151 @@
+/* pages/manageTemp/manageTemp.wxss */
+page
+{
+  background-color: #f5f5f5;
+}
+.my_temp
+{
+  padding-bottom: 40rpx;
+}
+.item
+{
+  width: 750rpx;
+  height: 90rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  font-size: 30rpx;
+  color:#212121;
+  border-bottom: 2rpx solid #f7f7f7;
+
+}
+.child
+{
+  color:#666666;
+  font-size: 26rpx;
+  height: 88rpx;
+}
+.add_child_box
+{
+  width: 750rpx;
+  height: 280rpx;
+  background-color: #f5f5f5;
+}
+.qx_title
+{
+  height:100rpx;
+  box-sizing: border-box;
+  padding:0 36rpx;
+  color:#5293e1;
+  font-size: 36rpx;
+}
+.temp_interduce
+{
+  background-color: white;
+  margin-top: 20rpx;
+  width: 750rpx;
+  padding: 0 36rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color:#212121;
+  padding-top: 30rpx;
+}
+.text_area
+{
+  width: 678rpx;
+  height: 130rpx;
+}
+.font_num
+{
+  text-align: right;
+  color:#3f3f3f;
+  font-size:22rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.circle
+{
+  width: 114rpx;
+  height: 114rpx;
+  border-radius: 50%;
+  font-size: 80rpx;
+  color:#5293e1;
+  text-align: center;
+  line-height: 114rpx;
+  background-color: white;
+}
+.add_btn
+{
+  color:#5293e1;
+  font-size: 26rpx;
+  
+}
+/*  */
+.mark
+{
+  position: fixed;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom:0;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+.box_icon
+{
+  width: 600rpx;
+  height: 500rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.icon_title
+{
+  font-size: 30rpx;
+  color:#5293e1;
+  text-align: center;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #f7f7f7;
+}
+.close
+{
+  position: absolute;
+   top:50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 90rpx;
+  height: 90rpx;
+  color:#B3B3B3;
+}
+.icon_item
+{
+  font-size: 30rpx;
+  color:#3f3f3f;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  border-bottom: 2rpx solid #f7f7f7;
+}
+.input_flm
+{
+  width: 300rpx;
+  height: 90rpx;
+  text-align: right;
+
+}
+.add_btn_class
+{
+  width: 400rpx;
+  margin: 0 auto;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color:#fff;
+  background-color: #5293e1;
+  border-radius: 6rpx;
+  margin-top: 50rpx;
+}

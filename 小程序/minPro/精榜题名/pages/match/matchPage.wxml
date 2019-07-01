@@ -1,0 +1,152 @@
+<import src="../../dati_comm/template/Grid3.wxml" />
+<import src="../../template/qualify.wxml" />
+<!--style="left:{{data.wndPosX}}rpx;opacity:{{data.wndAlpha}};"   -->
+<view class="fixed match">
+  <view class="match_bg icon_box">
+    <image src="../../imgs/comm/fight_bg.png" style="width:750rpx;height:100vh"></image>
+  </view>
+
+  <!--头像 金币 学分-->
+  <view class="user_info_container {{data.user_animation}}">
+    <!--头像-->
+    <view class="user_box" wx:if="{{data.plyIcon}}">
+      <view class="user_ph">
+        <view class="icon_box">
+          <!--头框  --> 
+         <view class="new_frame" wx:if="{{data.HeadFrame}}">
+          <image  src="{{data.HeadFrame}}" style="width:100%;height:100%"></image>
+         </view>
+
+          <!--vip-->
+          <view class="new_vip" wx:if="{{data.IsVip==1}}">
+            <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+          </view>
+          <image mode="aspectFit" src="{{data.plyIcon}}" class="photo_img user_photo"></image>
+        </view>
+      </view>
+      <view class="one_line">{{data.plyName}}</view>
+    </view>
+    <!--金币 -->
+    <view class="coin_box items" bindtap="OntazClick">
+      <view class="inter_bg">
+        <template is="Grid3" data="{{grid:data.inter_bg}}" />
+      </view>
+      <view class="icon_box left_coin">
+        <image src="../../imgs/comm/coin.png" style="width:52rpx;height:52rpx;"></image>
+      </view>
+      <view class="icon_box right_coin" wx:if="{{true}}">
+        <image src="../../imgs/comm/add_coin.png" style="width:34rpx;height:34rpx;"></image>
+      </view>
+      <view class="text">
+        {{data.money}}
+      </view>
+    </view>
+    <!--学分 -->
+    <view class="xf_box items">
+      <view class="inter_bg">
+        <template is="Grid3" data="{{grid:data.inter_bg}}" />
+      </view>
+      <view class="icon_box left_coin">
+        <image src="../../imgs/comm/xf.png" style="width:52rpx;height:52rpx;"></image>
+      </view>
+
+      <!-- <view class="icon_box right_coin" wx:if="{{false}}">
+            <image src="../../imgs/comm/add.png" style="width:34rpx;height:34rpx;"></image>
+        </view> -->
+      <view class="text">
+        {{data.xuefen}}
+      </view>
+    </view>
+    <!--奖励-->
+    <view class="icon_box rule" bindtap="OnPHClick" wx:if="{{season_open}}">
+      <image src="../../imgs/comm/jiangli.png" style="width:76rpx;height:76rpx"></image>
+    </view>
+    <!--赛季日期-->
+    <view class="hint" wx:if="{{SeasonNum>0}}">
+    <view class="tongzi">
+    <image src="../../imgs/comm/tongzhidb.png" style="width:375rpx;height:50rpx"></image>
+    <image class="fanz" src="../../imgs/comm/tongzhidb.png" style="width:375rpx;height:50rpx"></image>
+    </view>
+    <view class="saiji"><image src="../../imgs/comm/laba.png" style="width:24rpx;height:26rpx"></image>{{sjdate}}</view>
+    </view> 
+  </view>
+
+
+
+  <!--段位选择   -->
+  <view class="dw_bg {{data.dw_card}}">
+    <!--左 段位版背景  起始位置隐藏-->
+    <view class="bg_quality_left" wx:if="{{false}}">
+      <template is="qualify" data="{{data:data}}" />
+    </view>
+    <!--右 段位版背景  最后一张时隐藏 -->
+    <view class="bg_quality_right" wx:if="{{false}}">
+      <template is="qualify" data="{{data:data}}" />
+    </view>
+    <!--前进  起始位置隐藏-->
+    <view class="arrow_box">
+      <view class="forword icon_box">
+        <image style="width:44rpx;height:72rpx" src="../../imgs/comm/arrow.png"></image>
+      </view>
+      <!--没有显示--禁用 
+         <view class="arrow_mark" wx:if="{{false}}"></view> -->
+    </view>
+    <!--后退  -->
+    <view class=" back">
+      <view class=" icon_box roate">
+        <image style="width:44rpx;height:72rpx" src="../../imgs/comm/arrow.png"></image>
+      </view>
+      <!--没有显示--禁用  
+         <view class="arrow_mark" wx:if="{{true}}"></view>-->
+    </view>
+    <!--遮罩  -->
+    <view class="mark"></view>
+    <view class="swiper_box">
+      <!-- <swiper circular="{{false}}" current='0' indicator-dots="{{false}}" autoplay="{{false}}" interval="{{3000}}" duration="{{500}}"> -->
+      <block wx:for="{{data.dwItems}}" wx:key="dwitem_{{index}}">
+        <swiper-item>
+          <!--段位版  -->
+          <template is="qualify" data="{{data:data,it:item}}" />
+        </swiper-item>
+      </block>
+      <!-- </swiper> -->
+    </view>
+
+
+
+    <!--赛季通知图标 -->
+    <view class="inform"  wx:if="{{SeasonBtn==1}}">
+      <image src='../../imgs/match/inform.png' style="width:120rpx;height:118rpx"></image>
+    </view>
+
+    <!--赛季通知文本  -->
+    <view class="informtxt"  wx:if="{{SeasonBtn==1}}" >赛季通知</view> 
+    
+    <!--赛季通知点击范围  -->
+    <view class="but_tz" bindtap="inform_clack" wx:if="{{SeasonBtn==1}}"></view>
+    
+  </view>
+  <!--段位选择End-->
+
+
+
+  
+
+  <!--单人 -->
+  <view style="transform: scale({{data.btnHtwScale}}); transition:{{data.seconds}}ms" class="single_btn button {{data.dr}}" bindtouchstart="OnSingleTouchStart" bindtouchend="OnSingleTouchEnd" bindtap="OnSuijiPKClick">单人匹配</view>
+  <!--多人  -->
+  <view style="transform: scale({{data.moreScale}}); transition:{{data.seconds}}ms" class="more_btn button {{data.mr}}" bindtouchstart="OnMoreTouchStart" bindtouchend="OnMoreTouchEnd" bindtap="OnFriendPKClick">好友组队
+    <!--分享  -->
+    <!--<button open-type="share" class="more_group" data-id="pk3v3"></button>-->
+  </view>
+
+  <!--提示  -->
+  <view class="tip_node {{data.ts}}">
+    组队可以获得额外金币
+  </view>
+
+  <!--帮助-->
+  <view class="icon_box help" wx:if="{{false}}">
+    <image src="../../imgs/classify/rule.png" style="width:76rpx;height:76rpx"></image>
+  </view>
+</view>

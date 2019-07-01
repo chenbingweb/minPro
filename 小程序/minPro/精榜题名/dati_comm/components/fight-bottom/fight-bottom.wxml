@@ -1,0 +1,29 @@
+   <!-- 底部背景 -->
+    <view class="bottom_bg">
+      <!-- 左 -->
+      <view class="ball_left">
+        <view class="ball_5"></view>
+        <view class="ball_4"></view>
+        <view class="ball_3"></view>
+        <view class="ball_2"></view>
+      </view>
+      <!-- 中 -->
+       <view class="ball_middle">
+        <view class="ball_5_m"></view>
+        <view class="ball_4_m"></view>
+        <view class="ball_3_m"></view>
+        <view class="ball_2_m"></view>
+      </view>
+      <!-- 右 -->
+      <view class="ball_right">
+        <view class="ball_5_r"></view>
+        <view class="ball_4_r"></view>
+        <view class="ball_3_r"></view>
+        <view class="ball_2_r"></view>
+      </view>
+      <!-- <view class="ball_1"><image src='./img/bottom_txt.png' style='width:260rpx;height:50rpx;'></image></view> -->
+      <view class='ball_1'></view>
+      <view class="icon_box fz">
+        <image src="./img/bottom_fz.png" style="width:750rpx;height:262rpx"></image>
+      </view>
+    </view>

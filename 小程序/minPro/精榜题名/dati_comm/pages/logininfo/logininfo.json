@@ -1,0 +1,6 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "ticket-tip": "../../components/ticket-tip/ticket-tip"
+  }
+}

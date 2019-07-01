@@ -1,0 +1,15 @@
+/* components/header-tip/header-tip.wxss */
+.header_tip
+{
+  width: 100%;
+  margin: 0 auto;
+  line-height: 70rpx;
+  background-color: #434343;
+  text-align: center;
+}
+.f_30_fff
+{
+  font-size: 30rpx;
+  color:#fff;
+  
+}

@@ -1,0 +1,100 @@
+<paging>
+  <view class="shop_index" slot="list">
+    <!--轮播图  -->
+    <swiper-base imgsData="{{imgsData}}" baseSet="{{baseSet}}" width="750" height="430" />
+    <!--详情-->
+    <view class="detail">
+      <view class="title">
+        壹健身
+      </view>
+      <view class="dis relative">
+        羽毛球是一项室内、室外都可以进行的体育运动。依据参与的人数，可以分为单打与双打，及新兴的3打3。羽毛球拍由：拍面、拍杆、拍柄及拍框与拍杆的接头构成。
+        <view class="icon_box line">
+          <image src="../../images/line_bottom.png" style="width:650rpx;height:2rpx"></image>
+        </view>
+      </view>
+      <!--地址  -->
+      <view class="flex_between address" style="height:90rpx">
+        <view class="flex_start">
+          <view class="icon_box">
+            <image src="../../images/address_1_1.png" style="width:21rpx;height:28rpx;"></image>
+          </view>
+          <view style="padding-left:26rpx">北京大兴</view>
+        </view>
+        <view class="icon_box" style="height:40rpx;padding-left:30rpx;border-left:2rpx solid #e3e1e1;">
+          <image src="../../images/call.png" style="width:30rpx;height:30rpx"></image>
+        </view>
+      </view>
+    </view>
+    <view class="ticket relative">
+      <view class="icon_box absolute">
+        <image src="../../images/ticket.png" style="width:678rpx;height:173rpx"></image>
+      </view>
+      <view class="flex_start info">
+        <view class="ticket_title" style="width:424rpx;height:173rpx">
+          满99减10元
+        </view>
+        <view class="get_ticket">
+          领取
+        </view>
+      </view>
+    </view>
+    <!--评论  -->
+    <view class="evalue_list">
+      <view class="title">
+        用户评价
+      </view>
+      <view class="ev_item" wx:for="{{[1,2,3]}}" wx:key="item_{{index}}">
+        <!--头部  -->
+        <view class="header_info flex_between relative">
+          <view class="flex_start">
+            <view class="icon_box">
+              <image mode="aspectFill" src="../../images/img/n.jpg" style="width:74rpx;height:74rpx;border-radius:50%"></image>
+            </view>
+            <view style="margin-left:20rpx">
+              <view style="color:#5293e1;font-size:28rpx;">张三</view>
+              <view class="flex_start" style="margin-top:10rpx">
+                <view class="icon_box" wx:for="{{[1,2,3,0,0]}}" wx:key="in_{{index }}">
+                  <image wx:if="{{item}}" src="../../images/select_star.png" style="width:27rpx;height:25rpx"></image>
+                  <image wx:else src="../../images/default_star.png" style="width:27rpx;height:25rpx"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="e_time">2018-06-18</view>
+        </view>
+        <!--内容  -->
+        <view class="e_content">北京学汽修的学校在哪？缤智到底值得购买么？大家来说说这个话题</view>
+        <!--图片  -->
+        <view class="e_imgs flex_start">
+          <view class="icon_box item_img" wx:for="{{[1,2,3,4,5,6]}}" wx:key="img_{{index}}">
+            <image mode="aspectFill" src="../../images/img/n.jpg" style="width:210rpx;height:220rpx"></image>
+          </view>
+        </view>
+        <!--评论信息  -->
+        <view class="flex_between e_control" wx:if="{{false}}">
+          <view>浏览220</view>
+          <view class="flex_start">
+            <view class="flex_start">
+              <view class="icon_box">
+                <image src="../../images/evalue_icon.png" style="width:24rpx;height:24rpx"></image>
+              </view>
+              <view style="padding-left:16rpx">评论</view>
+            </view>
+            <view class="flex_start" style="margin-left:62rpx;">
+              <view class="icon_box">
+                <image src="../../images/dz_icon.png" style="width:25rpx;height:25rpx"></image>
+              </view>
+              <view style="padding-left:16rpx">8</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</paging>
+<view class="fixed fb">
+  <view class="user_eval flex_center">
+    <navigator url="../shoppingEvaluate/shoppingEvaluate" class="input_ev" bindtap="onEvalue">请输入评论</navigator>
+  </view>
+</view>

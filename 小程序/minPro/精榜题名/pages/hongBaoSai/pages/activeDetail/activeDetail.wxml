@@ -1,0 +1,35 @@
+ <view class="fixed">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="icon_box">
+        <image src="../../img/activeDetail/tx_bg_3.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../img/activeDetail/tx_bg_3.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+    </view>
+    <!-- 站内信 标题 -->
+    <view class="msg_title icon_box">
+      <image src="../../img/activeDetail/msg_title.png" style="width:231rpx;height:66rpx"></image>
+    </view>
+    <!-- 活动详情 -->
+    <view class="acitve_detail rr">
+      <!-- 活动标题 -->
+      <view class="title_active">标题</view>
+      <view>
+        2018.09.21 13:21:39这里是内容，这里是内容，这里是内容
+        ，这里是内容，这里是内容，这里是内容，这里是内容，这里是内容，
+      </view>
+      <view class="icon_box" style="margin-top:20rpx;">
+        <image src="../../img/activeDetail/msg_title.png" style="width:490rpx;height:66rpx"></image>
+      </view>
+    </view>
+    <!-- 报名 -->
+    <view class="icon_box bm">
+      <image src="../../img/activeDetail/bm_btn.png" style="width:376rpx;height:119rpx;"></image>
+    </view>
+     <!-- 返回 -->
+    <view class="back" bindtap="OnBack">
+      <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+    </view>
+</view>

@@ -1,0 +1,42 @@
+<import src="../../temp/temp.wxml" />
+<nav-back
+   userName="{{infoDetail.username}}" 
+    bid="{{infoDetail.id}}"
+    collectType="info"
+    userphone="{{infoDetail.userphone}}"
+/>
+<view class="fixed">
+<view class="detail_box">
+  <template is="info_release_temp" data="{{infoData:infoDetail,imgUrl:imgUrl,time:time}}"/>
+</view>
+<template is="nav_back"/>
+<!-- <view class="bottom_nav">
+  <view class="bottom_nav_box inline_flex">
+    <view class="home_box" style="margin-right:24rpx">
+      <view class="icon_box">
+        <image src="../../images/home_yes.png" style="width:49rpx;height:50rpx;"></image>
+      </view>
+      <view>
+        首页
+      </view>
+    </view>
+    <view class="home_box">
+      <view class="icon_box">
+        <image src="../../images/collect_icon.png" style="width:52rpx;height:50rpx;"></image>
+      </view>
+      <view>
+        收藏
+      </view>
+    </view>
+    <view class="phone_box">
+      <image class="absolute" style="width:430rpx;height:70rpx;" src="../../images/phone_btn.png"></image>
+      <view class="absolute flex_center">
+        <view class="icon_box">
+          <image src="../../images/phone_icon.png" style="width:21rpx;height:30rpx"></image>
+        </view>
+        <view style="color:white;font-size:28rxp;padding-left:10rpx">苏先生</view>
+      </view>
+    </view>
+  </view>
+</view> -->
+</view>

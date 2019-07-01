@@ -1,0 +1,44 @@
+<view class="fixed" style="padding-top:30rpx; box-sizing: border-box;">
+  <form>
+    <view class="theme_info">
+      <view style="line-height: 94rpx;">赛事|羽毛球</view>
+      <view class="flex_start">
+        <view class="icon_box">
+          <image src="../../images/address.png" style="width:19rpx;height:26rpx"></image>
+        </view>
+        <view style="padding-left:10rpx;color:#575656">北京大兴</view>
+      </view>
+      <view class="flex_start">
+        <view class="icon_box">
+          <image src="../../images/time.png" style="width:22rpx;height:22rpx"></image>
+        </view>
+        <view style="padding-left:10rpx;color:#575656">2010-09-09 —— 2011-10-09</view>
+      </view>
+    </view>
+    <view class="box">
+      <view class="title_box ">
+        报名信息
+      </view>
+      <view class="item flex_between" style="background-color:#ebf0f6">
+        <view>姓名</view>
+        <input name="userName" class="input_item" placeholder="请输入您的姓名"></input>
+      </view>
+      <view class="item flex_between" style="background-color:white;font-weight:normal">
+        <view style="font-weight:bold">性别</view>
+        <sex/>
+      </view>
+      <view class="item flex_between" style="background-color:#ebf0f6">
+        <view>年龄</view>
+        <input name="age" class="input_item" placeholder="请输入您的年龄"></input>
+      </view>
+      <view class="item flex_between" style="background-color:white">
+        <view>手机号</view>
+        <input name="phone" class="input_item" placeholder="请输入您的手机号"></input>
+      </view>
+    </view>
+    <view class="examing" bindtap="onToExaming">
+      确认报名
+    </view>
+
+  </form>
+</view>

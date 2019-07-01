@@ -1,0 +1,106 @@
+<view class="noticeAccounts_box">
+  <!--背景图
+  <view class="icon_bx img_bg">
+    <image style="width:750rpx;height:100vh" src="../../imgs/home/home_bg.png"></image>
+  </view>  -->
+  <view class="notice_body" style="opacity:{{data.opacity}}" wx:if="{{list.lenght!=0}}">
+    <!-- 通知头部 -->
+    <view class="notice_header">
+      <view class="notice_bg icon_box">
+        <image style="width:722rpx;height:174rpx" src="../../imgs/noticeAcc/oneMatch.png"></image>
+      </view>
+      <!--通知标题  -->
+        <view class="icon_box notice_title">
+        <text class='txt'>{{title}}</text>
+      </view>  
+    </view>
+    <!--通知内容  -->
+    <view class="notice_content_box">
+      <!--通知内容  -->
+      <view class="content_detal">
+        <!--2018最强答题第一季，2018最强答题第一季，(<text class="time_1">2018年3月9日</text>)2018最强答题第一季-->
+        {{preface}}
+      </view>
+      <!--规则  -->
+      <view class="rule_box">
+        <view class="rule_title">
+          {{gztitle}}
+        </view>
+        <text class="role_content">
+          {{opentxt}}
+        </text>
+      </view>
+      <!--奖励说明  -->
+      <view class="jiangLi_box">
+        <view class="title_box">
+          <view class="jiangLi_title">{{jltxt}}</view>
+          <view class="icon_box arr_db">
+            <image src="../../imgs/noticeAcc/bd_title.png" style="width:49rpx;height:40rpx"></image>
+          </view>
+        </view>
+        <!-- 说明详情 -->
+        <!--<text class="role_content"> {{item.str=='br'?'':'display:inline-flex;'}}-->
+        <view class="jl_content">
+          <text style="{{item.str=='br'?'width:100%;':''}}display:inline-flex;height:{{item.str=='br'?20:20}}rpx; color:{{item.c}};" wx:for="{{jlnr}}" wx:key="jl_{{index}}">
+              {{item.str=='br'?"":item.str}}  
+          </text>
+        </view>
+        <!--</text>-->
+      </view>
+      <!--奖励信息  -->
+      <!--
+      <view class="jiangLi_product_box">
+        
+        <view class="pro_item" style="margin-right:32rpx">
+          <view class="icon_box">
+            <image style="width:163rpx;height:163rpx" src="../../imgs/noticeAcc/coin_jp.png"></image>
+          </view>
+          <view class="score_item">金币X{{money}}</view>
+        </view>
+        
+         <view class="pro_item" style="margin-left:32rpx">
+           <view class="icon_box">
+            <image style="width:163rpx;height:163rpx" src="../../imgs/noticeAcc/xf_jp.png"></image>
+          </view>
+          <view class="score_item">学分X{{xuefen}}</view>
+        </view>
+      </view>
+      -->
+    </view>
+
+    <!--按钮  -->
+    <view class="footer_btn">
+      <view class="share_btn item">
+        分享
+        <button open-type="share" class="share_button"></button>
+      </view>
+      <view class="know_btn item" bindtap="OnNextClick">{{jlst==10?"领取奖励":"知道了"}}</view>
+    </view>
+  </view>
+
+  <view class="notice_body" style="opacity:{{data.opacity}}" wx:if="{{list.lenght==0}}">
+    <!-- 通知头部 -->
+    <view class="notice_header ">
+      <view class="icon_box notice_bg2">
+      </view>
+      <!-- 标题   -->
+      <view class="icon_box notice_title2">
+        {{breaktitle}}
+      </view>
+    </view>
+    <!--内容  -->
+    <view class="notice_content_box">
+      <!--内容  -->
+      <view class="img_bq">
+        <image src="../../imgs/noticeAcc/baoqian.png" style="width:274rpx;height:274rpx"></image>
+      </view>
+      <view class="content_detal">
+        {{breakcontent}}
+      </view>
+    </view>
+    <!--按钮  -->
+    <view class="footer_btn">
+      <view class="know_btn item" bindtap="OnNextClick">{{jlst==10?"知道了":"知道了"}}</view>
+    </view>
+  </view>
+</view>

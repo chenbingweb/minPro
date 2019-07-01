@@ -1,0 +1,90 @@
+<filter-picker 
+areaList="{{areaList}}"
+doorList="{{doorList}}"
+bindfilterEvent="filterEvent"
+bindresetEvent="resetEvent"
+showFilter="{{showFilterBox}}"
+/>
+<view class="fixed">
+  <!--筛选  -->
+  <view class="filter_header flex_center">
+    <view class="filter_item {{selectBtn=='lease'?'select_btn':''}}" bindtap="selectBtn" data-btn="lease">
+      出租
+    </view>
+    <view class="filter_item {{selectBtn=='sell'?'select_btn':''}}" bindtap="selectBtn"  data-btn="sell">
+      出售
+    </view>
+    <view class="filter_item flex_center" bindtap="showFilter">
+      <view style="padding-right:10rpx">筛选</view>
+      <view class="icon_box">
+        <image style="width:16rpx;height:9rpx" src="../../images/arraw_down.png"></image>
+      </view>
+    </view>
+  </view>
+  <!--中介列表 wx:if="{{src=='midd'}}" -->
+  <view class="middle_box" >
+    <paging dataObj="{{dataObjMidd}}" bindpageData="pageDataMidd">
+      <view slot="list">
+        <!--列表  -->
+        <view class="middle_item flex_start" bindtap="toDetal" data-bid="{{item.id}}" data-type="{{src}}" data-src="{{item.category=='sell'?'sell':'rent'}}" wx:for="{{middList}}" wx:key="index_{{index}}">
+          <!--图片  -->
+          <view class="icon_box relative">
+            <image mode="aspectFill" src="{{imgUrl+item.img_url}}" style="width:269rpx;height:210rpx;"></image>
+            <!--置顶  -->
+            <view class="zhi_ding" wx:if="{{item.is_top=='1'}}">
+              <view class="icon_box absolute">
+                <image src="../../images/tj_bg.png" style="width:90rpx;height:40rpx"></image>
+              </view>
+              <view class="absolute">
+                置顶
+              </view>
+            </view>
+          </view>
+          <view class="content">
+            <view style="line-height:60rpx;">{{item.name}} </view>
+            <view class="flex_start label_box">
+              <view wx:for="{{item.tag}}" wx:for-item="child" wx:key="key_{{index}}" class="label_type">{{child}}</view>
+              <!-- <view class="label_type">押一付一</view>
+              <view class="label_type">押一</view>
+              <view class="label_type">公寓</view> -->
+            </view>
+            <view style="color:#666666;font-size:24rpx">{{item.area}} | {{item.door}} | {{item.acreage}}m²</view>
+          </view>
+        </view>
+      </view>
+    </paging>
+  </view>
+  <!--个人房源  -->
+  <view class="middle_box" wx:if="{{false}}">
+    <paging dataObj="{{dataObjMidd}}" bindpageData="pageDataMidd">
+      <view slot="list">
+        <!--列表  -->
+
+        <view class="middle_item flex_start" bindtap="toDetal" data-src="{{index==1?'sell':'rent'}}" wx:for="{{[1,2,3]}}" wx:key="index_{{index}}">
+          <!--图片  -->
+          <view class="icon_box relative">
+            <image mode="aspectFill" src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:269rpx;height:210rpx;"></image>
+            <!--置顶  -->
+            <view class="zhi_ding">
+              <view class="icon_box absolute">
+                <image src="../../images/tj_bg.png" style="width:90rpx;height:40rpx"></image>
+              </view>
+              <view class="absolute">
+                置顶
+              </view>
+            </view>
+          </view>
+          <view class="content">
+            <view style="line-height:60rpx;">和平花园领域 </view>
+            <view class="flex_start label_box">
+              <view class="label_type">押一付一</view>
+              <view class="label_type">押一</view>
+              <view class="label_type">公寓</view>
+            </view>
+            <view style="color:#666666;font-size:24rpx">大望路 | 3室1厅 | 180m²</view>
+          </view>
+        </view>
+      </view>
+    </paging>
+  </view>
+</view>

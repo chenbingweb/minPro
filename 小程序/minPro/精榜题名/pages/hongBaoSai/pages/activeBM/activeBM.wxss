@@ -1,0 +1,70 @@
+page
+{
+    background-image:linear-gradient(180deg,#500206,#571909);
+}
+.bg_180
+{
+  /* transform-origin: 0 100%; */
+  transform: rotateY(180deg);
+  transform-origin:49.9% 0;
+
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:104rpx;
+}
+.msg_title
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 326rpx);
+}
+
+.bm
+{
+ position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 270rpx);
+}
+.acitve_detail
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 206rpx);
+}
+.bm_info
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color:#fff;
+  font-size: 30rpx;
+}
+.input_box
+{
+  width: 450rpx;
+  height: 84rpx;
+  background-color: #fff;
+  border-radius: 42rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info_item_titile
+{
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.input_1
+{
+ width: 376rpx;
+ height: 86rpx;
+ color:#333; 
+}

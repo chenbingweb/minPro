@@ -1,0 +1,61 @@
+<!--pages/searchList/searchList.wxml-->
+<view class="box">
+  <view class="box_item_list" wx:for="{{resultList}}" wx:for-item="child">
+    <view class="flex_between border_bottom" wx:if="{{child.list.length}}" bindtap="onToList" data-key="{{child.keys}}" data-src="{{child.src}}">
+   
+      <view class="f_30_333" wx:if="{{child.src=='build'}}">
+        售楼直销
+      </view>
+      <view class="f_30_333"  wx:if="{{child.src=='middle'}}">
+        房产中介
+      </view>
+      <view class="f_30_333" wx:if="{{child.src=='person'}}">
+        个人房源
+      </view>
+      <view class="f_30_333" wx:if="{{child.src=='boss'}}">
+        BOSS招聘
+      </view>
+      <view class="f_30_333"  wx:if="{{child.src=='self'}}">
+        毛遂自荐
+      </view>
+      <view class="f_30_333" wx:if="{{child.src=='info'}}">
+        资讯发布
+      </view>
+      <view class="hot_more f_30_333">
+        more
+      </view>
+    </view>
+   <view>
+      <view bindtap="navToDetail" data-cid="{{item.id}}" data-category="{{item.category}}" data-src="{{child.src}}" class="item flex_start relative" wx:for="{{child.list}}" wx:key="list_{{index}}">
+        <view class="icon_box" wx:if="{{child.src!='boss'&&child.src!='self'&&child.src!='info'}}">
+          <image mode="aspectFill" style="width:270rpx;height:210rpx" src="{{imgUrl+item.img_url}}"></image>
+        </view>
+        <view class="no_img" wx:else></view>
+        <view class="child" wx:if="{{child.src=='middle'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.name}}</view>
+          <view class="f_28_666">{{item.door}} {{item.direction}} </view>
+        </view>
+        <view class="child" wx:if="{{child.src=='person'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.name}}</view>
+          <view class="f_28_666">{{item.door}} {{item.direction}} </view>
+        </view>
+        <view class="child" wx:if="{{child.src=='build'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.name}}</view>
+          <view class="f_28_666">{{item.area}} {{item.tag}}</view>
+        </view>
+        <view class="child" wx:if="{{child.src=='boss'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.category}}</view>
+          <view class="f_28_666">{{item.company}} {{item.industry}}</view>
+        </view>
+        <view class="child" wx:if="{{child.src=='self'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.category}}</view>
+          <view class="f_28_666">{{item.info}}</view>
+        </view>
+        <view class="child" wx:if="{{child.src=='info'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.title}}</view>
+          <view class="f_28_666">{{item.detail}} </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

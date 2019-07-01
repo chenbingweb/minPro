@@ -1,0 +1,31 @@
+/* pages/community/community.wxss */
+.list_box
+{
+  position: absolute;
+  top:420rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.box
+{
+  padding: 0 36rpx;
+  padding-top: 70rpx;
+}
+.com_item
+{
+  height: 210rpx;
+  border-top:2rpx solid #efefef;
+}
+.title
+{
+  color:#232323;
+  height: 74rpx;
+  font-size: 30rpx;
+}
+.time
+{
+  color:#8e8d8d;
+  font-size: 24rpx;
+  margin-top:40rpx;
+}

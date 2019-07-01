@@ -1,0 +1,17 @@
+<!--引入准备开战   data="{{data:data}}"-->
+<import src="./ready.wxml"/>
+<import src="./ready_fight.wxml"/>
+<view class="fixed" wx:if="{{!show3v3Page}}">
+  <template is="ready_fight" data="{{data:data}}"></template>
+  <!-- <view class="fixed" style="pointer-events:none;">
+    <textarea value="{{info}}" style="pointer-events:all;"></textarea>
+  </view> -->
+</view>
+<view wx:else>
+  <fight-3v3-page data="{{data}}" bindstartFighr="OnStartClick"/>
+  <!-- <view class="fixed" style="pointer-events:none;">
+    <textarea value="{{info}}" style="pointer-events:all;"></textarea>
+  </view> -->
+</view>
+<!-- 
+<template is="ready" data="{{data:data}}"></template> -->

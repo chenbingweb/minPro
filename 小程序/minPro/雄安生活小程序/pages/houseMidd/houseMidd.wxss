@@ -1,0 +1,72 @@
+/* pages/houseMidd/houseMidd.wxss */
+.filter_header
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  height: 90rpx;
+}
+.filter_item
+{
+  width: 33%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color:#333333;
+  font-size: 28rpx;
+}
+/*中介列表  */
+.middle_box
+{
+  position: absolute;
+  top:90rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.middle_item
+{
+  width: 750rpx;
+  height: 270rpx;
+  box-sizing: border-box;
+  padding:30rpx 25rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  font-size: 30rpx;
+  color:#333333;
+}
+.content
+{
+  padding-left: 20rpx;
+}
+.label_box
+{
+  flex-wrap: wrap;
+}
+.label_type
+{
+  font-size: 28rp;
+  color:#666666;
+  background-color: #f4f4f4;
+  padding: 4rpx 10rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+}
+.zhi_ding
+{
+  position: absolute;
+  width:90rpx;
+  height: 40rpx;
+  left: 0;
+  top:20rpx;
+  color:#ffffff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+/*  */
+.select_btn
+{
+  color:#fed545;
+}

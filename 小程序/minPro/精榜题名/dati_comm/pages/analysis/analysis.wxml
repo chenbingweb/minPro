@@ -1,0 +1,108 @@
+<import src="../../template/Grid9.wxml"/> 
+<template name="analysis" >
+<!--left:{{data.wndPosX}}rpx;  -->
+  <view class="fixed analysis " style="opacity:{{data.wndAlpha}};" wx:if="{{data.display}}">
+      <!--背景  -->
+      <view class="icon_box bg_img">
+        <image src="../../../imgs/comm/fight_bg.png" style="width:750rpx;height:100vh"></image>
+      </view>
+      <!--背景2-->
+      <view class="left_bg">
+        <image src="/imgs/fight/succ_bg.png" style="width:375rpx;height:476rpx;"></image>
+      </view>
+      <!--背景3-->
+      <view class="rotate">
+        <image src="/imgs/fight/succ_bg.png" style="width:375rpx;height:476rpx;"></image>
+      </view>
+      <!--解析页面-->
+      <swiper class="swiper {{data.Ani_show}}" indicator-color="#dcdbe0" indicator-active-color="#ffda0c" indicator-dots  autoplay="{{false}}" interval="{{500}}" duration="{{500}}" circular="{{false}}">
+        <block wx:for="{{data.wenti}}" wx:key="sw_{{index}}">
+          <swiper-item >
+          <!--解析背景 -->
+          <view class="panel_box">
+            <!--背景  -->
+            <view class="jx_panel">
+                <template is="Grid9" data="{{grid:data.jx_bg}}" ></template>
+            </view>
+            <!--  中间条-->
+            <view class="zjt_db">
+              <template is="Grid9" data="{{grid:data.zjt_bg}}" ></template>
+            </view>
+            
+            <!--解析详情-->
+            <view class="jx_detai">
+              <view style="position:absolute;left:0;fight:0">
+                <template is="Grid9" data="{{grid:data.jx_up_bg}}" ></template>
+              </view>
+              <!--题目  -->
+              <view class="jx_title">
+                <text wx:if="{{false}}"></text> 
+              </view> 
+              <!--内容  -->
+              <scroll-view scroll-y class="content remove_roll_car">
+              <text>
+               {{item.jiexi}}
+               </text>
+              </scroll-view>
+               <!--渐变  -->
+            <view class="bottom_line icon_box">
+                <image src="../../imgs/analysis/jbt.png" style="width:576rpx;height:16rpx"></image>
+              </view>
+            </view>
+            <!--带图片的问题  -->
+            <view class="question_box" style="top:413rpx" wx:if="{{item.img!=null}}" >
+              <!--图片  -->
+              <view class="jx_img icon_box">
+                <image mode='aspectFit' src="{{item.img}}" style="width:212rpx;height:142rpx"></image>
+              </view>
+              <!--提问  -->
+              <view class="question">
+                {{item.tm}}
+              </view>
+            </view>
+
+             <!--带文字的问题  -->
+            <view class="question_box text_box" wx:if="{{item.img==null}}" >
+              <!--提问  -->
+              <view class="question">
+                {{item.tm}}
+              </view>
+            </view>
+
+            <!--回答问题 ok err-->
+            <view class="question_list">
+            <!--  -->
+              <view class="q_1 q_item  {{item.style}}" wx:for="{{item.daan}}" wx:key="q_{{index}}">
+                <view class="icon_box person_pos person_item_left"  wx:if="{{item.licon!=null}}">
+                    <image src="{{item.licon}}" style="width:50rpx;height:50rpx"></image>
+                </view>
+                <view>
+                  {{item.txt}}
+                </view>
+                <!--   -->
+                <view class="icon_box person_pos person_item_right" style="border-color:#c42564" wx:if="{{item.ricon!=null}}">
+                  <image src="{{item.ricon}}" style="width:50rpx;height:50rpx"></image>
+                </view>
+                <!--没人  -->
+                <view class="icon_box person_pos person_item_right no_body" wx:if="{{false}}">?</view>
+              </view>
+            </view> 
+            <!--回答问题 end  -->
+          </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!--下拉战报  -->
+      <view class="down_up" wx:if="{{false}}">
+        <image src="../../imgs/analysis/down_la.png" style="width:91rpx;height:64rpx"></image>
+        <view style="position:relative;top:-10rpx;">下拉看战报</view> 
+      </view>
+     <!--面板指示点  -->
+      <view class="dots_box" wx:if="{{false}}">
+          <view class="dots_item {{index==1?'active_dots':''}}"  wx:for="{{[1,2,3,4,5]}}">
+          </view>
+ 
+      </view>
+
+  </view>
+</template>

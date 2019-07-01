@@ -1,0 +1,108 @@
+/* pages/setPlan/setPlan.wxss */
+.tip_1
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 70rpx;
+  background-color: #434343;
+  text-align: center;
+  color:#fff;
+  font-size: 30rpx;
+  line-height: 70rpx;
+}
+.table_header
+{
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color:#fff;
+  font-size: 30rpx;
+  width: 33.33333%;
+  box-sizing: border-box;
+}
+.table_header:nth-of-type(1)
+{
+  background-color: #ff9802;
+  border-right: 2rpx solid #fff;
+}
+.table_header:nth-of-type(2)
+{
+  background-color: #009688;
+  border-left: 2rpx solid #b4e0dc;
+  border-right: 2rpx solid #b4e0dc;
+}
+.table_header:nth-of-type(3)
+{
+  background-color: #8bc34b;
+  border-left: 2rpx solid #fff;
+}
+.table_cell
+{
+  width: 33.333%;
+  text-align: center;
+  line-height: 90rpx;
+  color:#000000;
+  font-size: 34rpx;
+}
+.cell_box:nth-child(2n+1)
+{
+  background-color: white
+}
+.cell_box:nth-child(2n)
+{
+  background-color: #e9e9e9
+}
+.table_cell.selected
+{
+  background-color: #009688;
+  color:#fff!important;
+}
+.scroll_v
+{
+  position: absolute;
+  top:140rpx;
+  left: 0;
+  right: 0;
+  bottom: 170rpx;
+}
+.plan_bottom
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 170rpx;
+  box-sizing: border-box;
+  padding-top: 12rpx;
+}
+.end_plan
+{
+  width: 632rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  text-align: center;
+  border-radius: 27rpx;
+  background-color: #f0f9f8;
+  font-size: 30rpx;
+  color:#009688;
+  margin: 0 auto;
+  font-weight: bold;
+}
+.btn_box
+{
+   width: 632rpx;
+   margin: 0 auto;
+   height: 100rpx;
+}
+.p_btn
+{
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+  background-color: #969696;
+  width: 260rpx;
+}
+.p_btn:nth-of-type(2)
+{
+  background-color: #009688;
+}

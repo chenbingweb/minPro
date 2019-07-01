@@ -1,0 +1,385 @@
+.fightOver .f_o_over
+{
+  opacity: 0;
+}
+.fightOver .fight_over_bg
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.fightOver .fight_over_bg image
+{
+  width: 750rpx;
+  height: 100vh;
+}
+.fightOver .result_box
+{
+  position: absolute;
+  width: 375rpx;
+  height: 476rpx;
+
+}
+.fightOver .result_bg
+{
+  width: 375rpx;
+  height: 476rpx;
+}
+.fightOver .my_result
+{
+  left: 0;
+  top:111rpx;
+}
+.fightOver .friend_result
+{
+  left: 375rpx;
+  top:111rpx;
+}
+.fightOver .friend_result .rotate
+{
+  transform: rotate(180deg);
+}
+
+/*头框*/
+.new_frame{
+  
+   position: absolute;
+  left:-4rpx;
+  top:-4rpx;
+  width:110rpx;
+  height:110rpx; 
+
+}
+.new_vip{
+  
+  position: absolute;
+  left: 65rpx;
+  top:70rpx;
+
+}
+.fightOver  .user_box .new_frame{
+
+  
+  position: absolute;
+  left: -3rpx;
+  top:-2rpx;
+
+}
+/*头像  */ 
+.fightOver  .user_box
+{
+  position: absolute;
+  left: 16rpx;
+  top:165rpx;
+  color:white;
+  font-size: 22rpx;
+  width: 100rpx;
+    opacity: 0;
+}
+
+.fightOver .user_box  .user_name
+{
+  text-align: center;
+  line-height: 35rpx;
+}
+
+.fightOver  .friend_right
+{
+  left:250rpx;
+
+}
+/*没有人  */
+.fightOver  .friend_right .no_people
+{
+ border-color: #ed1b51;
+  text-align: center;
+  font-weight: bold;
+  line-height: 90rpx;
+  font-size: 54rpx;
+  box-sizing: border-box;
+  color:#57419d;
+  background-color: #f1edf1;
+}
+/*胜利提示  */
+.fightOver .success_tip
+{
+  position: absolute;
+  left: 50%;
+  width: 548rpx;
+  height: 256rpx;
+  margin-left:-274rpx; 
+  top:20rpx;
+  opacity: 0;
+  transform: scale(1.4)
+}
+.fightOver .success_tip image
+{
+  width: 548rpx;
+  height: 256rpx;
+}
+/*对战分数  */
+.fightOver .player_results
+{
+  position: absolute;
+  top:288rpx;
+  opacity: 0;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  width: 210rpx;
+  font-size: 72rpx;
+  font-weight: bold;
+  text-align: right;
+  color:#2dddfd;
+}
+.fightOver .player_results.my
+{
+  left:175rpx;
+}
+.fightOver .player_results.friend_player
+{
+  right: 190rpx;
+  color:#fb2a48;
+}
+.fightOver .player_results .item .friend_num
+{
+  position: relative;
+  /* left: 50rpx; */
+}
+
+
+.fightOver .player_results text
+{
+  font-size: 32rpx;
+  font-weight: normal;
+}
+.fightOver .player_results .item.right
+{
+  text-align: left;
+}
+.fightOver .player_results .num
+{
+  font-size: 32rpx;
+  color:white;
+  font-weight: normal;
+}
+.fightOver .player_results .num text
+{
+  font-weight: bold;
+  color:#2dddfd;
+}
+.fightOver .player_results .friend_num text 
+{
+  color:#fb2a48;
+}
+/*使用学分  */
+.fightOver .user_zs
+{
+  /* top:550rpx; */
+  top:2000rpx;
+  left:240rpx;
+}
+.fightOver .user_xf
+{
+  /* top:620rpx; */
+  top:2000rpx;
+  left:240rpx;
+}
+.fightOver .use_item
+{
+  position: absolute;
+}
+.fightOver .use_item .xf_img
+{
+  width: 52rpx;
+  height: 52rpx;
+  position: absolute;
+  top:7rpx;
+  left: 7rpx;
+}
+.fightOver .use_item .xf_img image
+{
+   width: 52rpx;
+  height: 52rpx;
+}
+.fightOver .use_item .use_xf
+{
+  position: absolute;
+  right:45rpx;
+  top:10rpx;
+  color:#f1cb23;
+  font-size: 26rpx;
+}
+/*再来一局  */
+.fightOver .play_item
+{
+  position: absolute;
+  border-radius:52rpx;
+  line-height:104rpx;
+  left:172rpx;
+  width: 416rpx;
+  height: 104rpx;
+   font-weight: bold;
+}
+.fightOver .play_too
+{ 
+  background-color: #ff3366;
+  color: #fff;
+  /* top:712rpx; */
+  top:2000rpx;
+  text-align: center;
+}
+/*炫耀成绩  */
+.fightOver .share_result
+{ 
+  background-color: #ffa913;
+  color:white;
+  /* top:840rpx; */
+  top:2000rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.fightOver .share_result .xy_img image
+{
+  width: 52rpx;
+  height: 52rpx;
+} 
+.fightOver .share_result .text_btn
+{
+  width:100%;/*76rpx;*/
+  text-align:center
+}
+/*分享群  */
+.fightOver .share_qun
+{
+  position: absolute;
+  top:980rpx;
+  left:0rpx;
+  display: inline-flex;
+  align-items: center;
+  font-size: 32rpx;
+  color:white;
+  width:750rpx;
+justify-content:center;
+
+}
+/*向上拉  */
+.fightOver .to_up
+{
+  position: absolute;
+  bottom:30rpx;
+  left: 50%;
+  margin-left: -48rpx;
+  color:white;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fightOver .to_up .up_2
+{
+  position: relative;
+  top:-10rpx;
+}
+.fightOver .to_up  .text
+{
+  text-align: center;
+}
+/*分享按钮  */
+.fightOver .share_button
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.fightOver .index_btns
+{
+  width: 416rpx;
+  height: 104rpx;
+  position: absolute;
+  top:692rpx;
+  left: 50%;
+  margin-left: -208rpx;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fightOver .index_btns .back_index,.fightOver .index_btns .refight
+{ 
+  width: 200rpx;
+  height: 104rpx;
+  border-radius: 59rpx;
+  background-color: #e3e4ea;
+  text-align: center;
+  line-height: 104rpx;
+  color:#000;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+.fightOver .index_btns .refight.bg_color
+{
+  background-color: #ff3366;
+  color:white;
+}
+.fightOver .back_home
+{
+  position: absolute;
+  top:0;
+  left:0;
+}
+.fightOver .img_180
+{
+  transform: rotate(180deg)
+}
+/*分享  */
+.fightOver .share_img_btn
+{
+  position: absolute;
+  /* top:880rpx; */
+  top:848rpx;
+  left: -500rpx;
+}
+.fightOver .share_img_btn .bg_img
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+}
+.fightOver .share_img_btn .box_img
+{
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: 26rpx;
+  color:#34393F;
+}
+.fightOver .share_img_btn .box_text
+{
+  padding: 10rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-top:20rpx;
+}
+
+.fightOver .share_img_btn .box_text_center
+{
+  padding: 30rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-top:40rpx;
+}
+.fightOver .share_img_btn .coin_pox
+{
+  position: absolute;
+ right:12rpx;
+bottom:8rpx;
+
+}

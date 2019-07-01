@@ -1,0 +1,59 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx2b1434e6c9b4737b",
+	"projectname": "%E9%87%91%E6%A6%9C%E9%A2%98%E7%9B%AE_online",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "测试1v1好友邀请",
+					"pathName": "pages/index/index",
+					"query": "share=true&m8=6F5432496130626C4843793375326B6E576B4E314E76393344302D63203132372E302E302E3120393035352064323465396531613537306339336635",
+					"scene": "1007"
+				},
+				{
+					"id": 1,
+					"name": "测试3v3好友邀请",
+					"pathName": "pages/index/index",
+					"query": "share=true&m9=6F5432496130626C4843793375326B6E576B4E314E76393344302D63203132372E302E302E3120393035352064323465396531613537306339336635",
+					"scene": "1007"
+				},
+				{
+					"id": 2,
+					"name": "测试通天塔获取门票次数",
+					"pathName": "pages/index/index",
+					"query": "share=true&m6=6F5432496130657665436B364F47675738726D6B2D4444526B796F67203132372E302E302E3120393035362034623966393330343530303834666232",
+					"scene": "1007"
+				}
+			]
+		}
+	}
+}

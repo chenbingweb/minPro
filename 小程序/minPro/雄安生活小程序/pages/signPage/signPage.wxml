@@ -1,0 +1,43 @@
+<view class="sign_header">
+  <!--签到背景  -->
+  <view class="icon_box absolute">
+    <image src="../../images/sign_bg.png" style="width:750rpx;height:387rpx"></image>
+  </view>
+  <!--签到信息  -->
+  <view class="absolute sign_box">
+    <view class="sign_title">账户目前雄心数</view>
+    <!--雄心币  -->
+    <view class="xiong_coin">
+      <text>{{signList.amount}}</text>
+      <text style="font-size:24rpx;color:white">币</text>
+    </view>
+    <!--签到天数  -->
+    <view class="sign_days">
+      <view class="day_item" wx:for="{{signList.signdays}}" wx:key="sign_{{index}}">
+        <view class="line {{item.signed==false?'no_sign':''}}" wx:if="{{index!=6}}">
+        </view>
+        <view class="icon_box item_img">
+          <image src="../../images/sign_yes.png" style="width:44rpx;height:44rpx"></image>
+          <view wx:if="{{!item.signed}}" class="line_mark"></view>
+        </view>
+        <view>{{index+1}}天</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--签到记录  -->
+<view class="sign_list_box">
+  <view class="sign_title_2">
+    签到记录
+  </view>
+  <view class="sign_list_container">
+    <paging contentTip="没有签到记录" dataObj="{{dataObj}}" bindpageData="pageData">
+      <view slot="list">
+        <view class="sign_item" wx:for="{{signDayList}}" wx:key="key_{{index}}">
+          <view>{{item.date}}</view>
+          <view>+{{item.number}}</view>
+        </view>
+      </view>
+    </paging>
+  </view>
+</view>

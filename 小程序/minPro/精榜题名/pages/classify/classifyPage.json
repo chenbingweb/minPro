@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-item": "/dati_comm/components/nav-item/nav-item",
+    "user-info": "/dati_comm/components/user-info/user-info",
+    "current-level": "/dati_comm/components/current-level/current-level",
+    "gan-kao-item": "/dati_comm/components/gan-kao-item/gan-kao-item"
+  }
+}

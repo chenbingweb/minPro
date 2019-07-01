@@ -1,0 +1,113 @@
+.fixed
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+.top_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  
+}
+.left_3v3
+{
+  position: absolute;
+  left: 0;
+  top:calc(50vh - 509rpx);
+}
+.right_3v3
+{
+   position: absolute;
+  right: 0;
+  top:calc(50vh - 509rpx);
+}
+.yq_1v1
+{
+  position: absolute;
+  width: 320rpx;
+  height: 180rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 80rpx);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+}
+.yq_btn
+{
+  width: 320rpx;
+  height: 119rpx;
+  position: relative;
+  pointer-events:all;
+
+}
+.yq_title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:18rpx;
+}
+.time
+{
+  text-align: center;
+  line-height: 78rpx;
+  font-size: 24rpx;
+  color:#fff;
+  font-weight: bold;
+}
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.absolute
+{
+  position:absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+}
+.relative
+{
+  position: relative;
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_login,.bl
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.back
+{
+  position: absolute;
+  left: 40rpx;
+  top:calc(50vh - 613rpx);
+}
+.start
+{
+  position:absolute;
+  width:320rpx;
+  left:50%;
+  transform:translateX(-50%);
+  top:calc(50vh + 280rpx);
+
+  
+}

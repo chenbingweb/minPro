@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "pay-list": "/components/pay-list/pay-list",
+    "job-three": "/components/job-three/job-three"
+  }
+}

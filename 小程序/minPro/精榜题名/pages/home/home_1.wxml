@@ -1,0 +1,138 @@
+<template name="home_1">
+  <!-- <view class="fixed" style="{{data.model?'top:130rpx;bottom:68rpx':''}}"> -->
+  <view class="fixed">
+    <!-- 背景图 -->
+    <view class="icon_box wap_pos">
+      <image src="../../imgs/home/1.jpg" style="width:750rpx;height:1634rpx"></image>
+    </view>
+    <!-- 按钮布局 -->
+    <view class="absolute" wx:if="{{false}}">
+      <!-- 通天塔 -->
+      <view class="ttt_btn" bindtap="OnTongTianTa">
+        <image src="../../imgs/home/ttt.png" style="width:229rpx;height:336rpx"> </image>
+      </view>
+      <!-- 赶考 -->
+      <view bindtap="OnHuatiwangClick" class="gan_kao_btn">
+        <image src="../../imgs/home/gan_kao.png" style="width:269rpx;height:249rpx"></image>
+      </view>
+      <!-- 切磋 -->
+      <view class="qie_cuo_btn">
+        <image src="../../imgs/home/qie_cuo.png" style="width:231rpx;height:223rpx"></image>
+        <!-- 1v1 3v3 按钮-->
+        <view class="btn_box flex_center">
+          <view class="relative" bindtap="OnTo1V1" styl="width:100%;height:50rpx;" >1v1
+            <!-- <button open-type="share" class="login_btn" data-id="pk1v1" ></button> -->
+          </view>
+          <view class="relative" bindtap="OnPKClick" style="width:100%;height:50rpx;text-align:center;line-height:50rpx;">3v3
+            <!-- <button open-type="share" class="login_btn" data-id="pk3v3" ></button> -->
+          </view>
+        </view>
+      </view>
+      <!-- 红包 -->
+      <view class="hong_bao_btn" bindtap="onHongBao">
+        <image src="../../imgs/home/hong_bao.png" style="width:127rpx;height:183rpx"></image>
+      </view>
+      <!-- 炉子 -->
+      <view class="lu_zi_btn">
+        <image src="../../imgs/home/lu_zi.png" style="width:69rpx;height:70rpx"></image>
+      </view>
+      <!-- 炉子 -->
+      <view class="cao_btn">
+        <image src="../../imgs/home/cao.png" style="width:39rpx;height:38rpx"></image>
+      </view>
+    </view>
+    <!-- 新版布局 -->
+    <view class="btn_box_2">
+      <image src="../../imgs/home/btn_bg.png" style="width:750rpx;height:895rpx"></image>
+      <view class="absolute">
+        <!-- 通天塔 -->
+        <view class="ttt_btn_1" bindtap="OnTongTianTa">
+          <image src="../../imgs/home/ttt_btn.png" style="width:117rpx;height:177rpx"></image>
+        </view>
+        <!-- 赶考 -->
+        <view class="gk_btn_1" bindtap="OnHuatiwangClick" >
+          <image src="../../imgs/home/gk_btn.png" style="width:117rpx;height:151rpx"></image>
+        </view>
+       
+        <!-- 红包赛 -->
+        <view class="hb_btn_1" bindtap="onHongBao">
+          <image src="../../imgs/home/hbs_btn.png" style="width:117rpx;height:177rpx"></image>
+        </view>
+        <!-- 通天塔 建筑-->
+        <view class="ttt_jz"  bindtap="OnTongTianTa"></view>
+          <!-- 赶考 -->
+        <view class="gk_jz" bindtap="OnHuatiwangClick"></view>
+         <!-- 切磋 -->
+        <view class="qc_jz" bindtap="OnShowBtn"></view>
+         <!-- 红包赛 -->
+        <view class="hb_jz" bindtap="onHongBao"></view>
+         <!-- 切磋 -->
+        <view class="qc_btn_1" >
+          <image bindtap="OnShowBtn" src="../../imgs/home/qc_btn.png" style="width:117rpx;height:151rpx"></image>
+          <view class="qc_btn_box flex_start">
+            <view class="flex_start" style="transform:translateX({{data.showBtn?0:-320}}rpx);transition: all 0.2s linear;">
+              <!-- 1v1 -->
+              <view class="icon_box relative" bindtap="OnTo1V1">
+                <image src="../../imgs/home/qc_btn_db.png" style="width:155rpx;height:83rpx;"></image>
+                <view class="icon_box v1_btn">
+                  <image src="../../imgs/home/1v1.png" style="width:61rpx;height:39rpx;"></image>
+                </view>
+                <view class="icon_box point">
+                  <image src="../../imgs/home/point.png" style="width:17rpx;height:11rpx;"></image>
+                </view>
+              </view>
+              <!-- 3v3 -->
+              <view class="icon_box relative" style="margin-left:6rpx"  bindtap="OnPKClick">
+                <image src="../../imgs/home/qc_btn_db.png" style="width:155rpx;height:83rpx;"></image>
+                <view class="icon_box v1_btn">
+                  <image src="../../imgs/home/3v3.png" style="width:70rpx;height:39rpx;"></image>
+                </view>
+                <view class="icon_box point">
+                  <image src="../../imgs/home/point.png" style="width:17rpx;height:11rpx;"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 通天塔 建筑
+        <view class="ttt_jz"  bindtap="OnTongTianTa"></view>-->
+          <!-- 赶考
+        <view class="gk_jz" bindtap="OnHuatiwangClick"></view> -->
+         <!-- 切磋
+        <view class="qc_jz" bindtap="OnShowBtn"></view> -->
+         <!-- 红包赛 
+        <view class="hb_jz" bindtap="onHongBao"></view>-->
+      </view>
+    </view>
+    <!-- 用户信息 -->
+    <user-info 
+    gankaoIcon="{{data.gankaoIcon}}"
+     qcLevel="{{data.qcLevel}}"
+     name="{{data.UserName}}"
+     msg="{{data.msg}}" 
+     money="{{data.Score}}" 
+     LevelIcon="{{data.LevelIcon}}"
+     gkStar="{{data.gkStar}}" 
+     nowPage="home"/>
+    <!-- 菜单导航 -->
+    <nav-item
+      bindscore="OnScore"
+      LianxuQiandaoCount="{{data.LianxuQiandaoCount}}"
+      TodayGankaoCount="{{data.TodayGankaoCount}}"
+      TodayQiecuo1V1Count="{{data.TodayQiecuo1V1Count}}"
+      TodayQiecuo3V3Count="{{data.TodayQiecuo3V3Count}}"
+      TodayCGCount="{{data.TodayCGCount}}"
+      LastQiandaoTime="{{data.LastQiandaoTime}}"
+      TodayIsQiandao="{{data.TodayIsQiandao}}"
+    />
+    <!-- 新人领取奖励 -->
+    <ticket-tip authorize="{{data.authorize}}" showTicket="{{data.authorize}}"/>
+    <!-- 一键登录
+    <one-key-login/> -->
+    <!-- 音乐播放 style="animation-play-state:{{data.playing?'running':'paused'}};" -->
+    <view bindtap="OnPlay" class="icon_box music {{data.playing?'ready_tip_animation':''}}">
+      <image src="../../imgs/home/music.png" style="width:60rpx;height:60rpx;"></image>
+    </view>
+  </view>
+
+</template>

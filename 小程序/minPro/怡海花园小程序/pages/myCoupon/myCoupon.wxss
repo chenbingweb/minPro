@@ -1,0 +1,88 @@
+/* pages/myCoupon/myCoupon.wxss */
+page
+{
+  background-color: #f5f5f5;
+  
+}
+.list_box
+{
+box-sizing: border-box;
+  padding: 20rpx 36rpx;
+}
+.ticket_item
+{
+  width: 678rpx;
+  height: 176rpx;
+  border-radius: 8rpx;
+  background: white;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.t_name
+{
+  color:#181818;
+  font-size: 28rpx;
+}
+.t_time
+{
+  color:#8a8888;
+  font-size: 24rpx;
+}
+.t_info
+{
+ height: 114rpx;
+}
+.use_control
+{
+  width: 172rpx;
+  height: 176rpx;
+  background-color: #5293e1;
+  position: absolute;
+  top:0;
+  right: 0;
+  border-radius: 8rpx;
+  color:#fff;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.use_control::after
+{
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color:#f5f5f5;
+  position: absolute;
+  left: -10rpx;
+  top:-10rpx;
+  border-radius: 50%;
+}
+.use_control::before
+{
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  background-color:#f5f5f5;
+  position: absolute;
+  left: -10rpx;
+  bottom:-10rpx;
+  border-radius: 50%;
+}
+.btn
+{
+  width: 114rpx;
+  height: 36rpx;
+  background-color: white;
+  border-radius: 18rpx ;
+  color:#5293e1;
+  text-align: center;
+  line-height: 36rpx;
+  
+}

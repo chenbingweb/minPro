@@ -1,0 +1,345 @@
+<import src="../../dati_comm/template/Grid3.wxml" />
+<import src="../../dati_comm/template/Grid9.wxml" />
+<import src="../../dati_comm/template/Grid6.wxml" />
+<template name="matchOver">
+  <!--left:{{data.wndPosX}}rpx;  -->
+  <view class="fixed matchOver" style="opacity:{{data.wndAlpha}};">
+    <!--游戏背景图  -->
+    <view class="icon_box fight_over_bg">
+      <image src="../../imgs/comm/fight_bg.png"></image>
+    </view>
+    <view class="M_O {{data.Ani_Match_show}}" wx-if="{{data.Ani_Match_show}}">
+      <!--我的战绩  -->
+      <view class="my_result result_box">
+        <view class="icon_box result_bg">
+          <image src="/imgs/fight/succ_bg.png" style='width:375rpx;height:590rpx'></image>
+        </view>
+        <!--我的头像  -->
+        <view wx-if="{{data.app_user_header_opacity_1v1}}" class="user_box {{data.app_user_header_opacity_1v1}}" wx:for="{{data.leftPly}}" wx:key="lply_{{index}}" style="top:{{index*180+66}}rpx; animation-delay: {{1000+index*100}}ms;">
+          <view class="user_ph {{item.mvp?'luser_mvp':'luser_normal'}}  ">
+            <view class="icon_box">
+              <image src="{{item.icon}}"></image>
+            </view>
+
+            <!--头框  --> 
+            <view class="new_frame" wx:if="{{item.icon&&item.k}}">
+              <image  src="{{item.k}}" style="width:100%;height:100%"></image>
+            </view>
+
+            <!--VIP图标  -->
+            <view class="new_vip" wx:if="{{item.icon&&item.hf==1}}">
+              <image mode="aspectFit" class="iconimg" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+
+            <!--mvp   -->
+            <view class="mvp {{data.mvpanima?'mvpanima':''}}" wx:if="{{item.icon&&item.mvp&&data.mvpanima}}">
+              <image class="iconimg" src="../../imgs/comm/mvp.png" style="width:100rpx;height:62rpx;"></image>
+            </view>
+          </view>
+          <view class="user_name one_line">
+            {{item.name}}
+          </view>
+        </view>
+
+      </view>
+      <!--好友战绩  -->
+      <view class="friend_result result_box">
+        <view class="icon_box result_bg rotate">
+          <image src="/imgs/fight/succ_bg.png" style='width:375rpx;height:590rpx'></image>
+        </view>
+        <view class="user_box friend_right {{data.app_user_header_opacity_1v1}}" wx:for="{{data.rightPly}}" wx:key="rply_{{index}}" style="top:{{index*180+66}}rpx;animation-delay: {{1000+index*100}}ms;">
+          <view class="user_ph ruser_normal" style="border-color:#c42564">
+            <view class="icon_box">
+              <image src="{{item.icon}}"></image>
+            </view>
+
+             <!--头框  --> 
+            <view class="new_frame" wx:if="{{item.icon&&item.k}}">
+              <image  src="{{item.k}}" style="width:100%;height:100%"></image>
+            </view>
+            
+            <!--vip图标  -->
+            <view class="new_vip" wx:if="{{item.icon&&item.hf==1}}">
+              <image mode="aspectFit" class="iconimg" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+          </view>
+          <view class="user_name one_line">
+            {{item.name}}
+          </view>
+        </view>
+        <!--没有好友  -->
+        <view class="user_box friend_right" wx:if="{{false}}">
+          <view class="user_ph no_people">
+            ?
+          </view>
+          <view class="user_name one_line">
+            ????
+          </view>
+        </view>
+      </view>
+      <view style="position:absolute;width:750rpx;left:0;">
+        <!-- 胜利提示 -->
+        <view class="success_tip icon_box {{data.app_tip_opacity_scale_1v1}}" wx:if="{{data.winv&&data.app_tip_opacity_scale_1v1}}">
+          <image src="../../imgs/fightOver/succ_tip.png"></image>
+        </view>
+        <!--绝杀  -->
+        <view class="success_tip icon_box" wx:if="{{false}}">
+          <image src="../../imgs/comm/js_img.png" style="width:611rpx;height:264rpx"></image>
+        </view>
+        <!-- 失败提示 -->
+        <view class="success_tip icon_box {{data.app_tip_opacity_scale_1v1}}" wx:if="{{!data.winv&&data.app_tip_opacity_scale_1v1}}">
+          <image src="../../imgs/comm/zjzl.png"></image>
+        </view>
+      </view>
+      <view style="position:absolute;width:750rpx;left:0;top:50rpx">
+        <!--我的对战分数  -->
+        <view wx-if="{{data.app_user_score_opacity_1v1}}" class="player_results my {{data.app_user_score_opacity_1v1}}">
+          <view class="item">
+            <view>{{data.leftfen}}
+              <text>分</text>
+            </view>
+            <!-- <view class="num">连续答对<text style="padding:0 8rpx;color:#ffa913">{{data.leftliandui}}</text>题</view> -->
+          </view>
+        </view>
+        <!--好友积分  -->
+        <view wx-if="{{data.app_user_score_opacity_1v1}}" class="player_results friend_player {{data.app_user_score_opacity_1v1}}">
+          <view class="item">
+            <view style="position:relative;left:50rpx;text-align:left">{{data.rightfen}}
+              <text>分</text>
+            </view>
+            <!-- <view class="num friend_num">连续答对<text style="padding:0 8rpx;color:#ffa913">{{data.rightliandui}}</text>题</view> -->
+          </view>
+        </view>
+      </view>
+      <!--使用学分 -->
+      <view wx-if="{{data.winv&&data.app_tip_opacity_scale_1v1}}" class="user_zs use_item {{data.app_user_xf_1v1_an}}">
+        <template is="Grid3" data="{{grid:data.use_bg}}"></template>
+        <view class="icon_box xf_img">
+          <image src="../../imgs/comm/xf.png"></image>
+        </view>
+        <view class="use_xf">{{data.xuefen}}</view>
+        <view class="use_fxf" wx:if="{{data.fjXuefen>0}}">特权+{{data.fjXuefen}}</view>
+      </view>
+      <!--提示  -->
+      <!-- <view class="tips_ts">
+        <template is="Grid9" data="{{grid:data.tispa}}"></template> 
+       </view> -->
+      <!--获得金币 -->
+      <view wx-if="{{data.winv&&data.app_tip_opacity_scale_1v1}}" class="user_xf use_item {{data.app_user_coin_1v1_an}}">
+        <template is="Grid3" data="{{grid:data.use_bg}}"></template>
+        <view class="icon_box xf_img">
+          <image src="../../imgs/comm/coin.png"></image>
+        </view>
+        <view class="use_xf">{{data.money>=0?"+":""}}{{data.money}}</view>
+        <!-- <view class="add_fen" wx-if="{{data.teamMoney&&data.teamMoney>0}}">组队+{{data.teamMoney}}</view> -->
+        <view class="add_fen" wx-if="{{data.addMoney>0}}">额外+{{data.addMoney}}</view>
+        <view class="tips_a" wx:if="{{data.addMoney>0}}" bindtap="tipsmoney">
+          <view class="tips_ts" style="height:{{data.boxheight}}rpx" wx:if="{{data.tipsxs}}">
+            <template is="Grid6" data="{{grid:data.tipsa}}"></template>
+            <view class="friend_zd">
+              <!-- 额外金币提示 -->
+              <view wx:if="{data.zd1}}">{{data.zuidui1}}</view>
+
+              <view wx:if="{data.zd2}}">{{data.zuidui2}}</view>
+
+              <view wx:if="{data.zd3}}">{{data.zuidui3}}</view>
+              <!-- </block> -->
+            </view>
+          </view>
+          <image src="../../imgs/fightOver/tips_1.png" style="width:36rpx;height:36rpx"></image>
+        </view>
+        <!-- <view class="tips_a" bindtap="tipsmoney">！</view> -->
+      </view>
+      <view style="position:absolute;width:750rpx;left:0">
+        <!--段位星级-->
+        <view wx-if="{{data.app_rank_An}}" class="elev_start {{data.app_rank_An}}">
+          <!--钻石 -->
+          <view class="icon_box " wx:if="{{true}}">
+          
+           <image class="{{data.qbx}}" src="../../imgs/comm/p_{{data.levelx}}.png" style="width:120rpx;height:120rpx;position: absolute;opacity: {{data.opax}};"></image>
+            <image  class="{{data.qb}}" src="../../imgs/comm/p_{{data.level1}}.png" style="width:120rpx;height:120rpx;opacity: {{data.opa}};"></image>
+          </view>
+          <view class="result_start_box">
+            <view>
+              {{data.levelName}}
+            </view>
+            <view class="start_box">
+              <!--yellow星  -->
+               <view class="icon_box">
+                <view class="up_start {{data.xs5}}" wx:if="{{data.sfxs5}}" style="opacity: {{data.opa5}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;position: absolute;"></image>
+                </view>
+                <view class="up_start {{data.xs0}}" wx:if="{{data.sfxs0}}" style="opacity: {{data.opa0}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;"></image>
+              </view>
+              <view class="icon_box">
+                <view class="up_start {{data.xs1}}" wx:if="{{data.sfxs1}}" style="opacity: {{data.opa1}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;"></image>
+              </view>
+              <view class="icon_box">
+                <view class="up_start {{data.xs2}}" wx:if="{{data.sfxs2}}" style="opacity: {{data.opa2}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;"></image>
+              </view>
+              <view class="icon_box">
+                <view class="up_start {{data.xs3}}" wx:if="{{data.sfxs3}}" style="opacity: {{data.opa3}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;"></image>
+              </view>
+              <view class="icon_box">
+                <view class="up_start {{data.xs4}}" wx:if="{{data.sfxs4}}" style="opacity: {{data.opa4}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;"></image>
+              </view> 
+              <!-- <view class="icon_box">
+                <view class="up_start {{data.xs+index}}" wx:for="{{data.item}}" wx:if="{{data.sfxs+index}}" style="opacity: {{data.opa+index}};">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;"></image>
+              </view> -->
+              <!--start星data.currxing  -->
+              <!-- <view class="icon_box" wx:for="{{[1,2,3,4,5]}}" wx:key="kxing_{{index}}">
+
+                <image src="../../imgs/comm/d_b_start.png" style="width:40rpx;height:40rpx;margin-left: -358rpx;"></image>
+              </view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="position:absolute;width:750rpx;left:0">
+        <!--金币数
+      <view class="icon_total">
+        <view class="icon_box">
+          <image style="width:52rpx;height:52rpx" src="../../imgs/comm/coin.png"></image>
+        </view>
+        <view class="get_coin_num">
+          +{{data.money}}
+        </view>
+      </view>-->
+      </view>
+      <!--返回首页和再来一局 
+      <view class="index_btns">
+        <view class="back_index">
+            返回首页
+        </view> -->
+      <!--再来一局  
+        <view class="refight bg_color" bindtap="OnClick" data-page="{{data.wndname}}"  data-evt="OnReFightClick" bindtap="OnReFightClick" >
+          再来一局
+        </view>
+      </view>-->
+      <!--使用学分 
+      <view class="user_zs use_item">
+        <template is="Grid3" data="{{grid:data.use_bg}}" ></template>
+        <view class="icon_box xf_img">
+          <image src="../../imgs/comm/xf.png"></image>
+        </view>
+        <view class="use_xf">{{data.money}}</view>
+      </view>
+      <!--获得金币 
+      <view class="user_xf use_item">
+        <template is="Grid3" data="{{grid:data.use_bg}}" ></template>
+        <view class="icon_box xf_img">
+          <image src="../../imgs/comm/coin.png"></image>
+        </view>
+        <view class="use_xf">{{data.xuefen}}</view>
+      </view> -->
+
+      <!--气泡底板，全屏-->
+      <view class="fixed ignoreEvt" style="z-index: 10;">
+        <!--气泡-->
+        <view class="qipao {{data.qipaoStyle}}" wx:if="{{data.qipaoStyle!=''}}">
+          <!--气泡偏移-->
+          <view style="position:absolute;left:-{{data.qpbg.w/2}}rpx">
+
+
+            <!--气泡背景-->
+            <template is="Grid9" data="{{grid:data.qpbg}}"></template>
+            <!--气泡箭头-->
+            <view class="qipao_jt">
+              <image src="../../imgs/fightOver/qp_jt.png" style="width:100%;height:100%" />
+            </view>
+
+            <view class="qipao_icons">
+              <view class="wait_icon wait_normal {{item.style}}" wx:for="{{data.waitPlys}}" wx:key="wply_{{index}}">
+                <image src="{{item.icon}}" style="width:100%;height:100%"></image>
+              </view>
+            </view>
+
+
+            <!--气泡文本-->
+            <text class="qipao_txt">
+               好友已准备就绪
+            </text>
+          </view>
+        </view>
+      </view>
+
+      <!--再来一局   -->
+      <view wx-if="{{data.app_repeat_an}}" style="transform: scale({{data.btnReFightScale}});transition:{{data.seconds}}ms;opacity: 0;" class="play_too play_item {{data.app_repeat_an}}" bindtouchstart="OnReFightTouchStart" bindtouchend="OnReFightTouchEnd" bindtap="OnReFightClick"
+        data-page="{{data.wndname}}" data-evt="OnReFightClick"> 再来一局</view>
+
+      <view wx-if="{{data.app_jx_an}}" style="transform: scale({{data.btnJiexiScale}});transition:{{data.seconds}}ms" class="share_result play_item {{data.app_jx_an}}" bindtouchstart="OnJiexiTouchStart" bindtouchend="OnJiexiTouchEnd">
+
+        <view class="text_btn" bindtap="OnJiexiClick">查看解析</view>
+      </view>
+      <!--2.0分享  -->
+      <view wx-if="{{data.app_share_btn_an}}" class="share_img_btn {{data.app_share_btn_an}}">
+        <view class="icon_box btn_bg_img">
+          <image src="../../imgs/fightOver/share_btn.png" style="width:166rpx;height:266rpx"></image>
+        </view>
+        <view class="box_img">
+          <view class="icon_box coin_pox" wx-if="{{data.FXMoney!=0}}">
+            <image src="../../imgs/comm/coin.png" style="width:36rpx;height:36rpx"></image>
+          </view>
+          <view class="box_text" wx-if="{{data.FXMoney!=0}}">
+            {{"炫耀成绩获得"+data.FXMoney}}
+          </view>
+          <view class="box_text_center" wx-if="{{data.FXMoney==0}}">
+            {{"炫耀成绩"}}
+          </view>
+        </view>
+        <button class="share_button" open-type="share"></button>
+      </view>
+      <!--炫耀成绩  
+      <view class="share_result play_item">
+        <view class="icon_box xy_img">
+          <image src="../../imgs/comm/xf.png"></image>
+        </view>
+        <view class="text_btn"   >
+           炫耀成绩
+        </view>
+        <button class="share_button" open-type="share" data-page="{{data.wndname}}" data-id="xuanyao"></button>
+      </view>-->
+
+      <!--分享到微信群
+      <view class="share_qun">
+          <view>分享到微信群,可获得</view>
+          <view class="icon_box" style="margin:0 10rpx">
+            <image src="../../imgs/comm/xf.png" style="width:52rpx;height:52rpx"></image>
+          </view>
+          <view>{{data.FXMoney}}</view>
+      </view>  -->
+      <!--上拉更精彩
+      <view class="to_up" bindtap="OnJiexiClick" >
+        <view class="icon_box">
+          <image src="../../imgs/fightOver/up.png" style="width:78rpx;height:33rpx"></image>
+        </view>
+        <view class="icon_box up_2">
+          <image src="../../imgs/fightOver/up.png" style="width:78rpx;height:33rpx"></image>
+        </view>
+        <view class="text">查看解析</view>
+      </view>-->
+      <!--返回  
+      <view class="back_home icon_box">
+         <image src="../../imgs/shope/back.png" style="width:76rpx;height:76rpx"></image>
+      </view>-->
+    </view>
+  </view>
+</template>

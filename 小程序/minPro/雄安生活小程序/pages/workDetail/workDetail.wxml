@@ -1,0 +1,90 @@
+<import src="../../temp/temp.wxml" />
+ <nav-back 
+    userName="{{selfDetail.name}}" 
+    bid="{{sid}}"
+    collectType="self"
+    userphone="{{selfDetail.userphone}}"/>
+<view class="fixed work_page">
+  <view class="user_header flex_start">
+    <view class="icon_box" style="margin-right:30rpx">
+      <image wx:if="{{selfDetail.head_img}}" src="{{selfDetail.head_img}}" style="width:120rpx;height:120rpx;border-radius:50%"></image>
+    </view>
+    <view>
+      <view class="flex_start">
+        <view class="user_name">{{selfDetail.name}}</view>
+        <view style="margin-left:10rpx;">
+          <image wx:if="{{selfDetail.sex==0}}" src="../../images/woman.png" style="width:32rpx;height:30rpx"></image>
+          <image wx:else src="../../images/man.png" style="width:32rpx;height:30rpx"></image>
+        </view>
+      </view>
+      <view class="flex_start">
+        <view class="self_item inline_flex">
+          <view class="icon_box">
+            <image src="../../images/gongwenbao.png" style="width:29rpx;height:25rpx"></image>
+          </view>
+          <view class="f_26_666" style="padding-left:10rpx">
+          {{selfDetail.year}}
+          </view>
+        </view>
+        <view class="self_item inline_flex">
+          <view class="icon_box">
+            <image src="../../images/birthday.png" style="width:28rpx;height:25rpx"></image>
+          </view>
+          <view class="f_26_666" style="padding-left:10rpx">
+          {{selfDetail.age}}岁
+          </view>
+        </view>
+         <view class="self_item inline_flex" hidden>
+          <view class="icon_box">
+            <image src="../../images/education.png" style="width:30rpx;height:25rpx"></image>
+          </view>
+          <view class="f_26_666" style="padding-left:10rpx">
+          20岁
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--求值意向  -->
+  <view class="find_job">
+    <view style="padding-bottom:10rpx;">求职意向</view>
+    <view class="f_28_666">{{selfDetail.thinkJob.category}}</view>
+    <view class="flex_end time">{{time}}</view>
+  </view>
+  <!--工作经历  -->
+  <view class="find_job" style="padding:30rpx 0;padding-top:30rpx;">
+    <view style="padding:0rpx 25rpx;padding-bottom:10rpx;">工作经历</view>
+    <view class="work_history_item f_28_666" wx:for="{{selfDetail.experienceList}}" wx:key="ex_{{index}}">
+      <view >公司名称: {{item.company}}</view>
+      <!-- <view >{{item.company}}</view> -->
+      <view >职位名称: {{item.station}}</view>
+      <!-- <view >{{item.station}}</view> -->
+      <view class="flex_between">
+      <view >开始时间: {{item.start_time}}</view>
+      <view >职位结束: {{item.end_time}}</view>
+      </view>
+      
+      <!-- <view >{{item.start_time}}</view> -->
+      
+      <!-- <view >{{item.start_time}}</view> -->
+    </view>
+  </view>
+  <!--教育经历  -->
+  <view class="find_job" style="padding-bottom:20rpx">
+    <view style="padding-bottom:10rpx;">教育经历</view>
+    <view class="f_28_666">
+        <view class="flex_between padding_bottom_10" wx:for="{{selfDetail.educationList}}" wx:key="i_{{index}}">
+          <view>{{item.school}}</view>
+          <view>{{item.start_time+'-'+item.end_time}}</view>
+        </view>
+    </view>
+  </view>
+  <!--自我介绍  -->
+  <view wx:if="{{selfDetail.info!=''}}" class="find_job" style="min-height:26.5vh">
+    <view style="padding-bottom:10rpx;">自我介绍</view>
+    <view class="f_28_666">
+      <text>{{selfDetail.info}}</text>
+    </view>
+  </view>
+</view>
+<!-- <template is="nav_back" /> -->

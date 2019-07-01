@@ -1,0 +1,56 @@
+<!--style="left:{{data.wndPosX}}rpx;opacity:{{data.wndAlpha}};"  -->
+  <view class="fixed login"  >
+   
+    <!--logo  -->
+    <view class="logo_pic icon_box">
+    
+      <image src="../../imgs/login/icon.png" style="width:208rpx;height:208rpx;"></image>
+    </view>
+
+ 
+    
+    <!--log_2  -->
+    <view class="logo_pic_2 icon_box">
+      <image src="../../imgs/login/logo_log.png" style="width:450rpx;height:190rpx;"></image>
+    </view>
+
+    <!--loading  -->
+    <view class="ld_txt icon_box">
+      <image src="../../imgs/login/ldtxt.gif" style="width:400rpx;height:35rpx;"></image>
+    </view>
+ 
+
+
+    <view class="gj gif" wx:if="{{false}}">
+      <image src="../../imgs/login/gj.gif" style="width:21rpx;height:98rpx"></image>
+    </view>
+    <view class="gj gif" >
+      <image src="../../imgs/login/sanjiao.gif" style="width:26rpx;height:35rpx"></image>
+    </view>
+    <view class="gj_2 gif">
+      <image src="../../imgs/login/gj_2.gif" style="width:419rpx;height:140rpx"></image>
+    </view>
+    <view class="gj_3 gif">
+      <image src="../../imgs/login/gift.gif" style="width:85rpx;height:82rpx"></image>
+    </view>
+     <view class="gj_4 gif">
+      <image src="../../imgs/login/flag.gif" style="width:36rpx;height:51rpx"></image>
+    </view>
+
+     <view class="gj_5 gif" wx:if="{{false}}">
+      <image src="../../imgs/login/global.gif" style="width:79rpx;height:73rpx"></image>
+    </view>
+     <view class="gj_5 gif" >
+      <image src="../../imgs/login/tuo_yuan.gif" style="width:28rpx;height:71rpx"></image>
+    </view>
+     <view class="gj_6 gif">
+      <image src="../../imgs/login/xing.gif" style="width:63rpx;height:52rpx"></image>
+    </view>
+     <!--底部logo  -->
+    <view class="bottom_icon icon_box">
+      <image src="../../imgs/login/bottom.png" style="width:513rpx;height:360rpx"></image>
+    </view>
+  </view>
+
+<!-- <view style="position:absolute;width:100%;height:100%;background:red" wx:if="{{ShowLogin}}"></view> -->
+

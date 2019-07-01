@@ -1,0 +1,12 @@
+<view class="time_box">
+    <view class="top" style="height:{{32*percent}}rpx">
+      <image src="./img/djs_1.png" style="width:8rpx;height:32rpx"></image>
+       <image src="./img/djs_1.png" style="width:8rpx;height:32rpx"></image>
+        <image src="./img/djs_1.png" style="width:8rpx;height:32rpx"></image>
+    </view>
+  <view class="bottom">
+   
+    <image src="./img/djs_2.png" style="width:64rpx;height:60rpx"></image>
+    <view class="time_tip">{{overtime}}</view>
+  </view>
+</view>

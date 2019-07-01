@@ -1,0 +1,575 @@
+/* pages/noticeAccounts/noticeAccounts.wxss */
+page
+{
+  width:100%;
+  height: 100%;
+   background-image:linear-gradient(0deg,#000,#000);
+}
+
+
+.matchJS_box
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #310439;
+}
+.matchJS_box .img_bg
+{
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom:0;
+}
+.matchJS_box .notice_body
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+.matchJS_box .notice_header
+{
+  position: relative;
+  top: 6rpx;
+  left: 0;
+  height: 174rpx;
+  width: 750px;
+  margin: 0 auto;
+}
+.matchJS_box .notice_header .notice_bg
+{
+  width: 750rpx;
+  position: absolute;
+  top:0;
+  left:0;
+  
+}
+.matchJS_box .notice_header .notice_bg1
+{
+  width: 750rpx;
+  position: absolute;
+  height: 96rpx;
+  border-radius: 20%;
+  top:0;
+  background-color: #666699;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.matchJS_box .notice_header .notice_bg2
+{
+  width: 722rpx;
+  position: absolute;
+  height: 170rpx;
+  border-radius: 24rpx 24rpx 0 0;
+  top:0;
+  background-color: #666699;
+  left:15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.matchJS_box .notice_header  .notice_title
+{ 
+  content: attr(data-sj);  
+  position: absolute;
+  top:60rpx;
+  left: 0;
+  width: 750rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+   /* -webkit-text-stroke: 1px #bb7103;  */
+  text-shadow: 2px 2px 0px #a34804;
+  
+ /* background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ef8a53), to(#fadf63));
+-webkit-background-clip: text; */
+ /* -webkit-text-fill-color: transparent;    */
+
+
+   /* -webkit-mask:linear-gradient(to bottom, #fadf63, transparent );  */
+  color:white ;
+
+  font-size: 58rpx;
+}
+.matchJS_box .notice_header  .notice_title1
+{
+  position: absolute;
+  top:45rpx;
+  left: 0;
+  width: 750rpx;
+  /* font-weight: bold; */
+  letter-spacing: 4rpx;
+  /* -webkit-text-stroke: 1px #bb7103;
+  text-shadow: 0px 1px 0px #cd9f59; */
+  color:#fff;
+  font-size: 58rpx;
+}
+.matchJS_box .notice_body .notice_content_jisuan
+{
+  width: 722rpx;
+  margin: 0 auto;
+  height: 846rpx;
+  background-color: #e3e3e3;
+  box-sizing: border-box;
+}
+ 
+.matchJS_box .img_frame{
+width: 100%;
+height: 320rpx;
+  display: flex;  
+  flex-direction: row;  
+  justify-content: center;  
+}
+.matchJS_box .img_a{
+  width: 274rpx;
+  height: 274rpx;
+  margin-top:30rpx;
+}
+
+
+.matchJS_box  .text_b{
+  width: 600rpx;
+  height: 440rpx;
+  position: absolute;
+}
+.matchJS_box .text_a{
+  display: flex;  
+  flex-direction: row;  
+  justify-content: center;  
+  width: 650rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+  margin-top: 50rpx;
+  color: #34073b;
+}
+.matchJS_box .notice_body .notice_content_jisuan_a
+{
+  width: 722rpx;
+  margin: 0 auto;
+  height: 846rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+
+}
+.matchJS_box .notice_body .footer_btn
+{
+  width: 722rpx;
+  margin:0 auto;
+  height: 150rpx;
+  background-color: #e3e3e3;
+  border-radius: 0 0 24rpx 24rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-top:4rpx solid #cbcbcb;
+}
+.matchJS_box .notice_body .footer_btn .item
+{
+  width: 300rpx;
+  height: 98rpx;
+  border-radius: 49rpx;
+  text-align: center;
+  line-height: 98rpx;
+  color:white;
+  font-size: 30rpx;
+  letter-spacing: 4rpx;
+}
+.matchJS_box .notice_body .footer_btn .share_btn
+{
+  background-color: #ff9d37;
+  margin-right: 5rpx;
+  position: relative;
+}
+.matchJS_box .notice_body .footer_btn .know_btn
+{
+  background-color: #ed1e79;
+  margin-left: 5rpx;
+}
+.matchJS_box .notice_body .footer_btn .share_button
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.matchJS_box .notice_content_jisuan .ranking_three_box
+{
+  width: 100%;
+ min-height: 200rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  padding-top: 10rpx;
+  border-bottom: 4px solid #cbcbcb;
+}
+.matchJS_box .notice_content_jisuan .ranking_item
+{
+  width: 670rpx;
+  height: 162rpx;
+  margin: 0 auto;
+  border-bottom: 4rpx solid #b5b6b7;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.matchJS_box .notice_content_jisuan  .ranking_item .child_1
+{
+  width: 74rpx;
+  height: 96rpx;
+  border-right: 4rpx solid #4a5b92;
+}
+.matchJS_box .notice_content_jisuan .ranking_item .child_2
+{
+  width: 130rpx;
+  height: 162rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.matchJS_box .king_k
+{
+  position: absolute;
+  transform:translate(8rpx,-15rpx);
+  width:108rpx;
+  height:126rpx
+}
+
+.matchJS_box .icon
+{
+  position: absolute;
+  width:87rpx;
+  height:87rpx;
+  border-radius:50%
+}
+
+.matchJS_box .user_photo
+{
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.matchJS_box .new_vip
+{
+  position: absolute;
+  top:88rpx;
+  left:85rpx;
+}
+ 
+.matchJS_box .notice_content_jisuan  .ranking_item .child_3
+{
+  width: 320rpx;
+  height: 162rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.matchJS_box .notice_content_jisuan  .ranking_item .child_3 .user_box
+{
+  font-size: 26rpx;
+  display: inline-flex;
+  align-items: center;
+}
+.matchJS_box .notice_content_jisuan  .ranking_item .child_4
+{
+  width: 144rpx;
+  height: 162rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.matchJS_box .notice_content_jisuan .ranking_item .child_4 .duan_wei_img
+{
+  width: 100%;
+  position: absolute;
+  top:52rpx;
+  left:0;
+}
+.matchJS_box .notice_content_jisuan .ranking_item .child_4 .LM_bg
+{
+  width:100%;
+  position: absolute;
+  left:0;
+  top:104rpx;
+}
+.matchJS_box .notice_content_jisuan .ranking_item .child_4 .LM_string
+{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 24rpx;
+  color:#ffd4d9;
+  font-size: 20rpx;
+}
+.matchJS_box .notice_content_jisuan .my_ranking
+{
+  width: 714rpx;
+  height: 168rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.matchJS_box .notice_content_jisuan .my_ranking .grid_box
+{
+ position: absolute;
+ top:0;
+ left: 0;
+ right:0;
+ bottom:0;
+ box-sizing: border-box;
+ padding-left: 60rpx; 
+}
+.matchJS_box .notice_content_jisuan .my_ranking .my_ranking_num
+{
+  position: absolute;
+  top:116rpx;
+  width: 100%;
+  height: 33rpx;
+}
+.matchJS_box .minci
+{
+  width: 100%;
+  text-align: center;
+  line-height: 33rpx;
+  height: 33rpx;
+  color:white;
+  font-size: 22rpx;
+  position: absolute;
+  left:0;
+  top:3rpx;
+  text-shadow:#ec8e48 1px 0 0,#ec8e48 0 1px 0,#ec8e48 -1px 0 0,#ec8e48 0 -1px 0;
+}
+.matchJS_box .succ_box
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.matchJS_box .succ_boxview
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none; 
+}
+
+.matchJS_box .succ_title
+{
+  width: 626rpx;
+  height: 730rpx;
+  background-color:#f3f1f1;
+  border-radius: 23rpx;
+  position: relative;
+  pointer-events: auto; 
+}
+.matchJS_box .succ_title .tai_tou
+{
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:-178rpx;
+}
+.matchJS_box .succ_title .tai_tou .style_title
+{
+  position: absolute;
+  width:100%;
+  color:#f9fae9;
+  font-size: 48rpx;
+  font-weight: bold;
+  text-align: center;
+  bottom: 0prx;
+  height: 48prx;
+  left: 0;
+  margin-top: 20rpx;
+}
+.matchJS_box .succ_duan_wei
+{
+  font-size: 34rpx;
+  color:#e01c61;
+  width:460rpx;
+  height: 120rpx;
+  margin:0 auto;
+  text-align: center;
+  line-height: 120rpx;
+  margin-top: 40rpx;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.matchJS_box .lines
+{
+    width:460rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin: 0 auto;
+}
+.matchJS_box .lines .line_1
+{
+  width: 210rpx;
+  height: 2rpx;
+  background-color: #cacaca;
+}
+.matchJS_box .lines .yuan
+{
+  width:12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background-color:#cacaca;
+  margin:  0 10rpx;
+}
+.matchJS_box .xf_and_jb
+{
+   display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 20rpx 0;
+  width: 440rpx;
+  margin: 0 auto;
+  border-bottom: 4rpx solid #cacaca;
+  margin-bottom: 20rpx;
+}
+.matchJS_box .pro_item
+{
+   width: 164rpx;
+  border-radius: 6rpx;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.matchJS_box .score_item
+{
+  color:#372152;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  white-space:nowrap;
+}
+.matchJS_box .hurry
+{
+  width:100%;
+  text-align: center;
+  font-size: 22rpx;
+  color:#a3a2a2;
+}
+
+.matchJS_box .btnbase
+{
+  width: 360rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color:white;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  position: relative;
+}
+
+.matchJS_box .xuan_chengji
+{ 
+  background-color: #ed1e79; 
+}
+
+
+.matchJS_box .newsaiji
+{ 
+  background-color: #56cf9c; 
+}
+
+
+
+.matchJS_box .share_button
+{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.matchJS_box .succ_dw
+{
+  width: 94rpx;
+  height: 78rpx;
+  margin-right: 10prx;
+  position: relative;
+}
+.matchJS_box .succ_duanwei
+{
+  position: absolute;
+  width:100%;
+  left: 0;
+  top:0;
+}
+.matchJS_box .LM_bg_box
+{
+  position: absolute;
+  width: 100%;
+  top:50rpx;
+  height: 24rpx;
+}
+.matchJS_box .LM_string_succ
+{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top:-48rpx;
+  color:white;
+  font-size: 20rpx;
+  height: 24rpx;
+}
+/*dhu  */
+.wind_Animo
+{
+  animation:Anima_1 0.3s linear;
+  animation-fill-mode:forwards;
+  /*animation-delay: 1s;*/
+}
+ @keyframes Anima_1 {
+    0% {
+      opacity: 0;
+      transform: scale(0); 
+    }
+    50%{
+      opacity: 0.9;
+     transform: scale(1.2);
+    }
+    100%
+    {
+      opacity: 1;
+       transform: scale(1);
+    }
+  }

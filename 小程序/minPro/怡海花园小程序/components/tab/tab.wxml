@@ -1,0 +1,6 @@
+<!--components/tab/tab.wxml-->
+<view class="box">
+  <view style="width:{{btWidth}};border-color:{{isBorder?'transparent':'#1fa9f2'}}" class="btn {{index==1&&midBorder?'border_midd':''}} {{item.selected?btnSelect:''}}" bindtap="onSelectTab" data-tid="{{item.id}}" wx:for="{{tabList}}" wx:key="tab_{{index}}">
+      {{item.name}}
+  </view>
+</view>

@@ -1,0 +1,203 @@
+<form>
+  <view class="my_temp">
+    <!--  -->
+    <view class="item flex_between">
+      <view>
+        板块名称
+      </view>
+      <view>二手市场</view>
+    </view>
+    <!--  -->
+    <view class="item flex_between">
+      <view>
+        板块图标
+      </view>
+      <view class="icon_box">
+        <image src="../../images/car_icon.png" style="width:46rpx;height:50rpx"></image>
+      </view>
+    </view>
+    <!--  -->
+    <view class="item flex_between">
+      <view>
+        小区权限
+      </view>
+      <radio-group class="flex_between" style="width:448rpx" bindchange="onRadioChange">
+        <label for="{{item.id}}" class="flex_start child" wx:for="{{xqPower}}" wx:key="radio_{{index}}">
+          <view class="icon_box">
+            <image wx:if="{{item.checked}}" src="../../images/radio_yes.png" style="width:41rpx;height:41rpx;"></image>
+            <image wx:else src="../../images/radio_no.png" style="width:41rpx;height:41rpx;"></image>
+          </view>
+          <view style="padding-left:20rpx">{{item.name}}</view>
+          <radio id="{{item.id}}" hidden value="{{item.id}}" checked="{{item.checked}}" />
+
+        </label>
+        <!-- <label for="all" class="flex_start child">
+          <view class="icon_box">
+            <image wx:if="{{!checked}}" src="../../images/radio_yes.png" style="width:41rpx;height:41rpx;"></image>
+            <image wx:else src="../../images/radio_no.png" style="width:41rpx;height:41rpx;"></image>
+          </view>
+          <view style="padding-left:20rpx">全部</view>
+          <radio id="all" hidden value="all" checked="{{!checked}}" />
+        </label> -->
+
+
+      </radio-group>
+    </view>
+    <!--  
+    <picker range="{{['二手市场','话题贴','活动']}}">
+      <view class="item flex_between">
+        <view>
+          允许发贴类型
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_down_2.png" style="width:28rpx;height:14rpx"></image>
+        </view>
+      </view>
+    </picker>-->
+
+    <view class="item flex_between">
+      <view>
+        允许发贴类型
+      </view>
+      <checkbox-group bindchange="checkboxChange">
+        <view class="flex_start">
+          <label for="check_{{index}}" class="checkbox flex_start child" style="margin-right:12rpx;" wx:for="{{fbType}}" wx:key="item_{{index}}">
+            <view class="icon_box">
+              <image wx:if="{{item.checked}}" src="../../images/radio_yes.png" style="width:41rpx;height:41rpx;"></image>
+              <image wx:else src="../../images/radio_no.png" style="width:41rpx;height:41rpx;"></image>
+            </view>
+            <view style="padding-left:20rpx">{{item.name}}</view>
+            <checkbox id="check_{{index}}" hidden value="{{item.id}}" checked="{{item.checked}}" />
+          </label>
+        </view>
+      </checkbox-group>
+    </view>
+    <!--选择模板类型  -->
+     <!--  -->
+    <view class="item flex_between">
+      <view>
+        板块类型选择
+      </view>
+      <radio-group class="flex_between" style="width:448rpx" bindchange="onRadioChangeTemp">
+        <label for="{{item.id}}" class="flex_start child" wx:for="{{temps}}" wx:key="radio_{{index}}">
+          <view class="icon_box">
+            <image wx:if="{{item.checked}}" src="../../images/radio_yes.png" style="width:41rpx;height:41rpx;"></image>
+            <image wx:else src="../../images/radio_no.png" style="width:41rpx;height:41rpx;"></image>
+          </view>
+          <view style="padding-left:20rpx">{{item.name}}</view>
+          <radio id="{{item.id}}" hidden value="{{item.id}}" checked="{{item.checked}}" />
+
+        </label>
+      </radio-group>
+    </view>
+    <view wx:if="{{temps[0].checked}}">
+      <view class="add_child_box icon_box">
+        <view class="add_btn" bindtap="onShowAddClass">
+          <view class="circle box_shadow">
+            +
+          </view>
+          <view style="padding-top:20rpx">分类添加</view>
+        </view>
+      </view>
+      <!-- 二级 -->
+      <view style="margin-bottom:30rpx;" >
+        <view class="item flex_between">
+          <view class="icon_box">
+            <image src="../../images/img/n.jpg" style="width:62rpx;height:62rpx;border-radius:50%;"></image>
+          </view>
+          <view>二手市场</view>
+        </view>
+        <view class="item flex_between">
+          <view class="icon_box">
+            <image src="../../images/img/n.jpg" style="width:62rpx;height:62rpx;border-radius:50%;"></image>
+          </view>
+          <view>二手市场</view>
+        </view>
+        <view class="item flex_between">
+          <view class="icon_box">
+            <image src="../../images/img/n.jpg" style="width:62rpx;height:62rpx;border-radius:50%;"></image>
+          </view>
+          <view>二手市场</view>
+        </view>
+        <view class="item flex_between">
+          <view class="icon_box">
+            <image src="../../images/img/n.jpg" style="width:62rpx;height:62rpx;border-radius:50%;"></image>
+          </view>
+          <view>二手市场</view>
+        </view>
+      </view>
+    </view>
+    <!--权限  -->
+    <view>
+      <view class="qx_title flex_start">
+        <view class="icon_box">
+          <image src="../../images/qx_1.png" style="width:42rpx;height:39rpx;"></image>
+        </view>
+        <view style="padding-left:26rpx;">权限</view>
+      </view>
+      <!--权限设置  -->
+      <view class="item flex_between">
+        <view>
+          设置助理
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_4.png" style="width:12rpx;height:22rpx"></image>
+        </view>
+      </view>
+      <view class="item flex_between">
+        <view>
+          浏览
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_4.png" style="width:12rpx;height:22rpx"></image>
+        </view>
+      </view>
+      <view class="item flex_between">
+        <view>
+          发帖
+        </view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_4.png" style="width:12rpx;height:22rpx"></image>
+        </view>
+      </view>
+    </view>
+    <!--板块介绍  -->
+    <view class="temp_interduce"  wx:if="{{temps[1].checked}}">
+      <view>
+        板块介绍
+      </view>
+      <view>
+        <textarea class="text_area"></textarea>
+      </view>
+      <view class="font_num">
+        0/500
+      </view>
+    </view>
+    <view class="relative submit">
+      提交
+      <button form-type="submit" class="btn_login"></button>
+    </view>
+  </view>
+  <!-- 添加二级分类  -->
+  <view class="mark" wx:if="{{showAddClass}}">
+    <view class="box_icon">
+      <view class="icon_title relative">
+          添加分类
+          <view class="close" bindtap="onClose">
+            X
+          </view>
+      </view>
+      <view class="icon_item flex_between">
+        <view>ICON图片</view>
+        <view class="icon_box">
+          <image src="../../images/img/1.jpg" style="width:90rpx;height:90rpx;border-radius:50%"></image>
+        </view>
+      </view>
+      <view class="icon_item flex_between">
+        <view>分类名称</view>
+          <input class="input_flm" placeholder="请输入分类名称"></input>
+      </view>
+      <view class="add_btn_class">添加分类</view>
+    </view>
+  </view>
+</form>

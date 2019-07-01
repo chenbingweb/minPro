@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "招聘岗位",
+  "usingComponents": {
+    "job-two": "/components/job-two/job-two"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "雄心历史",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+}

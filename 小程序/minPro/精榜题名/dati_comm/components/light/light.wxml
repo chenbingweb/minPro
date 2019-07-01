@@ -1,0 +1,5 @@
+<view class="light_box">
+  <view class="icon_img" wx:for="{{imgs}}" wx:key="img_{{index}}" style=" transform:translateX(-50%) rotate({{index*30}}deg)">
+     <image class="img" src="./img/eee.png" ></image>
+  </view>
+</view>

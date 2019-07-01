@@ -1,0 +1,40 @@
+/* components/box-tab/box-tab.wxss */
+.select_box
+{
+  position: absolute;
+  width: 174rpx;
+  height: 212rpx;
+  background-color: white;
+  border-top:2rpx solid #dedede;
+  border-left:2rpx solid #dedede;
+  border-right: 2rpx solid #dedede;
+  box-sizing: border-box;
+  right:19rpx;
+  z-index:232323;
+  top:70rpx;
+  font-size: 24rpx;
+  color:#000000;
+}
+.item
+{
+  height: 70rpx;
+  border-bottom: 2rpx solid #dedede;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: white;
+}
+.arrow
+{
+  position: absolute;
+  right: 20rpx;
+  top:0rpx;
+  width: 100rpx;
+  height: 70rpx;
+
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

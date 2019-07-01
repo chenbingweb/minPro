@@ -1,0 +1,7 @@
+<!--排行榜-->
+<import src="./ranking.wxml"/>
+<import src="./ranking_1.wxml"/>
+<!--排行榜-->
+<template is="ranking_1" data="{{data:data}}"></template>
+<!--排行榜
+<template is="ranking" data="{{data:data}}"></template>-->

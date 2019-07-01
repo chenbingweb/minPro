@@ -1,0 +1,8 @@
+/* pages/aboutUs/aboutUs.wxss */
+.about
+{
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding: 36rpx;
+  color:#4c4c4c;
+}

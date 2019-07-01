@@ -1,0 +1,6 @@
+<view class="coin_container" wx:if="{{showPDTip}}">
+  <view class="icon_box">
+    <image src="./img/coin_a.png" style="width:46rpx;height:48rpx"></image>
+  </view>
+  <view class="coin_num {{hidCoin?'hid_coin':''}}" >-{{mp}}</view>
+</view>

@@ -1,0 +1,121 @@
+
+<template name="matchOver_1">
+ 
+  <view class="fixed"  style="background-color: #f6dcba;">
+     <fight-bottom/>
+     <!-- 背景 -->
+      <!-- 头部背景 -->
+    <view class="top_bg icon_box">
+      <image src="../../imgs/fight/fight_top.png" style="width:750rpx;height:350rpx;"></image>
+    </view>
+     <!-- <view class="fight_over_bg">
+      <view class="flex_start" wx:for="{{[1,2,3]}}" wx:key="index2_{{index}}">
+        <view class="icon_box" wx:for="{{[1,2,2,2,2,2,2,2,2,2,1,2,2]}}" wx:key="index_{{index}}">
+          <image src="../../imgs/fightOver/fight_over_bg_top.png" style="width:62rpx;height:392rpx"></image>
+        </view>
+      </view>
+     </view> -->
+     <view class="back" bindtap="OnBackClick"  style="transform: scale({{data.Back}});transition:{{data.seconds}}ms" bindtouchstart="OnBackTouchStart" bindtouchend="OnBackTouchEnd" >
+      <image src="../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+     </view>
+    <!-- 平局 胜利 结果提示 -->
+     <view class="tip_box">
+      <!-- 背景 -->
+      <view class="res_bg_1 icon_box">
+        <image src="../../imgs/fightOver/cai_bg.png" style="width:750rpx;height:536rpx;"></image>
+      </view> 
+      <!-- 光 -->
+      <view class="res_bg_2 icon_box">
+        <image src="../../imgs/fightOver/guang.png" style="width:741rpx;height:864rpx;"></image>
+      </view>
+      <!-- 用户等级显示 
+      <user-grade starnum="{{data.Level2}}"/>-->
+      <!--  -->
+      <view class="qc_level icon_box">
+        <image src="{{data.LevelImg}}" style="width:322rpx;height:267rpx"></image>
+      </view>
+      <!--胜利 文字提示 -->
+      <view class="success_img icon_box" wx:if="{{data.leftfen>data.rightfen}}">
+        <image src="../../imgs/fightOver/b_s_s_l.png" style="width:351rpx;height:100rpx;"></image>
+      </view>
+      <!--平局 文字提示 -->
+      <view class="success_img icon_box"  wx:if="{{data.leftfen==data.rightfen}}">
+        <image src="../../imgs/fightOver/s_f_d_p.png" style="width:355rpx;height:104rpx;"></image>
+      </view>
+      <!--平局 文字提示 -->
+      <view class="success_img icon_box"  wx:if="{{data.leftfen<data.rightfen}}">
+        <image src="../../imgs/fightOver/b_s_s_b.png" style="width:355rpx;height:104rpx;"></image>
+      </view>
+     </view>
+     <!-- 获取金币 -->
+     <view class="coin_box relative font_style">
+        已切磋{{data.qc_count}}场
+        <!-- <view class="icon_box">
+          <image src="../../imgs/fightOver/coin.png" style="width:46rpx;height:48rpx;"></image>
+        </view> 
+        <view class="total_box flex_start">
+          <view style="font-size:22rpx"></view>
+        </view>-->
+     </view>
+     <!-- 1v1  -->
+     <!-- <view class="play_1v1_box" wx:if="{{data.is1v1}}">
+  
+      <view class="play_1v1_left">
+        <left-1v1 showprocess="false" playLeft="{{data.leftPly[0]}}" score="{{data.leftfen}}"/>
+      </view>
+  
+      <view class="play_1v1_right">
+        <right-1v1 showprocess="false" playRight="{{data.rightPly[0]}}" score="{{data.rightfen}}"/>
+      </view>
+     </view> -->
+      <!-- 3v3 -->
+      <view class="play_1v1_box">
+      <!-- 左边玩家 -->
+      <view class="play_1v1_left">
+        <left-3v3 showprocess="false" plays="{{data.leftPly}}" score="{{data.leftfen}}"/>
+      </view>
+      <!-- 右边玩家 -->
+      <view class="play_1v1_right">
+       <right-3v3 showprocess="false" plays="{{data.rightPly}}" score="{{data.rightfen}}"/>
+      </view>
+     </view>
+     <!-- 赶考按钮 -->
+     <view class="btn_box">
+        <!-- 继续 按钮 -->
+        <view class="go_on_btn" style="margin-bottom:10rpx;" style="transform: scale({{data.btnReFightScale}});transition:{{data.seconds}}ms"  bindtouchstart="OnReFightTouchStart" bindtouchend="OnReFightTouchEnd" bindtap="OnReFightClick" data-page="{{data.wndname}}" data-evt="OnReFightClick">
+          <view class="icon_box">
+            <image src="../../imgs/fightOver/go_on_l.png" style="width:51rpx;height:119rpx"></image>
+          </view>
+          <view class="icon_box md">
+            <image src="../../imgs/fightOver/go_on_m.png" style="width:100%;height:119rpx"></image>
+          </view>
+          <view class="icon_box">
+            <image src="../../imgs/fightOver/go_on_r.png" style="width:57rpx;height:119rpx"></image>
+          </view>
+          <!-- 字体 -->
+          <view class="icon_box z_t">
+            <image src="../../imgs/fightOver/go_on.png" style="width:194rpx;height:57rpx"></image>
+          </view>
+        </view>
+        <!-- 炫耀成绩按钮 -->
+        <view class="share_btn" style="transform: scale({{data.Share}});transition:{{data.seconds}}ms" bindtouchstart="OnShareTouchStart" bindtouchend="OnShareTouchEnd">
+          <view class="icon_box">
+            <image src="../../imgs/fightOver/share_l.png" style="width:53rpx;height:119rpx"></image>
+          </view>
+          <view class="icon_box md">
+            <image src="../../imgs/fightOver/share_m.png" style="width:100%;height:119rpx"></image>
+          </view>
+          <view class="icon_box">
+            <image src="../../imgs/fightOver/share_r.png" style="width:57rpx;height:119rpx"></image>
+          </view>
+          <!-- 字体 -->
+          <view class="icon_box z_t relative">
+            <image src="../../imgs/fightOver/share.png" style="width:193rpx;height:57rpx"></image>
+           <button open-type="share" class="btn_login" ></button>
+          </view>
+        </view>
+     </view>
+  </view>
+  <!-- 等级升级提示 -->
+  <level-succ bindfight="OnReFightClick" cc="{{data.qc_count}}" showSucc="{{data.level}}" img="{{data.level_icon}}"/>
+</template>

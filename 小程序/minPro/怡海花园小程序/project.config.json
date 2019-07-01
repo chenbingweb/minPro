@@ -1,0 +1,102 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.9",
+	"appid": "wx1fec79c6c90198bc",
+	"projectname": "%E6%80%A1%E6%B5%B7%E8%8A%B1%E5%9B%AD_kh",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 3,
+					"name": "personal发布成功页面",
+					"pathName": "pages/examiningTip/examiningTip",
+					"query": "src=personal"
+				},
+				{
+					"id": 4,
+					"name": "release发布成功页面",
+					"pathName": "pages/examiningTip/examiningTip",
+					"query": "src=release",
+					"scene": "1089"
+				},
+				{
+					"id": -1,
+					"name": "midd发布成功页面",
+					"pathName": "pages/examiningTip/examiningTip",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布成功页面",
+					"pathName": "pages/examiningTip/examiningTip",
+					"query": "src=middreleasetip",
+					"scene": "1089"
+				},
+				{
+					"id": 4,
+					"name": "middreleasetip发布成功页面",
+					"pathName": "pages/examiningTip/examiningTip",
+					"query": "src=release&category=lease",
+					"scene": "1089"
+				},
+				{
+					"id": 5,
+					"name": "boss发布成功",
+					"pathName": "pages/bossReleasSucc/bossReleasSucc",
+					"query": "src=bossrelease&category=PHP",
+					"scene": "1089"
+				},
+				{
+					"id": 6,
+					"name": "personal发布提示成功页面",
+					"pathName": "pages/examiningTip/examiningTip",
+					"query": "src=personal&category=lease",
+					"scene": "1089"
+				},
+				{
+					"id": 8,
+					"name": "资讯发布成功页面",
+					"pathName": "pages/bossReleasSucc/bossReleasSucc",
+					"query": "src=info&category_id=3",
+					"scene": "1089"
+				},
+				{
+					"id": 8,
+					"name": "貌似自荐发布成功页面",
+					"pathName": "pages/bossReleasSucc/bossReleasSucc",
+					"query": "src=selfRelease&category=Java",
+					"scene": "1089"
+				}
+			]
+		}
+	}
+}

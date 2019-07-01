@@ -1,0 +1,91 @@
+/* pages/hbsPages/pages/startHBS/startHBS.wxss */
+.bg
+{
+  position: absolute;
+
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:62rpx;
+}
+.tip
+{
+  position:absolute;
+  left:53%;
+  transform:translateX(-50%);
+  top:214rpx;
+
+}
+.content
+{
+  font-size: 40rpx;
+  color:#333;
+  text-align: center;
+  line-height: 198rpx;
+  font-weight: 600;
+}
+.time
+{
+  position: absolute;
+  width: 61rpx;
+  height: 92rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 20rpx);
+}
+.count
+{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  top:-50rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:white;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.persons
+{
+  width: 560rpx;
+  height: 560rpx;
+  position: absolute;
+  left: 50%;
+  top:calc(50vh - 238rpx);
+  transform: translateX(-50%);
+}
+.p_item
+{
+  position: absolute;
+  left:50%;
+  top:0;
+  
+  transform-origin: 50% 280rpx;
+}
+.photo
+{
+  position: absolute;
+   left: 50%;
+  top:50%;
+  transform: translateX(-50%)  translateY(-50%);
+}
+.vs
+{
+  position: absolute;
+   left: 50%;
+  top:calc(50vh + 390rpx);
+  transform: translateX(-50%);
+}
+.leave
+{
+  position: absolute;
+  right: 50rpx;
+  top:calc(50vh + 490rpx);
+}

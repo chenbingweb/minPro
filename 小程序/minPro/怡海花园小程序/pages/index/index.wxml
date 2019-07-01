@@ -1,0 +1,131 @@
+<!--引入模板-->
+<!-- <import src="../../temp/userheader.wxml" />-->
+<import src="../../temp/temp.wxml" />
+<nav-bar/>
+<view class="index_page relative">
+  <!--轮播图  -->
+  <swiper-base imgsData="{{imgsData}}" baseSet="{{baseSet}}" width="750" height="430" />
+  <!--导航小图标  -->
+  <view class="flex_start nav_box">
+    <view wx:for="{{plateList}}" bindtap="onToPlateDetail" data-pid="{{item.id}}" wx:key="temp_{{index}}" class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="{{item.logo}}" style="width:42rpx;height:44rpx"></image>
+      </view>
+      <view class="f_26_333 one_line" style="margin-top:16rpx;width:130rpx">{{item.name}}</view>
+    </view>
+    <!-- <view class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/car_icon.png" style="width:47rpx;height:38rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">汽车俱乐部</view>
+    </view>
+    <view class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/info_icon.png" style="width:42rpx;height:37rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">销惠信息</view>
+    </view>
+    <view class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/houseInfo_icon.png" style="width:45rpx;height:45rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">房屋出租</view>
+    </view>
+    <view class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/player-icon.png" style="width:46rpx;height:50rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">社区娱乐</view>
+    </view>
+    <view class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/comm_server_icon.png" style="width:42rpx;height:42rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">公告服务</view>
+    </view>
+    <view class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/work_icon.png" style="width:39rpx;height:42rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">兼职工作</view>
+    </view> -->
+    <navigator url="../moreTemp/moreTemp" wx:if="{{plateList.length}}" class="item_btn icon_box">
+      <view class="icon_box">
+        <image src="../../images/more_icon.png" style="width:38rpx;height:38rpx"></image>
+      </view>
+      <view class="f_26_333" style="margin-top:16rpx;">更多</view>
+    </navigator>
+    <view class="no_info" wx:if="{{plateList.length==0}}">暂无板块</view>
+  </view>
+  <!--最新消息  -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block >
+      <swiper-item>
+        <navigator url="../community/community" class="new_info flex_start">
+          <view class="flex_between border">
+            <view class="flex_start">
+              <view class="icon_box">
+                <image src="../../images/new_active.png" style="width:175rpx;height:55rpx"></image>
+              </view>
+              <view class="f_26_333" style="margin:0 20rpx">您有1条未读公告请及时查看</view>
+              <view class="f_26_333" style="color:#a6a7a7">7小时前</view>
+            </view>
+            <view class="icon_box">
+              <image src="../../images/arrow_right_2.png" style="width:13rpx;height:23rpx"></image>
+            </view>
+          </view>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <navigator url="../community/community" class="new_info flex_start">
+    <view class="flex_between border">
+      <view class="flex_start">
+        <view class="icon_box">
+          <image src="../../images/new_active.png" style="width:175rpx;height:55rpx"></image>
+        </view>
+        <view class="f_26_333" style="margin:0 20rpx">您有1条未读公告请及时查看</view>
+        <view class="f_26_333" style="color:#a6a7a7">7小时前</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:13rpx;height:23rpx"></image>
+      </view>
+    </view>
+  </navigator> -->
+  <!--精选s商户-->
+  <view class="best_shop_box">
+    <view class="title flex_between">
+      <view>
+        <view class="shop_name">精选商户</view>
+        <view class="f_30_333" style="color:#a6a7a7">最热门儿精选商户</view>
+      </view>
+      <view>
+        <text class="fz">3</text>
+        <text class="fm">/10</text>
+      </view>
+    </view>
+    <!--轮播图  -->
+    <swiper-text imgsData="{{imgsData_2}}" baseSet="{{baseSet_2}}" width="750" height="456" />
+  </view>
+  <!--优惠券  -->
+  <view class="tickt_list">
+    <view class="tickt">
+      <view>
+        <view style="color:#333;font-size:34rpx">精品优选</view>
+        <view style="color:#9a9b9b;font-size:24rpx">精选优惠省钱省心</view>
+      </view>
+      <!--优惠券  -->
+      <ticket wx:for="{{[1,2,3]}}" wx:key="tick_{{index}}" />
+    </view>
+    <view class="toMore">
+      查看更多
+    </view>
+  </view>
+</view>
+<view class="icon_box radius" bindtap="onToExamingYZ">
+  <image src="../../images/yzrz.png" style="width:102rpx;height:102rpx;border-radius:50%"></image>
+</view>
+<!--用户状态  -->
+<view class="user_status" wx:if="{{false}}">
+  审核中
+</view>

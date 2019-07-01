@@ -1,0 +1,72 @@
+/* pages/shopCouponRelease/shopCouponRelease.wxss */
+page
+{
+  background-color: #f5f5f5;
+}
+.item
+{
+  height: 90rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  background-color: white;
+  border-bottom: 2rpx solid #f6f6f6;
+  font-size: 30rpx;
+  color:#212121;
+  padding: 0 36rpx;
+}
+.item_child
+{
+  width: 500rpx;
+  height: 88rpx;
+  text-align: right;
+
+}
+.font_style{
+  color:#757979;
+}
+.set_box
+{
+  background-color: white;
+  margin-top:20rpx;
+
+}
+.set_title
+{
+  width:750rpx;
+  height: 95rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  font-size: 30rpx;
+  color:#212121;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+.input_box
+{
+  width: 124rpx;
+  height: 74rpx;
+  border:2rpx solid #5293e1;
+  border-radius: 6rpx;
+  /* box-sizing: border-box; */
+  padding:0 10rpx;
+}
+.set_box
+{
+  height: 290rpx;
+}
+.set_box_1
+{
+  height: 190rpx;
+}
+.set_name
+{
+  color:#5e5c59;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  /* line-height: 80rpx; */
+}
+.input_set
+{
+  color:#5e5c59;
+  font-size: 58rpx;
+}

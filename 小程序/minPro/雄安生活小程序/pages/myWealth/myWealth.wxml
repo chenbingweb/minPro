@@ -1,0 +1,77 @@
+<view class="fixed">
+  <view class="header flex_start">
+    <view class="icon_box">
+      <view style="width:124rpx;height:124rpx;border-radius:50%;overflow:hidden">
+        <open-data style="width:124rpx;height:124rpx;border-radius:50%;" type="userAvatarUrl"></open-data>
+      </view>
+      <!-- <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:124rpx;height:124rpx;border-radius:50%;"></image> -->
+    </view>
+    <view style="padding-left:20rpx">
+      <view>{{shopList.name}}</view>
+      <!--当前总发布天数还剩26天  -->
+      <view style="font-size:26rpx;">当前总发布天数还剩
+        <text style="color:#e60012">{{shopList.day}}</text>天</view>
+    </view>
+  </view>
+  <view class="title_MX">
+    商城
+  </view>
+  <form bindsubmit="toBuy" wx:if="{{shopList.month}}">
+    <view class="shop_list">
+      <radio-group class="radio-group" name="selectItm" bindchange="radioChange">
+        <label for="a" class="shop_item flex_between {{selectItem==shopList.month.id?'user_select':''}}">
+          <view>
+            <view>月度会员</view>
+            <view style="font-size:28rpx;color:#666666">轻松畅享免费发布一个月</view>
+          </view>
+          <view style="font-size:24rpx;color:#666">仅需¥
+            <text style="color:#e60012;font-size:36rpx">{{shopList.month.price}}</text>
+          </view>
+          <radio id="a" hidden value="{{shopList.month.id}}" checked="{{selectItem==shopList.month.id}}"/>
+        </label>
+        <label for="f_{{index}}" wx:for="{{shopList.list}}" wx:key="key_h_{{index}}" class="shop_item flex_between {{selectItem==item.id?'user_select':''}}">
+          <view>
+            <view>充20雄心币</view>
+            <view style="font-size:28rpx;color:#666666">极速获取{{item.price}}个雄心币</view>
+          </view>
+          <view style="font-size:24rpx;color:#666">仅需¥
+            <text style="color:#e60012;font-size:36rpx">{{item.price}}</text>
+          </view>
+          <radio id="f_{{index}}" hidden value="{{item.id}}" checked="{{selectItem==item.id}}"/>
+        </label>
+         <!-- <label for="c" class="shop_item flex_between {{selectItem=='coin_50'?'user_select':''}}">
+          <view>
+            <view>充50雄心币</view>
+            <view style="font-size:28rpx;color:#666666">极速获取50个雄心币</view>
+          </view>
+          <view style="font-size:24rpx;color:#666">仅需¥
+            <text style="color:#e60012;font-size:36rpx">50</text>
+          </view>
+          <radio id="c" hidden value="coin_50" checked="{{selectItem=='coin_50'}}"/>{{item.value}}
+        </label>
+         <label for="d" class="shop_item flex_between {{selectItem=='coin_100'?'user_select':''}}">
+          <view>
+            <view>充100雄心币</view>
+            <view style="font-size:28rpx;color:#666666">极速获取100个雄心币</view>
+          </view>
+          <view style="font-size:24rpx;color:#666">仅需¥
+            <text style="color:#e60012;font-size:36rpx">100</text>
+          </view>
+          <radio id="d" hidden value="coin_100" checked="{{selectItem=='coin_100'}}"/>
+        </label> -->
+      </radio-group>
+    </view>
+    <view class="buy_btn">
+      <view class="icon_box absolute">
+        <image src="../../images/phone_btn.png" style="width:615rpx; height: 88rpx;"></image>
+      </view>
+      <button formType="submit" class="absolute btn_child">
+        立即购买
+      </button>
+
+    </view>
+  </form>
+  <view wx:else class="no_info">
+      暂无数据
+  </view>
+</view>

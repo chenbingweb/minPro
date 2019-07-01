@@ -1,0 +1,27 @@
+<view class="fixed">
+  <paging>
+      <view slot="list" class="list_box">
+        <view class="ticket_item flex_start relative" wx:for="{{[1,2,2]}}" wx:key="index_{{index}}">
+          <view class="icon_box">
+            <image src="../../images/img/1.jpg" style="width:114rpx;height:114rpx;border-radius:10rpx"></image>
+          </view>
+          <view class="t_info" style="padding-left:30rpx">
+              <view class="t_name">32323</view>
+             <view class="t_time" style="margin-top:10rpx">2018.6.12-2018.6.18</view>
+          </view>
+          <view class="use_control">
+            <view >
+              ¥<text style="color:#fff;font-size:48rpx">10</text>
+            </view>
+            <view style="margin:10rpx 0;">
+              满99使用
+            </view>
+            <view class="btn">
+              去使用
+            </view>
+
+          </view>
+        </view>
+      </view>
+  </paging>
+</view>

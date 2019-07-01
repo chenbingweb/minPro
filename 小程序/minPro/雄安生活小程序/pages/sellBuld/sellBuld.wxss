@@ -1,0 +1,132 @@
+/* pages/bossList/bossList.wxss */
+.search_box
+{
+  width: 750rpx;
+  height: 90rpx;
+  background-color: #fed545;
+  display: flex;
+  justify-content: center;
+}
+.input_box
+{
+  width: 700rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: rgba(0, 0, 0,0.2);
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.input_btn
+{
+  height: 70rpx;
+  padding-left: 10rpx;
+  width: 620rpx;
+  color:#fffefe;
+  font-size: 26rpx;
+}
+.place_holder
+{
+    color:#fffefe;
+  font-size: 26rpx;
+}
+.title
+{
+  color:#333333;
+  font-size: 30rpx;
+  height: 87rpx;
+  width: 750rpx;
+  line-height: 87rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #ececec;
+}
+/*筛选条件  */
+.filter_box
+{
+  width: 750rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #ececec;
+}
+.filter_item
+{
+  width:186rpx;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333333;
+  font-size: 28rpx;
+  flex-direction: row;
+}
+/*列表  */
+.boss_list
+{
+  width: 750rpx;
+  position: absolute;
+  top:178rpx;
+  bottom: 0;
+  left: 0;
+}
+.list_item
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height:270rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f4f4f4;
+  padding: 30rpx 25rpx;
+  display: flex;
+  align-items: center;
+}
+/*楼盘简略信息  */
+.detail_box
+{
+  width: 430rpx;
+  height:210rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx; 
+}
+.buld_name
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color:#333333;
+}
+.build_status
+{
+  color:#666666;
+  font-size: 28rpx;
+  background-color: #f4f4f4;
+  padding: 6rpx 10rpx;
+  margin-left: 20rpx;
+}
+.build_1
+{
+  color:#666666;
+  font-size:28rpx;
+  line-height:48rpx;
+}
+.area_sise
+{
+  line-height:66rpx;
+  font-size: 26rpx;
+  color:#666666;
+}
+/*顶置  */
+.tip_top
+{
+  position: absolute;
+  left: 0;
+  top:20rpx;
+  width: 90rpx;
+  height: 40rpx;
+  color:white;
+  font-size: 24rpx;
+}

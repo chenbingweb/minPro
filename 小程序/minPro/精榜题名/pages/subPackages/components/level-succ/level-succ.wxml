@@ -1,0 +1,34 @@
+<view class="fixed" wx:if="{{showSucc}}">
+  <!-- 背景 -->
+  <view class="db">
+    <db/>
+  </view>
+  <light/>
+  <view class="db">
+   <!-- 标题背景 -->
+    <view class="title_bg icon_box">
+      <image src="./img/tite_bg.png" style="width:524rpx;height:216rpx"></image>
+      <!-- 标题 -->
+      <view class="icon_box title">
+        <image src="./img/title.png" style="width:317rpx;height:86rpx"></image>
+      </view>
+    </view>
+    <!-- 等级图片 -->
+    <view class="icon_box level_img">
+      <image src="{{img}}" style="width:330rpx;height:264rpx"></image>
+    </view>
+    <!-- 切磋场次 -->
+    <view class="cc font_style">
+    已切磋{{cc}}场
+    </view>
+    <!-- 继续调整 -->
+    <view class="go_on_fight icon_box" bindtap="OnFight">
+      <image src="./img/j_x_t_z.png" style="width:376rpx;height:119rpx"></image>
+    </view>
+     <!-- 返回按钮 -->
+    <view class="back_btn" bindtap="OnBack">
+      <image src="./img/back.png" style="width:110rpx;height:119rpx"></image>
+    </view>
+  </view>
+ 
+</view>

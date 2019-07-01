@@ -1,0 +1,20 @@
+/* components/paging/paging.wxss */
+.scroll_box
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.no_data
+{
+   text-align: center;
+  color:#ddd;
+  font-size: 26rpx;
+  margin-top:50rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}

@@ -1,0 +1,16 @@
+<view class="user_box">
+  <view wx:for="{{people}}" class="item">
+    <view class="icon_box relative">
+      <image src="./img/p_db.png" style="width:77rpx;height:82rpx;"></image>
+       <image src="./img/p_db.png" class="img" ></image>
+    </view>
+    <view class="tip" wx:if="{{false}}">
+       对3题
+    </view>
+    <view class="tip" style="color:#999999" wx:else>
+     失败 
+    </view>
+  </view>
+  
+  
+</view>

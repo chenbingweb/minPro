@@ -1,0 +1,19 @@
+<view class="fixed">
+  <view class="list">
+    <paging>
+      <view class="box" slot="list">
+        <view class="item flex_between" wx:for="{{[1,2]}}" wx:key="item_{{index}}">
+          <view class="title">
+            100优惠券
+          </view>
+          <view class="icon_box">
+            <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+          </view>
+        </view>
+      </view>
+    </paging>
+  </view>
+  <view class="fb_btn">
+    去核销
+  </view>
+</view>

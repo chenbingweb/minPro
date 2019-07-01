@@ -1,0 +1,33 @@
+<view>
+  <view class="select_btns">
+    <view class="btns">
+      <view class="btn" bindtap="onToSetPlan" style="height:{{height}}rpx">
+        <view class="icon_box">
+          <image src="../../images/plan.png" style="width:32rpx;height:32rpx;"></image>
+        </view>
+        <view class="f_32_009688" style="margin-left:10rpx">修改计划</view>
+      </view>
+      <view class="btn" bindtap="onToMyRang">
+         <view class="icon_box">
+          <image src="../../images/range.png" style="width:30rpx;height:32rpx;"></image>
+        </view>
+        <view class="f_32_009688" style="margin-left:10rpx" >我的排名</view>
+      </view>
+    </view>
+    <!-- 我的单词进度 -->
+    <view class="my_word_num flex_center">
+      <view style="margin-right:30rpx;">今天已学习新单词{{studyRate.today_study_words}}/{{studyRate.today_total_words}}</view>
+      <view>今天已复习旧单词{{studyRate.has_review_words}}/{{studyRate.total_review_words}}</view>
+    </view>
+  </view>
+  <view class="word_process" bindtap="onNavTo">
+    <view class="f_26_666">已完成{{studyRate.study_days}}天</view>
+    <view class="f_26_666">已学单词{{studyRate.study_words}}/{{studyRate.total_words}}</view>
+    <view class="f_26_666">还需要{{studyRate.left_days}}天</view>
+  </view>
+  <view class="process_box" bindtap="onNavTo">
+    <view class="process_bar" wx:if="{{studyRate.study_words}}" style="width:{{studyRate.study_words/studyRate.total_words * 100}}%">
+    
+    </view>
+  </view>
+</view>

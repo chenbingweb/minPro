@@ -1,0 +1,99 @@
+/* components/loginPage/loginPage.wxss */
+.logo_box
+{
+  width: 750rpx;
+  height: 395rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item
+{
+  width: 640rpx;
+  height: 130rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+}
+.input_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color:#999999;
+  font-size: 28rpx;
+}
+/*一行省略*/
+.one_line
+{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+/*图片盒子*/
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.input_item
+{
+  width: 460rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+.submit_btn
+{
+  width: 626rpx;
+  height: 80rpx;
+  background-color: #e26161;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color:#fff;
+  position: relative;
+  margin: 0 auto;
+}
+.check_box
+{
+  color:#e26161;
+  font-size: 28rpx;
+  width: 150rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.btn_login
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.fixed
+{
+  position: fixed;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 99999999999;
+}
+.register
+{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}

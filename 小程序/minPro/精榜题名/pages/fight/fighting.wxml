@@ -1,0 +1,110 @@
+<template name="fighting">
+    <view class="fixed" style="background-color: #f6dcba;">
+      <fight-bottom/>
+      <!-- 头部背景 -->
+      <view class="top_bg icon_box">
+        <image src="../../imgs/fight/fight_top.png" style="width:750rpx;height:350rpx;"></image>
+      </view>
+      <view class="back" bindtap="OnBack">
+        <image src="../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+      </view>
+      <!-- 计时器 -->
+      <view class="time_box icon_box">
+        <time overtime="{{data.overtime}}"  percent="{{data.hmovertime/(data.maxtime*1000)}}"/>
+      </view>
+      <!-- 1v1  -->
+      <view class="play_1v1_box" >
+        <!-- 左边玩家 -->
+        <view class="play_1v1_left">
+          <left-1v1 id="left" playLeft="{{data.leftPly[0]}}" score="{{data.leftfen}}"/>
+        </view>
+        <!-- 右边玩家 -->
+        <view class="play_1v1_right">
+          <right-1v1 id="right" playRight="{{data.rightPly[0]}}" score="{{data.rightfen}}"/>
+        </view>
+      </view>
+      <!-- 双倍积分提示 -->
+      <view class="double_fen"  hidden="{{!data.tx1}}">
+        最后一题 得分2倍
+      </view>
+      <!-- 当前第几题 -->
+      <view class="show_lun flex_start" style="{{data.showLun?'opacity:1; transition: opacity 0.2s;':'opacity:0'}}">
+        <view class="icon_img">
+          <image src="../../imgs/fight/t_l.png" style="width:36rpx;height:221rpx"></image>
+        </view>
+        <view class="icon_img">
+          <image src="../../imgs/fight/t_m.png" style="width:321rpx;height:221rpx"></image>
+        </view>
+        <view class="icon_img">
+          <image src="../../imgs/fight/t_r.png" style="width:37rpx;height:221rpx"></image>
+        </view>
+   
+        <view class="lun_bg">
+          {{data.currlun}}
+        </view>
+        <view class="lun">
+           {{data.currlun}}
+        </view>
+      </view>
+      <!-- 题目 -->
+      <view class="question" style="{{data.showQ?'opacity:1; transition: opacity 0.2s;':'opacity:0'}}">
+        {{data.wentiTxt}}
+      </view>
+      <!-- 选择答案 -->
+      <view class="answer_box">
+        <!--   bindanimationend="onAniEnd"-->
+        <view 
+        
+        bindtap="OnButtonClick" 
+        bindtouchstart="OnShopTouchStart"
+        bindtouchend="OnShopTouchEnd" 
+        bindtransitionend="onAniEnd"
+        id="{{index}}"
+        data-id="{{index}}"
+      
+        style="{{item.X!=-800?'transition: all 0.3s linear':''}};transform:translateX({{item.X}}rpx);transition-delay:{{index*30}}ms;opacity:{{item.v==4?0:1}}"
+        class="q_box" 
+        data-x="{{item.X}}"
+        wx:for="{{data.daanBtn}}"
+        wx:key="q_{{index}}"
+        
+        data-v="{{item.v}}"
+        >
+          <!--背景 -->
+          <view class="q_bg"></view>
+          <!-- 答案题目   "select_yes" : "select_no"-->
+          <view class="q_text_box flex_between {{item.style}}">
+            <!-- 正确提示 wx:if="{{item.licon}}-->
+        
+            <view  class="right_q icon_box" wx:if="{{item.licon}}">
+              <image src="{{item.licon}}" style="width:60rpx;height:60rpx;border-radius:50%"></image>
+            </view>
+            <view wx:else style="width:10rpx;height:10rpx;opacity:0" >
+            </view>
+            <!-- <view  class="right_q icon_box" wx:if="{{item.style=='select_yes'&&item.lp}}">
+              <image src="../../imgs/fight/ok.png" style="width:46rpx;height:46rpx;"></image>
+            </view>
+            <view class="right_q icon_box" wx:if="{{item.style=='select_no'&&item.lp}}">
+             <image src="../../imgs/fight/err.png" style="width:38rpx;height:38rpx;"></image>
+            </view> -->
+            <view class="answer_text">
+              {{item.txt}}
+            </view>
+            <!--  wx:if="{{item.ricon}}" -->
+            <view wx:if="{{item.ricon}}" class="right_q icon_box">
+              <image src="{{item.ricon}}" style="width:60rpx;height:60rpx;border-radius:50%"></image>
+            </view>
+            <view wx:else style="width:10rpx;height:10rpx;opacity:0" ></view>
+             <!-- 错误提示 -->
+            <!-- <view class="right_q icon_box" wx:if="{{item.style=='select_no'&&item.rp}}">
+              <image src="../../imgs/fight/err.png" style="width:38rpx;height:38rpx;"></image>
+            </view>
+            <view  class="right_q icon_box" wx:if="{{item.style=='select_yes'&&item.rp}}">
+              <image src="../../imgs/fight/ok.png" style="width:46rpx;height:46rpx;"></image>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    
+</template>

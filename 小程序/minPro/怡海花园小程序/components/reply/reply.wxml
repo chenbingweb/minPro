@@ -1,0 +1,16 @@
+<view class="re_content">
+  <view class="btn_box">
+    <view class="reply" bindtap="onShowReply">回复</view>
+  </view>
+  
+  <view class="re_box" wx:if="{{showBox}}">
+    <view>
+      <textarea class="text_area">
+      
+      </textarea>
+      <view class="btn_box">
+        <view class="fb_btn">发表</view>
+      </view>
+    </view>
+  </view>
+</view>

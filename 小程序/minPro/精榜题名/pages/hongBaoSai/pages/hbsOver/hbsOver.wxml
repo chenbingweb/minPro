@@ -1,0 +1,71 @@
+<view class="fixed">
+  <view class="wap_pos icon_box" style="top:0;">
+    <image src="../../img/startHBS/bg.jpg" style="width:750rpx;height:1634rpx"></image>
+  </view>
+  <!-- 标题 -->
+  <view class="icon_box title">
+    <image src="../../img/startHBS/title.png" style="width:110rpx;height:39rpx"></image>
+  </view>
+  <!-- 胜利提示 -->
+  <view class="succ_tip" wx:if="{{false}}">
+    <!-- 图片 -->
+    <view class="tip_box">
+      <view class="icon_box">
+        <image src="../../img/hbsOver/succ_db.png" style="width: 630rpx;height:657rpx;"></image>
+      </view>
+      <!-- 标题 -->
+      <view class="title_tip icon_box">
+        <image src="../../img/hbsOver/succ_tip_2.png" style="width: 524rpx;height: 228rpx;"></image>
+      </view>
+      <!-- 成功提示背景 -->
+      <view class="icon_box succ_bg">
+        <image src="../../img/hbsOver/succ_tip_1.png" style="width:750rpx;height:362rpx"></image>
+      </view>
+      <!-- 提示人数 -->
+      <view class="icon_box tip_person">
+        <image src="../../img/hbsOver/renshu_db.png" style="width:296rpx;height:88rpx;"></image>
+        <view class="text absolute">
+          共3人获胜
+        </view>
+      </view>
+      <!-- 获取红包奖励 -->
+      <view class="icon_box money">
+        <image src="../../img/hbsOver/succ_content_db.png" style="width:574rpx;height:196rpx;"></image>
+        <view class="text_2 absolute" >
+          <view>您获得6.66元现金红包</view>
+          <view>可以个人中心提现</view>
+        </view>
+      </view>
+      <!-- 返回按钮  -->
+      <view class="icon_box back_1" bindtap="OnBack">
+        <image src="../../img/start/back_btn1.png" style="width:110rpx;height:119rpx;"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 失败提示 -->
+  <view wx:else class="fail_tip">
+    <!-- 失败 -->
+    <view class="fail_box">
+      <view class="icon_box">
+        <image src="../../img/hbsOver/fail_db.png" style="width:588rpx;height:454rpx;"></image>
+      </view>
+      <!-- 标题 -->
+      <view class="icon_box title_3">
+        <image src="../../img/hbsOver/fai1.png" style="width:524rpx;height:214rpx;"></image>
+      </view>
+      <!-- 提示类容 -->
+      <view class="absolute ">
+        <view class="tip_3">很遗憾</view>
+        <view class="tip_4">您与红包擦肩而过！</view>
+      </view>
+      <!-- 返回按钮  -->
+      <view class="icon_box back_1" bindtap="OnBack">
+        <image src="../../img/start/back_btn1.png" style="width:110rpx;height:119rpx;"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 返回 -->
+  <view class="back" bindtap="OnBack">
+    <image src="../../img/startHBS/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+</view> 

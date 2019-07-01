@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "业主认证",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  "usingComponents": {
+    "forms": "/components/forms/forms",
+    "sex": "/components/sex/sex"
+  }
+}

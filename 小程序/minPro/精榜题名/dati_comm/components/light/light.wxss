@@ -1,0 +1,30 @@
+/* dati_comm/components/light/light.wxss */
+
+.light_box 
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  overflow: hidden;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+}
+.icon_img
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 149rpx;
+  height: 587rpx;
+  position: absolute;
+  left: 50%;
+  bottom:calc(50vh - 20rpx);
+  transform-origin: 50% 100%;
+}
+.img
+{
+  width: 149rpx;
+  height: 587rpx;
+ 
+}

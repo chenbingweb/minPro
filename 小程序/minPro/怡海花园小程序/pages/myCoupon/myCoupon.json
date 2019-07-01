@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的卡券",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  "usingComponents": {
+    "paging": "/components/paging/paging",
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "search": "/components/search/search"
+  }
+}

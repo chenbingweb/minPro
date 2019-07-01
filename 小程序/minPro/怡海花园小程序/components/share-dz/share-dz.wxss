@@ -1,0 +1,31 @@
+/* components/share-dz/share-dz.wxss */
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item_control
+{
+  width: 33.33333%;
+  height: 62rpx;
+  color:#616161;
+  font-size: 24rpx;
+  justify-content: center;
+}
+.inline_flex
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.relative
+{
+  position: relative;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}

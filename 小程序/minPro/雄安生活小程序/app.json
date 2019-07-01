@@ -1,0 +1,55 @@
+{
+  "pages": [
+      
+    "pages/index/index",
+    "pages/searchList/searchList",
+    "pages/myCollection/myCollection",
+    "pages/selfRelease/selfRelease",
+    "pages/middleRelease/middleRelease",
+    "pages/jobRelease/jobRelease",
+    "pages/bossSelectJob/bossSelectJob",
+    "pages/companyAddress/companyAddress",
+    "pages/fillCompany/fillCompany",
+    "pages/bossReleasSucc/bossReleasSucc",
+    "pages/examiningTip/examiningTip",
+    "pages/middleExamine/middleExamine",
+    "pages/workDetail/workDetail",
+    "pages/jobDetail/jobDetail",
+    "pages/sellHouseDetail/sellHouseDetail",
+    "pages/houseMidd/houseMidd",
+    "pages/bossList/bossList",
+    "pages/ownServices/ownServices",
+    "pages/buildDetail/buildDetail",
+    "pages/myWealth/myWealth",
+    "pages/userCoinLog/userCoinLog",
+    "pages/search/search",
+    "pages/sellBuld/sellBuld",
+    "pages/inforRelease/inforRelease",
+    "pages/makeCoin/makeCoin",
+    "pages/infoRelDetail/infoRelDetail",
+    "pages/signPage/signPage",
+    "pages/rentHouseDetail/rentHouseDetail",
+    "pages/myCenter/myCenter",
+    "pages/xiongxinHistory/xiongxinHistory",
+    "pages/historyList/historyList",
+    "pages/personInfo/personInfo",
+    "pages/wantWork/wantWork",
+    "pages/toDetal/houseMidd",
+    "pages/releaseHistory/releaseHistory",
+    "pages/aboutMe/aboutMe"
+  
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fed545",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false
+}

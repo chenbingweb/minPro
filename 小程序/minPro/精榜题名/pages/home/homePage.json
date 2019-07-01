@@ -1,0 +1,10 @@
+{
+  
+  "disableScroll": true,
+  "usingComponents": {
+    "nav-item": "/dati_comm/components/nav-item/nav-item",
+    "ticket-tip":"/dati_comm/components/ticket-tip/ticket-tip",
+    "one-key-login": "/dati_comm/components/one-key-login/one-key-login",
+    "user-info": "/dati_comm/components/user-info/user-info"
+  }
+}

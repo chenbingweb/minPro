@@ -1,0 +1,288 @@
+page
+{
+  background-color: #4f2e73;
+}
+
+.analysis .bg_img
+{
+  position: absolute;
+  left: 0;
+  top:0;
+
+}
+.analysis .left_bg
+{
+  position: absolute;
+  left: 0;
+  top:50rpx;
+}
+.analysis .rotate
+{
+  position: absolute;
+  right: 0;
+  top:50rpx;
+  transform:rotate(180deg);
+}
+.analysis .panel_box
+{
+  position:absolute;
+  left:58rpx;
+  top:90rpx;
+  width: 634rpx;
+   bottom:0;
+ right:0;
+}
+.analysis .jx_panel
+{
+ position:absolute;
+ left: 0;
+ top:0;
+
+}
+.analysis .swiper
+{
+  /* height: 1060rpx; */
+  height: 1108rpx;
+  width: 750rpx;
+  position: absolute;
+  left:0;
+  top:0rpx;
+  opacity: 0;
+}
+/* 解析详情 */
+.analysis .jx_detai
+{
+   /* width: 580rpx;
+  height: 319rpx;
+  position: absolute;
+  top:-80rpx;
+ background: white; 
+  left: 50%;
+  margin-left: -290rpx;
+  border-radius: 8rpx;
+  overflow: hidden;*/
+
+
+  width:572rpx;
+height:520rpx;
+position:absolute;
+top:-75rpx;
+left:50%;
+margin-left:-287rpx;
+border-radius:8rpx;
+overflow:hidden;
+
+}
+.analysis .jx_title
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 63rpx;
+  background-color: #126574;
+  color:#f4820c;
+  font-size: 25rpx;
+  text-align: center;
+  line-height:  63rpx;
+ 
+}
+.analysis .jx_title>text
+{
+  border-bottom: 3rpx solid #ca7b32;
+  padding: 0 10rpx;
+  padding-bottom: 6rpx;
+}
+
+.analysis .zjt_db
+{
+  position: absolute;
+  top:12rpx;
+  left:50%;
+  margin-left: -297rpx;
+}
+.analysis .jx_img
+{
+  /* position: absolute;
+  left: 50%; */
+  /* top:250rpx; */
+  /* margin-left:-160rpx; */
+  /* box-shadow: 0px 6rpx 20rpx 6rpx #ddd; */
+}
+.analysis .content
+{
+  position: absolute;
+  left: 0;
+  top:63rpx;
+  height: 420rpx;
+  line-height: 45rpx;
+  color:#7f70b2;
+  font-size: 28rpx;
+  padding: 26rpx;
+  padding-top: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  scrollbar-track-color: red;
+  scrollbar-base-color: yellow;
+  font-weight: bold;
+}
+
+.analysis .question
+{
+  /* position: absolute; */
+  width: 460rpx;
+  /* left: 50%;
+  top: 238rp;
+  margin-left: -230rpx; */
+  margin: 0 auto;
+  font-size: 20rpx;
+  color:#41336d;
+  font-weight: bold;
+  padding:10rpx;
+  text-align: center;
+}
+
+.analysis .q_item
+{
+  position: relative;
+  /* left: 50%;
+  margin-left: -231rpx; */
+  width: 350rpx;
+  height: 66rpx;
+  border-radius:43rpx;
+  text-align: center;
+  line-height: 66rpx; 
+  color:#504f04;
+  font-size: 20rpx;
+  margin-bottom: 15rpx;
+  background-color: #f6f6f6;
+}
+.analysis  .q_1_
+{
+  top:567rpx;
+}
+.analysis  .q_2
+{
+  top:660rpx;
+}
+.analysis  .q_3
+{
+  top:753rpx;
+}
+.analysis  .q_4
+{
+  top:845rpx;
+}
+.analysis .person_pos
+{
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  /* box-sizing: border-box; */
+  border:4rpx solid #37b9fe;
+  top:4rpx;
+}
+.analysis .person_item_left
+{ 
+  left: 8rpx;
+  
+}
+.person_item_right
+{
+  right:8rpx;
+}
+.analysis .ok
+{
+  background-color: #26d840;
+}
+.analysis .err
+{
+  background-color: #fb3d65;
+}
+.analysis .no_body
+{
+  width: 50rpx;
+  height:50rpx;
+  background-color: #f1f1f1;
+  color:#5c3c99;
+  font-weight: bold;
+  border-color: #f2244c;
+}
+
+/*  */
+.analysis .down_up
+{
+  position: absolute;
+  top: 1100rpx;
+  left: 50%;
+  margin-left: -82rpx;
+  color:#72fffa;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 164rpx;
+}
+
+.analysis .bottom_line
+{
+  position: absolute;
+ bottom:21px;
+left:0rpx;
+
+}
+.analysis .dots_box
+{
+  position: absolute;
+  top:1075rpx;
+  left:0rpx;
+  right:0;
+  height: 20rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+
+}
+.analysis .dots_box .dots_item
+{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: #dcdbe0;
+  margin-left: 10rpx;
+}
+.analysis .dots_box .active_dots
+{
+  width:36rpx;
+  height: 16rpx;
+  border-radius: 8rpx;
+  background-color: #ffda0c;
+}
+
+.analysis .question_box
+{
+  position: absolute;
+ right: 0;
+  top:436rpx;
+  left:0;
+  
+}
+.analysis .text_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170rpx;
+}
+.analysis .question_list
+{
+  position: absolute;
+  left:0;
+  right:0;
+  top:628rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

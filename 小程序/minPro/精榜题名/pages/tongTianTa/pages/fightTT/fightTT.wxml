@@ -1,0 +1,100 @@
+<view class="fixed">
+  <view class="icon_box bg">
+    <image src="../../imgs/fightTT/f_t_bg.jpg"  style="width:750rpx;height:1634rpx"></image>
+  </view>
+  <!-- 头像 -->
+  <view class="absolute">
+    <!-- 头像 ../../imgs/fightTT/btn_bg.png-->
+    <view class="photo">
+      <view class="icon_box relative">
+        <image src="../../imgs/fightTT/p_db.png" style="width:141rpx;height:150rpx"></image>
+        <!-- <image class="photo_1" src="{{userIcon}}" style="width:102rpx;height:102rpx;border-radius:50%"></image> -->
+        <view class="photo_img_1">
+          <open-data type="userAvatarUrl" style="width:102rpx;height:102rpx;border-radius:50%"></open-data>
+        </view>
+      </view>
+      <view class="nick_name icon_box">
+        <image src="../../imgs/fightTT/btn_bg.png" style="width:162rpx;height:53rpx"></image>
+        <view class="absolute one_line">
+          {{data.userName}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 当前闯关层数 -->
+  <view class="current_cen num">
+    第{{data.currlun}}层
+  </view>
+  <!-- 时间 -->
+  <view class="time flex_center">
+    <view class="icon_box relative">
+       <image src="../../imgs/fightTT/time_2.png"  style="width:61rpx;height:92rpx"></image>
+       <image class="time_1" src="../../imgs/fightTT/time_1.png"  style="width:3rpx;height:31rpx"></image>
+    </view>
+    <view class="show_time">{{data.overtime}}</view>
+  </view>
+  <!-- 题目列表 -->
+  <view class="question_box">
+    <!-- 底板 -->
+    <view class="absolute db">
+      <view class="t_b_1" >
+        <image src="../../imgs/fightTT/t_b_1.png" style="width:697rpx;height:144rpx;"></image>
+      </view>
+       <view class="t_b_2" >
+        <image  src="../../imgs/fightTT/t_b_2.png" style="width:650rpx;height:100%"></image>
+      </view>
+       <view class="t_b_3" >
+        <image src="../../imgs/fightTT/t_b_3.png" style="width:697rpx;height:90rpx;"></image>
+      </view>
+    </view>
+    <!-- 问题 -->
+    <view class="question">
+      <view class="q_db {{index==1?'rotate_180':''}}" wx:for="{{[1,2]}}" wx:key="q_{{index}}"> 
+        <view class="icon_box">
+          <image src="../../imgs/fightTT/q_1.png"  style="width:569rpx;height:30rpx"></image>
+        </view>
+        <view class="icon_box q_2">
+          <image src="../../imgs/fightTT/q_2.png"  style="width:569rpx;height:100%"></image>
+        </view>
+      </view>
+      <!-- 题目 -->
+      <view class="absolute detail">
+        {{data.wentiTxt}}
+      </view>
+    </view>
+    <!-- 选择题目 -->
+    <view class="answer_items">
+      <view class="ans_item"
+       bindtap="OnButtonClick" 
+       data-v="{{item.v}}"
+       id="{{index}}"
+      data-id="{{index}}"
+       wx:for="{{data.daanBtn}}"
+       style="transition: all 0.3s linear;transform:scale({{item.X}});opacity:{{item.v==4?0:1}}"
+       wx:key="da_{{index}}">
+        <!-- 答案图片 -->
+        <view class="icon_box">
+          <image wx:if="{{item.style==''}}" src="../../imgs/fightTT/btn_1.png" style="width:568rpx;height:118rpx"></image>
+          <image wx:if="{{item.style=='select_no'}}" src="../../imgs/fightTT/err_btn_1.png" style="width:568rpx;height:118rpx"></image>
+          <image wx:if="{{item.style=='select_yes'}}" src="../../imgs/fightTT/right_btn_1.png" style="width:568rpx;height:118rpx"></image>
+        </view>
+        <!-- 答案信息 -->
+        <view class="absolute flex_start daan_info">
+          <view class="icon_box">
+            <image wx:if="{{item.select=='select_no'}}" src="../../imgs/fightTT/err.png" style="width:48rpx;height:48rpx" ></image>
+            <image wx:if="{{item.select=='select_yes'}}" src="../../imgs/fightTT/right.png" style="width:56rpx;height:56rpx" ></image>
+          </view>
+          <view class="daan " style="{{item.select!=''||item.style!==''?'color:white':''}}">{{item.txt}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 返回 -->
+  <view class="back" bindtap="OnBack">
+    <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+  <!-- 挑战失败提示 -->
+  <fight-fail-tip showLock="{{data.showLock}}" id="fail" binduseEvent="OnUserEvent"/>
+  <!-- 挑战成功提示 -->
+  <fight-success-tip showSucc="{{data.showSucc}}" score="{{data.score}}" gk="{{data.gk}}"/>
+</view>

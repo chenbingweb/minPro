@@ -1,0 +1,58 @@
+<!--pages/testList/testList.wxml-->
+<nav-bar/>
+<view class="test_page">
+  <view class="test_bg relative">
+    <view class="icon_box absolute">
+      <image src="../../images/test_bg.png" style="width:750rpx;height:522rpx"></image>
+    </view>
+    <view class="mark_content ">
+      <text>您好：
+            测量可以从个体的智力、能力倾向、创造力、人格、心理健康等各方面对个体进行全面的描述，说明个体的心理特性和行为。同时可以对同一个人的不同心理特征间的差异进行比较，从而确定其相对优势和不足，发现行为变化的原因，为决策提供信息。 
+      </text>
+    </view>
+  </view>
+  <view class="question_list">
+    <view wx:for="{{testList}}" class="q_item relative box_shadow">
+      <view class="icon_box absolute">
+        <image src="../../images/img/1.jpg" style="width:700rpx;height:400rpx"></image>
+      </view>
+      <view class="absolute info_box">
+          <view class="f_30_333 q_title">{{item.ExamName}}</view>
+          <view class="info_1">
+            <text class="info_2">{{item.Time}}</text>分钟<text class="info_2">{{item.Total}}</text>道题
+            <view class="icon_box line">
+              <image src="{{item.LogoImage}}" style="width:420rpx;height:2rpx;"></image>
+            </view>
+          </view>
+          <!-- <view class="flex_start" style="width:450rpx;margin-top:10rpx;">
+            <view style="width:180rpx;" class="f_26_333">
+              国家标准
+            </view>
+            <view  class="f_26_333">
+             完整全面
+            </view>
+          </view>
+          <view class="flex_start" style="width:450rpx;margin-top:10rpx;">
+            <view style="width:180rpx;" class="f_26_333">
+              准确度93%
+            </view>
+            <view  class="f_26_333">
+              获得个性化调理方案
+            </view>
+          </view> -->
+          <view class="f_26_333 flex_start" style="height:100rpx">
+            <text>{{item.Description}}</text>
+          </view>
+          <view class="btn_box relative" data-qid="{{item.ExamId}}">
+            <view class="icon_box absolute">
+              <image src="../../images/btn.png" style="width:216rpx;height:58rpx"></image>
+            </view>
+            <view class="absolute button_btn">
+              开始检查
+            </view>
+          </view>
+      </view>
+    </view>
+    <view style="margin-bottom:34rpx;margin-top:0" wx:if="{{showTip.show}}" class="no_info">{{showTip.text}}</view>
+  </view>
+</view>

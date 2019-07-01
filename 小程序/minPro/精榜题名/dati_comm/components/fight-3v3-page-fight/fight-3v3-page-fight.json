@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "right-3v3": "../right-3v3/right-3v3",
+    "left-3v3": "../left-3v3/left-3v3",
+    "time": "../time/time",
+    "fight-bottom": "../fight-bottom/fight-bottom",
+    "photo": "../photo/photo"
+    }
+}

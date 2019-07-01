@@ -1,0 +1,338 @@
+/* pages/subPackages/pages/myCenter/myCenter.wxss */
+page
+{
+  background-color: #4F0307;
+
+}
+.bg_180
+{
+  /* transform-origin: 0 100%; */
+  transform: rotateY(180deg);
+  transform-origin:49.9% 0;
+
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:100rpx;
+}
+.back
+{
+   position: absolute;
+  left: 40rpx;
+  top:56rpx;
+  z-index: 4;
+}
+.msg
+{
+  /* position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:230rpx; */
+  position: relative;
+}
+.ms_title
+{
+  color:#fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  width: 404rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.nav_box_info
+{
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  bottom: 10rpx;
+  left: 53rpx;
+}
+.my_info
+{
+  /* position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:353rpx; */
+}
+.my_bg,.my_dj_list
+{
+  width: 600rpx;
+  height: 150rpx;
+  background-color: #5c95e1;
+  box-shadow: 0px 0rpx 40rpx 4rpx #456fa8 inset;
+  border-radius: 34rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin: 0 auto;
+  margin-top: 24rpx;
+}
+.my_dj_box
+{
+  width: 600rpx;
+  
+  /* position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top: 524rpx; */
+  margin: 0 auto;
+  margin-top: 24rpx;
+}
+.my_dj_title
+{
+  font-size: 26rpx;
+  color:#430808;
+  width: 600rpx;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  margin-bottom: 16rpx;
+}
+.dj_con
+{
+  margin-top:10rpx;
+  margin-bottom: 26rpx;
+}
+.icon_img
+{
+  position: absolute;
+  left:42%;
+  transform: translateX(-50%);
+  top:6rpx;
+}
+.coin_box
+{
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: -14rpx;
+  background-color: #3c0807;
+  width: 85rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  line-height: 30rpx;
+
+}
+.coin_num
+{
+  line-height: 30rpx;
+  text-align: center;
+  color:#ffe984;
+  font-size: 24rpx;
+
+}
+.dj_box_2
+{
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  top:744rpx;
+  width: 597rpx;
+  height: 325rpx;
+  background-color: #5c2817;
+  box-shadow: 0px 0rpx 40rpx 4rpx #451e11 inset;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  padding: 0 17rpx;
+}
+.info_title
+{
+  color:#ffe984;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 66rpx;
+  font-weight: 600;
+}
+.coin_pos
+{
+  position: absolute;
+  top:56%;
+  transform: translateY(-50%);
+  left: -20rpx;
+}
+.dj_con_2
+{
+   margin-top:14rpx;
+  margin-bottom: 18rpx;
+}
+.hb_box
+{
+  position: relative;
+  width: 602rpx;
+  height: 349rpx;
+  margin: 0 auto;
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  /* top:1095rpx; */
+  /* top: 795rpx; */
+  margin-top: 24rpx;
+
+}
+.flex_inline
+{
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.item_hb
+{
+  width: 224rpx;
+  height: 300rpx;
+  border-radius: 4rpx;
+  background-color: #33170d;
+  margin-right: 8rpx;
+  position: relative;
+}
+.hb_list
+{
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  padding-left:20rpx;
+ padding-right:20rpx;
+
+}
+.hb_img
+{
+  position: absolute;
+  left: 50%;
+  transform:translateX(-50%);
+  top:0;
+}
+.hb_time
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24rpx;
+  border-radius: 20rpx;
+  width: 180rpx;
+  height: 40rpx;
+  background-color: #3b0807;
+  text-align: center;
+  color:#ffdd71;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  font-weight: 600;
+}
+.qc_name
+{
+  width: 610rpx;
+  margin: 0 auto;
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  /* top:1467rpx; */
+  /* top: 1164rpx; */
+  margin-top: 24rpx;
+}
+.line
+{
+  width: 576rpx;
+  color:#4a0a09;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin: 0 auto;
+}
+.line::before,.line::after
+{
+  content: "";
+  display: block;
+  width: 194rpx;
+  height: 2rpx;
+  background-color: #805535;
+}
+.qc_name_box
+{
+  width: 600rpx;
+  height: 200rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.qc_img_box
+{
+  margin-left: 6rpx;
+}
+.qc_inline_flex
+{
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.photo_img
+{
+  width: 73rpx;
+  height: 73rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: border-box;
+  border:none;
+}
+.nack_name
+{
+  font-size: 30rpx;
+  color:white;
+  font-weight: 600;
+  width: 184rpx;
+  box-sizing: border-box;
+  padding-left: 14rpx;
+}
+.my_coin
+{
+  font-weight: 600;
+  font-size: 24rpx;
+  color:#fff;
+}
+.my_yl
+{
+  width: 130rpx;
+  height: 35rpx;
+  background-color: #3b0807;
+  border-radius: 18rpx;
+  margin-top: 10rpx;
+}
+.coin_icon
+{
+  position: absolute;
+  left:-10rpx;
+  top:58%;
+  transform: translateY(-50%);
+}
+.coin_num_2
+{
+  font-size: 24rpx;
+  color:#ffdd71;
+  line-height: 35rpx;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+}
+
+
+
+
+/* 徐佳鑫新增 */
+.all_content_position{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding-top: 234rpx;
+  height: 1334rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-bottom: 104rpx;
+}
+.all_content_position_son{
+  height: 100%;
+  overflow: scroll;
+}

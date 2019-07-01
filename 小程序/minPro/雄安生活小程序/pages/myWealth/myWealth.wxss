@@ -1,0 +1,60 @@
+/* pages/userCoinLog/userCoinLog.wxss */
+.header
+{
+  width: 750rpx;
+  height: 176rpx;
+  background-color: #fac131;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  color:white;
+  font-size: 30rpx;
+}
+.title_MX
+{
+  height: 100rpx;
+  color:#333333;
+  font-size: 36rxp;
+  line-height: 100rpx;
+   padding: 0 25rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #ececec;
+}
+/*明细列表  */
+.shop_list
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0rpx 25rpx;
+}
+.shop_item
+{
+  width: 700rpx;
+  height: 128rpx;
+  border:2rpx solid #f4f4f4;
+  box-sizing: border-box;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color:#333333;
+}
+.user_select
+{
+  border-color:#fed545;
+  background-color: #fffae8;
+}
+.buy_btn
+{
+  width: 615rpx;
+  height: 88rpx;
+  position: relative;
+  border-radius: 44rpx;
+  margin:  0 auto;
+  overflow: hidden;
+  margin-top: 174rpx;
+}
+.btn_child
+{
+  background-color: transparent;
+  color:white;
+  font-size: 36rpx;
+}

@@ -1,0 +1,115 @@
+/* pages/index/index.wxss */
+/*引入模板样式*/
+/* @import '../../temp/userheader.wxss';*/
+
+page
+{
+  display: table;
+  /* padding-bottom: 100rpx;  */
+  background-color: #fff;
+}
+.index_page
+{
+  box-sizing: border-box;
+  padding-bottom: 110rpx;
+  /* height: 1090rpx; */
+}
+.item_btn
+{
+  width: 25%;
+  height: 132rpx;
+  flex-direction: column;
+}
+.nav_box
+{
+  flex-wrap: wrap;
+  margin-bottom: 38rpx;
+}
+.new_info
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 126rpx;
+  border-bottom: 30rpx solid #f5f5f5;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  padding-right: 36rpx;
+}
+.border
+{
+  border-top:2rpx solid #f5f5f5;
+  width: 100%;
+  height: 126rpx;
+  
+}
+.title
+{
+  width: 750rpx;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  padding-right: 35rpx;
+  
+}
+.shop_name
+{
+  color:#333;
+  font-size: 34rpx;
+}
+.fz
+{
+  color:#010101;
+  font-size: 36rpx;
+}
+.fm
+{
+  color:#919191;
+  font-size: 18rpx;
+}
+
+.tickt_list
+{
+  width: 750rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+ 
+}
+.tickt
+{
+  width: 678rpx;
+  margin: 0 auto;
+  border-top: 2rpx solid #f2f0f0;
+  padding-top: 48rpx;
+}
+.toMore
+{
+  width: 136rpx;
+  height: 48rpx;
+  border:2rpx solid #5293e1;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+  margin: 0 auto;
+  text-align: center;
+ line-height: 48rpx;
+ margin-top: 20rpx;
+ color:#5293e1;
+}
+.radius
+{
+  position:fixed;
+  right:10rpx;
+  bottom:120rpx;
+}
+.user_status
+{
+   position:fixed;
+  left:10rpx;
+  top:20rpx;
+  color:#5293e1;
+  font-size: 30rpx;
+  background-color: white;
+  display: inline;
+  padding: 10rpx;
+  border-radius: 6rpx;
+}

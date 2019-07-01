@@ -1,0 +1,129 @@
+<nav-bar/>
+<view class="fixed my_page bottom_110">
+  <view class="header_box">
+    <view class="icon_box absolute">
+      <image src="../../images/center_bg.png" style="width:750rpx;height:245rpx"></image>
+    </view>
+    <navigator url="../userInfo/userInfo" class="header_box absolute flex_start">
+      <view class="icon_box photo">
+        <open-data type="userAvatarUrl" style="width:130rpx;height:130rpx;border-radius:50%"></open-data>
+      </view>
+      <view style="padding-left:25rpx;width:545rpx;">
+        <view style="color:#fefefe;font-size:44rpx">SS</view>
+        <view class="jf">积分302</view>
+      </view>
+    </navigator>
+  </view>
+  <!--导航  -->
+  <navigator url="../myJF/myJF" class="nav_item flex_between" style="margin-bottom:20rpx">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/jf_1_icon.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <view class="nav_name">积分</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/jf_icon.png" style="width:21rpx;height:21rpx"></image>
+      </view>
+      <view class="jf_num">112</view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <!--  -->
+  <navigator url="../myCoupon/myCoupon" class="nav_item flex_between bottom_border" >
+    <view  class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/my_tick.png" style="width:31rpx;height:31rpx"></image>
+      </view>
+      <view class="nav_name">我的优惠卷</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="../myRelease/myRelease" class="nav_item flex_between bottom_border" >
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/my_tz.png" style="width:34rpx;height:34rpx"></image>
+      </view>
+      <view class="nav_name">我的帖子</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="../manageTemp/manageTemp" class="nav_item flex_between" style="margin-bottom:20rpx">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/my_sq.png" style="width:41rpx;height:29rpx"></image>
+      </view>
+      <view class="nav_name">我的社区</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <!--  -->
+  <navigator url="../aboutUs/aboutUs" class="nav_item flex_between" style="margin-bottom:20rpx">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/about_us.png" style="width:35rpx;height:30rpx"></image>
+      </view>
+      <view class="nav_name">关于我们</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <!--  -->
+   <navigator url="../interShop/interShop" class="nav_item flex_between bottom_border" >
+    <view  class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/shop.png" style="width:34rpx;height:34rpx"></image>
+      </view>
+      <view class="nav_name">商户入口</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="../checkUser/checkUser" class="nav_item flex_between bottom_border" >
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/bkqr.png" style="width:32rpx;height:31rpx"></image>
+      </view>
+      <view class="nav_name">业主确认</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url="../myTheme/myTheme" class="nav_item flex_between" style="margin-bottom:20rpx">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/wdbm.png" style="width:35rpx;height:30rpx"></image>
+      </view>
+      <view class="nav_name">我报名的活动</view>
+    </view>
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </navigator>
+</view>

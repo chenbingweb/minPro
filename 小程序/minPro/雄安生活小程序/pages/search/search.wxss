@@ -1,0 +1,63 @@
+/* pages/search/search.wxss */
+.search_box
+{
+  width: 750rpx;
+  height: 90rpx;
+  background-color: #fed545;
+  display: flex;
+  justify-content: center;
+}
+.input_box
+{
+  width: 700rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: rgba(0, 0, 0,0.2);
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.input_btn
+{
+  height: 70rpx;
+  padding-left: 10rpx;
+  width: 620rpx;
+  color:#fffefe;
+  font-size: 26rpx;
+}
+.place_holder
+{
+    color:#fffefe;
+  font-size: 26rpx;
+}
+.title
+{
+  color:#333333;
+  font-size: 30rpx;
+  height: 87rpx;
+  width: 750rpx;
+  line-height: 87rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #ececec;
+}
+.filter_box
+{
+  border-top: 2rpx solid #e3e3e3;
+  padding: 30rpx 25rpx;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.item
+{
+  padding:14rpx 20rpx;
+  background: #f4f4f4;
+  font-size: 28rpx;
+  color:#666666;
+  display: inline-block;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}

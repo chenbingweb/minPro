@@ -1,0 +1,99 @@
+/* pages/index/index.wxss */
+/*引入模板样式*/
+/* @import '../../temp/userheader.wxss';*/
+
+page
+{
+  display: table;
+  padding-bottom: 100rpx; 
+  background-color: #fff;
+}
+.index_page
+{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 110rpx;
+  padding-bottom:50rpx;
+
+}
+
+.banner
+{
+  width: 750rpx;
+  background-color: #fff;
+  height: 242rpx;
+}
+.step
+{
+  font-size: 34rpx;
+  color:#fff;
+  line-height: 70rpx;
+  background-color: #009688;
+  text-align: center;
+}
+.select_words
+{
+  width: 750rpx;
+  min-height: 223rpx;
+  box-sizing: border-box;
+  padding: 40rpx 25rpx;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  border-bottom: 20rpx solid #f5f5f5;
+  padding-bottom: 0;
+}
+.radio_box
+{
+  width: 350rpx;
+  margin-bottom: 40rpx;
+}
+.radio_box:nth-child(2n+1)
+{
+  box-sizing: border-box;
+  padding-right: 54rpx;
+}
+.radio_box:nth-child(2n)
+{
+  box-sizing: border-box;
+  padding-left: 46rpx;
+}
+/* .radio_box:nth-of-type(3),.radio_box:nth-of-type(4)
+{
+  margin-bottom: 0;
+} */
+.tip_line
+{
+  margin: 0 auto;
+  margin-top:34rpx;
+}
+.img_icon
+{
+  margin: 0 auto;
+  margin-top:84rpx;
+}
+.btn
+{
+  width: 300rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  background-color: #009688;
+  color:#fff;
+}
+.refresh
+{
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 100rpx;
+  color:#009688;
+  font-size: 30rpx;
+}
+.dis_word
+{
+  padding-bottom: 30rpx;
+  font-size: 30rpx;
+  color:rgb(192, 182, 182);
+}

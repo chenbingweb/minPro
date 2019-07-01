@@ -1,0 +1,23 @@
+<words-bottom-nav>
+  <view class="flex_between btn_3_box" slot="list">
+    <view class="btn_3"  bindtap="onBackIndex">返回首页</view>
+    <!-- {{hideBtn?'':'visibility:hidden'}} -->
+    <view class="btn_3" style="background-color:#009688;" bindtap="onUpPage">上一组词</view>
+    <view class="btn_3" bindtap="onNextPage">下一组词</view>
+    <view class="btn_4" >
+      <switch color="#009688" bindchange="onMeanShow" checked="{{isMeanShow}}" class="switch_1"></switch>
+      <view>显示词义</view>
+    </view>
+  </view>
+
+</words-bottom-nav>
+<view class="fixed scroll words_index">
+  <view class="words_header f_30_fff">每10个单词为1个小节</view>
+  <!-- 完成进度 -->
+  <view class="words_header f_30_fff relative" style="background:#898989">
+   <view class="process_bar"  style="background-color:#ff9802;width:{{tipConent.curr_page/tipConent.total_pages * 100 +'%'}}"></view>
+   <view class="absolute">我的生词共有：第{{tipConent.curr_page}}节/共{{tipConent.total_pages}}节</view> 
+  </view>
+  <word-list pageObj="{{pageObj}}" bindpanelDetail="onPanelDetail" isMeanShow="{{isMeanShow}}" collectTip="{{collectTip}}" id="wordList" fromSrc="{{false}}"/>
+</view>
+<word-pannel id="wordPanel" panelDetail="{{panelDetail}}"/>

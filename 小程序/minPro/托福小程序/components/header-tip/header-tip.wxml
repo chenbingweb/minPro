@@ -1,0 +1,1 @@
+  <view class="header_tip f_30_fff">您总共努力学习单词{{studyInfo.total_time_long||0}}小时：超过了{{(studyInfo.total_percent||0)+'%'}}的伙伴</view>

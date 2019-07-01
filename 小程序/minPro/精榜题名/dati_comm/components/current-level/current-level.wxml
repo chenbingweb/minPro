@@ -1,0 +1,55 @@
+  <!-- 解锁提示 -->
+  <view class="lock_book" bindtap="OnToFight" data-mp="{{dwItems.mp}}">
+    <!-- 背景 -->
+    <view class="juan_zhou_box">
+      <view class="icon_box">
+        <image src="../gan-kao-item/img/jz_l.png" style="width:25rpx;height:215rpx;"></image>
+      </view>
+      <view class="icon_box">
+        <image src="../gan-kao-item/img/jz_m.png" class="jz_middle {{js_middle_width}}"></image>
+      </view>
+      <view class="icon_box">
+        <image src="../gan-kao-item/img/jz_r.png" style="width:27rpx;height:215rpx;"></image>
+      </view>
+    </view>
+    <!-- <view class="icon_box">
+      <image src="./img/juan_zhou.png" style="width:536rpx;height:215rpx;"></image>
+    </view> -->
+    <!-- 解锁信息 -->
+    <view class="lock_info">
+      <!-- 关卡图片 -->
+      <view class="icon_box gq_icon">
+        <image src="{{dwItems.img}}" style="width:200rpx;height:205rpx"></image>
+      </view>
+      <!-- 花费信息 -->
+      <view class="hua_fei">
+        <view class="icon_box relative move">
+          <image src="../../../imgs/classify/num_bg.png" style="width:264rpx;height:46rpx"></image>
+          <view class="absolute">
+            <view class="t_1">奖励:</view><view class="t_2">{{dwItems.win}}</view>
+          </view>
+        </view>
+        <view class="icon_box relative move_2">
+          <image src="../../../imgs/classify/num_bg.png" style="width:264rpx;height:46rpx"></image>
+          <view class="absolute">
+            <view class="t_1">花费:</view><view class="t_2">{{dwItems.mp}}</view>
+          </view>
+        </view>
+        <!-- <view>奖励:<text class="coin_num">{{dwItems.win}}</text> </view>
+        <view>花费:<text class="coin_num">{{dwItems.mp}}</text> </view> -->
+        <!-- 星级 -->
+        <view class="star">
+          <!-- <view class="icon_box pos" >"../../../imgs/classify/star.png
+            <image src="../user-info/img/star.png" style="width:46rpx;height:44rpx"></image>
+          </view>
+          <view>X{{dwItems.Level2}}</view> -->
+          <view class="icon_box pos" style="left:{{(15*index)}}rpx;z-index:{{(index+1)*4}}" wx:for="{{StarNum}}" wx:key="index1_{{index}}">
+            <image src="../user-info/img/star.png" style="width:55rpx;height:60rpx;"></image>
+          </view>
+          <view class="icon_box pos" style="left:{{(15*(totalStar-index-1))}}rpx;z-inde:-9" wx:for="{{noStarNum}}" wx:key="no_{{index}}">
+             <image src="../../../imgs/fightOver/no_star.png" style="width:55rpx;height:60rpx;"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

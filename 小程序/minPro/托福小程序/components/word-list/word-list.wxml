@@ -1,0 +1,64 @@
+<scroll-view scroll-y class="words_list" >
+  <view class="item_word flex_between" wx:for="{{list}}" wx:key="_{{index}}">
+    <view class='flex_start'>
+    <!-- wx:if="{{item.collection_id}}" -->
+      <view class="flex_center" style="width:50rpx;height:50rpx" bindtap="onCollect" data-wd="{{item.id}}">
+        <image src="../../images/{{item.collection_id?'is_collect.png':'no_collect.png'}}" style="width:31rpx;height:32rpx;transform:scale(1.5)"></image>
+      </view>
+      <view class="f_44_000 wold_one one_line" style="width:260rpx;">{{item.name}}</view>
+    </view>
+    <view class="flex_between right_1" >
+      <view class="f_34_666 one_line" wx:if="{{isMeanShow}}">{{item.meaning}}</view>
+      <view else></view>
+      <view class="flex_center" style="height:80rpx;" bindtap="onShowPanel" data-sid="{{item.id}}">
+        <image src="../../images/show_detail.png" style="width:45rpx;height:45rpx;"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="fixed_1"  wx:if="{{false }}">
+  <view class="word_detail">
+    <!-- 单词 -->
+    <view class="flex_between word_name">
+      <view class="words_line flex_start">
+         <view class="f_60_000">{{panelDetail.name}}</view>
+        <view class="yb_word">{{panelDetail.phonetic}}</view>
+      </view>
+       <play-sound source="{{imgUrl+panelDetail.audio_url}}"/>
+      <!-- <view class="flex_center">
+        <image src="../../images/sound.png" style="width:68rpx;height:66rpx;"></image>
+      </view> -->
+    </view>
+    <!-- 翻译 -->
+    <view class="fy_word">
+      <text>{{panelDetail.meaning}}</text>
+    </view>
+    <!-- 记忆 -->
+    <view class="fy_word">
+      <text class="f_30_666">{{panelDetail.root}}</text>
+    </view>
+    <!-- 例子 -->
+    <view  class="fy_word" style="border:none">
+      <text class="f_30_666">{{panelDetail.instance}}</text>
+    </view>
+    <!-- 关闭 -->
+    <view class="close_btn flex_center" bindtap="onClose">
+      <image src="../../images/cancel.png" style="width:70rpx;height:70rpx;"></image>
+    </view>
+  </view>
+</view>
+<view class="fixed_1" wx:if="{{false }}">
+  <view class="word_detail">
+    <view class="f_34_333 title_3">温馨提示</view> 
+    <view class="f_30_666 content">
+      在完成当天的新单词学习后，还有非常重
+      要的“新单词复习”任务。接下来请把今天的新单词小节从头到尾复习一遍，只需要
+      看到英文能反应释义即可。通过按钮切换
+      今天所有新单词小节，直到回忆完所有小
+      节为止。不断巩固，强化记忆，让我们开
+      始吧！
+    </view>
+    <view class="to_new_word" bindtap="onStartReview">开始复习今天的新单词</view>
+  </view>
+</view>

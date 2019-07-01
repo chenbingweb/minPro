@@ -1,0 +1,175 @@
+<scroll-view scroll-y class="fixed" style='height:1334rpx;top:calc(50vh - 667rpx)'>
+  <view style="width:750rpx;height:1334rpx" class="relative">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="bg icon_box">
+        <image src="../../imgs/center/c_bg_1.jpg" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../imgs/center/c_bg_1.jpg" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class='all_content_position'>
+       <view class='all_content_position_son'>
+         <!-- 站内消息 -->
+        <view class="msg icon_box" bindtap="OnToMsg">
+          <image src="../../imgs/center/zhan_nei_xin.png" style="width:607rpx;height:108rpx;"></image>
+          <view class="absolute flex_start nav_box_info">
+            <view class="icon_box">
+              <image src="../../imgs/center/la_ba.png" style="width:94rpx;height:81rpx;"></image>
+            </view>
+            <view class="ms_title">站内消息</view>
+            <view class="icon_box tip shan_dong">
+              <image src="../../imgs/center/tip.png" style="width:25rpx;height:25rpx"></image>
+            </view>
+          </view>
+        </view>
+        <!-- 个人信息-->
+        <view class="my_info my_bg flex_start">
+          <!-- 头像 -->
+          <view class="photo_box">
+            <!-- 背景 -->
+            <view class="icon_box relative">
+              <image src="../../../../imgs/fight/photo_bg.png" style="width:97rpx;height:104rpx"></image>
+              <view class="photo_img">
+                <image src="{{userIcon}}"  style="width:73rpx;height:73rpx;border-radius:50%"></image>
+                <!-- <open-data type="userAvatarUrl" style="width:73rpx;height:73rpx;border-radius:50%"></open-data> -->
+              </view>
+            </view>
+          </view>
+          <!-- 昵称 -->
+          <view class="nack_name one_line">
+            {{userName}}
+          </view>
+          <!-- 我的银两 -->
+          <view class="my_coin" style='margin-left:24rpx;'>
+            <view>我的银两</view>
+            <view class="my_yl relative">
+              <view class="coin_num_2">{{corn}}</view>
+              <view class="icon_box coin_icon">
+                <image src="../../imgs/dianpu/coin.png" style="width:38rpx;height:43rpx"></image>
+              </view>
+
+            </view>
+          </view>
+          <!-- 我的现金 -->
+          <!-- <view class="my_coin" bindtap="OnToMyMoney" style="margin-left:16rpx;">
+          <view>我的现金</view>
+          <view class="my_yl relative">
+            <view class="coin_num_2">{{money}}</view>
+            <view class="icon_box coin_icon">
+               <image src="../../imgs/dianpu/coin.png" style="width:38rpx;height:43rpx"></image>
+            </view>
+            
+          </view>
+        </view> -->
+        </view>
+        <!-- 我的道具 -->
+        <view class="my_dj_box">
+          <view class="my_dj_title"> 我的道具</view>
+          <my-tool myGoods="{{myGoods}}"/>
+          <view wx:if="{{false}}" class="my_dj_list flex_start">
+            <!-- 图片 -->
+            <view class="icon_box relative dj_con" style="width:134rpx;margin-left:10rpx" wx:for="{{myGoods}}" wx:key="pic_{{index}}">
+              <image src="../../imgs/dianpu/bg_5.png" style="width:104rpx;height:104rpx"></image>
+              <!-- 道具图片 -->
+              <view class="icon_box icon_img" style="left:50%;top:0">
+                <image src="{{item.icon}}" style="width:100rpx;height:107rpx"></image>
+              </view>
+              <!-- 金币 -->
+              <view class="coin_box" style="width:136rpx;height:40rpx;">
+                <!-- 金币数量 -->
+                <view class="position coin_num" style="line-height:40rpx;">{{item.name+''+item.num}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 头冠 道具-->
+        <view class="dj_box_2 flex_start" wx:if="{{false}}">
+
+          <view class="item relative" style="{{index==1?'margin:0 10rpx':''}}" wx:for="{{[1,2,3]}}" wx:key="index_{{index}}">
+            <!-- 背景 -->
+            <view class="icon_box">
+              <image src="../../imgs/dianpu/shop_bg.png" style="width:182rpx;height:284rpx"></image>
+            </view>
+            <!-- 道具信息 -->
+            <view class="absolute">
+              <!-- 标题 -->
+              <view class="info_title">答对卡</view>
+              <!-- 图片 -->
+              <view class="icon_box relative dj_con_2">
+                <image src="../../imgs/dianpu/bg_5.png" style="width:104rpx;height:104rpx"></image>
+                <!-- 道具图片 -->
+                <view class="icon_box icon_img" style="left:50%;top:0">
+                  <image src="../../imgs/dianpu/d_j_{{index+1}}.png" style="width:100rpx;height:107rpx"></image>
+                </view>
+
+              </view>
+              <!-- 按钮 -->
+              <view class="icon_box">
+                <image wx:if="{{index==0}}" src="../../imgs/center/use.png" style="width:133rpx;height:53rpx"></image>
+                <image wx:else src="../../imgs/center/using.png" style="width:133rpx;height:53rpx"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 海报 -->
+        <view class="hb_box">
+          <view class="icon_box">
+            <image src="../../imgs/center/h_b_bg.png" style="width:602rpx;height:349rpx"></image>
+          </view>
+          <!-- 海报列表 -->
+          <scroll-view class="hb_list absolute" scroll-x>
+            <view class="flex_inline">
+              <view class="item_hb" bindtap="OnShowHB" data-img="{{item.img}}" wx:for="{{postList}}" wx:key="hb_{{index}}">
+                <!-- 海报 -->
+                <view class="icon_box hb_img">
+                  <image  src="{{item.img}}" style="width:218rpx;height:290rpx"></image>
+                </view>
+                <!-- 获取海报时间 当前成就-->
+                <view class="hb_time">
+                  {{item.time}}获得
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+        <!-- 切磋称号 -->
+        <view class="qc_name">
+          <view class="flex_between line qc_title">切磋称号</view>
+          <scroll-view scroll-x class="qc_name_box">
+            <view class="qc_inline_flex">
+              <view class="qc_img_box relative" wx:for="{{chList}}" wx:key="qc_{{index}}">
+             
+                <view class="icon_box">
+                  <image src="../../imgs/center/qc_bg.png" style="width:220rpx;height:184rpx;"></image>
+                </view>
+                <view class="icon_box absolute">
+                  <image src="{{item.img}}" style="width:134rpx;height:146rpx;"></image>
+                  
+                </view>
+              </view>
+
+            </view>
+          </scroll-view>
+        </view>
+        <!-- 切磋称号 -->
+        <view class="qc_name" style="top:1716rpx" wx:if="{{false}}">
+          <view class="flex_between line qc_title">切磋称号</view>
+
+        </view>
+       </view>
+      </view>
+    </view>
+    <!-- 标题 -->
+    <view class="title icon_box">
+      <image src="../../imgs/center/my_center.png" style="width:279rpx;height:78rpx"></image>
+    </view>
+
+    
+  </view>
+</scroll-view>
+<!-- 返回 -->
+  <view class="back" bindtap="OnBack" wx:if="{{!showHB}}">
+    <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+<post-view bindbackData="OnBackData" showBtn="{{false}}" showHB="{{showHB}}" img="{{hb}}"/>

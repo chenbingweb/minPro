@@ -1,0 +1,17 @@
+<scroll-view scroll-x  class="my_dj_list flex_start">
+  <!-- 图片 -->
+  <view class="qc_inline_flex">
+    <view class="icon_box relative dj_con" style="width:134rpx;margin-left:10rpx" wx:for="{{myGoods}}" wx:key="pic_{{index}}">
+      <image src="../../imgs/dianpu/bg_5.png" style="width:104rpx;height:104rpx"></image>
+      <!-- 道具图片 -->
+      <view class="icon_box icon_img" style="left:50%;top:0">
+        <image src="{{item.icon}}" style="width:100rpx;height:107rpx"></image>
+      </view>
+      <!-- 金币 -->
+      <view class="coin_box" style="width:136rpx;height:40rpx;">
+        <!-- 金币数量 -->
+        <view class="position coin_num" style="line-height:40rpx;">{{item.name+''+item.num}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

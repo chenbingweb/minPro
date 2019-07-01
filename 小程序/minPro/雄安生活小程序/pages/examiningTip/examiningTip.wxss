@@ -1,0 +1,75 @@
+/* pages/examiningTip/examiningTip.wxss */
+.tip_box
+{
+  width: 700rpx;
+  height: 390rpx;
+  margin: 0 auto;
+  flex-direction: column;
+  box-shadow:0px 1rpx  #e7e7e7;
+}
+.submit
+{
+  width: 618rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius: 45rpx;
+  overflow: hidden;
+  margin-top:30rpx;
+}
+.btn_next
+{
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 36rpx;
+}
+/* 中介发布成功 推荐  */
+.recomment
+{
+  width: 700rpx;
+  margin: 0 auto;
+  height: 666rpx;
+  position: relative;
+
+}
+.re_title
+{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.page_box
+{
+  position: absolute;
+  top:80rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.recommont_source
+{
+  width: 700rpx;
+  height: 435rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 30rpx;
+}
+.info_box
+{
+  color:#333;
+  font-size: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 14rpx;
+
+}
+.item_info
+{
+  width: 100%;
+ line-height: 70rpx;
+}
+.child_1
+{
+  color:#666666;
+  font-size: 28rpx;
+}

@@ -1,0 +1,98 @@
+/* components/my-words/my-words.wxss */
+.select_btns
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  margin: 0 auto;
+  padding-top: 40rpx;
+  border-bottom: 2rpx solid #e9e9e9;
+  padding-bottom: 60rpx;
+}
+.btns
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 700rpx;
+  margin: 0 auto;
+}
+.btn
+{
+  width: 300rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+  border:4rpx solid #009688;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f_32_009688
+{
+  font-size: 32rpx;
+  color:#009688
+}
+.icon_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my_word_num
+{
+  color:#666;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f_22_666
+{
+  font-size: 22rpx;
+  color:#666
+}
+.f_26_666
+{
+  font-size: 26rpx;
+  color:#666
+}
+.word_process
+{
+  display: flex;
+  width: 700rpx;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 37rpx;
+  padding-bottom: 20rpx;
+}
+.process_box
+{
+  width: 700rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  background-color: #898989;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+
+}
+.process_bar
+{
+  position: absolute;
+  top:0;
+  height: 12rpx;
+  left: 0;
+  width: 0%;
+  background-color: #009588;
+  transform:skewX(-45deg);
+  border-right: 6rpx solid #fff;
+  transition: width 0.3s;
+}

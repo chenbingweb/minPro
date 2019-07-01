@@ -1,0 +1,167 @@
+/* components/word-list/word-list.wxss */
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_end
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex_between
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.words_list
+{
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:140rpx;
+  bottom: 0rpx;
+}
+.item_word
+{
+  width: 700rpx;
+  min-height: 90rpx;
+  box-sizing: border-box;
+  /* padding: 0 25rpx; */
+  border-bottom: 2rpx solid #e9e9e9;
+  margin: 0 auto;
+  
+}
+.f_44_000
+{
+  font-size: 38rpx;
+  color: #000;
+}
+.f_34_666
+{
+  font-size: 34rpx;
+  color:#666;
+}
+.wold_one
+{
+  margin-left: 18rpx;
+}
+.right_1
+{
+  /* width: 384rpx; */
+  width: 330rpx;
+}
+.fixed_1
+{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.word_detail
+{
+  width: 600rpx;
+  min-height: 500rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top:171rpx;
+  transform: translateX(-50%);
+  border-radius: 10rpx;
+}
+.close_btn
+{
+  position: absolute;
+  left: 50%;
+  bottom:-94rpx;
+  transform: translateX(-50%);
+}
+.f_60_000
+{
+  font-size: 60rpx;
+  color:#000;
+}
+.words_line
+{
+  align-items: baseline;
+}
+.word_name
+{
+  width: 542rpx;
+   margin: 0 auto;
+  border-bottom: 2rpx solid #e9e9e9;
+  line-height: 1;
+  padding: 36rpx 0;
+ 
+}
+.yb_word
+{
+  font-size: 28rpx;
+  color:#666;
+}
+.fy_word
+{
+   width: 542rpx;
+   margin: 0 auto;
+   border-bottom: 2rpx solid #e9e9e9;
+   padding: 18rpx 0;
+   font-size: 30rpx 0;
+}
+.f_30_666
+{
+  font-size: 30rpx;
+  color:#666;
+}
+
+.f_34_333
+{
+  font-size: 34rpx;
+  color:#333;
+}
+.title_3
+{
+  text-align: center;
+  margin-top: 48rpx;
+  margin-bottom: 18rpx;
+  line-height: 1;
+}
+.content
+{
+  margin: 0 auto;
+  padding:0 28rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.to_new_word
+{
+  width: 400rpx;
+  height: 70rpx;
+  background-color: #009588;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  text-align: center;
+  color:#ffffff;
+  margin-top: 37rpx;
+  margin-bottom: 30rpx;
+}
+.one_line
+{
+   overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+   width: 330rpx;
+}

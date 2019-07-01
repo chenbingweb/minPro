@@ -1,0 +1,64 @@
+page
+{
+  padding-bottom: 30rpx;
+}
+.center_item
+{
+  height: 106rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+}
+.input_style
+{
+  height: 110rpx;
+  width: 450rpx;
+}
+.item
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  background-color: white;
+}
+.item_title
+{
+  width: 186rpx;
+  margin-right: 30rpx;
+}
+/*提交  */
+.submit
+{
+  width:700rpx;
+  height:100rpx;
+  margin: 0 auto;
+  margin-top:30rpx;
+}
+.save
+{
+  color:white;
+  line-height: 100rpx;
+  text-align:center;
+  
+}
+.btn_next
+{
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 36rpx;
+}
+.check
+{
+  width: 160rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+  position: relative;
+  overflow: hidden;
+  color:white;
+  font-size:22rpx;
+  text-align: center;
+  line-height: 48rpx;
+}

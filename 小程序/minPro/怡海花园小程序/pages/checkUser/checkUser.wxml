@@ -1,0 +1,14 @@
+<view class="fixed">
+  <paging>
+    <view slot="list">
+      <view wx:for="{{[1,2,3]}}" bindtap="onToCheck" wx:key="index_{{index}}" class="item flex_between">
+          <view>
+            张三
+          </view>
+          <view class="status">
+            审核中
+          </view>
+      </view>
+    </view>
+  </paging>
+</view>

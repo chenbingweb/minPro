@@ -1,0 +1,38 @@
+<nav-bar/>
+<view class="theme_page bottom_110">
+  <!--搜索  -->
+  <search/>
+  <!--列表  -->
+  <view class="list_body">
+      <paging>
+        <view slot="list">
+          <navigator url="../themeDetail/themeDetail" class="flex_between list_box">
+            <view class="info">
+              <view class="title">
+                赛事|羽毛球比赛
+              </view>
+              <view class="status">报名中</view>
+              <view >
+                <view class="flex_start address">
+                  <view class="icon_box " style="margin-right:10rpx">
+                    <image src="../../images/address.png" style="width:19rpx;height:26rpx"></image>
+                  </view>
+                 北京市
+                 </view>
+                <view class="flex_start address" style="margin-top:10rpx">
+                  <view class="icon_box " style="margin-right:10rpx">
+                    <image src="../../images/time.png" style="width:22rpx;height:22rpx"></image>
+                  </view>
+                 2019-09-03 —— 2019-09-03 
+                 </view>
+              </view>
+            </view>
+            <view class="icon_box">
+              <image src="../../images/img/1.jpg" style="width:214rpx;height:214rpx;border-radius:10rpx"></image>
+            </view>
+            
+          </navigator>
+        </view>
+      </paging>
+  </view>
+</view>

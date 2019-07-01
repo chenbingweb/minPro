@@ -1,0 +1,8 @@
+
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "paging": "/components/paging/paging",
+    "filter-picker":"/components/filter-picker/filter-picker"
+  }
+}

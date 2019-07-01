@@ -1,0 +1,224 @@
+<pay-list shows="{{shows}}" bindselectPay="selectPayEvent" />
+<job-three 
+  shows="{{jobShows}}" value="{{valueArr}}" bindselectJob="selectJob"
+/>
+<form bindsubmit="submitEvent">
+  <view wx:if="{{src=='wantjob'}}">
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        工作性质
+      </view>
+      <picker style="color:#999" range="{{workNature}}" value="{{workNatureIndex}}" bindchange="selectWorkNature">
+        <input disabled class="input_style select_style" name="type" value="{{workNature[workNatureIndex]}}" placeholder="请选择"></input>
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333">
+      <view class="item_title">
+        工作地点
+      </view>
+      <picker bindchange="areaChange" range="{{areaList}}" range-key="name" value="{{areaListIndex}}" style="color:#999">
+        <input disabled class="input_style select_style" name="areaName" value='{{areaList[areaListIndex].name}}' placeholder="请选择"></input>
+        <input disabled hidden name="place" class="input_style select_style" value='{{areaList[areaListIndex].id}}' placeholder="请选择"></input>
+      </picker>
+      <!-- <picker mode="region" bindchange="cityChangeEvent"  style="color:#999">
+        <input disabled class="input_style select_style" value="{{cityInde}}" placeholder="请选择"></input>
+         <input class="input_style select_style" hidden name="area"   value="{{cityInde}}" placeholder="请选择"></input>
+      </picker> -->
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <!-- <view class="company item flex_start f_30_333">
+      <view class="item_title">
+        工作地点
+      </view>
+      <picker range="{{areaList}}" bindchange="areaChangeEvent" range-key="name" value="{{areaIndex}}" style="color:#999">
+        <input disabled class="input_style select_style" name="area" value="{{areaList[areaIndex].name}}" placeholder="请选择"></input>
+         <input class="input_style select_style" hidden  value="{{areaList[areaIndex].id}}" placeholder="请选择"></input>
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view> -->
+    <view class="company item flex_start f_30_333">
+      <!--跳转页面  -->
+      <view class="item_title">
+        职位类型
+      </view>
+       <view bindtap="showJobSpiker">
+        <view mode="date" style="color:#999">
+          <input disabled class="input_style select_style" name="category" value='{{station}}' placeholder="请选择"></input>
+        </view>
+      </view>
+      <!-- <picker range="{{jobTypeList}}" bindchange="jobTypeListEvent" value="{{jobIndex}}" style="color:#999">
+        <input disabled class="input_style select_style" name="category" 
+        value="{{jobTypeList[jobIndex]==''?'':jobTypeList[jobIndex]}}"
+         placeholder="请选择"></input>
+      </picker> -->
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333">
+      <!--跳转页面  -->
+      <view class="item_title">
+        期望薪资
+      </view>
+      <view bindtap="showPayList" style="color:#999">
+        <input disabled name="pay_start" hidden class="input_style select_style" value="{{selectPay.pay_start}}" placeholder="请选择"></input>
+        <input disabled name="pay_end" hidden class="input_style select_style" value="{{selectPay.pay_end}}" placeholder="请选择"></input>
+        <input disabled class="input_style select_style" value="{{selectPay.pay_start==''?'请选择':(selectPay.pay_start+'k~'+selectPay.pay_end+'k')}}" placeholder="请选择"></input>
+      </view>
+      <!-- <picker bindchange="payChangeEvent" range="{{payList}}" value="{{payIndex}}" range-key="name"  style="color:#999">
+        <input disabled class="input_style select_style" value="{{payList[payIndex].name}}" placeholder="请选择"></input>
+         <input hidden class="input_style select_style" name="pay" value="{{payList[payIndex].id}}" placeholder="请选择"></input>
+      </picker> -->
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{src=='experience'}}">
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        公司名称
+      </view>
+      <view style="color:#999">
+        <input class="input_style select_style" name="company" value='{{company}}' placeholder="请输入公司名称"></input>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        开始时间
+      </view>
+      <picker  start="2010-01-01" mode="date" fields="month" bindchange="startDayEvent" style="color:#999">
+        <input disabled class="input_style select_style" name="start_time" value="{{startTime}}" placeholder="请选择"></input>
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        结束时间
+      </view>
+      <picker start="2010-01-01" mode="date" fields="month" bindchange="endDayEvent" style="color:#999">
+        <input disabled class="input_style select_style" name="end_time" value="{{endTime}}" placeholder="请选择"></input>
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        岗位名称
+      </view>
+       <view bindtap="showJobSpiker">
+        <view mode="date" style="color:#999">
+          <input disabled class="input_style select_style" name="station" value='{{station}}' placeholder="请选择"></input>
+        </view>
+      </view>
+      <!-- <navigator url="../bossSelectJob/bossSelectJob?src=selfrelease">
+        <view mode="date" style="color:#999">
+          <input disabled class="input_style select_style" name="station" value='{{station}}' placeholder="请选择"></input>
+        </view>
+      </navigator> -->
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        工作描述
+      </view>
+      <view style="color:#999">
+        <input class="input_style select_style" name="detail" value='{{detail}}' placeholder="请输入工作描述"></input>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{src=='education'}}">
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        学校名称
+      </view>
+      <view style="color:#999">
+        <input class="input_style select_style" name="school" value='{{school}}' placeholder="请输入学校名称"></input>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        学历
+      </view>
+      <picker range="{{educationList}}" bindchange="educationEvent" value="{{eduIndex}}" style="color:#999">
+        <input disabled class="input_style select_style" name="education" value='{{educationList[eduIndex]}}' placeholder="请选择"></input>
+        <!-- <input disabled hidden class="input_style select_style" name="education" value="" placeholder="请选择"></input> -->
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        入学时间
+      </view>
+      <picker start="2010-01-01" bindchange="startDayEvent" mode="date" fields="month" style="color:#999">
+        <input disabled class="input_style select_style" name="start_time" value='{{startTime}}' placeholder="请选择"></input>
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        毕业时间
+      </view>
+      <picker start="2010-01-01" bindchange="endDayEvent" mode="date"  fields="month" style="color:#999">
+        <input disabled class="input_style select_style" name="end_time" value='{{endTime}}' placeholder="请选择"></input>
+      </picker>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        专业名称
+      </view>
+      <view style="color:#999">
+        <input class="input_style select_style" name="major" value='{{major}}' placeholder="请输入专业名称"></input>
+      </view>
+    </view>
+  </view>
+  <view class="flex_around" style="margin-top:100rpx;">
+    <view class="btn_item" bindtap="onNavBack">
+      <view class="icon_box absolute">
+        <image src="../../images/cancel_bg.png" style="width:300rpx;height:80rpx;"></image>
+      </view>
+      <view class="f_28_333 absolute">
+        取消
+      </view>
+    </view>
+    <view class="btn_item">
+      <view class="icon_box absolute">
+        <image src="../../images/phone_btn.png" style="width:300rpx;height:80rpx;"></image>
+      </view>
+      <view class="f_28_333 absolute" style="color:white">
+        完成
+      </view>
+      <button class="login_btn" formType="submit"></button>
+    </view>
+  </view>
+</form>

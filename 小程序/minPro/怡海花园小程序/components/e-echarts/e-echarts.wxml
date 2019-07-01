@@ -1,0 +1,9 @@
+<view class="data box_shadow " >
+  <view class="data_title f_30_333">
+    {{title}}
+  </view>
+
+  <view class="relative echar_box">
+     <ec-canvas class="ec_canvas" canvas-id="mychart-pie" id="ec_{{index}}" ec="{{ec}}"></ec-canvas> 
+  </view>
+</view>

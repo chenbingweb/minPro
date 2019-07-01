@@ -1,0 +1,121 @@
+/* pages/sellHouseDetail/sellHouseDetail.wxss */
+@import '../../temp/temp.wxss'; 
+page
+{
+  background-color: #f4f4f4;
+  height: 100%;
+  width: 750rpx;
+}
+.fx_box
+{
+  padding-bottom: 100rpx;
+  overflow: scroll;
+}
+.header_box
+{
+    margin-bottom: 10rpx;
+}
+.house_detail
+{
+  height: 188rpx;
+  padding: 0 25rpx;
+  background-color: #fff;
+  color:#333333;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.address
+{
+  color:#666;
+  font-size:28rpx;
+  /* line-height:50rpx; */
+  margin-bottom:10rpx;
+
+}
+.house_type
+{
+  color:#666666;
+  font-size:24rpx
+}
+.price
+{
+  font-size: 24rpx;
+  color:#333333;
+}
+/*房屋信息  */
+.house_info
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  background-color: white;
+  color:#666666;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.title_1
+{
+  padding-right:30rpx;
+}
+.title_2
+{
+  color:#333333
+}
+.one_chilid
+{
+  width: 350rpx;
+  height: 83rpx;
+
+}
+.info_item
+{
+  border-bottom: 2rpx solid #e3e3e3;
+  box-sizing: border-box;
+    padding: 0 25rpx;
+}
+/*房源  */
+.house_resource
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  /* padding: 0 25rpx; */
+  background-color: white;
+  color:#333333;
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+  margin-bottom: 0rpx;
+}
+.content
+{
+  color:#666;
+  font-size: 28rpx;
+  padding: 0 25rpx;
+}
+/*其他推荐  */
+.others
+{
+  width:750rpx;
+  background-color: white;
+  padding:  0 25rpx;
+  line-height: 88rpx;
+  color:#333333;
+  font-size: 30rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/*租房推荐  */
+.rent_box
+{
+  flex-wrap: wrap;
+}
+.rent_item
+{
+  width: 150rpx;
+  height: 120rpx;
+  color:#333333;
+  font-size: 24rpx;
+  flex-direction: column;
+}

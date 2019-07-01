@@ -1,0 +1,38 @@
+<view class="relative" style="height:100vh">
+  <view class="tip_1">您已选择《{{selectWordsName}}》词库</view>
+  <view class="table_title flex_start">
+    <view class="table_header">计划几天完成</view>
+    <view class="table_header">每天新背单词</view>
+    <view class="table_header">每天最多复习</view>
+  </view>
+  <scroll-view class="scroll_v" scroll-y>
+    <radio-group class="table_body" bindchange="onSelectPlan">
+    <view class="flex_start cell_box" wx:for="{{list}}" wx:key="_{{index}}">
+      <label class="flex_start" style="width:100%">
+        <view class="table_cell  {{item.checked?'selected':''}}">
+          {{item.days}}天
+        </view>
+        <view class="table_cell  {{item.checked?'selected':''}}">
+          {{item.words}}个
+        </view>
+        <view class="table_cell  {{item.checked?'selected':''}}">
+          {{item.max_review_words}}个
+        </view>
+        <radio hidden value="{{item.id}}" checked="{{item.checked}}" />
+      
+      </label>
+      
+    </view>
+    
+    </radio-group>
+  </scroll-view>
+  <view class="plan_bottom">
+      <view class="end_plan" ><text wx:if="{{finishTime!=''}}">预计任务达成日期: {{finishTime}}</text></view>
+     <view class="btn_box flex_between">
+      <view class="p_btn f_30_fff" bindtap="onCancel">取消修改</view>
+      <view class="p_btn f_30_fff" bindtap="onStartPlan">确认计划</view>
+     </view>
+  
+  </view>
+ 
+</view>

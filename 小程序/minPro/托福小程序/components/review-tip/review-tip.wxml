@@ -1,0 +1,8 @@
+<view class="fixed_1" wx:if="{{showToFX }}">
+  <view class="word_detail">
+    <view class="f_34_333 title_3">温馨提示</view> 
+    <view class="f_30_666 content">在完成当天的新单词学习后，还有非常重要的“新单词复习”任务。接下来请把今天的新单词小节从头到尾复习一遍，只需要看到英文能反应释义即可。通过按钮切换今天所有新单词小节，直到回忆完所有小节为止。不断巩固，强化记忆，让我们开始吧！
+    </view>
+    <view class="to_new_word" bindtap="onStartReview">开始复习今天的新单词</view>
+  </view>
+</view>

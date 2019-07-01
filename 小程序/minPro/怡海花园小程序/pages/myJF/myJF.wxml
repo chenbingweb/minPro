@@ -1,0 +1,67 @@
+<view class="jf_box flex_center">
+  <view class="jf_icon">
+    <view class="icon_box">
+      <image src="../../images/jf_big_icon.png" style="width:153rpx;height:197rpx;"></image>
+    </view>
+    <view style="padding-top:40rpx">当前积分222</view>
+  </view>
+
+</view>
+<view>
+  <view class="nav_item flex_between">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/jf_fb.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <view style="padding-left:20rpx;">发布</view>
+    </view>
+    <view class="flex_start">
+      <view style="padding-right:20rpx;color:#5293e1">10积分</view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </view>
+  <view class="nav_item flex_between">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/create_temp.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <view style="padding-left:20rpx;">创建模板</view>
+    </view>
+    <view class="flex_start">
+      <view style="padding-right:20rpx;color:#5293e1">10积分</view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </view>
+  <view class="nav_item flex_between">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/share_jf.png" style="width:26rpx;height:29rpx"></image>
+      </view>
+      <view style="padding-left:20rpx;">分享</view>
+    </view>
+    <view class="flex_start">
+      <view style="padding-right:20rpx;color:#5293e1">10积分</view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </view>
+  <view class="nav_item flex_between">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/add_all_info.png" style="width:26rpx;height:29rpx"></image>
+      </view>
+      <view style="padding-left:20rpx;">不全信息</view>
+    </view>
+    <view class="flex_start">
+      <view style="padding-right:20rpx;color:#5293e1">10积分</view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_1.png" style="width:14rpx;height:28rpx"></image>
+      </view>
+    </view>
+  </view>
+</view>

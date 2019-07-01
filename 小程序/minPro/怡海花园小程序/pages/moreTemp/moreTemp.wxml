@@ -1,0 +1,51 @@
+<view class="more_page">
+  <search/>
+  <view class="file_box flex_center">
+    <view class="btn_box flex_around">
+      <view class="btn_item select_font">
+        本小区
+      </view>
+      <view class="btn_item ">我的关注</view>
+      <!-- <view class="select"></view> -->
+    </view>
+
+  </view>
+  <view class="temp_box">
+    <view class="title flex_start">
+      <view class="line"></view>
+      <view>业主板块</view>
+    </view>
+    <!--板块  -->
+    <view class="temp_item_box relative">
+      <paging>
+        <view slot="list" class="list">
+          <view wx:for="{{[1,2,3,5]}}" wx:key="{{index}}_index" class="temp_item flex_between">
+            <view class="icon_box">
+              <image src="../../images/info_icon.png" style="width:42rpx;height:37rpx"></image>
+            </view>
+            <view class="info flex_between">
+              <view>
+                <view class="care_name">
+                  销惠信息
+                </view>
+                <view class="care_num">
+                  120关注
+                </view>
+              </view>
+              <view wx:if="{{false}}" class="care_n">
+                关注
+              </view>
+              <view wx:else class="care_y">
+                已关注
+              </view>
+            </view>
+          </view>
+        </view>
+      </paging>
+    </view>
+    <!--申请板块  -->
+    <view class="apply_temp" bindtap="onToOpenTemp">
+      开通我的板块
+    </view>
+  </view>
+</view>

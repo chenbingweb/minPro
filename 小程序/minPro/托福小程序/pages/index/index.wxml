@@ -1,0 +1,63 @@
+<nav-bar-bottom id="bottomNav"/>
+<view  class="fixed scroll index_page">
+  <!--头部  -->
+  <header-tip objData="{{studyRate}}"/>
+  <!-- banner wx:if="{{bannerImg==''}}"-->
+  <view class="icon_box banner relative">
+    <!-- <view class="loading_data" ></view> -->
+    <image wx:if="{{banner.length==1}}" src="{{banner[0].img_url}}" style="width:730rpx;height:224rpx;"></image>
+    <swiper-base wx:else height="224" imgsData="{{banner}}" baseSet="{{baseSet}}" />
+  </view>
+
+
+  <!-- 第一步 -->
+  <view class="step">【第一步】确认BEAT大数据词库</view>
+  <!-- 选择词库 -->
+  <view >
+    <radio-group class="select_words flex_start relative" bindchange="onRadioChange">
+      <view class="loading_data refresh" wx:if="{{words.length==0}}" bindtap="onRefresh">点击刷新</view>
+      <label  for="_{{index}}" class="radio_box flex_between relative" wx:for="{{words}}" wx:key="1_{{index}}">
+        <view class="f_30_333 flex_start" style="width:250rpx;">
+          <view class="icon_box" style="margin-right:4rpx" wx:if="{{item.is_hot=='1'}}">
+            <image src="../../images/hot.png" style="width:23rpx;height:28rpx"></image>
+          </view>
+          <view class="one_line" style="{{item.is_hot=='1'?'color:#ff9701':''}}">{{item.name}}</view>
+          
+        </view>
+        <view class="icon_box">
+          <image src="../../images/{{item.checked?'check_icon_yes':'check_icon_no'}}.png" style="width:46rpx;height:46rpx;"></image>
+        </view>
+              
+        <radio id="_{{index}}" class="opacity"  value="{{item.id}}" checked="{{item.checked}}"> 
+        <button wx:if="{{!isRegister}}" open-type="getUserInfo" data-wid="{{item.id}}" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="opacity"></button>
+        </radio>
+        
+      </label>
+      <view class="dis_word" >{{description}}</view>
+    </radio-group>
+
+  </view>
+  <!-- 第二步 -->
+  <view class="step">【第二步】确认当前背单词计划</view>
+  <view class="flex_center relative">
+    <!-- <view class="loading_data" ></view> -->
+    <my-words wx:if="{{studyRate.mode}}"/>
+    <view url="../setPlan/setPlan" wx:else class="relative">
+      <view class="icon_box img_icon">
+        <image src="../../images/no_plan.png" style="width:129rpx;height:135rpx"></image>
+      </view>
+      <view class="f_32_666 tip_line" wx:if="{{!isSelectLesson}}">您还没有选择词库，请先选择词库</view>
+      <view class="f_32_666 tip_line btn" wx:else>设置我的计划</view>
+      
+      <!-- <button wx:if="{{!isRegister}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="opacity"></button> -->
+      <view class="opacity" bindtap="onSetPlan" url="../setPlan/setPlan"></view>
+    </view>
+  </view>
+
+  <!-- <view style="width:700rpx;height:300rpx;margin:0 auto;border:2rpx solid red;">
+   <ec-canvas canvas-id="mychart-bar" ec="{{ ec }}"/>
+  </view> -->
+ <!-- <button wx:if="{{!isRegister}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="opacity"></button> -->
+</view> 
+<!-- <login-page wx:if="{{!isRegister}}"/> -->
+<!-- <calendar startDay='201943' endDay='201954'/> -->

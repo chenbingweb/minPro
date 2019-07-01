@@ -1,0 +1,46 @@
+<template name="gan_kao" >
+  <view class="fixed">
+    <view class="icon_box wap_pos">
+      <!-- <image src="../../imgs/classify/gan_kao_bg.jpg" style="width:750rpx;height:1334rpx;"></image> -->
+      <image src="../../imgs/classify/2.jpg" style="width:750rpx;height:1634rpx;"></image>
+    </view>
+    <!--返回 -->
+    <view class="back_btn icon_box {{data.back_btn_active}}" bindtap="OnCloseClick" style='left:40rpx;'>
+      <!-- <image src="../../imgs/classify/back.png" style="width:134rpx;height:76rpx"></image> -->
+      <image src="../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+      <!-- <view class="back_text flex_center"><text class="hot_more"></text> 返回</view> -->
+    </view>
+    <!-- 赶考列表 bindtap="OnItemClick" scroll-top-->
+    <scroll-view class="scroll_box" scroll-y scroll-top="{{[data.st]}}">
+      <view class="scroll_box_1" style="padding-bottom:200rpx;padding-top:30rpx">
+        <gan-kao-item  wx:for="{{data.dwItems}}" dwItems="{{item}}" wx:key="item_{{index}}"    data-id="{{item.id}}" />
+      </view>
+      
+    </scroll-view>
+       <!-- 当前关卡 -->
+    <view class="current_level">
+      <current-level  dwItems="{{data.currentLevel}}"/>
+    </view>
+    <!-- 用户信息 -->
+    <user-info 
+    
+    gankaoIcon="{{data.gankaoIcon}}"
+     LevelIcon="{{data.LevelIcon}}"
+    qcLevel="{{data.qcLevel}}"
+    money="{{data.Score}}"  
+    name="{{data.UserName}}" 
+    gkStar="{{data.gkStar}}"
+    nowPage="gankao"/>
+     <!-- 菜单导航 -->
+    <nav-item
+     bindscore="OnScore"
+      TodayIsQiandao="{{data.TodayIsQiandao}}"
+      LianxuQiandaoCount="{{data.LianxuQiandaoCount}}"
+      TodayGankaoCount="{{data.TodayGankaoCount}}"
+      TodayQiecuo1V1Count="{{data.TodayQiecuo1V1Count}}"
+      TodayQiecuo3V3Count="{{data.TodayQiecuo3V3Count}}"
+      TodayCGCount="{{data.TodayCGCount}}"
+    />
+
+  </view>
+</template>

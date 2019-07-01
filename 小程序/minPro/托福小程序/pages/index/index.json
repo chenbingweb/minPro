@@ -1,0 +1,7 @@
+{
+  
+  "usingComponents": {
+    "login-page": "/components/loginPage/loginPage"
+  },
+  "disableScroll":true
+}

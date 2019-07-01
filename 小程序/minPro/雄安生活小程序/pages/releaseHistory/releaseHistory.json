@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布历史",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+}

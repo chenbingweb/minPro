@@ -1,0 +1,144 @@
+.play_1v1_box
+{
+  position: absolute;
+  left: 0;
+  width: 750rpx;
+  height: 191rpx;
+  top:calc(50vh - 540rpx);
+}
+.play_1v1_left
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  
+}
+.play_1v1_right
+{
+   position: absolute;
+  right: 0;
+  top:0;
+}
+.fight_over_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 750rpx;
+  height: 1036rpx;
+  overflow: hidden;
+  border-bottom: 6rpx solid #420704;
+  box-sizing: border-box;
+}
+.btn_box
+{
+  width: 750rpx;
+  height: 240rpx;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 310rpx);
+}
+.go_on_btn,.share_btn
+{
+  margin: 0 auto;
+  width:380rpx;
+  height: 119rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.z_t
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 26rpx;
+}
+.md
+{
+  position: absolute;
+  left:48rpx;
+  right: 50rpx;
+  top:0;
+  bottom: 0;
+}
+.tip_box
+{
+  width: 750rpx;
+  height: 864rpx;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 280rpx);
+}
+.res_bg_1
+{
+  position: absolute;
+  left: 0;
+  top:-200rpx;
+
+}
+.res_bg_2
+{
+  position: absolute;
+  left: 0;
+  top:-200rpx;
+}
+.success_img
+{
+  position: absolute;
+  left: 50%;
+  top:-20rpx;
+  transform: translate(-50%);
+}
+.coin_box
+{
+  width: 188rpx;
+  height: 64rpx;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 130rpx);
+  box-sizing: border-box;
+  border:2rpx solid #f0b75a;
+  border-radius: 32rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.total_box
+{
+  width: 108rpx;
+  text-align: center;
+  line-break: 64rpx;
+  color:#632e3b;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.top_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+
+}
+.font_style
+{
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 64rpx;
+  font-weight: bold;
+  padding: 0 20rpx;
+}
+.qc_level
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:100rpx;
+}

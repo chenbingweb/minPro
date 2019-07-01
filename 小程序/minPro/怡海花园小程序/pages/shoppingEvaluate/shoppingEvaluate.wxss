@@ -1,0 +1,72 @@
+/* pages/shoppingEvaluate/shoppingEvaluate.wxss */
+.shop_info
+{
+  width: 750rpx;
+  height: 130rpx;
+  border-bottom: 2rpx solid #ebe9e9;
+  padding: 0 36rpx;
+  color:#333333;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.evalute_box
+{
+  padding: 20rpx 36rpx;
+}
+.content
+{
+  width: 678rpx;
+  display: block;
+  margin: 0 auto;
+  height: 150rpx;
+  color:#999999;
+  font-size: 26rpx;
+}
+.add_img_box
+{
+  box-sizing: border-box;
+  width: 750rpx;
+  padding: 0 36rpx;
+}
+.img_child:nth-of-type(3n-1)
+{
+  margin: 0 20rpx;
+}
+.font_num
+{
+  height: 90rpx;
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 36rpx;
+  color:#3f3f3f;
+  font-size: 22rpx;
+  line-height: 80rpx;
+  border-bottom: 20rpx solid #f5f5f5;
+}
+.star_box
+{
+  width: 750rpx;
+  height: 460rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  padding-top: 30rpx;
+  font-size: 28rpx;
+  color:#333333;
+}
+.star
+{
+  width: 60rpx;
+  height: 60rpx;
+}
+.submit
+{
+  width: 678rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  background: #5293e1;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color:#ffffff;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,10 @@
+<view class="data box_shadow " >
+  <view class="data_title f_30_333">
+    {{title}}
+  </view>
+
+  <view class="relative echar_box">
+    <slot name="ec"></slot>
+    <!-- <ec-canvas class="ec_canvas" canvas-id="mychart-pie" ec="{{ ecBar }}"></ec-canvas> -->
+  </view>
+</view>

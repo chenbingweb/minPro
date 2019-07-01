@@ -1,0 +1,451 @@
+<!--引入商品页面 -->
+<import src="./shop_1.wxml"/> 
+<!--商品页面 -->
+<template is="shopping" data="{{data:data}}"></template>
+<!-- <import src="../../../../dati_comm/template/Grid3.wxml" />
+<import src="../../../../dati_comm/template/Grid5.wxml" />
+<import src="../../../../dati_comm/template/Grid3d.wxml" /> -->
+
+
+
+
+<view wx:if="{{false}}" class="shoping">
+
+  <!-- 兑换和充值 -->
+  <view class="exchange_chong_zhi_box">
+    <!--背景  -->
+    <view class="exchange_header_bg_box">
+      <view class="icon_box">
+        <image mode="aspectFill" src="../../imgs/shoping/exchange_bg.png" style="width:750rpx;height:1200rpx"></image>
+      </view>
+
+      <!-- <view class="icon_box change_dir">
+        <image mode="aspectFill" src="../../imgs/shoping/exchange_bg.png" style="width:375rpx;height:1200rpx"></image>
+      </view> -->
+    </view>
+    <!-- 兑换和充值盒子 -->
+    <view class="exchange_chong_zhi_container">
+      <!--充值 和 兑换 切换 -->
+      <view class="btn_box">
+        <view bindtap="exchangeBtn" class="btn_item {{data.exchange?'select_ok':''}}">
+          <view class="duihuan">兑换</view>
+        </view>
+        <view bindtap="chongzhiBtn" class="btn_item {{!data.exchange?'select_ok':''}}">
+          <view class="chongzi">充值</view>
+        </view>
+      </view>
+      <view class="line_ab"></view>
+      <view class="denglong">
+        <image mode="aspectFill" src="../../imgs/shoping/denglong.png" style="width:54rpx;height:97rpx;"></image>
+      </view>
+      <view class="denglong1">
+        <image mode="aspectFill" src="../../imgs/shoping/denglong.png" style="width:54rpx;height:97rpx;"></image>
+      </view>
+      <!--充值  -->
+      <view wx:if="{{!data.exchange}}" class="tabpage">
+        <!--线条-->
+        <!-- <view class='show_are_c'></view> -->
+
+        <view class='show_are_b'>
+          <image class="lin_1" src="../../imgs/shoping/lin_1.png" style="width:8rpx;height:5rpx;"></image>
+          <image class="lin_2" src="../../imgs/shoping/lin_2.png" style="width:28rpx;height:12rpx;"></image>
+          <image class="lin_3" src="../../imgs/shoping/lin_3.png" style="width:8rpx;height:5rpx;"></image>
+        </view>
+        <view class="show_are_a show_privilege">
+          <view class='privilege_bj'>
+            <image src="../../imgs/shoping/privilege_bj.png" style="width:680rpx;height:220rpx"></image>
+          </view>
+          <view class="text_ts">
+            <view class="text_tq" wx:if="{{!data.isvip}}">快来开通特权吧</view>
+            <view class="text_tq" wx:if="{{data.isvip}}">特权有效期：{{data.VipEnd}}</view>
+            <view class='privilege' wx:if="{{data.isvip}}">
+              <view class='privilege_a' bindtap='privilege_amend'>
+                特权
+              </view>
+              <view class='privilege_e'>
+                <text class='wenhao'>?</text>
+              </view>
+              <view class='privilege_b'> </view>
+              <view class='privilege_c'> </view>
+              <view class='privilege_d'> </view>
+              <!--双倍积分-->
+              <view class='privilege_b1'>{{data.privilege_name_1}}</view>
+              <!--赠送门票-->
+              <view class='privilege_c1'>{{data.privilege_name_2}}</view>
+              <!--特权徽章-->
+              <view class='privilege_d1'>{{data.privilege_name_3}}</view>
+              <view class='privilege_baseboard_1'>
+                <image src="../../imgs/shoping/baseboard_ioc.png" style="width:90rpx;height:90rpx"></image>
+              </view>
+              <view class='privilege_baseboard_2'>
+                <image src="../../imgs/shoping/baseboard_ioc.png" style="width:90rpx;height:90rpx"></image>
+              </view>
+              <view class='privilege_baseboard_3'>
+                <image src="../../imgs/shoping/baseboard_ioc.png" style="width:90rpx;height:90rpx"></image>
+              </view>
+              <view class='privilege_b2'>
+                <image src="{{data.privilege_img_1}}" style="width:68rpx;height:68rpx"></image>
+              </view>
+              <view class='privilege_c2'>
+                <image src="{{data.privilege_img_2}}" style="width:68rpx;height:68rpx"></image>
+              </view>
+              <view class='privilege_d2'>
+                <image src="{{data.privilege_img_3}}" style="width:68rpx;height:68rpx"></image>
+              </view>
+
+              <view class='privilege_w' bindtap='privilegeinfo'></view>
+            </view>
+            <view class='privilege' wx:if="{{!data.isvip}}">
+              <view class='privilege_a'>
+                特权
+              </view>
+              <view class='privilege_e'>
+                <text class='wenhao'>?</text>
+              </view>
+              <view class='privilege_b'> </view>
+              <view class='privilege_c'> </view>
+              <view class='privilege_d'> </view>
+              <view class='privilege_b1'>{{data.privilege_name_1}}</view>
+              <view class='privilege_c1'>{{data.privilege_name_2}}</view>
+              <view class='privilege_d1'>{{data.privilege_name_3}}</view>
+              <view class='privilege_baseboard_1'>
+                <image src="../../imgs/shoping/baseboard_ioc.png" style="width:90rpx;height:90rpx"></image>
+              </view>
+              <view class='privilege_baseboard_2'>
+                <image src="../../imgs/shoping/baseboard_ioc.png" style="width:90rpx;height:90rpx"></image>
+              </view>
+              <view class='privilege_baseboard_3'>
+                <image src="../../imgs/shoping/baseboard_ioc.png" style="width:90rpx;height:90rpx"></image>
+              </view>
+              <view class='privilege_b2'>
+                <image src="{{data.privilege_imga_1}}" style="width:68rpx;height:68rpx"></image>
+              </view>
+              <view class='privilege_c2'>
+                <image src="{{data.privilege_imga_2}}" style="width:68rpx;height:68rpx"></image>
+              </view>
+              <view class='privilege_d2'>
+                <image src="{{data.privilege_imga_3}}" style="width:68rpx;height:68rpx"></image>
+              </view>
+              <view class='privilege_w' bindtap='privilegeinfo'></view>
+            </view>
+          </view>
+        </view>
+
+        <scroll-view scroll-y="true" class="exchange_gift_box_b show_Pays">
+          <!--充值 选择按钮  -->
+          <view scroll-y style="width: 680rpx;margin:0 auto;height: 660rpx" class="chong_zhi_box_ remove_roll_car">
+            <!--展示区，以后会用  -->
+            <view class="show_are" wx:if="{{data.bannerItem}}" bindtap="OnCZItemClick" data-id="{{data.bannerItem.Id}}">
+              <image mode="aspectFill" src="{{data.bannerItem.Picture}}" style="width:100%;height:100%"></image>
+            </view>
+            <view class="chong_zhi_box">
+              <view class="chongzhi_item show_Pays" wx:for="{{data.czitems}}" wx:key="item_{{index}}" bindtap="OnCZItemClick" data-id="{{item.Id}}" data-anId="{{index}}" style="animation-delay:{{500}}ms;opacity:0;">
+                <!-- <view class='background_cz'></view> -->
+                <view class="icon_box cz_btn_bg">
+                  <image src="../../imgs/shoping/chong_zhi_bg.png" style="width:338rpx;height:305rpx"></image>
+                </view>
+                <!--最热  -->
+                <view class="best_hot icon_box" wx:if="{{false}}">
+                  <image src="../../imgs/shoping/hot.png" style="width:139rpx;height:90rpx"></image>
+                </view>
+                <!--送最多  -->
+                <view class="best_hot icon_box" wx:if="{{false}}">
+                  <image src="../../imgs/shoping/more.png" style="width:139rpx;height:90rpx"></image>
+                </view>
+                <!--金币图片 -->
+                <view class="coin_img_item icon_box">
+                  <!-- <image src="{{item.Picture}}" style="width:283rpx;height:228rpx"></image> -->
+                  <image src="{{item.Picture}}" style="width:306rpx;height:231rpx"></image>
+                </view>
+
+                <!--名字  -->
+                <view class="gold_name">
+                  {{item.Name}}
+                </view>
+
+                <!--金币数量  -->
+                <view class="coin_number_box">
+
+                  <!--金币地板  -->
+                  <view class="icon_box coin_db_pos">
+                    <image src="../../imgs/shoping/coin_bg1.png" style="width:270rpx;height:60rpx"></image>
+                  </view>
+                  <!--金币图片  -->
+                  <view class="icon_box coin_pic">
+                    <image src="../../../imgs/comm/coin.png" style="width:52rpx;height:52rpx"></image>
+                  </view>
+                  <!--金币数量  -->
+                  <view class="coin_detail_num">{{item.Num}}</view>
+                  <view class="font_style_song">
+                    送
+                  </view>
+
+                </view>
+
+                <!--5倍金币 -->
+                <view class='double' wx-if="{{item.cs==0}}">
+                  <view class='sc'>(首充</view>
+                  <view class='sb'>
+                    <image src="../../imgs/shoping/x5.png" style="width:54rpx;height:29rpx;transform: translate(0rpx, -4rpx);"></image>
+                  </view>
+                  <view class='jb'>金币)</view>
+                </view>
+
+                 <!--2倍金币 -->
+                <view class='double' wx-if="{{item.cs==1}}">
+                  <view class='sc'>(次充</view>
+                  <view class='sb'>
+                    <image src="../../imgs/shoping/double.png" style="width:54rpx;height:29rpx;transform: translate(0rpx, -4rpx);"></image>
+                  </view>
+                  <view class='jb'>金币)</view>
+                </view>
+
+                <!--兑换价格  -->
+                <view class="exchange_price">
+                  ¥{{item.Price}}
+                </view>
+                <!--动画 -->
+                <view class="pos_arr"></view>
+              </view>
+            </view>
+
+            <!--分享  -->
+            <!-- <view class="user_share_box show_Payx" style="animation-delay:1000ms;opacity:0;">
+         
+              <view class="share_bg">
+                <template is="Grid3" data="{{grid:data.share_db}}"></template>
+              </view>
+              <view class="share_content">
+                <view class="fee_style" wx-if="{{data.showShareReward}}">
+                  分享到微信群获得
+                  <image class="xf_img" src="../../../imgs/comm/coin.png"></image>{{data.FXMoney}}
+                </view>
+
+                <view class="fee_style" wx-if="{{!data.showShareReward}}">
+                  分享到微信群
+                </view>
+              </view>
+              <button open-type="share" class="share_button" data-id="GMoney"></button>
+            </view> -->
+          </view>
+
+        </scroll-view>
+      </view>
+      <!--兑换  -->
+      <view wx:if="{{data.exchange}}" class="tabpage">
+
+        <!--兑换线条-->
+        <view class='show_are_d'>
+          <image class="lin_1" src="../../imgs/shoping/lin_1.png" style="width:8rpx;height:5rpx;"></image>
+           <image class="lin_2" src="../../imgs/shoping/lin_2.png" style="width:28rpx;height:12rpx;"></image>
+          <image class="lin_3" src="../../imgs/shoping/lin_3.png" style="width:8rpx;height:5rpx;"></image> 
+        </view>
+        <scroll-view  scroll-y="true"  class="exchange_gift_box shopping_conversion">
+           <!--虚线  -->
+          <view class="line_aa"></view>
+          <view class="line_ad"></view>
+          <view class="frame_zheng">
+            <view class="frame_dk" wx:for="{{data.items}}" wx:key="item_{{index}}">
+              <!-- <view class="frame_dhs"> -->
+              <!--虚线  -->
+              <view class="line_ac"></view>
+
+              <view class="tiaoz">
+                <template is="Grid3d" data="{{grid:data.tiao_banzi}}"></template>
+              </view>
+              <view class="frame_dh">
+
+                <view class="content_title">{{item.Name}}</view>
+                <view class="content_time" wx:if="{{item.time}}" >{{item.time}}</view>
+                <view class="content_time" wx:if="{{item.num}}" >{{item.num}}</view>
+
+                <view class="content_imgbj">
+                  <image mode="aspectFit" class="img_star" src="../../imgs/shoping/diban_1.png" style="width:300rpx;heigth:182rpx;"></image>
+                </view>
+
+
+                <view class="content_img">
+
+                  <image mode="scaleToFill" class="img_star" src="{{item.Picture}}" style="width:300rpx;height:182rpx"></image>
+                </view>
+                <view class="content_xf">
+                  <view class="xuefne_img">
+                     <image src="../../../imgs/comm/xf.png" style="width:52rpx;height:52rpx"></image> 
+                  </view>
+                  <view class="xuefen_txt"> {{item.Price}}</view>
+                </view>
+                <!-- </view> -->
+
+                <!-- <view class="frame_dhx"> -->
+                <view class="content_dh">
+                  <view class="exchange" bindtap="OnItemClick" data-id = "{{item.Id}}">立即兑换</view>
+                </view>
+                <!-- </view> -->
+                <!-- <view class="line_dhz"> -->
+                <!-- <image mode="aspectFit" src="../../imgs/shoping/banzi_3.png" style="width:310rpx;height:20rpx"></image> -->
+                <!-- <template is="Grid9" data="{{grid:data.tiao_banzi}}"></template> -->
+                <!-- </view> -->
+
+              </view>
+            </view>
+            <!--  
+          <view class="gift_items_box">
+            <view class="gift_item shopping_conversion" wx:for="{{data.items}}" wx:key="item_{{index}}" style="animation-delay:{{300+index*150}}ms;opacity:0;">
+               <view class="item_left">
+                <view class="icon_box">
+                  <image mode="aspectFit" src="{{item.Picture}}" style="width:284rpx;height:240rpx"></image>
+                </view>
+              </view> 
+              <view class="item_right">
+               
+                <view class="icon_box new_gift">
+                  <image src="../../imgs/shoping/new.png" style="width:64rpx;height:54rpx"></image>
+                </view>
+                <view class="item_right_top">
+                  <view class="gift_name">{{item.Name}}</view>
+                  
+                  <view class="date_yxq" wx:if="{{false}}">{{data.time}}  </view>
+                  <view class="date_yxq" wx:if="{{true}}">{{data.timea}}</view>
+                </view>
+                <view class="item_right_bottom">
+                  <view class="bottom_xf">
+                    <view class="icon_box bottom_xf_img">
+                      <image src="../../../imgs/comm/xf.png" style="width:52rpx;height:52rpx"></image>
+                    </view>
+                    <view class="bottom_xf_detail">
+                      {{item.Price}}
+                    </view>
+                  </view>
+                  <view class="bottom_btn" wx:if="{{false}}">
+                    <view class="exbtn_bg_box">
+                      <template is="Grid3" data="{{grid:data.btns_db}}"></template>
+                    </view>
+                    <view class="btn_text" bindtap="OnItemClick" data-id="{{item.Id}}">
+                      立即兑换
+                    </view>
+                  </view> <view class="bottom_btn" wx:if="{{true}}">
+                    <view class="exbtn_bg_box">
+                      <template is="Grid3" data="{{grid:data.btns_db}}"></template>
+                    </view>
+                    <view class="btn_text" wx:if="{{true}}" data-id="{{item.Id}}">
+                      续期
+                    </view>
+                  </view>     
+                </view>
+              </view>
+            </view>
+
+            <view class="gift_item" wx:if="{{false}}">
+              <view class="item_left" style="background-color:#ffedcf">
+                <view class="icon_box">
+                  <image mode="aspectFit" src="../../imgs/shoping/waiting.png" style="width:284rpx;height:240rpx"></image>
+                </view>
+              </view>
+              <view class="item_right">
+                <view class="item_right_top">
+                  <view class="gift_name">敬请期待</view>
+                  <view class="gift_dis ellipsis"></view>
+                </view>
+                <view class="item_right_bottom" wx:if="{{false}}">
+                  <view class="bottom_xf">
+                    <view class="icon_box bottom_xf_img">
+                      <image src="../../../imgs/comm/xf.png" style="width:52rpx;height:52rpx"></image>
+                    </view>
+                    <view class="bottom_xf_detail">
+                      88,888,88
+                    </view>
+                  </view>
+                  <view class="bottom_btn">
+                    <view class="exbtn_bg_box">
+                      <template is="Grid3" data="{{grid:data.btns_db}}"></template>
+                    </view>
+                    <view class="btn_text">
+                      立即兑换
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view> -->
+          </view>
+          <view class="user_share_box show_Payx" style="animation-delay:1000ms;opacity:0;">
+         
+              <view class="share_bg">
+                <template is="Grid3" data="{{grid:data.share_db}}"></template>
+              </view>
+              <view class="share_content">
+                
+                <view class="fee_style">
+                  分享
+                </view>
+              </view>
+              <button open-type="share" class="share_button" data-id="GMoney"></button>
+            </view>
+        </scroll-view>
+        <view class="chongzi_tips">
+        <image class="img_qipao" src="../../imgs/shoping/qipaocz.png" style="width:380rpx;height:85rpx;"></image>
+          <!-- <template is="Grid5" data="{{grid:data.tiao_qipaocz}}"></template> -->
+          <view class="txt_name">
+          <!--充值特权-->
+          <view class="txt_namea">{{data.txt_namea}}</view>
+          <!--排位赛赢取-->
+          <view class="txt_named">{{data.txt_named}}</view>
+          <!--双倍-->
+          <view class="txt_namec">{{data.txt_namec}}</view>
+          <!--积分-->
+          <view class="txt_nameb">{{data.txt_nameb}}</view>
+          </view>
+
+        </view>
+
+        <view class="img_bj1">
+          <image mode="aspectFit" src="../../imgs/shoping/decorate.png" style="width:706rpx;height:93rpx"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--金币动画  hidden="{{!anbox.show}}"-->
+  <view class="animation_mark" wx:key="key_{{index}}">
+    <view style="left:{{anbox.left+'px'}};top:{{anbox.top+'px'}}" wx:for="{{data.arr}}" id="coin_f_{{index}}" class="icon_box coin_anima" animation="{{anbox['ax_'+index]}}" wx:key="gold_{{index}}">
+      <image src="../../../imgs/comm/coin.png" style="width:52rpx;height:52rpx"></image>
+    </view>
+  </view>
+  <!--金币 学分  -->
+  <view class="coin_xf">
+    <!--金币  -->
+    <view class="coin_box">
+      <!--背景图  -->
+      <view class="coin_box_bg">
+        <template is="Grid3" data="{{grid:data.coin_bg}}"></template>
+      </view>
+      <!--金币图  -->
+      <view class="coin_img" id="coin_img">
+        <image src="../../../../imgs/comm/coin.png" style="width:52rpx;height:52rpx"></image>
+      </view>
+      <!--金币数量  -->
+      <view class="coin_total">
+        {{data.money}}
+      </view> 
+    </view>
+    <!--学分  -->
+    <view class="coin_box">
+      <!--背景  -->
+      <view class="coin_box_bg">
+        <!-- <template is="Grid3" data="{{grid:data.coin_bg}}"></template> -->
+      </view>
+      <!--学分图  -->
+      <view class="coin_img">
+         <image src="../../../../imgs/comm/xf.png" style="width:52rpx;height:52rpx"></image> 
+      </view>
+      <!--学分数量  -->
+      <view class="coin_total">
+        {{data.xuefen}}
+      </view>
+    </view>
+    <!--条  -->
+    <!-- <view class="tiao">
+      <template is="Grid3" data="{{grid:data.tiao_line}}"></template>
+    </view> -->
+  </view>
+</view>

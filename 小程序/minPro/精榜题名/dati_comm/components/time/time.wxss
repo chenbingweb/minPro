@@ -1,0 +1,41 @@
+/* dati_comm/components/time/time.wxss */
+.time_box
+{
+  width: 60rpx;
+  height: 92rpx;
+  position: relative;
+}
+.bottom
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.time_tip
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  text-align: center;
+  line-height: 50rpx;
+  color:#fff;
+  font-weight:900;
+  font-size: 24rpx;
+}
+.top
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom:70rpx;
+  width: 50rpx;
+  height: 32rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  transition: height 0.04s linear;
+}

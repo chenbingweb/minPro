@@ -1,0 +1,131 @@
+/* pages/bossList/bossList.wxss */
+.search_box
+{
+  width: 750rpx;
+  height: 90rpx;
+  background-color: #fed545;
+  display: flex;
+  justify-content: center;
+}
+.input_box
+{
+  width: 700rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: rgba(0, 0, 0,0.2);
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.input_btn
+{
+  height: 70rpx;
+  padding-left: 10rpx;
+  width: 620rpx;
+  color:#fffefe;
+  font-size: 26rpx;
+}
+.place_holder
+{
+    color:#fffefe;
+  font-size: 26rpx;
+}
+.title
+{
+  color:#333333;
+  font-size: 30rpx;
+  height: 87rpx;
+  width: 750rpx;
+  line-height: 87rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #ececec;
+}
+/*筛选条件  */
+.filter_box
+{
+  width: 750rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #ececec;
+}
+.filter_item
+{
+  /* width:186rpx; */
+  width: 33.3333%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333333;
+  font-size: 28rpx;
+}
+/*列表  */
+.boss_list
+{
+  width: 750rpx;
+  position: absolute;
+  top:178rpx;
+  bottom: 0;
+  left: 0;
+}
+.list_item
+{
+  width: 750rpx;
+  margin: 0 auto;
+  min-height:200rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f4f4f4;
+  padding: 0 25rpx;
+  padding-top: 23rpx;
+  padding-bottom: 10rpx;
+}
+.company_name
+{
+  color:#666666;
+  font-size: 28rpx;
+  line-height: 43rpx;
+}
+.label_item
+{
+  color:#666666;
+  font-size: 28rpx;
+  padding: 6rpx 8rpx;
+  background-color: #f4f4f4;
+  margin-right: 18rpx;
+}
+.label_item:last-child
+{
+  margin-right:0;
+}
+.job_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top
+{
+  width: 46rpx;
+  height: 26rpx;
+  background-color: #e60012;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 26rpx;
+  color:white;
+  margin-left: 15rpx;
+}
+.job_name
+{
+  color:#333333;
+  font-size: 30rpx;
+  line-height: 43rpx;
+}
+.money
+{
+  color:#fed545;
+  font-size: 30rpx;
+}

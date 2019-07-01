@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "售楼部直销",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+}

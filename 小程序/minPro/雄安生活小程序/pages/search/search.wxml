@@ -1,0 +1,19 @@
+<!--搜索框  -->
+<view class="search_box">
+    <view class="input_box">
+      <view class="icon_box">
+          <image src="../../images/searc_icon.png" style="width:29rpx;height:28rpx"></image>
+      </view>
+      <input bindconfirm="searchConfirm" placeholder-class="place_holder" placeholder="找工作 找房子 买卖二手" class="input_btn"/>
+    </view>
+</view>
+<view class="title">
+    猜你想搜
+</view>
+<view class="filter_box">
+  <!-- <view bindtap="toSearchList" class="item" wx:for="{{labels}}" wx:key="label_{{index}}" data-sid="{{item.id}}" data-search="{{item.name}}">{{item.name}}</view> -->
+   <view bindtap="toSearchList" data-name="毛遂自荐" class="item">毛遂自荐</view>
+  <view bindtap="toSearchList" data-name="boss招聘" class="item">boss招聘</view>
+  <view bindtap="toSearchList" data-name="房产" class="item">房产</view>
+  <view bindtap="toSearchList" data-name="租房" class="item">租房</view> 
+</view>

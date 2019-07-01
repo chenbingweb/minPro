@@ -1,0 +1,6 @@
+<form bindsubmit="onSubmit">
+  <view>
+    <slot name="forms"></slot>
+  </view>
+   
+</form>

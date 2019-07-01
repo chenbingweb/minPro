@@ -1,0 +1,39 @@
+/* pages/postImg/postImg.wxss */
+
+.btns_1
+{
+  position: absolute;
+  left: 0;
+  height: 100rpx;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  width: 750rpx;
+}
+.btn_item
+{
+  height: 90rpx;
+  font-size: 30rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+  width: 31%;
+}
+.btn_item:nth-of-type(1)
+{
+  /* width: 170rpx; */
+  background-color: #969696; 
+}
+.btn_item:nth-of-type(2)
+{
+  /* width: 220rpx; */
+  background-color: #009688;
+  margin:0 18rpx;
+}
+.btn_item:nth-of-type(3)
+{
+  /* width: 270rpx; */
+  background-color: #ff9701;
+}
+

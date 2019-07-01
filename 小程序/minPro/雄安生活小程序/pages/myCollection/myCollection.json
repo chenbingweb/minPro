@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  },
+  "navigationBarTitleText": "我的收藏"
+}

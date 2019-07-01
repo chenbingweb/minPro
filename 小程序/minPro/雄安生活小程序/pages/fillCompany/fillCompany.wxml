@@ -1,0 +1,25 @@
+<form bindsubmit="workEvent">
+  <textarea class="fill_info" maxlength="300" name="{{key}}" value="{{detail}}" placeholder="{{placeholder}}">
+  
+  </textarea>
+
+  <view class="flex_around">
+    <view class="btn_item" bindtap="cancelEvent">
+      <view class="icon_box absolute">
+        <image src="../../images/cancel_bg.png" style="width:300rpx;height:80rpx;"></image>
+      </view>
+      <view class="f_28_333 absolute">
+        取消
+      </view>
+    </view>
+    <view class="btn_item">
+       <view class="icon_box absolute">
+        <image src="../../images/phone_btn.png" style="width:300rpx;height:80rpx;"></image>
+      </view>
+      <view class="f_28_333 absolute" style="color:white">
+        完成
+      </view>
+      <button class="login_btn" formType="submit"></button>
+    </view>
+  </view>
+</form>

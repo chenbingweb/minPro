@@ -1,0 +1,16 @@
+<tab tabList="{{tabList_1}}" btWidth="50%" isBorder="false" bindselectTab="onSelectTab1" />
+<tab tabList="{{tabList_2}}" bindselectTab="onSelectTab2" midBorder="true" btnSelect="btn_select_bg" isBorder="false"/>
+<view class="release_list">
+  <paging>
+    <view slot="list">
+      <view class="re_item flex_start" wx:for="{{[1,2,3,4]}}" wx:key="index_{{index}}">
+        <view class="icon_box">
+          <image src="../../images/img/n.jpg" style="width:234rpx;height:163rpx;border-radius:10rpx"></image>
+        </view>
+        <view class="re_name">二手电脑</view>
+        <view class="btn_fb" wx:if="{{false}}">发布</view>
+        <view class="btn_fb close" wx:else>关闭</view>
+      </view>
+    </view>
+  </paging>
+</view>

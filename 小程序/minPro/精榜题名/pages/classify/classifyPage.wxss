@@ -1,0 +1,30 @@
+/* pages/classify/classifyPage.wxss */
+
+@import "./classify.wxss"; 
+@import "./gan_kao.wxss";
+page
+{
+  width:100%;
+  height: 100%;
+   background-image:linear-gradient(0deg,#0d3d5b,#4f2e73);
+}
+.classify_page_An
+{
+  animation:pageAn 3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s;
+}
+@keyframes pageAn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  10%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  100%{
+opacity: 1;
+    transform: scale(1);
+  }
+}

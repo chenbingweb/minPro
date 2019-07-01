@@ -1,0 +1,52 @@
+<view class="fixed">
+  <view class="tip_box flex_center">
+    <view class="icon_box" style="margin-bottom:30rpx">
+
+      <image wx:if="{{showRelease}}" src="../../images/succ_tip.png" style="width:127rpx;height:127rpx"></image>
+      <image wx:else src="../../images/tip.png" style="width:127rpx;height:127rpx"></image>
+    </view>
+    <view wx:if="{{isPersonal}}" class="f_30_333">发布成功，获得{{getCoin}}个雄心币</view>
+    <view wx:else>
+      <view wx:if="{{tip==''}}" class="f_30_333">提交成功，获得{{getCoin}}个雄心币</view>
+      <view wx:else class="f_30_333">您已提交，正在审核</view>
+    </view>
+  </view>
+  <!--发布成功后推荐  -->
+  <view wx:if="{{showRelease}}" class="recomment">
+    <view wx:if="{{isPersonal}}" class="f_30_333 re_title">其他推荐</view>
+    <view wx:elif="{{info}}">推荐信息</view>
+    <view wx:else class="f_30_333 re_title">推荐房源</view>
+    <view class="page_box">
+      <paging dataObj="{{dataObj}}" bindpageData="pageData">
+        <view slot="list">
+          <view bindtap="toDetal" data-src="{{item.category}}" data-type="{{type}}" data-bid="{{item.id}}" url="../buildDetail/buildDetail?id={{item.id}}" class="icon_box recommont_source" wx:for="{{houseList}}" wx:key="item_{{index}}">
+            <view class="icon_box">
+              <image mode="aspectFill" src="{{imgUrl+item.img_url}}" style="width:700rpx;height:310rpx"></image>
+            </view>
+            <view class="info_box">
+              <view class="inline_flex item_info">
+                <view> {{item.name}}</view>
+                <view wx:if="{{item.category=='lease'}}">
+                  <text style="color:#e60012;font-size:36rpx">{{item.amount}}</text>/月
+                </view>
+                <view wx:else>
+                  <text style="color:#e60012;font-size:36rpx">{{item.amount}}</text>/平米
+                </view>
+              </view>
+              <!-- 20180802 -->
+              <view class="child_1">{{item.door}} | {{item.area}} /平米</view>
+            </view>
+          </view>
+        </view>
+      </paging>
+    </view>
+  </view>
+  <view wx:else class="recomment"></view>
+  <!--提交  -->
+  <view class="submit relative" bindtap="nextStep">
+    <view class="icon_box ">
+      <image src="../../images/phone_btn.png" style="width: 618rpx;height: 90rpx;"></image>
+    </view>
+    <view class="absolute btn_next">下一步</view>
+  </view>
+</view>

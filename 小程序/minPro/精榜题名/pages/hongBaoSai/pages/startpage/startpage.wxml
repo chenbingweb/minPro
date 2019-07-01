@@ -1,0 +1,105 @@
+<view class="fixed">
+  <view class="icon_box bg wap_pos">
+    <image src="../../../../imgs/home/1.jpg" style="width:750rpx;height:1634rpx"></image>
+  </view>
+  <!-- 复活卡信息 -->
+  <view class="bottom_info">
+    <view class="bottom_child icon_box">
+      <image src="../../img/start/btootom_bg.png" style="width:750rpx;height:140rpx;"></image>
+      <!-- 信息 -->
+      <view class="info_box" >
+        <!-- 红包门票bindtap="OnToShop" -->
+        <view class="item" >
+          <view class="icon_box relative">
+            <image src="../../img/start/car_bg.png" style="width:135rpx;height:149rpx;"></image>
+            <view class="icon_box q_1">
+              <image src="../../img/start/hbp.png" style="width:113rpx;height:139rpx;"></image>
+            </view>
+          </view>
+          <view class="num_bg icon_box">
+             <image src="../../img/start/btn_bg.png" style="width:168rpx;height:53rpx;"></image>
+              <!-- 当前复活卡数量 -->
+             <view class="fhk_num absolute">
+                <view class="num">门票X{{ddk}}</view>
+             </view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 公告 -->
+  <view class="notice_box">
+    <view class="absolute">
+      <view class="icon_box g_g_t">
+        <image src="../../img/start/g_g_t.png" style="width:578rpx;height:135rpx;"></image>
+      </view>
+      <view class="g_g_m" >
+        <image src="../../img/start/g_g_m.png" style="width:531rpx;height:100%"></image>
+      </view>
+      <view class="icon_box g_g_b">
+        <image src="../../img/start/g_g_b.png" style="width:578rpx;height:89rpx;"></image>
+        <!-- 当前关数底板 -->
+        <view  style='z-index:2;' class="title_box {{index==1?'rotate_180':''}}"  wx:for="{{[1,2]}}" wx:key="t_{{index}}">
+          <view class="icon_box">
+              <image  src="../../../../dati_comm/components/ticket-tip/img/title_1.png" style="width:44rpx;height:90rpx"></image>
+          </view>
+          <view class="icon_box">
+              <image  src="../../../../dati_comm/components/ticket-tip/img/title_2.png" style="width:168rpx;height:90rpx"></image>
+          </view>
+        </view>
+        <!--  当前关数 -->
+        <view class="absolute" style='z-index:3;'>
+          <view class="num_g_gb">当前门票1张</view>
+          <view class="num g_num" >当前门票1张</view>
+        </view>
+      </view>
+    </view>
+    <!-- 标题 -->
+    <view class="notice_title">
+      <image src="../../img/start/title.png" style="width:379rpx;height:59rpx" ></image>
+    </view>
+    <!-- 公告内容 -->
+    <view class="content_box">
+      <view class="content RemoveRollCar">
+          <text>
+          进入红包赛需要使用1张门票，共10道题目，按照最终答对人数平分现金红包 奖励说明：每场红包赛奖金10元，按照最终获胜人数平分奖
+          </text>
+      </view>
+    </view>
+    
+  </view>
+  <!-- 返回 -->
+  <view class="back" bindtap="OnBack">
+    <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+  <!-- 挑战通天塔 -->
+  <view class="tiao_zhan_box">
+    <view class="t_z_btn icon_box">
+      <image bindtap="OnFight" src="../../img/start/start.png" style="width:441rpx;height:119rpx"></image>
+    </view>
+    <view class="btn_item icon_box relative" style="margin-top:20rpx;">
+        <image src="../../img/start/share.png" style="width:436rpx;height:119rpx"></image>
+        <button open-type="share" class="bl"></button>
+    </view>
+
+  </view>
+  <!-- 门票不知提示 -->
+  <view class="absolute tip_box" wx:if="{{close}}" style="transition:all 0.4s;opacity:{{opacity}}">
+    <view class="tip_box_1">
+      <view class="icon_box">
+      <image src="../../img/start/fail_db.png" style="width:588rpx;height:273rpx;"></image></view>
+      <!-- 标题 -->
+      <view class="title_box_1 icon_box">
+        <image src="../../img/start/ticket_1.png" style="width:379rpx;height:113rpx"></image>
+        <image class="img_title_2" src="../../img/start/title_tip.png" style="width:249rpx;height:70rpx"></image>
+      </view>
+      <!-- 内容 -->
+      <view class="conten_1">由于门票不足无法进入红包赛</view>
+      <!-- 返回按钮  -->
+      <view class="icon_box back_1" bindtap="OnClose">
+        <image src="../../img/start/back_btn1.png" style="width:110rpx;height:119rpx;"></image>
+      </view>
+    </view>
+  </view>
+</view>

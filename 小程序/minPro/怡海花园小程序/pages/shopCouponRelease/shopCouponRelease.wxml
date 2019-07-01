@@ -1,0 +1,78 @@
+<form>
+  <view class="item flex_between">
+    <view>卡券标题</view>
+    <view class="flex_start font_style">
+      <input placeholder="请输入卡券标题" placeholder-class="font_style" class="item_child"></input>
+    </view>
+  </view>
+  <view class="item flex_between">
+    <view>积分兑换</view>
+    <view class="flex_start font_style">
+      <input placeholder="请输入积分兑换数量" placeholder-class="font_style" class="item_child"></input>
+    </view>
+  </view>
+  <picker mode="date">
+    <view class="item flex_between">
+      <view>开始时间</view>
+      <view class="flex_start font_style">
+        <view style="padding-right:20rpx">选择</view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_5.png" style="width:14rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <picker  mode="date">
+    <view class="item flex_between">
+      <view>结束时间</view>
+      <view class="flex_start font_style">
+        <view style="padding-right:20rpx">选择</view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_5.png" style="width:14rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <view class="item flex_between">
+    <view>使用须知</view>
+    <view class="flex_start font_style">
+      <input placeholder="使用须知" placeholder-class="font_style" class="item_child"></input>
+    </view>
+  </view>
+  <!--卡券设置  -->
+  <view class="set_box">
+    <view class="flex_start set_title">
+        <view class="icon_box">
+          <image src="../../images/ticket_set.png" style="width:34rpx;height:32rpx"></image>
+        </view>
+        <view style="padding-left:20rpx;">
+          领券设置
+        </view>
+    </view>
+    <view class="flex_around set_box_1">
+        <view>
+          <view class="input_box flex_start">
+            <input class="input_set"></input>
+            <view class="set_name">
+              件
+            </view>
+          </view>
+          <view class="set_name">库存</view>
+        </view>
+        <view>
+          <view class="input_box flex_start">
+            <input class="input_set"></input>
+            <view class="set_name">
+              张
+            </view>
+          </view>
+          <view class="set_name">每人限领</view>
+        </view>
+    </view>
+  </view>
+  <!--提交  -->
+   <view class="relative submit">
+      提交
+      <button form-type="submit" class="btn_login"></button>
+    </view>
+</form>

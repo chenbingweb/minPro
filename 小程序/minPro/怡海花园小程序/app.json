@@ -1,0 +1,53 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+      "pages/tempDetailInfo/tempDetailInfo",
+    "pages/checkUser/checkUser",
+    "pages/manageTemp/manageTemp",
+    "pages/tempDetail/tempDetail",
+    "pages/signSucc/signSucc",
+    "pages/releaseTheme/releaseTheme",
+    "pages/myJF/myJF",
+    "pages/aboutUs/aboutUs",
+    "pages/signName/signName",
+    "pages/userInfo/userInfo",
+    "pages/myTheme/myTheme",
+    "pages/shopInfo/shopInfo",
+    "pages/shops/shops",
+    "pages/shopCoupon/shopCoupon",
+    "pages/interShop/interShop",
+    "pages/myRelease/myRelease",
+    "pages/myCoupon/myCoupon",
+    "pages/shoppingEvaluate/shoppingEvaluate",
+    "pages/shoppingDetail/shoppingDetail",
+    "pages/releaseST/releaseST",
+ 
+    "pages/signUp/signUp",
+    "pages/themeDetail/themeDetail",
+    "pages/examingYZ/examingYZ",
+    "pages/openTemp/openTemp",
+    "pages/moreTemp/moreTemp",
+    "pages/comDetail/comDetail",
+    "pages/community/community",
+    "pages/examingShop/examingShop",
+    "pages/theme/theme",
+    "pages/myCenter/myCenter",
+    "pages/shopCouponRelease/shopCouponRelease",
+    "pages/testList/testList",
+    "pages/manageUsedCoupon/manageUsedCoupon"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false
+}

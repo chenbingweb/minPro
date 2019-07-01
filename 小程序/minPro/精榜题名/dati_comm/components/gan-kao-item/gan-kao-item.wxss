@@ -1,0 +1,112 @@
+/* dati_comm/components/gan-kao-item/gan-kao-item.wxss */
+.item_box
+{
+  width: 194rpx;
+  height: 169rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 100rpx;
+}
+.icon_box
+{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.lock
+{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -40rpx;
+}
+.lock_book
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 536rpx; */
+  height: 215rpx;
+  top:15rpx;
+  overflow: hidden;
+}
+.lock_info
+{
+  position: absolute;
+  left: 25rpx;
+  top:-10rpx;
+  right: 27rpx;
+  height: 215rpx;
+  overflow: hidden;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.gq_icon
+{
+  position: absolute;
+   left: 40rpx;
+  top:20rpx;
+}
+.hua_fei
+{
+  position: absolute;
+  top:0;
+  width: 290rpx;
+  bottom: 0;
+  left: 250rpx;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  font-size: 40rpx;
+  font-weight: bold;
+  color:#f0d1ab;
+/* -webkit-text-stroke: 2rpx #333; */
+text-shadow: 0 0 8rpx #333, 0 8rpx #333,
+        0 0 8rpx #333;
+    
+}
+.coin_num
+{
+  color:#ffea00;
+  font-size: 34rpx;
+}
+.star
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 卷轴样式 */
+.juan_zhou_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width:536rpx; */
+  height:215rpx;
+}
+.jz_middle
+{
+  width:0rpx;
+  height:215rpx;
+  transition: width 0.4s;
+}
+.js_middle_width
+{
+ width:485rpx;
+}
+.tg
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom:-22rpx;
+}

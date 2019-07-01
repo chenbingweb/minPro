@@ -1,0 +1,153 @@
+<import src="../../dati_comm/template/Grid3.wxml" />
+<template name="home">
+  <!-- wx:if="{{data.display}}"  style="left:{{data.wndPosX}}rpx;opacity:{{data.wndAlpha}};"-->
+  <view class="home fixed">
+    <!--背景  -->
+    <view class="home_bg icon_box">
+      <image src="../../imgs/home/home_bg.png"></image>
+    </view>
+    <!--头像  -->
+    <view class="user_info_container" wx:if="{{data.UserIcon}}">
+      <view class="left_photoa">
+        <view class="left_photo icon_box ">
+          <!--VIP图标  -->
+          <view class="new_vip" wx:if="{{data.IsVip==1}}">
+            <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:40rpx;height:40rpx"></image>
+          </view>
+          <image src="{{data.UserIcon}}" class="photo_img"></image>
+        </view>
+        <!--头框  -->
+        <view class="new_frame" wx:if="{{data.HeadFrame}}">
+          <image src="{{data.HeadFrame}}" style="width:100%;height:100%"></image>
+        </view>
+      </view>
+      <view class="right_info">
+        <view class="user_name one_line tj_box">
+          <view style="width:182rpx"> {{data.UserName}}</view>
+          <!--在线统计  -->
+          <view class="online_tj">
+            <view class="icon_box">
+              <image src="../../imgs/home/online_person.png" style="width:29rpx;height:29rpx"></image>
+            </view>
+            <view class="tj_text">
+              {{data.ol}}
+            </view>
+          </view>
+        </view>
+        <view class="inter_box_container">
+          <view class="inter_box" bindtap="OntzClick">
+            <!--背景  -->
+            <view class="inter_bg">
+              <template is="Grid3" data="{{grid:data.inter_bg}}" />
+            </view>
+            <view class="left_icon icon_box" style="top:4rpx">
+              <image src="../../imgs/comm/coin.png"></image>
+            </view>
+            <view class="text ">
+              {{data.Money}}
+            </view>
+            <view class="right_icon icon_box" wx:if="{{true}}">
+              <image src="../../imgs/comm/add_coin.png"></image>
+            </view>
+          </view>
+          <view class="inter_box" style="margin-left:14rpx;">
+            <!--背景  -->
+            <view class="inter_bg">
+              <template is="Grid3" data="{{grid:data.inter_bg}}" />
+            </view>
+            <view class="left_icon icon_box">
+              <image src="../../imgs/comm/xf.png" class="icon_img"></image>
+            </view>
+            <view class="text ">
+              {{data.Xuefen}}
+            </view>
+            <!-- <view class="right_icon icon_box" bindtap="OntzClick" wx:if="{{true}}">
+              <image src="../../imgs/home/add.png"></image>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--组队  -->
+    <view class="htw icon_box {{data.grs}}" bindtouchstart="OnTeamTouchStart" bindtouchend="OnTeamTouchEnd" bindtouchcancel="OnTeamTouchCancel" bindtap="OnTeamClick" style="width:346rpx;height:396rpx">
+      <image mode="aspectFit" src="../../imgs/home/3V3.png" style="transform: scale({{data.btnTeamScale}});transition:{{data.seconds}}ms"></image>
+    </view>
+    <!--new排行  -->
+    <view class="shope icon_box {{data.sc}}" bindtouchstart="OnRankTouchStart" bindtouchend="OnRankTouchEnd" bindtouchcancel="OnRankTouchCancel" bindtap="OnRankClick" style="width:256rpx;height:294rpx">
+      <image mode="aspectFit" src="../../imgs/home/rank_btn.png" style="transform: scale({{data.btnRankScale}});transition:{{data.seconds}}ms"></image>
+    </view>
+    <!--商城 -->
+    <view class="group icon_box {{data.zd}}" bindtouchstart="OnShopTouchStart" bindtouchend="OnShopTouchEnd" bindtouchcancel="OnShopTouchCancel" bindtap="OnShopClick" style="width:326rpx;height:370rpx">
+      <image mode="aspectFit" src="../../imgs/home/shope.png" style="transform: scale({{data.btnShopScale}});transition:{{data.seconds}}ms"></image>
+      <view class="icon_box new_up">
+        <image mode="aspectFit" src="../../imgs/home/new.png" style="width:96rpx;height:152rpx"></image>
+      </view>
+    </view>
+    <!--好友对战-->
+    <view class="fight_btn icon_box {{data.dz}}" bindtouchstart="OnPKTouchStart" bindtouchend="OnPKTouchEnd" bindtap="OnPKClick" bindtouchcancel="OnPKTouchCancel" style="width:326rpx;height:372rpx">
+      <image mode="aspectFit" src="../../imgs/home/fight_btn.png" style="transform: scale({{data.btnPKScale}});transition:{{data.seconds}}ms"></image>
+      <!--好友分享  -->
+      <!--<button open-type="share" class="fight_share" data-id="pk3v3"  ></button>-->
+    </view>
+    <!--猜明星  -->
+    <view class="cmx icon_box {{data.cmx}}" bindtouchstart="OnCmxTouchStart" bindtouchend="OnCmxTouchEnd" bindtouchcancel="OnCmxTouchCancel" bindtap="OncmxClick" style="width:140rpx;height:161rpx">
+      <image mode="aspectFit" src="../../imgs/home/cmx.png" style="width:140rpx;height:161rpx;transform: scale({{data.btncmxScale}});transition:{{data.seconds}}ms"></image>
+    </view>
+    <!--new 话题王  -->
+    <view class="rank_btn icon_box {{data.ph}}" bindtouchstart="OnHuatiwangTouchStart" bindtouchend="OnHuatiwangTouchEnd" bindtouchcancel="OnHuatiwangTouchCancel" bindtap="OnHuatiwangClick" style="width:256rpx;height:294rpx">
+      <image mode="aspectFit" src="../../imgs/home/htw.png" style="transform: scale({{data.btnHtwScale}});transition:{{data.seconds}}ms"></image>
+    </view>
+    <!-- <view>
+    <button open-type='contact' > 客服</button>
+    </view>  -->
+    <!--广告位1  -->
+    <view class="friend_share {{data.share_animation}}" bindtap="qmcg" wx:if="{{data.appjump}}">
+      <view class="imges">
+        <image src="{{data.appjump.picture}}" style="width:320rpx;height:112rpx"></image>
+      </view>
+    </view>
+
+
+    <!-- 广告位2 -->
+    <!--  <view wx:if="{{data.yuexs}}">
+    <view class="friend_share {{data.share_animation}}" bindtap="qmcg" wx:if="{{data.yuebaoxs}}" style="opacity: {{data.opab}}">
+      <view class="imges"><image src="{{data.imgb}}" style="width:320rpx;height:112rpx"></image></view>
+    </view> 
+    </view> -->
+    <!--marker-1  -->
+    <view class="marker_1"></view>
+    <!--marker-2  -->
+    <view class="marker_2"></view>
+    <!--marker-3  -->
+    <view class="marker_3"></view>
+    <!--marker-4 -->
+    <view class="marker_4"></view>
+    <!--marker-5 -->
+    <view class="marker_5"></view>
+    <!--marker-6 -->
+    <view class="marker_6"></view>
+    <!--marker-7 -->
+    <view class="marker_7"></view>
+    <!--marker-8 -->
+    <view class="marker_8"></view>
+    <!--marker-9 -->
+    <view class="marker_9"></view>
+    <!--marker-9 -->
+    <view class="marker_10"></view>
+    <!--marker-9 -->
+    <view class="marker_11"></view>
+    <!--marker-9 -->
+    <view class="marker_12"></view>
+    <!--marker-9 -->
+    <view class="marker_13"></view>
+    <view class="marker_14"></view>
+    <!--提示框  -->
+    <view class="gonglv {{data.share_animationa}}" style="opacity:{{data.count}}">
+      <view class="icon_box">
+        <image src="../../imgs/comm/server.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <view style="margin-left:6rpx;">{{data.datigl}}</view>
+      <button class="absolute" open-type='contact' style="opacity:0 " session-from='{"nickName":"{{data.nickName}}","avatarUrl":"{{data.avatarUrl}}"}'></button>
+    </view>
+  </view>
+</template>

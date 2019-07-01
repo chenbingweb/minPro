@@ -1,0 +1,194 @@
+<view>
+  <form bindsubmit="formSubmit">
+    <view class="center_item flex_between">
+      <view class="f_30_333 inline_flex">
+        <view style="padding-left:0rpx">
+          头像
+        </view>
+      </view>
+      <view class="icon_box" wx:if="{{src!='center'}}" bindtap="changePhoto">
+        <image  mode="aspectFill" wx:if="{{head_img!=''}}" src="{{head_img}}" style="width:74rpx;height:74rpx;border-radius:50%"></image>
+        <view wx:else>
+          <image  mode="aspectFill"  wx:if="{{userInfo}}" src="{{userInfo.avatarUrl}}" style="width:74rpx;height:74rpx;border-radius:50%"></image>
+          <view wx:else style="width:74rpx;height:74rpx;border-radius:50%;overflow:hidden">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+        </view>
+      </view>
+      <view class="icon_box" wx:else>
+        <image  mode="aspectFill" wx:if="{{head_img!=''}}" src="{{head_img}}" style="width:74rpx;height:74rpx;border-radius:50%"></image>
+        <view wx:else>
+          <image  mode="aspectFill"  wx:if="{{userInfo}}" src="{{userInfo.avatarUrl}}" style="width:74rpx;height:74rpx;border-radius:50%"></image>
+          <view wx:else style="width:74rpx;height:74rpx;border-radius:50%;overflow:hidden">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{src=='center'||src=='release'}}">
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          昵称
+        </view>
+        <view style="color:#999">
+          <input wx:if="{{userInfo}}" value="{{userInfo.nickName}}" disabled name="company_name" class="input_style" placeholder="请输入昵称"></input>
+          <view wx:else>
+            <open-data class="input_style" type="userNickName"></open-data>
+          </view>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          手机号
+        </view>
+        <view style="color:#999">
+          <input type="number" name="userphone" value="{{phone}}" bindinput="blurEvent" bindblur="blurEvent" class="input_style" placeholder="请输入手机号"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          验证码
+        </view>
+        <view style="color:#999" style="width:320rpx">
+          <input name="code" style="width:300rpx" class="input_style" placeholder="请输入验证码"></input>
+        </view>
+        <view class="check">
+          <view class="ico_box absolute">
+            <image src="../../images/phone_btn.png" style="width:160rpx;height:48rpx"></image>
+          </view>
+          <view wx:if="{{time=='获取验证码'}}" class="absolute" bindtap="getCode">
+            获取验证码
+          </view>
+          <view wx:else class="absolute">
+            {{time}}
+          </view>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          生日
+        </view>
+        <picker mode="date" bindchange="birthEvent" style="color:#999">
+          <input name="birthday" disabled class="input_style" value="{{birthday==''?'请选择':birthday}}" placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          姓名
+        </view>
+        <view style="color:#999">
+          <input name="name" class="input_style" value="{{userAllInfo.name}}" placeholder="请输入姓名"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          性别
+        </view>
+        <picker bindchange="sexEvent" range="{{sexList}}" range-key="name" value="{{sexIndex}}" style="color:#999">
+          <!--0女 1男  -->
+          <input name="sex" hidden value="{{sexList[sexIndex].id==-1?'':sexList[sexIndex].id}}" disabled class="input_style" placeholder="请选择"></input>
+          <input value="{{sexList[sexIndex].name}}" disabled class="input_style" placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          出生年月
+        </view>
+        <picker mode="date" style="color:#999" bindchange="birthEvent" value="{{birthday}}">
+          <input name="birthday" disabled value="{{birthday}}" class="input_style" placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          自我介绍
+        </view>
+        <view style="color:#999">
+          <input type="text" name="info" value="{{userAllInfo.info==''?'':userAllInfo.info}}" class="input_style" placeholder="请输入自我介绍"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          参加工作时间
+        </view>
+        <picker mode="date" style="color:#999" bindchange="workTimeEvent" value="{{work_time}}">
+          <input name="work_time" value="{{work_time==''?'请选择':work_time}}" disabled class="input_style" placeholder="请选择"></input>
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          现居住城市
+        </view>
+        <picker mode="region" bindchange="liveEvent" value="{{live}}" style="color:#999">
+          <input name="live" value="{{live.length?live:''}}" disabled class="input_style" placeholder="请选择"></input>
+          <input name="live_province" hidden value="{{live[0]}}" />
+          <input name="live_city" hidden value="{{live[1]}}" />
+          <input name="live_area" hidden value="{{live[2]}}" />
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          户口所在地
+        </view>
+        <picker mode="region" bindchange="RegEvent" value="{{register}}" style="color:#999">
+          <input name="register" disabled class="input_style" value="{{register}}" placeholder="请选择"></input>
+          <input name="born_province" hidden value="{{register[0]}}" />
+          <input name="born_city" hidden value="{{register[1]}}" />
+          <input name="born_area" hidden value="{{register[2]}}" />
+        </picker>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          学历
+        </view>
+        <picker range="{{educationList}}" bindchange="educationEvent" value="{{eduIndex}}" style="color:#999">
+          <input name="education" disabled class="input_style" value="{{educationList[eduIndex]}}" placeholder="请选择"></input>
+        </picker>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          邮箱地址
+        </view>
+        <view mode="date" style="color:#999">
+          <input name="email" class="input_style" value="{{userAllInfo.email}}" placeholder="请输入邮箱地址"></input>
+        </view>
+      </view>
+      <view class="company item flex_start f_30_333 ">
+        <view class="item_title">
+          手机号
+        </view>
+        <view style="color:#999">
+          <input type="number" name="phone" value="{{userAllInfo.phone}}" class="input_style" placeholder="请输入手机号"></input>
+        </view>
+      </view>
+
+    </view>
+    <!--提交  -->
+    <view class="submit relative">
+      <view class="icon_box absolute">
+        <image src="../../images/phone_btn.png" style="width:700rpx;height:100rpx"></image>
+      </view>
+      <view class="absolute save" formType="submit">保存</view>
+      <button class="btn_login save" formType="submit"></button>
+    </view>
+  </form>
+</view>

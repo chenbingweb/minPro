@@ -1,0 +1,78 @@
+ <view class="bg_color" wx:if="{{authorize}}" style="opacity:{{opacity}}">
+ <!-- wx:if="{{show}}" -->
+    <view class="tick_box_position" wx:if="{{showTicket}}" >
+       <light/>
+      <!--  -->
+      <view class="box">
+        <!-- 底板 -->
+        <view class="absolute">
+          <view class="left {{index==1?'rotate_180':''}}" wx:for="{{[1,2]}}" wx:key="b_{{index}}" >
+            <view class="header">
+              <image class="./img/db_1.png" src="./img/db_1.png" style="width:293rpx;height:44rpx"></image>
+            </view>
+            <view class="body">
+              <image class="./img/db_2.png" src="./img/db_2.png" style="width:269rpx;height:537rpx"></image>
+            </view>
+            <view class="m_color">
+              <!-- 中间底板 -->
+            <view class="midd_db">
+              <view class="mid_top">
+                <view class="icon_box" wx:for="{{[1,2,2,2]}}" wx:key="top_i{{index}}">
+                  <image src="../../../imgs/fightOver/fight_over_bg_top.png" style="widht:62rpx;height:392rpx"></image>
+                </view>
+                <!-- <view class="mid_top_after"></view> -->
+                <view class="mid_top_before"></view>
+              </view>
+            </view>
+            </view>
+            <view class="bottom">
+            <image class="./img/db_3.png" src="./img/db_5.png" style="width:270rpx;height:180rpx"></image>
+            </view>
+            <!-- 标题 -->
+            <view class="title_box">
+              <view class="icon_box">
+                <image  src="./img/title_1.png" style="width:44rpx;height:90rpx"></image>
+              </view>
+            <view class="icon_box">
+                <image  src="./img/title_2.png" style="width:168rpx;height:90rpx"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 标题 -->
+        <view class="title">
+          <image  src="./img/title.png" style="width:317rpx;height:86rpx"></image>         
+        </view>
+        <!-- 半圆 -->
+        <view class="by">
+          <image  src="./img/ban_yuan.png" style="width:55rpx;height:72rpx"></image> 
+        </view>
+        <view class="by by_180">
+          <image  src="./img/ban_yuan.png" style="width:55rpx;height:72rpx"></image> 
+        </view>
+        <!-- 红包 -->
+        <view class="red_package">
+          <image  src="./img/tb.png" style="width:394rpx;height:355rpx;"></image>   
+          <view class="red_info_box absolute">
+            <image src="./img/q_c.png" class="left_1"></image>
+            <image src="./img/hbs.png" class="left_2"></image>
+              <image src="./img/tick.png" class="left_3"></image>
+          </view>   
+        </view>
+        <!-- 领取按钮 -->
+        <view class="btn icon_box" bindtap="OnClose">
+          <image src="./img/btn.png" style="width:333rpx;height:112rpx;"></image>
+        </view>
+        <!-- 关闭按钮 -->
+        <view class="close icon_box" bindtap="OnClose">
+          <image src="../nav-item/img/close.png" style="width:72rpx;height:72rpx;"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 一键登录 -->
+    <view class="one_key" wx:else>
+      一键登录
+        <button class="login" bindgetuserinfo='logina' open-type="getUserInfo" ></button>
+    </view>
+   
+ </view>

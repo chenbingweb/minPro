@@ -1,0 +1,129 @@
+<!--pages/buildDetail/buildDetail.wxml-->
+<import src="../../temp/temp.wxml" />
+ <nav-back 
+    userName="售楼热线" 
+    bid="{{bulidDetail.id}}"
+    collectType="build"
+    userphone="{{bulidDetail.phone}}"/>
+<view wx:if="{{bulidDetail}}">
+<!-- fixed -->
+  <view class="bulid_page RemoveRollCar">
+    <!--banner  fixed-->
+    <view class="header icon_box">
+    <swiper-base height="388" imgsData="{{bulidDetail.img_url}}" baseSet="{{baseSet}}"/>
+      <!-- <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:750rpx;height:388rpx;"></image> -->
+    </view>
+    <!--楼盘信息  -->
+    <view class="build_info">
+      <view class="build_name flex_between">
+        <view class="inline_flex">
+          <view style="padding-right:28rpx">{{bulidDetail.name}}</view>
+          <view class="label_item">{{bulidDetail.sell_status}}</view>
+           <view class="label_item">{{bulidDetail.type}}</view>
+        </view>
+        <view style="font-size:24rpx">
+          <text style="color:#e60012;font-size:36rpx">{{bulidDetail.amount}}</text>元/m²</view>
+      </view>
+      <view class="build_place two_line">{{bulidDetail.address}}</view>
+      <view class="flex_between" style=" align-items: stretch">
+        <view class="label" style="width:70%">{{bulidDetail.tag}}</view>
+        <view class="label" style="color:#d3d3d3;font-size:28rpx">{{bulidDetail.create_at}}</view>
+      </view>
+      
+    </view>
+    <!--楼盘开发信息  -->
+    <view class="build_box_info">
+      <view class="build_item_info flex_start">
+        <view>
+          开发公司
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+          {{bulidDetail.company}}
+        </view>
+      </view>
+      <view class="build_item_info flex_start">
+        <view>
+          预售许可
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+          {{bulidDetail.permit}}
+        </view>
+      </view>
+      <view class="build_item_info flex_start">
+        <view>
+          建筑类别
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+          {{bulidDetail.category}} 
+        </view>
+      </view>
+      <view class="build_item_info flex_start">
+        <view>
+          装修状态
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+          {{bulidDetail.renovation}}
+        </view>
+      </view>
+      <view class="build_item_info flex_start">
+        <view class="flex_between">
+          <view>停</view>
+          <view>车</view>
+          <view>位</view>
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+          <!-- 车位配比1:1 -->
+          {{bulidDetail.parking}}
+        </view>
+      </view>
+      <view class="build_item_info flex_start">
+        <view class="flex_between">
+          <view>交</view>
+          <view>房</view>
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+         {{bulidDetail.complete}}
+        </view>
+      </view>
+      <view class="build_item_info flex_start">
+        <view class="flex_between">
+          <view>开</view>
+          <view>盘</view>
+        </view>
+        <view style="color:#333;padding-left:50rpx;">
+          {{bulidDetail.start}}
+        </view>
+      </view>
+    </view>
+    <!--主力户型  -->
+    <view class="house_type">
+      <view class="house_type_title">
+        主力户型
+      </view>
+      <!--图片-->
+      <view class="house_type_list flex_start">
+        <!--  -->
+        <view class="house_type_item" bindtap="onShowImg" data-index="{{index}}" wx:for-item="child" wx:for="{{bulidDetail.sell_door_list}}" wx:key="index_{{index}}">
+          <view class="icon_box">
+            <image src="{{imgUrl+child.img_url}}" style="width:220rpx;height:162rpx;"></image>
+          </view>
+          <view style="line-height:70rpx">{{child.name}} 建面{{child.acreage}}m²</view>
+          <view style="color:#e60012">{{child.amount}}万/套</view>
+        </view>
+      </view>
+    </view>
+    <!-- 最新消息 -->
+    <view class="news">
+      <view class="news_title">
+        最新消息
+      </view>
+      <view class="content_box">{{bulidDetail.detail}}</view>
+    </view>
+  
+  </view>
+  <!-- <template is="nav_back"/>   -->
+</view>
+<view wx:else class="no_info">
+  没有数据..
+</view> 
+ 

@@ -1,0 +1,154 @@
+/* pages/jobDetail/jobDetail.wxss */
+@import '../../temp/temp.wxss';
+page
+{
+  background-color: #f4f4f4;
+}
+.detail_box
+{
+  overflow: scroll;
+  padding-bottom: 100rpx;
+}
+.job_box
+{
+  padding-top: 30rpx;
+  background-color: white;
+  padding-bottom: 30rpx;
+}
+.select_nav
+{
+  width: 340rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color:#333;
+}
+.nav_item
+{
+  width: 50%;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border:2rpx solid #f4f4f4;
+}
+.select_nav_selected
+{
+  color:white;
+  background-color: #fed545;
+  border-color: transparent;
+}
+/*职位信息  */
+.job_info
+{
+  width: 750rpx;
+  /* height: 174rpx; */
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  font-size: 28rpx;
+  color:#333;
+  margin-bottom: 10rpx;
+}
+.job_name
+{
+  font-size: 36rpx;
+}
+.company_name
+{
+  color:#666666;
+}
+.label_item
+{
+  color:#666;
+  background-color: #f4f4f4;
+  display: inline-block;
+  padding: 2rpx 10rpx;
+  margin-bottom: 20rpx;
+}
+.label_mark
+{
+  flex-wrap: wrap;
+}
+.salary
+{
+  color:#fed545;
+  font-size: 30rpx;
+}
+/*地址  */
+.address
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  height: 100rpx;
+  background-color: white;
+  font-size: 30rpx;
+  color:#333;
+  margin-bottom: 10rpx;
+}
+/*职业描述  */
+.job_desc
+{
+  width: 750rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  height: 60vh;
+  background-color: white;
+  color:#333333;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+}
+.desc_content
+{
+  font-size: 28rpx;
+  color:#666;
+}
+/*公司介绍  */
+.company
+{
+  width: 750rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  background-color: white;
+  color:#333333;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 10rpx;
+}
+.img_item
+{
+  margin-right: 20rpx;
+
+}
+.img_item:last-child
+{
+   margin-right: 0;
+}
+.job_info_font
+{
+  color:#333333;
+  font-size: 28rpx;
+}
+.fuli_box
+{
+  font-size: 26rpx;
+  color:#666;
+  margin-top:20rpx;
+
+  padding-bottom: 30rpx;
+}
+.other_jobs
+{
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+}
+.img_box
+{
+  overflow: scroll;
+}

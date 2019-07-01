@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "usingComponents": {
+      "my-tool": "../../components/my-tool/my-tool",
+      "post-view": "../../components/post-view/post-view"
+    }
+}

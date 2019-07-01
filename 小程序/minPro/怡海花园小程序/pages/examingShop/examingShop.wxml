@@ -1,0 +1,97 @@
+<form bindsubmit="onSubmit">
+  <view slot="forms" class="ex_paging bottom_110">
+    <view class="base_info" style="margin-bottom:20rpx;">
+      <view class="input_item flex_between">
+        <view>姓名</view>
+        <input name="userName" class="name_input" placeholder="请输入姓名"></input>
+      </view>
+      <view class="input_item flex_between">
+        <view>性别</view>
+        <sex bindsex="onSex" />
+        <input name="sex" value="{{sex}}" hidden></input>
+      </view>
+      <view class="input_item flex_between">
+        <view>年龄</view>
+        <input name="age" type="number" class="name_input" placeholder="请输入年龄"></input>
+      </view>
+    </view>
+    <view class="base_info">
+      <view class="input_item flex_between">
+        <view>手机号码</view>
+        <input name="userPhone" class="name_input" placeholder="请输入姓名"></input>
+      </view>
+      <view class="input_item flex_between">
+        <view class="inline_flex">
+          <text>验证码</text>
+          <input name="code" style="width:300rpx;text-align:left;padding-left:20rpx" class="name_input" placeholder="请输入验证码"></input>
+        </view>
+        <view class="code" style="color:#5293e1">
+          获取验证码
+        </view>
+      </view>
+      <view class="input_item flex_between">
+        <view>商户名称</view>
+        <input name="age" type="number" class="name_input" placeholder="请输入商户名称"></input>
+      </view>
+      <picker range="{{['2','3']}}">
+        <view class="input_item flex_between">
+          <view>商户类型 </view>
+          <view class="flex_start">
+            <view wx:if="{{true}}" style="padding-right:20rpx;color:#808080">选择</view>
+             <view wx:else style="padding-right:20rpx;color:#cacaca">选择</view>
+            <view class="icon_box">
+              <image src="../../images/arrow_right_5.png" style="width:14rpx;height:28rpx"></image>
+            </view>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <!-- 上传营业执照 -->
+    <view class="base_info" style="margin-top:20rpx;height:290rpx">
+      <view class="input_item flex_between" style="border:none;">
+        营业执照
+      </view>
+      <view class="flex_start" style="padding:0 35rpx;">
+        <view class="icon_box relative">
+          <view class="img_tip">添加图片</view>
+          <image style="width:168rpx;height:168rpx" src="../../images/add_yinye_photo.png"></image>
+        </view>
+      </view>
+
+    </view>
+    <!--上传身份证  -->
+    <view class="base_info" style="margin-top:20rpx;height:290rpx">
+      <view class="input_item flex_between" style="border:none;">
+        法人身份证（正反面）
+      </view>
+      <view class="flex_start" style="padding:0 35rpx;">
+        <view class="icon_box relative" style="margin-right:45rpx">
+          <view class="img_tip">身份正面</view>
+          <image style="width:168rpx;height:168rpx" src="../../images/add_yinye_photo.png"></image>
+        </view>
+        <view class="icon_box relative">
+          <view class="img_tip">身份发面</view>
+          <image style="width:168rpx;height:168rpx" src="../../images/add_yinye_photo.png"></image>
+        </view>
+      </view>
+
+    </view>
+    <!--上传身份证  -->
+    <view class="base_info" style="margin-top:20rpx;height:290rpx">
+      <view class="input_item flex_between" style="border:none;">
+        介绍
+      </view>
+      <view class="flex_start" style="padding:0 35rpx;">
+        <textarea class="textarea"></textarea>
+      </view>
+      <view class="font_style">
+        0/500
+      </view>
+    </view>
+    <view class="relative submit">
+      提交
+      <button form-type="submit" class="btn_login"></button>
+    </view>
+  </view>
+
+</form>

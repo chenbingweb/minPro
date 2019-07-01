@@ -1,0 +1,17 @@
+<!--pages/fight/fightPage.wxml-->
+<import src="./fight.wxml"/>
+<import src="./fighting.wxml"/>
+<import src="./fight_3v3.wxml"/>
+<view wx:if="{{!is3v3}}">
+  <template is="fighting" data="{{data:data}}"/>
+</view>
+<view wx:else>
+<template is="fighting_3v3" data="{{data:data}}"/>
+  <!-- <fight-3v3-page-fight 
+     bindButtonClick="OnButtonClick"
+     bindShopTouchStart="OnShopTouchStart"
+     bindShopTouchEnd="OnShopTouchEnd"
+     bindAniEnd="onAniEnd"
+      data="{{data}}"/> -->
+</view>
+

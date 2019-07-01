@@ -1,0 +1,53 @@
+/* pages/workDetail/workDetail.wxss */
+@import '../../temp/temp.wxss';
+page
+{
+  background-color: #f4f4f4;
+}
+.work_page
+{
+  overflow: scroll;
+  padding-bottom: 100rpx;
+  box-sizing: border-box;
+}
+.user_header
+{
+  width: 750rpx;
+  height: 183rpx;
+  padding: 0 25rpx;
+  background-color: white;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+}
+.user_name
+{
+  color:#333333;
+  font-size: 30rpx;
+}
+.to_edit
+{
+  color:#666666;
+  font-size: 28rpx;
+}
+/*求值意向  */
+.find_job
+{
+  width: 750rpx;
+  /* height: 138rpx; */
+  box-sizing: border-box;
+  padding:  30rpx 25rpx;
+  background-color: white;
+  margin-bottom: 10rpx;
+  color:#333333;
+  font-size: 30rpx;
+}
+.self_item
+{
+  padding-right: 30rpx;
+}
+.work_history_item
+{
+  border-bottom: 2rpx solid #f4f4f4;
+  padding:30rpx 25rpx;
+
+}

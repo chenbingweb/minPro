@@ -1,0 +1,22 @@
+.temp_list_box
+{
+  width: 750rpx;
+  height: 170rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start
+  
+}
+.temp_title
+{
+  color:#333;
+  font-size: 30rpx;
+}
+.temp_counts
+{
+  color:#666666;
+  font-size: 26rpx;
+}

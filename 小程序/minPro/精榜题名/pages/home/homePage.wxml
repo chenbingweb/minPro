@@ -1,0 +1,7 @@
+<import src="./home.wxml"/>
+<import src="./home_1.wxml"/>
+<!-- <template is="home" data="{{data:data}}" hidden="{{data.showHome}}"></template> -->
+ <!-- <view class="app_home_page_mark {{!data.showHome?'app_hidden_home_page':''}}" >
+
+</view>  -->
+<template is="home_1" data="{{data:data}}" hidden="{{data.showHome}}"></template>

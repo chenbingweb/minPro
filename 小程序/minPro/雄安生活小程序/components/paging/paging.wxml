@@ -1,0 +1,13 @@
+<scroll-view 
+     class="scroll_box"
+     lower-threshold="10" 
+     scroll-y 
+     bindscrolltolower="scrolltolower">
+  <view style="padding-bottom:30rpx">
+    <slot name="list"></slot>
+    <view wx:if="{{showMore}}" class="no_data">加载更多</view>
+    <view wx:if="{{showNoData}}" class="no_data">没有更多</view>
+    <view wx:if="{{showNoContent}}" class="no_data">{{contentTip}}</view>
+  </view>
+   
+</scroll-view>

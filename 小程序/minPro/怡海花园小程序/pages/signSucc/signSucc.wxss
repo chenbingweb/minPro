@@ -1,0 +1,8 @@
+/* pages/signSucc/signSucc.wxss */
+.succ
+{
+  color:#232323;
+  font-size:30rpx;
+  margin-top: 40rpx;
+  text-align: center;
+}

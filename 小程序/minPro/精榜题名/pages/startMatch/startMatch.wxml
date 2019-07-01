@@ -1,0 +1,52 @@
+<view class="startMatch_box">
+  <!--背景图
+  <view class="icon_bx img_bg">
+    <image style="width:750rpx;height:100vh" src="../../imgs/home/home_bg.png"></image>
+  </view>  -->
+  <view class="notice_body" style="opacity:{{data.opacity}}">
+    <!-- 头部 -->
+    <view class="notice_header">
+      <view class="notice_bg icon_box">
+        <image style="width:722rpx;height:174rpx" src="../../imgs/startMatch/start_match.png"></image>
+      </view>
+      <!--标题  -->
+      <view class="icon_box notice_title">
+        {{SeasonStartTitle}}
+      </view>
+      <!--日期  -->
+      <view class="notice_time">
+        {{datestr}}
+      </view>
+    </view>
+    <!--内容  -->
+    <view class="notice_content_box_start">
+      
+      <!--用户头像-->
+      <view class="user_con">
+        <view class="user_photo_box icon_box">
+          <image src="{{PlyIcon}}" class="photo_img"></image>
+        </view>
+        <view class="user_name">{{PlyName}}</view>
+      </view>
+      <!--图片  -->
+      <view class="img_huang_guan icon_box">
+        <image style="width:285rpx;height:239rpx" src="../../imgs/startMatch/king.png"></image>
+        <image style="width:200rpx;height:291rpx" class="king_bg"  src="../../imgs/startMatch/king_bg.png"></image>
+      </view>
+      <!--开启条  -->
+      <view class="start_line icon_box">
+        <image style="width:473rpx;height:73rpx" src="../../imgs/startMatch/start_line.png"></image>
+        <!--新赛季开启 最强榜单见-->
+        <view class="text">{{Tip01}}</view>
+      </view>
+    </view>
+    <!--按钮  -->
+    <view class="footer_btn">
+      <view class="share_btn item">
+        分享
+         <button open-type="share" class="share_button" ></button>
+      </view>
+      <view class="know_btn item" bindtap="OnNextClick" >开始新赛季</view>
+    </view>
+  </view>
+</view>

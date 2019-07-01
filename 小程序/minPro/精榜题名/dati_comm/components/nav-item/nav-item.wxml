@@ -1,0 +1,145 @@
+<view class="nav_box">
+  <!-- 左边 -->
+  <view class="left {{left_show_animation}}">
+     <!-- 推荐好友 -->
+    <view class="icon_box relative">
+      <image src="./img/share_friend.png" style="width:111rpx;height:113rpx"></image>
+      <!-- <image src="./img/tip.png" class="tip_1"></image> -->
+      <button open-type="share" class="btn_login"  ></button>
+    </view>
+    <!-- 公众号 -->
+     <view class="icon_box" bindtap="OnOpenTask" data-open="showShare">
+      <image src="./img/gong_zhong_hao_new.png" style="width:92rpx;height:106rpx"></image>
+      <!-- <image src="./img/tip.png" class="tip_1"></image> -->
+    </view>
+  </view>
+  <!-- 右边 -->
+  <view class="right {{right_show_animation}}">
+    <!-- 活动 -->
+     <view class="icon_box" bindtap="onActive">
+      <image src="./img/huo_dong.png" style="width:96rpx;height:113rpx"></image>
+      <!-- <image src="./img/tip.png" class="tip_2" ></image> -->
+    </view>
+    <!-- 任务 -->
+     <view class="icon_box" bindtap="OnOpenTask" data-open="showBox">
+      <image src="./img/ren_wu.png" style="width:92rpx;height:110rpx"></image>
+      <image  wx:if="{{LianxuQiandaoCount==0||TodayGankaoCount==0||TodayQiecuo1V1Count==0||TodayQiecuo3V3Count==0||TodayCGCount==0}}" src="./img/tip.png" 
+      class="tip_2 {{LianxuQiandaoCount==0||TodayGankaoCount==0||TodayQiecuo1V1Count==0||TodayQiecuo3V3Count==0||TodayCGCount==0?'shan_dong':''}}"
+      ></image>
+    </view>
+    <!-- 排行 -->
+     <view class="icon_box" bindtap="onRank">
+      <image src="./img/pai_hang.png" style="width:92rpx;height:111rpx"></image>
+      <!-- <image src="./img/tip.png" class="tip_2"></image> -->
+    </view>
+    <!-- 当铺 -->
+     <view class="icon_box" bindtap="onShopClick">
+      <image src="./img/dang_pu.png" style="width:96rpx;height:112rpx"></image>
+      <!-- <image src="./img/tip.png" class="tip_2"></image> -->
+    </view>
+  </view>
+  <!-- 显示任务 -->
+  <view class="box" wx:if="{{showBox}}" style="opacity:{{opacity}}">
+    <view class="child">
+      <!-- 背景 -->
+      <db/>
+      <!-- 标题 -->
+      <view class="title">
+        <view class="icon_box">
+          <image src="./img/ren_wu_bg.png" style="height:154rpx;width: 524rpx;"></image>
+        </view>
+        <view class="title_text">
+          <image src="./img/ren_wu_text.png" style="height:86rpx;width: 317rpx;"></image>
+        </view>
+      </view>
+      <!-- 每日签到 -->
+      <view class="sign_1">
+        <!-- 签到 -->
+        <view class="sign_box" bindtap="onSign"  data-sign="{{item.doSign}}" data-index="{{index}}"  wx:for="{{signList}}" wx:key="sign_{{index}}">
+          <!-- 背景 -->
+          <view class="icon_box">
+            <image wx:if="{{!item.doSign}}" src="./img/bg_3.png" style="width:137rpx;height:192rpx"></image>
+            <image wx:else src="./img/bg_2.png" style="width:137rpx;height:202rpx"></image>
+          </view>
+          <view class="absolute" >
+            <view class="day">
+              第{{index+1}}天
+            </view>
+            <view class="icon_box hb">
+              <image src="./img/h_b_no.png" style="width:118rpx;height:135rpx"></image>
+              <view class="coin">{{item.isSign?'已领':item.corn}}</view>
+            </view>
+          </view>
+          <!-- 已经签到 index<LianxuQiandaoCount 遮罩-->
+          <view class="mask" style='height:192rpx;' wx:if="{{item.isSign}}"></view>
+        </view>
+      </view>
+      <!-- 任务列表 ./img/gk_icon.png-->
+      <scroll-view class="sc_v" scroll-y>
+        <view class="item"  wx:for="{{tastList}}" wx:key="t_{{index}}">
+          <view class="left_item">
+            <view class="icon_box">
+              <image src="{{item.img}}" style="width:91rpx;height:87rpx"></image>
+            </view>
+            <view class="t_title">{{item.text}}</view>
+          </view>
+          <view class="right_item">
+            <view class="coin_box">
+              <view class="icon_box">
+                <image src="./img/coin_s.png" style="width:36rpx;height:38rpx"></image>
+              </view>
+              <view class="coin_num">
+                {{item.corn}}
+              </view>
+            </view>
+            <!-- 已经完成 -->
+            <view  wx:if="{{item.flag}}" class="btn_box">
+              <image  src="./img/y_w_c_btn.png" style="width:133rpx;height:71rpx;transform:translateY(5rpx);"></image>
+            </view>
+            <!-- 去完成完成 -->
+            <view bindtap="OnNav" data-url="{{item.url}}" wx:else class="btn_box">
+              <image src="./img/q_c_j_btn.png" style="width:140rpx;height:71rpx"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+       <!-- 关闭按钮 -->
+      <view class="close" bindtap="OnClose" data-close="showBox">
+         <image src="./img/close.png" style="width:72rpx;height:72rpx"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 公众号提示 -->
+  <view class="box" wx:if="{{showShare}}" style="opacity:{{opacity}}">
+    <view class="gzh">
+       <!-- 背景 -->
+      <db/>
+      <!-- 标题 -->
+      <view class="title">
+        <view class="icon_box">
+          <image src="./img/ren_wu_bg.png" style="height:154rpx;width: 524rpx;"></image>
+        </view>
+        <view class="title_text">
+          <image src="./img/fenx_xiang.png" style="height:86rpx;width: 159rpx;"></image>
+        </view>
+      </view>
+      <!-- 内容 -->
+      <view class="content">
+        <view>1.点击右上角</view>
+        <view class="wx">
+          <view class="left_d"><view class="d_1"></view><view class="d_2"></view><view class="d_1"></view></view>
+          <view class="line_m"></view>
+          <view class="right_d"></view>
+        </view>
+        <view> 2.关于金榜题名</view>
+        <view>3.相关公众号</view>
+        <view>4.关注公众号</view>
+        
+      </view>
+       <!-- 关闭按钮 -->
+      <view class="close" bindtap="OnClose" data-close="showShare">
+         <image src="./img/close.png" style="width:72rpx;height:72rpx"></image>
+      </view>
+    </view>
+  </view>
+</view>

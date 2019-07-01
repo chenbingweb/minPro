@@ -1,0 +1,52 @@
+<form>
+  <view class="info_page">
+    <!--头像  -->
+    <view class="flex_between photo">
+      <view>
+        头像
+      </view>
+      <view class="flex_start">
+        <view class="icon_box">
+          <image src="../../images/img/n.jpg" style="width:90rpx;height:90rpx;border-radius:50%"></image>
+        </view>
+        <view class="icon_box" style="padding-left:25rpx">
+          <image src="../../images/arrow_right_5.png" style="width:14rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </view>
+    <!--用户信息  -->
+    <view style="margin:30rpx 0;">
+      <view class="info_item flex_between">
+        <view>昵称</view>
+        <view style="color:#8f8d8d">jorn</view>
+      </view>
+      <navigator url="../signName/signName" class="info_item flex_between">
+        <view>签名</view>
+        <view class="icon_box" style="padding-left:25rpx">
+          <image src="../../images/arrow_right_5.png" style="width:14rpx;height:28rpx"></image>
+        </view>
+      </navigator>
+      <view class="info_item flex_between">
+        <view>性别</view>
+        <sex/>
+      </view>
+    </view>
+    <!--生日  -->
+    <picker mode="date">
+      <view class="info_item flex_between">
+        <view>生日</view>
+        <view class="flex_start">
+          <view style="color:#8f8d8d">1990-09-09</view>
+          <view class="icon_box" style="padding-left:25rpx">
+            <image src="../../images/arrow_right_5.png" style="width:14rpx;height:28rpx"></image>
+          </view>
+        </view>
+
+      </view>
+    </picker>
+    <view class="relative submit" style="margin-top:90rpx">
+      确认
+      <button form-type="submit" class="btn_login"></button>
+    </view>
+  </view>
+</form>

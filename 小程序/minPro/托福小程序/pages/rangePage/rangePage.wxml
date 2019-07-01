@@ -1,0 +1,73 @@
+<nav-bar-bottom default="{{false}}">
+  <view class="btns_1 flex_center" slot="list">
+    <view class="btn_item" bindtap="onNavIndex">返回首页</view>
+    <view class="btn_item" wx:if="{{mode!='study'}}" bindtap="onReviewOld">复习旧词</view>
+    <view class="btn_item" wx:else bindtap="onReviewOld">开始背单词</view>
+    <view class="btn_item" bindtap="onDK">打卡奋斗轨迹</view>
+  </view>
+</nav-bar-bottom>
+<!-- class="fixed scroll index_page" -->
+<view style="padding-bottom:110rpx;">
+  <!--头部  -->
+  <header-tip objData="{{rangeInfo}}"/>
+  <view class="step f_30_fff">BEAT单词神器，已陪伴您</view>
+  <view class="words_count flex_between relative">
+    <view class="loading_data" wx:if="{{rangeInfo.show==false}}"></view>
+    <view class="words_item flex_center" style="width:50%">
+      <view>学习单词卡片总共</view>
+      <view class="words_num_1">{{rangeInfo.study_words}}<text class="f_30">页次</text> </view>
+    </view>
+    <view class="words_item flex_center" wx:if="{{false}}">
+      <view>巩固旧词</view>
+      <view class="words_num_1">{{rangeInfo.review_words}}</view>
+    </view>
+    <view class="words_item flex_center"  style="width:50%">
+      <view>背单词时长总共</view>
+      <view class="words_num_1">{{rangeInfo.totoalTime.hours}}<text class="f_30">h</text>{{rangeInfo.totoalTime.minutes}}<text class="f_30">m</text></view>
+    </view>
+  </view>
+  <view class="step f_30_fff">BEAT单词神器，为您记录每天备考投入</view>
+  <!-- 统计图 -->
+  <view class="relative">
+    <view class="loading_data"  wx:if="{{rangeInfo.show==false}}"></view>
+    <view class="flex_between tj">
+      <view class="f_26_000">
+        <view class="flex_center">{{rangeInfo.nickname}}：今日成长<text class="ff9701">超过了{{rangeInfo.today_percent}}%</text>的伙伴</view>
+        <view class="flex_center" style="margin-top:16rpx">学习了<text class="ff9701">{{rangeInfo.today_study_words}}</text>个新单词卡片，复习了<text class="ff9701">{{rangeInfo.today_review_words}}个</text>旧单词卡片</view>
+      </view> 
+      <view class="mark_lable flex_center">
+        <view class="flex_between" style="margin-top:16rpx;margin-right:70rpx;"> 
+          <view class="f_26_666 friend_color" style="margin-right:10rpx"></view>
+          <view class="f_26_666">战友平均 <text>时间投入</text> </view>
+        </view>
+         <view class="flex_between" style="margin-top:16rpx"> 
+          <view class="f_26_666 you_color" style="margin-right:10rpx"></view>
+          <view class="f_26_666">您的 <text>时间投入</text></view>
+        </view>
+      </view>
+    </view>
+    <view class="echart_box">
+      <view class="f_24_000 houre">小时</view>
+      <view class="flex_start">
+        <view class="first" wx:if="{{ecCanvas}}">
+          <ec-canvas canvas-id="mychart-bar" ec="{{ ec }}"/>
+        </view>
+        <view class="f_24_000 rq">日期</view>
+      </view>
+       
+    </view>
+
+  </view>
+  <view class="step f_30_fff mt">今日成长排行榜</view>
+  <view class="range_box relative">
+    <view class="loading_data" wx:if="{{rangeInfo.rank.length==0}}"></view>
+    <view class="flex_start range_item" wx:for="{{rangeInfo.rank}}" wx:key="_{{index}}"> 
+      <view class="icon_box" style="margin-right:20rpx;">
+        <image src="../../images/no_{{index+1}}.png" style="width:31rpx;height:32rpx"></image>
+      </view>
+      <view wx:if="{{index==0}}">第一名：{{item.nickname}}</view>
+      <view wx:if="{{index==1}}">第二名：{{item.nickname}}</view>
+      <view wx:if="{{index==2}}">第三名：{{item.nickname}}</view>
+    </view>
+  </view>
+</view>

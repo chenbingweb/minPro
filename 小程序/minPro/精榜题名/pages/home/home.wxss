@@ -1,0 +1,470 @@
+@import "./home_1.wxss";
+new.home
+{
+  position: fixed;
+  top:0;
+  left: 0;
+}
+.home .home_bg
+{
+  position: absolute;
+  top:0;
+  left:0;
+}
+.home .absolute{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  
+}
+.home .home_bg>image
+{
+ width: 750rpx;
+ height: 100vh;
+}
+.home .imges{
+  position: absolute;
+  /* background-color: #aaa; */
+}
+/*统计  */
+.home .tj_box
+{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 540rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.home .online_tj
+{
+  min-width: 180rpx;
+  height: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.home .online_tj .tj_text
+{
+  /* font-size: 22rpx;
+  color:#206acc; */
+   font-size: 24rpx;
+  color:white;
+  line-height: 30rpx;
+  padding-left: 5rpx;
+}
+/*头像  */
+.home .user_info_container
+{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 150rpx;
+  width: 750rpx;
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 48rpx;
+  color:white;
+  font-size: 25rpx;
+}
+
+.home  .left_photoa{
+  position: relative;
+}
+/*.home .user_info_container .left_photo
+{
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  border:8rpx solid #34b7f7;
+
+}*/
+/*.home .user_info_container .left_photo .photo_img
+{
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  border:8rpx solid #34b7f7;
+}*/
+/*用户信息和积分信息  */
+.home .user_info_container .right_info
+{
+  padding-left: 14rpx;
+  position: relative;
+}
+.home .user_info_container .right_info .user_name
+{
+  line-height: 45rpx;
+  overflow:hidden; 
+  /* width:182rpx; */
+  white-space:nowrap;
+
+}
+.home .user_info_container .right_info .inter_box
+{
+  position: relative;
+  height: 56rpx;
+  width: 260rpx;
+}
+.home .user_info_container .right_info .inter_box .inter_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.home .user_info_container .right_info .inter_box .left_icon
+{
+  position: absolute;
+  left: 0;
+  top:0rpx;
+   height: 52rpx;
+}
+.home .user_info_container .right_info .inter_box .left_icon>image
+{
+  width: 52rpx;
+  height: 52rpx;
+}
+.home .user_info_container .right_info .text
+{
+  text-align: right;
+  position: absolute;
+  top:0rpx;
+  width: 140rpx;
+  right:51rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 30rpx;
+  color:#fed71f;
+  box-sizing: border-box;
+  overflow:hidden;
+  white-space:nowrap;
+
+}  
+.home .user_info_container .right_info .right_icon
+{
+  position: absolute;
+  right: 14rpx;
+  top:0;
+  height: 56rpx;
+}
+.home .user_info_container .right_info .inter_box_container
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .user_info_container .right_info .right_icon>image
+{
+  width: 34rpx;
+  height: 34rpx;
+}
+.home .user_info_container .right_info .inter_box .left_icon>image.icon_img
+{
+  position: relative;
+  top:3rpx;
+  width: 63rpx;
+  height: 63rpx;
+}
+/*话题王  */
+.home .htw
+{
+  position: absolute;
+  top:164rpx;
+  left: 92rpx;
+  box-sizing: border-box;
+  transform: scale(0);
+}
+/*商城  */
+.home .shope
+{
+  position: absolute;
+  top:157rpx;
+  right: 30rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.home .cmx
+{
+  position: absolute;
+  top:790rpx;
+  right: 10rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: scale(0);
+  z-index: 100;
+}
+.home .new_up
+{
+  position: absolute;
+  top:36rpx;
+  right: -6rpx;
+  /* left: 50%;
+  margin-left: -64rpx;
+  width:256rpx; */
+    /* right:0;
+  width:256rpx; */
+  
+}
+.home .new_frame
+{
+  position: absolute;
+  width:145rpx;
+  height:145rpx; 
+  top: -6rpx;
+  transform: translateX(-5.5%)
+}
+.home .new_vip
+{
+  position: absolute;
+  left: 95rpx;
+  top:87rpx;
+  z-index: 100;
+}
+ 
+ 
+/*组队  */
+.home .group
+{
+  position: absolute;
+  top:564rpx;
+  left: 30rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.home .gonglv{
+
+  position: absolute;
+  width: 130rpx;
+  height: 66rpx;
+  border-radius: 33rpx 0 0 33rpx;
+  background: #f352a9;
+  right: 0;
+  top:990rpx;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 20rpx;
+  color:white;
+  display: flex;
+  /* justify-content: center; */
+  box-sizing: border-box;
+  padding-left: 8rpx;
+}
+/*对战*/
+.home .fight_btn
+{
+  position: absolute;
+  top:456rpx;
+  right: 43rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: scale(0);
+}
+/*排行*/
+.home .rank_btn
+{
+  position: absolute;
+  top:830rpx;
+  right: 173rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: scale(0);
+}
+/*遮挡  */
+.home .marker_1
+{
+  width: 69rpx;
+  height: 104rpx;
+  position: absolute;
+  top:456rpx;
+  right:310rpx;
+  
+}
+.home .marker_2
+{
+  width:50rpx;
+  height:107rpx;
+  position:absolute;
+  top:830rpx;
+  right:390rpx;
+}
+.home .marker_3
+{
+  width:50rpx;
+  height:107rpx;
+  position:absolute;
+  top:531rpx;
+  right:372rpx;
+
+}
+.home .marker_4
+{
+  width:137rpx;
+height:107rpx;
+position:absolute;
+top:493rpx;
+left:0;
+
+
+}
+.home .marker_5
+{
+  width:214rpx;
+  height:90rpx;
+  position:absolute;
+  top:126rpx;
+  left:0;
+
+}
+.home .marker_6
+{
+  width:214rpx;
+  height:90rpx;
+  position:absolute;
+  top:126rpx;
+  left:320rpx;
+  border-radius:40rpx;
+}
+.home .marker_7
+{
+  width:121rpx;
+  height:90rpx;
+  position:absolute;
+  top:760rpx;
+  left:342rpx;
+  border-radius:40rpx;
+
+}
+.home .marker_8
+{
+  width:148rpx;
+  height:357rpx;
+  position:absolute;
+  top:815rpx;
+  right:6px;
+  border-radius:40rpx;
+}
+.home .marker_9
+{
+ width:140rpx;
+height:100rpx;
+position:absolute;
+top:415rpx;
+right:-3px;
+border-radius:40rpx;
+}
+.home .marker_10
+{
+ width:148rpx;
+height:100rpx;
+position:absolute;
+top:80rpx;
+right:6px;
+border-radius:40rpx;
+}
+.home .marker_11
+{
+  width:201rpx;
+  height:100rpx;
+  position:absolute;
+  top:1075rpx;
+  left:103px;
+  border-radius:40rpx;
+}
+.home .marker_12
+{
+ width:201rpx;
+height:100rpx;
+position:absolute;
+top:516rpx;
+left:103px;
+border-radius:40rpx;
+
+}
+.home .marker_13
+{
+  width:100rpx;
+  height:90rpx;
+  position:absolute;
+  top:391rpx;
+  left:220px;
+  border-radius:0 50% 50% 0;
+}
+.home .marker_14
+{
+  width:100rpx;
+  height:90rpx;
+  position:absolute;
+  top:497rpx;
+  left:49px;
+  border-radius:0 50% 50% 0;
+}
+/*好友分享  */
+.home .friend_share
+{
+  position: absolute;
+  top:954rpx;
+  left: -300rpx;
+  width: 320rpx;
+  height: 124rpx;
+  box-sizing: border-box;
+}
+
+.home .friend_share .share_info
+{
+  position: absolute;
+  left: 0rpx;
+  top:0;
+  width: 207rpx;
+  height: 130rpx;
+  color:white;
+  font-size: 25rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+
+}
+.home .friend_share .share_info .title
+{
+  padding-left: 23rpx
+}
+.home .friend_share .share_info .bottom
+{
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5rpx;
+  box-sizing: border-box;
+}
+.home .friend_share .share_info .xf_img
+{
+  width: 52rpx;
+  height: 52rpx;
+}
+.home .friend_share .share_info .score
+{
+  font-size: 30rpx;
+  color:#ff5252;
+}
+.home .share_button
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom:0;
+  border-radius: 0 62rpx 62rpx 0;
+  opacity: 0;
+}
+.home .fight_share
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}

@@ -1,0 +1,81 @@
+<view class="search_box">
+  <view class="input_box">
+    <view class="icon_box ">
+      <image src="../../images/searc_icon.png" style="width:29rpx;height:28rpx"></image>
+
+    </view>
+    <input placeholder-class="place_holder" bindconfirm="confirmEvent" placeholder="输入关键字" class="input_btn" />
+  </view>
+</view>
+<!--筛选 <picker mode="region"-->
+<view class="filter_box">
+  <picker range="{{areaList}}" range-key="name" value="{{regionIndex}}"  bindchange="bindRegionChange" >
+    <view class="filter_item">
+      <view style="padding-right:10rpx;">{{regionIndex==0?'区域':areaList[regionIndex].name}}</view>
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+  <picker bindchange="LopanChange"  data-filter="lou_pan_list" range="{{filterList.lou_pan_list}}">
+    <view class="filter_item">
+      <view style="padding-right:10rpx;">{{lopan==''?'楼盘':lopan}}</view>
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+  <picker bindchange="amountChange" data-filter="amount_list" range="{{filterList.amount_list}}">
+    <view class="filter_item">
+      <view style="padding-right:10rpx;">{{amount==''?'均价':amount}}</view>
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+  <picker bindchange="houseTypeChange" range="{{filterList.house_type}}" range-key="name" data-filter="house_type">
+    <view class="filter_item">
+      <view style="padding-right:10rpx;">{{houseType==''?'户型':houseType}}</view>
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+</view>
+<!--列表  -->
+<view class="boss_list">
+  <paging 
+    dataObj="{{dataObj}}"
+    bindpageData="pageData"
+  >
+    <view slot="list">
+      <navigator  url="../buildDetail/buildDetail?id={{item.id}}" class="list_item" wx:for="{{buildList}}" wx:key="a_{{index}}">
+        <view class="icon_box relative">
+          <image src="{{imgUrl+item.img_url}}" style="width:270rpx;height:210rpx"></image>
+          <view class="tip_top" wx:if="{{item.is_top=='1'}}">
+            <view class="icon_box">
+              <image src="../../images/tj_bg.png" style="width:90rpx;height:40rpx"></image>
+            </view>
+            <view class="absolute" style="text-align:center;line-height:40rpx">置顶</view>
+          </view>
+        </view>
+        <view class="detail_box">
+          <view class="buld_name">
+            <view>{{item.name}}</view>
+            <view class="inline_flex" hidden>
+              <view class="build_status">住宅</view>
+              <view class="build_status">在售</view>
+            </view>
+          </view>
+          <view class="build_1 one_line">{{item.address}}</view>
+          <view class="build_1">{{item.tag}}</view>
+          <view class="area_sise">
+            <text style="color:#e60012">{{item.amount}}</text>
+            <text>元/m²</text>
+            <!-- <text style="padding-left:18rpx">建面{{item.acreage}}m²</text> -->
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </paging>
+</view>

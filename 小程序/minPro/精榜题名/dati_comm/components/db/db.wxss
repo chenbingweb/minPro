@@ -1,0 +1,68 @@
+/* dati_comm/components/db/db.wxss */
+.db_box
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  border-radius: 54rpx;
+  overflow: hidden;
+  background-color: #f1d7af;
+}
+.child_1
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.rota_y_180
+{
+
+  transform: rotateY(180deg);
+  transform-origin:99.8% 0;
+
+}
+.top
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 50%;
+
+
+  overflow: hidden;
+}
+.rota_x_180
+{
+  transform-origin: 100% 100%;
+  transform: rotateX(180deg)
+}
+.r
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 54rpx;
+  height: 54rpx;
+}
+.t
+{
+  position: absolute;
+  left: 54rpx;
+  top:0;
+  width: calc(100% - 54rpx);
+  height: 53rpx;
+}
+.l
+{
+  position: absolute;
+  left:0;
+  width: 53rpx;
+  top:54rpx;
+  height:calc(100% - 34rpx);
+}

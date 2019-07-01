@@ -1,0 +1,47 @@
+<view class="shop_page fixed">
+  <search/>
+  <view class="filter flex_start">
+    <view class="filter_child flex_center">
+      <view style="padding-right:20rpx;">商圈</view>
+      <view class="sj"></view>
+    </view>
+    <view class="filter_child flex_center">
+      <view style="padding-right:20rpx;">类型</view>
+      <view class="sj"></view>
+    </view>
+  </view>
+  <view class="shop_list">
+    <paging>
+      <view slot="list">
+        <navigator url="../shoppingDetail/shoppingDetail" class="shop_item" wx:for="{{[1,2,3]}}">
+          <view class="flex_start">
+            <view class="icon_box relative" style="overflow:hidden; border-radius: 10rpx;">
+              <image src="../../images/img/1.jpg" class="img_style" ></image>
+              <view class="tip">专属优惠</view>
+            </view>
+            <view class="ticket_box">
+              <view class="shop_name">吉野家</view>
+              <view class="ticket_info" style="margin-bottom:20rpx;margin-top:10rpx">100元代金券一张</view>
+              <view class="ticket_info" >19:00-21:00</view>
+            </view>
+          </view>
+          <!--地址  -->
+          <view class="flex_between address_detail">
+            <view class="flex_start">
+              <view class="icon_box">
+                <image src="../../images/shop_l.png" style="width:19rpx;height:26rpx"></image>
+              </view>
+              <view class="address_name">北京朝阳</view>
+            </view>
+            <view style="font-size:22rpx;color:#c1c2c2">
+              500m
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </paging>
+  </view>
+  <view class="examing" bindtap="onToExaming"> 
+    认证商户
+  </view>
+</view>

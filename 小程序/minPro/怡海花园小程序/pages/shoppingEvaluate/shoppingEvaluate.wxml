@@ -1,0 +1,51 @@
+<form>
+  <view class="shop_info flex_start">
+    <view class="icon_box">
+      <image mode="aspectFill" src="../../images/img/1.jpg" style="width:82rpx;height:82rpx"></image>
+    </view>
+    <view style="margin-left:35rpx;">吉野家</view>
+  </view>
+  <!--评论  -->
+  <view class="evalute_box">
+    <textarea class="content" placeholder="各位客官：每一个脚印，每一次的进步，都离不开您提出的宝贵意见和建议。尽力把最好的送给大家"></textarea>
+  </view>
+  <!--添加图片  -->
+  <view class="flex_start add_img_box">
+    <view class="icon_box img_child">
+      <image src="../../images/img/1.jpg"  style="width:168rpx;height:168rpx"></image>
+    </view>
+    <view class="icon_box img_child">
+      <image src="../../images/img/1.jpg"  style="width:168rpx;height:168rpx"></image>
+    </view>
+    <view class="icon_box">
+      <image src="../../images/add_yinye_photo.png" style="width:168rpx;height:168rpx"></image>
+    </view>
+
+  </view>
+  <!--显示字数  -->
+  <view class="font_num">
+  0/500
+  </view>
+    <!--星评  -->
+  <view class="star_box">
+    <view class="flex_start">
+        <view class="icon_box">
+            <image src="../../images/star_add.png" style="width:26rpx;height:26rpx;"></image>
+        </view>
+        <view style="padding-left:18rpx;">
+          评分
+        </view>
+    </view>
+    <view class="flex_start" style="padding-left:30rpx">
+      <view bindtap="onSelectStar" data-id="{{item.id}}" data-status="{{item.status}}" class="star icon_box" wx:for="{{start}}" wx:key="index_{{index}}">
+         <image wx:if="{{item.status}}" src="../../images/yes_star.png" style="width:39rpx;height:37rpx"></image>
+        <image wx:else src="../../images/no_star.png" style="width:39rpx;height:37rpx"></image>
+      </view>
+
+    </view>
+  </view>
+   <view class="relative submit">
+      提交
+      <button form-type="submit" class="btn_login"></button>
+    </view>
+</form>

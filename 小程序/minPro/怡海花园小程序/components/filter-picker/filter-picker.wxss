@@ -1,0 +1,135 @@
+/* components/filter-picker/filter-picker.wxss */
+.filter_box
+{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 999999999999;
+}
+.filter_right_box
+{
+  position: absolute;
+  width: 610rpx;
+  top:0;
+  bottom: 0;
+  right: -1000rpx;
+  background-color: white;
+}
+.title
+{
+  font-size: 30rpx;
+  color:#333333;
+  height: 150rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  line-height: 150rpx;
+}
+.select_box_title
+{ 
+  box-sizing: border-box;
+  padding:0 25rpx;
+  font-size: 30rpx;
+  color:#333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.area_box
+{
+  width: 610rpx;
+  box-sizing: border-box;
+  padding: 30rpx 25rpx;
+  padding-bottom:10rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.child_area
+{
+  width: 160rpx;
+  height: 56rpx;
+  background-color: #f4f4f4;
+  text-align: center;
+  line-height: 56rpx;
+  margin-bottom: 20rpx;
+  margin-right: 40rpx;
+  font-size: 24rpx;
+  color:#666;
+}
+.child_area:nth-of-type(3n)
+{
+   margin-right: 0rpx;
+}
+.selected
+{
+  background-color: #fed545;
+  color:white;
+}
+.btn_box
+{
+  width: 560rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100rpx;
+}
+.btn_item
+{
+  width: 270rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 28rpx;
+  position: relative;
+}
+.absolute
+{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.btn_login
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.showFilter
+{
+  animation:hideContent 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0;
+}
+@keyframes hideContent {
+  0% {
+     right: -1000rpx;
+  }
+  100%{
+    right: 0;
+  }
+}
+.hideFilter
+{
+  animation:hideContent_1 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0;
+}
+@keyframes hideContent_1 {
+  0% {
+     right: 0rpx;
+  }
+  100%{
+    right: -1000rpx;
+  }
+}

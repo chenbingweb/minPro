@@ -1,0 +1,32 @@
+
+.user_header
+{
+  width: 750rpx;
+  height: 195rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 10rpx solid #f4f4f4;
+}
+.item
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  background-color: white;
+}
+.item_title
+{
+  width: 120rpx;
+  margin-right: 30rpx;
+}
+/*列表  */
+.center_item
+{
+  height: 106rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+}

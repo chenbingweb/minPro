@@ -1,0 +1,50 @@
+/* pages/hongBaoSai/pages/activeList/activeList.wxss */
+.bg_180
+{
+  /* transform-origin: 0 100%; */
+  transform: rotateY(180deg);
+  transform-origin:49.9% 0;
+
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 552rpx);
+}
+.scroll
+{
+  width: 600rpx;
+  height: 1000rpx;
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 420rpx);
+}
+.bg_item
+{
+  background-color: #837246;
+  border-radius: 30rpx;
+    width: 600rpx;
+  height: 290rpx;
+ position: absolute;
+ left: 0;
+ top:12rpx;
+}
+.item_active
+{
+  width: 600rpx;
+  height: 290rpx;
+  margin-bottom: 24rpx;
+}
+.bg_img
+{
+   width: 600rpx;
+  height: 290rpx;
+ border-radius: 30rpx;
+ position: absolute;
+ left: 0;
+ top:0;
+ overflow: hidden;
+}

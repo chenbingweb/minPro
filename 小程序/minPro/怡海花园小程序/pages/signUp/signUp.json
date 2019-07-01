@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "报名",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  "usingComponents": {
+    "sex": "/components/sex/sex"
+  }
+}

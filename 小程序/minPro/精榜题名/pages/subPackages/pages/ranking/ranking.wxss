@@ -1,0 +1,365 @@
+
+.ranking .rank_bg
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+}
+.ranking .line_bg
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+}
+.ranking .user_photea{
+position: relative;
+
+}
+.ranking .img_tk{
+    position: absolute;
+    left: -10%;
+    transform: translateY(-85%);
+    z-index: 20;
+
+}
+
+.ranking .rank_bg image
+{
+  width: 750rpx;
+  height: 100vh;
+}
+.ranking .back
+{
+  position: absolute;
+  left: 0;
+  top:12rpx;
+}
+/*排行  */
+.ranking .ranking_header_box
+{
+  position: absolute;
+  left: 16rpx;
+  width: 718rpx;
+  height: 500rpx;
+  top:20rpx;
+}
+.ranking .ranking_header_box .update
+{
+  position: absolute;
+  top:0;
+  left: 50%;
+  margin-left: -215rpx;
+}
+/*第一名*/
+.ranking .ranking_header_box .box
+{
+  position: absolute;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  font-weight: bold;
+  display:flex;
+  flex-direction:column;
+}
+
+.ranking .ranking_header_box .box .name
+{ 
+  color:#fedf39;
+  position: relative;
+  line-height: 30rpx;
+  height: 34rpx;
+}
+.ranking .name_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  /* bottom: 0;
+  right: 0; */
+}
+.ranking .name_text
+{
+  /* position: absolute;
+  left: 0;
+  top:0;
+   bottom: 0;
+  right: 0; */
+  text-align: center;
+  font-size: 34rpx;
+}
+.ranking .photo_pic
+{
+  position: absolute;
+  top:62rpx;
+  left: 45rpx;
+  overflow:hidden;
+border-radius:50%;
+
+}
+/*标签  */
+.ranking .label
+{
+  width: 200rpx;
+  height: 43rpx;
+  position: relative;
+   margin:0 auto; 
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+ 
+}
+.ranking .label_name
+{
+  color:#00ccff;
+  position: absolute;
+  top:0rpx;
+  /* left:24rpx; */
+  font-size:30rpx;
+  text-align: center;
+}
+.ranking .labe_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+
+/*金币  */
+.ranking .coin
+{
+  position: relative;
+  height: 32rpx;
+  /* margin:0 auto; */
+  width: 180rpx;
+  margin-top: 10rpx !important;
+  box-sizing: border-box;
+}
+.ranking  .come_from
+{
+  position: absolute;
+  right: -5rpx;
+  top:0;
+  color:#00a1b5;
+  font-size: 22rpx;
+}
+.ranking  .coin_bg
+{
+  position: relative;
+  left: 10rpx;
+}
+.ranking  .coin_total
+{
+  position: absolute;
+  top:0;
+  left: 40rpx;
+  font-size: 24rpx;
+  color:white;
+}
+.ranking .coin_img
+{
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.ranking .yj_jun
+{
+  width: 160rpx;
+}
+/*one  */
+.ranking .ranking_header_box .box.one
+{
+   top:60rpx;
+  left: 50%;
+  /* margin-left: -135rpx; */
+  margin-left: -114rpx;
+  /* width: 270rpx; */
+  width: 224rpx;
+}
+/*two*/
+.ranking .ranking_header_box .box.two
+{
+  top:142rpx;
+  left:20rpx;
+  width: 180rpx
+  
+}
+.ranking .ranking_header_box .box.three
+{
+   top:142rpx;
+  right:25rpx;
+width: 180rpx;
+}
+/*排行列表  */ 
+.ranking .ph_scroll
+{
+  position: absolute;
+  top:528rpx;
+  left: 24rpx;
+  width: 702rpx;
+  background: #d5d9e0;
+  height: 628rpx;
+  border-radius: 0 0 20rpx 20rpx;
+}
+.ranking  .list_item
+{
+  width: 680rpx;
+  height: 110rpx;
+  box-sizing: border-box;
+  border-bottom: 4rpx solid #bec2cc;
+  margin: 0 auto;
+  display: flex;
+   justify-content: flex-start; 
+  align-items: center;
+}
+.ranking  .list_item .child_1
+{
+  width: 60rpx;
+  height: 100rpx;
+  text-align: center;
+  font-weight: bold;
+  line-height: 100rpx;
+  color:#336699;
+  border-right:8rpx solid #336699;
+
+} 
+.ranking .list_item .child_2
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20rpx;
+  /* width: 430rpx; */
+  width: 510rpx;
+}
+.ranking .list_item .child_2 .user_photes
+{
+  border-radius: 50%;
+  box-sizing: border-box;
+  border:4rpx solid #336699;
+  overflow: hidden;
+  z-index: 10;
+
+}
+.ranking .user_photesa{
+  position: relative;
+
+}
+.ranking .list_item .child_2 .simble_info
+{
+  font-size: 25rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  line-height: 35rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+    /*transform: translate(-25rpx, 0rpx);*/
+}
+.ranking .list_item .child_3
+{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 70rpx;
+  width: 74rpx;
+}
+.ranking .list_item .child_3 .icon_bg_icon
+{
+  position: absolute;
+  top:-2rpx;
+  left: 0;
+}
+.ranking .list_item .child_3 .jb_num
+{
+  position: absolute;
+  top:0;
+  left: 50rpx;
+  font-size: 20rpx;
+  color:white;
+}
+.ranking  .list_item .child_3 .font_style
+{
+  color:#c3c2c3;
+  font-size: 20rpx;
+}
+.ranking  .icon_bg_img
+{
+  left:14rpx;
+position:relative;
+
+}
+/*我的排行  */
+.ranking .my_range
+{
+  z-index: 120;
+  width:670rpx;
+  height: 110rpx;
+  position: absolute;
+  bottom: -10rpx;
+  left: 50%;
+  margin-left: -335rpx;
+  background-color: white;
+  border-radius: 20rpx;
+   box-shadow: 0px -6rpx 0rpx 0rpx #9ea1aa;
+}
+/*无头像  */
+.ranking  .photo_pic_no
+{
+  width:130rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+  background-color: #DDEEEE;
+   text-align: center; 
+  color:#21233E;
+  font-weight: bold;
+  font-size: 70rpx;
+
+}
+.ranking .wait_size
+{
+  margin: 0 auto;
+  color: white;
+}
+.ranking .up_show_yy
+{
+  position: absolute;
+  width: 702rpx;
+  left: 24rpx;
+ top:520rpx;
+
+}
+/*头框 */
+/* .ranking .list_item .child_2 .user_photes .new_frame
+{  
+  position: absolute;
+  left:100rpx;
+} */
+ 
+ 
+.ranking .new_framea
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -7rpx;
+}
+
+
+.ranking  .new_vipw
+{  
+  z-index: 100;
+}   
+.ranking .list_item .child_2 .user_photes .new_vip1
+{  
+  position: absolute;
+  left:68rpx;
+  top:46rpx;
+  z-index: 100;
+}   

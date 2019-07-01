@@ -1,0 +1,53 @@
+<!--pages/inforRelease/inforRelease.wxml-->
+<import src="../../temp/temp.wxml" />
+<view class="filter_box">
+  <picker class="filter_btn" range="{{areaList}}" range-key="name" bindchange="bindRegionChange" value="{{regionIndex}}">
+    <view class=" flex_center">
+      <!--color:#e3e3e3  -->
+      <view style="margin-right:10rpx;">{{areaList[regionIndex].name}}</view>
+      <input name="area" hidden value="{{areaList[regionIndex].id}}"></input>
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+  <picker class="filter_btn" range="{{infoList}}"  value="{{infoIndex}}" bindchange="infoAllClass" range-key="name">
+
+    <view class=" flex_center">
+      <view style="margin-right:10rpx">{{infoList[infoIndex].name}}</view>
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+
+  </picker>
+  <!-- <view class="filter_btn flex_center" bindtap="sortEvent">
+    <view style="margin-right:10rpx">排序</view>
+    <view class="icon_box" wx:if="{{sort=='desc'}}">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+     <view wx:else class="icon_box" style="transform:rotate(180deg)">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view> -->
+  <picker bindchange="sortEvents" range="{{filterList}}" value="{{filterIndex}}" range-key="name" class="filter_btn flex_center">
+    <view class=" flex_center" >
+      <view style="margin-right:10rpx">{{filterList[filterIndex].name}}</view>
+      <view class="icon_box" wx:if="{{sort=='desc'}}">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+      <view wx:else class="icon_box" style="transform:rotate(180deg)">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+</view>
+<view class="infoRelease_box">
+  <paging dataObj="{{dataObj}}" bindpageData="pageData">>
+    <view slot="list">
+      <navigator bindtap="getInfoDetail" data-id="{{item.id}}" url="../infoRelDetail/infoRelDetail?id={{item.id}}&time={{item.create_at}}" class="info_list" wx:key="index_{{index}}" wx:for="{{iList}}">
+        <template is="info_release_temp" data="{{infoData:item,imgUrl:imgUrl}}"  />
+      </navigator>
+    </view>
+  </paging>
+</view>

@@ -1,0 +1,114 @@
+/* pages/tongTianTa/component/left-3v3/left-3v3.wxss */
+.item
+{
+  width: 345rpx;
+  height: 126rpx;
+  background-color: #cc3433;
+  box-shadow: 0px 7rpx 0rpx 0rpx #ae2322;
+  border-radius: 0 63rpx 63rpx 0;
+  position: relative;
+  margin-bottom: 7rpx;
+}
+.photo_info
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon_box
+{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info_box
+{
+  font-size: 28rpx;
+  font-weight: 600;
+  color:white;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  width: 150rpx;
+}
+.grade
+{
+  color:#ffdb4d;
+}
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.relative
+{
+  position: relative;
+}
+.user_photo
+{
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+
+}
+.wait_photo
+{
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  color:#ffdb4d;
+  font-weight: bold;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 75rpx;
+  background-color: #510a09;
+}
+.process
+{
+  position: absolute;
+  left: 35rpx;
+  width: 15rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  top:386rpx;
+  background-color: #cc3433;
+  transition: height 0.2s;
+  
+}
+.box
+{
+  position: absolutea;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.fen
+{
+  width: 126rpx;
+  height: 64rpx;
+  position: absolute;
+  left: 60rpx;
+  bottom: -80rpx;
+  background-color: #fff;
+  border:2rpx solid #fddf7b;
+  border-radius: 32rpx;
+  text-align: center;
+  line-height: 64rpx;
+  color:#632e3b;
+  font-size: 30rpx;
+  font-weight: bold;
+  box-shadow:0px 4rpx 0rpx 0rpx #cbb79b;
+
+}

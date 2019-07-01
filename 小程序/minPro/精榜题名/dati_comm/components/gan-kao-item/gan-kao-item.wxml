@@ -1,0 +1,43 @@
+<view class="item_box icon_box">
+<!-- src="{{dwItems.img}}"  OnShow-->
+  <image bindtap="OnToFight" data-s="{{dwItems.id}}"  data-show="{{dwItems.id<= dwItems.Level1}}" src="{{dwItems.img}}" style="width:200rpx;height:205rpx"></image>
+  <image class="lock" wx:if="{{dwItems.id>dwItems.Level1}}" src="./img/btn_12.png" style="width:199rpx;height:86rpx"></image>
+  <image class="tg" wx:else src="./img/tg.png"  hidden="{{dwItems.id==dwItems.Level1}}" style="width:147rpx;height:65rpx"></image>
+  <!-- 解锁提示 -->
+  <view class="lock_book" bindtap="OnToFight" data-mp="{{dwItems.mp}}" wx:if="{{showTip}}">
+    <!-- 背景 -->
+    <view class="juan_zhou_box">
+      <view class="icon_box">
+        <image src="./img/jz_l.png" style="width:25rpx;height:215rpx;"></image>
+      </view>
+      <view class="icon_box">
+        <image src="./img/jz_m.png" class="jz_middle {{js_middle_width}}"></image>
+      </view>
+      <view class="icon_box">
+        <image src="./img/jz_r.png" style="width:27rpx;height:215rpx;"></image>
+      </view>
+    </view>
+    <!-- <view class="icon_box">
+      <image src="./img/juan_zhou.png" style="width:536rpx;height:215rpx;"></image>
+    </view> -->
+    <!-- 解锁信息 -->
+    <view class="lock_info">
+      <!-- 关卡图片 -->
+      <view class="icon_box gq_icon">
+        <image src="{{dwItems.img}}" style="width:194rpx;height:169rpx"></image>
+      </view>
+      <!-- 花费信息 -->
+      <view class="hua_fei">
+        <view>奖励:<text class="coin_num">100</text> </view>
+        <view>花费:<text class="coin_num">{{dwItems.mp}}</text> </view>
+        <!-- 星级 -->
+        <view class="star">
+          <view class="icon_box">
+            <image src="../user-info/img/star.png" style="width:46rpx;height:44rpx"></image>
+          </view>
+          <view>X{{dwItems.Level2}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

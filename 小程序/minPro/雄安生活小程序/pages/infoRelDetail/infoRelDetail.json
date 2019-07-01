@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "nav-back": "/components/nav-back/nav-back"
+  }
+}

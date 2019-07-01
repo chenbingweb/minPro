@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "fight-fail-tip": "../../component/fight-fail-tip/fight-fail-tip",
+    "fight-success-tip": "../../component/fight-success-tip/fight-success-tip",
+    "photo": "/dati_comm/components/photo/photo"
+    
+  }
+}

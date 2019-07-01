@@ -1,0 +1,196 @@
+<template name="shopping">
+  <view class="fixed">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="bg icon_box">
+        <image src="../../imgs/dianpu/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../imgs/dianpu/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+    </view>
+    <!-- 标题 -->
+    <view class="title icon_box">
+      <image src="../../imgs/dianpu/title.png" style="width:141rpx;height:78rpx"></image>
+    </view>
+    <!-- 道具列表 1-->
+    <view class="dj_box flex_start" >
+
+      <view class="item relative" wx:if="{{item.can_buy}}" style="{{index==1?'margin:0 10rpx':''}}" wx:for="{{data.goods}}" wx:key="index_{{index}}">
+        <!-- 背景 -->
+        <view class="icon_box">
+          <image src="../../imgs/dianpu/shop_bg.png"  style="width:182rpx;height:284rpx"></image>
+        </view>
+        <!-- 道具信息 -->
+        <view class="absolute">
+          <!-- 标题 -->
+          <view class="info_title">{{item.name}}</view>
+          <!-- 图片 -->
+          <view class="icon_box relative dj_con">
+            <image src="../../imgs/dianpu/bg_5.png" style="width:104rpx;height:104rpx"></image>
+            <!-- 道具图片 ../../imgs/dianpu/da_dui_ka.png-->
+            <view class="icon_box icon_img">
+              <image src="{{item.icon}}" style="width:90rpx;height:97rpx"></image>
+            </view>
+            <!-- 金币 -->
+            <view class="coin_box">
+              <!-- 金币icon -->
+              <view class="icon_box coin_pos">
+                <image src="../../imgs/dianpu/coin.png" style="width:38rpx;height:43rpx"></image>
+              </view>
+              <!-- 金币数量 -->
+              <view class="position coin_num">{{item.price}}</view>
+            </view>
+          </view>
+          <!-- 按钮 -->
+          <view class="icon_box" bindtap="OnBuy" data-cid="{{item.id}}">
+            <image src="../../imgs/dianpu/buy_btn.png"  style="width:133rpx;height:53rpx"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 道具列表 2-->
+    <view class="dj_box_2 flex_start" wx:if="{{false}}">
+
+      <view class="item relative" style="{{index==1?'margin:0 10rpx':''}}" wx:for="{{[1,2,3]}}" wx:key="index_{{index}}">
+        <!-- 背景 -->
+        <view class="icon_box">
+          <image src="../../imgs/dianpu/shop_bg.png"  style="width:182rpx;height:284rpx"></image>
+        </view>
+        <!-- 道具信息 -->
+        <view class="absolute">
+          <!-- 标题 -->
+          <view class="info_title">答对卡</view>
+          <!-- 图片 -->
+          <view class="icon_box relative dj_con">
+            <image src="../../imgs/dianpu/bg_5.png" style="width:104rpx;height:104rpx"></image>
+            <!-- 道具图片 -->
+            <view class="icon_box icon_img" style="left:50%;top:0">
+              <image src="../../imgs/dianpu/d_j_{{index+1}}.png" style="width:100rpx;height:107rpx"></image>
+            </view>
+            <!-- 金币 -->
+            <view class="coin_box">
+              <!-- 金币icon -->
+              <view class="icon_box coin_pos">
+                <image src="../../imgs/dianpu/coin.png" style="width:38rpx;height:43rpx"></image>
+              </view>
+              <!-- 金币数量 -->
+              <view class="position coin_num">225</view>
+            </view>
+          </view>
+          <!-- 按钮 -->
+          <view class="icon_box">
+            <image src="../../imgs/dianpu/buy_btn.png"  style="width:133rpx;height:53rpx"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 我的道具 -->
+    <view class="my_dj_box">
+      <view class="my_dj_title"> 我的道具</view>
+      <my-tool myGoods="{{data.myGoods}}"/>
+      <view wx:if="{{false}}" class="my_dj_list flex_start">
+        <!-- 图片 -->
+        <view class="icon_box relative dj_con" style="width:134rpx;margin-left:10rpx" wx:for="{{data.myGoods}}">
+          <image src="../../imgs/dianpu/bg_5.png" style="width:104rpx;height:104rpx"></image>
+          <!-- 道具图片 -->
+          <view class="icon_box icon_img" style="left:50%;top:0">
+            <image src="{{item.icon}}" style="width:100rpx;height:107rpx"></image>
+          </view>
+          <!-- 金币 -->
+          <view class="coin_box" style="width:136rpx;height:40rpx;">
+            <!-- 金币数量 -->
+            <view class="position coin_num" style="line-height:40rpx;">{{item.name+''+item.num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 用户信息 -->
+    <user-info
+      nowPage="shop"
+     gankaoIcon="{{data.gankaoIcon}}"
+     LevelIcon="{{data.LevelIcon}}"
+     showMsg="{{false}}"
+     qcLevel="{{data.qcLevel}}"
+     name="{{data.UserName}}"
+     msg="{{data.msg}}" 
+     money="{{data.Score}}" 
+     LevelIcon="{{data.LevelIcon}}"
+     gkStar="{{data.gkStar}}"
+    />
+    <view class="u_user_bottom" wx:if="{{false}}">
+      <!-- 背景 -->
+      <view class="u_icon_box">
+        <image src="../../imgs/dianpu/db_bg.png" style="width:750rpx;height:126rpx;"></image>
+      </view>
+      <!--   用户信息 -->
+      <view class="u_absolute">
+        <!--头像 -->
+        <view class="u_photo_box">
+          <view class="u_icon_box u_relative">
+            <image src="../../imgs/dianpu/photo_bg_1.png" style="width:141rpx;height:150rpx;"></image>
+            <image src="../../imgs/dianpu/db.png" class="u_icon"></image>
+          </view>
+          
+          <!-- 用户名 -->
+          <view class="u_icon_box u_db">
+            <image src="../../imgs/dianpu/db.png" style="width:162rpx;height:50rpx;"></image>
+            
+            <view class="u_absolute one_line u_name">
+                张三
+            </view>
+          </view>
+        </view>
+        <!-- 切磋等级 -->
+        <view class="u_qc_level u_bg_db">
+          <!-- 等级图片 -->
+          <view class="u_icon_box u_qc_icon">
+            <image src="../../imgs/dianpu/level.png" style="width:49rpx;height:50rpx;"></image>
+          </view>
+          <!-- 当前等级 -->
+          <view class="u_absolute u_current_level">
+          初出茅庐
+          </view>
+        </view>
+        <!-- 赶考等级 -->
+        <view class="u_gk_level u_bg_db">
+          <!-- 等级图片 -->
+          <view class="u_icon_box u_qc_icon" style="left:-6rpx;">
+            <image src="../../imgs/dianpu/level.png" style="width:49rpx;height:50rpx;"></image>
+          </view>
+          <!-- 当前等级 -->
+          <view class="u_absolute u_current_level">
+           <view class="u_icon_box u_pos" style="left:{{50+(13*index)}}rpx;z-index:{{index*4}}" wx:for="{{[1,2,3]}}" wx:key="index1_{{index}}">
+            <image src="../../../../dati_comm/components/user-info/img/star.png" style="width:32rpx;height:31rpx;"></image>
+            </view>
+            <view class="u_icon_box u_pos" style="left:{{50+(13*(8-index-1))}}rpx;z-inde:-9" wx:for="{{[5,5,5,5,5]}}" wx:key="no_{{index}}">
+              <image src="../../../../imgs/fightOver/no_star.png" style="width:32rpx;height:31rpx;"></image>
+            </view>
+          </view>
+        </view>
+        <!-- 金币 -->
+        <view class="u_coin_level u_bg_db">
+          <!-- 等级图片 -->
+          <view class="u_icon_box u_qc_icon" style="top:56%;">
+            <image src="../../imgs/dianpu/coin.png" style="width:46rpx;height:48rpx"></image>
+          </view>
+          <!-- 当前等级 -->
+          <view class="u_absolute u_current_level">
+          1000
+          </view>
+        </view>
+        <!-- 帮助 -->
+        <view class="u_icon_box u_help">
+          <image src="../../imgs/dianpu/help.png" style="width:57rpx;height:57rpx"></image>
+        </view>
+      </view>
+      <!-- -->
+    </view>
+    <!-- 返回 -->
+    <view class="back" bindtap="OnBack">
+      <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+    </view>
+  </view>
+
+</template>

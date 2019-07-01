@@ -1,0 +1,126 @@
+<view class="fixed">
+  <view class="icon_box bg wap_pos">
+    <image src="../../../../imgs/home/1.jpg" style="width:750rpx;height:1634rpx"></image>
+  </view>
+  <!-- 通天塔 -->
+  <view class="t_t_t icon_box">
+    <image src="../../imgs/start/t_t_t.png" style="width:245rpx;height:368rpx"></image> 
+  </view>
+  <!-- 复活卡信息 -->
+  <view class="bottom_info">
+    <view class="bottom_child icon_box">
+      <image src="../../imgs/start/btootom_bg.png" style="width:750rpx;height:140rpx;"></image>
+      <!-- 信息 -->
+      <view class="info_box" >
+        <!-- 答对卡 -->
+        <view class="item" bindtap="OnToShop">
+          <view class="icon_box relative">
+            <image src="../../imgs/start/car_bg.png" style="width:135rpx;height:149rpx;"></image>
+            <view class="icon_box q_1">
+              <image src="../../imgs/start/quan_1.png" style="width:117rpx;height:139rpx;"></image>
+            </view>
+          </view>
+          <view class="num_bg icon_box">
+             <image src="../../imgs/start/btn_bg.png" style="width:174rpx;height:73rpx;"></image>
+              <!-- 当前复活卡数量 -->
+             <view class="fhk_num absolute">
+                <view class="num">答对卡X{{ddk}}</view>
+             </view>
+          </view>
+        </view>
+        <!-- 复活卡 -->
+        <view class="item" bindtap="OnToShop" style="margin-left:20rpx;">
+          <view class="icon_box">
+            <image src="../../imgs/start/car_bg.png" style="width:135rpx;height:149rpx;"></image>
+            <view class="icon_box q_1">
+              <image src="../../imgs/start/quan_2.png" style="width:110rpx;height:143rpx;"></image>
+            </view>
+          </view>
+          <view class="num_bg icon_box ">
+             <image src="../../imgs/start/btn_bg.png" style="width:174rpx;height:73rpx;"></image>
+             <!-- 当前复活卡数量 -->
+             <view class="fhk_num absolute">
+                <view class="num">复活卡X{{fhk}}</view>
+             </view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 公告 -->
+  <view class="notice_box">
+    <view class="absolute">
+      <view class="icon_box g_g_t">
+        <image src="../../imgs/start/g_g_t.png" style="width:578rpx;height:135rpx;"></image>
+      </view>
+      <view class="g_g_m" >
+        <image src="../../imgs/start/g_g_m.png" style="width:531rpx;height:100%"></image>
+      </view>
+      <view class="icon_box g_g_b">
+        <image src="../../imgs/start/g_g_b.png" style="width:578rpx;height:89rpx;"></image>
+        <!-- 当前关数底板 -->
+        <view  style='z-index:2;' class="title_box {{index==1?'rotate_180':''}}"  wx:for="{{[1,2]}}" wx:key="t_{{index}}">
+          <view class="icon_box">
+              <image  src="../../../../dati_comm/components/ticket-tip/img/title_1.png" style="width:44rpx;height:90rpx"></image>
+          </view>
+          <view class="icon_box">
+              <image  src="../../../../dati_comm/components/ticket-tip/img/title_2.png" style="width:168rpx;height:90rpx"></image>
+          </view>
+        </view>
+        <!--  当前关数 -->
+        <view class="absolute" style='z-index:3;'>
+          <view class="num_g_gb">已经挑战{{SavedGk}}层</view>
+          <view class="num g_num" >已经挑战{{SavedGk}}层</view>
+        </view>
+      </view>
+    </view>
+    <!-- 标题 -->
+    <view class="notice_title">
+      <image src="../../imgs/start/title.png" style="width:379rpx;height:59rpx" ></image>
+    </view>
+    <!-- 公告内容 -->
+    <view class="content_box">
+      <view class="content RemoveRollCar">
+        <view>欢迎大侠来到通天塔，在通天塔可以答题爬层
+玩法规则</view>
+<view>1、 通天塔有4个层级，每层级有10层，总共有40层；</view>
+<view>2、 每周大侠都可以免费进入通天塔3次 </view>
+<view>3、 通天塔每层一道题，大侠需要连续答题爬塔10层才能获得一次奖励；</view>
+<view>4、 在通天塔中，如果大侠答错其中一层的问题，将需要从本层级的第一层重新开始(1-10层中答错题目，将从1层开始，11-20层答错，将从11层开始);</view>
+<view>5、 在通天塔中，如果大侠题目答错，玩家也可以通过邀请好友或者使用复活卡复活；</view>
+<view>6、 复活卡可以在当铺用银两购买</view>
+<view>7、 通天塔层级每周日会重置一次；</view>
+      </view>
+    </view>
+    
+  </view>
+  <!-- 返回 -->
+  <view class="back" bindtap="OnBack">
+    <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+  <!-- 挑战通天塔 -->
+  <view class="tiao_zhan_box">
+    <view class="t_z_btn icon_box">
+      <image bindtap="OnFight" src="../../imgs/start/tz_t_t_t.png" style="width:441rpx;height:157rpx"></image>
+      <view class="s_y_times" style="pointer-events:none;">
+        剩余次数：{{TodayCGLeftCount}}
+      </view>
+    </view>
+    <view class="flex_between btn_s">
+      <view class="btn_item icon_box relative">
+         <image src="../../imgs/start/btn.png" style="width:276rpx;height:119rpx"></image>
+         <view class="icon_box absolute" style="bottom:10rpx">
+            <image src="../../imgs/start/share_f.png" style="width:190rpx;height:53rpx"></image>
+         </view>
+         <button open-type="share" class="bl"></button>
+      </view>
+      <view class="btn_item icon_box relative" bindtap="OnRank">
+        <image src="../../imgs/start/btn.png" style="width:276rpx;height:119rpx"></image>
+         <view class="icon_box absolute" style="bottom:10rpx">
+            <image src="../../imgs/start/look_ph.png" style="width:189rpx;height:53rpx"></image>
+         </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,1106 @@
+.friend_fight .fight_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.friend_fight .fight_bg image {
+  width: 750rpx;
+  height: 100vh;
+}
+
+.friend_fight .farme_ac{
+  margin-left: 0rpx;
+  margin-top: 10rpx;
+}
+.friend_fight .hei{
+  
+  margin-top: 20rpx;
+  height: 20rpx;
+}
+
+.friend_fight .new_frame
+{
+  position: absolute;
+  left:-4rpx;
+  top:-4rpx;
+  width:110rpx;
+  height:110rpx; 
+}
+
+.friend_fight .farme_ab{
+  width: 600rpx;
+  height: 500rpx;
+    display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  box-sizing: border-box;
+}
+.friend_fight .play_user {
+  position: absolute;
+  top: 81rpx;
+  left: 0;
+}
+.friend_fight .frame_vw{
+  width: 600rpx;
+  height: 100rpx;
+
+}
+
+.friend_fight .play_user .play_user_bg image {
+  width: 375rpx;
+  height: 248rpx;
+}
+
+.friend_fight .play_user .user_box {
+  position: absolute;
+  top: 56rpx;
+  left: -400rpx;
+  color: white;
+  font-size: 22rpx;
+}
+
+/*正在挑战  */
+
+.friend_fight .play_user.succ, .friend_fight .friend.succ {
+  top: 0;
+  width: 375rpx;
+}
+
+.friend_fight .play_user.succ .new_vip, .friend_fight .friend.succ .new_vip {
+  position: absolute;
+  top: 77rpx;
+  left: 65rpx;
+}
+
+.friend_fight .play_user .user_box .user_name,
+.friend_fight .friend .friend_box  .user_name {
+  width: 100rpx;
+  text-align: center;
+  line-height: 30rpx;
+}
+
+.friend_fight .friend {
+  position: absolute;
+  top: 81rpx;
+  /* right: 0; */
+  left: 375rpx;
+  z-index: 10;
+}
+
+.friend_fight .friend .friend_bg {
+  transform: rotateY(180deg);
+  width: 375rpx;
+  height: 248rpx;
+}
+
+.friend_fight .friend .friend_bg image {
+  width: 375rpx;
+  height: 248rpx;
+}
+
+.friend_fight .friend .friend_box {
+  position: absolute;
+  right: -400rpx;
+  top: 56rpx;
+  color: white;
+  font-size: 22rpx;
+}
+
+/*正在等待  */
+
+.friend_fight .friend .friend_box .user_photo.wait {
+  border-color: #ed1b51;
+  text-align: center;
+  font-weight: bold;
+  line-height: 90rpx;
+  font-size: 54rpx;
+  box-sizing: border-box;
+  color: #57419d;
+  background-color: #f1edf1;
+}
+
+/*提示信息  */
+
+.friend_fight .font_wait {
+  position: absolute;
+  top: 354rpx;
+  left: 209rpx;
+}
+
+.friend_fight .font_wait .text_wait, .friend_fight .font_wait .text_wait image {
+  width: 332rpx;
+  height: 90rpx;
+}
+
+.friend_fight .font_start {
+  left: 135rpx;
+  width: 480rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.friend_fight .font_start .tip {
+  color: white;
+  font-size: 34rpx;
+  position: relative;
+  top: 156rpx;
+}
+
+.friend_fight .font_wait .text_start, .friend_fight .font_wait .text_start image {
+  width: 330rpx;
+  height: 88rpx;
+}
+
+/*邀请好友  */
+
+.friend_fight .visited_friend_box {
+  position: absolute;
+  top: 553rpx;
+  left: 168rpx;
+  height: 300rpx;
+  width: 414rpx;
+}
+
+.friend_fight .visited_friend_box .visi_btn {
+  width: 414rpx;
+  height: 102rpx;
+  background-color: #3dd152;
+  border-radius: 51rpx 51rpx 51rpx 51rpx;
+  font-size: 36rpx;
+  color: white;
+  text-align: center;
+  line-height: 102rpx;
+  position: relative;
+  font-weight: bold;
+  letter-spacing: 6rpx;
+}
+
+.friend_fight .visited_friend_box .visi_btn .icon {
+  position: absolute;
+  width: 58rpx;
+  height: 58rpx;
+  top: 22rpx;
+  right: 30rpx;
+}
+
+.friend_fight .visited_friend_box .visi_btn .icon>image {
+  width: 58rpx;
+  height: 58rpx;
+}
+
+.friend_fight .visited_friend_box .give_up {
+  text-align: center;
+  color: #747090;
+  font-size: 36rpx;
+  width: 414rpx;
+  height: 102rpx;
+  line-height: 102rpx;
+  font-weight: bold;
+}
+
+.friend_fight .visited_friend_box .start_fight_btn {
+  background-color: #f53d83;
+}
+
+/*题库  */
+
+.friend_fight .question_box {
+  width: 470rpx;
+  /* height: 546rpx;  */
+  height: 0rpx;
+  background: white;
+  position: absolute;
+  top: 53rpx;
+  left: 140rpx;
+  z-index: 10;
+  border-radius: 20rpx;
+  opacity: 0;
+}
+
+.friend_fight .question_box.anima {
+  height: 546rpx;
+  transition: height 1s;
+}
+
+.friend_fight .question_box .time {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #d7d7d7;
+  position: absolute;
+  top: -44rpx;
+  /* left: 191rpx; */
+  left: 50%;
+  margin-left: -44rpx;
+  z-index: 1;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #57419d;
+  font-size: 46rpx;
+}
+
+.friend_fight .question_box .time>text_X {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -33rpx;
+  margin-top: -33rpx;
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  line-height: 66rpx;
+  overflow: hidden;
+}
+
+.friend_fight .question_box .question_type {
+  width: 314rpx;
+  height: 78rpx;
+  position: relative;
+  margin: 0 auto;
+  top: 222rpx;
+}
+
+.friend_fight .question_box .question_type .question_type_title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 78rpx;
+  color: #57419d;
+  font-size: 46rpx;
+  font-weight: bold;
+}
+
+.friend_fight .question_box .question_num_box {
+  position: absolute;
+  right: 25rpx;
+  top: 17rpx;
+  color: #c7c7c7;
+  font-size: 26rpx;
+  opacity:0;
+  transition: opacity 40ms linear 600ms;
+}
+
+/*问题详情  */
+
+.friend_fight .question_box .question_content {
+  width: 402rpx;
+  margin: 0 auto;
+  position: relative;
+  top: 57rpx;
+  height: 270rpx;
+}
+
+.friend_fight .question_box .question_content .img {
+  overflow: hidden;
+}
+
+.friend_fight .question_box .question_content .img image {
+  height: 270rpx;
+}
+
+.friend_fight .question_box .question_content .question_title {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  padding-top: 40rpx;
+  color: #57419d;
+  font-weight: bold;
+}
+
+.friend_fight .question_box .question_content.no_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 432rpx;
+}
+
+.friend_fight .question_box .question_content.no_img .no_padding_top {
+  padding: 0;
+}
+
+/*最后一题  */
+
+.friend_fight .last_one {
+  position: absolute;
+  top: 649rpx;
+  left: 155rpx;
+}
+
+.friend_fight .last_one .img_last {
+  width: 440rpx;
+  height: 100rpx;
+}
+
+/*左边进度条  */
+
+.friend_fight .process_left {
+  /* position: absolute; */
+  position: fixed;
+  left: -400rpx;
+  bottom: 45rpx;
+  width: 30rpx;
+  height: 400rpx;
+  top:680rpx;
+  z-index: 9999;
+  /*background-color: #364a84;*//*border-radius: 22rpx;*//*box-sizing: border-box;*//*border:4rpx solid #0d7cac;*//*display: flex;*//*justify-content: center; */
+}
+
+.friend_fight .process_right {
+   z-index: 9999;
+  /* position: absolute; */
+  position: fixed;
+  right: -400rpx;
+  /* left: 690rpx; */
+  bottom: 45rpx;
+  width: 30rpx;
+  height: 400rpx;
+  top:680rpx;
+  /*background-color: #364a84;*//*border-radius: 22rpx;*//*box-sizing: border-box;*//*border:2rpx solid #0d7cac;*//*display: flex;*//*justify-content: center; */
+}
+
+.friend_fight .process {
+  width: 26rpx;
+  height: 400rpx;
+  background-color: #08ffba;
+  position: absolute;
+  bottom: 2rpx;
+  border-radius: 16rpx;
+}
+
+.friend_fight .score {
+  position: absolute;
+  top: -52rpx;
+  left: 0;
+  text-align: left;
+  /* font-size: 35rpx; */
+  font-size: 32rpx;
+  color: #37ffbf;
+  font-weight: bold;
+}
+
+.friend_fight .ld_left
+{
+  position: absolute;
+  left:-27rpx;
+  top:-120rpx;
+  width:191rpx;
+  height:71rpx;
+  z-index: 999;
+  transform: translate(-200rpx);
+  pointer-events: none;
+}
+
+/*左侧连对进入*/
+.friend_fight .leftld_in
+{
+  animation:leftld_inKeys 2s linear;
+  animation-fill-mode:forwards; 
+}
+
+@keyframes leftld_inKeys {
+  0% {
+    transform: translate(-200rpx);
+  }
+
+  10%{
+    transform: translate(0rpx);
+  } 
+
+  90% { 
+    transform: translate(0rpx) scale(1); 
+    opacity: 1;
+  }
+  100%{ 
+    transform: translate(40rpx) scale(1.4);
+    opacity: 0;
+  } 
+}
+
+/*左侧连队消失*/
+.friend_fight .leftld_out
+{
+  animation:leftld_outKeys 0.3s linear;
+  animation-fill-mode:forwards; 
+}
+ 
+@keyframes leftld_outKeys {
+  0% { 
+    transform: translate(0rpx) scale(1); 
+    opacity: 1;
+  }
+  100%{ 
+    transform: translate(40rpx) scale(1.4);
+    opacity: 0;
+  } 
+}
+
+
+/*右侧连对进入*/
+.friend_fight .rightld_in
+{
+  animation:rightld_inKeys 2s linear;
+  animation-fill-mode:forwards; 
+}
+
+@keyframes rightld_inKeys {
+  0% {
+    transform: translate(200rpx);
+  }
+  10%{
+    transform: translate(0rpx);
+  } 
+
+  90% {
+    transform: translate(0rpx) scale(1);
+     opacity: 1;
+  }
+  100%{
+    transform: translate(-40rpx) scale(1.4);
+     opacity: 0;
+  } 
+}
+
+/*右侧连对淡出*/
+.friend_fight .rightld_out
+{
+  animation:rightld_outKeys 0.3s linear;
+  animation-fill-mode:forwards; 
+}
+
+@keyframes rightld_outKeys {
+  0% {
+    transform: translate(0rpx) scale(1);
+     opacity: 1;
+  }
+  100%{
+    transform: translate(-40rpx) scale(1.4);
+     opacity: 0;
+  } 
+}
+
+ 
+
+
+
+ 
+/*右侧连对背景*/
+.friend_fight .ld_bg
+{ 
+  position: absolute;
+
+  width:191rpx;
+  height:71rpx;
+  z-index: 0;
+ transform: scale(-1,1);
+  pointer-events: none;
+}
+ 
+.friend_fight .ld_right
+{
+  position: absolute;
+  left:-130rpx;
+  top:-120rpx;
+  width:191rpx;
+  height:71rpx;
+  z-index: 999;
+  transform: translate(200rpx);
+  pointer-events: none;
+}
+
+
+.friend_fight .ld_txt
+{
+  position: inherit; 
+  left: 2rpx;
+  top:18rpx;
+  font-size: 26rpx;
+  color:#fff;
+  font-weight: bold; 
+  text-shadow:#bc4e12 0.05em 0 0,#bc4e12 0 0.05em 0,#bc4e12 -0.05em 0 0,#bc4e12 0 -0.05em 0;
+  display: inline-flex;
+  /*justify-content: space-between;*/
+} 
+
+
+.friend_fight .ld_x
+{
+  position: inherit;
+  left: 110rpx;
+  top:14rpx;
+  font-size: 34rpx;
+  color:#bc4e12;
+  font-weight: bold; 
+
+  text-shadow:#fff 0.05em 0 0,#fff 0 0.05em 0,#fff -0.05em 0 0,#fff 0 -0.05em 0;
+  display: inline-flex;
+}
+
+.friend_fight .ld_num
+{
+   position: inherit;
+   left: 140rpx;
+  top:-2rpx;
+  font-size: 50rpx;
+  color:#bc4e12;
+  font-weight: bold;
+  text-shadow:#fff 0.05em 0 0,#fff 0 0.05em 0,#fff -0.05em 0 0,#fff 0 -0.05em 0;
+  display: inline-flex;
+}
+   
+.friend_fight .score_left
+{
+  left:50%;
+  top:-52rpx;
+  width:88rpx;
+  text-align:center;
+  margin-left:-44rpx;
+}
+
+
+.friend_fight .score_right {
+  left: -50%;
+  top: -52rpx;
+  width: 88rpx;
+  margin-left: -18rpx;
+  text-align: center;
+}
+
+.friend_fight .select_btn {
+  width: 503rpx;
+  height: 96rpx;
+  font-size: 30rpx;
+  position: absolute;
+  border-radius: 48rpx;
+  line-height: 96rpx;
+  padding-left: 69rpx;
+  box-sizing: border-box;
+}
+
+.friend_fight .btns {
+  background-color: #eae8e8;
+  border: 4rpx solid transparent;
+  /* border:4rpx solid #ffffff; *//* left:11135rpx; */
+  font-weight: bold;
+  transform: scale(0);
+}
+
+.friend_fight .select_yes {
+  background-color: #26d840;
+  /* border:1rpx solid #296c58; */
+  color: white;
+}
+
+.friend_fight .select_no {
+  background-color: #fb3d65;
+  /* border:1rpx solid #296c58; */
+  color: white;
+}
+
+.friend_fight .player_photo {
+  display: none;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1rpx solid #0d7cac;
+  position: absolute;
+  /* left:6rpx;
+  top:19rpx; */
+  left: 16rpx;
+  top: 20rpx;
+}
+
+.friend_fight .player_photo {
+  display: flex;
+  overflow: hidden;
+}
+
+.friend_fight  .player_photo.friend_user {
+  /* left: 438rpx; */
+  left: 428rpx;
+  position: absolute;
+  border-color: #c42564;
+}
+
+.friend_fight  .player_photo image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+
+.friend_fight  .player_photo.friend_user.no_body {
+  background-color: #f1edf1;
+  color: #57419d;
+  font-weight: bold;
+  border: 6rpx solid #c42564;
+  box-sizing: border-box;
+}
+
+.friend_fight .select_btn_1 {
+  top: 638rpx;
+  /* left: -800rpx; */
+  left: 134rpx;
+}
+
+.friend_fight .select_btn_2 {
+  top: 752rpx;
+  /* left: -800rpx; */
+  left: 134rpx;
+}
+
+.friend_fight .select_btn_3 {
+  top: 867rpx;
+  /* left: -800rpx;*/
+  left: 134rpx;
+}
+
+.friend_fight .select_btn_4 {
+  top: 982rpx;
+  /* left: -800rpx;*/
+  left: 134rpx;
+}
+
+/*底部笑脸、背景*/
+
+.friend_fight .btn_face {
+  height: 100rpx;
+  width: 100%;
+  position: absolute;
+  bottom: 0rpx;
+  left: 100rpx;
+}
+
+.friend_fight .dot {
+  background-color: #937380;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  /* position: absolute; */
+  /* top: 35rpx;
+  left: 20rpx; */
+}
+
+.friend_fight .content {
+  color: #d2d2d6;
+  font-size: 30rpx;
+   /* font-weight: 100; 
+  top: 20rpx;
+  left: 40rpx;
+  position: absolute; */
+  margin-left: 50rpx;
+  margin-top: -25rpx;
+}
+
+.friend_fight .line_a {
+  height: 100%;
+  position: absolute;
+  width: 2rpx;
+  background-color: #4b4068;
+  top: 0rpx;
+  left: 636rpx;
+}
+
+.friend_fight .wire {
+  width: 580rpx;
+  height: 4rpx;
+  background-color: rgba(255, 255, 255, 0.12);
+  /* position: absolute; */
+  /* top: 80rpx;
+  left: 10rpx; */
+  margin-top: 15rpx;
+}
+
+.friend_fight .btn_line {
+  background-color: #827f8c;
+  height: 2rpx;
+  width: 100%;
+  position: absolute;
+  bottom: 75rpx;
+  left: 0rpx;
+  top: 510rpx;
+
+}
+.friend_fight .skip_a{
+  top:-1rpx;
+  position: fixed;
+height: 49%;
+  width: 100%;
+}
+.friend_fight .skip {
+  position: absolute;
+  width: 100%;
+  height: 510rpx;
+  top: 595rpx;
+   color: #8a8a9d;  
+   z-index: 9999;
+}
+
+ 
+
+.friend_fight .skip .btn_texta {
+  top: 0rpx;
+  /* color: #8a8a9d; */
+  height: 50%;
+  width: 15%;
+  right: 0rpx;
+  background-color: #262751;
+  position: absolute;
+}
+
+
+.friend_fight .skip .showone {
+  color: #fff;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4b3d69), to(#575997));
+}
+
+.friend_fight .skip .btn_text_a {
+  font-size: 40rpx;
+  left: 15rpx;
+  /* color: #fff; */
+  top: 100rpx;
+  position: absolute;
+  /* display: none;   */
+}
+
+.friend_fight .skip .btn_face_a {
+  font-size: 40rpx;
+  left: 15rpx;
+  /* color: #8a8a9d; */
+  top: 100rpx;
+  position: absolute;
+}
+
+.friend_fight .skip  .txt {
+  top: 100rpx;
+  height: 0rpx;
+  width: 115rpx;
+  right: 0rpx;
+  color: #8a8a9d;
+  position: absolute;
+}
+
+.friend_fight .skip .btn_facea {
+  top: 255rpx;
+  height: 50%;
+  width: 15%;
+  right: 0rpx;
+  background-color: #262751;
+  position: absolute;
+}
+
+.friend_fight .skip .line_one {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#141840), to(#363a6a));
+  position: absolute;
+  background-color: #262751;
+  right: 15%;
+  width: 85%;
+  height: 100%;
+  
+  /* display: none;   */
+}
+.friend_fight .skip .line_two {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#141840), to(#363a6a));
+  position: absolute;
+  background-color: #262751;
+  right: 20%;
+  width: 80%;
+  height: 100%;
+  /* display: none;   */
+  
+}
+.friend_fight .skip .img_one{
+  width: 108rpx;
+  height: 108rpx;
+position: absolute;
+margin-left: 0rpx;
+margin-top: -20rpx;
+  /* margin-left: 35rpx;
+  margin-top: 30rpx; */
+  /* height: 84rpx; */
+    /* display: flex; */
+  /* justify-content: center; */
+  /* text-align: center;
+  align-items: center; */
+}
+.friend_fight .offline{
+
+  background-color:rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+}
+
+
+.friend_fight .offlineb{
+  background-color:rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%;
+
+
+}
+
+.friend_fight .offlinec{
+  position: absolute;
+  top: 30rpx;
+  left: 18rpx;
+
+}
+.friend_fight .skip .farme{
+  width: 100%;
+  height: 100rpx;
+  margin-left: 0rpx;
+  margin-top: -10rpx;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  box-sizing: border-box;
+}
+
+.friend_fight .line_three{
+  margin-top: -2rpx;
+  background-color: #928eb0;
+  width: 100%;
+  height: 2rpx;
+}
+.friend_fight .skip .farmeb{
+  width: 150rpx;
+  height: 180rpx;
+   margin-top: 20rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.friend_fight .skip .face_b{
+  font-size: 24rpx;
+  /* margin-top:10rpx;
+  margin-left: 20rpx;
+  justify-content: center;
+  text-align: center;
+  width: 80rpx; */
+  position: absolute;
+  color: #fff;
+  margin-top: 70rpx;
+  margin-left: 0rpx;
+}
+.friend_fight .baseboard {
+  width: 58rpx;
+  height: 70rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 25rpx;
+}
+
+.friend_fight .name_a{
+  font-size: 22rpx;  
+  /* position: absolute; */
+  margin-left: 10rpx;
+   margin-top: 10rpx; 
+  color: #fff;
+
+}
+
+.friend_fight .rad_border{ 
+   border-radius: 50%;
+  border:1rpx solid #ed1b51;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 12rpx;
+  /* position: absolute; */
+  margin-left:  40rpx;
+
+}
+.friend_fight .base_img{
+
+  border-radius: 50%;
+  border:1rpx solid #37b9ff;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 12rpx;
+  /* position: absolute; */
+  margin-left:  40rpx;
+}
+.friend_fight .speak_a{
+
+  font-size: 22rpx;
+  /* position: absolute; */
+  margin-left:  5rpx;
+  margin-top:  10rpx;
+  color: #9996a3;
+}
+.friend_fight .base_speak{
+
+    display: flex; 
+  /* position: absolute; */
+  /* top: 9rpx;
+  left: 0rpx; */
+  height: 42rpx;
+  margin-top: 0rpx;
+  width: 100%;
+
+}
+
+.friend_fight .farme_flow{
+  
+    /* display: flex; */
+  /* flex-direction:column-reverse; */
+  position: absolute; 
+  overflow:hidden;
+  width: 100%;
+  height: 100rpx; 
+  bottom:0rpx;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+  box-sizing: border-box;
+}
+.friend_fight .base_speak_c{
+
+  position: absolute;
+  top: -14rpx;
+  left: 0rpx;
+  height: 43rpx;
+  width: 100%;
+
+}
+.friend_fight .name_b{
+  font-size: 22rpx;  
+  position: absolute;
+  left: 80rpx;
+  top: 0rpx;
+  color: #fff;
+
+}
+.friend_fight .base_img_b{
+  top: 2rpx;
+  position: absolute;
+  left: 40rpx;
+}
+.friend_fight .speak_b{
+
+  font-size: 22rpx;
+  position: absolute;
+  left: 175rpx;
+  top: 0rpx;
+  color: #9996a3;
+}
+.friend_fight .base_speak_b{
+
+  position: absolute;
+  top: 53rpx;
+  left: 0rpx;
+  height: 43rpx;
+  width: 100%;
+
+}
+/*回答正确  */
+
+.friend_fight .ok {
+  position: absolute;
+  top: -50rpx;
+  left: 20rpx;
+}
+
+/*3V3  */
+
+.friend_fight .group_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.friend_fight  .group_bg_right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotateY(180deg);
+}
+
+/*沉默状态*/
+
+.friend_fight .cm_status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 25rpx;
+  color: #f00;
+  font-weight: bold;
+}
+
+.friend_fight .jshu_box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.friend_fight .jshu_box .show_time {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  line-height: 66rpx;
+  overflow: hidden;
+}
+
+.friend_fight .chen_mo_tip {
+  width: 122rpx;
+  height: 59rpx;
+  margin: 0 auto;
+  position: absolute;
+  top: -30rpx;
+  left: 50%;
+  margin-left: -61rpx;
+  box-sizing: border-box;
+}
+
+.friend_fight .question_box .time.an {
+  animation: SCale 1s infinite;
+}
+
+@keyframes SCale {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.friend_fight .speak_img{
+
+  font-size: 22rpx;
+  /* position: absolute; */
+  margin-left:  5rpx;
+  margin-top:  10rpx; 
+}

@@ -1,0 +1,18 @@
+{
+    "usingComponents": {
+      "progress-bar": "/dati_comm/components/progress-bar/progress-bar",
+      "waite-img": "/dati_comm/components/waite-img/waite-img",
+      "safeimg": "/dati_comm/components/safeimg/safeimg",
+      "fight-bottom": "/dati_comm/components/fight-bottom/fight-bottom",
+      "time": "/dati_comm/components/time/time",
+      "right-1v1": "/dati_comm/components/right-1v1/right-1v1",
+      "fight-3v3-page-fight":"/dati_comm/components/fight-3v3-page-fight/fight-3v3-page-fight",
+      "left-1v1":"/dati_comm/components/left-1v1/left-1v1",
+      "right-3v3": "/dati_comm/components/right-3v3/right-3v3",
+      "left-3v3": "/dati_comm/components/left-3v3/left-3v3",
+
+      "photo": "/dati_comm/components/photo/photo"
+    }
+}
+
+ 

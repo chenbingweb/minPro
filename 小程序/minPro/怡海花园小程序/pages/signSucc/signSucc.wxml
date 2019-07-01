@@ -1,0 +1,5 @@
+<view class="icon_box" style="margin-top:120rpx;">
+  <!-- <icon type="success" size="50" color="#5293e1"></icon> -->
+  <image src="../../images/succ.png" style="width:100rpx;height:100rpx;"></image>
+</view>
+<view class="succ">恭喜您，报名成功</view>

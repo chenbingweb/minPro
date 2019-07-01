@@ -1,0 +1,10 @@
+<!-- 话题王分类 -->
+<import src="./classify.wxml"/>
+<import src="./gan_kao.wxml"/>
+<!--话题王分类  -->
+<!-- <template is="classify" data="{{data:data}}"></template> -->
+<template is="gan_kao" data="{{data:data}}"></template>
+<!-- <view class="app_home_page_mark {{!data.showHome?'app_hidden_home_page':''}}" >
+
+</view> -->
+

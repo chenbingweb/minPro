@@ -1,0 +1,128 @@
+.bg
+{
+  position: absolute;
+  left: 0;
+  top:calc(50vh - 667rpx);
+}
+.rank_list
+{
+  width: 700rpx;
+  height: 880rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 385rpx);
+}
+.rank_item
+{
+  width: 675rpx;
+  height: 122rpx;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 8rpx;
+}
+.info
+{
+  box-sizing: border-box;
+  padding-left: 47rpx;
+  padding-right: 34rpx;
+}
+.rank_num
+{
+  font-size: 20rpx;
+  text-align: center;
+  color:black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:7rpx;
+  font-weight:600;
+
+}
+.photo_img
+{
+  width:83rpx;
+  height:83rpx;
+  border-radius:50%;
+  box-sizing: border-box;
+  border:4rpx solid #3e0b05;
+}
+.game_info
+{
+  width: 300rpx;
+  height: 74rpx;
+  padding-left:20rpx;
+  box-sizing: border-box;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:flex-start; */
+
+}
+.nick_name
+{
+  color:#333;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+.rank_cur_cum
+{
+  position:absolute;
+  height:70rpx;
+  width:100%;
+  left:50%;
+  transform:translateX(-50%);
+  top:0;
+  color:#fff;
+  font-size:30rpx;
+  text-align:center;
+  line-height:70rpx;
+  font-weight:600;
+
+}
+.cur_rank
+{
+  margin-left: 25rpx;
+}
+.ticket_item
+{
+  width: 136rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  background-color: #501f16;
+  border:2rpx solid white;
+
+  font-size: 22rpx;
+  color:#f3ac3c;
+  text-align: center;
+  font-weight: 600;
+  line-height: 38rpx;
+  
+}
+.current_user
+{
+  position: absolute;
+  width: 750rpx;
+  height: 125rpx;
+  left: 0;
+  bottom: 0;
+}
+.pos
+{
+  position: absolute;
+  left: 50%;
+  top:-12rpx;
+  transform: translateX(-50%);
+}
+.my_rank
+{
+  color:#333;
+  font-size:33rpx;
+  padding-left: 24rpx;
+}
+.u_icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

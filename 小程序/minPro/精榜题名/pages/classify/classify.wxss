@@ -1,0 +1,193 @@
+
+.classify .header_box
+{
+ position:absolute;
+ left:0;
+ top:0;
+ width:750rpx;
+ height:82rpx
+}
+.classify .rule
+{
+  position: absolute;
+  left: 30rpx;
+  top:12rpx;
+}
+.classify .help
+{
+  position: absolute;
+   right: 30rpx; 
+  top:12rpx;
+}
+
+
+.classify .user_box
+{
+  position: absolute;
+  top:13rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color:white;
+  line-height: 30rpx;
+  width: 750rpx;
+  opacity: 0;
+}
+
+.classify .new_vip{
+  position: absolute;
+  top:88rpx;
+  left:407rpx;
+}
+
+.classify .new_frame
+{
+  position: absolute;
+  left: 307rpx;
+  top:-8rpx;
+  width:145rpx;
+  height:145rpx; 
+}
+
+.classify .items
+{
+  position: absolute;
+  width: 260rpx;
+  height: 55rpx;
+  font-size: 30rpx;
+  color:#fed71f;
+   /* top:103rpx; */
+   top:20rpx;
+}
+.classify .coin_box
+{
+ 
+  left:28rpx;
+ 
+}
+.classify .left_coin
+{
+  position: absolute;
+  left: 9rpx;
+  top:-2rpx;
+}
+.classify .right_coin
+{
+  position: absolute;
+  right: 12rpx;
+  top:12rpx;
+  /* display: none; */
+}
+.classify .text
+{
+  position: absolute;
+  right:50rpx;
+  top:9rpx;
+}
+/*学分  */
+.classify .xf_box
+{
+  /* right: 30rpx; */
+  left:464rpx;
+}
+/*综合  */
+.classify .comm
+{
+  position: absolute;
+  left:30rpx;
+  top:188rpx;
+}
+.classify .font_type
+{
+  color:white;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.classify .comm_title
+{
+  position: absolute;
+  left:40rpx;
+  top:12rpx;
+}
+.classify .coin_icon_img
+{
+  position: absolute;
+  bottom: 24rpx;
+  left: 12rpx;
+}
+.classify .jb_text
+{
+  position: absolute;
+  bottom: 35rpx;
+  left: 64rpx;
+  font-size: 30rpx;
+  color:#fed71f;
+  width: 100rpx;
+  text-align: center;
+}
+.classify .list
+{
+  position: absolute;
+  left:30rpx;
+  /* top:470rpx; */
+  top:188rpx;
+  width: 692rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 75%;
+  /*overflow: scroll;*/
+  overflow-y: scroll;
+  
+}
+
+.classify .dynview
+{
+  position: absolute;
+  left:0rpx;
+  /* top:470rpx; */
+  top:0rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%; 
+  min-height: 101%;/*解决偶尔不能拖动的关键代码*/
+}
+
+.classify .item
+{
+  position: relative;
+  width: 346rpx;
+  height: 212rpx;
+  top:8rpx;
+}
+
+/*装饰  */
+.classify .pointer
+{
+  position:absolute; 
+  bottom:32rpx;
+  right:274rpx;
+}
+.classify .friend_share_button
+{
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.classify .friend_fight
+{
+  position: absolute;
+  top:12rpx;
+  left: 40rpx;
+}
+.classify .one_vs_one
+{
+  font-weight: normal;
+  font-size: 32rpx;
+  padding-top: 10rpx;
+  letter-spacing: 4rpx;
+}

@@ -1,0 +1,41 @@
+/* pages/myTheme/myTheme.wxss */
+.list
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+}
+.item
+{
+  width: 678rpx;
+  height: 275rpx;
+  border-bottom: 2rpx solid #ebf0f2;
+}
+.theme_info
+{
+  color:#060606;
+  font-size: 28rpx;
+  height: 212rpx;
+}
+.theme_title
+{
+  height: 70rpx;
+}
+.theme_status
+{
+
+  width: 85rpx;
+  height: 40rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color:#fff;
+  background-color: #5293e1;
+  border-radius: 8rpx;
+}
+.info_item
+{
+  color:#575656;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+}

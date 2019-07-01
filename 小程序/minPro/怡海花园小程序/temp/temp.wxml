@@ -1,0 +1,15 @@
+<!---发布信息-->
+<template name="health_list">
+  <view class="temp_list_box">
+    <view class="icon_box">
+      <image mode="aspectFill" src="../../images/img/n.jpg" style="width:216rpx;height:120rpx"></image>
+    </view>
+    <view style="margin-left:26rpx">
+      <view class="temp_title">心理健康教育</view>
+      <view class="temp_counts">58次查看</view>
+    </view>
+  </view>
+</template> 
+
+<!--数据统计  -->
+

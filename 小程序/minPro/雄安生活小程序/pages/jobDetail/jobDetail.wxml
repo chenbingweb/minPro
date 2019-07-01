@@ -1,0 +1,121 @@
+<import src="../../temp/temp.wxml" />
+<nav-back
+    userName="{{jobDetail.companyDetail.username}}" 
+    bid="{{jobDetail.id}}"
+    collectType="boss"
+    userphone="{{jobDetail.companyDetail.userphone}}"
+/>
+<!--fixed  -->
+<view class=" detail_box">
+  <view class="job_box">
+    <!--选项卡切换  -->
+    <view class="select_nav ">
+      <view style="border-radius:30rpx 0rpx 0rpx 30rpx;border-right:none" class="{{selectNav=='job'?'select_nav_selected':''}} nav_item" bindtap="selectNav" data-nav="job">
+        职位详情
+      </view>
+      <view bindtap="selectNav" class="{{selectNav=='company'?'select_nav_selected':''}} nav_item" data-nav="company" style="border-radius:0 30rpx 30rpx 0;border-left:none" >
+        公司详情
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{selectNav=='job'}}">
+    <!--职位信息  -->
+    <view class="job_info">
+      <view class="flex_between">
+        <view class="job_name">{{jobDetail.jobDetail.category}}</view>
+        <view class="salary">{{jobDetail.jobDetail.pay_start}}k-{{jobDetail.jobDetail.pay_end}}k</view>
+      </view>
+      <view class="company_name" style="padding-top:6rpx;padding-bottom:16rpx;">{{jobDetail.jobDetail.company}}</view>
+      <view class="flex_start label_mark">
+        <view class="label_item" wx:for="{{jobDetail.jobDetail.tag}}" wx:key="index_{{index}}" style="margin-right:20rpx">{{item}}</view>
+
+      </view>
+      <view class="flex_end time">
+        {{time}}
+      </view>
+    </view>
+    <view class="address flex_start">
+      <view class="icon_box">
+        <image style="width:33rpx;height:40rpx" src="../../images/address_icon.png"></image>
+      </view>
+      <view style="padding-left:20rpx;">{{jobDetail.jobDetail.address}}</view>
+    </view>
+
+    <!--职业描述  -->
+    <view class="job_desc">
+      <view>职位描述</view>
+      <text class="desc_content">
+        {{jobDetail.jobDetail.detail}}
+      </text>
+      <!-- 1.了解Android平台内存管理、进程管理机制、任务管理机制；
+            2.深入了解Android UI事件传递、布局、绘制等原理，能够编写自定义UI控件；
+        3.熟悉Android下网络通信机制，对Socket通信、TCP/IP和HTTP有一定理解和经验；
+          4.有良好的编码习惯，要求结构清晰，命名规范，逻辑性强，代码使用率高 -->
+      
+    </view>
+  </view>
+  <!--公司详情  -->
+  <view wx:if="{{selectNav=='company'}}">
+    <!--职位信息  -->
+    <view class="job_info">
+      <view class="flex_between">
+        <view class="job_name">{{jobDetail.companyDetail.company}}</view>
+        <!-- <view class="salary">20k-25k</view> -->
+      </view>
+      <view class="company_name" style="padding-top:6rpx;padding-bottom:16rpx;">
+        {{jobDetail.companyDetail.industry}} · {{jobDetail.companyDetail.scale}}
+      </view>
+      <!-- <view class="flex_start label_mark">
+        <view class="label_item" wx:for="{{[1,2,3,4]}}" wx:key="index_{{index}}" style="margin-right:20rpx">北京</view>
+
+      </view> -->
+    </view>
+    <!--职业描述  -->
+    <view class="company">
+      <view style="padding-bottom:20rpx">公司介绍</view>
+      <text class="desc_content">
+        {{jobDetail.companyDetail.company_detail}}
+      </text>
+    </view>
+    <!--主力户型  -->
+    <view class="company" wx:if="{{jobDetail.companyDetail}}">
+      <view style="padding-bottom:20rpx">公司环境</view>
+      <view class="flex_start img_box RemoveRollCar" >
+        <view class="icon_box img_item" wx:for="{{jobDetail.companyDetail.img_url}}" wx:key="img_{{index}}">
+          <image bindtap="viewImg" data-index="{{index}}" mode="aspectFill" style="width:220rpx;height:160rpx" src="{{imgUrl+item}}"></image>
+        </view>
+      </view>
+    </view>
+    <!--在招其他职位  -->
+    <view class="company" style="padding-left:0;padding-right:0" wx:if="{{jobDetail.companyDetail.companySelf.length}}">
+      <view style="padding-bottom:20rpx;padding-left:25rpx;padding-right:25rpx">在招其他职位</view>
+      <view class="other_jobs" wx:for="{{jobDetail.companyDetail.companySelf}}" wx:key="item_{{index}}">
+        <view class="flex_between job_info_font">
+          <view>{{item.category}}</view>
+           <view style="color:#fed545;font-size:28rpx;">{{item.pay_start}}k-{{item.pay_end}}k</view>
+        </view>
+        <view class="flex_start fuli_box" >
+          <view class="inline_flex" style="margin-right:30rpx">
+            <view class="icon_box">
+              <image src="../../images/job_local.png" style="width:22rpx;height:25rpx"></image>
+            </view>
+            <view style="padding-left:10rpx;">{{item.area}}</view>
+          </view>
+          <view class="inline_flex" style="margin-right:30rpx">
+            <view class="icon_box">
+              <image src="../../images/baoxian.png" style="width:24rpx;height:25rpx"></image>
+            </view>
+            <view style="padding-left:10rpx;">{{item.tag[0]}}</view>
+          </view>
+          <view class="inline_flex" style="margin-right:30rpx" wx:if="{{item.year_start}}">
+            <view class="icon_box">
+              <image src="../../images/job_local.png" style="width:29rpx;height:25rpx"></image>
+            </view>
+            <view style="padding-left:10rpx;">{{item.year_start}}-{{item.year_end}}年</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <template is="nav_back" /> -->

@@ -1,0 +1,82 @@
+/* dati_comm/components/left-1v1/left-1v1.wxss */
+.right_box
+{
+  position: relative;
+  width: 354rpx;
+  height: 191rpx;
+}
+.bg
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+}
+.flex_start
+{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.icon_box
+{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+}
+.photo_img
+{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.fen
+{
+  color:#ffdb4d;
+  font-size: 50rpx;
+}
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.user_info
+{
+  color:#fff;
+  font-size: 25rpx;
+  width: 128rpx;
+  box-sizing: border-box;
+  padding-right: 10rpx;
+  text-align: left;
+}
+.process
+{
+  position: absolute;
+  right: 35rpx;
+  width: 15rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+  top:180rpx;
+  background-color: #599ae1;
+  transition: height 0.3s;
+
+}

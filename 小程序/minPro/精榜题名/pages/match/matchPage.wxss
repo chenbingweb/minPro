@@ -1,0 +1,511 @@
+new_vippage
+{
+  width:100%;
+  height: 100%;
+   background-image:linear-gradient(0deg,#0d3d5b,#4f2e73);
+}
+
+.match .new_frame
+{
+  position: absolute;
+  left:26rpx;
+  top:-4rpx;
+  width:110rpx;
+  height:110rpx; 
+}
+
+.match .rule
+{
+  position: absolute;
+  left: 30rpx;
+  top:12rpx;
+}
+.match .help
+{
+  position: absolute;
+  right: 30rpx;
+  top:12rpx;
+}
+.match .user_info_container
+{
+  position: absolute;
+  left: 0;
+  top:50%;
+  width:750rpx;
+  height: 200rpx;
+  margin-top:-100rpx;
+  opacity: 0;
+}
+.match .user_box
+{
+  position: absolute;
+  left:50%;
+  margin-left: -78rpx;
+  top:13rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color:white;
+  line-height: 30rpx;
+  width: 157rpx;
+}
+
+.match  .new_vip
+{
+  position: absolute;
+  left: 98rpx;
+  top:70rpx;
+}
+.match .laba{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.match .items
+{
+  position: absolute;
+  width: 260rpx;
+  height: 55rpx;
+  font-size: 30rpx;
+  color:#fed71f;
+   top:103rpx;
+}
+.match .coin_box
+{
+ 
+  left:28rpx;
+ 
+}
+.match .left_coin
+{
+  position: absolute;
+  left: 9rpx;
+  top:-2rpx;
+}
+.match .right_coin
+{
+  position: absolute;
+  right: 12rpx;
+  top:12rpx;
+}
+.match .text
+{
+  position: absolute;
+  right:50rpx;
+  top:9rpx;
+}
+/*学分  */
+.match .xf_box
+{
+  right: 30rpx;
+}
+
+/*单人  */
+.match .button
+{
+  position: absolute;
+  left: 50%;
+  margin-left: -206rpx;
+  width: 412rpx;
+  height: 102rpx;
+  border-radius: 51rpx;
+  text-align: center;
+  line-height: 102rpx;
+  color:white;
+}
+.match .single_btn
+{
+  background-color: #66d698;
+   /* top:800rpx; */
+   top:1500rpx;
+}
+.match .more_btn
+{
+  background-color: #ed1e76;
+   /* top:930rpx; */
+   top:1500rpx;
+}
+.match .user_info_container .hint .saiji{
+
+   position: absolute; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+  /* color: white; */
+     margin-top: -8rpx; 
+  /* z-index: 99; */
+    /* animation-delay:0s; */
+  /* box-sizing: border-box; */
+  
+    /*IE*/
+   z-index: 9999; 
+
+}
+.match .fanz{ 
+     -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    /*IE*/
+    filter:FlipH;
+   z-index: 999; 
+}
+.match .tongzi{
+  position: absolute;
+  z-index: 1;
+}
+.match .user_info_container .hint{
+  width: 100%;
+  position: fixed;
+  height: 55rpx;
+  top: 180rpx;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  /* z-index: 9999; */
+  /* background-color: #451773; */
+}
+.match .dw_bg
+{
+  position: absolute;
+  width:100%;
+  left: 0;
+   top:710rpx; 
+  height: 530rpx;
+  opacity: 0;
+}
+.match .dw_bg .bg_quality_left
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  transform: scale(1,0.9)
+}
+.match .dw_bg .bg_quality_right
+{
+  position: absolute;
+  right: 0;
+  top:0;
+  transform: scale(1,0.9)
+}
+
+/*遮罩  */ 
+.match .dw_bg .mark
+{
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(14,26,63,0.8);
+   display: none;
+}
+
+.match .bjgx
+{
+  position: absolute;
+  top:68rpx;
+  left: 41rpx;
+}
+/*箭头  */
+.match .dw_bg .arrow_box
+{
+  position: absolute;
+  right: 40rpx;
+  top:230rpx;
+  display: none;
+}
+.match .dw_bg .arrow_box .arrow_mark,.match .dw_bg .back .arrow_mark
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background:#3A4361;
+  opacity:0.5;
+
+}
+
+.match .dw_bg .back
+{
+  position: absolute;
+  left: 40rpx;
+  top:230rpx;
+  display: none;
+}
+.match .dw_bg .back .roate
+{
+  transform: rotate(180deg)
+}
+
+/*排位选择  */
+.match .swiper_box
+{
+  position: absolute;
+  top:0;
+ width:530rpx;
+left:50%;
+margin-left:-280rpx;
+
+  height: 530rpx;
+ /* width: 100%; */
+  /* left: 50%;
+  margin-left: -234rpx; */
+}
+.match .swiper_box swiper
+{
+ height: 530rpx;
+
+}
+.match .swiper_box swiper-item
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*排位类型  */
+.match .qualify_box
+{
+  position: relative;
+  height: 530rpx;
+  /* width: 468rpx; */
+  width: 430rpx;
+}
+/*排位类型  */
+.match .qualify_box .p_db
+{
+  position: absolute;
+  left: 0;
+  bottom:0rpx;
+}
+/*标题  */
+.match .qualify_box .font_box
+{
+  position: absolute;
+  top:8rpx;
+  height: 48rpx;
+  width: 296rpx;
+  left: 50%;
+  margin-left: -148rpx;
+  display: flex;
+  align-items: center;
+}
+.match .font_db
+{
+  position: absolute;
+  left: 50%;
+  margin-left: -165rpx;
+  top:10rpx;
+}
+.match .qualify_box .font_type_
+{
+  position: absolute;
+  left: 50%;
+  top:0;
+  margin-left: -119rpx;
+}
+.match .qualify_box .p_w_icon
+{
+  position: absolute;
+  left: 41%;
+  margin-left: -109rpx;
+  top:85rpx;
+}
+.match .qualify_box .flag_box
+{
+  position: absolute;
+  width: 560rpx;
+  height: 118rpx;
+  top:310rpx;
+  left: 50%;
+  margin-left: -280rpx;
+}
+.match .qualify_box .flag_db
+{
+  position: absolute;
+  left: 100rpx;
+  top:0;
+
+}
+/*星  */ 
+.match .qualify_box .start_evel_box
+{
+  position:absolute;
+  left: 30rpx;
+  top:-640rpx;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}  
+.match .qualify_box .xue_fen_box
+{
+  width: 340rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:415rpx;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.match .qualify_box .xue_fen_box .xue_fen_text
+{
+  color:#fff;
+  font-size: 33rpx;
+  font-weight: bold;
+  padding: 0 30rpx;
+  position: absolute;
+  top: 52rpx;
+  left: 190rpx;
+}
+.match .qualify_box .xue_fen_box .img_box
+{
+  position:relative;
+  width:300rpx;
+  height:74rpx
+}
+.match .informtxt{
+  font-size: 30rpx;
+  color: #ffffff;
+  width:120rpx;
+  margin-left: 20rpx;
+  margin-top: -15rpx;
+}
+.match .but_tz{
+  background-color: transparent;
+  width:170rpx;
+  height: 180rpx;
+  position: absolute;
+  top: 0rpx;
+  
+}
+
+.match .inform{
+  margin-left: 20rpx;
+  
+}
+.match .tip_node
+{
+  position: absolute;
+  width: 750rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color:white;
+  /* top:1050rpx; */
+  top:1800rpx;
+  left: 50%;
+  margin-left: -375rpx;
+}
+.match .more_group
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom:0;
+  right: 0;
+  opacity: 0;
+}
+/*动画  */
+/* 用户信息 */
+.match .user_animation
+{
+  animation:Anima_user 0.001s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0;
+}
+@keyframes Anima_user {
+  0% {
+    opacity: 0
+
+  }
+  
+  100%
+  {
+      opacity: 1;
+      top:0;
+      margin-top:0;
+  } 
+}
+/*段位卡  */
+.match .dw_card
+{
+  animation:Anima_card 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0s;
+}
+@keyframes Anima_card {
+  0% {
+    opacity: 0
+  }
+  
+  100%
+  {
+      opacity: 1;
+      top:226rpx;
+     
+  } 
+}
+/*单人  */
+.match .dr
+{
+  animation:Anima_single 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0.05s;
+}
+@keyframes Anima_single {
+  0% {
+    opacity: 0
+  }
+  
+  100%
+  {
+      opacity: 1;
+      top:800rpx;
+     
+  } 
+}
+/*多人  */
+.match .mr
+{
+  animation:Anima_more 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0.1s;
+}
+@keyframes Anima_more {
+  0% {
+    opacity: 0
+  }
+  
+  100%
+  {
+      opacity: 1;
+      top:930rpx;
+     
+  } 
+}
+/*提示  */
+.match .ts
+{
+  animation:Anima_ts 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0.1s;
+}
+@keyframes Anima_ts {
+  0% {
+    opacity: 0
+  }
+  
+  100%
+  {
+      opacity: 1;
+      top:1050rpx;
+     
+  } 
+}

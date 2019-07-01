@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Boss招聘发布",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+}

@@ -1,0 +1,142 @@
+<form bindsubmit="submitEvent" report-submit>
+  <view class="fixed" style=" overflow: scroll">
+    <view class="user_header flex_start">
+      <view class="icon_box">
+        <image wx:if="{{head_img!=''}}" mode="aspectFill" src="{{head_img}}" style="width:122rpx;height:122rpx;border-radius:50%;"></image>
+        <view wx:else>
+          <image wx:if="{{userInfo}}" mode="aspectFill" style="width:122rpx;height:122rpx;border-radius:50%;" src="{{userInfo.avatarUrl}}"></image>
+          <view wx:else style="width:122rpx;height:122rpx;border-radius:50%;border-radius:50%;overflow:hidden">
+            <open-data type="userAvatarUrl" style="width:122rpx;height:122rpx;border-radius:50%"></open-data>
+          </view>
+        </view>
+      </view>
+      <navigator url="../personInfo/personInfo?src=self">
+        <view style="padding-left:26rpx;">
+          <view class="inline_flex f_30_333">
+            <view wx:if="{{userInfo}}" class="one_line" style="max-width:300rpx;padding-right:10rpx">{{userInfo.nickName}}</view>
+            <open-data wx:else type="userNickName" style="max-width:300rpx;padding-right:10rpx"></open-data>
+            <view class="icon_box">
+             <image wx:if="{{userInfo.gender!=1}}" src="../../images/woman.png" style="width:32rpx;height:30rpx"></image>
+            <image wx:else src="../../images/man.png" style="width:32rpx;height:30rpx"></image>
+            </view>
+          </view>
+          <view class="f_28_666">编辑个人信息</view>
+        </view>
+      </navigator>
+    </view>
+    <view  class="company item flex_between f_30_333" bindtap="toDetail" data-url="../wantWork/wantWork?src=wantjob&local=wantjobList&index={{index}}"   wx:if="{{wantjobList.length}}" wx:key="name_{{index}}" wx:for="{{wantjobList}}">
+      <view class="item_title one_line" style="width:700rpx">
+        {{item}}
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <navigator style="margin-bottom:10rpx;border-bottom:none" url="../wantWork/wantWork?src=wantjob" class="company item flex_center f_30_333 ">
+      <view class="item_title" style="color:#fed545;width:200rpx;text-align:center">
+        + 求职意向
+      </view>
+    </navigator>
+    <!-- <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        求职意向
+      </view>
+      <navigator url="../wantWork/wantWork?src=wantjob">
+        <view style="color:#999">
+          <input disabled class="input_style" placeholder="添加求值意向"></input>
+        </view>
+      </navigator>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view> -->
+    <view class="company item flex_between f_30_333"  bindtap="toDetail"  data-url="../wantWork/wantWork?src=experience&local=experienceList&index={{index}}" wx:if="{{experienceList.length}}" wx:key="name_{{index}}" wx:for="{{experienceList}}">
+      <view class="item_title one_line" style="width:280rpx">
+        {{item.company}}
+      </view>
+      <view>
+        {{item.start_time+'~'+item.end_time}}
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <navigator style="margin-bottom:10rpx;border-bottom:none" url="../wantWork/wantWork?src=experience" class="company item flex_center f_30_333 ">
+      <view class="item_title" style="color:#fed545;width:300rpx;text-align:center">
+        + 工作经历
+      </view>
+    </navigator>
+    <!-- <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        工作经历
+      </view>
+      <navigator url="../wantWork/wantWork?src=experience">
+        <view style="color:#999">
+          <input disabled class="input_style" placeholder="添加工作经历"></input>
+        </view>
+      </navigator>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view> -->
+    <view bindtap="toDetail"  data-url="../wantWork/wantWork?src=education&local=educationList&index={{index}}" class="company item flex_between f_30_333 " wx:if="{{educationList.length}}" wx:key="name_{{index}}" wx:for="{{educationList}}">
+      <view class="item_title one_line" style="width:280rpx">
+        {{item.school}}
+      </view>
+      <view>
+        {{item.start_time+'~'+item.end_time}}
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <navigator style="margin-bottom:10rpx;border-bottom:none" url="../wantWork/wantWork?src=education" class="company item flex_center f_30_333 ">
+      <view class="item_title" style="color:#fed545;width:300rpx;text-align:center">
+        + 教育经历
+      </view>
+    </navigator>
+    <!-- <view class="company item flex_start f_30_333 margin_bottom_10" style="border:none">
+      <view class="item_title">
+        教育经历
+      </view>
+      <navigator url="../wantWork/wantWork?src=education">
+        <view style="color:#999">
+          <input value="" disabled class="input_style" placeholder="添加教育经历"></input>
+        </view>
+      </navigator>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view> -->
+    <!--是否顶置  -->
+    <view class="company item flex_between f_30_333 margin_bottom_10" style="border:none">
+      <view class="flex_start">
+        <view class="item_title">
+          是否置顶
+        </view>
+        <view style="color:#999">
+          <view class="set_top">置顶需支付{{price}}个雄心币</view>
+        </view>
+      </view>
+      <input name="is_top" hidden value="{{isTop}}"></input>
+      <switch class="switch" color="#fed545" bindchange="switchEvent" />
+    </view>
+    <!--提交  -->
+    <view class="submit_box">
+      <view class="disclaimer flex_start">
+        <switch id="agree" class="switch" checked="{{checked}}" type="checkbox" color="#fed545" bindchange="agreeEvent" />
+        <label for="agree" class="f_30_999">
+          我已认真阅读并同意
+        </label>
+        <text class="f_30_999" style="color:#3ea2ef">《免责声明》</text>
+      </view>
+      <view class="submit relative">
+        <view class="icon_box ">
+          <image src="../../images/phone_btn.png" style="width: 618rpx;height: 90rpx;"></image>
+        </view>
+        <view class="absolute btn_next">提交</view>
+        <button form-type="submit" class="login_btn"></button>
+      </view>
+    </view>
+  </view>
+</form>

@@ -1,0 +1,57 @@
+<words-bottom-nav >
+  <view class="flex_between btn_3_box" slot="list">
+    <view class="btn_3"  bindtap="onBackIndex">返回首页</view>
+    <navigator class="btn_3 scb" url="../newWord/newWord">生词本</navigator>
+     <!-- <view class="btn_3 scb" bindtap="onPreV">上一页</view> -->
+
+    <view class="btn_3 xyc" bindtap="onNextWord" wx:if="{{!isFinishXJ}}">下一个词</view>
+    <view class="btn_3 fx" wx:if="{{isFinishXJ}}" bindtap="onCompleteSection" data-flag="{{sectionFlag}}">
+      <text wx:if="{{studyStatus=='study'&& !sectionFlag}}">完成本节</text>
+      <text wx:if="{{studyStatus=='restudy' && !sectionFlag }}">复习下节</text>
+      
+      <!-- studyStatus=='review' && !isReviewAll  -->
+      <text wx:if="{{studyStatus=='review' && !sectionFlag && ((studyProgress.study_sections+1)!=studyProgress.total_sections) }}">复习下节</text>
+      <text wx:if="{{studyStatus!='study'&& ( sectionFlag || ((studyProgress.study_sections+1)==studyProgress.total_sections))}}">完成复习</text>
+    
+    </view>
+
+    <view class="btn_3 xjyl" wx:if="{{!isFinishXJ}}" bindtap="onViewXJ">小节浏览</view>
+    <view class="btn_4" wx:else>
+      <switch color="#009688" checked="{{isMeanShow}}" bindchange="onMeanShow" class="switch_1"></switch>
+      <view>显示词义</view>
+    </view>
+  </view>
+
+</words-bottom-nav>
+<!-- bindtouchstart="onTS" bindtouchmove="onTM" bindtouchend="onTE" scroll-->
+<view  class="words_index" >
+  <view class="top_pos ">
+    <view wx:if="{{studyStatus=='study'}}">
+      <view class="words_header f_30_fff">每10个单词为1个小节；每学完1小节需要复习本小结</view>
+      <!-- 完成进度 -->
+      <view class="words_header f_30_fff relative" style="background:#898989">
+      <view class="process_bar" style="width:{{(studyProgress.study_words+1)/studyProgress.total_words*100+'%'}};{{!isFinishXJ?'':'background-color:#ff9802'}}"></view>
+      <!-- wx:if="{{!isFinishXJ}}" -->
+      <view class="absolute" wx:if="{{!isFinishXJ}}">当前单词{{studyProgress.study_words+1>studyProgress.total_words?studyProgress.total_words:studyProgress.study_words+1}}/{{studyProgress.total_words}}；当前小节：第{{studyProgress.study_sections+1}}节/共{{studyProgress.total_sections}}节</view> 
+      
+      <view class="absolute" wx:else >当前单词{{studyProgress.study_words>studyProgress.total_words?studyProgress.total_words+1:studyProgress.study_words}}/{{studyProgress.total_words}}；当前小节：第{{studyProgress.study_sections+1}}节/共{{studyProgress.total_sections}}节</view> 
+      </view>
+    </view>
+    <view wx:if="{{studyStatus=='review'||studyStatus=='restudy'}}">
+      <view class="words_header f_30_fff">每10个单词为1个小节；每学完1小节需要复习本小结</view>
+      <!-- 完成进度 -->
+      <view class="words_header f_30_fff relative" style="background:#898989">
+      <view class="process_bar" style="width:{{(studyProgress.study_sections+1)/studyProgress.total_sections*100+'%'}};{{!isFinishXJ?'':'background-color:#ff9802'}}"></view>
+      <view class="absolute">复习当前小节：第{{studyProgress.study_sections+1}}节/共{{studyProgress.total_sections}}节</view> 
+      
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:for="{{100}}">sddf</view> -->
+  <!-- 单词详情 -->
+  <word-detail id="wordDetail"  wordDetail="{{wordDetail}}" wx:if="{{!isFinishXJ}}"/>
+  <word-list backRes="{{studyProgress}}" bindpanelDetail="onPanelDetail" isMeanShow="{{isMeanShow}}" ReviewFn="{{ReviewFn}}" id="wordList" wx:else/>
+</view >
+<!-- 显示单词面板 -->
+<word-pannel id="wordPanel" panelDetail="{{panelDetail}}"/>
+<review-tip ReviewFn="{{ReviewFn}}"/>

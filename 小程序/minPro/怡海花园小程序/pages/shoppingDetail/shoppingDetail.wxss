@@ -1,0 +1,158 @@
+/* pages/shoppingDetail/shoppingDetail.wxss */
+page
+{
+  background-color: #fff;
+}
+.detail
+{
+  width: 750rpx;
+  /* min-height: 330rpx; */
+  background-color: white;
+  padding: 0 36rpx;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+}
+.title
+{
+  color:#333333;
+  font-size: 34rpx;
+  border-left: 6rpx solid #d3e1f3;
+  padding-left: 15rpx;
+  font-weight: bold;
+}
+.dis
+{
+  color:#5e5d5d;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding: 10rpx 30rpx;
+}
+.line
+{
+  position: absolute;
+  left:0;
+  bottom: 0;
+}
+.address
+{
+  font-size: 26rpx;
+  color:#5e5d5d;
+
+}
+.ticket
+{
+  width: 750rpx;
+  height: 250rpx;
+  background-color: white;
+  /* margin: 20rpx 0; */
+   box-sizing: border-box; 
+  padding: 36rpx;
+  border-top:20rpx solid #f5f5f5;
+  border-bottom:20rpx solid #f5f5f5;
+}
+.info
+{
+ width:678rpx;
+ height:173rpx;
+ position: absolute;
+ left: 50%;
+ top:50%;
+ transform: translateX(-50%) translateY(-50%);
+}
+.ticket_title
+{
+  font-size: 48rpx;
+  color:#ffffff;
+  text-align: center;
+  line-height: 173rpx;
+   height: 173rpx;
+}
+.get_ticket
+{
+  width: 250rpx;
+  height: 173rpx;
+  line-height: 173rpx;
+   text-align: center;
+   font-size: 48rpx;
+   color:#4d8bdc;
+}
+.evalue_list
+{
+  background-color: white;
+  box-sizing: border-box;
+  padding: 40rpx 36rpx;  
+}
+.ev_item
+{
+ /* width: 750rpx; */
+ box-sizing: border-box;
+ padding-top:46rpx;
+ border-bottom: 2rpx solid #f1f1f1;
+ padding-bottom: 10rpx;
+}
+.header_info
+{
+  width: 678rpx;
+}
+
+.e_time
+{
+  color:#858585;
+  font-size:22rpx;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.e_content
+{
+  font-size: 30rpx;
+  color:#4d4c4c;
+  padding: 20rpx 0;
+}
+.e_control
+{
+  color:#8e8d8d;
+  font-size: 24rpx;
+  height: 60rpx;
+}
+/*  */
+.fb
+{
+  pointer-events: none;
+}
+.user_eval
+{
+  position: absolute;
+  height: 100rpx;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  background-color: white;
+  pointer-events: all;
+}
+.input_ev
+{
+  width: 678rpx;
+  height: 60rpx;
+  background: #f6f6f6;
+  margin: 0 auto;
+  line-height:  60rpx;
+  color:#8f8f8f;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  border-radius: 10rpx;
+}
+.e_imgs
+{
+  flex-wrap: wrap;
+}
+.item_img
+{
+  margin-bottom: 20rpx;
+}
+.item_img:nth-of-type(3n-1)
+{
+  margin:0 20rpx;
+   margin-bottom: 20rpx;
+}

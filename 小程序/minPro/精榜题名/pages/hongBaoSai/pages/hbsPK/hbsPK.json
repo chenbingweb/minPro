@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "user-pk": "../../components/user-pk/user-pk"
+
+  }  
+}

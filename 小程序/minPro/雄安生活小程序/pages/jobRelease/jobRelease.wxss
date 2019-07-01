@@ -1,0 +1,152 @@
+/* pages/middleExamine/middleExamine.wxss */
+page
+{
+  background-color: #f4f4f4
+}
+.item
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  background-color: white;
+}
+.input_style
+{
+  height: 110rpx;
+  width: 510rpx;
+}
+.item_title
+{
+  width: 120rpx;
+  margin-right: 30rpx;
+}
+
+
+.btn_next
+{
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 36rpx;
+}
+/*标签  */
+.label_select
+{
+  width: 750rpx;
+  min-height: 400rpx;
+  background-color: white;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.label_title
+{
+  height: 106rpx;
+  line-height: 106rpx;
+  box-sizing: border-box;
+    padding: 0 25rpx;
+  border-bottom:2rpx solid #e3e3e3;
+}
+.label_box
+{
+  padding: 30rpx 25rpx;
+  padding-left: 5rpx;
+  padding-bottom: 10rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.label_item
+{
+  display: inline-block;
+  padding: 15rpx 20rpx;
+  color:#666666;
+  font-size: 28rpx;
+  background-color:#f4f4f4;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+}
+/*添加  */
+.add_btn
+{
+  position: absolute;
+  left:5rpx;
+  bottom:0rpx;
+  color:#fed545;
+}
+/*顶置  */
+.set_top
+{
+  line-height: 110rpx;
+}
+.switch
+{
+  transform: scale(0.76)
+}
+/*提交  */
+.submit_box
+{
+  width: 750rpx;
+  height: 245rpx;
+  background-color: white;
+}
+.disclaimer
+{
+  height: 103rpx;
+  width:750rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+}
+/*提交  */
+.submit
+{
+  width: 618rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius: 45rpx;
+  overflow: hidden;
+  margin-top: 24rpx;
+}
+/*上传公司照片  */
+.company_photo
+{
+  background-color: white;
+
+  box-sizing: border-box;
+}
+.company_photo_title
+{
+  line-height: 106rpx;
+  height: 106rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #e3e3e3;
+}
+/*上传图片  */
+.upload_photo
+{
+  width: 750rpx;
+  min-height:285rpx;
+  box-sizing: border-box;
+  padding: 30rpx 25rpx;
+  flex-wrap: wrap;
+}
+.up_box
+{
+  width: 224rpx;
+  height: 224rpx;
+  background-color: #f4f4f4;
+  flex-direction: column;
+  margin-right: 14rpx;
+  margin-bottom: 26rpx;
+}
+.up_box:nth-of-type(3n)
+{
+   margin-right: 0;
+}
+.selected_label
+{
+  color:#fed545;
+}

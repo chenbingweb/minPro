@@ -1,0 +1,288 @@
+.play_1_box
+{
+  width:400rpx;
+  position: absolute;
+  top:0rpx;
+  bottom:calc(50vh + 100rpx);
+  left: 50%;
+  /* transform: translateX(-50%); */
+ 
+  transform:translateX(-50%) translateY(-800rpx);
+  background-color: #c2271f;
+}
+.play_2_box
+{
+  width: 400rpx;
+  position: absolute;
+  top:calc(50vh + 100rpx);
+  bottom: 0;
+  left: 50%;
+  /* transform: translateX(-50%); */
+   
+  transform:translateX(-50%) translateY(800rpx);
+  background-color: #599ae1;
+}
+.midd_box
+{
+  width: 400rpx;
+  height: -200rpx;
+  position: absolute;
+  left: 50%;
+  bottom:-200rpx;
+  transform: translateX(-50%);
+  overflow: hidden;
+   border-top:4rpx solid  #c2271f;
+}
+.red_x
+{
+  width:500rpx;
+  height:200rpx;
+  transform-origin:0 200rpx;
+  background-color:#c2271f;
+  transform:rotate(-26deg);
+
+}
+.midd_box_2
+{
+  width: 400rpx;
+  height: 200rpx;
+  position: absolute;
+  left: 50%;
+  top:-200rpx;
+  transform: translateX(-50%);
+  overflow: hidden;
+  
+  border-bottom:4rpx solid #599ae1;
+}
+.blue_x
+{
+  width:500rpx;
+  height:200rpx;
+  transform-origin:0 0rpx;
+  background-color:#599ae1;
+  transform:rotate(-26deg) translateX(-90rpx) translateY(179rpx);
+}
+.midd_box_tip
+{
+  width: 400rpx;
+  height: 200rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* border-top:4rpx solid  #c2271f;
+  border-bottom:4rpx solid #599ae1; */
+  box-sizing: border-box;
+}
+.pd_bg
+{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.bottom_bg_2
+{
+  position: absolute;
+  left:50%;
+  bottom:0;
+  transform: translateX(-50%);
+}
+.top_bg_2
+{
+  position: absolute;
+  left:50%;
+  top:0;
+  transform: translateX(-50%);
+}
+.absolute
+{
+   position: absolute;
+  left:0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+.photo_box
+{
+  position: absolute;
+  left:50%;
+  top:264rpx;
+  transform: translateX(-50%);
+
+}
+.photo_box_play_2
+{
+  position: absolute;
+  left:50%;
+  bottom:240rpx;
+  transform: translateX(-50%);
+}
+.reduce_coin_bottom
+{
+   position: absolute;
+  left:50%;
+  bottom:100rpx;
+  transform: translateX(-50%);
+}
+.reduce_coin_top
+{
+  position: absolute;
+  left:50%;
+  top:146rpx;
+  transform: translateX(-50%);
+}
+.level_top
+{
+   position: absolute;
+  left:50%;
+  top:480rpx;
+  transform: translateX(-50%);
+}
+.level_bottom
+{
+   position: absolute;
+  left:50%;
+  bottom:443rpx;
+  transform: translateX(-50%);
+}
+.level_info
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-right: 10rpx;
+}
+.star_img
+{
+  width: 110rpx;
+  position: relative;
+  height: 30rpx;
+  transform:translateX(-14rpx);
+
+}
+.ready_tip
+{
+  opacity: 0;
+  transform:scale(3);  
+  transition: all 0.3s
+}
+/* 动画 */
+.ready_tip_animation{
+  
+  animation:readyTip 0.8s linear infinite;
+  animation-delay: 0s;
+
+}
+@keyframes readyTip {
+  0% {
+   transform: rotate(0)
+  }
+  100%{
+   transform: rotate(360deg)
+  }
+}
+
+.show_Ok{
+  
+  animation:showOk 0.6s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0ms;
+}
+@keyframes showOk {
+  0% {
+    opacity: 0;
+    transform:  scale(3);  
+  }
+  100%{
+    opacity: 1;
+    transform:  scale(1);  
+  }
+}
+/* 1v1 邀请 */
+.yq_1v1
+{
+  position: absolute;
+  width: 320rpx;
+  height: 180rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 90rpx);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+}
+.yq_btn
+{
+  width: 320rpx;
+  height: 119rpx;
+  position: relative;
+  pointer-events:all;
+
+}
+.yq_title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:18rpx;
+}
+.time
+{
+  text-align: center;
+  line-height: 78rpx;
+  font-size: 24rpx;
+  color:#fff;
+  font-weight: bold;
+}
+.pos
+{
+  position: absolute;
+  
+  top:50%;
+  transform: translateY(-50%);
+}
+.u_bg_db
+{
+  border-radius: 27rpx;
+  background-color: white;
+  border:4rpx solid #ffe685;
+  box-sizing: border-box;
+  /* box-shadow:0px 4rpx 0rpx 2rpx #77130f */
+}
+.icon_box_bg
+{
+  width: 187rpx;
+  height: 55rpx;
+}
+.level_img
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qc_level
+{
+  line-height:44rpx;
+  box-sizing:border-box;
+
+  color:#632e3b;
+  font-size:22rpx;
+  font-weight:600;
+  width:112rpx
+}
+.pdsucc
+{
+  position: absolute;
+  /* left: 50%;
+  top:50%;
+  transform:translateY(-50%) translateX(-50%) ; */
+}

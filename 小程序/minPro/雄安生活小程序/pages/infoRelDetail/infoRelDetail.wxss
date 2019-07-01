@@ -1,0 +1,41 @@
+/* pages/infoRelDetail/infoRelDetail.wxss */
+@import '../../temp/temp.wxss';
+.detail_box
+{
+  padding-top: 40rpx;
+}
+/* .bottom_nav
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.bottom_nav_box
+{
+  width: 750rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0rpx;
+  color:#333333;
+  font-size: 24rpx;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+   box-shadow: 0px 4rpx 2rpx 6rpx #e7e7e7;
+   justify-content: flex-start;
+}
+.home_box
+{
+  width: 100rpx;
+  text-align: center;
+}
+.phone_box
+{
+  width: 430rpx;
+  height: 70rpx;
+  position: relative;
+  margin-left: 60rpx;
+} */

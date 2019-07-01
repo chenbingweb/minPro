@@ -1,0 +1,263 @@
+<import src="../../dati_comm/template/Grid3.wxml" />
+<view class="matchJS_box">
+  <!--背景图
+  <view class="icon_bx img_bg">
+    <image style="width:750rpx;height:100vh" src="../../imgs/home/home_bg.png"></image>
+  </view>  -->
+  <view class="notice_body" style="opacity:{{data.opacity}}" wx:if="{{list.length!=0}}">
+    <!-- 头部 -->
+    <view class="notice_header">
+      <view class="notice_bg icon_box">
+        <image style="width:722rpx;height:174rpx" src="../../imgs/matchJS/js_header.png"></image>
+      </view>
+      <!--标题  -->
+      <view class="icon_box notice_title">
+      {{jiesuanTitle}}
+        
+        <!-- <image style="width:329rpx;height:60rpx" src="../../imgs/matchJS/js_title.png"></image> -->
+      </view>
+    </view>
+    <!--内容  -->
+    <view class="notice_content_jisuan">
+      <!-- 排名前三 -->
+      <view class="ranking_three_box">
+        <view class="ranking_item" wx:for="{{list}}" wx:key="r_{{index}}" style="{{index==2?'border:none':''}}">
+          <!--排名  -->
+          <view class="child_1 icon_box">
+            <image src="../../imgs/matchJS/{{index+1}}.png" style="width:30rpx;height:44rpx;"></image>
+          </view>
+          <!--头像  classify/fight.png-->
+          <view class="child_2 icon_box">
+            <view class="icon_box ">
+              <image class="icon" src="{{item.icon}}"></image>
+            </view>
+            <!--头冠  -->
+            <view class="icon_box ">
+              <image class="king_k" src="../../imgs/matchJS/king_{{index+1}}.png"></image>
+              <!--vip图标   -->
+              <view class="new_vip" wx:if="{{item.vip==1}}">
+                <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+              </view>
+            </view>
+          </view>
+          <view class="child_3">
+            <!--用户名  -->
+            <view class="user_box">
+              <!-- 用户名称 -->
+              <view style="color:#57419d;max-width:180rpx;" class="one_line user_name">
+                {{item.name}}
+              </view>
+              <!--来自  -->
+              <view class="one_line user_name" style="color:#b6afd1;font-size:20rpx;margin-left:14rpx" wx-if="{{false}}">
+                (来自：北京)
+              </view>
+            </view>
+            <!--用户名  -->
+            <view class="user_box">
+              <!--段位等级  -->
+              <view style="color:#b6afd1" class="one_line user_name">
+                {{item.dwn}}{{item.lm}}
+              </view>
+              <view class="icon_box" style="margin-left:10rpx;">
+                <image src="../../imgs/comm/yellow_start.png" style="width:30rpx;height:30rpx;"></image>
+              </view>
+              <!--星级数量  -->
+              <view style="color:#7c70af">X{{item.l3}}</view>
+            </view>
+          </view>
+          <!--段位  -->
+          <view class="child_4">
+            <!--段位等级图片  -->
+            <view class="icon_box duan_wei_img">
+              <image style="width:60rpx;height:60rpx" src="../../imgs/comm/p_{{item.l1}}.png"></image>
+            </view>
+            <!--罗马字符背景图  -->
+            <view class="icon_box LM_bg">
+              <image style="width:72rpx;height:24rpx" src="../../imgs/ranking/ele_db.png"></image>
+              <!--罗马字符等级  -->
+              <view class="LM_string">
+                {{item.lm}}
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+      <!-- 我的排行 -->
+      <view class="my_ranking" wx-if="{{self&&self.pm>0}}">
+        <view>
+          <template is="Grid3" data="{{grid:data.myRankDB}}"></template>
+        </view>
+        <view class="grid_box">
+          <view class="ranking_item" style="border:none">
+            <!--头像  classify/fight.png-->
+            <view class="child_2 icon_box" style="width:145rpx">
+              <view class="icon_box " style="width:100%">
+                <image src="{{self.icon}}" style="width:90rpx;height:90rpx;border-radius:50%;border:2px solid #97a7c1;"></image>
+              </view>
+
+              <!--vip图标   -->
+              <view class="new_vip" wx:if="{{self.vip==1}}">
+                <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+              </view>
+
+              <!--我的排行名次  -->
+              <view class="icon_box my_ranking_num">
+                <image src="../../imgs/matchJS/my_rank_db.png" style="width:145rpx;height:33rpx"></image>
+                <view class="minci">第{{self.pm}}名</view>
+              </view>
+            </view>
+            <view class="child_3" style="margin-left:20rpx">
+              <!--用户名  -->
+              <view class="user_box">
+                <!-- 用户名称 -->
+                <view style="color:#57419d;max-width:180rpx;" class="one_line user_name">
+                  {{self.name}}
+                </view>
+                <!--来自  -->
+                <view class="one_line user_name" style="color:#b6afd1;font-size:20rpx;margin-left:14rpx" wx-if="{{false}}">
+                  (来自：北京)
+                </view>
+              </view>
+              <!--用户名  -->
+              <view class="user_box">
+                <!--段位等级  -->
+                <view style="color:#b6afd1" class="one_line user_name">
+                  {{self.dwn}}{{self.lm}}
+                </view>
+                <view class="icon_box" style="margin-left:10rpx;">
+                  <image src="../../imgs/comm/yellow_start.png" style="width:30rpx;height:30rpx;"></image>
+                </view>
+                <!--星级数量  -->
+                <view style="color:#7c70af">X{{self.l3}}</view>
+              </view>
+            </view>
+            <!--段位  -->
+            <view class="child_4">
+              <!--段位等级图片  -->
+              <view class="icon_box duan_wei_img">
+                <image style="width:60rpx;height:60rpx" src="../../imgs/comm/p_{{self.l1}}.png"></image>
+              </view>
+              <!--罗马字符背景图  -->
+              <view class="icon_box LM_bg">
+                <image style="width:72rpx;height:24rpx" src="../../imgs/ranking/ele_db.png"></image>
+                <!--罗马字符等级  -->
+                <view class="LM_string">
+                  {{self.lm}}
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <!--按钮  -->
+    <view class="footer_btn">
+      <view class="share_btn item">
+        分享
+        <button open-type="share" class="share_button" data-id='1'></button>
+      </view>
+      <view class="know_btn item" bindtap="OnNextClick">{{jlst==10?"领取奖励":"知道了"}}</view>
+    </view>
+  </view>
+
+  <view class="notice_body" style="opacity:{{data.opacity}}" wx:if="{{list.length==0}}">
+    <!-- 头部 -->
+    <view class="notice_header">
+      <view class="notice_bg2 icon_box">
+        <!-- <image style="width:722rpx;height:174rpx" src="../../imgs/matchJS/js_header.png"></image> -->
+      </view>
+      <!--标题  -->
+      <view class="icon_box notice_title1">
+       {{breaktitle}}
+        <!-- <image style="width:329rpx;height:60rpx" src="../../imgs/matchJS/js_title.png"></image> -->
+      </view>
+    </view>
+    <!--内容  -->
+
+    <view class="notice_content_jisuan_a">
+    <view class="img_frame">
+    <image class="img_a" src="../../imgs/noticeAcc/baoqian.png"  ></image>
+    </view>
+    <view class="text_a"><text class="text_b">{{breakcontent}}</text></view>
+    </view>
+    <!--按钮  -->
+    <view class="footer_btn">
+      <view class="know_btn item" bindtap="OnNextClick">{{jlst==10?"知道了":"知道了"}}</view>
+    </view>
+  </view>
+  <!--弹框背景-->
+  <view class="succ_box" bindtap="OnNextClick2" wx:if="{{jlboxv}}"> </view>
+
+  <!--闯关成功    -->
+  <view class="succ_boxview wind_Animo" wx:if="{{jlboxv}}">
+
+    <!--弹框-->
+    <view class="succ_title">
+      <!--抬头  -->
+      <view class="tai_tou icon_box">
+        <image style="width:410rpx;height:294rpx" src="../../imgs/matchJS/tai_tou.png"></image>
+        <view class="style_title">{{title}}</view>
+      </view>
+      <!--获取段位  -->
+      <view class="succ_duan_wei">
+        <view class="succ_dw icon_box">
+          <!--段位图片  -->
+          <view class="icon_box succ_duanwei">
+            <image style="width:60rpx;height:60rpx" src="../../imgs/comm/p_{{self.l1}}.png"></image>
+          </view>
+          <view class="icon_box LM_bg_box">
+            <image style="width:72rpx;height:24rpx" src="../../imgs/ranking/ele_db.png"></image>
+            <!--罗马字符等级-->
+            <view class="LM_string_succ">
+              {{self.lm}}
+            </view>
+          </view>
+        </view>
+        <view>{{dwtxt}}</view>
+      </view>
+
+      <!--分割线  -->
+      <view class="lines">
+        <view class="line_1"></view>
+        <view class="yuan"></view>
+        <view class="line_1"></view>
+      </view>
+
+      <!--奖励学分和金币  -->
+      <view class="xf_and_jb">
+        <view class="pro_item" style="margin-right:32rpx">
+          <view class="icon_box">
+            <image style="width:163rpx;height:163rpx" src="../../imgs/noticeAcc/coin_jp.png"></image>
+          </view>
+          <view class="score_item">金币X{{jlmoney}}</view>
+        </view>
+        <view class="pro_item" style="margin-left:32rpx">
+          <view class="icon_box">
+            <image style="width:163rpx;height:163rpx" src="../../imgs/noticeAcc/xf_jp.png"></image>
+          </view>
+          <view class="score_item">学分X{{jlxf}}</view>
+        </view>
+      </view>
+
+      <!--激励玩家的话-->
+      <view class="hurry">{{gltxt}}</view>
+
+      <!--炫耀成绩  -->
+      <view class="btnbase xuan_chengji">
+        炫耀成绩
+        <button open-type="share" class="share_button" data-id='2'></button>
+      </view>
+
+      <!--开始新赛季  -->
+      <view class="btnbase newsaiji">
+        开始新赛季
+        <view open-type="share" class="share_button" bindtap="OnCloseClick" data-id='3'></view>
+      </view>
+    </view>
+    <!--End弹框-->
+
+  </view>
+</view>

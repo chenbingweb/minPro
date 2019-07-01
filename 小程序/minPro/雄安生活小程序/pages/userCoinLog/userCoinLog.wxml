@@ -1,0 +1,25 @@
+<view class="fixed">
+  <view class="header flex_start">
+    <view class="icon_box">
+      <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:124rpx;height:124rpx;border-radius:50%;"></image>
+    </view>
+    <view style="padding-left:20rpx">
+      <view>爱笑的向日葵</view>
+      <view style="font-size:26rpx;">当前账户还剩
+        <text style="color:#e60012">866</text>雄心币</view>
+    </view>
+  </view>
+  <view class="title_MX">
+    明细
+  </view>
+  <view class="log_box">
+    <paging>
+      <view slot="list">
+        <view class="item_log flex_between" wx:for="{{[1,23,4,5,6,7,8,3]}}">
+          <view>2018-02-09</view>
+           <view>+10</view>
+        </view>
+      </view>
+    </paging>
+  </view>
+</view>

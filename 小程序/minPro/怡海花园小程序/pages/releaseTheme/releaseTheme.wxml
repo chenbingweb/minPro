@@ -1,0 +1,103 @@
+<form>
+  <view class="add_btn flex_center relative">
+    <view wx:if="{{true}}">
+      <view class="icon_box relative">
+        <image style="width:168rpx;height:168rpx;" src="../../images/add_yinye_photo.png"></image>
+        <view class="title">添加照片</view>
+      </view>
+
+    </view>
+    <view wx:else class="absolute flex_start img_box">
+      <view class="icon_box img" wx:for="{{[1,2,3,4,5]}}">
+        <image mode="aspectFill" src="../../images/img/1.jpg" style="width:200rpx;height:200rpx;border-radius:10rpx;"></image>
+      </view>
+      <view class="icon_box img relative">
+        <image mode="aspectFill" src="../../images/add_yinye_photo.png" style="width:200rpx;height:200rpx;border-radius:10rpx;"></image>
+        <view class="title">添加照片</view>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="input_title flex_between">
+    <view style="padding-right:30rpx">标题</view>
+    <input class="item_input" placeholder-class="pc" placeholder="请输入标题"></input>
+  </view>
+  <!--报名时间  -->
+  <view class="input_title flex_between">
+    <view style="padding-right:30rpx">报名开始时间</view>
+    <view class="flex_end item_input">
+      <picker mode="date" bindchange="onBMStartDate">
+        <view>{{startBMDate==''?'开始日期':startBMDate}}</view>
+      </picker>
+      <text decode="true">&nbsp;&nbsp; </text>
+      <picker mode="time" bindchange="onBMStartTime">
+        <view>{{startBMTime==''?'开始时间':startBMTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="input_title flex_between">
+    <view style="padding-right:30rpx">报名结束时间</view>
+    <view class="flex_end item_input">
+      <picker mode="date" bindchange="onBMEndtDate">
+        <view>{{endBMDate==''?'结束日期':endBMDate}}</view>
+      </picker>
+      <text decode="true">&nbsp;&nbsp; </text>
+      <picker mode="time" bindchange="onBMEndTime">
+        <view>{{endBMTime==''?'结束时间':endBMTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <!--活动时间  -->
+  <view class="input_title flex_between">
+    <view style="padding-right:30rpx">活动开始时间</view>
+    <view class="flex_end item_input">
+      <picker mode="date" bindchange="onHDStartDate">
+        <view>{{startHDDate==''?'开始日期':startHDDate}}</view>
+      </picker>
+      <text decode="true">&nbsp;&nbsp; </text>
+      <picker mode="time" bindchange="onHDStartTime">
+        <view>{{startHDTime==''?'开始时间':startHDTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="input_title flex_between">
+    <view style="padding-right:30rpx">活动结束时间</view>
+    <view class="flex_end item_input">
+      <picker mode="date" bindchange="onHDEndtDate">
+        <view>{{endHDDate==''?'结束日期':endHDDate}}</view>
+      </picker>
+      <text decode="true">&nbsp;&nbsp; </text>
+      <picker mode="time" bindchange="onHDEndTime">
+        <view>{{endHDTime==''?'结束时间':endHDTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <picker range="{{['大兴']}}">
+    <view class="input_title flex_between">
+      <view style="padding-right:30rpx">活动地址</view>
+      <view class="flex_start">
+        <view style="padding-right:20rpx;color:#b2b1b1">请选择</view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_4.png" style="width:12rpx;height:22rpx;"></image>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <!--活动介绍  -->
+  <view class="theme_interduce relative">
+    <view class="absolute"> 
+      <image src="../../images/them_bg_1.png" style="width:678rpx;height:352rpx;"> </image>
+    </view>
+    <view class="absolute">
+      <view class="theme_title">活动详情</view>
+      <view>
+        <textarea class="text_rea" placeholder="请输入活动介绍"></textarea>
+      </view>
+      <view class="font_num">0/300</view>
+    </view>
+  </view>
+   <view class="relative submit">
+      发布
+      <button form-type="submit" class="btn_login"></button>
+    </view>
+</form>

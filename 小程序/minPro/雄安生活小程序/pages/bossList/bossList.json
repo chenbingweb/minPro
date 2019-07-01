@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Boss招聘",
+  "usingComponents": {
+    "paging": "/components/paging/paging",
+    "pay-list":"/components/pay-list/pay-list",
+    "job-three": "/components/job-three/job-three"
+  }
+}

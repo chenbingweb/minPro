@@ -1,0 +1,103 @@
+/* pages/tongTianTa/component/fight-success-tip/fight-success-tip.wxss */
+.fixed
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.succ_tip
+{
+  position: absolute;
+  width: 550rpx;
+  height:745rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 354rpx);
+}
+.title
+{
+  position:absolute;
+  left:47%;
+  transform:translateX(-50%);
+  top:-113rpx;
+
+}
+.icon_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.num
+{
+  width: 100%;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
+  top:142rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+  text-align: center;
+  background: repeating-linear-gradient(#ffff00, #fff 50%, #ffff00);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 2rpx #670c09;
+ 
+}
+.num_bg
+{
+ width: 100%;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
+  top:146rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+  text-align: center;
+  /* background: repeating-linear-gradient(#ffff00, #fff 50%, #ffff00);
+  -webkit-background-clip: text; */
+  color: transparent;
+  -webkit-text-stroke: 6rpx #670c09;
+ 
+}
+.coin
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:230rpx;
+}
+.coin_num
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 183rpx;
+  height: 62rpx;
+  border-radius: 31rpx;
+  border:2rpx solid #fcde79;
+  top:475rpx;
+  text-align: center;
+  line-height: 62rpx;
+  background: linear-gradient(white, #faf3d9);
+  box-shadow:0px 6rpx 5rpx 0rpx #c7b291;
+  color:#632e3b;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.go_on
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:562rpx;
+}
+.back_btn
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

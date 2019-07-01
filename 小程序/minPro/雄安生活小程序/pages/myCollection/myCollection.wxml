@@ -1,0 +1,57 @@
+<view class="fixed">
+  <scroll-view scroll-x class="header_box  f_30_333">
+    <view class="container_box">
+      <view bindtap="selectEvent" class="c_item_1 {{selected=='middle'?'selected':''}}" data-bid="middle">房产中介</view>
+      <view bindtap="selectEvent" class="c_item_1 {{selected=='person'?'selected':''}}" data-bid="person">个人房源</view>
+      <view bindtap="selectEvent" class="c_item_1 {{selected=='boss'?'selected':''}}" data-bid="boss">BOSS招聘</view>
+      <view bindtap="selectEvent" class="c_item_1 {{selected=='self'?'selected':''}}" data-bid="self">毛遂自荐</view>
+      <view bindtap="selectEvent" class="c_item_1 {{selected=='build'?'selected':''}}" data-bid="build">售楼直销</view>
+      <view bindtap="selectEvent" class="c_item_1 {{selected=='info'?'selected':''}}" data-bid="info">资讯</view>
+    </view>
+  </scroll-view>
+  <!-- <view class="header flex_around f_30_333">
+    <view bindtap="selectEvent" class="{{selected=='company'?'selected':''}}" data-bid="company">房产中介</view>
+    <view bindtap="selectEvent" class="{{selected=='person'?'selected':''}}" data-bid="person">个人房源</view>
+    <view bindtap="selectEvent" class="{{selected=='boss'?'selected':''}}" data-bid="boss">BOSS招聘</view>
+    <view bindtap="selectEvent" class="{{selected=='self'?'selected':''}}" data-bid="self">毛遂自荐</view>
+    <view bindtap="selectEvent" class="{{selected=='build'?'selected':''}}" data-bid="build">售楼直销</view>
+  </view> -->
+
+<view class="container">
+  <paging dataObj="{{dataObj}}" bindpageData="pageData">
+    <view slot="list">
+      <view bindtap="navToDetail" data-cid="{{item.id}}" data-category="{{item.category}}" data-src="{{selected}}" class="item flex_start relative" wx:for="{{list}}" wx:key="list_{{index}}">
+        <view class="icon_box" wx:if="{{selected!='boss'&&selected!='self'&&selected!='info'}}">
+          <image mode="aspectFill" style="width:270rpx;height:210rpx" src="{{imgUrl+item.img_url}}"></image>
+        </view>
+        <view class="no_img" wx:else></view>
+        <view class="child" wx:if="{{selected=='middle'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.name}}</view>
+          <view class="f_28_666">{{item.door}} {{item.direction}} </view>
+        </view>
+        <view class="child" wx:if="{{selected=='person'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.name}}</view>
+          <view class="f_28_666">{{item.door}} {{item.direction}} </view>
+        </view>
+        <view class="child" wx:if="{{selected=='build'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.name}}</view>
+          <view class="f_28_666">{{item.area}} {{item.tag}}</view>
+        </view>
+        <view class="child" wx:if="{{selected=='boss'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.category}}</view>
+          <view class="f_28_666">{{item.company}} {{item.industry}}</view>
+        </view>
+        <view class="child" wx:if="{{selected=='self'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.category}}</view>
+          <view class="f_28_666 two_line">{{item.info}}</view>
+        </view>
+        <view class="child" wx:if="{{selected=='info'}}">
+          <view class="f_30_333" style="line-height:80rpx">{{item.title}}</view>
+          <view class="f_28_666 ">{{item.detail}} </view>
+        </view>
+      </view>
+    </view>
+
+  </paging>
+</view>
+</view>

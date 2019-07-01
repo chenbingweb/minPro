@@ -1,0 +1,37 @@
+<view class="fixed">
+  <paging>
+    <view class="list" slot="list">
+      <view class="item flex_between" wx:for="{{[1,2]}}" wx:key="l_{{index}}">  
+        <view class="theme_info">
+          <view class="theme_title two_line">
+           羽毛球比赛
+          </view>
+          <view class="theme_status">
+            报名中
+          </view>
+          <!--地址  -->
+          <view class="flex_start info_item">
+            <view class="icon_box">
+              <image src="../../images/shop_l.png" style="width:19rpx;height:26rpx;"></image>
+            </view>
+            <view style="padding-left:10rpx;">
+              北京大兴
+            </view>
+          </view>
+          <!--活动时间  -->
+           <view class="flex_start info_item">
+            <view class="icon_box">
+              <image src="../../images/time.png" style="width:22rpx;height:22rpx;"></image>
+            </view>
+            <view style="padding-left:10rpx;">
+              2018-09-09 —— 2018-09-18
+            </view>
+          </view>
+        </view>
+        <view class="icon_box">
+          <image mode="aspectFill" src="../../images/img/n.jpg" style="width:212rpx;height:212rpx;border-radius:10rpx"></image>
+        </view>
+      </view>
+    </view>
+  </paging>
+</view>

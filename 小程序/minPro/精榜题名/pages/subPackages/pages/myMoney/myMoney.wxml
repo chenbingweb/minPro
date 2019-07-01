@@ -1,0 +1,48 @@
+ <view class="fixed">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="bg icon_box">
+        <image src="../../imgs/dianpu/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../imgs/dianpu/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+    </view>
+    <!-- 标题 -->
+    <view class="title icon_box">
+      <image src="../../imgs/myMoney/money.png" style="width:231rpx;height:66rpx"></image>
+    </view>
+    <!-- 现金 -->
+    <view class="money_box">
+      <view class="icon_box">
+        <image src="../../imgs/myMoney/money_bg.png" style="width:605rpx;height:300rpx"></image>
+      </view>
+      <!-- 现金显示 -->
+      <view class="absolute money_info">
+        <view class="money_font">66.54</view>
+        <!-- 点击领取 -->
+        <view class="icon_box get_btn" bindtap="OnTX">
+          <image src="../../imgs/myMoney/txbtn.png" style="width:297rpx;height:82rpx"></image>
+        </view>
+        <view class="money_tip">每次提现金额要大于200元</view>
+      </view>
+    </view>
+    <!-- 历史记录 -->
+    <scroll-view scroll-y class="list_his">
+      <view>
+        <view class="his_item flex_between" wx:for="{{[1,2,2,3,3,3,3,3,3,3]}}" wx:key="i_{{index}}"> 
+          <view>账户提现</view>
+          <view class="coin_info flex_start">
+            <view class="icon_box coin_pos">
+                <image src="../../imgs/dianpu/coin.png" style="width:38rpx;height:43rpx"></image>
+            </view>
+            <view class="coin_num_kq">+232</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <!-- 返回 -->
+    <view class="back" bindtap="OnBack">
+      <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+<!-- <import src="./matchOver.wxml"/>
+<template is="matchOver" data="{{data:data}}"  ></template> -->
+<import src="./matchOver_1.wxml"/>
+<template is="matchOver_1" data="{{data:data}}"  ></template>

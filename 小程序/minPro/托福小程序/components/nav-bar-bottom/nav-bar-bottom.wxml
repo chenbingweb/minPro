@@ -1,0 +1,8 @@
+<view class="nav_box" style="bottom:{{islongP}}rpx" wx:if="{{list.length}}">
+  <view class="nav_items" >
+    <slot name="list"></slot>
+    <view class="item" wx:if="{{default}}" bindtap="onNav" data-nid="{{item.id}}" wx:for="{{list}}" wx:key="index_{{index}}"> 
+      {{item.name}}
+    </view>
+  </view>
+</view>

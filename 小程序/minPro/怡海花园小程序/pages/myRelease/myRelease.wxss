@@ -1,0 +1,49 @@
+/* pages/myRelease/myRelease.wxss */
+.release_list
+{
+  position: fixed;
+  top:200rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+.re_item
+{
+  width: 678rpx;
+  height: 234rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #f4f4f4;
+}
+.re_name
+{
+  width: 322rpx;
+  height: 163rpx;
+  box-sizing: border-box;
+  padding-left: 37rpx;
+  color:#232323;
+  font-size: 30rpx;
+}
+.btn_fb
+{
+  width: 125rpx;
+  height: 50rpx;
+  background-color: #5293e1;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color:#ffffff;
+  font-size: 22rpx;
+}
+.close
+{
+   width: 125rpx;
+  height: 50rpx;
+  background-color: #fff;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color:#5293e1;
+  font-size: 22rpx;
+  border:2rpx solid #5293e1;
+}

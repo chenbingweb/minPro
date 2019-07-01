@@ -1,0 +1,170 @@
+.ttt_btn
+{
+  position: absolute;
+  left:137rpx;
+  top:184rpx;
+}
+.btn_box_2
+{
+  width:750rpx;
+  height:895rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 540rpx);
+}
+.gan_kao_btn
+{
+  position: absolute;
+  left: 370rpx;
+  top:428rpx;
+}
+.qie_cuo_btn
+{
+  position: absolute;
+  left: 93rpx;
+  top:644rpx;
+}
+.hong_bao_btn
+{
+  position: absolute;
+  left: 368rpx;
+  top:795rpx;
+}
+.lu_zi_btn
+{
+  position: absolute;
+  left:243rpx;
+  top:936rpx;
+}
+.cao_btn
+{
+  position: absolute;
+  left:184rpx;
+  top:1022rpx;
+}
+.fix-iphonex-button {
+  bottom:68rpx!important;
+
+}
+
+.fix-iphonex-button::after {
+    content:' ';
+
+    position: fixed;
+
+    bottom: 0!important;
+
+    height: 68rpx!important;
+
+    width: 100%;
+
+    background: #fff;
+
+}
+.btn_box
+{
+  position: absolute;
+  left: 20rpx;
+  bottom: 0;
+  width: 100rpx;
+  height: 100rpx;
+  border:2rpx solid black;
+  font-size: 30rpx;
+  color:blue;
+  flex-direction: column;
+  font-weight: bold;
+}
+/* 新版 */
+.ttt_btn_1
+{
+  position: absolute;
+  left: 272rpx;
+  top:calc(220rpx - 110rpx);
+}
+.gk_btn_1
+{
+  position: absolute;
+  left: 594rpx;
+  top:calc(608rpx - 110rpx);
+}
+.qc_btn_1
+{
+  position: absolute;
+  left: 186rpx;
+  top:calc(648rpx - 110rpx);
+}
+.hb_btn_1
+{
+  position: absolute;
+  left: 466rpx;
+  top:calc(818rpx - 110rpx);
+}
+.qc_btn_box
+{
+  position: absolute;
+  right: -308rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width:313rpx;
+  overflow:hidden;
+  height: 82rpx;
+}
+.v1_btn
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:18rpx;
+}
+.point
+{
+  position: absolute;
+  top:10rpx;
+  right: 10rpx;
+
+}
+.ttt_jz
+{
+  position: absolute;
+  width: 166rpx;
+  height: 383rpx;
+ left:155rpx;
+ top:100rpx;
+
+}
+.gk_jz
+{
+  position:absolute;
+  width:166rpx;
+  height:177rpx;
+  right:134rpx;
+  top:478rpx;
+}
+.qc_jz
+{
+  position:absolute;
+  width:166rpx;
+  height:220rpx;
+  left:12rpx;
+  top:538rpx;
+
+
+}
+.hb_jz
+{
+ position:absolute;
+width:86rpx;
+height:150rpx;
+right:270rpx;
+top:698rpx;
+
+}
+.music
+{
+  position: absolute;
+  left: 30rpx;
+  top:60rpx;
+}
+/* ,
+    "navigationStyle":"custom" */

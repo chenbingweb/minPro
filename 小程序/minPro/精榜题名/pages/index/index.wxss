@@ -1,0 +1,9 @@
+.index_page 
+{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  background-image:linear-gradient(0deg,#0d3d5b,#4f2e73);
+}

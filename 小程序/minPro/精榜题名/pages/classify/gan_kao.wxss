@@ -1,0 +1,58 @@
+.back_btn
+{
+  position: absolute;
+  left: -140rpx;
+  top:64rpx;
+  transition: left 0.5s;
+}
+.back_btn_active
+{
+  left: 0;
+}
+.back_text
+{
+  position: absolute;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 76rpx;
+  color:white;
+  font-size: 22rpx;
+}
+/*箭头**/
+.hot_more
+{
+  font-size: 28rpx;
+  color:#333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hot_more::after
+{
+  content: '';
+  display: block;
+  width: 16rpx;
+  height: 16rpx;
+  border-top:2rpx solid #fff;
+  border-right: 2rpx solid #fff;
+  transform: rotateZ(225deg);
+}
+.scroll_box
+{
+  width: 540rpx;
+  height: 1148rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:0rpx;
+}
+.current_level
+{
+  position: absolute;
+  width: 750rpx;
+  left: 0;
+   bottom: 450rpx;
+}

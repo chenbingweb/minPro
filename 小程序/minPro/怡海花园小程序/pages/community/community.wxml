@@ -1,0 +1,20 @@
+<view class="comm_page fixed">
+   <!--轮播图  -->
+  <swiper-base imgsData="{{imgsData}}" baseSet="{{baseSet}}" width="750" height="420" />
+  <view class="list_box">
+     <paging>
+      <view slot="list" class="box">
+          <navigator url="../comDetail/comDetail" class="com_item flex_start" wx:for="{{[1,2,3,4]}}">
+            <view class="icon_box">
+              <image src="../../images/img/1.jpg" style="width:232rpx;height:166rpx;border-radius:10rpx;"></image>
+            </view>
+            <view style="padding-left:36rpx;">
+              <view class="title two_line">如何处理业主装修那些事？如何保证物业管理到位</view>
+                <view class="time">2018-09-09</view>
+            </view>
+          </navigator>
+      </view>
+    </paging>
+  </view>
+ 
+</view>

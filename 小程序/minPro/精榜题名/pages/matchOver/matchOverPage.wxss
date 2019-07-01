@@ -1,0 +1,817 @@
+/* pages/matchOver/matchPage.wxss */
+@import "./matchOver_1.wxss";
+page
+{
+  width:100%;
+  height: 100%;
+   background-image:linear-gradient(0deg,#0d3d5b,#4f2e73);
+}
+
+
+.matchOver .fight_over_bg
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.matchOver .fight_over_bg image
+{
+    width: 750rpx;
+    height: 100vh;
+}
+.matchOver .result_box
+{
+    position: absolute;
+
+    width: 375rpx;
+    /* height: 476rpx; */
+}
+.matchOver .result_bg
+{
+    width: 375rpx;
+    /* height: 476rpx; */
+}
+.matchOver .my_result
+{
+    top: 0rpx;
+    left: 0;
+}
+/*头框*/
+.matchOver .new_frame
+{
+  position: absolute;
+  left:-4rpx;
+  top:-4rpx;
+  width:110rpx;
+  height:110rpx; 
+}
+
+.matchOver .new_vip
+{
+    position: absolute;
+    top: 70rpx;
+    left: 65rpx;
+}
+
+/*.matchOver .user_photo image
+{
+  width: 100rpx;
+  height: 100rpx;
+  border:6rpx solid #37b9ff;
+  box-sizing: border-box;
+  overflow: hidden;
+}*/
+
+.matchOver .friend_result
+{
+    top: 0rpx;
+    left: 375rpx;
+}
+.matchOver .friend_result .rotate
+{
+    transform: rotate(180deg);
+}
+/*头像  */
+.matchOver  .user_box
+{
+    font-size: 22rpx;
+
+    position: absolute;
+    top: 66rpx;
+    left: 16rpx;
+
+    width: 100rpx;
+
+    opacity: 0;
+    color: white;
+}
+
+.matchOver .user_box .user_ph
+{
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: 100rpx;
+    height: 100rpx;
+    
+    border-radius: 50%;
+}
+
+.matchOver  .user_box .user_ph image
+{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.matchOver .luser_normal
+{
+    border: 6rpx solid #37b9ff;
+}
+
+.matchOver .luser_mvp
+{
+    border: 6rpx solid #f3c546;
+}
+
+
+.matchOver .ruser_normal
+{
+    border: 6rpx solid #fb2a48;
+}
+
+.matchOver .qipao_icons
+{
+    position: absolute;
+    top: 10rpx;
+    left: 15rpx;
+
+    display: flex;
+
+    width: 200rpx;
+}
+
+.matchOver .wait_icon
+{
+    position: relative;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: 50rpx;
+    height: 50rpx;
+
+    border-radius: 50%;
+}
+
+.matchOver .wait_normal
+{
+    border: 3rpx solid #37b9ff;
+}
+
+
+
+
+.matchOver .mvp
+{
+    position: absolute;
+    top: -40rpx;
+    left: 0rpx;
+
+    transform: scale(0);
+}
+
+.matchOver .mvpanima
+{
+    animation: mvpanimaKeys .3s linear;
+    animation-delay: 2000ms;
+
+    animation-fill-mode: forwards;
+}
+
+@keyframes mvpanimaKeys
+{
+    0%
+    {
+        /*opacity: 0;*/
+        transform: scale(0);
+    }
+    100%
+    {
+        /*opacity: 1;*/
+        transform: scale(1);
+    }
+}
+
+
+.matchOver .FullPanel
+{
+    pointer-events: none;
+}
+
+
+
+.matchOver .user_box  .user_name
+{
+    line-height: 35rpx;
+
+    text-align: center;
+}
+
+.matchOver  .friend_right
+{
+    left: 250rpx;
+}
+/*没有人  */
+.matchOver  .friend_right .no_people
+{
+    font-size: 54rpx;
+    font-weight: bold;
+    line-height: 90rpx;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    color: #57419d;
+    border-color: #ed1b51;
+    background-color: #f1edf1;
+}
+/*胜利提示  */
+.matchOver .success_tip
+{
+    position: absolute;
+    top: 20rpx;
+    left: 50%;
+
+    width: 548rpx;
+    height: 256rpx;
+    margin-left: -274rpx;
+
+    transform: scale(1.4);
+
+    opacity: 0;
+}
+.matchOver .success_tip image
+{
+    width: 548rpx;
+    height: 256rpx;
+}
+/*对战分数  */
+.matchOver .player_results
+{
+    font-size: 62rpx;
+    font-weight: bold;
+
+    position: absolute;
+    top: 288rpx;
+
+    display: flex;
+
+    width: 210rpx;
+
+    text-align: right;
+
+    opacity: 0;
+    color: #2dddfd;
+
+    justify-content: center;
+    align-content: center;
+}
+.matchOver .player_results.my
+{
+    left: 175rpx;
+}
+.matchOver .player_results.friend_player
+{
+    right: 190rpx;
+
+    color: #fb2a48;
+}
+.matchOver .player_results .item .friend_num
+{
+    position: relative;
+    left: 50rpx;
+}
+
+
+.matchOver .player_results text
+{
+    font-size: 32rpx;
+    font-weight: normal;
+}
+.matchOver .player_results .item.right
+{
+    text-align: left;
+}
+.matchOver .player_results .num
+{
+    font-size: 32rpx;
+    font-weight: normal;
+
+    color: white;
+}
+.matchOver .player_results .num text
+{
+    font-weight: bold;
+
+    color: #2dddfd;
+}
+.matchOver .player_results .friend_num text
+{
+    color: #fb2a48;
+}
+/*使用学分  */
+.matchOver .user_zs
+{
+    /* top:625rpx; */
+    top: 2000rpx;
+    left: 240rpx;
+}
+.matchOver .user_xf
+{
+    /* top:695rpx; */
+    top: 2000rpx;
+    left: 240rpx;
+}
+.matchOver .use_item
+{
+    position: absolute;
+}
+.matchOver .use_item .xf_img
+{
+    position: absolute;
+    top: 7rpx;
+    left: 7rpx;
+
+    width: 52rpx;
+    height: 52rpx;
+}
+.matchOver .use_item .xf_img image
+{
+    width: 52rpx;
+    height: 52rpx;
+}
+.matchOver .use_item .use_xf
+{
+    font-size: 26rpx;
+
+    position: absolute;
+    top: 10rpx;
+    right: 45rpx;
+
+    color: #f1cb23;
+}
+
+.matchOver .use_fxf
+{
+    font-size: 26rpx;
+    position: absolute;
+    top: 8rpx;
+    left: 270rpx;
+    width: 200rpx;
+
+    color: white;
+}
+/*再来一局  */
+.matchOver .play_item
+{
+    font-weight: bold;
+    line-height: 104rpx;
+
+    position: absolute;
+    left: 172rpx;
+
+    width: 416rpx;
+    height: 104rpx;
+
+    border-radius: 52rpx;
+}
+
+
+.matchOver .qipao
+{
+    position: absolute;
+    top: 760rpx;
+    left: 50%;
+}
+
+.matchOver .qipao_txt
+{
+    font-size: 32rpx;
+    font-weight: bold;
+
+    position: absolute;
+    right: 15rpx;
+    bottom: 15rpx;
+
+    color: #4d3471;
+}
+
+
+.matchOver .qipao_jt
+{
+    position: absolute;
+    top: 50rpx;
+    left: 50%;
+
+    width: 40rpx;
+    height: 28rpx;
+
+    transform: translate(-20rpx,0rpx);
+}
+
+
+.matchOver .play_too
+{
+    /* top:910rpx; */
+    top: 835rpx;
+
+    display: inline-flex;
+
+    color: white;
+
+    justify-content: center;
+    align-items: center;
+    background-color: #f36;
+}
+/*炫耀成绩  */
+.matchOver .share_result
+{
+    /* top:910rpx; */
+    top: 2000rpx;
+
+    display: inline-flex;
+
+    color: white;
+    background-color: #ffa913;
+
+    justify-content: center;
+    align-items: center;
+}
+.matchOver .share_result .xy_img image
+{
+    width: 52rpx;
+    height: 52rpx;
+}
+.matchOver .share_result .text_btn
+{
+    width: 100%;/*176rpx;*/
+
+    text-align: center;
+}
+/*分享群  */
+.matchOver .share_qun
+{
+    font-size: 32rpx;
+
+    position: absolute;
+    top: 1030rpx;
+
+    display: inline-flex;
+
+    width: 750rpx;
+
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+}
+/*向上拉  */
+.matchOver .to_up
+{
+    font-size: 24rpx;
+
+    position: absolute;
+    top: 1080rpx;
+    left: 300rpx;
+
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    justify-content: center;
+}
+
+
+
+.matchOver .to_up .up_2
+{
+    position: relative;
+    top: -10rpx;
+}
+.matchOver .to_up  .text
+{
+    text-align: center;
+}
+/*分享按钮  */
+.matchOver .share_button
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+}
+/*段位星级  */
+.matchOver .elev_start
+{
+    position: absolute;
+    /* top:480rpx; */
+    top: 2000rpx;
+    left: 50%;
+    /* background-color: red; */
+
+    display: inline-flex;
+
+    box-sizing: border-box;
+    width: 320rpx;
+    height: 120rpx;
+    margin-left: -160rpx;
+
+    opacity: 0;
+
+    align-items: center;
+    justify-content: flex-start;
+}
+.matchOver .result_start_box
+{
+    font-size: 30rpx;
+
+    padding-left: 20rpx;
+
+    color: white;
+}
+.matchOver .start_box
+{
+    display: inline-flex;
+
+    justify-content: flex-start;
+    align-items: center;
+}
+.matchOver .icon_total
+{
+    position: absolute;
+    top: 690rpx;
+    left: 50%;
+
+    display: inline-flex;
+
+    box-sizing: border-box;
+    width: 240rpx;
+    height: 60rpx;
+    margin-left: -120rpx;
+    padding-left: 4rpx;
+
+    border-radius: 30rpx;
+    background-color: #e3e4ea;
+
+    align-items: center;
+}
+.matchOver .get_coin_num
+{
+    font-size: 27rpx;
+    font-weight: bold;
+
+    width: 178rpx;
+
+    text-align: center;
+
+    color: #333;
+}
+.matchOver .index_btns
+{
+    position: absolute;
+    top: 780rpx;
+    left: 50%;
+
+    display: inline-flex;
+
+    width: 416rpx;
+    height: 104rpx;
+    margin-left: -208rpx;
+
+    justify-content: space-between;
+    align-items: center;
+}
+.matchOver .index_btns .back_index,
+.matchOver .index_btns .refight
+{
+    font-size: 37rpx;
+    font-weight: bold;
+    line-height: 104rpx;
+
+    width: 200rpx;
+    height: 104rpx;
+
+    text-align: center;
+
+    color: #000;
+    border-radius: 59rpx;
+    background-color: #e3e4ea;
+}
+.matchOver .index_btns .refight.bg_color
+{
+    color: white;
+    background-color: #f36;
+}
+.matchOver .back_home
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*分享  */
+.matchOver .share_img_btn
+{
+    position: absolute;
+    top: 848rpx;
+    left: -600rpx;
+}
+.matchOver .share_img_btn .bg_img
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.matchOver .share_img_btn .box_img
+{
+    font-size: 26rpx;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    color: #34393f;
+}
+.matchOver .share_img_btn .box_text_center
+{
+    box-sizing: border-box;
+    padding: 30rpx;
+    padding-top: 40rpx;
+    padding-left: 20rpx;
+
+    text-align: center;
+}
+.matchOver .share_img_btn .box_text
+{
+    box-sizing: border-box;
+    padding: 10rpx;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+}
+.matchOver .share_img_btn .coin_pox
+{
+    position: absolute;
+    right: 12rpx;
+    bottom: 8rpx;
+}.matchOver .friend_zd{
+  display: flex;
+  font-size: 22rpx;
+  position: absolute;
+  color: #51398c;
+  top: 15rpx;
+  left: 20rpx;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.matchOver .tips_ts{
+  position: absolute;
+  width: 220rpx;
+  max-height: 140rpx;
+   background-color: #f0e4fd; 
+   border-radius: 20rpx; 
+
+   left:-145rpx;
+  bottom:68rpx;
+}
+.matchOver .tips_a{
+  position: absolute;
+  width: 40rpx;
+  height:40rpx;
+border-radius: 50%;
+left: 388rpx;
+top: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+
+}
+.matchOver .add_fen
+{
+    font-size: 26rpx;
+
+    position: absolute;
+    top: 8rpx;
+    left: 270rpx;
+
+    width: 167rpx;
+
+     color: white; 
+}
+.matchOver .M_O
+{
+    opacity: 0;
+}
+.matchOver .Ani_Match_show
+{
+    animation: Ani_Match .3s linear;
+    animation-delay: 0s;
+
+    animation-fill-mode: forwards;
+}
+@keyframes Ani_Match
+{
+    0%
+    {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: .5;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+.matchOver .iconjoin
+{
+    animation: Ani_Match .3s linear;
+    animation-delay: 0s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
+}
+
+
+.matchOver .iconout
+{
+    animation: iconoutKeys .3s linear;
+    animation-delay: 0s;
+
+    animation-fill-mode: forwards;
+}
+
+@keyframes iconoutKeys
+{
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+/*气泡显示*/
+.matchOver .qipao_show
+{
+    animation: qipao_showKeys .3s linear;
+    animation-delay: 0s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
+}
+
+@keyframes qipao_showKeys
+{
+    0%
+    {
+        transform: translate(0rpx,20rpx);
+
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translate(0rpx,0rpx);
+
+        opacity: 1;
+    }
+}
+
+
+
+/*气泡隐藏*/
+.matchOver .qipao_hide
+{
+    animation: qipao_hideKeys .3s linear;
+    animation-delay: 0s;
+
+    animation-fill-mode: forwards;
+}
+
+@keyframes qipao_hideKeys
+{
+    0%
+    {
+        transform: translate(0rpx,0rpx);
+
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translate(0rpx,20rpx);
+
+        opacity: 0;
+    }
+}
+
+.matchOver .up_start{
+   position: absolute; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

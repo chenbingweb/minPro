@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "情绪血压自测",
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar"
+  }
+}

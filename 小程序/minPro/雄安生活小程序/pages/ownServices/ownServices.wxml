@@ -1,0 +1,80 @@
+<import src="../../temp/temp.wxml"  />
+<pay-list shows="{{shows}}" bindselectPay="selectPayEvent" />
+<!-- value="{{valueArr}}"  -->
+<job-three shows="{{jobShows}}" bindselectJob="selectJob"/>
+<view class="search_box">
+  <view class="input_box">
+    <view class="icon_box">
+      <image src="../../images/searc_icon.png" style="width:29rpx;height:28rpx"></image>
+    </view>
+    <input placeholder-class="place_holder"  bindconfirm="confirmEvent" placeholder="输入关键字" class="input_btn" />
+  </view>
+</view>
+<!--筛选 <picker mode="region"-->
+<view class="filter_box">
+  <picker range="{{areaList}}" style="width:33.333%" class="flex_center" bindchange="bindRegionChange" value="{{regionIndex}}" range-key="name">
+
+    <view class="filter_item" style="width:230rpx;">
+     <view style="padding-right:10rpx;">{{areaList[regionIndex].name}}</view>
+      <input hidden name="area" value="{{areaList[regionIndex].id}}" />
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+
+  </picker>
+  <view class="filter_item" bindtap="jobStyleEvent">
+    <view style="padding-right:10rpx;">{{jobName}}</view>
+    <view class="icon_box">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view>
+  <view class="filter_item" bindtap="showPayList">
+     <text>薪资</text>
+      <text wx:if="{{selectPay.pay_start}}">{{selectPay.pay_start+'k~'+selectPay.pay_end+'k'}}</text>
+    <view class="icon_box">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view>
+  <view class="filter_item" bindtap="sortEvent" wx:if="{{false}}">
+    <view style="padding-right:10rpx;">排序</view>
+    <view class="icon_box" wx:if="{{sort=='desc'}}">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+     <view wx:else class="icon_box" style="transform:rotate(180deg)">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view>
+</view>
+<!--列表  -->
+<view class="boss_list">
+  <paging dataObj="{{dataObj}}" bindpageData="pageData">
+    <view slot="list">
+      <template is="recomentSelf" data="{{arr:selfList,imgUrl:imgUrl}}" />
+      <!-- <navigator url="../workDetail/workDetail">
+      <view class="list_item flex_start" wx:for="{{[12,2,3,4]}}" wx:key="s_{{index}}">  
+        <view class="icon_box" style="margin-right:30rpx;">
+          <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg" style="width:122rpx;height:122rpx;border-radius:50%"></image>
+        </view>
+        <view style="width:548rpx">
+          <view class="job_box">
+            <view class="job_name inline_flex">
+              <view>视觉设计总监</view>
+              <view class="user_name">林夕</view>
+              <view class="top">置顶</view>
+            </view>
+            <view class="money">10K-12K</view>
+          </view>
+          <view class="company_name one_line">
+            视觉设计较经验丰富，对于视觉设计把控
+          </view>
+          <view class="inline_flex">
+            <view class="label_item" wx:key="index_{{index}}" wx:for="{{[1]}}">三年</view>
+            <view class="label_item">本科</view>
+          </view>
+        </view>
+      </view>
+      </navigator> -->
+    </view>
+  </paging>
+</view>

@@ -1,0 +1,230 @@
+/* pages/tongTianTa/component/fight-fail-tip/fight-fail-tip.wxss */
+.fixed
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.fail_box
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 588rpx;
+  height: 717rpx;
+  top:calc(50vh - 356rpx);
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.db_box
+{
+  position: absolute;
+  left:0;
+  top:0;
+}
+.rotate_180
+{
+  transform-origin: 50% 100%;
+  transform: rotate(180deg)
+}
+.title
+{
+  position: absolute;
+  left:50%;
+  top:-100rpx;
+  transform: translate(-50%)
+
+}
+.card_box
+{
+  position: absolute;
+  width: 588rpx;
+  left: 0;
+  top:140rpx;
+  /* height: 200rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item
+{
+  width: 178rpx;
+  height: 185rpx;
+  position: relative;
+
+}
+.relative
+{
+  position: relative;
+}
+.q_1
+{
+  position: absolute;
+  left: 50%;
+  top:-18rpx;
+  transform: translateX(-50%);
+}
+.num_bg
+{
+
+  text-align:center;
+  font-size:28rpx;
+  /* font-weight:bold; */
+  /* -webkit-text-stroke:6rpx #670c09; */
+  /* color:#880101; */
+  position:absolute;
+  bottom:0px;
+  left:50%;
+  transform: translateX(-50%);
+
+}
+.fhk_num
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.num
+{
+
+  position: absolute;
+  left:0;
+  right: 0;
+  top:6rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  /* background: repeating-linear-gradient(#fff, #fff 50%, #fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1rpx #fff; */
+  color: #fff;
+ 
+}
+.absolute
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right:0;
+  top:0;
+}
+.btn_box
+{
+  position: absolute;
+  width: 588rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:326rpx;
+}
+.btn_title
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  text-align: center;
+  line-height: 71rpx;
+}
+.line
+{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:425rpx;
+  color:#872d46;
+  line-height:1;
+
+}
+.share_btn
+{
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:490rpx;
+}
+.sb
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.share_tip
+{
+  position: absolute;
+  top:0;
+  bottom:15rpx;
+  left: 0;
+  right: 0;
+}
+.tip_text_1
+{
+  width: 100%;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:610rpx;
+  color:#333;
+  font-size:30rpx;
+  font-weight: 600;
+  width:100%;
+  text-align:center;
+
+}
+.back_btn
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 400rpx);
+}
+/* 复活卡足 */
+.card_bz
+{
+  position: absolute;
+  width: 473rpx;
+  height: 355rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 145rpx);
+}
+.f_h_img
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:-60rpx;
+}
+.buy_box
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:150rpx;
+}
+.tip_text
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:270rpx;
+  text-align: center;
+  color:#333;
+  font-size: 30rpx;
+  width: 100%;
+}

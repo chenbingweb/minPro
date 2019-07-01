@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "fight-bottom": "../fight-bottom/fight-bottom",
+    "left-3v3": "../left-3v3/left-3v3",
+    "right-3v3": "../right-3v3/right-3v3"
+  }
+}

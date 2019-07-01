@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "waite-img": "/dati_comm/components/waite-img/waite-img",
+    "fight-bottom":"/dati_comm/components/fight-bottom/fight-bottom",
+    "photo": "/dati_comm/components/photo/photo",
+    "fight-3v3-page": "/dati_comm/components/fight-3v3-page/fight-3v3-page",
+    "reduce-coin": "/dati_comm/components/reduce-coin/reduce-coin"
+  },
+  "disableScroll": true
+}

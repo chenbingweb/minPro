@@ -1,0 +1,50 @@
+<paging>
+  <view slot="list">
+    <view class="content">
+      <view class="title">
+        这还是一个标题
+      </view>
+      <view class="detail_content relative">关于路权我个人有很多问题，有兴趣的小伙伴可以聊聊；1.在中国，行人和车都有哪些路权关于路权我个人有很多问题，关于路权我个人有很多问题，关于路权我个人有很多问题，有兴趣的小伙伴可以聊聊；1.在中国，行人和车都有哪些路权关于路权我个人有很多问题，关于路权我个人有很多问题，关于路权我个人有很多问题，有兴趣的小伙伴可以聊聊；1.在中国，行人和车都有哪些路权关于路权我个人有很多问题，关于路权我个人有很多问题，
+        <!-- <view class="inline_flex more ">
+          <view>展开问题描述</view>
+          <view class="icon_box">
+            <image src="../../images/arrow_down_1.png" style="width:19rpx;height:11rpx"></image>
+          </view>
+        </view> -->
+      </view>
+      <!-- <view style="padding-top:10rpx">
+        <share-dz/>
+      </view> -->
+    </view>
+    <view class="eval_box">
+      <view class="total_num">3条评伦</view>
+      <view>
+        <view class="eval_item " style="border-top:2rpx solid #f2f0f0" wx:for="{{[1,2,3,4]}}">
+          <view class="flex_between" style=" align-items:stretch;">
+            <view class="relative">
+              <view class="photo">
+                <image  src="../../images/img/1.jpg" style="width:76rpx;height:76rpx;border-radius:50%"></image>
+              </view>
+            </view>
+            <view class="eval_box_child">
+              <view class="user_name">张三</view>
+              <view>张三张三张三张三张三张三张三张三张三张三张三张三张三张三</view>
+              <!--回复列表  -->
+              <view class="reply_list" wx:if="{{index==0}}">张三张三张三张三张三张三张三张三张三张三张三张三张三张三</view>
+            </view>
+          </view>
+          <view class="flex_end r_btn">
+            <reply/>
+          
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</paging>
+<view class="fixed eval_box_2">
+  <view class="eval flex_start">
+    <input class="input_bottom" placeholder="请输入评论"></input>
+    <view class="send_btn">发送</view>
+  </view>
+</view>

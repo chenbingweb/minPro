@@ -1,0 +1,87 @@
+<view class="fixed">
+  <view class="icon_box bg">
+    <image src="../../imgs/worldRank/Background.jpg"  style="width:750rpx;height:1334rpx"></image>
+  </view>
+  <!-- 排行列表 -->
+  <scroll-view scroll-y  class="rank_list">
+
+    <view class="rank_item" wx:for="{{rankList}}" wx:key="index_{{index}}">
+      <!-- 背景 -->
+      <view class="icon_box">
+        <image src="../../imgs/worldRank/rank_bg.png" style="width:675rpx;height:122rpx;"></image>
+      </view>
+      <!-- 信息 -->
+      <view class="absolute info flex_start">
+        <!-- 前三名 -->
+        <view class="icon_box" wx:if="{{index<3}}">
+          <image wx:if="{{index==0}}" src="../../imgs/worldRank/n_1.png" style="width:39rpx;height:56rpx;"></image>
+          <image wx:if="{{index==1}}"  src="../../imgs/worldRank/n_2.png" style="width:39rpx;height:56rpx;"></image>
+          <image wx:if="{{index==2}}"  src="../../imgs/worldRank/n_3.png" style="width:39rpx;height:56rpx;"></image>
+        </view>
+        <!-- 排行三明以后 -->
+        <view class="icon_box relative" wx:else>
+          <image src="../../imgs/worldRank/rank_num_bg.png" style="width:44rpx;height:49rpx"></image>
+          <view class="rank_num">
+            {{index+1}}
+          </view>
+        </view>
+        <!-- 头像 -->
+        <view class="icon_box" style="margin-left:6rpx;">
+          <image class="photo_img" src="{{item.icon}}"></image>
+        </view>
+        <!-- 用户游戏信息 -->
+        <view class="game_info flex_center" >
+          <view class="nick_name">{{item.name}}</view>
+          <!-- <view  class="game_ticket flex_start">
+            <view class="ticket_item">
+              答对卡X1
+            </view>
+            <view class="ticket_item">
+              复活卡X1
+            </view>
+          </view> -->
+        </view>
+        <!-- 当前排行 -->
+        <view class="cur_rank relative">
+          <view class="icon_box">
+            <image src="../../imgs/worldRank/rank_num.png" style="width:136rpx;height:75rpx;"></image>
+          </view>
+          <view class="rank_cur_cum">
+            {{item.gk}}层
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+    <!-- 用户当前排行 -->
+  <view class="current_user">
+    <view class="icon_box">
+      <image src="../../imgs/start/btootom_bg.png" style="width:750rpx;height:152rpx;"></image>
+    </view>
+    <view class="rank_item pos">
+      <!-- 背景 -->
+      <view class="icon_box">
+        <image src="../../imgs/worldRank/rank_bg.png" style="width:675rpx;height:122rpx;"></image>
+      </view>
+      <!-- 信息 -->
+      <view class="absolute info flex_center">
+        <!-- 头像 -->
+        <view class="icon_box" style="margin-left:6rpx;">
+          <image class="photo_img" src="{{userIcon}}"></image>
+        </view>
+          
+        <view class="my_rank" wx:if="{{rank!=0}}">
+         我的当前排名{{rank}}
+        </view>
+        <view class="my_rank" wx:else>
+          暂无排名
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 返回 -->
+  <view class="back" bindtap="OnBack">
+    <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+</view>

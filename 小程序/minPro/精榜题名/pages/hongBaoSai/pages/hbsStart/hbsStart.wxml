@@ -1,0 +1,40 @@
+<view class="fixed">
+  <view class="wap_pos icon_box" style="top:0;">
+    <image src="../../img/startHBS/bg.jpg" style="width:750rpx;height:1634rpx"></image>
+  </view>
+  <!-- 标题 -->
+  <view class="icon_box title">
+    <image src="../../img/startHBS/title.png" style="width:110rpx;height:39rpx"></image>
+  </view>
+  <!-- 提示 -->
+  <view class="tip icon_box">
+    <image src="../../img/startHBS/msg.png" style="width:528rpx;height:198rpx"></image>
+    <view class="absolute content">本局奖金 100 元现金</view>
+  </view>
+  <!-- 时间 -->
+  <view class="time">
+    <image src="../../img/startHBS/time.png" style="width:61rpx;height:92rpx"></image>
+    <text class="count">10</text>
+  </view>
+  <!-- 组队人员 -->
+  <view class="persons">
+    <view class="p_item icon_box" wx:for="{{[1,2,2,2,2,2,2,2]}}" style="transform: translateX(-50%) rotate({{45*index}}deg);">
+      <image src="../../img/startHBS/p_db.png" style="width:125rpx;height:130rpx;transform:rotate({{-45*index}}deg)"></image>
+      <view class="icon_box photo" >
+        <image src="../../img/startHBS/p_db.png" style="width:96rpx;height:96rpx;border-radius:50%;transform:rotate({{-45*index}}deg)"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 邀请人 -->
+  <view class="vs icon_box" >
+    <image src="../../img/startHBS/vf.png" style="width:320rpx;height:120rpx"></image>
+  </view>
+  <!-- 离开 -->
+  <view class="leave" bindtap="OnBack">
+    <image src="../../img/startHBS/live.png" style="width:110rpx;height:119rpx"></image>
+  </view>
+  <!-- 返回 -->
+   <view class="back" bindtap="OnBack">
+    <image src="../../img/startHBS/back.png" style="width:66rpx;height:72rpx"></image>
+  </view>
+</view>

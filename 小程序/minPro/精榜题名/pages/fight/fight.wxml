@@ -1,0 +1,395 @@
+<import src="../../dati_comm/template/Grid3.wxml" />
+<import src="../../template/circle.wxml" />
+<!--left:{{data.wndPosX}}rpx;  -->
+<template name="fight">
+  <view class="fixed friend_fight" style="opacity:{{data.wndAlpha}};" wx:if="{{data.display}}">
+    <!--背景图 -->
+    <view class="icon_box fight_bg">
+      <image src="../../imgs/comm/fight_bg.png">
+      </image>
+    </view>
+    <!--挑战人员1 正在战斗添加 class类名：succ 等待中，不需要-->
+    <view class="play_user succ">
+      <!--游戏等待，玩家显示 -->
+      <!--<view class="play_user_bg icon_box" wx:if="{{false}}">
+        <image src="../../imgs/fight/user_bg.png">
+        </image>
+      </view>-->
+      <!--3V3对战背景  左边-->
+      <view class="icon_box group_bg">
+        <image src="../../imgs/fight/succ_bg.png" style="width:375rpx;height:590rpx"></image>
+      </view>
+
+
+
+      <!--用户头像 -->
+      <view  class="user_box {{data.left_animation}}" wx:for="{{data.leftPly}}" wx:key="lply_{{index}}" style="top:{{index*170+56}}rpx;animation-delay:{{index/10}}s">
+        <view class="user_ph" wx:if="{{item.v}}">
+          <view class="icon_box">
+            <image src="{{item.icon}}" class="user_photo"> </image>
+           <!-- <safeimg  IsAspectFit="false" src="{{item.icon}}"> </safeimg>-->
+          </view>
+          <!--沉默 -->
+          <view class="cm_status" wx:if="{{false}}">沉默</view>
+        </view>
+        
+        <!--头框  --> 
+         <view class="new_frame" wx:if="{{item.k}}">
+          <image  src="{{item.k}}" style="width:100%;height:100%"></image>
+        </view>
+
+        <!--掉线  -->
+        <view class="offline" bindtap="offb" wx:if="{{false}}" style="opacity:{{data.offlinebj}}">
+          <image class="offlinec"  src="../../imgs/comm/offline.png" style="width:71rpx;height:50rpx;opacity:{{data.offline}}" ></image>
+        </view>
+        <!--VIP图标-->
+        <view class="new_vip" wx:if="{{item.v&&item.hf==1}}">
+          <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+        </view>
+
+        <view class="user_name one_line" wx:if="{{item.v}}">
+          {{item.name}}
+        </view>
+        <!--回答正确  
+				<view class="ok icon_box"  wx:if="{{item.v}}">
+					<image src="../../imgs/comm/right.png" wx:if="{{item.rightv}}" style="width:80rpx;height:70rpx">
+					</image>
+				</view>-->
+        <!--回答错误 
+				<view class="ok icon_box" wx:if="{{item.errorv && item.v}}" >
+					<image src="../../imgs/comm/wrong.png" style="width:80rpx;height:70rpx">
+					</image>
+				</view>-->
+      </view>
+
+    </view>
+    <!--好友加入头像-->
+    <view class="friend succ">
+      <view class="friend_bg icon_box" wx:if="{{false}}">
+        <image src="../../imgs/fight/user_bg.png">
+        </image>
+      </view>
+      <!--3V3对战背景  右边-->
+      <view class="icon_box group_bg_right" wx:if="{{true}}" bindtap="onChangeShowState_gb">
+        <image src="../../imgs/fight/succ_bg.png" style="width:375rpx;height:590rpx"></image>
+      </view>
+
+      <!--用户头像 -->
+      <view  class="friend_box {{data.right_animation}}" wx:for="{{data.rightPly}}" wx:key="rply_{{index}}" style="top:{{index*170+56}}rpx;;animation-delay:{{index/10}}s">
+        <view class="user_ph" style="border-color:#c42564" wx:if="{{item.v}}">
+          <view class="icon_box">
+            <image src="{{item.icon}}" class="user_photo" style="border:6rpx solid #c42564;"> </image>
+            <!--<safeimg  IsAspectFit="false" src="{{item.icon}}"> </safeimg>-->
+          </view>
+          <!--沉默状态  -->
+          <view class="cm_status" wx:if="{{false}}">沉默</view>
+        </view>
+       
+       
+        <!--头框  --> 
+         <view class="new_frame" wx:if="{{item.k}}">
+          <image  src="{{item.k}}" style="width:100%;height:100%"></image>
+        </view>
+        
+        <!--掉线  -->
+        <view class="offlineb" bindtap="offb" wx:if="{{false}}" style="opacity:{{data.offlinebj}}">
+          <image class="offlinec"  src="../../imgs/comm/offline.png" style="width:71rpx;height:50rpx;opacity:{{data.offline}} " ></image>
+        </view>
+        <!--VIP图标-->
+        <view class="new_vip" wx:if="{{item.v&&item.hf==1}}">
+          <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+        </view>
+        <view class="user_name one_line" wx:if="{{item.v}}">
+          {{item.name}}
+        </view>
+        <!--回答正确
+				<view class="ok icon_box" >
+					<image src="../../imgs/comm/right.png" wx:if="{{item.rightv&&item.v}}" style="width:80rpx;height:70rpx">
+					</image>
+				</view> -->
+        <!--回答错误 
+				<view class="ok icon_box" wx:if="{{item.errorv&&item.v}}">
+					<image src="../../imgs/comm/wrong.png" style="width:80rpx;height:70rpx">
+					</image>
+				</view>-->
+      </view>
+    </view>
+
+    <!--提示信息 -->
+    <!--等待中-->
+    <view class="font_wait" wx:if="{{false}}">
+      <view class="icon_box text_wait">
+        <image src="../../imgs/fight/wating.png">
+        </image>
+      </view>
+    </view>
+    <!--准备备战-->
+    <view class="font_wait" wx:if="{{false}}">
+      <view class="icon_box text_wait">
+        <image src="../../imgs/fight/ready.png">
+        </image>
+      </view>
+    </view>
+    <!--挑战开始 -->
+    <view class="font_wait font_start" wx:if="{{false}}">
+      <view class="icon_box text_start">
+        <image src="../../imgs/fight/start.png">
+        </image>
+      </view>
+      <view class="tip">
+        共10回合，每题10秒回答时间
+      </view>
+    </view>
+    <!--邀请好友 -->
+    <view class="visited_friend_box" wx:if="{{false}}">
+      <view class="visi_btn">
+        <text>邀请好友</text>
+        <view class="icon icon_box">
+          <image src="../../imgs/fight/visit_icon.png">
+          </image>
+        </view>
+      </view>
+      <view class="give_up">
+        放弃
+      </view>
+    </view>
+    <!--开始挑战-->
+    <view class="visited_friend_box" wx:if="{{false}}">
+      <view class="visi_btn start_fight_btn">
+        <text>开始挑战</text>
+        <view class="icon icon_box">
+          <image src="../../imgs/fight/start_fight.png">
+          </image>
+        </view>
+      </view>
+    </view>
+    <!--题库 {{data.an==true?'anima':''-->
+    <view class="question_box {{data.question_animation}}" bindtransitionend="Transitionend"  bindtap="onChangeShowState_gb">
+      <!--时间显示 -->
+      <view class="time {{data.anima==true?'an':''}}" wx:if="{{true}}">
+        <template is="circle" data="{{deg:360-(data.hmovertime/(data.maxtime*1000) *360 )}}"></template>
+        <view class="jshu_box">
+          <view class="show_time">{{data.overtime}}</view>
+        </view>
+      </view>
+      <!--3v3倒计时开始之前显示  -->
+      <view class="time" wx:if="{{false}}">
+        <view class="icon_box">
+          <!-- <image src="../../imgs/fight/time_jump.png" style="width:88rpx;height:88rpx"></image>  -->
+          <!--  data.show=true //显示 data.show=false//隐藏-->
+          <waite-img width="88" height="88" srcArr="{{data.jump_img}}" show="{{false}}" time="100"> </waite-img>
+        </view>
+      </view>
+      <!--3v3沉默  -->
+      <view class="chen_mo_tip" wx:if="{{false}}">
+        <view class="icon_box">
+          <image src="../../imgs/comm/chen_mo.png" style="width:122rpx;height:59rpx"></image>
+        </view>
+      </view>
+      <!--题目数量 -->
+      <view class="question_num_box" style="opacity:1">
+        {{data.currlun}}/{{data.maxlun}}
+      </view>
+      <!--题目类型 -->
+      <view class="question_type" wx:if="{{data.tx2}}">
+        <template is="Grid3" data="{{grid:data.q_type}}">
+        </template>
+        <view class="question_type_title">
+          {{data.tx2txt}}
+        </view>
+      </view>
+      <!--问题-->
+      <view class="question_content {{data.imgwt?'style_out_in':''}}" wx:if="{{data.imgwt}}">
+        <view class="icon_box img">
+          <safeimg id="wtimg" IsAspectFit="true" src="{{data.wentiimg}}" width="402rpx" height="270rpx"> </safeimg>
+        </view>
+        <text class="question_title">
+					{{data.wentiTxt}}
+				</text>
+      </view>
+      <!--问题2-->
+      <view class="question_content no_img {{data.wentiTxt?'style_out_in':''}}" wx:if="{{data.txtwt}}">
+        <text class="no_padding_top question_title ">
+					{{data.wentiTxt}}
+				</text>
+      </view>
+    </view>
+
+    <!--最后一题，双倍 -->
+    <view class="last_one">
+      <view class="icon_box Anima_Succ" style="opacity:0" hidden="{{!data.tx1}}">
+        <image src="../../imgs/fight/double.png" style="width:493rpx;height:240rpx" class="img_last">
+        </image>
+      </view>
+    </view>
+    <!--左边战斗进度条 -->
+    <view class="process_left {{data.left_process}}">
+      <progress-bar id="leftProgressBar" direction="v" inverse="true" showBack="true" backColor="#293772" backRadius="25" showMid="true" midSpace="0" midSpeed="-1" midColor="yellow" showFore="true" foreSpace="0" foreSpeed="0.5" foreRadius="25" foreColor="#23ffad"
+        borderWidth="1" borderColor="#155c92" progress="0" style="position:absolute;width:100%;height:100%">
+      </progress-bar>
+      <view class="score score_left" style="transform: scale({{data.leftScaleAni}});transition:500ms">
+        {{data.leftfen}}
+      </view>
+      <!--连续答对 wx-if="{{false}} leftld_in leftld_out"-->
+      <view class="ld_left {{data.leftld.style}}" wx-if="{{data.leftld.style}}">
+        <image src="../../imgs/fight/rightbg.png" style="width:100%;height:100%"> </image>
+
+        <view class="ld_txt">连续答对</view>
+        <view class="ld_x">X</view>
+        <view class="ld_num">{{data.leftld.num}}</view>
+      </view>
+
+    </view>
+    <!--右边战斗进度条 -->
+    <view class="process_right {{data.right_process}}">
+      <progress-bar id="rightProgressBar" direction="v" inverse="true" showBack="true" backRadius="25" backColor="#293772" showMid="true" midSpace="0" midSpeed="-1" midColor="yellow" showFore="true" foreSpace="0" foreSpeed="0.5" foreRadius="25" foreColor="#23ffad"
+        borderWidth="1" borderColor="#155c92" progress="0" style="position:absolute;width:100%;height:100%">
+      </progress-bar>
+      <view class="score score_right" style="transform: scale({{data.rightScaleAni}});transition:100ms">
+        {{data.rightfen}}
+      </view>
+
+
+      <!--连续答对 wx-if="{{false}}" rightld_in rightld_out-->
+      <view class="ld_right  {{data.rightld.style}}" wx-if="{{data.rightld.style}}">
+        <view class="ld_bg  ">
+          <image style=" " src="../../imgs/fight/rightbg.png" style="width:100%;height:100%"> </image>
+        </view>
+
+        <view class="ld_txt" style="transform: translate(20rpx);">连续答对</view>
+        <view class="ld_x" style="transform: translate(20rpx);">X</view>
+        <view class="ld_num" style="transform: translate(20rpx);">{{data.rightld.num}}</view>
+      </view>
+
+    </view>
+
+    <!--答题1 style="left: {{data.daanBtn[0].left}}rpx" -->
+    <!--bindanimationstart="AnimaStart"-->
+    <view bindtap="OnButtonClick" bindtouchstart="OnShopTouchStart" bindtouchend="OnShopTouchEnd" id="0" data-id="0" class="select_btn btns select_btn_1 {{data.daanBtn[0].style}} {{data.btnst[data.daanBtn[0].v]}}" style="transform: scale({{data.btnShopScale_1}}"
+      hidden="{{data.daanBtn[0].txt==''}}">
+      <view class="icon_box player_photo" wx:if="{{data.daanBtn[0].licon!=null}}">
+        <image src="{{data.daanBtn[0].licon}}">
+        </image>
+      </view>
+      <text>{{data.daanBtn[0].txt}}</text>
+      <!--好友头像 -->
+      <view class="icon_box player_photo friend_user" wx:if="{{data.daanBtn[0].ricon!=null}}">
+        <image src="{{data.daanBtn[0].ricon}}"> </image>
+      </view>
+    </view>
+    <!--答题2 style="left: {{data.daanBtn[1].left}}rpx"-->
+    <view bindtap="OnButtonClick" bindtouchstart="OnShopTouchStart" bindtouchend="OnShopTouchEnd" id="1" data-id="1" class="select_btn btns select_btn_2 {{data.daanBtn[1].style}} {{data.daanBtn[1].style}} {{data.btnst[data.daanBtn[1].v]}}" style="transform: scale({{data.btnShopScale_2}}"
+      hidden="{{data.daanBtn[1].txt==''}}">
+      <view class="icon_box player_photo" wx:if="{{data.daanBtn[1].licon!=null}}">
+        <image src="{{data.daanBtn[1].licon}}">
+        </image>
+      </view>
+      <text>{{data.daanBtn[1].txt}}</text>
+      <view class="icon_box player_photo friend_user" wx:if="{{data.daanBtn[1].ricon!=null}}">
+        <image src="{{data.daanBtn[1].ricon}}">
+        </image>
+      </view>
+    </view>
+    <!--答题3 style="left: {{data.daanBtn[2].left}}rpx"-->
+    <view bindtap="OnButtonClick" bindtouchstart="OnShopTouchStart" bindtouchend="OnShopTouchEnd" id="2" data-id="2" class="select_btn btns select_btn_3 {{data.daanBtn[2].style}} {{data.daanBtn[2].style}} {{data.btnst[data.daanBtn[2].v]}}" style="transform: scale({{data.btnShopScale_3}}"
+      hidden="{{data.daanBtn[2].txt==''}}">
+      <view class="icon_box player_photo" wx:if="{{data.daanBtn[2].licon!=null}}">
+        <image src="{{data.daanBtn[2].licon}}">
+        </image>
+      </view>
+      <text>{{data.daanBtn[2].txt}}</text>
+      <view class="icon_box player_photo friend_user" wx:if="{{data.daanBtn[2].ricon!=null}}">
+        <image src="{{data.daanBtn[2].ricon}}">
+        </image>
+      </view>
+    </view>
+    <!--答题4  style="left: {{data.daanBtn[3].left}}rpx" -->
+    <view bindtap="OnButtonClick" hidden="{{data.daanBtn[3].txt==''}}" wx:if='{{data.len==4}}' bindtouchstart="OnShopTouchStart" bindtouchend="OnShopTouchEnd" id="3" data-id="3" class="select_btn btns select_btn_4 {{data.daanBtn[3].style}} {{data.daanBtn[3].style}} {{data.btnst[data.daanBtn[3].v]}}">
+      <view class="icon_box player_photo" wx:if="{{data.daanBtn[3].licon!=null}}">
+        <image src="{{data.daanBtn[3].licon}}"></image>
+      </view>
+      <text>{{data.daanBtn[3].txt}}</text>
+      <view class="icon_box player_photo friend_user" wx:if="{{data.daanBtn[3].ricon!=null}}">
+        <image src="{{data.daanBtn[3].ricon}}">
+        </image>
+      </view>
+    </view>
+    <view class="skip" wx:if="{{data.showView}}">
+      <view class="line_three"></view>
+      <view bindtap="textBtn" class="btn_texta {{!data.showViewone?'showone':''}}">
+        <view class="btn_text_a ">文字</view>
+      </view>
+      <view bindtap="faceBtn" class="btn_facea {{data.showViewone?'showone':''}}">
+        <view class="btn_face_a ">表情</view>
+      </view>
+      
+    <!--聊天和答题区域分割线-->
+    <view class='btn_line' >  </view>
+      <view class="skip_a" bindtap="onChangeShowState_gb"></view>
+      <scroll-view scroll-y class='line_one' wx:if="{{!data.showViewone}}">
+      <view class="farme_ab">
+
+      <!--文字点击区域-->
+      <view class='farme_ac'  wx:for="{{data.itema}}" wx:key="item_{{index}}"  bindtap="onTxtClick"  data-id="{{item.id}}">
+        <view class="dot"></view>
+        <view class="content">{{item.TextPre}}</view>
+        <view class="wire"></view>
+        </view>
+        </view>
+      </scroll-view>
+
+      <scroll-view scroll-y class='line_one'  wx:if="{{data.showViewone}}">
+        <view class='farme'>
+          <!--表情点击区域-->
+          <view class='farmeb'  wx:for="{{data.items}}" wx:key="item_{{index}}" bindtap="onBQClick" data-id="{{item.id}}">
+            <view class="img_one">
+              <image src="{{item.Picture}}" style="width:108rpx; height:108rpx"></image>
+            </view>
+            <view class="face_b">
+              {{item.PictureName}}
+            </view>
+          </view>
+          <!-- <view class='farmeb'>
+            <view class="img_one">
+              <image src='../../imgs/fight/chart_btn.png' style="width:58rpx; height:58rpx"></image>
+            </view>
+            <view class="face_b">
+              笑脸
+            </view>
+          </view> -->
+        </view>
+      </scroll-view>
+
+      <view class="line_a"></view>
+    </view>
+  
+    <!--聊天底框-->
+    <view class='btn_face ' wx:if="{{false}}" >
+      <image src='../../imgs/fight/chart_db.png' style="width:708rpx; height:100rpx"></image>
+    </view>
+
+    <!--聊天内容滚动-->
+    <scroll-view scroll-y="true"  wx:if="{{false}}" scroll-top="{{data.scrollTop}}" scroll-with-animation="true" class="farme_flow"  >
+      <view class="base_speak" wx:for="{{data.speekItems}}" wx:key="spk_{{index}}" >
+        <!--发言人头像-->
+        <image class="{{item.ply.isLeft?'base_img':'rad_border'}}" src='{{item.ply.iconurl}}' style="width:28rpx;height:28rpx"></image>
+
+        <!--发言人名字-->
+        <view class="name_a">{{item.ply.name}}说：</view>
+
+        <!--发言文本-->
+        <view class="speak_a" wx:if="{{item.txt}}" >{{item.txt}}</view>
+
+        <!--发言表情-->
+        <view class="speak_img" wx:if="{{item.emoticon}}"><image src="{{item.emoticon}}"  style="width:28rpx;height:28rpx" ></image></view>
+        
+      </view>
+    </scroll-view>
+  <!--聊天右侧的笑脸按钮-->
+    <view class="baseboard" bindtap="onChangeShowState"  wx:if="{{false}}" >
+      <image src='../../imgs/fight/chart_btn.png' style="width:64rpx; height:64rpx"></image>
+    </view>
+    
+  </view>
+
+</template>

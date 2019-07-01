@@ -1,0 +1,266 @@
+/* pages/ready/readyPage.wxss */
+
+@import "./ready.wxss"; 
+@import "./ready_fight.wxss"; 
+page
+{
+  width:100%;
+  height: 100%;
+  background-color: #f6dcba;
+   /* background-image:linear-gradient(0deg,#0d3d5b,#4f2e73); */
+}
+
+/*一对一 左 匹配成功  */
+.ready .left_An
+{
+  animation:Anima_left 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Anima_left {
+  0% {
+    display: block;
+    left:-430rpx;
+  }
+  100%
+  {
+      left:0rpx;
+      
+  }
+}
+
+/*一对一 右 匹配成功  */
+.ready .right_An
+{
+  animation:Anima_right 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Anima_right {
+  0% {
+    right:-430rpx;
+     display: block;
+  }
+  100%
+  {
+      right:0rpx;
+      
+  }
+}
+
+/*一对一 Vs  */
+
+.ready .top_VS
+{
+  animation:Anima_toVS 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Anima_toVS {
+  0% {
+    top:-430rpx;
+     display: block;
+  }
+  100%
+  {
+     top:0
+  }
+}
+
+  /*匹配成功 左边头像移动  */
+.ready .hide_left_1v1_ani
+{
+  animation:Anima_toHeader 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Anima_toHeader {
+  0% {
+    left:-50rpx;
+     display: block;
+  }
+  100%
+  {
+     left:80rpx;
+  }
+}
+/*匹配成功 右边头像移动  */
+
+.ready .hide_right_1v1_ani
+{
+  animation:Anima_toHeader_right 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Anima_toHeader_right {
+  0% {
+    right:0rpx;
+     display: block;
+  }
+  100%
+  {
+     right:80rpx;
+  }
+}
+/*3v3匹配成功后，头像隐藏  */
+.ready .hidden_left
+{
+  animation:Anima_3v3_hidden_left 0.5s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes Anima_3v3_hidden_left {
+  0% {
+    left:16rpx;
+  }
+  100%
+  {
+    left:-400rpx;
+  }
+}
+/*3v3 显示地板-自己  */
+.ready .Ani_DB_Show_left_self
+{
+  animation:Ani_V3_Left_self 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_Left_self {
+  0% {
+    left:-2220rpx;
+  }
+  100%
+  {
+    left:0;
+  }
+}
+/*3v3 显示地板-左_1  */
+.ready .Ani_DB_Show_left
+{
+  animation:Ani_V3_Left 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_Left {
+  0% {
+    left:-2220rpx;
+  }
+  100%
+  {
+    left:-110rpx
+  }
+}
+/*3v3 显示地板-左_2  */
+.ready .Ani_DB_Show_left_ok
+{
+  animation:Ani_V3_Left_ok 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_Left_ok {
+  0% {
+    left:-110rpx;
+  }
+  100%
+  {
+    left:0;
+  }
+}
+/*3v3 显示地板-左_2  */
+.ready .Ani_DB_Show_left_photo
+{
+  animation:Ani_V3_Left_ok_photo 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_Left_ok_photo {
+  0% {
+    left:-94rpx;
+  }
+  100%
+  {
+    left:16rpx;
+  }
+}
+/*3v3 显示地板-右_2  */
+.ready .Ani_DB_Show_right_photo
+{
+  animation:Ani_V3_Right_ok_photo 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_Right_ok_photo {
+  0% {
+    right:-94rpx;
+  }
+  100%
+  {
+    right:16rpx;
+  }
+}
+
+/*3v3 显示地板-右  */
+.ready .Ani_DB_Show_right
+{
+  animation:Ani_V3_right 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_right {
+  0% {
+    right:-1220rpx;
+  }
+  100%
+  {
+    right:-110rpx;
+  }
+}
+
+/*3v3 显示地板-右  */
+.ready .Ani_DB_Show_right_ok
+{
+  animation:Ani_V3_right_ok 0.3s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0s
+}
+@keyframes Ani_V3_right_ok {
+  0% {
+    right:-110rpx;
+  }
+  100%
+  {
+    right:0rpx;
+  }
+}
+
+/*3v3 挑战开始缩放  */
+.ready .Fight_Start_Ani
+{
+  animation:Fight_Start 0.3s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes Fight_Start {
+  0% {
+    transform: scale(1.5)
+  }
+  100%
+  {
+    transform: scale(1)
+  }
+}
+
+/*等待结束淡出动画  */
+
+.ready .Fight_Waite_Out_Ani
+{
+  animation:Fight_Waite 0.3s linear;
+  animation-fill-mode:forwards;
+}
+@keyframes Fight_Waite {
+  0% {
+    opacity: 1
+  }
+  100%
+  {
+    opacity: 0
+  }
+}

@@ -1,0 +1,80 @@
+/* pages/subPackages/components/level-succ/level-succ.wxss */
+.fixed
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0,0.8);
+}
+.db
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50% - 344rpx);
+  width: 580rpx;
+  height: 730rpx;
+}
+.title_bg
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:-90rpx;
+}
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:68rpx;
+}
+.level_img
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:138rpx;
+
+}
+.cc
+{
+    min-width: 188rpx;
+  height: 64rpx;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:460rpx;
+  box-sizing: border-box;
+  border:2rpx solid #f0b75a;
+  border-radius: 32rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.font_style
+{
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 64rpx;
+  font-weight: bold;
+  padding: 0 20rpx;
+}
+.go_on_fight
+{
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:550rpx;
+}
+.back_btn
+{
+   position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom: -155rpx
+
+}

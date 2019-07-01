@@ -1,0 +1,3 @@
+<view class="center" bindtap="onPlay">
+  <image src="{{src}}" style="width:34px;height:33px;"></image>
+</view>

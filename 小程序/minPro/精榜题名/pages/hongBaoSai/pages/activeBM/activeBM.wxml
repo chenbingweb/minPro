@@ -1,0 +1,39 @@
+ <view class="fixed">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="icon_box">
+        <image src="../../img/activeDetail/tx_bg_3.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../img/activeDetail/tx_bg_3.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+    </view>
+    <!-- 站内信 标题 -->
+    <view class="msg_title icon_box">
+      <image src="../../img/activeBM/bm.png" style="width:317rpx;height:86rpx"></image>
+    </view>
+    <!-- 活动详情 -->
+    <view class="acitve_detail rr">
+      <view class="icon_box">
+        <image src="../../img/activeBM/bm_1.png" style="width:525rpx;height:440rpx;"></image>
+      </view>
+      <view class="absolute bm_info">
+        <view class="info_item_titile">姓名</view>
+        <view class="input_box">
+          <input name="name" class="input_1" placeholder="请输入"></input>
+        </view>
+        <view class="info_item_titile">手机号</view>
+        <view class="input_box">
+          <input name="mobile" type="number" class="input_1"  placeholder="11位手机号"></input>
+        </view>
+      </view>
+    </view>
+    <!-- 报名 -->
+    <view class="icon_box bm">
+      <image src="../../img/activeDetail/bm_btn.png" style="width:376rpx;height:119rpx;"></image>
+    </view>
+     <!-- 返回 -->
+    <view class="back" bindtap="OnBack">
+      <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+    </view>
+</view>

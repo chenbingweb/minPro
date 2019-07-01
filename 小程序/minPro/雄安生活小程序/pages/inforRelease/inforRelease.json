@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "资讯发布",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+}

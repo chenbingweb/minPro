@@ -1,0 +1,28 @@
+<view class="fixed">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="bg icon_box">
+        <image src="../../img/acitveList/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../img/acitveList/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+    </view>
+    <!-- 标题 -->
+    <view class="title icon_box">
+      <image src="../../img/acitveList/active_title.png" style="width:232rpx;height:66rpx"></image>
+    </view>
+    <!-- 活动列表 -->
+    <scroll-view class="scroll" scroll-y>
+      <view>
+        <view class="item_active relative" wx:for="{{[1,2,2,1]}}" wx:key="item_{{index}}">
+        <!-- 背景 -->
+          <view class="bg_item"></view>
+          <view class="icon_box bg_img">
+            <image src="../../img/acitveList/bg_4.png" style="width600rpx;height:290rpx;"></image>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>

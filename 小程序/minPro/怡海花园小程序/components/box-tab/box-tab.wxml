@@ -1,0 +1,11 @@
+<view>
+  <view class="icon_box arrow" catchtap="showTab">
+    <image wx:if="{{tname==''}}" src="../../images/arrow_down_1.png" style="width:19rpx;height:11rpx;"></image>
+    <view wx:else style="color:#8e8e8e;font-size:24rpx;">{{tname}}</view>
+  </view>
+  <view class="select_box" wx:if="{{showTab}}" >
+    <view class="item" wx:for="{{select}}" wx:key="item_{{index}}" bindtap="onSelectBtn" data-id="{{item.id}}">
+      {{item.name}}
+    </view>
+  </view>
+</view>

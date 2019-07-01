@@ -1,0 +1,105 @@
+<pay-list shows="{{shows}}" bindselectPay="selectPayEvent" />
+<job-three shows="{{jobShows}}" value="{{valueArr}}" bindselectJob="selectJob"/>
+<view class="search_box">
+  <view class="input_box">
+    <view class="icon_box">
+      <image src="../../images/searc_icon.png" style="width:29rpx;height:28rpx"></image>
+    </view>
+    <input placeholder-class="place_holder" bindconfirm="confirmEvent" placeholder="输入关键字" class="input_btn" />
+  </view>
+</view>
+<!--筛选 <picker mode="region"-->
+<view class="filter_box">
+  <picker range="{{areaList}}" class="flex_center" style="width:33.333%"  bindchange="bindRegionChange" value="{{regionIndex}}" range-key="name">
+    <view class="filter_item" style="width:230rpx">
+      <view style="padding-right:10rpx;text-align:center">{{areaList[regionIndex].name}}</view>
+      <input hidden name="area" value="{{areaList[regionIndex].id}}" />
+      <!-- <picker mode="region" custom-item="请选择" style="padding-right:10rpx;" value="{{region}}" bindchange="bindRegionChange">{{region[2]&&region[2]!='请选择'?region[2]:'区域'}}</picker> -->
+      <view class="icon_box">
+        <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+      </view>
+    </view>
+  </picker>
+  <view class="filter_item" bindtap="jobStyleEvent">
+    <view style="padding-right:10rpx;">{{jobName}}</view>
+    <view class="icon_box">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view>
+  <view class="filter_item" bindtap="showPayList">
+    <view style="padding-right:10rpx;">
+      <text>薪资</text>
+      <text wx:if="{{selectPay.pay_start}}">{{selectPay.pay_start+'k~'+selectPay.pay_end+'k'}}</text>
+    </view>
+    <view class="icon_box">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view>
+  <view class="filter_item" wx:if="{{false}}" bindtap="sortEvent">
+    <view style="padding-right:10rpx;">排序</view>
+     <view class="icon_box" wx:if="{{sort=='desc'}}">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+     <view wx:else class="icon_box" style="transform:rotate(180deg)">
+      <image src="../../images/arraw_down.png" style="width:16rpx;height:9rpx"></image>
+    </view>
+  </view>
+</view>
+<!--列表  -->
+<view class="boss_list">
+  <paging dataObj="{{dataObj}}" bindpageData="pageData">
+    <view slot="list">
+      <navigator url="../jobDetail/jobDetail?id={{item.id}}&time={{item.create_at}}" wx:for="{{bossList}}" wx:key="item_{{index}}">
+        <view class="list_item">
+          <view class="flex_start">
+            <view class="icon_box" style="margin-right:10rpx">
+                <image src="{{item.head_img}}" style="width:80rpx;height:80rpx;border-radius:50%"></image>
+            </view>
+            <view style="width:590rpx">
+              <view class="job_box">
+                <view class="job_name inline_flex">
+                  <view>{{item.category}}</view>
+                  <view class="top" wx:if="{{item.is_top=='1'}}">置顶</view>
+                </view>
+                <view class="money">{{item.pay_start}}K-{{item.pay_end}}K</view>
+              </view>
+              <view class="company_name">
+                {{item.company}}
+              </view>
+            </view>
+          </view>
+          <view class="flex_start" style="flex-wrap:wrap;">
+            <view class="label_item" style="margin-top:10rpx" wx:key="index_{{index}}" wx:for="{{item.tag}}" wx:if="tag_{{index}}">{{item}}</view>
+
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </paging>
+</view>
+
+<!--
+
+  <paging dataObj="{{dataObj}}" bindpageData="pageData">
+    <view slot="list">
+      <navigator url="../jobDetail/jobDetail?id={{item.id}}" wx:for="{{bossList}}" wx:key="item_{{index}}">
+        <view class="list_item">
+          <view class="job_box">
+            <view class="job_name inline_flex">
+              <view>{{item.category}}</view>
+              <view class="top" wx:if="{{item.is_top}}">置顶</view>
+            </view>
+            <view class="money">{{item.pay_start}}K-{{item.pay_end}}K</view>
+          </view>
+          <view class="company_name">
+            {{item.company}}
+          </view>
+          <view class="flex_start" style="flex-wrap:wrap;">
+            <view class="label_item" style="margin-top:10rpx" wx:key="index_{{index}}" wx:for="{{item.tag}}" wx:if="tag_{{index}}">{{item}}</view>
+
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </paging>
+  -->

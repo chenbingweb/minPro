@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "db": "/dati_comm/components/db/db",
+    "light": "/dati_comm/components/light/light"
+  }
+}

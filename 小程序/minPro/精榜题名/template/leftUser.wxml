@@ -1,0 +1,46 @@
+<template name="leftUser">
+      <view class="user_box hide_left_1v1_ani" style="top:{{top}}rpx;"> 
+        <view class="{{PlyCount==3&&plr.icon?'Ani_DB_Show_left_photo':''}}" style="position:absolute;z-index:10;left:{{PlyCount==3?'-76rpx':'16rpx'}}" wx:if="{{plr.v}}">
+          <view class="user_ph" wx:if="{{plr.icon}}">
+              <view class="icon_box">
+                <image src="{{plr.icon}}" class="user_photo"></image>
+              </view>
+          </view> 
+
+          <!--好友等待 -->
+         <view class="left_wait" wx:if="{{!plr.icon&&!plr.gifwait}}" >?</view>
+          <view class="waiting_statue icon_box"  style="border-color:#37b9ff" wx:if="{{false}}">
+              <!--VIP图标  -->
+              <view class="new_vip" wx:if="{{plr.hf==1&&plr.icon}}">
+                    <image mode="aspectFit"src="/imgs/comm/vip.png" style="width:30rpx;height:30rpx" ></image>
+              </view>
+              <image src="/imgs/fight/waiting_icon.gif" style="width:75rpx;height:27rpx"></image>
+          </view> 
+
+          <!--3v3 单打 等待提示  -->
+          <view class="waiting_statue icon_box" style="border-color:#37b9ff"  wx:if="{{!plr.icon&&plr.gifwait}}" >
+              <image src="/imgs/fight/ready_waiting.gif" style="width:93rpx;height:93rpx;border-radius:50%"></image>
+          </view> 
+
+          <!--头框  --> 
+         <view class="new_frame" wx:if="{{plr.k}}">
+          <image  src="{{plr.k}}" style="width:100%;height:100%"></image>
+         </view>
+
+          <!--VIP图标  -->
+          <view class="new_vip" wx:if="{{plr.hf==1&&plr.icon}}">
+                <image mode="aspectFit"src="/imgs/comm/vip.png" style="width:30rpx;height:30rpx" ></image>
+          </view>
+          <!--显示玩家名称  -->
+          <view class="user_name one_line" wx:if="{{plr.name}}">
+            {{plr.name}}
+          </view>
+          <!--不显示  -->
+          <view style="text-align:center" class="user_name one_line" wx:else>
+            ????
+          </view>
+        </view>
+         <view wx:if="{{false}}" class="photo_label_mark pos team" >队长</view>
+         <view wx:if="{{item.icon&&item.v}}" class="photo_label_mark pos ready">已准备</view>
+      </view>
+</template>

@@ -1,0 +1,54 @@
+ <view class="fixed" style="background-color: #f6dcba;">
+      <fight-bottom/>
+      <!-- 头部背景 -->
+      <view class="top_bg icon_box">
+        <image src="../../../imgs/fight/fight_top.png" style="width:750rpx;height:350rpx;"></image>
+      </view>
+      <!-- 左边 -->
+      <view class="left_3v3">
+        <left-3v3 showprocess="{{false}}" plays="{{data.leftPly}}"/>
+      </view>
+      <!-- 右边 -->
+      <view class="right_3v3">
+        <right-3v3 showprocess="{{false}}" plays="{{data.rightPly}}"/>      
+      </view>
+
+     
+      <!-- 邀请好友 -->
+      <view class="yq_1v1">
+        <!-- 时间提示 -->
+        <view class="relative icon_box">
+          <image src="../../../imgs/ready/t_b.png" style="width:166rpx;height:78rpx"></image>
+          <view class="absolute time">
+            {{data.countdown}}
+          </view>
+        </view>
+        <view class="yq_btn flex_start">
+          <view class="icon_box">
+            <image src="../../../imgs/fightOver/go_on_l.png" style="width:58rpx;height:119rpx;"></image>
+          </view>
+           <view class="icon_box">
+            <image src="../../../imgs/fightOver/go_on_m.png" style="width:204rpx;height:119rpx;"></image>
+          </view>
+           <view class="icon_box">
+            <image src="../../../imgs/fightOver/go_on_r.png" style="width:57rpx;height:119rpx;"></image>
+          </view>
+          <view class="icon_box yq_title">
+            <image src="../../../imgs/ready/y_q_h_y.png" style="width:190rpx;height:53rpx;"></image>
+          </view>
+           <button open-type="share"class="bl"  data-page="{{data.wndname}}" data-id="yaoqing" ></button>
+  
+        </view>
+
+      </view>
+      <!-- 开始切磋 start_fight.png-->
+      <view class="start" bindtap="OnStart"   wx:if="{{data.showStart}}">
+       
+        <view class="icon_box">
+          <image src="../../../imgs/ready/start_fight.png" style="width:376rpx;height:120rpx;"></image>
+        </view>
+      </view>
+      <view class="back" bindtap="Back">
+        <image src="../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+      </view>
+    </view>

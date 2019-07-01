@@ -1,0 +1,406 @@
+<import src="../../../../dati_comm/template/Grid9.wxml" />
+
+<import src="../../../../dati_comm/template/Grid3.wxml" />
+
+<template name="ranking">
+  <!--left:{{data.wndPosX}}rpx;  -->
+  <view class="fixed ranking" style="opacity:{{data.wndAlpha}};">
+    <!--背景  -->
+    <view class="rank_bg icon_box">
+      <image src="../../imgs/comm/fight_bg.png"></image>
+    </view>
+    <view style="opacity:0" class="{{data.Ani_show}}">
+      <view class="line_bg">
+        <template is="Grid9" data="{{grid:data.line_bg}}"></template>
+      </view>
+      <!--排行头部 -->
+      <view class="ranking_header_box">
+        <!--背景-->
+        <view class="ranking_bg icon_box">
+          <image mode="aspectFit" src="../../imgs/ranking/rangking_3.png" style="width:718rpx;height:500rpx"></image>
+        </view>
+        <!--更新  -->
+        <view class="icon_box update">
+          <template is="Grid3" data="{{grid:data.time_bg}}"></template>
+          <view class="note_info">邀请好友对战后即可查看好友排名</view>
+        </view>
+        <!--冠军  -->
+        <view class="box one">
+          <!--用户所在地-->
+          <view class="come_from" style="right:0rpx" wx:if="{{data.items.length>=1&&false}}">
+            (来自：{{data.items[0].city}})
+          </view>
+          <view class="number_one img_bg">
+            <view class="icon_box" style="width:178rpx;height:236rpx;">
+              <image src="../../imgs/ranking/one.png" style="width:178rpx;height:236rpx;"></image>
+            </view>
+          </view>
+          <!--用户头像  -->
+          <view class="photo_pic icon_box" wx:if="{{data.items.length>=1}}">
+            <image mode="aspectFill" src="{{data.items[0].icon}}" style="width:126rpx;height:126rpx;"></image>
+          </view>
+          <!--没有头像  -->
+          <view class="photo_pic_no photo_pic" style="left:42rpx;top:59rpx" wx:if="{{data.items.length==0}}">?</view>
+          <!--用户名  -->
+          <view class="name">
+            <view class="name_bg">
+              <template is="Grid3" data="{{grid:data.y_d_bg}}"></template>
+            </view>
+            <view class="name_text one_line" wx:if="{{true}}">
+              {{data.items.length>=1?data.items[0].name:"???"}}
+            </view>
+            <!--没有用户名-->
+            <view class="name_text one_line" wx:if="{{false}}">
+              ???
+            </view>
+          </view>
+          <!--最强王者(1)  wx:if="{{data.items.length>=1}}"-->
+          <view class="label" style="margin:0 auto;margin-top: 10rpx;" wx:if="{{data.items.length>=1}}">
+            <view class="labe_bg">
+              <template is="Grid3" data="{{grid:data.lable_bg}}"></template>
+            </view>
+            <view class="label_name">
+              {{data.items.length>=1?data.items[0].title+ data.items[0].lm:""}}
+            </view>
+          </view>
+          <!--金币  -->
+          <view class="coin" style="margin:0 auto; margin-top: 10rpx;" wx:if="{{data.items.length>=1}}">
+            <view class="coin_bg">
+              <template is="Grid3" data="{{grid:data.coin_bg}}"></template>
+            </view>
+            <!--星级显示  -->
+            <view class="start_box">
+              <view class="icon_box" wx:for="{{ data.items[0].lv3star}}" wx:key="xing0_{{index}}">
+                <image src="../../imgs/ranking/start_style.png" style="width:31rpx;height:31rpx"></image>
+              </view>
+            </view>
+            <view class="coin_total" wx:if="{{false}}">
+              {{data.items.length>=1?data.items[0].money:"?"}}
+            </view>
+            <view class="coin_img icon_box" wx:if="{{false}}">
+              <image src="../../imgs/comm/xf.png" style="width:36rpx;height:36rpx;"></image>
+            </view>
+          </view>
+          <!--虚位以待  -->
+          <view class="wait_size" wx:if="{{data.items.length==0}}">
+            虚位以待
+          </view>
+        </view>
+        <!--亚军  -->
+        <view class="box two">
+          <!--用户所在地-->
+          <view class="come_from" style="font-size:20rpx;right:-16rpx;" wx:if="{{data.items.length>=2&&false}}">
+            (来自：{{data.items[1].city}} )
+          </view>
+          <view class="number_one img_bg">
+
+            <view class="icon_box" style="width:140rpx;height:190rpx;">
+              <image src="../../imgs/ranking/two.png" style="width:140rpx;height:190rpx;"></image>
+            </view>
+          </view>
+          <!--用户头像  -->
+          <view class="photo_pic icon_box" style="top:50rpx;left:35rpx;" wx:if="{{data.items.length>=2}}">
+            <image mode="aspectFill" src="{{data.items[1].icon}}" style="width:100rpx;height:100rpx;"></image>
+          </view>
+          <!--没有头像  -->
+          <view class="photo_pic_no photo_pic" style="top:50rpx;left:35rpx;width:100rpx;height:100rpx;line-height:100rpx;font-size:66rpx" wx:if="{{data.items.length<2}}">?</view>
+          <!--用户名  -->
+          <view class="name">
+            <view class="name_bg">
+              <template is="Grid3" data="{{grid:data.y_d_bg_1}}"></template>
+            </view>
+            <view class="name_text one_line" style="font-size:24rpx;color:white" wx:if="{{data.items.length>=2}}">
+              {{data.items[1].name}}
+            </view>
+            <!--没有用户名-->
+            <view class="name_text one_line" style="color:white;font-size:22rpx" wx:if="{{data.items.length<2}}">
+              ???
+            </view>
+          </view>
+          <!--最强王者 wx:if="{{data.items.length>=2}}"-->
+          <view class="label" style="width:138rpx" wx:if="{{data.items.length>=2}}">
+            <view class="labe_bg">
+              <template is="Grid3" data="{{grid:data.lable_bg_2}}"></template>
+            </view>
+            <view class="label_name" style="font-size:22rpx;top:7rpx;">
+              {{data.items.length>=1?data.items[1].title+ data.items[1].lm:""}}
+            </view>
+          </view>
+          <!--金币  -->
+          <view class="coin" style="width:130rpx;margin:0 auto;" wx:if="{{data.items.length>=2}}">
+            <view class="coin_bg">
+              <template is="Grid3" data="{{grid:data.coin_bg}}"></template>
+            </view>
+            <!--星级显示  -->
+            <view class="start_box">
+              <view class="icon_box" wx:for="{{data.items[1].lv3star}}" wx:key="xing1_{{index}}">
+                <image src="../../imgs/ranking/start_style.png" style="width:31rpx;height:31rpx"></image>
+              </view>
+            </view>
+
+            <view class="coin_total" wx:if="{{false}}">
+              {{data.items[1].money}}
+            </view>
+            <view class="coin_img icon_box" style="top:4rpx" wx:if="{{false}}">
+              <image src="../../imgs/comm/xf.png" style="width:30rpx;height:30rpx;"></image>
+            </view>
+          </view>
+
+          <!--虚位以待  -->
+          <view class="wait_size" style="font-size:22rpx;" wx:if="{{data.items.length<2}}">
+            虚位以待
+          </view>
+        </view>
+        <!--季军  -->
+        <view class="box three">
+          <!--用户所在地-->
+          <view class="come_from" style="font-size:20rpx;right:-16rpx;" wx:if="{{data.items.length>=3&&false}}">
+            (来自：{{data.items[2].city}} )
+          </view>
+          <view class="number_one img_bg">
+            <view class="icon_box" style="width:140rpx;height:190rpx;">
+              <image src="../../imgs/ranking/three.png" style="width:140rpx;height:190rpx;"></image>
+            </view>
+          </view>
+          <!--用户头像  -->
+          <view class="photo_pic icon_box" style="top:50rpx;left:35rpx;" wx:if="{{data.items.length>=3}}">
+            <image mode="aspectFill" src="{{data.items[2].icon}}" style="width:100rpx;height:100rpx;"></image>
+          </view>
+          <!--没有头像  -->
+          <view class="photo_pic_no photo_pic" style="top:47rpx;left:35rpx;width:102rpx;height:102rpx;line-height:100rpx;font-size:66rpx" wx:if="{{data.items.length<3}}">?</view>
+          <!--用户名  -->
+          <view class="name">
+            <view class="name_bg">
+              <template is="Grid3" data="{{grid:data.y_d_bg_1}}"></template>
+            </view>
+            <view class="name_text one_line" style="font-size:24rpx;color:white" wx:if="{{data.items.length>=3}}">
+              {{data.items[2].name}}
+            </view>
+            <!--没有用户名-->
+            <view class="name_text" wx:if="{{data.items.length<3}}" style="color:white;font-size:22rpx">
+              ???
+            </view>
+          </view>
+
+          <!--最强王者 wx:if="{{data.items.length>=3}}"-->
+          <view class="label" style="width:138rpx" wx:if="{{data.items.length>=3}}">
+            <view class="labe_bg">
+              <template is="Grid3" data="{{grid:data.lable_bg_2}}"></template>
+            </view>
+            <view class="label_name" style="font-size:22rpx;top:7rpx;">
+              {{data.items.length>=1?data.items[2].title+ data.items[2].lm:""}}
+            </view>
+          </view>
+          <!--金币  -->
+          <view class="coin" style="width:130rpx;margin:0 auto;" wx:if="{{data.items.length>=3}}">
+            <view class="coin_bg">
+              <template is="Grid3" data="{{grid:data.coin_bg}}"></template>
+            </view>
+            <!--星级显示  -->
+            <view class="start_box">
+              <view class="icon_box" wx:for="{{data.items[2].lv3star}}" wx:key="xing2_{{index}}">
+                <image src="../../imgs/ranking/start_style.png" style="width:31rpx;height:31rpx"></image>
+              </view>
+            </view>
+
+            <view class="coin_total" wx:if="{{false}}">
+              {{data.items[2].money}}
+            </view>
+            <view class="coin_img icon_box" style="top:4rpx" wx:if="{{false}}">
+              <image src="../../imgs/comm/xf.png" style="width:30rpx;height:30rpx;"></image>
+            </view>
+          </view>
+          <!--虚位以待  -->
+          <view class="wait_size" style="font-size:22rpx;" wx:if="{{data.items.length<3}}">
+            虚位以待
+          </view>
+        </view>
+      </view>
+
+      <!--排行列表-->
+      <scroll-view class="ph_scroll" scroll-y>
+        <view style="padding-bottom:60rpx; min-height:650rpx;box-sizing: border-box;">
+          <view class="list_item" wx:for="{{data.items}}" wx:key="ranking_{{index}}">
+            <view class="child_1">
+              {{index+1}}
+            </view>
+            <view class="child_2">
+              <view class="user_photea">
+                <view class="icon_box user_photes">
+                  <image src="{{item.icon}}" style="width:80rpx;height:80rpx"></image>
+                </view>
+
+                <!--头框  -->
+                <!-- <view style="top:{{index*110+5}}rpx; position:absolute; left:90rpx; " wx:if="{{item.k}}">
+                  <image  src="{{item.k}}" style="width:95rpx;height:95rpx"></image>
+              </view> -->
+                <!--头框item.k  -->
+                <view class='img_tk' wx:if="{{item.k}}">
+                  <image src="{{item.k}}" style="width:102rpx;height:102rpx"></image>
+                </view>
+              </view>
+
+
+              <view class=" new_vipw" style="margin-top:60rpx;margin-left:-30rpx; " wx:if="{{item.vip==1}}">
+                <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+              </view>
+
+              <view class="simble_info">
+                <view style="color:#57419d" class="user_info_box">
+                  <view class="one_line" style="font-weight:bold">{{item.name}}</view>
+                  <view style="color:#91979f;font-size:20rpx;padding-left:8rpx" wx-if="{{false}}">(来自：{{item.city}})</view>
+                </view>
+                <view style="color:#9d98c0" class="info_box">
+                  <view style="font-weight:bold">{{item.title+ item.lm}}</view>
+                  <view class="icon_box" style="margin-left:10rpx">
+                    <image src="../../imgs/ranking/start_style.png" style="width:31rpx;height:31rpx"></image>
+                  </view>
+                  <view>X</view>
+                  <view style="color:#7c70af;font-weight:bold">{{item.lv3}}</view>
+                </view>
+              </view>
+            </view>
+            <!--等级  -->
+            <view class="child_3">
+              <view class="bg_1 icon_box">
+                <image src="../../imgs/comm/p_{{item.lv1}}.png" style="width:61rpx;height:61rpx"></image>
+              </view>
+              <view class="bg_2 icon_box">
+                <image mode="aspectFit" src="../../imgs/ranking/ele_db.png" style="width:74rpx;height:24rpx"></image>
+              </view>
+              <view class="bg_2 text_info">
+                {{item.lm}}
+              </view>
+            </view>
+            <view class="child_3" wx:if="{{false}}">
+              <view style="position:relative">
+                <view class="icon_bg_img">
+                  <template is="Grid3" data="{{grid:data.list_bg}}"></template>
+                </view>
+                <view class="icon_bg_icon icon_box">
+                  <image src="../../imgs/comm/xf.png" style="width:40rpx;height:40rpx;"></image>
+                </view>
+                <view class="jb_num">
+                  {{item.money}}
+                </view>
+              </view>
+              <view class="font_style" wx-if="{{false}}">
+                (来自：{{item.city}})
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <!--滑动时出现头部阴影  -->
+      <view class="up_show_yy">
+        <!-- <template is="Grid3" data="{{grid:data.scroll_bg}}" ></template>  -->
+        <image src="../../imgs/ranking/scroll_yy.png" style="width:702rpx;height:34rpx"></image>
+      </view>
+
+      <!--我的排行  wx:for="{{data.items}}" wx:key="ranking_{{index}}"-->
+      <view class="my_range" wx:if="{{data.selfIdx>=0}}">
+        <view class="list_item">
+          <view class="child_1">
+            {{data.selfIdx+1}}
+          </view>
+          <view class="child_2">
+            <view class='user_photesa'>
+              <view class="icon_box user_photes">
+                <!--VIP -->
+                <view class="new_vip1" wx:if="{{data.items[data.selfIdx].vip == 1}}">
+                  <image mode="aspectFit" src="../../imgs/comm/vip.png" style="width:30rpx;height:30rpx"></image>
+                </view>
+                <image src="{{data.items[data.selfIdx].icon}}" style="width:80rpx;height:80rpx"></image>
+              </view>
+              <view class="new_framea" wx:if="{{data.items[data.selfIdx].k}}">
+                <image src="{{data.items[data.selfIdx].k}}" style="width:100rpx;height:100rpx"></image>
+              </view>
+            </view>
+            <view class="simble_info">
+              <view style="color:#57419d" class="user_info_box">
+                <view class="one_line" style="font-weight:bold">{{data.items[data.selfIdx].name}}</view>
+                <view style="color:#91979f;font-size:20rpx;padding-left:8rpx" wx-if="{{false}}">(来自：{{data.items[data.selfIdx].city}})</view>
+              </view>
+              <view style="color:#9d98c0" class="info_box">
+                <view style="font-weight:bold">
+                  {{data.items[data.selfIdx].title + data.items[data.selfIdx].lm}}
+                </view>
+                <view class="icon_box" style="margin-left:10rpx">
+                  <image src="../../imgs/ranking/start_style.png" style="width:31rpx;height:31rpx"></image>
+                </view>
+                <view>X</view>
+                <view style="color:#7c70af;font-weight:bold">{{data.items[data.selfIdx].lv3}}</view>
+              </view>
+            </view>
+          </view>
+          <!--等级  -->
+          <view class="child_3">
+            <view class="bg_1 icon_box">
+              <image src="../../imgs/comm/p_{{data.items[data.selfIdx].lv1}}.png" style="width:61rpx;height:61rpx"></image>
+            </view>
+            <view class="bg_2 icon_box">
+              <image mode="aspectFill" src="../../imgs/ranking/ele_db.png" style="width:74rpx;height:24rpx"></image>
+            </view>
+            <view class="bg_2 text_info">
+              {{data.items[data.selfIdx].lm}}
+            </view>
+          </view>
+          <view class="child_3" wx:if="{{false}}">
+            <view style="position:relative">
+              <view class="icon_bg_img">
+                <template is="Grid3" data="{{grid:data.list_bg}}"></template>
+              </view>
+              <view class="icon_bg_icon icon_box">
+                <image src="../../imgs/comm/xf.png" style="width:40rpx;height:40rpx;"></image>
+              </view>
+              <view class="jb_num">
+                {{item.money}}
+              </view>
+            </view>
+            <view class="font_style" wx-if="{{false}}">
+              (来自：{{item.city}})
+            </view>
+
+          </view>
+        </view>
+        <!--
+      <view class="list_item" wx:if="{{false}}" style="width:670rpx;position:relative;left:-4rpx">
+        <view class="child_1">
+          {{data.selfIdx+1}}
+        </view>
+        <view class="child_2">
+          <view class="icon_box user_photes" style='overflow:hidden'>
+            <image src="{{data.items[data.selfIdx].icon}}" style="width:75rpx;height:75rpx"></image>
+          </view>
+          <view class="simble_info">
+            <view style="color:#57419d">{{data.items[data.selfIdx].name}}</view>
+            <view style="color:#9d98c0" wx:if="{{false}}">{{data.items[data.selfIdx].title}}</view>
+          </view>
+        </view>
+        <view class="child_3">
+          <view style="position:relative">
+            <view class="icon_bg_img">
+              <template is="Grid3" data="{{grid:data.list_bg}}" ></template>  
+            </view>
+            <view class="icon_bg_icon icon_box">
+              <image src="../../imgs/comm/xf.png" style="width:40rpx;height:40rpx;"></image>
+            </view>
+            <view class="jb_num">
+              {{data.items[data.selfIdx].money}}
+            </view>
+          </view>
+          <view class="font_style" wx-if="{{false}}">
+            (来自：{{data.items[data.selfIdx].city}})
+          </view>
+        </view>
+      </view>  -->
+      </view>
+      <!--返回  -->
+      <view class="back icon_box" bindtap="OnClick" wx:if="{{false}}" style="width:86rpx;height:86rpx;" data-page="{{data.wndname}}" data-evt="OnCloseClick">
+        <!-- <image src="../../imgs/ranking/back_icon.png" style="width:58rpx;height:70rpx;"></image> -->
+        <image src="../../imgs/shope/back.png" style="width:76rpx;height:76rpx"></image>
+      </view>
+    </view>
+  </view>
+</template>

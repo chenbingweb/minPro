@@ -1,0 +1,250 @@
+<pay-list shows="{{shows}}" bindselectPay="selectPayEvent">
+</pay-list>
+
+<job-three 
+  shows="{{jobShows}}" value="{{valueArr}}" bindselectJob="selectJob"
+/>
+<year-list shows="{{yearShows}}" bindselectYear="selectYearEvent" />
+<view>
+  <form class="send_box" bindsubmit="formSubmit" report-submit>
+    <!--上传图片upload_phote.png 
+    <view class="up_box flex_center">
+      <view class="icon_box">
+        <image src="../../images/upload_phote.png" style="width:106rpx;height:87rpx;"></image>
+      </view>
+      <view class="f_30_999" style="margin-top:26rpx;">
+        添加照片
+      </view>
+    </view> -->
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        公司名称
+      </view>
+      <view style="color:#999">
+        <input name="company" class="input_style" placeholder="请输入公司名称"></input>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        公司地址
+      </view>
+      <navigator url="../companyAddress/companyAddress">
+        <view style="color:#999">
+          <input disabled name="address" class="input_style select_style" value="{{address}}" placeholder="请选择"></input>
+          <input disabled hidden name="area" class="input_style select_style" value="{{area}}" placeholder="请选择"></input>
+        </view>
+      </navigator>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        联系人
+      </view>
+      <view mode="selector" style="color:#999">
+        <input name="username" class="input_style select_style" value='' placeholder="请输入联系人"></input>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        手机号码
+      </view>
+      <view style="color:#999">
+        <input name="userphone" class="input_style" placeholder="请输入手机号码"></input>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        薪资待遇
+      </view>
+      <view bindtap="showPayEvent" class="input_style select_style relative" style="color:#999">
+        <input disabled name="pay_start" hidden class="input_style select_style" value="{{selectPay.pay_start}}" placeholder="请选择"></input>
+        <input disabled name="pay_end" hidden class="input_style select_style" value="{{selectPay.pay_end}}" placeholder="请选择"></input>
+        <input disabled class="input_style select_style" value="{{selectPay.pay_start==''?'请选择':(selectPay.pay_start+'k~'+selectPay.pay_end+'k')}}" placeholder="请选择"></input>
+
+
+      </view>
+      <!-- <picker mode="selector" bindchange="selectPayEvent" range="{{payList}}" range-key="name" style="color:#999">
+        <input disabled name="pay" hidden class="input_style select_style" value="{{payList[payIndex].id}}" placeholder="请选择"></input>
+        <input disabled  class="input_style select_style" value="{{payList[payIndex].name}}" placeholder="请选择"></input>
+      </picker> -->
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        招聘岗位
+      </view>
+      <view bindtap="jobStyleEvent">
+        <view style="color:#999">
+          <input disabled name="category" class="input_style select_style" value="{{category=='类型'?'':category}}" placeholder="请选择"></input>
+        </view>
+      </view>
+      <!-- <navigator url="../bossSelectJob/bossSelectJob">
+        <view style="color:#999">
+          <input disabled name="category" class="input_style select_style" value='{{category}}' placeholder="请选择"></input>
+        </view>
+      </navigator> -->
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <!--跳转页面  -->
+      <view class="item_title">
+        岗位要求
+      </view>
+      <navigator url="../fillCompany/fillCompany?src=jobreq">
+        <view style="color:#999">
+          <input disabled name="detail" class="input_style select_style" value="{{detail}}" placeholder="请选择"></input>
+        </view>
+      </navigator>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        工作经验
+      </view>
+      <view style="color:#999" bindtap="showYearEvent">
+        <input wx:if="{{!selectYear.year_start}}" disabled class="input_style" placeholder="请选择工作经验"></input>
+        <input wx:elif="{{selectYear.year_start=='不限'}}" disabled class="input_style" value="不限" placeholder=""></input>
+        <input wx:else disabled class="input_style" value="{{selectYear.year_start+'~'+selectYear.year_end+'年'}}" placeholder="请选择工作经验"></input>
+         <input name="year_start" hidden value="{{selectYear.year_start}}" class="input_style" placeholder="请选择工作经验"></input>
+          <input  name="year_end" hidden value="{{selectYear.year_end}}" class="input_style" placeholder="请选择工作经验"></input>
+      </view>
+       <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        公司介绍
+      </view>
+      <navigator url="../fillCompany/fillCompany?src=company">
+        <view style="color:#999">
+          <input disabled name="company_detail" class="input_style select_style" value="{{company_detail}}" placeholder="请选择"></input>
+        </view>
+      </navigator>
+      <view class="icon_box">
+        <image src="../../images/arrow_right_2.png" style="width:16rpx;height:28rpx"></image>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        所属行业
+      </view>
+      <view style="color:#999">
+        <input name="industry" class="input_style" placeholder="请输入所属行业"></input>
+      </view>
+    </view>
+    <view class="company item flex_start f_30_333 ">
+      <view class="item_title">
+        公司规模
+      </view>
+      <view style="color:#999">
+        <input name="scale" class="input_style" placeholder="请输入公司规模"></input>
+      </view>
+    </view>
+    <view class="company_photo f_30_333 ">
+      <view class="company_photo_title">
+        公司照片
+      </view>
+      <view class="upload_photo flex_start">
+        <view class="icon_box up_box relative" style="background:white" wx:for="{{buildImg}}" wx:key="p_{{index}}">
+          <image mode="aspectFill" src="{{item}}" style="width:224rpx;height:224rpx"></image>
+           <image bindtap="delPhoto" data-index="{{index}}" src="../../images/del.png" style="position:absolute;right:0;top:-10rpx;width:50rpx;height:50rpx;"></image>
+        </view>
+        <view class="up_box flex_center" bindtap="selectPhoto" wx:if="{{showUpdateBtn}}">
+          <view class="icon_box">
+            <image src="../../images/upload_phote.png" style="width:106rpx;height:87rpx;"></image>
+          </view>
+          <view class="f_30_999" style="margin-top:12rpx;">
+            添加照片
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--标签选择  -->
+    <view class="label_select">
+      <view class="f_30_333 label_title">
+        可选标签
+      </view>
+      <checkbox-group bindchange="labelChange" name="tag" class="inline_flex label_box">
+        <label class="label_item {{item.selected?'selected_label':''}}" wx:for="{{lableList}}" wx:key="label_{{index}}">
+          {{item.name}}
+          <checkbox hidden value="{{item.id}}" checked="{{item.checked}}" />
+        </label>
+        <!-- <view class="label_item add_btn">添加</view> -->
+      </checkbox-group>
+      <!-- <view class="inline_flex label_box">
+        <view class="label_item">
+          简装
+        </view>
+        <view class="label_item">
+          一室两厅
+        </view>
+        <view class="label_item">
+          三室一厅
+        </view>
+        <view class="label_item">
+          两室一厅
+        </view>
+        <view class="label_item">
+          精装
+        </view>
+        <view class="label_item">
+          五证俱全
+        </view>
+        <view class="label_item">三室一厅</view>
+        <view class="label_item add_btn">添加</view>
+      </view> -->
+    </view>
+    <!--房屋介绍  -->
+    <view class="company item flex_start f_30_333 " wx:if="{{false}}" style="border:none;display:none">
+      <view class="item_title">
+        房屋介绍
+      </view>
+      <view style="color:#999">
+        <input name="company_name" class="input_style" placeholder="请输入手机号码"></input>
+      </view>
+    </view>
+    <!--是否顶置  -->
+    <view class="company item flex_between f_30_333 margin_bottom_10" style="border:none">
+      <view class="flex_start">
+        <view class="item_title">
+          是否置顶
+        </view>
+        <view style="color:#999">
+          <view class="set_top">置顶需支付{{price}}个雄心币</view>
+        </view>
+      </view>
+      <input name="is_top" hidden value="{{isTop}}"></input>
+      <switch class="switch" color="#fed545" checked="{{isTop}}" bindchange="switchEvent" />
+    </view>
+    <!--提交  -->
+    <view class="submit_box">
+      <view class="disclaimer flex_start">
+        <switch id="mz" class="switch" checked="{{isRead}}" type="checkbox" color="#fed545" bindchange="switchMZEvent" />
+        <label for="mz" class="f_30_999">
+          我已认真阅读并同意
+         
+        </label>
+         <text class="f_30_999" style="color:#3ea2ef">《免责声明》</text>
+      </view>
+      <view class="submit relative">
+        <view class="icon_box ">
+          <image src="../../images/phone_btn.png" style="width: 618rpx;height: 90rpx;"></image>
+        </view>
+        <view class="absolute btn_next">提交</view>
+        <button form-type="submit" class="login_btn"></button>
+      </view>
+    </view>
+
+  </form>
+</view>

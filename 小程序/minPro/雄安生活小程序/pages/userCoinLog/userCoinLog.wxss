@@ -1,0 +1,40 @@
+/* pages/userCoinLog/userCoinLog.wxss */
+.header
+{
+  width: 750rpx;
+  height: 176rpx;
+  background-color: #fac131;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  color:white;
+  font-size: 30rpx;
+}
+.title_MX
+{
+  height: 100rpx;
+  color:#333333;
+  font-size: 36rxp;
+  line-height: 100rpx;
+   padding: 0 25rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #ececec;
+}
+/*明细列表  */
+.log_box
+{
+  position: absolute;
+  top:277rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.item_log
+{
+  height: 83rpx;
+  line-height: 83rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  color:#666666;
+  font-size: 28rpx
+}

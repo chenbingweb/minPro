@@ -1,0 +1,121 @@
+/* pages/examiningTip/examiningTip.wxss */
+@import '../../temp/temp.wxss'; 
+page
+{
+  background-color: #f4f4f4;
+}
+.tip_box
+{
+  width: 750rpx;
+  height: 390rpx;
+  margin: 0 auto;
+  flex-direction: column;
+  background-color: white;
+}
+.submit
+{
+  width: 618rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius: 45rpx;
+  overflow: hidden;
+  margin-top:30rpx;
+}
+.btn_next
+{
+  text-align: center;
+  line-height: 90rpx;
+  color:white;
+  font-size: 36rpx;
+}
+/* 中介发布成功 推荐  */
+.recomment
+{
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750rpx;
+  margin: 0 auto;
+  top:400rpx;
+  bottom: 0;
+}
+.re_title
+{
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+}
+.page_box
+{
+  position: absolute;
+  top:80rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.recommont_source
+{
+  width: 700rpx;
+  height: 435rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 30rpx;
+}
+.info_box
+{
+  color:#333;
+  font-size: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 14rpx;
+
+}
+.item_info
+{
+  width: 100%;
+ line-height: 70rpx;
+}
+.child_1
+{
+  color:#666666;
+  font-size: 28rpx;
+}
+/*  */
+.info_item
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 30rpx 25rpx;
+  border-bottom: 2rpx solid #e3e3e3;
+}
+.info_child
+{
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+  
+}
+
+.job_info_font
+{
+  color:#333333;
+  font-size: 28rpx;
+}
+.fuli_box
+{
+  font-size: 26rpx;
+  color:#666;
+  margin-top:20rpx;
+
+  padding-bottom: 30rpx;
+}
+.other_jobs
+{
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+}

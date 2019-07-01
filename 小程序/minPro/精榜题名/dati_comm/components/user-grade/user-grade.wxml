@@ -1,0 +1,18 @@
+<view class="level_box">
+  <view class="grade_img">
+    <image src="{{gradeImg}}" style="width:226rpx;height:278rpx"></image>
+  </view>
+  <!-- 星级 -->
+  <view class="star_box">
+    <view class="icon_box">
+      <image src="../../../imgs/fightOver/bg.png" style="width:353rpx;height:107rpx;"></image>
+    </view>
+    <!-- 星级 -->
+    <view class="star_child icon_box" style="transform: rotate({{-14+index*3}}deg);z-index:8" wx:for="{{star.length}}" wx:key="star_{{index}}">
+      <image src="../../../imgs/fightOver/star.png" style="width:53rpx;height:55rpx;"></image>
+    </view>
+    <view class="star_child icon_box" style="transform: rotate({{-14+(star.length+index)*3}}deg);z-index:{{8-index-1}}" wx:for="{{8-star.length}}" wx:key="star_{{index}}">
+      <image src="../../../imgs/fightOver/no_star.png" style="width:53rpx;height:55rpx;"></image>
+    </view>
+  </view>
+</view>

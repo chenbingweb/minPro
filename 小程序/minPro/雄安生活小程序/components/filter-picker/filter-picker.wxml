@@ -1,0 +1,50 @@
+<view class="filter_box" wx:if="{{showFilter}}">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="filter_right_box  {{showFilter?'showFilter':'hideFilter'}}" bindanimationend="animationEnd">
+      <view class="title">
+        筛选
+      </view>
+      <view class="select_box_title">
+        <view>区域</view>
+      </view>
+      <radio-group name="area" bindchange="radioChange" class="area_box">
+        <label class="child_area {{item.checked?'selected':''}}" wx:for="{{areaList}}" wx:key="area_{{index}}">
+          {{item.name}}
+          <radio hidden value="{{item.id}}" checked="{{item.checked}}" />
+        </label>
+
+      </radio-group>
+      <view style="border-top:10rpx solid #f4f4f4;border-bottom:10rpx solid #f4f4f4">
+        <view class="select_box_title">
+          <view style="height:90rpx;line-height:90rpx">房型</view>
+          <view style="height:90rpx;line-height:90rpx;font-size:26rpx;color:#e60012">{{selectName}}</view>
+        </view>
+        <radio-group name="door" bindchange="radioDoorChange" class="area_box" style="padding-top:0">
+          <label class="child_area {{item.checked?'selected':''}}" wx:for="{{doorList}}" wx:key="door_{{index}}">
+            {{item.name}}
+            <radio hidden value="{{item.name}}" checked="{{item.checked}}" />
+          </label>
+
+        </radio-group>
+
+      </view>
+      <view class="btn_box">
+        <view class="btn_item">
+          <image src="../../images/cancel_bg.png" class="absolute" style="width:270rpx;height:90rpx;"></image>
+          <view class="absolute" style="color:#333" >
+           重置
+          </view>
+          <button form-type="reset" class="btn_login"></button>
+
+        </view>
+        <view class="btn_item" >
+          <image src="../../images/phone_btn.png" class="absolute" style="width:270rpx;height:90rpx;"></image>
+           <view class="absolute" >
+           确认
+          </view>
+          <button form-type="submit" class="btn_login"></button>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>

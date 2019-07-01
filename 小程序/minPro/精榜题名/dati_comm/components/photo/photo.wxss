@@ -1,0 +1,53 @@
+/* dati_comm/components/photo/photo.wxss */
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.photo_box
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.nama_box
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:130rpx;
+}
+.user_photo
+{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 126rpx;
+  height: 126rpx;
+  border-radius: 50%;
+}
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.name_info
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color:#ffffff;
+  font-size: 28rpx;
+  line-height: 55rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}

@@ -1,0 +1,171 @@
+/* pages/hongBaoSai/pages/hbsPK/hbsPK.wxss */
+.title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:62rpx;
+}
+.qc
+{
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:115rpx;
+}
+.qc_num
+{
+  text-align: center;
+  line-break: 34rpx;
+  font-size: 24rpx;
+  color:#fcebab;
+  font-weight: bold;
+ 
+}
+.join
+{
+  position: absolute;
+  left: 0;
+  width: 750rpx;
+  top:180rpx;
+}
+.question_box
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* top:calc(50vh - 190rpx); */
+  top:476rpx;
+  width: 697rpx;
+  height: 817rpx;
+}
+.db
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.t_b_1
+{
+  width: 697rpx;
+  height: 144rpx;
+
+}
+.t_b_2
+{
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:144rpx;
+  bottom: 90rpx;
+}
+.question
+{
+  position: absolute;
+  width: 574rpx;
+  height: 219rpx;
+  left: 50%;
+  top:0;
+  transform: translate(-50%);
+}
+.q_db
+{
+  width: 574rpx;
+  height:calc(219rpx / 2);
+  position: absolute;
+  left: 50%;
+  top:0rpx;
+  transform: translate(-50%);
+}
+.q_2
+{
+  position: absolute;
+  left: 50%;
+  top:30rpx;
+  transform: translate(-50%);
+  bottom: 0;
+}
+.rotate_180
+{
+  transform-origin:0% 100%;
+  transform:rotateX(-180deg) translateX(-50%) translateY(2rpx);
+}
+.detail
+{
+  color:white;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.answer_items
+{
+  position:absolute;
+  left: 0;
+  right: 0;
+  top:240rpx;
+  bottom: 40rpx;
+
+}
+.ans_item
+{
+  width: 568rpx;
+  height: 118rpx;
+  margin:0 auto;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+.daan
+{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top:50%;
+  transform: translateY(-50%);
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color:#000;
+  font-weight: bold;
+  
+}
+.daan_info
+{
+  padding: 0 44rpx;
+  box-sizing: border-box;
+
+}
+.time
+{
+  width: 70rpx;
+  height: 92rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* top:calc(50vh - 300rpx); */
+  top:382rpx;
+}
+.time_1
+{
+  position: absolute;
+  top:0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.show_time
+{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: rgba(33, 20, 23, 0.7);
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color:#fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:-46rpx;
+  font-weight: bold;
+}

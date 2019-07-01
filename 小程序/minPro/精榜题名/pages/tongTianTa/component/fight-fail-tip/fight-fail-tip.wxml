@@ -1,0 +1,109 @@
+<view class="fixed"  wx:if="{{showLock}}">
+  <!-- 挑战失败 -->
+  <view class="absolute" wx:if="{{showLock && !showShop}}">
+    <view class="fail_box">
+      <!-- 底板 -->
+      <view class="db_box {{index==1?'rotate_180':''}}" wx:for="{{[1,2]}}" wx:key="db_{{index}}">
+        <view class="icon_box">
+          <image src="./imgs/db_1.png" style="width:588rpx;height:50rpx"></image>
+        </view>
+        <view class="icon_box">
+          <image src="./imgs/db_2.png" style="width:588rpx;height:308rpx"></image>
+        </view>
+      </view>
+      <!-- 标题 -->
+      <view class="title">
+        <image src="./imgs/fail_tip.png" style="width:524rpx;height:214rpx"></image>
+      </view>
+      <!-- 用户当前复活卡和答对卡信息 -->
+      <view class="card_box">
+        <!-- 答对卡 -->
+          <view class="item">
+            <view class="icon_box relative">
+              <image src="../../imgs/start/car_bg.png" style="width:135rpx;height:149rpx;"></image>
+              <view class="icon_box q_1">
+                <image src="../../imgs/start/quan_1.png" style="width:117rpx;height:139rpx;"></image>
+              </view>
+            </view>
+            <view class="num_bg icon_box">
+              <image src="../../imgs/start/btn_bg.png" style="width:174rpx;height:73rpx;"></image>
+                <!-- 当前复活卡数量 -->
+              <view class="fhk_num absolute">
+                  <view class="num">答对卡X{{ddk}}</view>
+              </view>
+            </view>
+          </view>
+          <!-- 复活卡 -->
+          <view class="item" style="margin-left:68rpx;">
+            <view class="icon_box">
+              <image src="../../imgs/start/car_bg.png" style="width:135rpx;height:149rpx;"></image>
+              <view class="icon_box q_1">
+                <image src="../../imgs/start/quan_2.png" style="width:110rpx;height:143rpx;"></image>
+              </view>
+            </view>
+            <view class="num_bg icon_box ">
+              <image src="../../imgs/start/btn_bg.png" style="width:174rpx;height:73rpx;"></image>
+              <!-- 当前复活卡数量 -->
+              <view class="fhk_num absolute">
+                  <view class="num">复活卡X{{fhk}}</view>
+              </view>
+            </view>
+          </view>
+      </view>
+      <!-- 按钮 -->
+      <view class="btn_box">
+        <view class="icon_box relative" bindtap="onUse" data-cid="{{ddkId}}" data-num="{{ddk}}">
+          <image src="./imgs/s_y_btn.png" style="width:176rpx;height:71rpx"></image>
+          <view class="icon_box btn_title">
+              <image src="./imgs/l_j_s_y.png" style="width:127rpx;height:35rpx"></image>
+          </view>
+        </view>
+        <view class="icon_box relative" style="margin-left:68rpx;" bindtap="onUse" data-cid="{{fhkId}}" data-num="{{fhk}}">
+          <image src="./imgs/s_y_btn.png" style="width:176rpx;height:71rpx"></image>
+          <view class="icon_box btn_title">
+              <image src="./imgs/l_j_s_y.png" style="width:127rpx;height:35rpx"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 虚线 -->
+      <view class="line">........................................................</view>
+      <!-- 分享按钮 bindtap="OnToShop"-->
+      <view class="icon_box share_btn" >
+        <image src="./imgs/share_btn.png" style="width:376rpx;height:119rpx"></image>
+        <view class="icon_box share_tip">
+            <image src="./imgs/share_text.png" style="width:190rpx;height:53rpx"></image>
+        </view>
+        <button open-type='share' class="sb"></button>
+      </view>
+      <!-- 提示文字 -->
+      <view class="tip_text_1">可立即复活，每次挑战限 1 次</view>
+    </view>
+    <!-- 返回 -->
+    <view class="back_btn icon_box" bindtap="OnBack">
+      <image src="./imgs/back.png" style="width:110rpx;height:119rpx;"></image>
+    </view>
+  </view>
+  <!-- 复活卡不足提示 -->
+  <view wx:else class="absolute" >
+    <view class="card_bz">
+      <view class="icon_box">
+        <image src="./imgs/buy_db.png" style="width:473rpx;height:355rpx"></image>
+      </view>
+      <!-- 复活卡提示 ./imgs/fu_huo_ka.png icon ddk_no.png-->
+      <view class="f_h_img icon_box">
+         <image wx:if="{{icon==1}}" src="./imgs/fu_huo_ka.png" style="width:174rpx;height:180rpx"></image>
+          <image wx:if="{{icon==2}}"  src="./imgs/ddk_no.png" style="width:174rpx;height:180rpx"></image>
+      </view>
+      <!-- 立即购买 -->
+      <view class="icon_box buy_box" bindtap="OnToShop">
+         <image src="./imgs/buy.png" style="width:306rpx;height:93rpx"></image>
+      </view> 
+      <!-- 提示文字 -->
+      <view class="tip_text" style="width:100%">复活卡不足前往当铺购买</view>
+    </view>
+    <!-- 返回 -->
+    <view class="back_btn icon_box" bindtap="OnBack" style="top:calc(50vh + 237rpx);">
+      <image src="./imgs/back.png" style="width:110rpx;height:119rpx;"></image>
+    </view>
+  </view>
+</view>

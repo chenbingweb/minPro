@@ -1,0 +1,6 @@
+<!-- 对战结果 -->
+<import src="./fightOver.wxml"/>
+<import src="./fightOver_1.wxml"/>
+<!--战斗结果  -->
+<!-- <template is="fightOver" data="{{data:data}}"></template> -->
+<template is="fightOver_1" data="{{data:data}}"></template>

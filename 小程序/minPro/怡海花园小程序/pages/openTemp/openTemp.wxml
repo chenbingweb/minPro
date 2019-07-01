@@ -1,0 +1,41 @@
+<form bindsubmit="onSubmit">
+  <view class="item flex_start">
+    <view style="margin-right:20rpx;">名称</view>
+    <input style="height:80rpx;" name="name" placeholder="请输入板块名称"></input>
+  </view>
+  <view class="item">
+    <view style="margin-right:20rpx;height:80rpx;line-height:80rpx">介绍</view>
+    <textarea name="introduce" class="js_text_area"></textarea>
+  </view>
+  <view class="item">
+    <view style="margin-right:20rpx;height:80rpx;line-height:80rpx">理由</view>
+    <textarea name="reson" class="js_text_area"></textarea>
+  </view>
+  <picker range="{{[1,2,3,4]}}">
+    <view class="item flex_between" style="height:80rpx;">
+      <view style="margin-right:20rpx;">小区</view>
+      <view class="flex_start">
+        <view style="padding-right:30rpx;color:#a9a8a8">请选择</view>
+        <view class="icon_box">
+          <image src="../../images/arrow_right_3.png" style="width:14rpx;height:28rpx"></image>
+        </view>
+      </view>
+    </view>
+    <input hidden name="village"></input>
+  </picker>
+  <view class="item flex_start address">
+    <view style="margin-right:20rpx;">住址</view>
+    <textarea name="address" class="js_text_area" placeholder="请输入详细地址信息，如门牌号，小区，楼栋号等"></textarea>
+  </view>
+
+  <view class="relative submit">
+    提交审核
+    <button form-type="submit" class="btn_login"></button>
+  </view>
+  <view class="icon_box relative">
+    <image src="../../images/tip_bg.png" style="width:678rpx;height:130rpx"></image>
+    <view class="tip btn_login">
+      提交管理员审核，需要等待30分钟时间
+    </view>
+  </view>
+</form>

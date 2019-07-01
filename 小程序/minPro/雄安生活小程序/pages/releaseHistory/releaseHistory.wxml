@@ -1,0 +1,50 @@
+<view class="fixed">
+  <view class="flex_center f_30_333">
+    <view class="item {{selectTop=='fb'?'selected':''}}" data-t="fb" bindtap="selectTopBtn">
+      发布历史
+    </view>
+    <view class="item {{selectTop=='xj'?'selected':''}}" data-t="xj" bindtap="selectTopBtn">
+      下架记录
+    </view>
+  </view>
+  <view class="flex_center f_28_333 child">
+    <view class="item_2 {{childBtn=='company'?'selected_item_2':''}} " data-child="company" bindtap="childSelectBtn">房产中介</view>
+    <view class="item_2 {{childBtn=='person'?'selected_item_2':''}}"  data-child="person"  bindtap="childSelectBtn">个人房源</view>
+    <view class="item_2 {{childBtn=='boss'?'selected_item_2':''}}" data-child="boss"  bindtap="childSelectBtn">BOSS招聘</view>
+    <view class="item_2 {{childBtn=='self'?'selected_item_2':''}}"  data-child="self" bindtap="childSelectBtn">毛遂自荐</view>
+  </view>
+  <view class="list_wrap">
+    <paging
+       dataObj="{{dataObj}}" bindpageData="pageData"
+    >
+      <!--房产  -->
+      <view slot="list">
+        <view  wx:for="{{middPerList}}" wx:key="list_{{index}}" class="flex_start item_child relative">
+          <view bindtap="navToDetail" data-src="{{childBtn}}" data-category="{{item.category=='sell'?'sell':'rent'}}" data-did="{{item.id}}"  class="icon_box"  wx:if="{{childBtn!='boss'&&childBtn!='self'}}">
+            <image mode="aspectFill" src="{{imgUrl+item.img_url}}" style="width:270rpx;height:210rpx"></image>
+          </view>
+          <view wx:else class="no_img"></view>
+          <view class="child_item" bindtap="navToDetailNoImg" data-id="{{item.id}}" data-src="{{childBtn}}">
+     
+            <view wx:if="{{childBtn!='boss'&&childBtn!='self'}}">
+              <view class="f_30_333" >{{item.name}}</view>
+              <view class="f_28_666">{{item.village||''}} {{item.acreage}}m² {{item.amount}} {{item.lookat}} </view>
+            </view>
+            <view wx:else>
+                <view class="f_30_333" >{{item.category}}</view>
+               <view class="f_28_666 ellipsis" wx:if="{{childBtn!='self'}}">{{item.detail}}</view>
+               <view class="f_28_666 ellipsis" wx:else>{{item.info}}</view>
+            </view>
+            
+            <view class="relative" style="width:160rpx;height:60rpx">
+              <image class="absolute" style="width:160rpx;height:60rpx" src="../../images/phone_btn.png"></image>
+              <view catchtap="XJEvent" data-did="{{item.id}}" wx:if="{{selectTop!='xj'}}" class="absolute font_btn">立即下架</view>
+              <view catchtap="SJEvent" data-did="{{item.id}}" wx:else class="absolute font_btn">立即上架</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </paging>
+  </view>
+</view>

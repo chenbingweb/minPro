@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "社区板块",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#5293e1",
+  
+  "usingComponents": {
+    "search": "/components/search/search",
+    "paging": "/components/paging/paging",
+    "swiper-base": "/components/swiper-base/swiper-base"
+  }
+}

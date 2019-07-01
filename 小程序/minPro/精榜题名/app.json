@@ -1,0 +1,113 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/homePage",
+    "pages/fight/fightPage",
+    "pages/ready/readyPage",
+    "dati_comm/pages/logininfo/logininfo",
+    "pages/matchOver/matchOverPage",
+    "pages/classify/classifyPage",
+    "pages/match/matchPage",
+    "pages/startMatch/startMatch",
+    "pages/noticeAccounts/noticeAccounts",
+    "pages/matchJieSuan/matchJieSuan",
+    "dati_comm/pages/analysis/analysisPage",
+    "pages/money/money"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4f2e73",
+    "navigationBarTitleText": "最强答题",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom"
+  },
+  "subPackages": [
+    {
+      "name": "shoping",
+      "root": "pages/subPackages/",
+      "pages": [
+        "pages/shopping/shoppingpage",
+        "pages/ranking/rankingPage",
+        "pages/fightOver/fightOverPage",
+        "pages/myCenter/myCenter",
+        "pages/tiXianTip/tiXianTip",
+        "pages/myMoney/myMoney"
+      ]
+    },
+    {
+      "name": "ttt",
+      "root": "pages/tongTianTa/",
+      "pages": [
+        "pages/startpage/startpage",
+        "pages/fightTT/fightTT",
+        "pages/worldRank/worldRank"
+      ]
+    },
+    {
+      "name": "hbs",
+      "root": "pages/hongBaoSai/",
+      "pages": [
+        "pages/startpage/startpage",
+        "pages/hbsPK/hbsPK",
+        "pages/hbsStart/hbsStart",
+        "pages/activeList/activeList",
+        "pages/hbsOver/hbsOver",
+        "pages/activeDetail/activeDetail",
+        "pages/activeBM/activeBM"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "shoping",
+        "ttt"
+      ]
+    },
+    "pages/home/homePage": {
+      "network": "all",
+      "packages": [
+        "hbs"
+      ]
+    },
+    "pages/subPackages/pages/fightOver/fightOverPage": {
+      "network": "all",
+      "packages": [
+        "shoping"
+      ]
+    },
+    "pages/subPackages/pages/ranking/rankingPage": {
+      "network": "all",
+      "packages": [
+        "shoping"
+      ]
+    },
+    "pages/subPackages/pages/shopping/shoppingpage": {
+      "network": "all",
+      "packages": [
+        "shoping"
+      ]
+    },
+    "pages/tongTianTa/pages/startpage/startpage": {
+      "network": "all",
+      "packages": [
+        "ttt"
+      ]
+    },
+    "pages/tongTianTa/pages/fightTT/fightTT": {
+      "network": "all",
+      "packages": [
+        "ttt"
+      ]
+    },
+    "pages/tongTianTa/pages/worldRank/worldRank": {
+      "network": "all",
+      "packages": [
+        "ttt"
+      ]
+    }
+  }
+}

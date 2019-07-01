@@ -1,0 +1,151 @@
+<template name="ranking_1">
+  <view class="fixed">
+    <!-- 背景图 -->
+    <view class="absolute flex_center">
+      <view class="bg icon_box">
+        <image src="../../imgs/dianpu/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+      <view class="bg_180 icon_box">
+        <image src="../../imgs/dianpu/bg_4.png" style="width:375rpx;height:1334rpx"></image>
+      </view>
+    </view>
+      <!-- 标题 -->
+    <view class="title icon_box">
+      <image src="../../imgs/rank/p_h_b_title.png" style="width:175rpx;height:66rpx"></image>
+    </view>
+    <!-- 世界排行，好友排行 -->
+    <view class="word_rank_btn flex_between">
+      <view class="icon_box relative" bindtap="OnRank" data-rank="slist" data-isworld="{{data.isWorldFlag}}">
+        <image wx:if="{{!data.isWorldFlag}}" src="../../imgs/rank/btn_t_1.png" style="width:223rpx;height:72rpx"></image>
+        <image wx:else src="../../imgs/rank/btn_t_2.png" style="width:223rpx;height:72rpx"></image>
+        <view class="absolute btn_title">世界排行</view>
+      </view>
+      <view class="icon_box relative" bindtap="OnRank" data-rank="flist" data-isworld="{{!data.isWorldFlag}}">
+        <image wx:if="{{data.isFriendFlag}}" src="../../imgs/rank/btn_t_2.png" style="width:223rpx;height:72rpx"></image>
+        <image wx:else src="../../imgs/rank/btn_t_1.png" style="width:223rpx;height:72rpx"></image>
+        <view class="absolute btn_title">好友排行</view>
+      </view>
+    </view>
+    <!-- 等级排行 现金排行 -->
+    <view class="level_rank flex_between" wx:if="{{false}}">
+      <view class="icon_box relative">
+        <image wx:if="{{false}}" src="../../imgs/rank/btn_b_1.png" style="width:211rpx;height:68rpx"></image>
+        <image wx:else src="../../imgs/rank/btn_b_2.png" style="width:211rpx;height:68rpx"></image>
+        <view class="absolute btn_title">等级排行</view>
+      </view>
+      <view class="icon_box relative">
+        <image wx:if="{{false}}" src="../../imgs/rank/btn_b_2.png" style="width:211rpx;height:68rpx"></image>
+        <image wx:else src="../../imgs/rank/btn_b_1.png" style="width:211rpx;height:68rpx"></image>
+        <view class="absolute btn_title">现金排行</view>
+      </view>
+    </view>
+    <!-- 排行列表 -->
+    <scroll-view scroll-y class="rank_list_box">
+      <view>
+        
+          <view class="rank_item" wx:for="{{data.list}}" wx:key="index_{{index}}">
+            <!-- 背景 -->
+            <view class="icon_box">
+              <image src="../../imgs/rank/itw.png" style="width:610rpx;height:122rpx;"></image>
+            </view>
+            <!-- 信息 -->
+            <view class="absolute info flex_start">
+              <!-- 前三名 -->
+              <view class="icon_box" wx:if="{{index<3}}">
+                <image wx:if="{{index==0}}" src="../../imgs/rank/n_1.png" style="width:40rpx;height:52rpx;"></image>
+                <image wx:if="{{index==1}}"  src="../../imgs/rank/n_2.png" style="width:40rpx;height:52rpx;"></image>
+                <image wx:if="{{index==2}}"  src="../../imgs/rank/n_3.png" style="width:40rpx;height:52rpx;"></image>
+              </view>
+              <!-- 排行三明以后 -->
+              <view class="icon_box relative" wx:else>
+                <image src="../../imgs/rank/rank_num_bg.png" style="width:44rpx;height:49rpx"></image>
+                <view class="rank_num">
+                  {{index+1}}
+                </view>
+              </view>
+              <!-- 头像 -->
+              <view class="icon_box" style="margin-left:6rpx;">
+                <image class="photo_img" src="{{item.icon}}"></image>
+              </view>
+              <!-- 用户游戏信息 -->
+              <view class="game_info" >
+                <view class="nick_name">{{item.n}}</view>
+                <view class="game_ticket flex_start">
+                  <view class="ticket_item">
+                    <!-- 等级图片-->
+                    <view class="icon_box icon_level">
+                      <image src="../../imgs/dianpu/coin.png" style="width:46rpx;height:48rpx"></image>
+                    </view> 
+                    <!-- 当前等级 -->
+                    <view class="absolute coin_num" style="color:#ffeb48">
+                        {{item.score}}
+                    </view>
+                  </view>
+                  <!-- 09-25 -->
+                  <view class="ticket_item" wx:if="{{false}}">
+                    <!-- 等级图片 -->
+                    <view class="icon_box icon_level">
+                      <image src="{{item.dw_icon}}" style="width:36rpx;height:42rpx"></image>
+                    </view>
+                    <!-- 当前等级 -->
+                    <view class="absolute">
+                      <view class="icon_box pos" style="left:{{22+(14*index)}}rpx;z-index:{{1}}" wx:for="{{item.arr}}" wx:key="index1_{{index}}">
+                        <image src="../../../../dati_comm/components/user-info/img/star.png" style="width:32rpx;height:31rpx;"></image>
+                      </view>
+                      <view class="icon_box pos" style="left:{{22+(14*(8-index-1))}}rpx;z-inde:-9" wx:for="{{item.noArr}}" wx:key="no_{{index}}">
+                        <image src="../../../../imgs/fightOver/no_star.png" style="width:32rpx;height:31rpx;"></image>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="flex_start relative dw_box" >
+               <view class="icon_box">
+                <image src="{{item.dw_icon}}" style="width:67rpx;height:82rpx"></image>
+               </view>
+               <view class="icon_box ht">
+                <image src="../../imgs/rank/ht.png"  style="width:99rpx;height:83rpx"></image>
+                <view class="star flex_center">
+                  <image src="../../../../dati_comm/components/user-info/img/star.png" style="width:20rpx;height:20rpx;"></image><text>X{{item.arr.length}}</text>
+                  
+                </view>
+               </view>
+              
+              </view>
+              <!-- 当前排行
+              <view class="flex_start relative">
+               <view class="icon_box">
+                <image src="../../imgs/dianpu/coin.png" style="width:46rpx;height:48rpx"></image>
+               </view>
+               <view class="coin_num">{{item.score}}</view>
+              </view> -->
+            </view>
+          </view>
+      </view>
+    </scroll-view>
+    <!-- 我的排行 -->
+    <view class="my_rank_box">
+       <!-- 背景 -->
+      <view class="u_icon_box">
+        <image src="../../imgs/dianpu/db_bg.png" style="width:750rpx;height:126rpx;"></image>
+      </view>
+      <!-- 我的排名 -->
+      <view class="my_rank_current">
+        <view class="icon_box">
+          <image src="../../imgs/rank/itw.png" style="width:660rpx;height:122rpx;"></image>
+        </view>
+        <view class="absolute flex_center">
+           <!-- 头像 userIcon: Player.Iconurl-->
+          <view class="icon_box" style="margin-left:6rpx;">
+            <image class="photo_img" src="{{data.userIcon}}"></image>
+          </view>
+          <view class="my_rank_num">我的当前排名{{data.rank}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 返回 -->
+    <view class="back" bindtap="OnBack">
+      <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+    </view>
+  </view>
+</template>
