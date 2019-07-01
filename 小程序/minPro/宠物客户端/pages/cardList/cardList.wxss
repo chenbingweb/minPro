@@ -1,0 +1,56 @@
+/* pages/cardList/cardList.wxss */
+
+.scroll_view
+{
+  width: 750rpx;
+  background-color: #f1f2f3;
+}
+.item_card
+{
+  width: 700rpx;
+  height: 190rpx;
+  background-color: white;
+  border-radius: 4rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+}
+.card_price
+{
+  color:#fa443b;
+  font-size: 48rpx;
+}
+.price_1
+{
+  color:#fa443b;
+  font-size: 28rpx;
+}
+.card_name_1
+{
+  font-size: 30rpx;
+  color:#000;
+}
+.card_date
+{
+  font-size: 26rpx;
+  color:#a9a9a9;
+}
+
+.to_use
+{
+  width: 134rpx;
+  height: 46rpx;
+  background-color: #ffdb01;
+  text-align: center;
+  line-height: 44rpx;
+  color:#fff;
+  font-size: 28rpx;
+  border-radius: 23rpx;
+
+}
+.card_info_2
+{
+  width: 370rpx;
+  margin-left: 20rpx;
+}

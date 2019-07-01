@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "city-piker": "/components/city-piker/city-piker"
+  },
+  "disableScroll": false,
+  "navigationBarTitleText": "宠物信息"
+}

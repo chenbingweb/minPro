@@ -1,0 +1,66 @@
+   <nav-bar/>
+ <view class="fixed">
+
+  <view class="header flex_start">
+    <view class="photo flex_center">
+      <image src="{{userInfo.avatarUrl}}" style="width:140rpx;height:140rpx"></image>
+    </view>
+    <view class="margin_left_20">
+      <view class="one_line" style="width:400rpx">{{userInfo.nickname}}</view>
+      <view class="f_28_a9">{{userInfo.mobile}}</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view>
+    <navigator url="../myInfo/myInfo" class="list_item flex_between">
+      <view class="flex_start">
+        <view class="flex_center" style="width:50rpx;height:50rpx;">
+          <image src="../../images/person.png" style="width:40rpx;height:44rpx"></image>
+        </view>
+        <view class="f_34_000 margin_left_20">个人信息</view>
+      </view>
+      <view class="flex_center">
+        <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+      </view>
+    </navigator>
+    <navigator url="../myOrderList/myOrderList" class="list_item flex_between">
+      <view class="flex_start">
+        <view class="flex_center" style="width:50rpx;height:50rpx;">
+          <image src="../../images/my_list.png" style="width:36rpx;height:44rpx"></image>
+        </view>
+        <view class="f_34_000 margin_left_20">历史订单</view>
+      </view>
+      <view class="flex_center">
+        <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+      </view>
+    </navigator>
+ 
+    <view url="" class="list_item flex_between relative">
+      <view class="flex_start">
+        <view class="flex_center" style="width:50rpx;height:50rpx;">
+          <image src="../../images/wxkf.png" style="width:50rpx;height:44rpx"></image>
+        </view>
+        <view class="f_34_000 margin_left_20">微信客服</view>
+      </view>
+      <view class="flex_center">
+        <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+      </view>
+      <button open-type="contact" class="lb"></button>
+    </view>
+    <navigator url="../loginPage/loginPage" class="list_item flex_between">
+      <view class="flex_start">
+        <view class="flex_center" style="width:50rpx;height:50rpx;">
+          <image src="../../images/changeLogin.png" style="width:46rpx;height:46rpx"></image>
+        </view>
+        <view class="f_34_000 margin_left_20">切换账号</view>
+      </view>
+      <view class="flex_center">
+        <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+      </view>
+    </navigator>
+  </view>
+  <!-- 电话 -->
+  <view class="flex_center kf">
+    <text bindtap="onCall" class="margin_left_20 margin_right_20">客服电话: 400-910-0180</text>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<map
+  id="map"
+  longitude="{{longitude}}"
+   latitude="{{latitude}}"
+  scale="13"
+  show-compass
+  markers="{{markers}}"
+  enable-rotate="{{false}}"
+  include-points="{{includePoints}}"
+  show-location
+  style="width: 100%; height: 100vh;"
+>
+  <cover-view bindtap="onRefresh" class="refresh">
+    刷新
+  </cover-view>
+  <!-- <cover-view class="f_30_333">
+  {{delivery_location}}
+  </cover-view>
+  <cover-view>{{time}}</cover-view> -->
+
+</map>

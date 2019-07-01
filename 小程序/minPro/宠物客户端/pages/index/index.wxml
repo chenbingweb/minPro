@@ -1,0 +1,170 @@
+<!-- bindregionchange="regionchange" -->
+<map
+
+  id="map"
+  longitude="{{longitude}}"
+   latitude="{{latitude}}"
+  scale="13"
+  show-compass
+  markers="{{markers}}"
+  enable-rotate="{{false}}"
+  polyline="{{polyline}}"
+  include-points="{{includePoints}}"
+  show-location
+  style="width: 100%; height: 100vh;"
+>
+   
+    <!--个人中心 -->
+    <cover-view wx:if="{{isLogin}}" class="center" bindtap="onToMyCenter">
+      <cover-image class="center_img" src="../../images/center.png" />
+    </cover-view>
+    <!--移动位置 -->
+    <cover-view wx:if="{{isLogin}}" class="pos_center" style="{{isFillInfo?'bottom:580rpx;':'bottom:310rpx;'}}" bindtap="onToCenter">
+      <cover-image class="pos_center_img" src="../../images/pos.png" />
+    </cover-view>
+    <!--电话 -->
+    <cover-view wx:if="{{isLogin}}" class="phone" bindtap="onMakePhone">
+      <cover-image class="phone_img" src="../../images/jf.png" />
+    </cover-view>
+    <!--money -->
+    <cover-view class="money" wx:if="{{isFillInfo && isLogin && priceFlag}}" >
+      <cover-image class="money_img" src="../../images/money.png" />
+      <cover-view class="flex_center money_detail">
+        <cover-view class="money_code" style="font-weight:bold">￥</cover-view>
+        <cover-view style="font-weight:bold">{{price}}</cover-view>
+      </cover-view>
+    </cover-view>
+    <!-- 控制面板 906 style="{{isFillInfo?top2:top}}"-->
+    <cover-view wx:if="{{isLogin}}" class="control_box" style="{{isFillInfo?'height:574rpx':'bottom: 20rpx;'}}">
+  
+      <!-- 地址选择 -->
+      <cover-view class="address_box">
+        <cover-image class="address_box_img" src="../../images/bg_1.png" />
+        <!-- 开始图标 -->
+        <cover-image class="send_address" src="../../images/send.png" />
+        <!-- 结束图标 -->
+        <cover-image class="receive_address" src="../../images/receive.png" />
+        <!-- 开始地址 -->
+        <cover-view class="send_address_info flex_start" bindtap="onToAddInfo" data-ty="send">
+          <cover-view class="item_address one_line">{{start.address==''?'起始地':start.address}}</cover-view>
+          <cover-view class="item_connect one_line">{{start.sendMobile==''?'请完善发货信息':start.sendName+' '+start.sendMobile}}</cover-view>
+        </cover-view>
+        <!-- receive-->
+        <cover-view class="receive_address_info flex_start"  bindtap="onToAddInfo" data-ty="recetive">
+          <cover-view class="item_address one_line">{{end.address==''?'目的地':end.address}}</cover-view>
+          <cover-view class="item_connect one_line">{{end.receiveMobile==''?'请完善收货信息':end.receiveName+' '+end.receiveMobile}}</cover-view>
+        </cover-view>
+      </cover-view>
+      <!-- 按钮 -->
+      <cover-view class="btn_boxs relative" wx:if="{{isFillInfo}}">
+        <cover-image class="btn_boxs_img" src="../../images/btn_1.png"></cover-image>
+        <cover-view class="absolute flex_between">
+          <cover-view class="ani_info"  bindtap="onToFillInfo">宠物信息</cover-view>
+          <cover-view class="get_time">{{time==''?'预约时间':time}}</cover-view>
+        </cover-view>
+      </cover-view>
+      <!-- 支付按钮 -->
+      <cover-view wx:if="{{isFillInfo}}" bindtap="onSubmit" class="relative pay_box">
+        <cover-image class="pay_btn_img" src="../../images/pay.png"></cover-image>
+        <cover-view class="absolute pay_btn">立即预约</cover-view>
+      </cover-view>
+      <!-- 同意条款 -->
+      <cover-view class="tk_box" wx:if="{{isFillInfo}}">
+      <cover-image class="tk_btn_img" src="../../images/tg_1.png"></cover-image>
+        <cover-view class="absolute flex_center">
+          <cover-view class="flex_start" bindtap="onAgress">
+            <cover-image class="check_img" src="{{agress?'../../images/check_yes.png':'../../images/check_no.png'}}"></cover-image>
+            <cover-view class="f_24_9b9b9b">已阅读并同意</cover-view>
+          </cover-view>
+          <cover-view class="flex_start">
+            
+            <cover-view bindtap="onToDisclaimer" class="f_24_6a7fa6">《免责声明》</cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+    <!-- 登录 
+    <button hidden='{{!isPower}}' wx:if="{{!isLogin && ready}}" bindgetuserinfo="onGetUserInfo" open-type='getUserInfo' style="background-color:transparent" class="login">
+    
+      <cover-image class="pay_btn_img" src="../../images/pay.png"></cover-image>
+      <cover-view class="absolute pay_btn">立即登录</cover-view>
+   
+    </button>-->
+    <!-- 登录 -->
+    <button hidden='{{!isPower}}' wx:if="{{!isLogin && ready}}" bindgetuserinfo="onGetUserInfo2" open-type='getUserInfo' style="background-color:transparent" class="login">
+    
+      <cover-image class="pay_btn_img" src="../../images/pay.png"></cover-image>
+      <cover-view class="absolute pay_btn">立即登录</cover-view>
+   
+    </button>
+    <button wx:if="{{!isPower && ready}}" bindopensetting="onOpenSetting" open-type='openSetting' style="background-color:transparent" class="login">
+    
+      <cover-image class="pay_btn_img" src="../../images/pay.png"></cover-image>
+      <cover-view class="absolute pay_btn">设置定位授权</cover-view>
+   
+    </button>
+    <!-- 登录界面 wx:if="{{loginPanel}}"-->
+    <cover-view class="login_box fixed" wx:if="{{false}}">
+      <cover-image class="cat_img" src="../../images/cat.png"></cover-image>
+      <cover-view class="login_panel">
+        <cover-view class="login_panel_header relative">
+          立即登录
+        </cover-view>
+        <!-- 登录按钮 -->
+        <cover-view class="flex_center login_btns">
+          <button bindgetphonenumber="onGetphonenumber" plain='true' class="flex_center items relative login_btn_2" open-type='getPhoneNumber' >
+            <cover-image class="wx_icon" src="../../images/wx.png"></cover-image>
+            <cover-view class="f_30_999" style="line-height:1">微信登录</cover-view>
+          </button>
+          <!-- <cover-view class="flex_center items" style="margin-left:84rpx" bindtap="onToLogin">
+            <cover-image class="wx_icon" src="../../images/phone.png"></cover-image>
+            <cover-view class="f_30_999">手机登录</cover-view>
+          </cover-view> -->
+        </cover-view>
+        <!-- 暂不登录 -->
+        <cover-view class="relative no_login" bindtap="onNoLogin">
+          <cover-image class="line_img" src="../../images/line.png"></cover-image>
+           暂不登录
+        </cover-view>
+      </cover-view>
+    </cover-view>
+      <!-- 选择优惠券 -->
+    <cover-view wx:if="{{cardNum}}" class="select_card" bindtap="onNavTo" style="{{isFillInfo?'bottom:680rpx;':'bottom:410rpx;'}}">
+     <cover-image class="select_img" src="../../images/select_card.png"></cover-image>
+     <cover-view class="select_img_text">{{cardNum}}张可用</cover-view>
+    </cover-view>
+    <!-- 安全 isLogin-->
+    <cover-view wx:if="{{false}}" class="safe" style="{{isFillInfo?'bottom:580rpx;':'bottom:310rpx;'}}">
+       <cover-image class="safe_img" src="../../images/safe_icon.png"></cover-image>
+       <cover-view class="safe_text">如何保证宠物安全?</cover-view>
+    </cover-view>
+     <!-- 优惠券 showGetCard-->
+    <cover-view class="yhq_box" wx:if="{{showGetCard}}" bindtap="getCard">
+      <cover-view class="yhq_tip">
+        <cover-image class="card_logo_2" src="../../images/card_logo_3.png" ></cover-image>
+        <cover-view class="card_info">
+          <cover-image class="logo_img" src="../../images/card_logo.png" ></cover-image>
+          <cover-view class="card_info_2">
+            <cover-view class="flex_start" style="align-items: baseline">
+              <cover-view class="price_1">¥</cover-view>
+              <!-- <cover-view class="card_price">{{couponInfo.reduction}}</cover-view> -->
+               <cover-view  wx:if="{{couponInfo.type=='reduction'}}" class="card_price">{{couponInfo.reduction}}</cover-view> 
+          <cover-view  wx:if="{{couponInfo.type=='money'}}" class="card_price">{{couponInfo.money}}</cover-view> 
+          <cover-view wx:if="{{couponInfo.type=='discount'}}" class="card_price">{{couponInfo.discount}}</cover-view> 
+            </cover-view>
+            <cover-view wx:if="{{couponInfo.type=='reduction'}}" class="card_name_1">消费满{{couponInfo.reduction_top}}可用</cover-view>
+             <cover-view wx:if="{{couponInfo.type=='money'}}" class="card_name_1">抵扣券</cover-view>
+              <cover-view class="card_name_1" wx:if="{{couponInfo.type=='discount'}}">折扣券</cover-view>
+            <cover-view class="card_date">有效期至{{couponInfo.end_time}}</cover-view>
+          </cover-view>
+          <cover-view class="to_use">去使用</cover-view>
+        </cover-view>
+        
+      </cover-view>
+    </cover-view>
+  
+</map>
+   <!-- <cover-view >
+           
+       <button open-type="getPhoneNumber" class="login_btn"></button> 
+            </cover-view> -->

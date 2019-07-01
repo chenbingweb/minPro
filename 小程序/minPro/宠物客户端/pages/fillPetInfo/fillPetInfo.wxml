@@ -1,0 +1,77 @@
+<view class="wrap">
+  <form bindsubmit="onSubmit" style="display:block">
+    <view class="fill_item flex_between">
+      <view class="f_28_333">预约日期</view>
+      <view class="flex_start">
+        <picker bindchange='onDate' mode="date" start="{{start}}" end="{{end}}"> 
+        <view class="f_26_ce fill_input" style="{{date==''?'color:#808080':''}}" bindtap="OnShow">{{date==''?'请选择':date}}</view>
+        </picker>
+        <!-- <city-piker shows="{{show}}" bindcancelCity="onCancelCity" bindcitySelect="onSelectCity"/> -->
+        <view class="icon_box">
+          <image src="../../images/arrow.png" style="width:16rpx;height:25rpx"></image>
+        </view>
+        <input hidden name="date" value="{{date}}"></input>
+      </view>
+    </view>
+     <view class="fill_item flex_between">
+      <view class="f_28_333">取件时间</view>
+      <view class="flex_start">
+        <picker bindchange='onTime' mode="time"> 
+        <view class="f_26_ce fill_input" style="{{time==''?'color:#808080':''}}" bindtap="OnShow">{{time==''?'请选择':time}}</view>
+        </picker>
+        <!-- <city-piker shows="{{show}}" bindcancelCity="onCancelCity" bindcitySelect="onSelectCity"/> -->
+        <view class="icon_box">
+          <image src="../../images/arrow.png" style="width:16rpx;height:25rpx"></image>
+        </view>
+        <input hidden name="time" value="{{time}}"></input>
+      </view>
+    </view>
+    <view class="fill_item flex_between">
+      <view class="f_28_333">宠物数量</view>
+      <view class="flex_start">
+        <input class="f_26_ce fill_input" type="number" value="{{petInfo.petNum}}" name="petNum" placeholder="请输入"></input>
+        <view class="icon_box" style="width:16rpx;height:25rpx">
+          <!-- <image src="../../images/arrow.png"></image> -->
+        </view>
+      </view>
+    </view>
+    <view class="fill_item flex_between">
+      <view class="f_28_333">宠物名称</view>
+      <view class="flex_start">
+        <input class="f_26_ce fill_input" name="petName" value="{{petInfo.petName}}" placeholder="请输入"></input>
+        <view class="icon_box" style="width:16rpx;height:25rpx">
+          <!-- <image src="../../images/arrow.png" ></image> -->
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="fill_item flex_between" style="border:none">
+        <view class="f_28_333">宠物描述</view>
+      </view>
+      <textarea name="petDis" class="text_area" value="{{petInfo.petDis}}" placeholder='请输入宠物描述'></textarea>
+    </view>
+    <view>
+      <view class="fill_item flex_between" style="border:none">
+        <view class="f_28_333">宠物照片</view>
+      </view>
+      <view class="photo_box flex_start">
+        <view wx:for="{{uploadImgs}}" class="relative m_l_b" wx:key="_{{index}}">
+          <view class="icon_box img_box_1" bindtap="onViewImg" data-index="{{index}}">
+            <image mode="aspectFit" src="{{item}}" style="width:100%"></image>
+          </view>
+          <!-- 删除按钮 -->
+          <view class="icon_box del_btn" bindtap="onDel" data-img="{{index}}">
+              <image src="../../images/dell.png" style="width:40rpx;height:39rpx;"></image>
+            </view>
+        </view>
+        <!-- 上传照片 -->
+        <view class="m_l_b" bindtap="onUpload" wx:if="{{uploadImgs.length<9}}">
+          <view class="icon_box img_box_1 upload"  wx:key="_{{index}}">
+            <image mode="aspectFit" src="../../images/camary.png" style="width:44rpx;height:32rpx"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  class="sub_btn relative">确认<button class="lb" form-type="submit"></button></view>
+  </form>
+</view>

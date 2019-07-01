@@ -1,0 +1,15 @@
+<view class="fixed">
+  <form bindsubmit="onSubmit">
+    <view class="login_item flex_start">
+      <view class="f_28_333">手机号</view>
+      <input class="login_input" bindinput="onInput" value="{{mobile}}" name="mobile" placeholder="请输入有效手机号"></input>
+      <view wx:if="{{count<=0}}" class="get_code" bindtap="onGetCode">获取验证码</view>
+      <view wx:else class="get_code" >{{count+'S'}}</view>
+    </view>
+    <view class="login_item flex_start">
+      <view class="f_28_333">验证码</view>
+      <input class="login_input" name="checkcode" placeholder="请输入验证码"></input>
+    </view>
+    <view  class="sub_btn relative">确认登录<button class="lb" form-type="submit"></button></view>
+  </form>
+</view>

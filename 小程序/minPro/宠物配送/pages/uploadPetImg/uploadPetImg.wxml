@@ -1,0 +1,87 @@
+<view class="wrap">
+  <form bindsubmit="onSubmit" style="display:block">
+    <view class="fill_item flex_between">
+      <view class="f_28_333">取 货 地 点</view>
+      <picker disabled="{{src=='look'}}" range="{{range}}" bindchange="onSelectAddress" range-key="name" value="{{index}}">
+        <view class="flex_start">
+          <view class="f_26_ce fill_input" style="{{index==0?'color:#808080':''}}">{{index==0?'请选择':range[index].name}}</view>
+          <view class="icon_box">
+            <image src="../../images/arrow.png" style="width:16rpx;height:25rpx"></image>
+          </view>
+        </view>
+      </picker>
+      <input hidden name="location_type" value="{{range[index].id}}"></input>
+    </view>
+    <view class="fill_item flex_between">
+      <view class="f_28_333">位置或店名</view>
+      <view class="flex_start">
+        <input disabled="{{src=='look'}}" class="f_26_ce fill_input" name="location_name" value="{{petInfo.location_name}}" placeholder="请输入"></input>
+        <view class="icon_box" style="width:16rpx;height:25rpx">
+          <!-- <image src="../../images/arrow.png" ></image> -->
+        </view>
+      </view>
+    </view>
+    <view class="fill_item flex_between">
+      <view class="f_28_333">宠 物 数 量</view>
+      <view class="flex_start">
+        <input disabled="{{src=='look'}}" class="f_26_ce fill_input" type="number" value="{{petInfo.pets_number}}" name="pets_number" placeholder="请输入"></input>
+        <view class="icon_box" style="width:16rpx;height:25rpx">
+          <!-- <image src="../../images/arrow.png"></image> -->
+        </view>
+      </view>
+    </view>
+    
+    <view>
+      <view class="fill_item flex_between" style="border:none">
+        <view class="f_28_333">宠 物 描 述
+</view>
+      </view>
+      <textarea disabled="{{src=='look'}}" name="pets_info" class="text_area" value="{{petInfo.pets_info}}" placeholder='请输入宠物描述'></textarea>
+    </view>
+    <view>
+      <view class="fill_item flex_between" style="border:none">
+        <view class="f_28_333">宠物照片</view>
+      </view>
+      <view class="photo_box flex_start">
+        <view wx:for="{{uploadImgs}}" class="relative m_l_b" wx:key="_{{index}}">
+          <view class="icon_box img_box_1" bindtap="onViewImg" data-index="{{index}}">
+            <image mode="aspectFit" src="{{item}}" style="width:100%"></image>
+          </view>
+          <!-- 删除按钮 -->
+          <view wx:if="{{src=='uploadimg'}}" class="icon_box del_btn" bindtap="onDel" data-img="{{index}}">
+              <image src="../../images/dell.png" style="width:40rpx;height:39rpx;"></image>
+            </view>
+        </view>
+        <!-- 上传照片 -->
+        <view class="m_l_b" bindtap="onUpload" wx:if="{{uploadImgs.length!=9 && src=='uploadimg'}}">
+          <view class="icon_box img_box_1 upload"  wx:key="_{{index}}">
+            <image mode="aspectFit" src="../../images/camary.png" style="width:44rpx;height:32rpx"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="fill_item flex_between" style="border:none">
+        <view class="f_28_333">路线照片</view>
+      </view>
+      <view class="photo_box flex_start">
+        <view wx:for="{{route_image}}" class="relative m_l_b" wx:key="_{{index}}">
+          <view class="icon_box img_box_1"  bindtap="onViewImg2" data-index="{{index}}">
+            <image mode="aspectFit" src="{{item}}" style="width:100%"></image>
+          </view>
+          <!-- 删除按钮 -->
+          <view wx:if="{{src=='uploadimg'}}" class="icon_box del_btn" bindtap="onDelRoutImg" data-img="{{index}}">
+              <image src="../../images/dell.png" style="width:40rpx;height:39rpx;"></image>
+            </view>
+        </view>
+        <!-- 上传照片 -->
+        <view class="m_l_b" bindtap="onUploadRoutImg" wx:if="{{route_image.length==0 && src=='uploadimg'}}">
+          <view class="icon_box img_box_1 upload"  wx:key="_{{index}}">
+            <image mode="aspectFit" src="../../images/camary.png" style="width:44rpx;height:32rpx"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{src=='uploadimg'}}" class="sub_btn relative">确认<button class="lb" form-type="submit"></button></view>
+  </form>
+</view>

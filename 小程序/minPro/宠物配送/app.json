@@ -1,0 +1,37 @@
+{
+  "pages": [
+ 
+    "pages/index/index",
+      "pages/loginPage/loginPage",
+    "pages/sendImg/sendImg",
+    "pages/myCenter/myCenter",
+    "pages/myInfo/myInfo",
+    "pages/myOrderList/myOrderList",
+    "pages/orderDetail/orderDetail",
+    "pages/lookPetInfo/lookPetInfo",
+    "pages/uploadPetImg/uploadPetImg"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false,
+  "usingComponents": {
+    "paging": "/components/paging/paging",
+    "nav-bar": "/components/nav-bar/nav-bar"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取附近餐厅信息"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<view class="fixed scroll" wx:if="{{detail.pets_name}}">
+  <view class="pet_item flex_between f_28_333">
+    <view>宠物数量</view>
+    <view>{{detail.pets_number}}</view>
+  </view>
+  <view class="pet_item flex_between f_28_333">
+    <view>宠物名称</view>
+    <view>{{detail.pets_name}}</view>
+  </view>
+  <!-- 宠物描述 -->
+  <view>
+    <view class="f_28_333 dis">宠物描述</view>
+    <view class="f_26_666 dis_detail">
+      {{detail.pets_info}}
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view>
+    <view class="f_28_333 dis">宠物照片</view>
+    <view class="f_26_666 dis_detail flex_start" style="border:none">
+      <view bindtap="onLookImg" data-index="{{index}}" class="icon_box img_box" wx:for="{{detail.pets_imgs}}" wx:key="_{{index}}">
+        <image mode="aspectFit" src="{{item}}" style="width:218rpx;"></image>
+      </view>
+    </view>
+  </view>
+</view>

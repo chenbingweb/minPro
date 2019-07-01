@@ -1,0 +1,22 @@
+/* pages/myInfo/myInfo.wxss */
+.item
+{
+  width: 700rpx;
+  height: 110rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+  margin: 0 auto;
+}
+.input
+{
+  font-size: 26rpx;
+  color:#4c4c4c;
+  width: 540rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+}
+input::-webkit-input-placeholder {
+  
+   color: #4c4c4c;
+
+  }

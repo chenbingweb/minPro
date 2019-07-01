@@ -1,0 +1,75 @@
+<view wx:if="{{detail.order_status}}" class="fixed scroll" style="padding-bottom:35rpx;">
+  <view class="detail_item flex_between">
+    <view class="f_28_333">订单状态</view>
+    <!-- 
+    等待接单 wait_dispatch
+等待取货 wait_pick
+正在配送 sending
+已完成 complate
+    
+     -->
+    <view wx:if="{{detail.order_status=='wait_dispatch'}}" class="f_26_4c list_status_color_wait">等待接单</view>
+    <view wx:elif="{{detail.order_status=='wait_pick'}}" class="f_26_4c list_status_wait_pick">等待取货</view>
+    <view wx:elif="{{detail.order_status=='sending'}}" class="f_26_4c list_status_color_sending">正在配送</view>
+    <view wx:elif="{{detail.order_status=='in_refund'}}" class="f_26_4c list_status_color_complete">退款中</view>
+     <view wx:elif="{{detail.order_status=='has_refund'}}" class="f_26_4c list_status_color_complete">已退款</view>
+    <view wx:else class="f_26_4c list_status_color_complete">已完成</view>
+  </view>
+  <view class="detail_item flex_between">
+    <view class="f_28_333">订单编号</view>
+    <view class="f_26_4c">{{detail.order_sn}}</view>
+  </view>
+  <view class="detail_item flex_between">
+    <view class="f_28_333">下单时间</view>
+    <view class="f_26_4c">{{detail.create_at}}</view>
+  </view>
+  <view class="detail_item flex_between" wx:if="{{detail.pick_at}}">
+    <view class="f_28_333">取货时间</view>
+    <view class="f_26_4c">{{detail.pick_at}}</view>
+  </view>
+  <view class="detail_item flex_between" wx:if="{{detail.order_status=='complate'}}">
+    <view class="f_28_333">送达时间</view>
+    <view class="f_26_4c">{{detail.receive_at}}</view>
+  </view>
+  <view class="detail_item flex_between">
+    <view class="f_28_333">订单金额</view>
+    <view class="f_26_4c flex_start">
+      <view>¥{{detail.total_fee}}</view>
+      <navigator url="../priceDetail/priceDetail?oid={{detail.id}}" class="margin_left_30" style="line-height:70rpx;">明细</navigator>
+    </view>
+  </view>
+  <view class="detail_item flex_between">
+    <view class="f_28_333">宠物信息</view>
+    <navigator url="../lookPetInfo/lookPetInfo?oid={{detail.id}}" class="f_26_4c" style="color:#fa756d;line-height:70rpx">点击查看</navigator>
+  </view>
+  <!-- 配送信息 -->
+  <view >
+    <view class="ps_info_title" wx:if="{{detail.order_status=='sending'||detail.order_status=='wait_pick'}}">配送信息</view>
+    <view class="ps_info flex_between" wx:if="{{detail.order_status=='sending'||detail.order_status=='wait_pick'}}">
+      <view class="flex_start">
+        <view class="icon_box img_photo">
+          <image src="{{detail.avatarUrl}}" style="width:82rpx;height:82rpx;border-radius:50%"></image>
+        </view>
+        <view class="f_28_000">
+          <text class="padding_right_10">{{detail.realname}}</text>
+          <text bindtap="onPhoneCall" data-mobile="{{detail.mobile}}" style="color:#fe736c">{{detail.mobile}}</text> </view>
+      </view>
+      <view class="look_pos" bindtap="onLookPoster" data-lng="{{detail.lng}}" data-lat="{{detail.lat}}">查看位置</view>
+    </view>
+    <view class="ps_info_title">发货信息</view>
+    <view class="send_address_info flex_start">
+      <view class="f_28_333 one_line" style="width:100%;margin-bottom:10rpx">{{detail.send_address}}</view>
+      <view class="f_28_999">{{detail.send_name}}：{{detail.send_mobile}}</view>
+    </view>
+    <view class="ps_info_title">收货信息</view>
+    <view class="send_address_info flex_start">
+      <view class="f_28_333 one_line" style="width:100%;margin-bottom:10rpx">{{detail.receive_address}}</view>
+      <view class="f_28_999">{{detail.receive_name}}：{{detail.receive_mobile}}</view>
+    </view>
+  </view>
+  <!-- 跳转评价信息 -->
+  <navigator wx:if="{{detail.is_comment == 0 && detail.order_status=='complate' }}" url="../evaluate/evaluate?oid={{oid}}" class="sub_btn">立即评价</navigator>
+  <!-- wx:if="{{detail.order_status=='wait_dispatch' || detail.order_status=='wait_pick' }}"  -->
+  <view  wx:if="{{detail.order_status=='wait_dispatch' || detail.order_status=='wait_pick' }}"  url="../evaluate/evaluate?oid={{oid}}" bindtap="onRefund" data-oid="{{oid}}" class="sub_btn">申请退款</view>
+</view>
+<view class="refresh" bindtap="onRefresh">刷新</view>

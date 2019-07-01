@@ -1,0 +1,95 @@
+<view class="fixed">
+  <!-- 寄 -->
+  <form wx:if="{{ty=='send'}}" bindsubmit="onSubmit">
+    <view class="item flex_start" bindtap="onToSelectPos">
+      <view class="f_28_333">发货地址</view>
+      <input disabled class="input"  value="{{addressInfo.address}}" placeholder="请选择发货地址"></input>
+      <view class="icon_box">
+        <image src="../../images/location.png" style="width:30rpx;height:38rpx"></image>
+      </view>
+    </view>
+    <view class="item flex_start">
+      <view class="f_28_333">详细信息</view>
+      <input class="input" value="{{addressInfo.sendAddressDetail}}" name="sendAddressDetail" placeholder="请输入详细信息（单元、门牌号）"></input>
+    </view>
+    <view class="item flex_start">
+      <view class="f_28_333">发货人姓名</view>
+      <input class="input" value="{{addressInfo.sendName}}" name="sendName" placeholder="请输入发货人姓名"></input>
+    </view>
+    <view class="item flex_start">
+      <view class="f_28_333">发货人电话</view>
+      <input class="input" value="{{addressInfo.sendMobile}}" type="number" name="sendMobile" placeholder="请输入发货人电话"></input>
+    </view>
+    <!-- 提交 -->
+    <view class="sub_btn relative bs">
+      确认
+      <button class="lb" form-type="submit"></button>
+    </view>
+  </form>
+  <!-- 收 -->
+  <form wx:else bindsubmit="onSubmit">
+    <view class="item flex_start" bindtap="onToSelectPos">
+      <view class="f_28_333">收货地址</view>
+      <input disabled class="input" value="{{addressInfo.address}}" placeholder="请选择收货地址"></input>
+      <view class="icon_box">
+        <image src="../../images/location.png" style="width:30rpx;height:38rpx"></image>
+      </view>
+    </view>
+    <view class="item flex_start">
+      <view class="f_28_333">详细信息</view>
+      <input class="input" value="{{addressInfo.receiveAddressDetail}}" name="receiveAddressDetail" placeholder="请输入详细信息（单元、门牌号）"></input>
+    </view>
+    <view class="item flex_start">
+      <view class="f_28_333">收货人姓名</view>
+      <input class="input" value="{{addressInfo.receiveName}}" name="receiveName" placeholder="请输入收货人姓名"></input>
+    </view>
+    <view class="item flex_start">
+      <view class="f_28_333">收货人电话</view>
+      <input class="input" type="number" value="{{addressInfo.receiveMobile==''?'':addressInfo.receiveMobile}}" name="receiveMobile" placeholder="请输入收货人电话"></input>
+    </view>
+    <!-- 提交 -->
+    <view class="sub_btn relative bs">
+      确认
+      <button class="lb" form-type="submit"></button>
+    </view>
+  </form>
+  <!-- 历史记录 -->
+  <view class="history">
+    <view class="his_title">历史地址</view>
+    <!-- 历史记录 -->
+    <view class="his_box">
+      <paging contentTip="无历史记录" dataObj="{{dataObj}}" bindpageData="onPageData">
+        <view slot="list" wx:if="{{ty=='send'}}">
+          <view class="relative history_box" bindtap="onSelectHis" data-hid="{{item.id}}"  wx:for="{{historyList}}" wx:key="_{{index}}" >
+            <slide-view  bind:slideopen="onLintap" data-index="{{index}}" height="150" width="750" slide-width="122" close="{{item.close}}" threshold="30" auto-close="{{false}}">
+              <view slot="left" class="left_box">
+                <view  class="left">
+                  <view class="f_28_333 one_line" style="width:100%">{{item.address}}</view>
+                  <view class="f_28_999">{{item.sendName}}：{{item.sendMobile}}</view>
+                </view>
+              </view>
+              <view slot="right" bindtap="onDel" data-hid="{{item.id}}" class="right f_28_fff">
+                <text>删除</text>
+              </view>
+            </slide-view>
+          </view>
+        </view>
+         <view slot="list" wx:else>
+           <view class="relative" bindtap="onSelectHis" data-hid="{{item.id}}"  wx:for="{{historyList}}" wx:key="_{{index}}" >
+            <slide-view bind:slideopen="onLintap" data-index="{{index}}"  height="150" width="750" slide-width="122" threshold="30" auto-close="{{false}}">
+              <view slot="left" class="left_box">
+                <view  class="left">
+                  <view class="f_28_333 one_line" style="width:100%">{{item.address}}</view>
+                  <view class="f_28_999">{{item.receiveName}}：{{item.receiveMobile}}</view>
+                </view>
+              </view>
+              <view slot="right" bindtap="onDel" data-hid="{{item.id}}" class="right f_28_fff">
+                <text>删除</text>
+              </view>
+            </slide-view>
+          </view>
+        </view>
+      </paging>
+    </view>
+  </view>
+</view>

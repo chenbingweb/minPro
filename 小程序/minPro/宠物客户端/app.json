@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/disclaimer/disclaimer",
+    "pages/fillPetInfo/fillPetInfo",
+    "pages/login/login",
+    "pages/evaluate/evaluate",
+    "pages/priceDetail/priceDetail",
+    "pages/lookPetInfo/lookPetInfo",
+    "pages/orderDetail/orderDetail",
+    "pages/myOrderList/myOrderList",
+    "pages/petInfo/petInfo",
+    "pages/myInfo/myInfo",
+    "pages/myCenter/myCenter",
+    "pages/send/send",
+    "pages/loactionPos/loactionPos",
+    "pages/cardList/cardList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false,
+  "usingComponents": {
+    "slide-view": "/components/slide-view/index",
+    "paging": "/components/paging/paging",
+    "nav-bar": "/components/nav-bar/nav-bar"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取附近配送员信息"
+    }
+  }
+}

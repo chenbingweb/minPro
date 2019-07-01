@@ -1,0 +1,41 @@
+<view class="fixed">
+  <form bindsubmit="onSubmit">
+    <view class="item flex_between">
+      <view class="f_28_333">姓名</view>
+      <input class="input" value="{{name}}" name="name" placeholder='请输入'></input>
+    </view>
+    <view class="item flex_between">
+      <view class="f_28_333">性别</view>
+      <picker range="{{range}}" range-key="name" bindchange="onGenderChange">
+        <view class="input flex_between">
+          <view class="margin_right_10" style="{{range[genderIndex].id==0?'color:#808080':''}}">{{range[genderIndex].name}}</view>
+          <input hidden name="gender" value="{{range[genderIndex].id}}"></input>
+          <view class="icon_box">
+            <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+          </view>
+        </view>
+        
+      </picker>
+    </view>
+    <view class="item flex_between">
+      <view class="f_28_333">出生日期</view>
+      <picker mode = "date" bindchange="onDateChange">
+        <view class="input flex_between">
+          <view class="margin_right_10"style="{{birthday==''?'color:#808080':''}}" >{{birthday==''?'请选择':birthday}}</view>
+          <input hidden name="birthday" value="{{birthday}}"></input>
+          <view class="icon_box">
+            <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class="item flex_between">
+      <view class="f_28_333">联系电话</view>
+      <input type="number" value="{{mobile}}" name="mobile" class="input" placeholder='请输入'></input>
+    </view>
+    <view class="sub_btn relative bs">
+      保存
+      <button class="lb" form-type="submit"></button>
+    </view>
+  </form>
+</view>

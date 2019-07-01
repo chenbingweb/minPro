@@ -1,0 +1,15 @@
+/* pages/disclaimer/disclaimer.wxss */
+image
+{
+  margin: 0 auto;
+  display: block;
+}
+.wp
+{
+  width: 690rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow:hidden;
+
+  /* padding: 10rpx 30rpx; */
+}

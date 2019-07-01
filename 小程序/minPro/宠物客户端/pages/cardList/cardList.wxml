@@ -1,0 +1,24 @@
+<scroll-view scroll-y class="scroll_view fixed">
+  <view>
+    <view class="item_card flex_start"  wx:for="{{list}}" wx:key="_{{index}}" >
+      <view class="icon_box">
+        <image src="../../images/card_logo.png" style="width:104rpx;height:104rpx;"></image>
+      </view>
+      <view class="card_info_2">
+        <view>
+          <text  wx:if="{{item.type=='discount'}}" class="price_1">折</text>
+          <text wx:else class="price_1">¥</text>
+          <text  wx:if="{{item.type=='reduction'}}" class="card_price">{{item.reduction}}</text> 
+          <text  wx:if="{{item.type=='money'}}" class="card_price">{{item.money}}</text> 
+          <text wx:if="{{item.type=='discount'}}" class="card_price">{{item.discount}}</text> 
+        </view>
+        <!-- ENUM('money', 'discount', 'reduction') -->
+        <view class="card_name_1" wx:if="{{item.type=='reduction'}}">消费满{{item.reduction_top}}可用</view>
+        <view class="card_name_1" wx:if="{{item.type=='money'}}">抵扣券</view>
+         <view class="card_name_1" wx:if="{{item.type=='discount'}}">折扣券</view>
+        <view class="card_date">有效期至{{item.end_time}}</view>
+      </view>
+      <view class="to_use" data-cid="{{item.id}}" bindtap="onSelect">去使用</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,25 @@
+/* pages/login/login.wxss */
+.login_item
+{
+  width: 700rpx;
+  height: 100rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  margin: 0 auto;
+}
+.login_input
+{
+  width: 420rpx;
+  height: 90rpx;
+  margin-left: 45rpx;
+  font-size: 26rpx;
+  color:#cecece;
+}
+.get_code
+{
+  width: 150rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#fdd000;
+  font-size: 26rpx;
+}

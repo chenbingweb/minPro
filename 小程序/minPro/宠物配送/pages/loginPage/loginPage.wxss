@@ -1,0 +1,44 @@
+/* pages/loginPage/loginPage.wxss */
+.logo_img
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:90rpx;
+}
+.item_input
+{
+  width:700rpx;
+  height: 88rpx;
+  border:2rpx solid #e5e5e5;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  top:420rpx;
+  background-color: #fff;
+  padding-left: 35rpx;
+}
+.f_26_999
+{
+  font-size: 26rpx;
+  color:#666;
+}
+.input
+{
+  width: 620rpx;
+  height: 80rpx;
+}
+.password
+{
+  top:530rpx;
+}
+.login_btn_1
+{
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  top:650rpx;
+  margin-top:0;
+}

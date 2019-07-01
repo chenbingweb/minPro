@@ -1,0 +1,13 @@
+<view class="fixed">
+  <form bindsubmit="onSubmit">
+    <view class="title f_28_333 flex_start">
+      对平台的评价
+    </view>
+    <textarea class="area_box" name="platform" placeholder="请输入你的评价"></textarea>
+     <view class="title f_28_333 flex_start">
+      对配送员的评价
+    </view>
+    <textarea class="area_box" name="send" placeholder="请输入你的评价"></textarea>
+    <view  class="sub_btn relative">提交评价<button class="lb" form-type="submit"></button></view>
+  </form>
+</view>

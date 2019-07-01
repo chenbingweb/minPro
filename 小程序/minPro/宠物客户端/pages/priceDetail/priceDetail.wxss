@@ -1,0 +1,26 @@
+/* pages/priceDetail/priceDetail.wxss */
+.price_item
+{
+  height: 100rpx;
+  width: 700rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #e5e5e5;
+  
+}
+.explain
+{
+  width: 700rpx;
+  margin: 0 auto;
+  padding-top: 50rpx;
+}
+.explain_2
+{
+   width: 700rpx;
+  margin: 0 auto;
+  padding-top: 10rpx;
+}
+.explain_2 view
+{
+
+  line-height: 40rpx;
+}

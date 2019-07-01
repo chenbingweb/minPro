@@ -1,0 +1,67 @@
+<view wx:if="{{true}}">
+  <nav-bar/>
+  <view class="index_page scroll">
+     <!-- <paging  contentTip="无历史订单" dataObj="{{dataObj}}" bindpageData="onPageData">  </paging> -->
+      <view wx:if="{{orderList.length}}" slot="list">
+        <navigator url="../orderDetail/orderDetail?oid={{item.id}}" wx:key="_{{index}}" class="list_item" wx:for="{{orderList}}">
+          <!-- 时间 -->
+          <view class="list_item_title flex_between">
+            <view class="f_26_a9">
+              <text class="padding_right_20">下单时间</text>{{item.create_at}}
+            </view>
+            <!-- detail.order_status=='normal' && detail.delivery_status=='yes'&& detail.pick_status=='no' -->
+            <view wx:if="{{item.order_status=='normal' && item.delivery_status=='yes'&& item.pick_status=='no'}}" class="list_status list_status_color_wait">
+              等待取货
+            </view>
+
+            <view wx:if="{{item.order_status=='normal' && item.dispatch_status=='yes' && item.delivery_status=='yes'&& item.pick_status=='yes'}}" class="list_status list_status_color_sending">
+              正在配送
+            </view>
+            <view wx:if="{{item.delivery_status=='no' && item.order_status=='normal'}}" class="list_status list_status_color_complete">
+              等待接单
+            </view>
+            <view wx:if="{{item.order_status=='in_refund'}}" class="list_status list_status_color_complete">
+              退款中
+            </view>
+            <view wx:if="{{item.order_status=='has_refund'}}" class="list_status list_status_color_complete">
+              已退款
+            </view>
+          </view>
+          <!-- 寄送信息 -->
+          <view class="address_info flex_start">
+            <view class="info_left">
+              <view class="icon_img">
+                <image src="../../images/send.png" style="width:45rpx;height:46rpx"></image>
+              </view>
+              <view class="m_line"></view>
+              <view class="icon_img">
+                <image src="../../images/receive.png" style="width:45rpx;height:46rpx"></image>
+              </view>
+            </view>
+          
+            <view class="info_right">
+              <view class="child_1">
+                <view class="f_30_000 one_line" style="width:600rpx">{{item.send_address}}</view>
+                <view class="f_26_a9">{{item.send_name}} {{item.send_mobile}}</view>
+              </view>
+              <view class="child">
+                <view class="f_30_000 one_line" style="width:600rpx">{{item.receive_address}}</view>
+                <view class="f_26_a9">{{item.receive_name}} {{item.receive_mobile}}</view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="no_info" wx:if="{{orderList.length==0}}">暂无接单</view>
+
+   
+  </view>
+  <!-- 刷新 -->
+  <view class="refresh flex_center" bindtap="onrefresh">
+    <view class="icon_box margin_right_10">
+      <image src="../../images/refresh.png" style="width:38rpx;height:32rpx"></image>
+    </view>
+    <view class="f_28_333 ">刷新页面</view>
+  </view>
+</view>
+<login-page bindisLogin="onIsLogin" wx:else/>

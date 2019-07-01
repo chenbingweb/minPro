@@ -1,0 +1,46 @@
+.header
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 242rpx;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  padding: 0 23rpx;
+  font-size: 34rpx;
+  color:#333;
+}
+page
+{
+ background-color: #fff; 
+}
+.photo
+{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.list_item
+{
+  width: 700rpx;
+  margin: 0 auto;
+  height: 120rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  font-size: 34rpx;
+  color:#000;
+}
+.kf
+{
+  font-size:24rpx;
+  color:#666;
+  height: 50rpx;
+  margin-top: 80rpx;
+}
+.kf::before,.kf::after
+{
+  content:"";
+  display: block;
+  width: 100rpx;
+  height: 2rpx;
+  background-color: #666;
+}

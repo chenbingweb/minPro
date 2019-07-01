@@ -1,0 +1,25 @@
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class="fixed" wx:if="{{detail.distance}}">
+  <view class="price_item flex_between">
+    <view class="f_28_333">订单距离</view>
+    <view class="f_26_666">{{detail.distance}}公里</view>
+  </view>
+  <view class="price_item flex_between">
+    <view class="f_28_333">订单总额</view>
+    <view class="f_26_666">{{detail.total_fee}}元</view>
+  </view>
+  <view>
+    <view class="f_28_333 explain">价格说明：</view>
+    <view class="f_26_666 explain_2">
+      <!-- <view>5公里以内，5公斤以下，16元</view>
+      <view>5公里后每增加5km，加收10元</view>
+      <view>5-20公斤每增加1kg，加收2元</view>
+      <view>超出20kg后，每增加1kg，加收5元</view>
+      <view>00:00：00至01:00:00下单或此时间段内的预约单，需支付夜 间费10元</view>
+      <view>3公里内45分钟，3到5公里内60分钟，超过5公里每加5公里 加30分钟</view> -->
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+    </view>
+  </view>
+</view>

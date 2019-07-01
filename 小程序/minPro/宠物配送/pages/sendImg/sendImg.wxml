@@ -1,0 +1,21 @@
+<view class="">
+   <view class="header">宠物照片</view>
+   <view class="photo_box flex_start">
+        <view wx:for="{{petImg}}" class="relative m_l_b" wx:key="_{{index}}">
+          <view class="icon_box img_box_1" bindtap="onViewImg" data-index="{{index}}">
+            <image mode="aspectFit" src="{{item}}" style="width:100%"></image>
+          </view>
+          <!-- 删除按钮 -->
+          <view wx:if="{{src=='normal'}}" class="icon_box del_btn" bindtap="onDel" data-img="{{index}}">
+              <image src="../../images/dell.png" style="width:40rpx;height:39rpx;"></image>
+            </view>
+        </view>
+        <!-- 上传照片 -->
+        <view class="m_l_b" bindtap="onUploadImg" wx:if="{{petImg.length<9 && src=='normal'}}">
+          <view class="icon_box img_box_1 upload"  wx:key="_{{index}}">
+            <image mode="aspectFit" src="../../images/camary.png" style="width:44rpx;height:32rpx"></image>
+          </view>
+        </view>
+    </view>
+    <view class="sub_btn" bindtap="onSubmit" wx:if="{{src=='normal'}}">提交并确认送达</view>
+</view>

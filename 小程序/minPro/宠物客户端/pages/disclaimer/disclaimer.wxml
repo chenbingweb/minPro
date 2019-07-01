@@ -1,0 +1,6 @@
+<!--pages/disclaimer/disclaimer.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="wp">
+ <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+

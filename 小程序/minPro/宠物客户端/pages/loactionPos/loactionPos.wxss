@@ -1,0 +1,15 @@
+/* pages/loactionPos/loactionPos.wxss */
+.refresh
+{
+  position: absolute;
+  right: 30rpx;
+  bottom: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  color:#fff;
+  background-color: #FCDF2B;
+  font-size: 30rpx;
+}

@@ -1,0 +1,42 @@
+/* dati_comm/components/post-view/post-view.wxss */
+.fixed
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+.hb_img
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh - 667rpx);
+}
+.control
+{
+  width: 700rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:calc(50vh + 495rpx);
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back
+{
+  position: absolute;
+  top:50rpx;
+  left: 40rpx;
+}

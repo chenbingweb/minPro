@@ -1,0 +1,31 @@
+<view class="fixed">
+  <form bindsubmit="onSubmit">
+    <view class="item flex_between">
+      <view class="f_28_333">宠物品种</view>
+      <input class="input" name="pets_breeds" value="{{pets_breeds}}" placeholder='请输入'></input>
+    </view>
+     <view class="item flex_between">
+      <view class="f_28_333">宠物年龄</view>
+      <input type="number" name="pets_age" value="{{pets_age}}" class="input" placeholder='请输入'></input>
+    </view>
+    <view class="item flex_between">
+      <view class="f_28_333">宠物性别</view>
+      <picker range="{{range}}" range-key="name" bindchange="onGenderChange">
+        <view class="input flex_between">
+          <view class="margin_right_10" style="{{range[genderIndex].id==''?'color:#808080':''}}">{{range[genderIndex].name}}</view>
+          <input hidden name="pets_sex" value="{{range[genderIndex].id}}"></input>
+          <view class="icon_box">
+            <image src="../../images/arrow.png" style="width:16rpx;height:25rpx;"></image>
+          </view>
+        </view>
+        
+      </picker>
+    </view>
+ 
+   
+    <view class="sub_btn relative bs">
+      保存
+      <button class="lb" form-type="submit"></button>
+    </view>
+  </form>
+</view>
