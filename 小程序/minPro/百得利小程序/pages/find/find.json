@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "发现",
+  "usingComponents": {
+    "swiper-base": "/components/swiper-base/swiper-base",
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "city-piker": "/components/city-piker/city-piker"
+  },
+  "enablePullDownRefresh":false
+}

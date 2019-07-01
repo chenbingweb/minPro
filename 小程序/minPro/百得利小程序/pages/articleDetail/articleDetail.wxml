@@ -1,0 +1,12 @@
+<!--文章标题  -->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class="detail_page">
+  <view class="title">{{Title}}</view>
+  <view class="rich_box">
+
+   <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+     <!-- <rich-text nodes="{{richText}}"></rich-text>  -->
+  </view>
+</view>
+

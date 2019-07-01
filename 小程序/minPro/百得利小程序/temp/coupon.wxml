@@ -1,0 +1,41 @@
+<!-- 优惠券 -->
+<template name="coupon">
+  <view class="coupon_item">
+    <!--背景图片  -->
+    <view class="icon_box coupon_bg">
+      <image src="../../images/coupon_bg.png" style="width:695rpx;height:181rpx;"></image>
+    </view>
+    <!--优惠券信息  -->
+    <view class="coupon_info_box">
+        <!--图片  -->
+        <view class="info_img icon_box">
+          <image wx:if="{{couponItem.ImgUrl}}"  mode="aspectFill"  src="{{imgUrl+couponItem.ImgUrl}}" style="width:120rpx;height:120rpx;"></image>
+        </view>
+        <!--信息  -->
+        <view class="info_detail ">
+            <view class="info_name one_line">{{couponItem.Name}}</view>
+            <view class="info_date one_line">有效期：{{couponItem.ExpireTime}}</view>
+            <view class="one_line">适用门店：{{couponItem.AvailableShop}}</view>
+        </view>
+        <!--立即兑换  {{couponItem.Price?'购买':'领券'}}-->
+        <view class="exchange_box">
+            <view wx:if="{{couponItem.Price}}">¥{{couponItem.Price}}</view>
+            <view wx:else>免费券</view>
+            <view></view>
+            <view wx:if="{{type==2}}" bindtap="toUserCard" data-cardid="{{couponItem.WeChatId}}" data-code="{{couponItem.Code}}" data-id="{{couponItem.Id}}" class="exchange_btn">去使用</view>
+            <view  wx:else >
+            <!--wx:if="{{couponItem.Status==0||couponItem.Status=='can_get'}}"   -->
+              
+              
+              <view  wx:if="{{couponItem.Status=='consumed'}}" class="exchange_btn used" data-id="{{couponItem.Id}}" data-status="{{couponItem.Status}}" bindtap="checkUsed">已核销</view>
+              <view wx:if="{{couponItem.Status==0||couponItem.Status=='can_get'}}" class="exchange_btn">
+                立即领券
+                  <button class="btn_buy"  data-id="{{couponItem.Id}}" data-canbuy="{{couponItem.Price}}"  open-type="getUserInfo" bindgetuserinfo="toBuyCoupon"></button>
+              </view>
+               <view  wx:if="{{couponItem.Status=='has_get'}}" bindtap="toBuyCoupon" data-id="{{couponItem.Id}}"  class="exchange_btn used">已领取</view> 
+            </view>
+             
+        </view>
+    </view>
+  </view>
+</template>

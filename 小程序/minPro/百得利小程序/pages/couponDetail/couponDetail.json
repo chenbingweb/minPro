@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#4f72b4",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "plate-picker": "/components/plate-picker/plate-picker"
+  }
+}

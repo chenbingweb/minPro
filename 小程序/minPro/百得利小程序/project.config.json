@@ -1,0 +1,66 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.0",
+	"appid": "wxa3a5a82c237f6c24",
+	"projectname": "%E7%99%BE%E5%BE%97%E5%88%A9_online_0.4",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "1",
+					"pathName": "pages/index/index",
+					"query": "scene=2323423",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "2",
+					"pathName": "pages/shopDetail/shopDetail",
+					"query": "id=17",
+					"scene": "1035",
+					"referrerInfo": {}
+				},
+				{
+					"id": -1,
+					"name": "3",
+					"pathName": "pages/couponDetail/couponDetail",
+					"query": "id=246",
+					"scene": "1035",
+					"referrerInfo": {}
+				}
+			]
+		}
+	}
+}

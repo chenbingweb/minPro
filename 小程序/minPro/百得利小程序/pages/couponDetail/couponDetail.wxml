@@ -1,0 +1,113 @@
+<view class="detail_box" wx:if="{{detail.Brand}}">
+  <view class="icon_box logo">
+    <!--  -->
+    <image style="width:75rpx;height:75rpx;border-radius:50%;" src="{{imgUrl+detail.ImgUrl}}"></image>
+  </view>
+  <!--标题  -->
+  <view class="title item">{{detail.Brand}}</view>
+  <view class="content item">{{detail.Name}}</view>
+  <view wx:if="{{detail.Price}}" class="price">卡券价格：
+    <text class="rmb" style="font-weight:bold">{{detail.Price}}</text>
+    <text style="font-size:26rpx" class="rmb">元</text>
+  </view>
+  <view wx:else class="price">卡券价格：
+    <text class="rmb" style="font-weight:bold">免费</text>
+  </view>
+  <!--说明  -->
+  <view class="explain">
+    <!-- 优惠说明 -->
+    <view class="explain_item">
+      <view class="title_name">优惠说明：</view>
+      <view class="contents">
+        <text> {{detail.Description}}</text>
+        <!-- <view> 1、该优惠券仅支持在海淀保时捷门店针对保时捷品牌车型进行洗车服务；</view>
+        <view> 1、该优惠券仅支持在海淀保时捷门店针对保时捷品牌车型进行洗车服务；</view> -->
+      </view>
+    </view>
+     <!-- 车牌号 -->
+    <view class="explain_item" wx:if="{{VehLicense}}">
+      <view class="title_name">车牌号：</view>
+      <view>{{VehLicense}}</view>
+    </view>
+    <!-- 有效日期 -->
+    <view class="explain_item">
+      <view class="title_name">有效日期：</view>
+      <view>{{detail.ExpireTime}}</view>
+    </view>
+    <!-- 使用须知 -->
+    <view class="explain_item" wx:if="{{false}}">
+      <view class="title_name"> 使用须知：</view>
+      <view>每人限领1张；每人限用50张，不可与其他</view>
+    </view>
+  </view>
+  <view class="item btn" style="color:#82a5e7" wx:if="{{detail.Status=='consumed'}}">已核销</view>
+  <view wx:else>
+
+    <view wx:if="{{detail.WeChatId}}" bindtap="toUse" data-cardid="{{detail.WeChatId}}" data-code="{{detail.Code}}" class="item btn">去使用</view>
+    <view  wx:else>
+      <view wx:if="{{!detail.PayInShop}}">
+        <view data-plate="{{detail.Source}}" wx:if="{{detail.Status!='has_get'}}" class="item btn" bindtap="toBuy" data-id="{{Id}}" data-canbuy="{{detail.Price}}"> 立即{{detail.Price?'购买':'领券'}}</view>
+        <view  class="item btn" style="color:#82a5e7" wx:if="{{detail.Status=='has_get'}}">已领取</view>
+      </view>
+       <!--新增功能  -->
+      <view wx:else class="item btn" bindtap="toBuy" data-id="{{Id}}" data-canbuy="{{!detail.PayInShop}}">领取后到店支付</view>
+    </view>
+     
+  </view>
+
+</view>
+<view wx:if="{{showLogin}}" class="login_btn">
+    点击登录
+    <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" class="btn_login"></button>
+</view>
+
+<!--弹层  -->
+<view class="mark_box" hidden="{{!showBox}}">
+    <!--弹框  -->
+    <form class="select_box"  data-id="{{Id}}" data-canbuy="{{detail.Price}}" bindsubmit="formSubmit">
+      <view value="{{value}}"  bindtap="showSelectBox" class="picker_1" mode = selector range-key="code" range="{{plateList}}">
+        <view  class="plate_select relative">
+         
+          <view>{{plate==''?'请选择车牌':plate}}</view>
+          <input hidden name="plateType" value="{{plate}}"></input>
+        
+          <view class="icon_box">
+            <image src="../../images/arrow_down.png" style="width:30rpx;height:16rpx;"></image>
+          </view>
+        </view>
+      </view>
+     <!-- <picker value="{{value}}"  bindchange="selectPlate" class="picker_1" mode = selector range-key="code" range="{{plateList}}">
+        <view  class="plate_select relative">
+         
+          <view>{{value==-1?'请选择车牌':plateList[value].code}}</view>
+          <input hidden name="plateType" value="{{plateList[value].code}}"></input>
+        
+          <view class="icon_box">
+            <image src="../../images/arrow_down.png" style="width:30rpx;height:16rpx;"></image>
+          </view>
+        </view>
+      </picker> -->
+        <view class="plate_select">
+          <input name="platenumber" value="{{platenumber}}" type="bun" class="input_box" placeholder="请输入车牌号"></input>
+        </view>
+        <view class="tip_line"><text style="color:#ef6a6d;font-size:26rpx">* </text>请准确填写车牌号，否则卡券将不能使用</view>
+        <view class="control_box">
+          <button  formType="submit" class="btn_item">确定</button>
+          <view style="background:#959595" class="btn_item" bindtap="cancelBox">取消</view>
+        </view>
+    </form>
+     <plate-picker showBoxFlag="{{showBoxFlag}}" bindselectOk="selectOk"/> 
+</view>
+
+
+<!--"Id": 35,
+		"Name": "机油1升",consumed
+		"ExpireTime": "2018-03-31",
+		"Price": 0.01,
+		"ImgUrl": "/Logo/Back/8b423c7c-41d6-43f9-8d41-e9a25e944cd2.png",
+		"AvailableShop": "北京亦庄保时捷中心",
+		"Status": "has_get",
+		"Code": null,
+		"WeChatId": null,
+		"Description": "灰壳机油"  -->
+    

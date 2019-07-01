@@ -1,0 +1,114 @@
+<!--pages/find/find.wxml-->
+<!--引入模板-->
+<import src="../../temp/coupon.wxml" />
+<!--引入模板-->
+<import src="../../temp/loadmore.wxml" />
+
+<!--导航  -->
+<nav-bar login="{{login}}"/>
+<!--自定义城市选择  -->
+<city-piker shows="{{show}}" bindcitySelect="citySelect" bindcancelCity="cancelCity" cityList="{{cityList}}" />
+<!--发现  -->
+<view class="find_page">
+  <view class="search_box">
+    <input wx:if="{{markTip}}" focus="{{focus}}"  style="border-radius:{{!focus?'10rpx':'10rpx 0 0 10rpx'}};" disabled="{{!focus}}" value="{{value}}" bindconfirm="confirmSearch" bindinput="bindKeyInput" />
+    <!--用户提示  -->
+    <view class="tip_mark" wx:else="{{!markTip}}" bindtap="hideTipMark">
+        <view class="icon_box">
+          <image style="width:28rpx;height:31rpx" src="../../images/search.png"></image>
+        </view>
+        <view class="tip_margin">请输入品牌名称</view>
+    </view>
+     <!--取消搜索  -->
+    <!-- <view class="cancel_search" hidden="{{!markTip}}" capture-catch:tap="cancleSearch">取消</view> -->
+     <view class="cancel_search icon_box" hidden="{{!markTip}}" capture-catch:tap="cancleSearch">
+      <image style="width:48rpx;height:48rpx" src="../../images/cancel.png"></image>
+     </view>
+  </view>
+  <view class="select_bar">
+   <!-- <view bindtap="selectItem" data-id="{{item.Id}}" class="bar_item opaciy_an {{item.flag?'selected':''}}" wx:for="{{industryList}}" wx:key="item_{{index}}" style="opacity:0;animation-delay:{{index*30}}ms;">
+        {{item.Name}}
+    </view>
+    <view class="right_view">2</view> -->
+    <!--2.0修改  -->
+    <view class="btn_item {{selectObj.all}} one_line" id="all" catchtap="selectBtnFilter">
+      全部  
+    </view>
+    <view class="btn_item {{selectObj.city}} one_line" id="city" catchtap="selectBtnFilter">
+      <view class="one_line">{{showCity}}</view>
+    </view>
+    <view class="btn_item  {{selectObj.pingpai}}" id="pingpai" catchtap="selectBtnFilter">
+     <view class="one_line">{{brand}}</view>
+    </view>
+    <view class="btn_item  {{selectObj.shop}} " id="shop" catchtap="selectBtnFilter">
+      <view class="one_line">{{shopName}}</view>
+    </view>
+    
+  </view>
+  <view class="coupon_box">
+    <!--筛选列表  -->
+    <view class="mark" bindtap="cancel" wx:if="{{showFilter}}"></view>
+    <view class="filter_box" wx:if="{{showFilter}}">
+      
+      <view class="select_child RemoveRollCar" >
+          <!--品牌  -->
+          <radio-group class="ping_pai" wx:if="{{showPanel=='pingpai'}}" bindchange="checkboxChange">
+            <label class="ping_pai_checkbox" wx:key="item_{{index}}" wx:for="{{industryList}}">
+              <view class="icon_box">
+                <image style="width:35rpx;height:35rpx" src="../../images/{{item.flag?'selected':'no_select'}}.png"></image>
+              </view>
+              <view class="font_style">
+               {{item.Name}}
+              </view>
+              <radio checked="{{item.flag}}" value="{{item.Id}}" hidden />
+            </label>
+          </radio-group>
+          <!--门店  -->
+          <radio-group class="shop_check_box" bindchange="shopCheckChange"  wx:if="{{showPanel=='shop'}}">
+            <label class="shop_check"  wx:key="items_{{index}}" wx:for="{{shopList}}">
+              <view class="icon_box">
+                <image style="width:35rpx;height:35rpx" src="../../images/{{item.flag?'selected':'no_select'}}.png"></image>
+              </view>
+              <view class="font_style_2">
+               {{item.Name}}
+              </view>
+              <radio value="{{item.Id}}" checked="{{item.flag}}" hidden />
+            </label>
+          </radio-group>
+      </view>
+      <!--控制  -->
+      <view class="control_btns">
+        <view class="repeat control_btn_item" id="{{userSelect}}" bindtap="repeat">
+          重置
+        </view>
+        <view class="sure control_btn_item"  id="{{userSelect}}" bindtap="confirmCoup">
+          确认
+        </view>
+      </view>
+    </view>
+    <scroll-view  class="relative"  bindscrolltolower="paginationEvent" style="height:74.4vh;" scroll-y>
+     
+      <view class="find_coupon_box">
+      <view wx:for="{{couponList}}" wx:key="coup_{{index}}" class="opaciy_an" style="opacity:0;animation-delay:{{index*30}}ms;">
+          <template is="coupon" data="{{couponItem:item,imgUrl:imgUrl}}" />
+        </view>
+        <!--没有数据  -->
+          <view class="no_info" style="margin:16rpx;padding:20rpx 0" wx:if="{{showTip}}">没有更多</view>
+          <!--加载更多  -->
+          <template is="loadmore" data="{{showMore}}"/>
+      </view>
+    </scroll-view>
+    
+  </view>
+  <view class="no_info"  wx:if="{{!showFind}}" style="transform:translateY(-900rpx);">
+    没有找到相关数据....
+  </view>
+  <view class="no_info relative" wx:if="{{uid}}" style="transform:translateY(-500rpx);">
+    <view class="icon_box">
+      <image src="../../images/click.png" style="width:48rpx;height:48rpx"></image>
+    </view>
+     <view> 获取全部店铺</view>
+    <button  open-type="getUserInfo"  class="btn_login"   bindgetuserinfo="getAllShop"  ></button>
+  </view>
+</view>
+

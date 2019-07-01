@@ -1,0 +1,47 @@
+/* pages/feedback/feedback.wxss */
+@import '../../temp/coupon.wxss';
+.feedback{
+  width: 100%;
+}
+.feedback .feedback_box{
+  width:750rpx;
+  padding:0 30rpx;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  /* border: 1px solid black; */
+}
+
+.feedback .feedback_box .section{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 35rpx;
+}
+
+.feedback .feedback_box .section textarea{
+  width: 100%;
+  height: 198rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d2d2d2;
+  font-size: 28rpx;
+  padding:20rpx 0 0 22rpx;
+  border-radius: 10rpx;
+}
+
+.feedback .feedback_box .section input{
+  width: 100%;
+  height: 86rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d2d2d2;
+  font-size: 28rpx;
+  padding:0 0 0 22rpx;
+  border-radius: 10rpx;
+  margin-top: 28rpx;
+  line-height: 86rpx;
+}
+
+.feedback .feedback_box .section button{
+  margin-top: 78rpx;
+}

@@ -1,0 +1,98 @@
+.coupon_item
+{
+  width:  695rpx;
+  height: 181rpx;
+  margin: 0 auto;
+  position: relative;
+  background: #edecec;
+  box-shadow: 0px 6rpx 20rpx 6rpx #e7e7e7;
+  margin-bottom: 25rpx;
+  
+}
+.coupon_bg
+{
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.coupon_info_box
+{
+  display: flex;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+
+  justify-content: flex-start;
+  align-items: center;
+   padding-left: 22rpx;
+  padding-right: 12rpx;
+  
+}
+.coupon_info_box .info_img
+{
+  width: 120rpx;
+  height: 120rpx;
+  border:1px solid #d9d9d9;
+ 
+}
+.coupon_info_box .info_detail
+{
+  width: 380rpx;
+  height: 120rpx;
+ 
+  font-size: 24rpx;
+  color:#999;
+  box-sizing: border-box;
+  padding-left: 16rpx;
+}
+.coupon_info_box .info_name
+{
+  color:#666;
+  font-size: 26rpx;
+}
+.coupon_info_box .info_date
+{
+  line-height: 54rpx;
+}
+.coupon_info_box .exchange_box
+{
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  color:#ff6666;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.coupon_info_box .exchange_btn
+{
+  position: relative;
+  display: inline-block;
+  background-color: #ff6666;
+  color:white;
+  width: 136rpx;
+  height: 44rpx;
+  border-radius:22rpx;
+  line-height: 44rpx;
+  text-align: center;
+  margin-top: 24rpx;
+  
+}
+.coupon_info_box .used
+{
+  background-color: #b5b5b5;
+}
+.coupon_info_box .btn_buy
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}

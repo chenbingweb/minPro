@@ -1,0 +1,256 @@
+/* pages/centerPage/centerPage.wxss */
+.center_box
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fb5757;
+}
+.circle_box
+{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.circle_item_1
+{
+  position: absolute;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.34);
+  left: 220rpx;
+  top:0rpx;
+}
+.circle_item_2
+{
+  position: absolute;
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.16);
+  left: 120rpx;
+  top:50rpx;
+}
+.circle_item_3
+{
+  position: absolute;
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  left: 45rpx;
+  top:100rpx;
+}
+.circle_item_4
+{
+  position: absolute;
+  width: 260rpx;
+  height: 260rpx;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.27);
+  right: -90rpx;
+  top:0rpx;
+}
+.user_infor
+{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  right:0;
+ top:240rpx;
+  width:1800rpx;
+  height:1500rpx;
+  border-radius:50%;
+  background-color:white;
+
+}
+.user_infor_box
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.user_photo
+{
+  width: 180rpx;
+  height:180rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border:10rpx solid white;
+  margin-top: 136rpx;
+}
+.user_name
+{
+  width: 230rpx;
+  margin: 0 auto;
+  color:#333333;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 74rpx;
+}
+
+.nav_list
+{
+  width:690rpx;
+  margin:0 auto;
+  box-sizing:border-box;
+  padding:0 30rpx;
+  margin-top:10rpx;
+  border-radius:20rpx;
+
+}
+.nav_item
+{
+  width: 100%;
+  height: 120rpx;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color:#333333;
+  font-size: 28rpx;
+  position: relative;
+}
+.item_name
+{
+  margin-left: 22rpx;
+}
+.arrow
+{
+  position: absolute;
+  right: 0;
+  top:50%;
+  transform: translateY(-50%);
+ 
+}
+.contact
+{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0
+}
+
+.login_btn
+{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background-color: #fb5757;
+  color:white;
+  line-height:180rpx;
+  text-align:center;
+  font-size:50rpx;
+    position:absolute;
+  left:0;
+  top:0;
+
+}
+
+.no_name
+{
+  width:230rpx;
+  margin:0 auto;
+  color:#333333;
+  font-size:32rpx;
+  text-align:center;
+  line-height:74rpx;
+  height: 74rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @import '../../temp/temp.wxss'; */
+/* .center_header
+{
+  height: 290rpx;
+  width: 100%;
+  background-image: url('https://api.jeemoo.com/yanglao/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.photo_circle
+{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border:8rpx solid #94DDD8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:40rpx;
+  margin-left:-88rpx;
+
+}
+.center_photo
+{
+  height: 154rpx;
+  width: 154rpx;
+  border-radius: 50%;
+}
+.user_name
+{
+  color:#fff;
+  font-size: 40rpx;
+  background-color: transparent;
+
+}
+.user_box
+{
+  margin-left:20rpx;
+ margin-top:70rpx;
+}
+.user_box .icon_box
+{
+   justify-content: flex-start
+}
+.center_nav
+{
+  height: 100rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #eee;
+  padding:0 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.center_container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center_title
+{
+  font-size: 28rpx;
+  color:#333;
+  margin-left: 34rpx;
+} */

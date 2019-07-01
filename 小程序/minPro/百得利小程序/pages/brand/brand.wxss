@@ -1,0 +1,40 @@
+/* pages/brand/brand.wxss */
+.brand_page
+{
+  padding-bottom: 120rpx;
+}
+.brand_page .brand_list
+{
+  width: 750rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.brand_page .brand_list .title
+{
+  font-size: 32rpx;
+  color:#585858;
+  text-align: center;
+  line-height: 120rpx;
+}
+.item_box
+{
+  width: 33.3333%;
+  height:196rpx;
+  border-bottom:1px solid  #e5e5e5;
+  border-right:1px solid  #e5e5e5;
+  box-sizing: border-box;
+  padding:45rpx;
+}
+.item_box:nth-of-type(3n)
+{
+   border-right:none;
+}
+.list_brand
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top:1px solid #e5e5e5;
+  flex-wrap: wrap;
+}

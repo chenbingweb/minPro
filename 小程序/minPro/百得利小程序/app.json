@@ -1,0 +1,31 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/shopeList/shopeList",
+    "pages/find/find",
+    "pages/centerPage/centerPage",
+    "pages/brand/brand",
+    "pages/myCoupon/myCoupon",
+    "pages/myMember/myMember",
+    "pages/feedback/feedback",
+    "pages/articleDetail/articleDetail",
+   "pages/activeMember/activeMember",
+      "pages/couponDetail/couponDetail",
+    "pages/shopDetail/shopDetail"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fb5757",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false
+}

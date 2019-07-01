@@ -1,0 +1,67 @@
+/* components/nav-bar/nav-bar.wxss */
+.nav_bar_component
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 9999999999;
+  pointer-events: none; 
+}
+
+.nav_bar_component .nav_box
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  width:100%;
+  background-color: white;
+  box-sizing: border-box;
+  border-top:2rpx solid #DCDCDC;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index:99999;
+  pointer-events: all;
+}
+.nav_bar_component .nav_item
+{
+  width: 140rpx;
+  height: 70rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color:#666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.nav_bar_component .select_nav
+{
+  color:#cc9966;
+}
+.nav_bar_component .nav_img
+{
+  width:32rpx;
+  height: 32rpx;
+  
+}
+.nav_bar_component .icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_bar_component .login_btn
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  opacity: 0;
+}

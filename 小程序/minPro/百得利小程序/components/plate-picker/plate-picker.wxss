@@ -1,0 +1,70 @@
+/*车牌选择  */
+.select_plate_box
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 748rpx;
+  background: white;
+  bottom: -1000rpx;
+  display: inline-flex;
+  
+  flex-wrap: wrap;
+  align-items: flex-start;
+   border-top: 2rpx solid #dddddd;
+   opacity: 0;
+}
+.btn_item
+{
+  width: 125rpx;
+  height: 125rpx;
+  border-right: 2rpx solid #dddddd;
+  border-bottom: 2rpx solid #dddddd;
+  text-align: center;
+  line-height: 128rpx;
+  font-size: 30rpx;
+  color:#333;
+  box-sizing: border-box;
+}
+.btn_item:nth-of-type(6n)
+{
+   border-right:none;
+}
+.selected
+{
+  background-color: #eee;
+  color:white;
+}
+/*淡出动画  */
+.show_box
+{
+  animation:showBox 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0;
+}
+@keyframes showBox {
+  0% {
+    bottom:-1000rpx;
+     opacity: 0;
+  }
+  100%{
+    bottom: 0;
+     opacity: 1;
+  }
+}
+.hide_box
+{
+  animation:hideBox 0.2s linear;
+  animation-fill-mode:forwards;
+  animation-delay: 0;
+}
+@keyframes hideBox {
+  0% {
+    bottom: 0;
+     opacity: 1;
+  }
+  100%{
+    bottom: -1000rpx;
+     opacity: 0;
+  }
+}

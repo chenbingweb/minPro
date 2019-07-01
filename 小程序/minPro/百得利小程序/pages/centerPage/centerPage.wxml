@@ -1,0 +1,190 @@
+<!--pages/centerPage/centerPage.wxml-->
+<!--引入模板-->
+<import src="../../temp/temp.wxml" />
+<!--导航-->
+<nav-bar login="{{login}}"/>
+<!--  -->
+<view class="center_box">
+  <!--头部圆圈  -->
+  <view class="circle_box">
+    <view class="circle_item_1"></view>
+    <view class="circle_item_2"></view>
+    <view class="circle_item_3"></view>
+    <view class="circle_item_4"></view>
+  </view>
+  <!--用户信息背景图  -->
+  <view class="user_infor"></view>
+  <!--用户信息  -->
+  <view class="user_infor_box">
+      <!--头部  -->
+      <view class="icon_box user_photo box_shadow relative">
+        <image  src="{{userInfo.Avatar}}" style="width:180rpx;height:180rpx;border-radius:50%"></image>
+         <button wx:if="{{showButton}}"open-type="getUserInfo" bindgetuserinfo="login"  class="login_btn" >登录</button>
+      </view>
+      <!--用户名称  -->
+      <view wx:if="{{showLogin}}" class="user_name one_line">{{userInfo.Nickname}}</view>
+      <view wx:else class="no_name"></view>
+      <!--导航条  -->
+      <view class="nav_list box_shadow">
+        <!-- 我的会员卡 -->
+        <view class="nav_item" bindtap="toNavigator" data-url="../myMember/myMember">
+          <view class="icon_box">
+            <image style="width:34rpx;height:28rpx " src="../../images/member_card.png"></image>
+          </view>
+          <view class="item_name">我的会员卡</view>
+          <view class="icon_box arrow">
+            <image style="width:18rpx;height:34rpx " src="../../images/arrow.png"></image>
+          </view>
+        </view>
+        <!-- 我的优惠券 -->
+        <view class="nav_item" bindtap="toNavigator" data-url="../myCoupon/myCoupon">
+          <view class="icon_box">
+            <image style="width:39rpx;height:39rpx " src="../../images/coupon_card.png"></image>
+          </view>
+          <view class="item_name">我的优惠券</view>
+          <view class="icon_box arrow">
+            <image style="width:18rpx;height:34rpx " src="../../images/arrow.png"></image>
+          </view>
+        </view>
+        <!-- 意见反馈 -->
+          <view class="nav_item" bindtap="toNavigator" data-url="../feedback/feedback">
+            <view class="icon_box">
+              <image style="width:34rpx;height:34rpx " src="../../images/sug_card.png"></image>
+            </view>
+            <view class="item_name">意见反馈</view>
+            <view class="icon_box arrow">
+              <image style="width:18rpx;height:34rpx " src="../../images/arrow.png"></image>
+            </view>
+          </view>
+        <!-- 在线客服 -->
+        <view class="nav_item" style="border:none">
+          <view class="icon_box">
+            <image style="width:36rpx;height:34rpx " src="../../images/server_card.png"></image>
+          </view>
+          <view class="item_name">在线客服</view>
+          <view class="icon_box arrow">
+            <image style="width:18rpx;height:34rpx " src="../../images/arrow.png"></image>
+          </view>
+          <button open-type="contact" class="contact"></button>
+        </view>
+      </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view wx:if="{{false}}">
+  <view class="center_header bg" wx:if="{{showLogin}}">
+    <view class="icon_box photo_circle">
+      <image class="center_photo" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="user_box" >
+      <view class="icon_box">
+        <image style="width:120rpx;height:40rpx;" src="../../images/person_mark.png"></image>
+      </view>
+      <view class="user_name ellipsis" >{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view wx:else class="center_header bg">
+    <view class="icon_box ">
+      <image class="center_photo" src="../../images/login_no.png"></image>
+    </view>
+    <view class="user_box" >
+      <button  open-type="getUserInfo" bindgetuserinfo="login"  class="user_name" style="margin-top:32rpx">点击登录</button>
+    </view>
+  </view>
+  <view>
+    <view bindtap="toNavigator" class="center_nav" data-url="../personalInfo/personalInfo">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:40rpx;height:38rpx" src="../../images/person_info_icon.png"></image>
+        </view>
+        <view class="center_title">个人信息</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </view>
+    <view bindtap="toNavigator" class="center_nav" data-url="../oldManInfo/oldMabInfo">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:40rpx;height:38rpx" src="../../images/old_icon.png"></image>
+        </view>
+        <view class="center_title">老人信息</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </view>
+    <view bindtap="toNavigator" data-url="../myCollect/myCollect" class="center_nav">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:40rpx;height:38rpx" src="../../images/collect_icon.png"></image>
+        </view>
+        <view class="center_title">我的收藏</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </view>
+    <view bindtap="toNavigator" class="center_nav" data-url="../myBespoke/myBespoke">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:36rpx;height:36rpx" src="../../images/order_icon.png"></image>
+        </view>
+        <view class="center_title">我的试住</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </view>
+    <view bindtap="toNavigator" class="center_nav" data-url="../myVisit/myVisit">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:40rpx;height:38rpx" src="../../images/visit_icon.png"></image>
+        </view>
+        <view class="center_title">我的参观</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </view>
+    <!--
+    <navigator url="../accreditationOrg/accreditationOrg" class="center_nav">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:32rpx;height:34rpx" src="../../images/org_rz.png"></image>
+        </view>
+        <view class="center_title">机构认证</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </navigator>
+    <navigator url="../orgInfo/orgInfo" class="center_nav" wx:if="{{true}}">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:40rpx;height:38rpx" src="../../images/org_icon.png"></image>
+        </view>
+        <view class="center_title">机构信息</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </navigator>
+    <navigator url="../extensionCooperation/extensionCooperation" class="center_nav">
+      <view class="center_container">
+        <view class="icon_box">
+          <image style="width:40rpx;height:38rpx" src="../../images/tg_icon.png"></image>
+        </view>
+        <view class="center_title">推广合作</view>
+      </view>
+      <view class="hot_more">
+      </view>
+    </navigator>-->
+  </view>
+</view>

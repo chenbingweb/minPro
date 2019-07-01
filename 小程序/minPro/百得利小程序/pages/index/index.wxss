@@ -1,0 +1,179 @@
+/* pages/index/index.wxss */
+/*引入模板样式*/
+@import '../../temp/coupon.wxss';
+page
+{
+  display: table;
+  padding-bottom: 110rpx;
+  background-color: white;
+}
+.index_page
+{
+  box-sizing: border-box;
+  background-color: white;
+}
+.index_page .menber_title
+{
+  background-color: white;
+  height: 94rpx;
+  width: 750rpx;
+  margin:0 auto;
+  box-sizing: border-box;
+  position: relative;
+  
+}
+.index_page .menber_title .menber_line_bg
+{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translateX(-50%)  translateY(-50%);
+}
+.index_page .menber_title  .title_style
+{
+   position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translateX(-50%)  translateY(-50%);
+  color:#666;
+  font-size: 28rpx;
+}
+.card_list
+{
+  width: 750rpx;
+  /* padding: 0 30rpx; 
+  padding-left: 30rpx;*/
+  box-sizing: border-box;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.index_page .menber_card
+{ 
+   /* width: 334rpx;  */
+   width: 50%;
+  margin-right: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+  height:202rpx;
+}
+.index_page .menber_card_item
+{
+  /* position: absolute;
+  top:0;
+  left:0; */
+  height: 100%;
+  width: 100%;
+  border-radius: 10rpx;
+}
+.index_page .member_info
+{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 84rpx;
+  width: 100%;
+  color:white;
+  font-size: 16rpx;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.index_page .member_logo_box
+{
+  width: 44rpx;
+  height: 44rpx;
+  border:2rpx solid white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.index_page .near_shop_title
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  margin:0 auto;
+  padding:  0 30rpx;
+  height: 94rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#666;
+  font-size: 28rpx;
+}
+.index_page .near_shop_title .more
+{
+  width: 94rpx;
+  height: 94rpx;
+  color:#9a9a9a;
+}
+/*附近店铺  */
+.index_page .shop_list
+{
+  width: 750rpx;
+  margin:0 auto;
+  display: flex;
+  justify-content:;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.index_page .shop_box
+{
+   width: 214rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  box-sizing: border-box;
+ /* box-shadow: 0px 6rpx 20rpx 6rpx #eee; */
+}
+.index_page .shop_box .top
+{
+  width: 214rpx;
+  height: 150rpx;
+  overflow: hidden;
+}
+.index_page .shop_box .top image
+{
+  border-radius: 10rpx 10rpx 0 0;
+  height: 150rpx;
+}
+.index_page .address_info
+{
+  text-align: center;
+  color:#333333;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.index_page .address_dis
+{
+  color:#999999;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8rpx;
+ 
+}
+/*推荐优惠券  */
+.index_page .coupon_list_box
+{
+  width: 750rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.index_page .more_coupon
+{
+  color:#9a9a9a;
+  font-size: 26rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+
+.scroll_box
+{
+  display: inline-flex;
+  align-items: center;
+  padding-left:30rpx;
+
+}

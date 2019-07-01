@@ -1,0 +1,64 @@
+/* pages/shopDetail/shopDetail.wxss */
+@import '../../temp/coupon.wxss';
+.shop_detail_page
+{
+  padding-bottom: 100rpx;
+}
+.shop_detail_page .shop_header
+{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.shop_detail_page .header_item
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 210rpx;
+}
+.shop_detail_page .shop_name
+{
+  height: 100rpx;
+  margin-left:18rpx ;
+  color:#000000;
+  font-size: 38rpx;
+  width: 458rpx;
+}
+.shop_detail_page .user_control
+{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 690rpx;
+  height: 100rpx;
+  border-top:2rpx dotted #e0e0e0;
+  border-bottom:2rpx dotted #e0e0e0;
+  margin:0 auto;
+  color:#888888;
+  font-size: 30rpx;
+}
+.shop_detail_page .toCheck
+{
+  width: 130rpx;
+  height: 54rpx;
+  border:1px solid #1bb10d;
+  line-height: 54rpx;
+  text-align: center;
+  color:#1bb10d;
+  border-radius: 8rpx;
+}
+.shop_detail_page .coupon_list
+{
+  position: absolute;
+  top:314rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 100rpx;
+  margin-top:30rpx;
+}
+.shop_detail_page .coupon_list .list
+{
+  padding: 30rpx 0;
+}

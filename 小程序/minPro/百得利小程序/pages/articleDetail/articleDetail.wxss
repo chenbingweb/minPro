@@ -1,0 +1,29 @@
+/* pages/articleDetail/articleDetail.wxss */
+@import "../../wxParse/wxParse.wxss";
+.detail_page
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  
+}
+.detail_page .title
+{
+  font-size: 40rpx;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 30rpx;
+  color: #333;
+}
+.detail_page .rich_box
+{
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 750rpx;
+  padding: 30rpx;
+}
+.wxParse-p
+{
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+  color: #333;
+}

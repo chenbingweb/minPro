@@ -1,0 +1,19 @@
+<!--pages/find/find.wxml-->
+<!--引入模板-->
+<import src="../../temp/coupon.wxml" />
+<!--导航  -->
+<nav-bar/>
+<!--发现  -->
+<view class='feedback'>
+  <view class='feedback_box'>
+    <view class="section">
+      <form  bindsubmit="formSubmit" >
+        <textarea placeholder="请描述您的问题" name="suggest" placeholder-style="color:#888;" auto-focus show-confirm-bar />
+         <input type="number" maxlength="11" name="mobile" placeholder="请输入您的联系方式  "    placeholder-style="color:#888;"   confirm-type="done"/>
+           <button formType="submit" type="primary"  >提交反馈</button>
+      </form>
+    </view>
+  </view>
+   
+</view>
+

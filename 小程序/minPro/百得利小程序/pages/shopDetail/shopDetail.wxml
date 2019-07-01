@@ -1,0 +1,36 @@
+<!--引入模板-->
+<import src="../../temp/coupon.wxml" />
+<!--引入模板-->
+<import src="../../temp/loadmore.wxml" />
+<!--导航  -->
+<nav-bar/>
+<view class="shop_detail_page">
+  <!--店面头部  -->
+  <view class="shop_header">
+    <view class="header_item">
+      <view class="icon_box">
+        <image mode="aspectFill" style="width:210rpx;height:150rpx" wx:if="{{shopDetail.ImgUrl}}" src="{{imgUrl+shopDetail.ImgUrl}}"></image>
+      </view>
+      <view class="shop_name ellipsis">{{shopDetail.FullName}}</view>
+    </view>
+  </view>
+  <!--用户操作  -->
+  <view class="user_control">
+    <view>门店详细信息</view>
+    <view class="toCheck" data-appid="{{shopDetail.AppId}}" data-id="{{shopDetail.Id}}" data-polid="{{shopDetail.PolId}}" bindtap="toShopingDetail">查看</view>
+  </view>
+  <!--卡券列表  -->
+    <scroll-view bindscrolltolower="scrolltolower" class="coupon_list" scroll-y>
+      <view class="list">
+        <view wx:for="{{couponList}}" wx:key="coup_{{index}}">
+          <template is="coupon" data="{{couponItem:item,imgUrl:imgUrl}}" />
+        </view>
+        <view class="no_info"  wx:if="{{showNodata}}">此店未发布优惠券</view>
+        <view class="no_info" style="margin:16rpx;padding:20rpx 0" wx:if="{{showTip}}">没有更多</view>
+        <!--加载更多  -->
+          <template is="loadmore" data="{{showMore}}"/>
+      </view>
+
+      
+    </scroll-view>
+</view> 

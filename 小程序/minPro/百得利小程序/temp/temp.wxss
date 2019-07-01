@@ -1,0 +1,114 @@
+/***轮播****/
+.swiper_box,.swiper_box swiper-item,.swiper_box swiper-item>image
+{
+  width: 750rpx;
+  height: 420rpx;
+}
+
+/**导航样式*/
+.nav_box
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 10.78vh;
+  width:100%;
+  background-color: white;
+  box-sizing: border-box;
+  border-top:2rpx solid #DCDCDC;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index:99999;
+}
+.nav_item
+{
+  width: 140rpx;
+  height: 70rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color:#333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.select_nav
+{
+  color:#1da09c;
+}
+.nav_img
+{
+  width:32rpx;
+  height: 32rpx;
+  
+}
+.loader_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130rpx;
+  width: 100%;
+  color:#8e8e8e;
+  font-size: 26rpx;
+}
+.loader_box view:nth-child(2)
+{
+  padding-left:16rpx;
+}
+
+/*城市选择*/
+/***/
+.picker_view_box
+{
+ position: fixed;
+  bottom: 0;
+  left: 0;
+  width:100%; 
+  z-index: 99999999999999999;
+ 
+}
+.picker_view
+{
+ 
+  background-color: white;
+  height: 480rpx;
+
+  padding-top:60rpx;
+  box-sizing: border-box;
+}
+.item
+{
+  height: 80rpx;
+  text-align: center;
+  line-height:80rpx;
+  font-size: 28rpx;
+}
+.control_button
+{
+  position: absolute;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #6c6a6b;
+  line-height: 80rpx;
+}
+.control_button view
+{
+  width: 50%;
+  text-align: center;
+}
+.picker_mark
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999999999999999999;
+}
