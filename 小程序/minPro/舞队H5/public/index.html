@@ -1,0 +1,75 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- set `maximum-scale` for some compatibility issues -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./common/weui.min.css">
+  <link rel="stylesheet" href="./common/jquery-weui.css">
+  <script src="./js/zrender.min.js"></script>
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+  <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+  <script src="./flexible_css.js"></script>
+  <script src="./flexible.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery-weui.js"></script>
+  <script src="./js/city-picker.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }
+    if(!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+    }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+<script>
+  $("#root").on("blur","textarea",function(){
+    var currentPosition,timer;
+        var speed=1;//页面滚动距离
+        timer=setInterval(function(){
+            currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+            currentPosition-=speed;
+            window.scrollTo(0,currentPosition);//页面向上滚动
+            currentPosition+=speed; //speed变量
+            window.scrollTo(0,currentPosition);//页面向下滚动
+            clearInterval(timer);
+        },1);
+  })
+  $("#root").on("blur","input",function(){
+    var currentPosition,timer;
+        var speed=1;//页面滚动距离
+        timer=setInterval(function(){
+            currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+            currentPosition-=speed;
+            window.scrollTo(0,currentPosition);//页面向上滚动
+            currentPosition+=speed; //speed变量
+            window.scrollTo(0,currentPosition);//页面向下滚动
+            clearInterval(timer);
+        },1);
+  })
+  $("#root").on("blur","select",function(){
+    var currentPosition,timer;
+        var speed=1;//页面滚动距离
+        timer=setInterval(function(){
+            currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+            currentPosition-=speed;
+            window.scrollTo(0,currentPosition);//页面向上滚动
+            currentPosition+=speed; //speed变量
+            window.scrollTo(0,currentPosition);//页面向下滚动
+            clearInterval(timer);
+        },1);
+  })
+
+ 
+</script>
+
+
+</html>

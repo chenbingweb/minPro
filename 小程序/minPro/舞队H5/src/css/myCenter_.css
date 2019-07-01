@@ -1,0 +1,49 @@
+.center_header
+{
+    width: 10rem;
+    margin: 0 auto;
+    height: 4.466667rem;
+    background: url("../images/center_bg.png") no-repeat center center;
+    background-size: 100% 100%;
+    padding-top: .72rem;
+}
+.photo_img
+{
+    width: 10rem;
+    margin: 0 auto;
+  
+}
+.photo_img>img
+{
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+}
+.user_name
+{
+    color:#fff;
+    font-size:.426667rem;
+    padding-top: .266667rem;
+    line-height:1;
+    text-align: center;
+}
+.item_nav
+{
+    width: 9.266667rem;
+    margin:0 auto;
+    height: 1.333333rem;
+    border-bottom:1px solid #e5e5e5;
+    
+}
+.item_name
+{
+    color:#333333;
+    font-size: .373333rem;
+    padding-left: .186667rem;
+
+}
+.arrow_icon
+{
+    width: .186667rem;
+    height: .346667rem;
+}

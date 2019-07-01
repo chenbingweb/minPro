@@ -1,0 +1,19 @@
+.move_box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+}
+
+.move_box .move_box_2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.move_box .move_box_2 .swiper_child {
+  width: 100%;
+  height: 100%;
+  background: rebeccapurple;
+}

@@ -1,0 +1,50 @@
+.person_center
+{
+    width: 10rem;
+    margin: 0 auto;
+    background-color: #fff;
+    .ul_box
+    {
+        width: 9.146667rem;
+        margin: 0 auto;
+        .address_box
+        {
+            
+            height: 1.866667rem;
+        }
+        li
+        {
+            min-height: 1.2rem;
+            border-bottom: 1px solid #f8f8f8;
+            background-color: #fff;
+            .label_title
+            {
+                width: 1.65rem;
+                font-size: .4rem;
+                color:#333;
+            }
+            .fill_info
+            {
+                width: 7.026667rem;
+                line-height: 1.066667rem;
+                color:#999;
+                font-size: .4rem;
+                border:none;
+            }
+            .address
+            {
+                align-self: flex-start;
+                margin-top: .4rem;
+                line-height: 1;
+            }
+            .address_detail
+            {
+                line-height: .67rem;
+            }
+        }
+    }
+    .save_btn
+    {
+        margin-top: .666667rem;
+    }
+}

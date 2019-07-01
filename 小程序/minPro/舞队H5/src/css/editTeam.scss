@@ -1,0 +1,229 @@
+.edit_team
+{
+    width: 10rem;
+    margin:0 auto;
+    padding-top: 1.2rem;
+    padding-bottom: 1.466667rem;
+    .title_box
+    {
+        width: 10rem;
+        height: 1.2rem;
+        background-color: #f5f7f7;
+        box-sizing: border-box;
+        padding: 0 .4rem;
+        font-size: .453333rem;
+        color:#333333;
+        position: fixed;
+        left:50%;
+        transform: translateX(-50%);
+        top:0;
+    }
+    .teams
+    {
+        width: 10rem;
+        margin: 0 auto;
+        background-color: #fff;
+        // li:nth-child(1) .select_label
+        // {
+        //     background:none;
+        // }
+        li
+        {
+            width: 9.146667rem;
+            margin: 0 auto;
+            border-bottom: 1px solid #ececec;
+            .select_active
+            {
+                background: url("../images/select_ok.png") no-repeat left center !important;
+                background-size: .533333rem .533333rem!important;
+            }
+            .select_label_no
+            {
+                background: none !important;
+            }
+            .select_label
+            {
+                width: 7.013333rem;
+                height: 1.64rem;
+                background: url("../images/select_no.png") no-repeat left center;
+                background-size: .533333rem .533333rem;
+                padding-left: .8rem;
+                box-sizing: border-box;
+                .photo_img_1
+                {
+                    width: 1.106667rem;
+                    height: 1.106667rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: .133333rem;
+                    img
+                    {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .dz_label
+            {
+                color:#eb2343;
+                font-size: .373333rem;
+            }
+            .set_team
+            {
+                width: 1.986667rem;
+                height: .653333rem;
+                background:url("../images/wd_border_bg.png") no-repeat center center;
+                background-size: 100% 100%;
+                color:#eb2343;
+                text-align: center;
+                line-height:.653333rem;
+                font-size: .373333rem;
+            }
+        }
+    }
+    .control_box_team
+    {
+        width: 10rem;
+        height: 1.466667rem;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: #f5f7f7;
+        box-sizing: border-box;
+        padding: 0 .4rem;
+        border-top:1px solid #f5f7f7;
+        .select_all
+        {
+            width: 1.773333rem;
+            height: 1.466667rem;
+            font-size: .346667rem;
+            color:#333333;
+            line-height:  1.466667rem;
+            img
+            {
+                width: .533333rem;
+                height: .533333rem;
+                margin-right: .133333rem;
+            }
+        }
+        .control_btns
+        {
+            width: 4.133333rem;
+            height: .88rem;
+            border-radius: .44rem;
+            border:1px solid #eb2343;
+            overflow: hidden;
+            span:nth-child(1)
+            {
+                background-color: #fff;
+                text-align: center;
+                line-height:.88rem; 
+                width: 50%;
+            }
+            span:nth-child(2)
+            {
+                background-color: #eb2343;
+                color:#fff;
+                text-align: center;
+                line-height:.88rem; 
+                width: 50%;
+            }
+        }
+    }
+    // 拆分队伍提示
+    .split_mark
+    {
+        position: absolute;
+        left: 0;
+        top:0;;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color: #000000, $alpha: 0.63);
+        .split_panel
+        {
+            width: 7.466667rem;
+            height: 4.773333rem;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: .08rem;
+            position: relative;
+            .panel_title_1
+            {
+                text-align: center;
+                line-height: 1.333333rem;
+                font-size: .48rem;
+                color:#000;
+                width: 6.88rem;
+                border-bottom: 1px solid #f1f1f1;
+                margin: 0 auto;
+            }
+            .input_fill
+            {
+                width: 6.266667rem;
+                height: 1.12rem;
+                border-radius: .08rem;
+                border:1px solid #f1f1f1;
+                margin: 0 auto;
+                margin-top: .48rem;
+                input
+                {
+                    width: 5.333333rem;
+                    height: .933333rem;
+                    font-size: .4rem;
+                }
+                .select_dance_team
+                {
+                    width: 5.333333rem;
+                    height: .933333rem;
+                    font-size: .4rem;
+                    color:#999;
+                    font-size: .4rem;
+                }
+                
+               
+
+            }
+            .select_fill
+            {
+                width: 5.333333rem;
+                height: .933333rem;
+                box-sizing: border-box;
+                padding-left: .4rem;
+                
+                background: url("../images/arrow_right.png") no-repeat 4.8rem center;
+                background-size: .226667rem .413333rem; 
+               
+            }
+            .bottom_btns
+            {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                border-top:1px solid #f1f1f1;
+                height: 1.333333rem;
+                span
+                {
+                    width: 50%;
+                    height: 1.333333rem;
+                    text-align: center;
+                    line-height: 1.333333rem;
+                    font-size: .48rem;
+                    box-sizing: border-box;
+                }
+                .cancel_btn
+                {
+                    border-right:1px solid #f1f1f1;
+                    color:#000;
+                }
+                .sure_btn
+                {
+                    color:#eb2343;
+                }
+            }
+        }
+    }
+}

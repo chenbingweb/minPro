@@ -1,0 +1,31 @@
+{
+   "BaseURL":"http://square-dance.jeemoo.com/",
+   "ImgURL":"http://square-dance.jeemoo.com/",
+   "interface":{
+      "wxJsTicket":"/api/wx/getJsSign",
+      "getCode":"/api/wx/getCode",
+      "getUserInfo":"/api/wx/getUserInfo",
+      "getMemberInfo":"/api/member/info",
+      "getActiveList": "/api/activity/list",
+      "ocr":"/api/team/auth",
+      "registCaptain":"/api/team/create",
+      "scanjoinTeam":"/api/team/join",
+      "activeDetail":"/api/activity/info",
+      "joinTeamList":"/api/activity/activityTeam",
+      "getVoteList":"/api/goods/list",
+      "freeVote":"/api/goods/freeVotes",
+      "butTicket":"/butTicket",
+      "getTeamInfo":"/api/team/getInfo",
+      "getUserTeamList":"/api/team/activity",
+      "joinTeam":"/jointeam",
+      "signSucc": "/api/team/signUp",
+      "getUserRole":"/getUserRole",
+      "getResDetailInfo":"restaurant/detail",
+      "saveInfo":"/api/member/update",
+      "buyTicket":"/api/goods/buy",
+      "createTeam":"/api/team/signIn",
+      "delTeam":"/api/team/cancelSignUp",
+      "sendCode":"/api/wx/sendMobileCode",
+      "checkCode":"/api/wx/verifyCode"
+   }
+}

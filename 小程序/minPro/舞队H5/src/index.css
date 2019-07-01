@@ -1,0 +1,93 @@
+.flex_start
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex_end
+{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex_center
+{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.flex_between
+{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+/* 激活 */
+.submit_btn_active,.sba
+{
+  width: 9.146667rem;
+  height: 1.2rem;
+  border-radius: .6rem;
+  text-align: center;
+  line-height: 1.2rem;
+  background: linear-gradient(to right,#ec212c,#ff963f);
+  margin: 0 auto;
+  color:#fff;
+  font-size: .48rem;
+  display: block;
+}
+.submit_btn_no,.sbn
+{
+  width: 9.146667rem;
+  height: 1.2rem;
+  border-radius: .6rem;
+  text-align: center;
+  line-height: 1.2rem;
+  background: #dfdfdf;
+  color:#333;
+  font-size: .48rem;
+  margin: 0 auto;
+  display: block;
+}
+.g_l_r
+{
+  background: linear-gradient(to right,#ec212c,#ff963f);
+}
+.fixed
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+.scroll
+{
+  overflow-y: scroll;
+ 
+}
+.no_data
+{
+  text-align: center;
+  font-size: .4rem;
+  line-height: 1.2rem;
+  color:#ddd;
+}
+.rich_text
+{
+  padding: .4rem;
+  background-color: #fff;
+  font-size: .4rem;
+  position: fixed;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.MsoNormal
+{
+  line-height: .666667rem;
+  color:#333;
+}

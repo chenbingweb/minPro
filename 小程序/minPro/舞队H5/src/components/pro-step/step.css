@@ -1,0 +1,206 @@
+.register_header {
+  width: 9.146667rem;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: .88rem;
+}
+
+.register_header .step_box:nth-child(2) .step::before {
+  content: '';
+  position: absolute;
+  width: 3.12rem;
+  height: 1px;
+  background-color: #ececec;
+  left: .613333rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register_header .step_box:nth-child(2) .step::after {
+  content: '';
+  position: absolute;
+  width: 3.12rem;
+  height: 1px;
+  background-color: #d93c44;
+  right: .613333rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register_header .step_box {
+  flex-direction: column;
+  width: 1.44rem;
+}
+
+.register_header .step_box .step.active {
+  background-color: #d93c44;
+}
+
+.register_header .step_box .step {
+  position: relative;
+  width: .533333rem;
+  height: .533333rem;
+  border-radius: 50%;
+  background-color: #c7c7cc;
+  font-size: .346667rem;
+  color: #fff;
+  line-height: .533333rem;
+  text-align: center;
+}
+
+.register_header .step_box .step_name {
+  font-size: .346667rem;
+  color: #000;
+  text-align: center;
+  margin-top: .226667rem;
+}
+
+.suport_mark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.suport_mark .suport_pannel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 8.573333rem;
+  width: 9.146667rem;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #fff;
+  border-radius: .133333rem;
+  padding-top: .4rem;
+  box-sizing: border-box;
+}
+
+.suport_mark .suport_pannel .close_box_img_icon {
+  position: absolute;
+  width: 1.066667rem;
+  height: 1.066667rem;
+  top: 0;
+  right: 0;
+  background: url("../../images/close.png") no-repeat center center;
+  background-size: .453333rem .453333rem;
+}
+
+.suport_mark .suport_pannel .title_pannel_12 {
+  font-size: .533333rem;
+  color: #000;
+  text-align: center;
+  line-height: 1.333333rem;
+}
+
+.suport_mark .suport_pannel .suport_title_content_10 {
+  text-align: center;
+  font-size: .373333rem;
+  color: #888888;
+  line-height: .453333rem;
+}
+
+.suport_mark .suport_pannel .suport_title_content_10 .tickes_total_num {
+  color: #eb2343;
+}
+
+.suport_mark .suport_pannel .success_icon {
+  width: 2.626667rem;
+  height: 2.066667rem;
+  background: url("../../images/s_success.png") no-repeat center center;
+  background-size: 100%;
+  margin: 0 auto;
+  margin-top: .533333rem;
+}
+
+.suport_mark .suport_pannel .go_o_btn {
+  width: 5.6rem;
+  height: 1.066667rem;
+  text-align: center;
+  line-height: 1.066667rem;
+  font-size: .48rem;
+  color: #ffffff;
+  margin: 0 auto;
+  border-radius: .533333rem;
+  margin-top: .746667rem;
+}
+
+.suport_mark .cap_pannel {
+  width: 9.146667rem;
+  height: 12.72rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: url("../../images/qr_bg_1.png") no-repeat center center;
+  background-size: 100%;
+  border-radius: .133333rem;
+  overflow: hidden;
+}
+
+.suport_mark .cap_pannel .cap_title {
+  width: 100%;
+  height: 1.666667rem;
+  line-height: 1.666667rem;
+  text-align: center;
+  color: #000000;
+  font-size: .533333rem;
+  position: relative;
+}
+
+.suport_mark .cap_pannel .cap_title .cancel_btn {
+  width: 1.333333rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background: url("../../images/close.png") no-repeat center center;
+  background-size: .453333rem .453333rem;
+}
+
+.suport_mark .cap_pannel .qr_img {
+  width: 5.986667rem;
+  height: 5.813333rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2.933333rem;
+}
+
+.suport_mark .cap_pannel .team_name_4 {
+  width: 100%;
+  font-size: .533333rem;
+  color: #000;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 9.906667rem;
+}
+
+.suport_mark .cap_pannel .team_name_4 .team_title_7 {
+  margin-bottom: .4rem;
+}
+
+.suport_mark .cap_pannel .team_name_4 .qr_code_tip {
+  color: #888;
+  font-size: .373333rem;
+  margin-bottom: .133333rem;
+}
+
+.suport_mark .cap_pannel .absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.no_data {
+  text-align: center;
+  font-size: .4rem;
+  line-height: 1.2rem;
+  color: #ddd;
+}

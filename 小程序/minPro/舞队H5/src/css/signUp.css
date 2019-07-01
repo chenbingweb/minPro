@@ -1,0 +1,202 @@
+.sign_up_page {
+  width: 10rem;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 1.653333rem;
+  box-sizing: border-box;
+  padding-bottom: 4rem;
+}
+
+.sign_up_page .btn_box_1 {
+  position: fixed;
+  position: fixed;
+  width: 10rem;
+  left: 0;
+  bottom: 0;
+  height: 4rem;
+  background-color: #f5f7f7;
+  box-sizing: border-box;
+  padding-top: .4rem;
+}
+
+.sign_up_page .btn_box_1 .over_fp {
+  width: 9.146667rem;
+  height: 1.2rem;
+  background: url("../images/btn_border_1.png") no-repeat center center;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: .48rem;
+  color: #eb2343;
+  margin: 0 auto;
+  margin-top: .4rem;
+}
+
+.sign_up_page .sign_up_title {
+  font-size: .32rem;
+  color: #999;
+  text-align: center;
+  height: 1.653333rem;
+  flex-direction: column;
+  background-color: #f5f7f7;
+  position: fixed;
+  width: 10rem;
+  left: 0;
+  top: 0;
+}
+
+.sign_up_page .sign_up_title p {
+  line-height: .533333rem;
+}
+
+.sign_up_page .total_teams {
+  width: 9.146667rem;
+  margin: 0 auto;
+}
+
+.sign_up_page .total_teams li {
+  width: 100%;
+  height: 2.093333rem;
+  box-sizing: border-box;
+  margin-bottom: .266667rem;
+  border-radius: .08rem;
+  background-color: #fff;
+  padding-right: .4rem;
+}
+
+.sign_up_page .total_teams li .select_box_no {
+  background: none !important;
+}
+
+.sign_up_page .total_teams li .select_box {
+  width: 5.693333rem;
+  height: 2.093333rem;
+  background: url("../images/select_no.png") no-repeat 0.26667rem center;
+  background-size: .533333rem .533333rem;
+  box-sizing: border-box;
+  padding-left: 1.133333rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sign_up_page .total_teams li .select_box p {
+  line-height: .533333rem;
+}
+
+.sign_up_page .total_teams li .select_box p:nth-child(1) {
+  font-size: .426667rem;
+  color: #333;
+}
+
+.sign_up_page .total_teams li .select_box p:nth-child(2) {
+  font-size: .373333rem;
+  color: #666;
+}
+
+.sign_up_page .total_teams li .select_box_active {
+  background: url("../images/select_ok.png") no-repeat 0.26667rem center;
+  background-size: .533333rem .533333rem;
+}
+
+.sign_up_page .total_teams li .wdcf_btn {
+  width: 1.986667rem;
+  height: .653333rem;
+  background: url("../images/wd_border_bg.png") no-repeat center center;
+  background-size: 100% 100%;
+  font-size: .373333rem;
+  color: #eb2343;
+  text-align: center;
+  line-height: .653333rem;
+}
+
+.sign_up_page .total_teams li .qr_code_btn {
+  width: .546667rem;
+  height: .533333rem;
+  background: url("../images/qr_code.png") no-repeat center center;
+  background-size: 100% 100%;
+  margin-left: .266667rem;
+}
+
+.sign_up_page .total_teams li .del_box_btn {
+  width: .546667rem;
+  height: 1.333333rem;
+  background: url("../images/del.png") no-repeat right center;
+  background-size: .533333rem .533333rem;
+}
+
+.sign_up_page .qr_mark {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.62);
+}
+
+.sign_up_page .qr_mark .qr_panel {
+  width: 9.146667rem;
+  height: 11.506667rem;
+  background: url("../images/qr_bg.png") no-repeat center center;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.sign_up_page .qr_mark .qr_panel .close_panel {
+  position: absolute;
+  width: 1.333333rem;
+  height: 1.64rem;
+  background: url("../images/close.png") no-repeat center center;
+  background-size: .453333rem .453333rem;
+  top: 0;
+  right: 0;
+}
+
+.sign_up_page .qr_mark .qr_panel .absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.sign_up_page .qr_mark .qr_panel .imgBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sign_up_page .qr_mark .qr_panel .content_bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sign_up_page .qr_mark .qr_panel .qr_title {
+  width: 100%;
+  line-height: 1.64rem;
+  border-bottom: 1px solid #fff;
+  font-size: .533333rem;
+  text-align: center;
+  position: relative;
+}
+
+.sign_up_page .qr_mark .qr_panel .qr_title span {
+  color: #999999;
+}
+
+.sign_up_page .qr_mark .qr_panel .qr_img_4 {
+  width: 5.866667rem;
+  height: 5.813333rem;
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translateX(-50%) translateY(-50%);
+}

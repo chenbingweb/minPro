@@ -1,0 +1,149 @@
+.header_box_1
+{
+    width: 10rem;
+    height: 1.6rem;
+    background: url('http://ft.jeemoo.com/uploads/images/restaurant/15482088935955.png') no-repeat center center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.header_box_1 .img_bg
+{
+    position: absolute;
+    width: 1.466667rem;
+    height: 1.466667rem;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.733333rem;
+}
+.shop_js
+{
+    width: 10rem;
+    height: 3.333333rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: .733333rem;
+    font-size: .48rem;
+    color:#333;
+    text-align: center;
+
+}
+.shop_js .address
+{
+    text-align: center;
+    font-size: .32rem;
+    line-height: .666667rem;
+}
+.shop_js .dis
+{
+    font-size: .293333rem;
+}
+.scroll_box
+{
+    width: 10rem;
+    position: absolute;
+    left: 0;
+    top: 4.933333333rem;
+    bottom: 1.466667rem;
+    box-sizing: border-box;
+    border-top:1px solid #e5e5e5;
+}
+.scroll_box .left_box
+{
+    position: absolute;
+    width: 2.133333rem;
+    left: 0;
+    top:0;
+    bottom: 0;
+    overflow-y: scroll;
+    background-color: #f8f8f8;
+}
+.scroll_box .right_box
+{
+    position: absolute;
+    left:  2.133333rem;
+    right: 0;
+    top:0;
+    bottom: 0;
+    overflow-y: scroll;
+
+}
+.scroll_box .left_box .left_item
+{
+    width: 100%;
+    height: 1.2rem;
+    box-sizing:border-box;
+    text-align:center;
+    line-height:1.2rem;
+    padding:0 .133333rem;
+    font-size: .32rem;
+    color:#333;
+    position: relative;
+}
+.scroll_box .left_box .left_item.select
+{
+    background-color:white;
+
+}
+.scroll_box .left_box .left_item.select::before
+{
+    content: '';
+    display: block;
+    width: .053333rem;
+    height: .373333rem;
+    background-color: #605858;
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+}
+.scroll_box .right_box .cai_item
+{
+    width: 100%;
+    padding: 0 .4rem;
+    box-sizing: border-box;
+}
+.scroll_box .right_box .left_img>img
+{
+    width: 2.266667rem;
+    height: 1.733333rem;
+}
+.scroll_box .right_box .right_info
+{
+    width: 4.4rem;
+    height: 2.213333rem;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    box-sizing:border-box;
+    padding: .213333rem 0;
+
+}
+.scroll_box .right_box .right_info .title
+{
+    font-size: .373333rem;
+    color:#333;
+}
+.scroll_box .right_box .right_info .sy
+{
+    font-size:.293333rem;
+    color:#999;
+}
+.scroll_box .right_box .right_info .money
+{
+    font-size: .293333rem;
+    color:#333;
+}
+.scroll_box .right_box .right_info span
+{
+   display: block;
+   width: .666667rem;
+   height: .666667rem;
+   line-height: .666667rem;
+   text-align: center;
+   font-size: .4rem;
+}
+.scroll_box .right_box .right_info span:nth-of-type(1),.scroll_box .right_box .right_info span:nth-of-type(3)
+{
+    border:1px solid #333;
+}

@@ -1,0 +1,15 @@
+.scroll_box_1
+{
+    width: 10rem;
+    min-height: 4rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    box-sizing: border-box;
+}
+.rr {
+    -webkit-overflow-scrolling: touch;
+  }
+  

@@ -1,0 +1,48 @@
+.person_center {
+  width: 10rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.person_center .ul_box {
+  width: 9.146667rem;
+  margin: 0 auto;
+}
+
+.person_center .ul_box .address_box {
+  height: 1.866667rem;
+}
+
+.person_center .ul_box li {
+  min-height: 1.2rem;
+  border-bottom: 1px solid #f8f8f8;
+  background-color: #fff;
+}
+
+.person_center .ul_box li .label_title {
+  width: 1.65rem;
+  font-size: .4rem;
+  color: #333;
+}
+
+.person_center .ul_box li .fill_info {
+  width: 7.026667rem;
+  line-height: 1.066667rem;
+  color: #999;
+  font-size: .4rem;
+  border: none;
+}
+
+.person_center .ul_box li .address {
+  align-self: flex-start;
+  margin-top: .4rem;
+  line-height: 1;
+}
+
+.person_center .ul_box li .address_detail {
+  line-height: .67rem;
+}
+
+.person_center .save_btn {
+  margin-top: .666667rem;
+}

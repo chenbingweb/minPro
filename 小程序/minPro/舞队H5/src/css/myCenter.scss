@@ -1,0 +1,137 @@
+.my_center
+{
+    width: 10rem;
+    margin: 0  auto;
+
+    .my_center_bg
+    {
+        background: linear-gradient(to top,#ec212c,#ff963f);
+        position: fixed;
+        top: .4rem;
+        bottom: 1.866667rem;
+        left: 0.4rem;
+        right: 0.4rem;
+        border-radius: .133333rem;
+        .user_info_panel
+        {
+            width: 7.6rem;
+            height: 3.733333rem;
+            background-color: #fff;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top:calc(50% - 3.733333rem);
+            border-radius: .133333rem;
+            .nick_name
+            {
+                font-size: .48rem;
+                color:#eb2343;
+                margin-top: 1.693333rem;
+                text-align: center;
+            }
+            .team_name
+            {
+                font-size: .373333rem;
+                color:#3a3a3a;
+                text-align: center;
+                line-height: 1.013333rem;
+            }
+          .photo_img
+          {
+              width: 2.586667rem;
+              height: 2.586667rem;
+              border-radius: 50%;
+              background: #fff;
+              position: absolute;
+              left: 50%;
+              top: -1.293333rem;
+              transform: translateX(-50%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img
+              {
+                  width: 2.133333rem;
+                  height: 2.133333rem;
+                  border-radius: 50%;
+              }
+              .label_num
+              {
+                  padding: .08rem .213333rem;
+                  position: absolute;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  bottom: 0;
+                  width: 1.866667rem;
+                 text-align: center;
+                 line-height: .533333rem;
+                 font-size: .32rem;
+                 color:#ffffff;
+                 border-radius: .366667rem;
+              }
+          }
+        
+        }
+        .nav_items
+        {
+            width: 7.626667rem;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top:calc(50% + .373333rem);
+            border-radius: .133333rem;
+            overflow: hidden;
+            li
+            {
+                a{
+                    font-size: .426667rem;
+                    color:#333333;
+                }
+                height: 1.333333rem;
+                margin: 0 auto;
+                border-radius: .133333rem;
+                box-sizing: border-box;
+                padding-left: .933333rem;
+                .arrow_img
+                {
+                    width: 1.066667rem;
+                    height: 1.2rem;
+                    background: #ffffff url("../images/arrow_right.png") no-repeat 0.4rem center;
+                    background-size: .226667rem .413333rem;
+                }
+            }
+            li:nth-child(1)
+            {
+                background: #ffffff url("../images/info.png") no-repeat 0.4rem center;
+                background-size: .373333rem .4rem;
+            }
+        }
+    }
+    .relative_1
+    {
+        position: relative;
+    }
+    .absolute_1
+    {
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    .select_1
+    {
+        display: block;
+        height:.413333rem;
+        width:.226667rem;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right: 0.4rem;
+        background: url("../images/arrow_right.png") no-repeat center center;
+        background-size: 100%;
+    }
+}
