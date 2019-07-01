@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+
+</head>
+
+<body >
+    <div class="home">
+        <!-- banner -->
+        <div class="banner" style="display: block">
+                
+                    <div class="swiper-slide">
+                        <img src="./images/banner1.jpg" class="banner_img" />
+              
+                </div>
+            </div>
+        <!-- <div class="swiper-container banner" style="display: block">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/banner1.jpg" class="banner_img" />
+                </div><div class="swiper-slide">
+                    <img src="./images/banner1.jpg" class="banner_img" />
+                </div>
+            </div>
+        </div> -->
+        <!-- 选项 -->
+        <div class="select_box">
+            <p class="title">选择购买的险种</p>
+            <ul class="select_content">
+                <li class="active">
+                    <div class="img_box">
+                        <img class="img_1" src="./images/ywbx.png"/>
+                    </div>
+                    
+                    <p>意外保</p>
+                </li>
+                <li>
+                    <div class="img_box">
+                        <img class="img_2" src="./images/spbh.png"/>
+                    </div>
+                            
+                    <p>碎屏保</p>
+                </li>
+                <li>
+                    <div class="img_box">
+                        <img class="img_3" src="./images/ycbs.png"/>
+                    </div>     
+                    <p>延长保</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 下一步 -->
+        <a href="javascript:;" class="newx_btn">下一步</a>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+
+        // new Swiper('.swiper-container', {
+        //             loop: true,
+        //             autoplay:{
+        //                 stopOnLastSilde:true
+        //             },
+        //             speed:500,
+        //             autoplayDisableOnInteraction : false ,   /* 注意此参数，默认为true */ 
+        //             observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+        //             observeParents: true,   // 修改swiper父元素时，自动初始化swip
+        //     })
+        //事件绑定
+        $('.select_content li').click(function(){
+            $(this).addClass('active').siblings().removeClass('active')
+            return false;
+        })
+            
+    })
+</script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+
+</head>
+
+<body >
+    <div class="boss">
+        <!-- banner -->
+        <div class="banner" style="display: block">
+            <img src="./images/banner_bg.jpg" class="banner_img" />
+            <div class="banner_content">
+                <p class="title">迪信通北太平庄世纪华联店</p>
+                <div>
+                    <p class="core_title">当前积分：</p>
+                    <p class="core">5020</p>
+                </div>
+                <a href="javascript:;" class="look_core">查看积分明细 >></a>
+            </div>
+        </div>
+        <!-- 选项 -->
+        <div class="select_box">
+            <ul class="select_content">
+                <li class="active">
+                    <div class="img_box">
+                        <img class="img_1" src="./images/bd_1.png"/>
+                    </div>
+                    
+                    <p>保单查询</p>
+                </li>
+                <li>
+                    <div class="img_box">
+                        <img class="img_2" src="./images/bd_2.png"/>
+                    </div>
+                            
+                    <p>数据查看</p>
+                </li>
+                <li>
+                    <div class="img_box">
+                        <img class="img_3" src="./images/bd_3.png"/>
+                    </div>     
+                    <p>人员设置</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+
+        //事件绑定
+        $('.select_content li').click(function(){
+            $(this).addClass('active').siblings().removeClass('active')
+            return false;
+        })
+            
+    })
+</script>
+
+</html>

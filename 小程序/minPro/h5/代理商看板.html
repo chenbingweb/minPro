@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>代理商看板</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+    
+</head>
+
+<body >
+    <div class="proxy_box">
+        <div class="select_date">
+            <div class="date_control">
+                <div class="show_time" >
+                    <span id="date">2019年04月</span>
+                    <input  type="text" id='datetime-picker' class="date_picker" readonly />
+                </div> 
+                
+                <!-- <div class="show_time">2019年04月</div> -->
+                <!-- <input type="text" id='datetime-picker'/> -->
+            </div>
+            
+        </div>
+        <div class="proxy_bg">
+            <div class="proxy_img_bg">
+                <p class="total_title">单月总保单量：</p>
+                <p class="total_num">583</p>
+            </div>
+        </div>
+        <ul class="bd_items">
+            <li class="bd_item">
+                <div>意外保：</div>
+                <div class="num">220</div>
+            </li>
+            <li class="bd_item">
+                <div>碎屏保：</div>
+                <div class="num">220</div>
+            </li>
+            <li class="bd_item">
+                <div>延长保：</div>
+                <div class="num">220</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $('html').append('<style>.picker-items{padding-left:2.5rem!important;}.picker-items-col:nth-child(5),.picker-items-col:nth-child(6),.picker-items-col:nth-child(7),.picker-items-col:nth-child(8),.picker-items-col:nth-child(9){display:none;}</style>')
+        $("#datetime-picker").datetimePicker({}).change(function(){
+            var time=$(this).val().split('-')
+            var mont=time[1].split(' ');
+
+            $('#date').html(time[0]+'年'+mont[0]+'月')
+        });
+        //完成日期选择
+        $('body').on('click','.picker-button.close-picker',function(){
+           
+          
+        })
+        
+        //获取验证码
+        $('#get_code').click(function(){
+            $('.time').show()
+            $(this).hide();
+            var that=this;
+            $.countDown(function(time){
+                if(time<=0)
+                {
+                    $(that).show()
+                    $('.time').hide()
+                }
+                else
+                {
+                    $('.time').html(time+'S')
+                }
+
+            })()
+            return false;
+        })
+        //提交表单
+        $('.submit_info').click(function (event) {
+            event.preventDefault();
+            var $arrData = $("#filldata").serializeArray()
+            var $data = $.serializeObj($arrData);
+            if ($data.mobile == '') {
+                $.toptip('请输入手机号', 'warning');
+                return
+            }
+            if (!/^1\d{10}/.test($data.mobile)) {
+                $.toptip('请输入正确的手机号', 'warning');
+                return
+            }
+            if ($data.code=='') {
+                $.toptip('请输入验证码', 'warning');
+                return
+            }
+        })
+      
+            
+    })
+</script>
+
+</html>

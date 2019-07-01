@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交保单</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/swiper.min.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+ 
+    <script src="/js/common.js"></script>
+    <script src="/js/exif.js"></script>
+</head>
+
+<body >
+    <form  id="filldata" class="submit_bd">
+        <div class="submit_item">
+            <span class="tile">姓名</span>
+            <input class="input"  name="name" value="大可"/>
+        </div>
+        <div class="submit_item">
+            <span class="tile">联系方式</span>
+            <input class="input"  name="connect" placeholder="请输入联系方式"/>
+        </div>
+        <div class="submit_item">
+            <span class="tile">品牌</span>
+            <input class="input"   value="苹果"/>
+        </div>
+        <div class="submit_item">
+            <span class="tile">型号</span>
+            <input class="input" value="Xma"/>
+        </div>
+        <div class="submit_item">
+            <span class="tile">IMEI码</span>
+            <div class="scan_box">
+                    <input class="input_1 input"  name="imei" placeholder="请输入产品IMEI码" />
+                    <span class="scan"></span>
+            </div>
+        </div>
+        <div class="submit_item">
+            <span class="tile">购买时间</span>
+            <div class="buy_time">
+                <span id="date"class="no_active">请选择</span>
+                <input hidden id="buy_time" name="date" />
+                <input class="input_date"  id="datetime-picker" />
+            </div>
+        </div>
+         <div class="submit_item" style="border:none">
+            <span class="tile">产品金额</span>
+            <input class="input" name="price"  placeholder="请输入商品购买金额" />
+        </div>
+        <div class="img_tile">
+            <span>图片上传</span>
+            <div>查看示意图</div>
+        </div>
+        <div class="upload_img_box">
+            <div id="img_1">
+                <div class="div div_1">
+                    <div class="img_box img_box_1">
+                        <div class="addimg"></div>
+                        <span>上传照片</span>
+                    </div>
+                    <input type="file" id="file_1" accept="image/*"  class="file_img_load" value="" />
+                    <input name="imeiImg" id="imeiImg" hidden/>
+                </div>
+                <p class="img_title_1">手机IMEI图片</p>
+            </div>
+            
+             <div  id="img_2">
+                <div class="div">
+                    <div class="img_box div_2">
+                        <div class="addimg"></div>
+                        <span>上传照片</span>
+                    </div>
+                    <input type="file" id="file_2" accept="image/*"  class="file_img_load" value="" />
+                    <input name="bxk" id="bxk" hidden/>
+                </div>
+                <p class="img_title_1">保修卡照片</p>
+            </div>
+        </div>
+        <div class="xy">
+            <span class="select_icon">
+                <img id="select_img_radio" src="./images/no.png"/>
+            </span>
+            <p>我确认投保手机设备屏幕完好，我确认已阅读投保协议。点击查看<span class="bdxy">《投保协议》</span></p>
+            <input type="radio" hidden  name="agress" id="agree"/>
+        </div>
+        <div class="submit_box_bottom">
+            <div class="jf_box">
+                <p>积分价格:<span>150</span></p>
+                <span class="icon_3"></span>
+               
+            </div>
+            <input class="submit_info" type="submit" value="确认投保" />
+        </div>
+        
+    </form>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $('html').append('<style>.picker-items{padding-left:2rem!important;}.picker-items-col:nth-child(7),.picker-items-col:nth-child(8),.picker-items-col:nth-child(9){display:none;}</style>')
+        $("#datetime-picker").datetimePicker({monthSplit:'-'}).change(function(){
+            var time=$(this).val().split(' ')
+            $('#date').html(time[0]).removeClass("no_active");
+            $('#buy_time').val(time[0])
+        });
+        //完成日期选择
+        // $('body').on('click','.picker-button.close-picker',function(){
+    
+        // })
+        var pb1=null
+        function ShowImgs(){
+            
+            var imgUrls=[];
+            var img_1=$('#imeiImg').val()
+            var img_2=$('#bxk').val()
+            if(img_1!=='')
+            {
+                imgUrls.push(img_1)
+            }
+            if(img_2!=='')
+            {
+                imgUrls.push(img_2)
+            }
+            if(imgUrls.length==2)
+            {
+                pb1 = $.photoBrowser({
+                    items: imgUrls
+                });
+            }
+        }
+        //图片预览
+        $('.img_tile').click(function(){
+            ShowImgs()
+            if(pb1)
+            {
+                pb1.open()
+            }
+            else
+            {
+                $.toast("请添加图片", "text");
+            }
+        })
+        $('.xy').click(function(){
+       
+            if($('#agree')[0].checked)
+            {
+                $('#agree')[0].checked=false;
+                $('#select_img_radio')[0].src='./images/no.png'
+            }
+            else
+            {
+                $('#agree')[0].checked=true
+                $('#select_img_radio')[0].src='./images/yes.png'
+            }
+        })
+        $('#file_1').change(function (event) {
+            console.log(event.target.files)
+            var file = event.target.files[0];
+            if(file==undefined) return
+      
+           // $.showLoading('上传中...')
+
+          
+            var imgMasSize = 1024 * 1024 * 10; // 10MB
+            // 检查文件类型
+            if (['jpeg', 'png', 'gif', 'jpg'].indexOf(file.type.split("/")[1]) < 0) {
+                // 自定义报错方式
+                // Toast.error("文件类型仅支持 jpeg/png/gif！", 2000, undefined, false);
+                return;
+            }
+            // 文件大小限制
+            if (file.size > imgMasSize) {
+                // 文件大小自定义限制
+                // Toast.error("文件大小不能超过10MB！", 2000, undefined, false);
+                return;
+            }
+     
+            $.transformFileToDataUrl(file, function (base, per) {
+                $.hideLoading();
+                $('.img_box_1').hide()
+                $('.img_url').remove()
+                $('.div_1').append('<img class="img_url" src="'+base+'" />')
+                $('#imeiImg').val(base);
+               
+              
+            });
+        })
+        
+        $('#file_2').change(function (event) {
+            console.log(event.target.files)
+            var file = event.target.files[0];
+            if(file==undefined) return
+      
+           // $.showLoading('上传中...')
+
+          
+            var imgMasSize = 1024 * 1024 * 10; // 10MB
+            // 检查文件类型
+            if (['jpeg', 'png', 'gif', 'jpg'].indexOf(file.type.split("/")[1]) < 0) {
+                // 自定义报错方式
+                // Toast.error("文件类型仅支持 jpeg/png/gif！", 2000, undefined, false);
+                return;
+            }
+            // 文件大小限制
+            if (file.size > imgMasSize) {
+                // 文件大小自定义限制
+                // Toast.error("文件大小不能超过10MB！", 2000, undefined, false);
+                return;
+            }
+     
+            $.transformFileToDataUrl(file, function (base, per) {
+                $.hideLoading();
+                $('.img_box_2').hide()
+                $('.img_url_2').remove()
+                $('.div_2').append('<img class="img_url_2" src="'+base+'" />')
+                $('#bxk').val(base);
+                
+              
+            });
+        })
+        //提交表单
+        $('.submit_info').click(function (event) {
+            event.preventDefault();
+            var $arrData = $("#filldata").serializeArray()
+            var $data = $.serializeObj($arrData);
+            if ($data.connect == '') {
+                $.toptip('请输入手机号', 'warning');
+                return
+            }
+            if (!/^1\d{10}/.test($data.connect)) {
+                $.toptip('请输入正确的手机号', 'warning');
+                return
+            }
+            
+            if ($data.imei=='') {
+                $.toptip('请输入产品IMEI码', 'warning');
+                return
+            }
+            if ($data.date=='') {
+                $.toptip('请选择购买时间', 'warning');
+                return
+            }
+            if ($data.price=='') {
+                $.toptip('请输入商品购买金额', 'warning');
+                return
+            }
+            if ($data.imeiImg=='') {
+                $.toptip('请添加手机IMEI图片', 'warning');
+                return
+            }
+            if ($data.bxk=='') {
+                $.toptip('请添加保修卡照片', 'warning');
+                return
+            }
+            if (!$data.agress) {
+                $.toptip('请阅读投保协议', 'warning');
+                return
+            }
+            console.log($data)
+            //imeiImg
+        })
+      
+            
+    })
+</script>
+
+</html>

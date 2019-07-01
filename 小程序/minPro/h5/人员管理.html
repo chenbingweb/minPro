@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>人员管理</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/common/vue.js"></script>
+    
+</head>
+
+<body >
+   <div class="member">
+        <div class="title">
+            <img class="shop_img" src="./images/shop.png"/>
+            <p>选择要管理的店铺</p>
+        </div>
+        <ul class="shop_list">
+            <li class="active">
+                <span>迪信通大望路店</span>
+            
+            </li>
+            <li>
+                <span>迪信通大望路店</span>
+                
+            </li>
+            <li>
+                <span>迪信通大望路店</span>
+            
+            </li>
+        </ul>
+        <div class=" title title_box_2">
+            <div class="btn_box">
+                <img class="shop_img" src="./images/shop_dz.png"/>
+                <p>店长</p>
+            </div>
+            <div class="btn_box btn_box_1" id="adddz" data-ty="dz">
+                <img class="add_icon" src="./images/addYg.png"/>
+                <span>增加</span>
+            </div>
+        </div>
+        <ul class="m_box" id="dz_mb">
+            <li>
+                <span>张三</span>
+                <div class="img_box_4 dz_del">
+                    <img src="./images/del.png"/>
+                    <span>删除</span>
+                </div>
+            </li>
+            <li>
+                <span>张三</span>
+                <div class="img_box_4 dz_del">
+                    <img src="./images/del.png"/>
+                    <span>删除</span>
+                </div>
+            </li>
+        </ul>
+        <div class=" title title_box_2">
+            <div class="btn_box">
+                <img class="shop_img" src="./images/shop_dy.png"/>
+                <p>店员</p>
+            </div>
+            <div class="btn_box btn_box_1" id="adddy" data-ty="dy">
+                <img class="add_icon" src="./images/addYg.png"/>
+                <span>增加</span>
+            </div>
+        </div>
+        <ul class="m_box" id="dy_mb">
+            <li>
+                <span>张三</span>
+                <div class="img_box_4 dy_del">
+                    <img src="./images/del.png"/>
+                    <span>删除</span>
+                </div>
+            </li>
+            <li>
+                <span>张三</span>
+                <div class="img_box_4 dy_del">
+                    <img src="./images/del.png"/>
+                    <span>删除</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 增加 -->
+        <div class="mask" style="display: none">
+            <form class="input_box" id="filldata">
+                <span class="cancel">X</span>
+                <p class="title_6">请输入增加人员信息</p>
+                <p class="fill_item">
+                    <input name="mc" placeholder="请输入姓名"/>
+                </p>
+                <p class="fill_item">
+                    <input name="mobile" type="tel" placeholder="请输入手机号"/>
+                </p>
+                <input class="submit_info" type="submit" value="确认投保" />
+            </form>
+            
+        </div>
+   </div>
+  
+</body>
+
+<script type="text/javascript">
+    $(function () {
+      $('.shop_list>li').click(function(){
+          $(this).addClass('active').siblings().removeClass('active')
+          return false
+      })
+      $('.cancel').click(function(){
+          $('.mask').hide()
+      })
+      var type=""
+      //增加店长
+      $('#adddz').click(function(){
+        $('.mask').show()
+        type=$(this).attr("data-ty");
+      })
+      //增加店员
+      $('#adddy').click(function(){
+        $('.mask').show()
+        type=$(this).attr("data-ty");
+      })
+      //店长删除
+      $('#dz_mb').on('click','.dz_del',function(){
+          var that=this;
+        $.confirm("确认删除？", function() {
+        //点击确认后的回调函数
+            $(that).parent().remove()
+        }, function() {
+        //点击取消后的回调函数
+        });
+      })
+       //店员删除
+       $('#dy_mb').on('click','.dy_del',function(){
+          var that=this;
+        $.confirm("确认删除？", function() {
+        //点击确认后的回调函数
+            $(that).parent().remove()
+        }, function() {
+        //点击取消后的回调函数
+        });
+      })
+      $('.submit_info').click(function (event) {
+            event.preventDefault();
+            var $arrData = $("#filldata").serializeArray()
+            var $data = $.serializeObj($arrData);
+            if ($data.mc == '') {
+                $.toptip('请输入姓名', 'warning');
+                return
+            }
+            if ($data.mobile == '') {
+                $.toptip('请输入手机号', 'warning');
+                return
+            }
+            if (!/^1\d{10}/.test($data.mobile)) {
+                $.toptip('请输入正确的手机号', 'warning');
+                return
+            }
+            $('.mask').hide()
+            //添加店长
+            if(type=='dz')
+            {
+                $('#dz_mb').append('<li>'
+                    +'<span>'+$data.mc+'</span>'
+                    +'<div class="img_box_4 dz_del" >'
+                            +'<img src="./images/del.png"/>'
+                            +' <span>删除</span>'
+                            +'</div>'
+                 +'</li>')
+            }
+            //店员
+            else
+            {
+                $('#dy_mb').append('<li>'
+                    +'<span>'+$data.mc+'</span>'
+                    +'<div class="img_box_4 dy_del">'
+                            +'<img src="./images/del.png"/>'
+                            +' <span>删除</span>'
+                            +'</div>'
+                 +'</li>')
+            }
+            console.log($data)
+        })
+       
+    });
+</script>
+
+</html>
