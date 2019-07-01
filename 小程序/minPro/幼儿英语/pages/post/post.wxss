@@ -1,0 +1,12 @@
+/* pages/post/post.wxss */
+page
+{
+  overflow-y: scroll
+}
+.container
+{
+  height: 100vh;
+  overflow: scroll;
+  width: 740rpx;
+  border:1px solid red;
+}

@@ -1,0 +1,71 @@
+<view class="sign_page_index">
+  <view class="sign_total">
+    <view class="total_sign">
+      <view class="icon_box">
+        <image src="../../images/sb_2.png" style="width:69rpx;height:59rpx"></image>
+      </view>
+      <view style="margin-left:20rpx;">
+        <view>总学贝</view>
+        <view class="total_num">{{signInfo.total_gold}}</view>
+      </view>
+    </view>
+  </view>
+  <!--用户签到  -->
+  <view class="uer_sign_box">
+    <view class="sign_top">
+      <view class="sign_item" wx:key="sign_{{index}}" style="{{index==0||index==4?'margin-left:0':''}}" wx:for="{{signInfo.signdays}}">
+
+        <view class="absolute">
+
+          <view class="icon_box relative sign_child {{item.signed || day==index && !item.signed?'signed':''}}">
+            <view class="absolute icon_box" wx:if="{{index==6&&!item.signed}}">
+              <image src="../../images/last_day.png" style="width:125rpx;height:125rpx;"></image>
+            </view>
+            <image class="{{index==6&&!item.signed?'img_absolute':''}}"src="../../images/sb.png" style="{{item.signed || day==index && !item.signed?'position:relative;top:-12rpx;width: 83rpx ;height: 64rpx':'width:100rpx;height:78rpx;'}}"></image>
+
+            <view wx:if="{{item.signed}}" class="icon_box sign_ok">
+              <!-- <view wx:if="{{day==index && !item.signed}}"> +{{item.gold}}</view> -->
+              <image src="../../images/sign_ok.png" style="width:32rpx;height:23rpx"></image> 
+            </view>
+            <view wx:if="{{day==index && !item.signed}}" class="icon_box sign_ok ">
+              <view style="line-height:30rpx"> +{{gold}}</view>
+            
+            </view>
+          </view>
+          <view class="second" wx:if="{{index==0}}">第一天</view>
+          <view class="second" wx:if="{{index==1}}">第二天</view>
+          <view class="second" wx:if="{{index==2}}">第三天</view>
+          <view class="second" wx:if="{{index==3}}">第四天</view>
+          <view class="second" wx:if="{{index==4}}">第五天</view>
+          <view class="second" wx:if="{{index==5}}">第六天</view>
+          <view class="second" wx:if="{{index==6}}">第七天</view>
+        </view>
+      </view>
+    </view>
+    <view class="tip">{{CheckInPageTip}}</view>
+    <!-- <view class="tip">连续7天签到，可获得丰厚奖励</view> -->
+    <view class="sign_btn" wx:if="{{signInfo.todaysign}}">已签到</view>
+    <view class="sign_btn" wx:else style="background-color:#85D238" bindtap="toSign">签到</view>
+
+  </view>
+  <!-- 签到记录 -->
+  <view class="sign_record">
+    <view class="sign_title">签到记录</view>
+   
+     <view class="sign_page relative"  scroll-y > 
+      <paging 
+       dataObj="{{dataObj}}" 
+        bindpageData="pageData" >
+         <view slot="list" style="padding-bottom:50rpx"> 
+          <view class="sign_page_item" wx:key="time_{{index}}" wx:for="{{signHisList}}">
+            <view>
+              {{item.date}}
+            </view>
+            <view class="get_fen">+{{item.gold}}</view>
+          </view>
+         </view> 
+      </paging>
+     </view> 
+    
+  </view>
+</view>

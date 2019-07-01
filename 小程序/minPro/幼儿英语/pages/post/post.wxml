@@ -1,0 +1,4 @@
+<!-- <web-view src="http://bec-api.jeemoo.com/share/share.html?shareid={{shareid}}&cid={{cid}}"></web-view> -->
+
+<canvas bindtap="saveImg" data-src="{{posterImg}}"  style="width: 750rpx; height: 1250rpx;" canvas-id="first"></canvas>
+<!-- <image wx:else src="{{posterImg}}" style="width:750rpx;height:100vh" ></image> -->

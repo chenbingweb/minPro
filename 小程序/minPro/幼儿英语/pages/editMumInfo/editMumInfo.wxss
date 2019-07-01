@@ -1,0 +1,101 @@
+/* pages/editMumInfo/editMumInfo.wxss */
+page
+{
+  background-color: #e2ebf2;
+}
+.edit_page
+{
+  padding-top: 22rpx;
+   background-color: #e2ebf2;
+}
+.edit_page .user_file_box
+{ 
+  width: 750rpx;
+  height: 488rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.edit_page .item
+{
+  width: 710rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #e7e7e7;
+  height: 97rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  color:#363636;
+  font-size: 34rpx;
+  box-sizing: border-box;
+  padding:0 18rpx;
+}
+.edit_page .item:nth-of-type(5)
+{
+  border: none;
+}
+.edit_page .input_box
+{
+  width: 500rpx;
+  color:#a1a0a0;
+  text-align: right;
+}
+.edit_page .input_box input
+{
+  height: 90rpx;
+} 
+.edit_page .radio_group
+{
+  width: 500rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color:#a1a0a0;
+}
+.edit_page .radio
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 84rpx;
+}
+.edit_page .btn_area
+{
+  width: 750rpx;
+  position: absolute;
+  top:537rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+   color:#a1a0a0;
+  font-size: 34rpx;
+  text-align: center;
+}
+
+.edit_page .control
+{
+  position: absolute;
+  width: 750rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 34rpx;
+}
+.edit_page .save
+{
+  width: 600rpx;
+  margin:0 auto;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #ff6300;
+  position: relative;
+  color:white;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+}
+.placeholder
+{
+  font-size: 28rpx;
+}

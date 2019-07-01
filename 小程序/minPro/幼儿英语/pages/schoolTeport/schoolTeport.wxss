@@ -1,0 +1,367 @@
+/* pages/ schoolTeport/ schoolTeport.wxss */
+page
+{
+  background-color: #e2ebf2;
+}
+.teport_page .re_header
+{
+  position: relative;
+  height:698rpx
+}
+.teport_page .user_bg
+{
+  background-color: white;
+  margin-top:20rpx;
+}
+.teport_page .lesson_info
+{
+  position: absolute;
+  top:166rpx;
+  left: 0;
+  width: 750rpx;
+  height: 326rpx;
+  background-color: rgba(255,255,255,0.2);
+  text-align: center;
+  color:#fff;
+  font-size: 34rpx;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+}
+/*  */
+.teport_page .success
+{
+  position: absolute;
+  width: 750rpx;
+  left: 0;
+  top:390rpx;
+}
+.teport_page .photo_box
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:488rpx;
+  width:560rpx;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.teport_page .photo
+{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border:4rpx solid white;
+  overflow: hidden;
+}
+.teport_page .tip
+{
+  width: 280rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -86rpx;
+  color:#ffffff;
+  font-size: 34rpx;
+  /* font-size: 40rpx; */
+  text-align: center;
+  line-height: 42rpx;
+  height:84rpx;
+}
+.teport_page .title_tip
+{
+  width: 750rpx;
+  height: 218rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#686868;
+  font-size: 34rpx;
+  flex-direction: column;
+}
+.teport_page .record_list
+{
+  width: 750rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.teport_page .re_item:nth-of-type(3n-1)
+{
+  margin: 0 10rpx
+}
+.teport_page .re_item
+{
+  width: 220rpx;
+  color:#4b4b4b;
+  font-size: 25rpx;
+  margin-bottom: 20rpx;
+}
+.teport_page .sound
+{
+  position: absolute;
+  bottom:10rpx;
+  right:10rpx;
+  background:#FFA0CA;
+  border-radius:50%;
+  height: 46rpx;
+  width: 46rpx;
+}
+/*动画  */
+.teport_page .vedio
+{
+  width: 750rpx;
+  height: 424rpx;
+  
+}
+/*录音  */
+.teport_page .recod_item_box
+{
+  /* height: 200rpx; */
+  position: relative;
+  width: 750rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 80rpx;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  min-height: 90rpx;
+}
+.teport_page .box_shadow
+{
+   box-shadow: 0px 6rpx 10rpx 0rpx #e7e7e7;
+}
+.teport_page .current
+{
+  position: absolute;
+  height: 71rpx;
+  line-height: 71rpx;
+  width: 130rpx;
+  text-align: center;
+  right: 0;
+  top:0;
+  color:#686868;
+  font-size: 34rpx;
+}
+.teport_page .record_yp
+{
+  position: relative;
+  width:134rpx;
+  height: 134rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border:6rpx solid white;
+  overflow:hidden;
+  margin-right: 40rpx;
+}
+.teport_page .la_ba
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/*彩蛋  */
+.teport_page .cai_dan
+{
+  position: relative;
+  width: 750rpx;
+  margin:0 auto;
+  /* height: 1516rpx; */
+  height: 1028rpx
+}
+.teport_page .font_style
+{
+  color:white;
+  height: 170rpx;
+}
+.teport_page .total_item
+{
+    width: 750rpx;
+    height: 60rpx;
+    
+    line-height: 60rpx;
+    text-align: center;
+    color:#494949;
+    font-size: 34rpx;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.teport_page .dp
+{
+  text-align: center;
+  color: #494949;
+  font-size: 34rpx;
+  margin-top: 50rpx;
+}
+.teport_page .text_are
+{
+  width: 610rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10rpx;
+  margin-top: 24rpx;
+  font-size: 34rpx;
+  color:#bbbbbb;
+ box-shadow: 0px 0rpx 10rpx 6rpx #e8e4ec inset;
+ box-sizing: border-box;
+ padding: 20rpx;
+}
+.teport_page .tip_2
+{ 
+  text-align: right;
+  color:#319c65;
+  font-size: 25rpx;
+  width: 610rpx;
+  margin:0 auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  box-sizing: border-box;
+  padding-right: 20rpx;
+}
+.teport_page .tip_3
+{
+  color:#494949;
+  font-size: 34rpx;
+  text-align: center;
+  margin-top:10rpx;
+}
+.teport_page .tip_4
+{
+  color:#7e9d88;
+  font-size: 25rpx;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+/*选择  */
+.teport_page .select_box
+{
+  width: 670rpx;
+  margin:0 auto;
+  min-height: 435rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+.teport_page .radio_select
+{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 210rpx;
+  min-height: 170rpx;
+  margin-bottom: 20rpx;
+}
+.teport_page .radio_select:nth-of-type(3n-1)
+{
+  margin: 0 20rpx;
+}
+.teport_page .selected_ok
+{
+  display: flex;
+  justify-content: center;
+}
+
+.teport_page .select_box_result
+{
+  display: flex;
+  justify-content: center;
+  color:#494949;
+  font-size: 34rpx;
+  width: 670rpx;
+  margin:0 auto;
+  /* height: 435rpx; */
+}
+/*按钮  */
+.teport_page .share_btn
+{
+  width:600rpx;
+  height: 80rpx;
+  margin:  0 auto;
+  background-color: #f49ac1;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#ffffff;
+  font-size: 34rpx;
+ 
+}
+.teport_page .two_btns_box
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   width:600rpx;
+  margin:  0 auto;
+  margin-top:25rpx;
+}
+.teport_page .item
+{
+  /* width: 276rpx; */
+  width: 100%;
+  height: 80rpx;
+  background-color: #5574b9;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  color:white;
+  font-size: 34rpx;
+}
+.teport_page .gift_detail
+{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) scale(2) translateY(0%);
+
+
+}
+.teport_page .baby_title
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+.teport_page .baby_result
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+   width: 100%;
+  text-align: center;
+  bottom:-32rpx;
+}
+.teport_page .eval_box
+{
+  color:#fff;
+  font-size: 34rpx;
+  width: 610rpx;
+  margin:0 auto;
+  margin-top:50rpx;
+}
+.teport_page .eval_title
+{
+  text-align: center;
+  color:#494949;
+}
+.teport_page .content_eval
+{
+  margin-top: 20rpx;
+  background-color: #66db9f;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  height: 250rpx;
+}

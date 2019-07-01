@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "签到",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+}

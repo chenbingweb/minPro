@@ -1,0 +1,205 @@
+<view wx:if="{{class_info}}" class="teport_page">
+  <view class="re_header">
+    <!--背景  -->
+    <view class="icon_box absolute">
+      <image src="{{staticUrl}}cj_header_bg.jpg" style="width:750rpx;height:698rpx"></image>
+    </view>
+    <!--课程信息  -->
+    <view class="lesson_info">
+      <view>{{class_info.unit+' '+class_info.lesson_name}}</view>
+      <view style="margin-top:20rpx">{{class_info.lesson}}</view>
+      <view>{{class_info.e_name}}</view>
+      <view>{{class_info.c_name}}</view>
+    </view>
+    <!--圆满成功  -->
+    <view class="success icon_box">
+      <image src="../../images/ymcg.png" style="width:509rpx;height:194rpx"></image>
+    </view>
+    <!--头像  -->
+    <view class="photo_box">
+      <!--妈妈  -->
+      <view class="relative">
+        <view class="tip ellipsis">
+          <view class="one_line">
+            {{userInfo.nickname}}</view>
+          <view>
+           教的妥妥哒
+          </view>
+        </view>
+        <view class="icon_box photo ">
+          <image src="{{userInfo.head_img}}" style="width:110rpx;height:110rpx;border-radius:50%"></image>
+        </view>
+      </view>
+      <!--宝宝  -->
+      <view class="relative">
+        <view class="tip ellipsis">
+          <view class="one_line">
+            {{userInfo.baby_name==null?'宝宝':userInfo.baby_name}}
+          </view>
+          <view>
+           学的棒棒哒
+          </view>
+        </view>
+        <view class="icon_box photo relative">
+          <image src="{{userInfo.baby_img==null?'../../images/body.png':userInfo.baby_img}}" style="width:110rpx;height:110rpx;border-radius:50%"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--录音 -->
+  <view class="user_bg" style="margin:0">
+    <view class="title_tip">
+      <!-- <view>这是{{userInfo.baby_name}}学习的绘本课程:</view> -->
+      <view>{{ReportPageText1}}</view>
+      <view class="icon_box">
+        <image src="../../images/floor_page.png" style="width:408rpx;height:75rpx"></image>
+      </view>
+    </view>
+    <!--配音列表  -->
+    <view>
+      <view class="box_shadofw">
+        <book-swiper mode="aspectFit" height="370" bindchangeEvent="changeEvent" bindleftArrow="leftArrow" bindrightArrow="rightArrow" baseSet="{{baseSet}}" imgsData="{{imgsData}}" />
+      </view>
+      <view class="recod_item_box">
+        <view class="current">{{baseSet.current+1}}/{{imgsData.length}}</view>
+        <view wx:if="{{item.url}}" class="record_yp" bindtap="playRecord" data-id="{{item.id}}" data-types="userRe" data-url="{{imgUrl+item.url}}" wx:for="{{recordArr}}" wx:key="index_{{index}}">
+          <view class="icon_box">
+            <image src="{{item.img==null?'../../images/body.png':item.img}}" style=" width:134rpx;height:134rpx;border-radius:50%"></image>
+          </view>
+          <view class="la_ba icon_box">
+            <image wx:if="{{!item.reflag}}" src="../../images/laba.png" style="width:49rpx;height:48rpx"></image>
+            <image wx:else src="../../images/play.gif" style="width:49rpx;height:49rpx"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--已学单词  -->
+  <view class="user_bg">
+    <view class="title_tip">
+      <!-- <view>这是{{userInfo.baby_name}}掌握的重点单词：</view> -->
+      <view>{{ReportPageText2}}</view>
+      
+      <view class="icon_box">
+        <image src="../../images/floor_page.png" style="width:408rpx;height:75rpx"></image>
+      </view>
+    </view>
+    <!--配音列表  -->
+    <view class="record_list">
+      <view class="re_item " bindtap="playRecord" data-id="{{item.id}}" data-url="{{imgUrl+item.word_url}}" wx:for="{{words}}" wx:key="{{index}}_re">
+        <view class="icon_box relative" style="width:220rpx;height:220rpx">
+          <image mode="aspectFit" src="{{imgUrl+item.img_url}}" style="width:220rpx;height:220rpx"></image>
+          <view class="icon_box sound">
+            <image wx:if="{{!item.playItem}}" src="../../images/sound.png" style="width:46rpx;height:46rpx"></image>
+            <image wx:else src="../../images/play.gif" style="width:36rpx;height:36rpx"></image>
+          </view>
+        </view>
+        <view style="text-align: center;margin-top:4rpx">{{item.word}}</view>
+      </view>
+    </view>
+  </view>
+  <!--动画  -->
+  <view class="user_bg">
+    <view class="title_tip">
+      <!-- <view>这是{{userInfo.baby_name}}观看的动画片：</view> -->
+      <view>{{ReportPageText3}}</view>
+      <view class="icon_box">
+        <image src="../../images/floor_page.png" style="width:408rpx;height:75rpx"></image>
+      </view>
+    </view>
+    <!--配音列表  -->
+    <view style="height:424rpx">
+      <video  initial-time="1" bindplay="videoPlay" bindtimeupdate="timeUpdate" id="myVideo" class="video" id="myVideo" class="vedio" duration="{{duration}}" src="{{cartoon}}"
+        danmu-list="{{danmuList}}" controls></video>
+    </view>
+  </view>
+  <!--彩蛋  -->
+  <view class="cai_dan">
+    <!--背景  -->
+    <view class="icon_box absolute">
+      <image src="../../images/cj_bg.jpg" style="width:750rpx;height:1028rpx;"></image>
+    </view>
+    <!--内容  -->
+    <form bindsubmit="formSubmit" >
+    <view class="absolute">
+      <!--头部  -->
+      <view class="title_tip font_style">
+        <!-- <view>这是{{userInfo.baby_name}}做练习的成绩：</view> -->
+        <view>{{ReportPageText4}}</view>
+        <view class="icon_box">
+          <image mode="aspectFill" src="../../images/floor_page.png" style="width:408rpx;height:75rpx"></image>
+        </view>
+      </view>
+      <!--花费时间  -->
+      <view class="total_item" wx:if="{{false}}" style="margin-bottom: 30rpx;">
+        学习用时：{{study_result.totalTime}}
+      </view>
+      <view class="total_item">
+        学习成绩：{{study_result.totalScore}}
+      </view>
+      <view style="height:400rpx" wx:if="{{src!='sharePage'}}">
+        <view class="dp">如此精彩的亲子课程，怎能少了点评：</view>
+        <textarea class="text_are" maxlength="50" value="{{study_result.content}}" name="evalue" bindinput="evalueEvent"></textarea>
+        <view class="tip_2" >最多输入50个字符</view>
+        <view class="tip_3" wx:if="{{false}}">宝宝这么努力学习，妈妈的奖励在哪里？</view>
+        <!-- <view class="tip_4" >为宝宝选择礼物吧</view> -->
+      </view>
+      <!--填写完成  -->
+      <view wx:else class="eval_box" style="height:360rpx">
+        <!-- <view class="eval_title">妈妈评语</view> -->
+        <view class="eval_title">{{ReportPageText5}}</view>
+        <view class="content_eval">{{study_result.content}}</view>
+      </view>
+      <!--选择
+      <view wx:if="{{src!='sharePage'}}" style="margin-bottom:30rpx;margin-top:40rpx">
+        <radio-group class="select_box" name="gift_id"  bindchange="radioChange">
+          <label class="radio_select relative" wx:for="{{gifts}}" wx:key="gift_{{index}}">
+            <view class="icon_box" wx:if="{{!item.flag}}">
+                <image  mode="aspectFit"  src="{{imgUrl+item.gift_1}}" style="width:200rpx;height:200rpx"></image>
+            </view>
+    
+            <view wx:else class="selected_ok">
+              <view class="icon_box">
+                <image mode="aspectFit"  src="{{imgUrl+item.gift_2}}" style="width:200rpx;height:200rpx"></image>
+             </view> 
+            </view>
+           <view wx:if="{{item.flag}}" class="icon_box absolute">
+            <image src="../../images/select_gift_ok.png" style="width:75rpx;height:55rpx"></image>
+           </view>
+            <radio value="{{item.gift_id}}" checked="{{item.flag}}" hidden />
+          </label>
+        </radio-group>
+      </view>-->
+      <!--结果   wx:else-->
+      <view wx:if="{{src=='sharePage'}}"  class="select_box_result relative" style="margin-bottom:60rpx">
+        <!-- <view class="icon_box absolute shine_gb">
+          <image src="../../images/success_guang.png" style="width:656rpx;height:320rpx"></image>
+        </view>
+       
+        <view class="icon_box gift_detail">
+          <image mode="aspectFit" src="{{imgUrl+study_result.gift}}" style="width:240rpx;height:113rpx"></image>
+        </view>
+         <view class="baby_title">宝宝获得的礼物</view> -->
+        <!-- <view class="baby_result">恭喜您获得{{userInfo.nickname}}送出的本节免费课程</view> -->
+       <view class="baby_result">{{ReportPageText7}}</view>
+      </view>
+
+       <view wx:if="{{src=='sharePage'}}" class="share_btn relative">开启课程
+        <button class="btn_login" open-type="getUserInfo" bindtap="toIndex"></button>
+       </view>
+      <view wx:if="{{src!='sharePage'}}" class="share_btn relative">
+        分享给朋友
+        <button class="absolute" open-type="{{openType}}" formType="submit" data-btn="" style="opacity:0"></button>
+      </view>
+      <view wx:if="{{src!='sharePage'}}" class="two_btns_box">
+        <view bindtap="navBack" class="item">继续学习</view>
+        <view class="item relative" wx:if="{{false}}">保存成绩单
+         <button class="absolute" formType="submit" data-btn="post" style="opacity:0"></button>
+        </view>
+      </view>
+    </view>
+    </form>
+  </view>
+</view>
+<view wx:else class="no_info">加载中...</view>
+<canvas hidden bindtap="saveImg" wx:if="{{showCanvas}}" data-src="{{posterImg}}"  style="width: 750rpx; height: 1250rpx;position:absolute;left:0;top:0;opacity:0" canvas-id="first"></canvas>

@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "我的钱包",
+    "usingComponents": {
+      "paging": "/components/paging/paging"
+    }
+}

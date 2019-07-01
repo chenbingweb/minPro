@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "商城",
+  "usingComponents": {
+    "swiper-base": "/components/swiper-base/swiper-base"
+  }
+}

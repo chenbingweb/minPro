@@ -1,0 +1,89 @@
+@import '../../temp/process.wxss';
+.baby_page .base_info
+{
+  width: 750rpx;
+  height: 404rpx;
+}
+.baby_page .base_info .user_info
+{
+  position: absolute;
+  left: 0;
+  top:126rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:#efefef;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+.baby_page .base_info .photo
+{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border:6rpx solid white;
+  overflow: hidden;
+}
+.baby_page .to_user_info
+{
+  position: absolute;
+  /* top:10rpx;
+  right: 0; */
+  top:30rpx;
+  right: 30rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 154rpx;
+  color:#fff;
+  font-size: 22rpx;
+}
+/*s等级  */
+.leve_box
+{
+  width: 750rpx;
+ 
+}
+.leve_box .name
+{
+  color:#565656;
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 55rpx;
+}
+.leve_box .leve_1
+{
+  text-align: center;
+  color:#de6492;
+  font-size: 38rpx;
+  margin-top: 30rpx;
+}
+
+
+.leve_box .leve_tip
+{
+   text-align: center;
+   color:#b5b5b5;
+   font-size: 25rpx;
+   margin-top: 40rpx;
+}
+.edit_statue
+{
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #ed1c24;
+  right: -4rpx;
+  top:2rpx;
+}
+.tip_box
+{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top:-30rpx;
+  right: 20rpx;
+}

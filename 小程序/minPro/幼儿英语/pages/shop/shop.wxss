@@ -1,0 +1,211 @@
+/* pages/shop/shop.wxss */
+page
+{
+  background-color: #e2ebf2;
+}
+.shop_page .result_box
+{
+  width: 750rpx;
+  height: 195rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shop_page .result_item
+{
+  width: 350rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.shop_page .types
+{
+  color:#898989;
+  font-size: 26rpx;
+  text-align: center;
+}
+.shop_page .result_box .bottom
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop_page .result_box .xf
+{
+  color:#898989;
+  font-size: 67rpx;
+  padding-left: 10rpx;
+}
+/*兑换  */
+.exchange_box
+{
+  width: 750rpx;
+  height: 220rpx;
+  background-color: white;
+  margin-top: 20rpx;
+}
+.exchange_box .exchange_name
+{
+  font-size: 25rpx;
+  color:#4d4d4d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 94rpx;
+  box-sizing: border-box;
+  padding-left: 66rpx;
+}
+.exchange_box .input_box
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:8rpx;
+
+}
+.exchange_box .input
+{
+  height: 77rpx;
+  width: 560rpx;
+  border:4rpx solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+   font-size: 34rpx;
+   color:#4d4d4d;
+   padding: 0 10rpx;
+}
+.exchange_box .exchange_btn
+{
+  width: 140rpx;
+  height: 77rpx;
+  background-color: #ff6300;
+  text-align: center;
+  line-height: 77rpx;
+  border-radius: 10rpx;
+  color:white;
+  font-size: 34rpx;
+  /* position: relative;
+  left: -20rpx; */
+}
+.shopping
+{
+  margin-top: 20rpx;
+  background-color: white;
+  width: 750rpx;
+   padding-top: 37rpx;
+   padding-bottom:100rpx;
+
+}
+.good_box
+{
+
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.shopping_tip
+{
+ width: 690rpx;
+ height: 70rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #efefef;
+  padding-bottom: 4rpx;
+    margin-bottom: 20rpx;
+}
+.shop_list_box
+{
+  position: relative;
+  width:214rpx;
+  height:300rpx;
+   margin-left: 27rpx;
+  margin-bottom: 22rpx;
+}
+.good_item
+{
+  
+  border:2rpx solid #c58e65;
+  border-top:2rpx solid #ecd9cb;
+  border-radius: 10rpx;
+ 
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.price_box
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18rpx;
+  background: #f7941d;
+  width: 144rpx;
+  height: 58rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 25rpx;
+}
+.price_db
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10rpx;
+  background: #e88107;
+  width: 144rpx;
+  height: 58rpx;
+  border-radius: 10rpx;
+}
+.input_box_item
+{
+   display: flex;
+  align-items: center;
+  width:520rpx;
+justify-content:center;
+
+}
+.items
+{
+  display: flex;
+  align-items: center;
+}
+.items .input
+{
+  width: 45rpx;
+  height: 60rpx;
+  border:2rpx solid #cccccc;
+  margin-left:10rpx;
+  border-radius: 10rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.input_lines
+{
+  width:29rpx;
+  border:1rpx solid black;
+  margin-left:10rpx;
+
+}
+.code_1,.code_2
+{
+  width: 200rpx;
+  height: 78rpx;
+  border-radius: 10rpx;
+  border:2rpx solid #cccccc;
+  text-align: center;
+}
+.midd_line
+{
+  width: 30rpx;
+  height: 5rpx;
+  margin: 0 10rpx;
+  background-color: black;
+}

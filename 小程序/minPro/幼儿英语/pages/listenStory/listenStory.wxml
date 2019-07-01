@@ -1,0 +1,93 @@
+<import src="../../temp/tip.wxml"/>
+<!--bindtap="cancelPlay"  -->
+<view wx:if="{{imgsData.length}}" class="fixed listen_page" >
+  <!--课本图片  -->
+  <view class="book_list">
+    <book-swiper bindchangeEvent="changeEvent" bindleftArrow="leftArrow" bindrightArrow="rightArrow" baseSet="{{baseSet}}" imgsData="{{imgsData}}" />
+  </view>
+  <!--编辑课本   -->
+  <view class="content_box">
+    <!--提示  &&imgsData.length-2>=-->
+    <view class="tip" >
+     <view  wx:if="{{src=='bk'}}" >{{PlanningStoryPageTip1}}</view> 
+      <!-- <view  wx:if="{{src=='bk'}}" > 点击可修改文字内容，翻页自动保存</view> -->
+       <!-- <view  wx:if="{{src=='sk' && baseSet.current>= imgsData.length-2}}" > 不容错过的互动环节，一问一答欢乐多</view> -->
+       <view  wx:if="{{src=='sk' && baseSet.current>= imgsData.length-2}}" >{{StudyStoryPageTip}} </view>
+      <view class="current">{{baseSet.current+1}}/{{imgsData.length}}</view>
+    </view>
+    <!--文本内容 
+    <view class="content_detail RemoveRollCar">
+      <view class="text">
+       {{contentInfo.teaching_plan?'show_content':'hide_content'}}
+       {{contentInfo.teaching_plan?'show_content':'hide_content'}} 
+      </view>
+    </view> wx:if="{{!focus}}"  wx:if="{{(src=='bk' && showMark)}}"-->
+    <view wx:if="{{src=='bk' && contentInfo.dub_url}}" style="height:460rpx;overflow:hidden;">
+      <view  wx:if="{{(src=='bk' && !focus)}}" bindtap="doEdit" style='background-color:#ebebeb' class="content_detail RemoveRollCar  ">
+        <text>{{contentInfo.teaching_plan}}</text>
+      </view>
+      <!--style="height:0rpx;"  focus="{{focus}}"  -->
+     <textarea fixed="true" wx:else  style="font-size:34rpx" bindconfirm="editContent" focus="{{focus}}" auto-focus="{{focus}}" bindblur="editContent" data-id="{{contentInfo.id}}" class="content_detail RemoveRollCar " value="{{contentInfo.teaching_plan}}"   maxlength="20000"></textarea>
+    </view>
+       <!--文本内容--> 
+    <view wx:if="{{src=='bk' && !contentInfo.dub_url}}" class="content_detail RemoveRollCar">
+      <!-- <text class="text">
+       {{contentInfo.teaching_plan}}
+      </text> -->
+       <view  wx:if="{{(src=='bk' && !focus)}}" bindtap="doEdit" style='background-color:#ebebeb' class="content_detail RemoveRollCar  ">
+        <text>{{contentInfo.teaching_plan}}</text>
+      </view>
+      <!--style="height:0rpx;"  focus="{{focus}}"  -->
+     <textarea fixed="true" wx:else  style="font-size:34rpx" bindconfirm="editContent" focus="{{focus}}" auto-focus="{{focus}}" bindblur="editContent" data-id="{{contentInfo.id}}" class="content_detail RemoveRollCar " value="{{contentInfo.teaching_plan}}"   maxlength="20000"></textarea>
+    </view> 
+      <!--只读  -->
+    <view wx:if="{{src=='sk'}}" class="only_read_content_detail RemoveRollCar" >
+      <view class="one_bg" ></view>
+      <view class="two_bg">
+        <view class="header_bg">
+          <view wx:for="{{[1,2]}}" wx:key="index_{{index}}" class="icon_box" style="width:23rpx;height:42rpx">
+            <image style="width:23rpx;height:42rpx" src="../../images/label_t.png"></image>
+          </view>
+        </view>
+        <view class="read_only_box">
+          <view >
+            <text>{{contentInfo.teaching_plan}}</text>
+          </view>
+        </view>
+      
+      </view>
+      
+    </view>
+  </view>
+ 
+
+  <!--控制  -->
+  <view class="control"  wx:if="{{contentInfo.dub_url}}">
+    <view wx:if="{{contentInfo.dub_url!=''}}" class="icon_box play_icon" bindtap="playStory" data-url="{{imgUrl+contentInfo.dub_url}}">
+      <image wx:if="{{!audioPlay}}" style="width:76rpx;height:76rpx" src="../../images/sound.png"></image>
+        <image wx:else style="width:58rpx;height:58rpx" src="../../images/play.gif"></image>
+    </view>
+    <view bindtap="repeatContent" wx:if="{{src=='bk'}}" data-id="{{contentInfo.id}}" class="icon_box " style="margin-left:80rpx;">
+      <image style="width:76rpx;height:76rpx" src="../../images/repeat_btn.png"></image>
+    </view>
+  </view>
+
+  <!--控制  -->
+  <view class="control"  wx:else>
+    <view bindtap="repeatContent" wx:if="{{src=='bk'}}" data-id="{{contentInfo.id}}" class="icon_box " style="margin-left:0rpx;">
+      <image style="width:76rpx;height:76rpx" src="../../images/repeat_btn.png"></image>
+    </view>
+  </view>
+
+</view>
+<view class="no_info" wx:else>
+  网络不给力呦，请检查网络连接并稍后再试！
+</view>
+<!--备课提示 showMark -->
+<view hidden="{{!(src=='bk' && showMark)}}">
+ <template  data="{{staticUrl}}" is="bk_ok"/>
+</view>
+<!-- 上课提示 -->
+<view hidden="{{!(src=='sk' && showMark)}}">
+ <template  data="{{staticUrl,gold}}" is="sk_ok"/>
+</view>

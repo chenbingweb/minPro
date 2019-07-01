@@ -1,0 +1,42 @@
+<template name="question">
+<view class="question_box">
+  <!--音频  -->
+  <view class="audio">
+    <view class="icon_box" bindtap="playAudio" data-url="{{img_url+practiceItem.dub_url}}">
+      <image wx:if="{{!isplay}}" src="../../images/play_question.png" style="width:75rpx;height:75rpx;"></image>
+      <image wx:else src="../../images/play2.gif" style="width:75rpx;height:75rpx;"></image>
+    </view>
+    <view class="question">
+    <view style="color:#464444;font-size:40rpx">{{practiceItem.sentence[0]}}</view>
+    <view style="color:#464444;font-size:40rpx">{{practiceItem.sentence[1]}}</view>
+      <!-- <view style="color:#464444;font-size:42rpx">{{practiceItem.e_name}}</view> -->
+      <view style="color:#464444;font-size:26rpx">
+        {{practiceItem.c_name}}
+     
+      </view>
+    </view>
+  </view>
+  <!-- <view class="note">请选择与语音内容相符合的图片</view> -->
+   <view class="note">{{StudyQuestionPageTip}}<text style="padding-left:30rpx">{{currentQ+''}}/{{total+''}}</text></view>
+  <radio-group class="radio_group" bindchange="radioChange">
+    <label class="question_item" wx:for="{{practiceItem.option}}" wx:key="q_index">
+      <view class="select" wx:if="{{index==0}}">A</view>
+      <view class="select" wx:if="{{index==1}}">B</view>
+      <view class="select" wx:if="{{index==2}}">C</view>
+      <view class="select" wx:if="{{index==3}}">D</view>
+      <view class="icon_box">
+        <image mode="aspectFit" src="{{img_url+item.img_url}}" style="width:248rpx;height:248rpx"></image>
+      </view>
+      <!--选择正确  -->
+      <view class="icon_box select_ok" wx:if="{{item.right}}">
+        <image src="../../images/select_ok.png" style="width:69rpx;height:49rpx"></image>
+      </view>
+      <!--选择错误 -->
+      <view class="icon_box select_err" wx:if="{{item.err}}">
+        <image src="../../images/select_no.png" style="width:52rpx;height:50rpx"></image>
+      </view>
+      <radio hidden value="{{item.id}}"  checked="{{item.check}}" />
+    </label>
+  </radio-group>
+</view>
+</template>

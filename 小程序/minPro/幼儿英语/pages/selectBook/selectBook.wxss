@@ -1,0 +1,168 @@
+/* pages/selectBook/selectBook.wxss */
+page
+{
+  height: 100%;
+  background-color: white;
+}
+.select_book_page .book_box
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 790rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select_book_page .swiper_item
+{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  /* padding-right: 10rpx; */
+}
+.select_book_page .book_item_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.select_book_page .anthor
+{
+  /* color:#646464;
+  font-size: 24rpx;
+  line-height: 70rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translateX(-50%); */
+  color:#646464;
+font-size:24rpx;
+line-height:70rpx;
+position:absolute;
+bottom:-70rpx;
+left:50%;
+transform:translateX(-50%);
+width:100%;
+text-align:center;
+
+}
+.select_book_page .status_pos
+{
+  position: absolute;
+  right: -8rpx;
+  top:20rpx;
+}
+.select_book_page .status_type
+{
+  position: absolute;
+  width:103rpx;
+  height:62rpx;
+   right: -8rpx;
+  top:20rpx;
+  text-align: center;
+  line-height: 62rpx;
+  color:#e08400;
+  font-size: 30rpx;
+}
+.select_book_page .book_info
+{
+  width: 750rpx;
+  height: 138rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.select_book_page .left_1
+{
+  width: 290rpx;
+  height: 138rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select_book_page .info_num
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.select_book_page .info_num view:nth-of-type(1)
+{
+  color:#646464;
+  font-size: 24rpx;
+  text-align: center;
+  padding-top: 10rpx;
+}
+.select_book_page .info_num view:nth-of-type(2)
+{
+  font-size:40rpx;
+  color:#2286b4;
+    text-align: center;
+}
+/*用户操作  */
+.select_book_page .user_control
+{
+  width: 750rpx;
+  height: 130rpx;
+  margin:0 auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items:  flex-end;
+}
+.select_book_page .user_control view:nth-of-type(1)
+{
+  width: 150rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #ff7e00;
+  border-radius: 10rpx;
+  color:white;
+  font-size: 30rpx;
+}
+.select_book_page .user_control view:nth-of-type(2)
+{
+  width: 170rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #84d237;
+  border-radius: 10rpx;
+  color:white;
+  font-size: 30rpx;
+  margin:0 40rpx;
+}
+.select_book_page .user_control view:nth-of-type(3)
+{
+  width: 150rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #b7b7b7;
+  border-radius: 10rpx;
+  color:white;
+  font-size: 30rpx;
+}
+.select_book_page .to_other
+{
+  text-align: center;
+  font-size: 26rpx;
+  color:#848383;
+  margin-top:70rpx;
+}
+.btn_box
+{
+  width: 339rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+  color:white;
+  margin-top:110rpx;
+}

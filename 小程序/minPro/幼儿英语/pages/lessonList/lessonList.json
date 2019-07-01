@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "课程大纲",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  }
+  
+}

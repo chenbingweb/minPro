@@ -1,0 +1,50 @@
+<view class="login_page">
+  <!--头部  -->
+  <view class="header_box">
+    <view class="icon_box absolute">
+      <image src="../../images/login_bg.jpg" style="width:750rpx;height:354rpx"></image>
+    </view>
+    <view class="icon_box adver" wx:if="{{false}}">
+      <image src="../../images/adver.jpg" style="width:116rpx;height:116rpx"></image>
+    </view>
+    <!-- <view class="content">
+      <view>每个妈妈都是孩子最好的</view>
+      <view> 英语启蒙老师 </view>
+    </view> -->
+  </view>
+  <!--用户选择登录  -->
+  <view wx:if="{{!showPhone}}">
+    <view class="wx_login user_select_login relative">
+      <view class="icon_box">
+        <image src="../../images/wx_logo.png" style="width:53rpx;height:43rpx"></image>
+      </view>
+      <view  style="padding-left:10rpx;">微信用户快速登录</view>
+       <button style="opacity:0" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="absolute"> </button>
+    </view>
+    <view bindtap="toPhoneLogin" class="use_phone">输入手机号码登录／注册</view>
+  </view>
+
+  <form wx:if="{{showPhone}}" class="form_box" bindsubmit="formSubmit">
+    <view class="form">
+      <view class="item">
+        <view>手机号</view>
+        <input placeholder-style="color:#bababa" bindinput="getUserPhone"  bindblur="getUserPhone" name="mobile" class="input" placeholder="填写手机号" type="number"></input>
+        <view wx:if="{{showGetCodeBtn==true}}" bindtap="getCode" class="get_code">获取验证码</view>
+        <view wx:else class="get_code">{{showGetCodeBtn}}</view>
+      </view>
+      <view class="item">
+        <view >验证码</view>
+        <input name="code" placeholder-style="color:#bababa" style="width:530rpx" class="input" placeholder="输入验证码" type="number" bindinput="getUserCode" bindblur="getUserCode" ></input>
+
+      </view>
+    </view>
+    <view class="btn-area">
+      <view class="start">
+        开始
+        <button formType="submit" class="absolute" style="opacity:0"></button>
+      </view>
+
+    </view>
+  </form>
+
+</view>

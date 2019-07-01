@@ -1,0 +1,42 @@
+<import src="../../temp/process"/>
+<view wx:if="{{false}}">
+  <cropper/>
+</view> 
+<view class="baby_page">
+   
+  <!--妈妈基本信息  -->
+  <view class="base_info relative">
+    <!--背景  -->
+    <view class="absolute icon_box">
+      <image src="{{staticUrl}}bb.jpg" style="width:750rpx;height:404rpx"></image>
+    </view>
+    <!--用户信息  -->
+    <view class="user_info ">
+        <view class="icon_box photo" bindtap="updatePhoto">
+          <image src="{{info.head_img==null?'../../images/body.png':info.head_img}}" style="width:150rpx;height:150rpx"></image>
+        </view>
+        <view>{{info.nickname?info.nickname:'宝宝昵称'}}</view>
+    </view>
+    <!--查看基本信息  -->
+    <navigator url="../editBabyInfo/editBabyInfo" class="to_user_info">
+      <view class="icon_box relative">
+        <image style="width:28rpx;height:28rpx" src="../../images/user_info.png"></image>
+        <view class="edit_statue" wx:if="{{dflag}}"></view>
+      </view>
+      <view style="padding-left:10rpx">详情信息</view>
+    </navigator>
+  </view>
+    <!--等级  -->
+  <view class="leve_box">
+    <view class="name relative">
+    当前等级
+      <view class="icon_box tip_box" bindtap="tip">
+        <image src="../../images/tip_1.png" style="width:40rpx;height:40rpx"></image>
+      </view>
+    </view>
+    <view class="leve_1">{{info.user_level}}</view>
+    <template is="process" data="{{process:info.level_per}}"/>
+    <!-- <view class="leve_tip">宝宝完成上课可获得等级提升</view> -->
+    <view class="leve_tip">{{BabyPageTip}}</view>
+  </view>
+</view>

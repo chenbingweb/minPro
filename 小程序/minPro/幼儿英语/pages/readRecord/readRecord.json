@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "读绘本",
+  "usingComponents": {
+    "book-swiper": "/components/book-swiper/book-swiper",
+    "recorder":"/components/recorder/recorder"
+  }
+}

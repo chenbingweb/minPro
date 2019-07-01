@@ -1,0 +1,191 @@
+.mark_bk
+{
+  background:rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  z-index: 999999;
+}
+.mark_bk .bg_tip_1
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:230rpx;
+ 
+}
+.mark_bk .tip_content 
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:326rpx;
+  text-align: center;
+  color:white;
+  font-size: 42rpx;
+}
+.mark_bk .go_bk_btn
+{
+  width: 170rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:474rpx;
+  background-color: #84d237;
+  border-radius: 4rpx;
+  color:white;
+  font-size: 30rpx;
+}
+.mark_bk .close_bk_mark
+{
+  position:absolute;
+/* top:32rpx;
+right:101rpx; */
+top:42rpx;
+right:46rpx;
+font-weight:bold;
+
+color:#9f9f9f;
+font-size:38rpx;
+width:70rpx;
+height:70rpx;
+text-align:center;
+line-height:70rpx;
+}
+.mark_bk .bg_tip_2
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:120rpx;
+ 
+}
+.mark_bk .tip_content_2
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* top:560rpx; */
+  top:456rpx;
+  text-align: center;
+  color:white;
+  font-size: 33rpx;
+ 
+}
+.mark_bk .get_sb_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  /* top:670rpx; */
+  top:514rpx;
+  color:#fff;
+  font-size: 64rpx;
+}
+.mark_bk .get_sb_num_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding-left: 30rpx;
+}
+.mark_bk .bg_tip_3
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:400rpx;
+ width: 600rpx;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color:#fff;
+ font-size: 58rpx;
+
+}
+.mark_bk .open_lesson_btn
+{
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #84d237;
+  position: absolute;
+   left: 50%;
+  transform: translateX(-50%);
+  color:white;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 80rpx;
+  top:720rpx;
+  border-radius: 10rpx;
+}
+/*淡出动画  */
+.BK_anima
+{
+  animation:BKAn 0.6s linear;
+  animation-fill-mode:forwards;
+  animation-delay:0.2s;
+}
+@keyframes BKAn {
+  0% {
+    transform: scale(0)
+  }
+  50%{
+    transform: scale(1.5)
+  }
+  100%{
+    transform: scale(1)
+  }
+}
+/*淡出动画  */
+.SK_anima
+{
+  animation:SKAn 1.2s linear;
+   /* animation-fill-mode:forwards ;  */
+  animation-delay:0.2s;
+}
+@keyframes SKAn {
+  0% {
+    transform: scale(0)
+  }
+  30%{
+    transform: scale(1.5)
+  }
+  70%{
+    transform: scale(1);
+    
+  }
+  100%{
+    transform: scale(0);
+    
+  }
+}
+.title_tip_1
+{
+  font-size: 34rpx;
+  color:white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:447rpx;
+}
+.lock_win
+{
+  text-align:center;
+  font-size:30rpx;
+  color:white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:663rpx;
+width:750rpx;
+letter-spacing:4rpx;
+
+}

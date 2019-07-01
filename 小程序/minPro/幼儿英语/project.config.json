@@ -1,0 +1,62 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.90",
+	"appid": "wx4904c5ae6c0f577b",
+	"projectname": "%E5%B9%BC%E5%84%BF%E9%9F%B3%E4%B9%90_02",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "1",
+					"pathName": "pages/index/index",
+					"query": "scene=2323423",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "测试",
+					"pathName": "pages/schoolTeport/schoolTeport",
+					"query": "uid=6&lid=17&shareid=27&cid=13",
+					"scene": "1007"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,61 @@
+<template name="lesson">
+  <!--课程列表  -->
+  <navigator url="../selectBook/selectBook?cid={{lesson.cid}}&uid={{lesson.uid}}&lid={{lesson.lid}}">
+    <view class="lesson_item">
+
+      <view class="left">
+        <view class="lesson_title">
+          <view class="one_line">{{lesson.lesson_name}}</view>
+          <view style="border-color:{{lesson.color_u}}">{{lesson.unit}}</view>
+          <view style="border-color:{{lesson.color_l}}">{{lesson.lesson}}</view>
+        </view>
+        <view class="info">{{lesson.name}}／重点词 {{lesson.key_words}}</view>
+      </view>
+      <view class="right">
+        <view wx:if="{{lesson.status==0}}">去备课</view>
+        <view wx:if="{{lesson.status==1}}">去上课</view>
+        <view wx:if="{{lesson.status==2}}">已结课</view>
+        <view class="icon_box" style="width:40rpx;">
+          <image src="../../images/arrow.png" style="width:11rpx;height:20rpx"></image>
+        </view>
+        <!--新增  -->
+         <view class="icon_box king_status" wx:if="{{lesson.status==2}}">
+            <image src="../../images/king_ok.png" style="width:42rpx;height:35rpx"></image>
+          </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+
+<!-- 课程列表中 -->
+<template name="lesson_img">
+  <!--课程列表  -->
+  <navigator url="../selectBook/selectBook?cid={{lesson.cid}}&uid={{lesson.uid}}&lid={{lesson.lid}}&src=lessonlist">
+    <view class="lesson_item" style="border-top:none;border-bottom:2rpx solid #e7e7e7;">
+      <view class="icon_box" style="margin-left:26rpx;">
+        <image  mode='aspectFill' src="{{imgUrl+lesson.cover_img}}" style="width:90rpx;height:90rpx"></image>
+      </view>
+      <view class="left" style="padding:0;width:464rpx; align-items: flex-start;padding-left:30rpx">
+        <view>
+          <view class="lesson_title">
+            <view  class="one_line">{{lesson.lesson_name}}</view>
+            <view style="border-color:{{lesson.color_u}}">{{lesson.unit}}</view>
+            <view style="border-color:{{lesson.color_l}}">{{lesson.lesson}}</view>
+          </view>
+          <view class="info">{{lesson.name}}／重点词 {{lesson.key_words}}</view>
+        </view>
+      </view>
+      <view class="right relative">
+        <view wx:if="{{lesson.status==0}}">去备课</view>
+        <view wx:if="{{lesson.status==1}}">去上课</view>
+        <view wx:if="{{lesson.status==2}}">已结课</view>
+        <view class="icon_box " style="width:40rpx;">
+          <image src="../../images/arrow.png" style="width:11rpx;height:20rpx"></image>
+        </view>
+        <view class="icon_box king_status" wx:if="{{lesson.status==2}}">
+            <image src="../../images/king_ok.png" style="width:42rpx;height:35rpx"></image>
+          </view>
+      </view>
+    </view>
+  </navigator>
+</template>

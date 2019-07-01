@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "成绩",
+  "usingComponents": {
+    "book-swiper": "/components/book-swiper/book-swiper"
+  }
+}

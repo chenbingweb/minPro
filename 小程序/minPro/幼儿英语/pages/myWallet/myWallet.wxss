@@ -1,0 +1,115 @@
+/* pages/myWallet/myWallet.wxss */
+.my_wallet_page .select_box
+{
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  
+}
+.my_wallet_page .item
+{
+  text-align: center;
+  color:#565656;
+  font-size: 38rpx;
+  line-height: 80rpx;
+  width: 50%;
+  position: relative;
+}
+.my_wallet_page .item.selected
+{
+  color: #74c74e;
+}
+.my_wallet_page .item.selected::after
+{
+  content: '';
+  display: block;
+  width: 215rpx;
+  height: 10rpx;
+  background-color: #73c74e;
+  border-radius: 5rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+} 
+.my_wallet_page .result_box
+{
+  width: 750rpx;
+  height: 207rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_wallet_page .result_item
+{
+  width: 350rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.my_wallet_page .types
+{
+  color:#898989;
+  font-size: 26rpx;
+  text-align: center;
+}
+.my_wallet_page .result_box .bottom
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.my_wallet_page .result_box .xf
+{
+  color:#898989;
+  font-size: 67rpx;
+  padding-left: 10rpx;
+}
+.my_wallet_page .consumption_list
+{
+  position: absolute;
+  top:281rpx;
+  left:0;
+  right: 0;
+  bottom: 0;
+}
+.my_wallet_page .consumption_list .item
+{
+  height: 93rpx;
+  border-bottom:2rpx solid #f7f7f7;
+  width: 750rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.my_wallet_page .consumption_list .info
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:  flex-start;
+}
+.my_wallet_page .consumption_list .info .types_1
+{
+  height: 45rpx;
+  line-height: 45rpx;
+  text-align: left
+  
+}
+.my_wallet_page .consumption_list .date
+{
+  height: 45rpx;
+  line-height: 45rpx;
+  color:#7e7e7e;
+}
+.my_wallet_page .consumption_list .con
+{
+  color:#74c74e
+}

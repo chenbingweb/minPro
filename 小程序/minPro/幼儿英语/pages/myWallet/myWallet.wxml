@@ -1,0 +1,54 @@
+<view class="my_wallet_page fixed">
+  <!--选择  -->
+  <view class="select_box">
+    <view bindtap="selectBtn" class="item {{selected=='xb'?'selected':''}}" id="xb">学贝</view>
+    <view bindtap="selectBtn" class="item {{selected=='my'?'selected':''}}" id="my">学习魔药</view>
+  </view>
+  <!--学果  -->
+  <view class="result_box">
+    <view class="result_item" wx:if="{{selected=='xb'}}">
+      <view class="types">总学贝</view>
+      <view class="bottom">
+        <view class="icon_box">
+          <image src="../../images/sb.png" style="width:78rpx;height:64rpx"></image>
+        </view>
+        <view class="xf">{{userIntegral.total_gold}}</view>
+      </view>
+    </view>
+    <view class="result_item" wx:if="{{selected=='my'}}">
+      <view class="types">学习魔药</view>
+      <view class="bottom">
+        <view class="icon_box">
+          <image src="../../images/mo_fa_ping.png" style="width:53rpx;height:82rpx"></image>
+        </view>
+        <view class="xf">{{userIntegral.diamonds}}</view>
+      </view>
+    </view>
+  </view>
+  <!--消费列表  -->
+  <view class="consumption_list" style="border-top:2rpx solid #f7f7f7;">
+    <paging 
+       contentTip="网络不给力呦，请检查网络连接并稍后再试！"
+        dataObj="{{dataObj}}"
+        bindpageData="pageData" >
+        <view wx:if="{{selected=='xb'}}"  class="item" slot="list" wx:for="{{list}}"  wx:key="index_{{index}}">
+          <view class="info">
+            <view class="types_1">{{item.source}}</view>
+            <view class="date">{{item.time}}</view>
+          </view>
+          <view class="con">
+            {{(item.type=="reduce"?'-':'+')+item.gold}}
+          </view>
+        </view>
+        <view wx:if="{{selected=='my'}}" class="item" slot="list" wx:for="{{list}}" wx:key="index_{{index}}">
+          <view class="info">
+            <view class="types_1">{{item.source}}</view>
+            <view class="date">{{item.time}}</view>
+          </view>
+          <view class="con">
+            {{(item.type=="reduce"?'-':'+')+item.diamonds}}
+          </view>
+        </view>
+    </paging>
+  </view>
+</view>

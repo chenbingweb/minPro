@@ -1,0 +1,43 @@
+@import "../../temp/question.wxss";
+page
+{
+  /* overflow: hidden; */
+   overflow: scroll;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.mark_tip_box
+{
+  /* position:absolute;
+left:50%;
+top:878rpx;
+bottom:0rpx;
+overflow: hidden;
+width:750rpx;
+transform:translate(-50%); */
+height:328rpx;
+overflow:hidden;
+position:relative;
+
+
+}
+/*提示  */
+.mark_tip
+{
+  position: absolute;
+  left: 50%;
+  bottom: -740rpx;
+  transform: translateX(-50%);
+  background-color: #ebebeb;
+  width: 1400rpx;
+  height: 1000rpx;
+  border-radius: 50%;
+}
+.right
+{
+  position: absolute;
+  top:-50rpx;
+  left:50%;
+  transform: translateX(-50%);
+}

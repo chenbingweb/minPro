@@ -1,0 +1,23 @@
+ <template name="xg">
+ <!--学果  -->
+  <view class="result_box">
+    <view class="result_item">
+      <view class="types">总学贝</view>
+      <view class="bottom">
+        <view class="icon_box">
+          <image src="../../images/sb_2.png" style="width:86rpx;height:66rpx"></image>
+        </view>
+        <view class="xf">{{gold}}</view>
+      </view>
+    </view>
+    <view class="result_item">
+      <view class="types">学习魔药</view>
+      <view class="bottom">
+        <view class="icon_box">
+          <image src="../../images/mo_fa_ping.png" style="width:53rpx;height:81rpx"></image>
+        </view>
+        <view class="xf">{{diamonds}}</view>
+      </view>
+    </view>
+  </view>
+  </template>

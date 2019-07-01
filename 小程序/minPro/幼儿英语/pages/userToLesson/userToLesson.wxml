@@ -1,0 +1,104 @@
+<import src="../../temp/tip.wxml"/>
+<view wx:if="{{SKInfo}}" class="to_lesson_page fixed" style="overflow:scroll;">
+  <!-- 背景 1220rpx-->
+  <view class="bg icon_box">
+    <image  style="width:100%;height:100%;" src="{{staticUrl}}bg_sk.jpg"></image>
+  </view>
+  <!--头部  -->
+  <view class="header relative">
+    <view class="clound">
+      {{SKInfo.e_name}}
+    </view>
+    <view class="clound relative" style="width:488rpx;">
+      {{SKInfo.c_name}}
+      <view class="clound item"></view>
+    </view>
+    <!--返回首页  -->
+    <view class="icon_box home" bindtap="goIndex">
+      <image style="width:60rpx;height:51rpx;" src="../../images/home_1.png"></image>
+    </view>
+  </view>
+  <view class="select_btns">
+    <!--看动画  -->
+    <view class="icon_box btn_item look_ani" bindtap="toSKRead" data-item="0" data-url="../lookAnimation/lookAnimation?src=sk&uid={{uid}}&lid={{lid}}&cid={{cid}}">
+      <image src="../../images/look_ani.png" style="width:236rpx;height:291rpx"></image>
+      <view class="icon_box king_box">
+        <image wx:if="{{SKInfo.is_cartoon}}" src="../../images/king_ok.png" style="width:69rpx;height:57rpx"></image>
+        <image wx:else src="../../images/king_no.png" style="width:69rpx;height:57rpx"></image>
+      </view>
+    </view>
+    <!--读绘本 -->
+    <view class="icon_box btn_item read_book" bindtap="toSKRead" data-item="1" data-url="../readRecord/readRecord?src=sk&uid={{uid}}&lid={{lid}}&cid={{cid}}">
+      <!-- 完成看动画 -->
+       <image wx:if="{{SKInfo.is_cartoon}}" src="../../images/read_book.png" style="width:212rpx;height:262rpx"></image>
+       <!--未完成看动画  -->
+      <image wx:else src="../../images/read_book_no.png" style="width:212rpx;height:262rpx"></image>
+      <view class="icon_box king_box" style="top:20rpx">
+        <image wx:if="{{SKInfo.is_read_book}}" src="../../images/king_ok.png" style="width:69rpx;height:57rpx"></image>
+        <image wx:else src="../../images/king_no.png" style="width:69rpx;height:57rpx"></image>
+      </view>
+    </view>
+    <!--听故事 -->
+    <view class="icon_box btn_item listen_story" bindtap="toSKRead" data-item="2" data-url="../listenStory/listenStory?src=sk&uid={{uid}}&lid={{lid}}&cid={{cid}}">
+      <!--完成读绘本  -->
+      <image wx:if="{{SKInfo.is_read_book}}" src="../../images/story_yes.png" style="width:259rpx;height:320rpx"></image>
+       <!--未完成读绘本  -->
+      <image wx:else src="../../images/listen_story.png" style="width:259rpx;height:320rpx"></image>
+      <view class="icon_box king_box" style="top:44rpx">
+        <image wx:if="{{SKInfo.is_story}}" src="../../images/king_ok.png" style="width:69rpx;height:57rpx"></image>
+        <image wx:else src="../../images/king_no.png" style="width:69rpx;height:57rpx"></image>
+      </view>
+    </view>
+    <!--做练习-->
+    <view class="icon_box btn_item exercise" bindtap="toSKRead" data-item="3" data-url="../exersiceSK/exersiceSK?src=sk&uid={{uid}}&lid={{lid}}&cid={{cid}}">
+      <image wx:if="{{SKInfo.is_story}}" src="../../images/exercise_yes.png" style="width:221rpx;height:272rpx"></image>
+      <image wx:else src="../../images/zlx.png" style="width:221rpx;height:272rpx"></image>
+      <view class="icon_box king_box" style="top:26rpx">
+        <image wx:if="{{SKInfo.is_practice}}" src="../../images/king_ok.png" style="width:69rpx;height:57rpx"></image>
+        <image wx:else src="../../images/king_no.png" style="width:69rpx;height:57rpx"></image>
+      </view>
+    </view>
+    <!--用户头像-->
+    <view class="user_photo_box">
+      <view class="mum">
+        <view class="icon_box mother">
+          <image src="{{SKInfo.motherInfo.head_img?SKInfo.motherInfo.head_img:'../../images/mum_photo.png'}}" style="width:100rpx;height:100rpx; border-radius: 50%;"></image>
+        </view>
+        <view style="margin-left:10rpx;">
+          <view>{{SKInfo.motherInfo.user_level}}</view>
+          <view class="one_line" style="max-width:200rpx">{{SKInfo.motherInfo.nickname}}</view>
+        </view>
+      </view>
+      <view class="mum">
+      <view >
+          <view style='text-align:right;'>{{SKInfo.babyInfo.baby_level}}</view>
+          <view class="one_line" style='text-align:right;max-width:200rpx' wx:if="{{SKInfo.babyInfo.baby_name}}">{{SKInfo.babyInfo.baby_name}}</view>
+          <view style='text-align:right;'  wx:else>宝宝昵称</view>
+        </view>
+        <view class="icon_box mother" style="margin-left:10rpx;">
+          <image src="{{SKInfo.babyInfo.baby_img?SKInfo.babyInfo.baby_img:'../../images/body.png'}}" style="width:100rpx;height:100rpx; border-radius: 50%;"></image>
+        </view>
+        
+      </view>
+    </view>
+    <!--小鸟  -->
+    <view class="icon_box bird">
+      <image src="../../images/bird_1.png" style="width:69rpx;height:49rpx"></image>
+    </view>
+    <view class="icon_box bird" style="left:106rpx;top:731rpx">
+      <image src="../../images/bird_2.png" style="width:76rpx;height:74rpx"></image>
+    </view>
+    <view class="icon_box bird"  style="left:122rpx;top:253rpx">
+      <image src="../../images/bird_3.png" style="width:88rpx;height:69rpx"></image>
+    </view>
+    <view class="icon_box bird"  style="left:598rpx;top:45rpx">
+      <image src="../../images/bird_4.png" style="width:87rpx;height:57rpx"></image>
+    </view>
+  </view>
+</view>
+<view class="no_info" wx:else>
+  网络不给力呦，请检查网络连接并稍后再试！
+</view>
+<view hidden="{{!showSKTip}}">
+  <template data="{{staticUrl}}" is="bk_all_ok" />
+</view>

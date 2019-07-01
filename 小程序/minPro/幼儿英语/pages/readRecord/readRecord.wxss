@@ -1,0 +1,196 @@
+/* pages/readRecord/readRecord.wxss */
+@import '../../temp/photo.wxss';
+page
+{
+  height: 100%;
+  overflow: scroll;
+  background-color: #f5f5f5;
+}
+.read_record_page .book_list
+{
+  padding-top: 6rpx;
+  background: white;
+}
+/*书本内容  */
+.read_record_page .leason_content
+{
+  background: white;
+  width: 750rpx;
+  margin: 0 auto;
+  height: 190rpx;
+  box-sizing: border-box;
+  padding: 0 37rpx;
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  justify-content: space-between;
+  position: relative;
+}
+.read_record_page .lesson_detail
+{
+  font-size: 34rpx;
+  color:#606060;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-weight: 900rpx;
+  /* width: 554rpx; */
+  pointer-events: none;
+   word-wrap:break-word;
+   display: flex;
+   align-items: center;
+   /* justify-content: center; */
+   flex-direction: column;
+   padding-top: 18rpx
+}
+.read_record_page .current_pos
+{
+  color:#b1b1b1;
+  font-size: 34rpx;
+}
+/*用户录音  */
+.read_record_page .user_control
+{
+  background:white;
+
+position:relative;
+height:480rpx;
+
+  overflow: hidden;
+  /* top:700rpx; */
+}
+.read_record_page
+{
+  background: #f5f5f5;
+}
+.read_record_page .control_btn
+{
+  position:absolute;
+  width:1350rpx;
+  height:1000rpx;
+  border-radius:50%;
+   bottom:-562rpx; 
+  /* top:0; */
+  left:50%;
+  transform:translateX(-50%);
+  background-color:#f5f5f5;
+}
+.read_record_page .record_control
+{
+  position: absolute;
+  width: 750rpx;
+  height: 350rpx;
+   bottom:0; 
+  /* top:118rpx; */
+  left: 0;
+  
+}
+.read_record_page .tip
+{
+  color:#979797;
+  font-size: 26rpx;
+  text-align: center;
+  padding-top:60rpx; 
+}
+
+.read_record_page .recording
+{
+  position: absolute;
+  width: 516rpx;
+  height: 74rpx;
+  bottom:44rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 74rpx;
+  color:#606060;
+  font-size: 34rpx;
+  background-color: #ebebeb;
+  border:2rpx solid #d1d1d1;
+  border-radius: 10rpx;
+}
+/*已经配音  */
+.read_record_page .recorded_box
+{
+  width: 750rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.read_record_page  .audio_box
+{
+  width: 205rpx;
+  height: 74rpx;
+  background-color: #a1e75b;
+  border-radius: 10rpx;
+  margin-left: 40rpx;
+  position: relative;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+  font-size: 34rpx;
+  color:#606060;
+  margin-right: 38rpx;
+}
+.read_record_page .audio_box::after
+{
+  content: '';
+  display: block;
+  width:26rpx;
+	height:26rpx;
+	position:absolute;
+	left:-12rpx;
+	top:50%;
+  transform: translateY(-50%)  rotate(45deg);
+  background: #a1e75b;
+}
+.read_record_page .record_tip
+{
+  font-size: 20rpx;
+  text-align: center;
+  color:#979797;
+  margin-top: 20rpx;
+}
+.read_record_page .mum_recoord
+{
+  position: absolute;
+  top:-38rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130rpx;
+}
+.read_record_page .play_mark
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom:0;
+  border-radius: 50%;
+  background-color:rgba(0, 0, 0, 0.5)
+}
+.play_icon
+{
+  background: #FFA0CA;
+  border-radius: 50%;
+  width:76rpx;height:76rpx
+}
+/*录音提示  */
+.record_tips_box
+{
+  position: absolute;
+  width: 255rpx;
+  height: 255rpx;
+  background-color: rgba(0, 0, 0, 1);
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 20rpx;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

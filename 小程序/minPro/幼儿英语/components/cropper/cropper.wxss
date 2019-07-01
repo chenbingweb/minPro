@@ -1,0 +1,24 @@
+/* components/cropper/cropper.wxss */
+.bg
+{
+  background: #0A0A0A;
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+.cropper-buttons
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  color:white;
+  font-size: 30rpx;
+  width: 750rpx;
+}
+.item
+{
+  padding: 20rpx 40rpx;
+}

@@ -1,0 +1,131 @@
+<!--备课完成  -->
+<template name="bk_ok">
+<view class="mark_bk">
+  <view class="mark_bk BK_anima" style="transform:scale(0)">
+    <view class="icon_box bg_tip_1">
+      <image src="{{staticUrl}}wcbk_tip.png" style="width:615rpx;height:596rpx;"></image>
+      <view class="tip_content" style="top:300rpx">
+        <view>恭喜您</view>
+        <view>完成本环节备课</view>
+      </view>
+      <view class="go_bk_btn" bindtap="goOnBK">继续备课</view>
+      <!--关闭弹层  -->
+      <view bindtap="closeTip" class="close_bk_mark">X</view>
+    </view>
+  </view>
+  </view>
+</template>
+<!--备课完成 SK_anima-->
+<template name="bk_all_ok">
+  <view class="mark_bk BK_anima" bindanimationend="animationend" style="transform:scale(0)">
+    <view class="icon_box bg_tip_2" style="top:150rpx">
+      <image src="{{staticUrl}}wcbk_tip.png" style="width:734rpx;height:596rpx;"></image>
+      <!-- <image src="../../images/img/sb_tip.png" style="width:734rpx;height:596rpx;"></image> -->
+      <view class="tip_content_2">
+        <!-- <view>恭喜你完成备课</view> -->
+        <view wx:if="{{gold!=0}}">获得奖励</view>
+      </view>
+      <view class="get_sb_box" wx:if="{{gold!=0}}">
+        <view class="icon_box">
+          <image src="../../images/sb.png" style="width:100rpx;height:84rpx"></image>
+        </view>
+        <view class="get_sb_num_box">
+          <view style="font-size:40rpx">X</view>
+          <view>{{gold}}</view>
+        </view>
+        
+      </view>
+      <view class="tip_content" style="top:300rpx">
+        <view>恭喜您</view>
+        <view>完成备课</view>
+      </view>
+      <view class="go_bk_btn" style="{{gold!=0?'top:630rpx':''}}" bindtap="goBack">确定</view>
+    </view>
+  </view>
+</template>
+<!--上课完成 -->
+<template name="sk_all_ok">
+  <view class="mark_bk BK_anima" bindanimationend="animationend" style="transform:scale(0)">
+    <view class="icon_box bg_tip_2">
+      <image src="../../images/img/sb_tip.png" style="width:734rpx;height:596rpx;"></image>
+      <view class="tip_content_2">
+        <view>恭喜你完成上课</view>
+        <view wx:if="{{fasle}}">获得奖励</view>
+      </view>
+      <view class="get_sb_box" wx:if="{{fasle}}">
+        <view class="icon_box">
+          <image src="../../images/sb.png" style="width:100rpx;height:84rpx"></image>
+        </view>
+        <view class="get_sb_num_box">
+          <view style="font-size:40rpx">X</view>
+          <view>{{gold}}</view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--上完一节 SK_anima-->
+
+ <template name="sk_ok">
+  <view class="mark_bk BK_anima" bindanimationend="animationend_" style="transform:scale(0)">
+    <view class="icon_box bg_tip_2">
+      <image src="../../images/img/sb_tip.png" style="width:734rpx;height:596rpx;"></image>
+      <view class="tip_content_2" style="top:554rpx">
+        <view>恭喜你完成本环节学习</view>
+        <view wx:if="{{gold!=0}}">获得奖励</view>
+      </view>
+      <view class="get_sb_box" style="top:640rpx" wx:if="{{gold!=0}}">
+        <view class="icon_box">
+          <image src="../../images/sb.png" style="width:100rpx;height:84rpx"></image>
+        </view>
+        <view class="get_sb_num_box">
+          <view style="font-size:40rpx">X</view>
+          <view>{{gold}}</view>
+        </view>
+      </view>
+      <view class="go_bk_btn" style="top:{{gold!=0?'740rpx':'640rpx'}}" bindtap="goOnBK">继续上课</view>
+    </view>
+  </view>
+</template> 
+
+<!--解锁课程  -->
+<template name="open_ok">
+  <view class="mark_bk" catchtap="closeEvent">
+    <view class=" bg_tip_3">
+      <view class="icon_box">
+       <image src="../../images/yao_shuo_js.png" style="width:157rpx;height:242rpx;"></image>
+      </view>
+      <view style="padding-left:20rpx;">-{{diamonds}}</view>
+    </view>
+    <!-- <view class="lock_win">解锁此课程消耗{{diamonds}}瓶学习魔药</view> -->
+    <view class="lock_win">{{UnlockPopup1}}</view> 
+    <view catchtap="toExchangelesson" class="open_lesson_btn">
+      解锁课程
+    </view>
+  </view>
+</template>
+<!--完善资料提示  -->
+<!--用户信息补全 SK_anima -->
+<template name="finish_ok">
+ <view class="mark_bk BK_anima"   style="transform:scale(0)">
+    <view class="icon_box bg_tip_1">
+      <image src="{{staticUrl}}wcbk_tip.png" style="width:615rpx;height:596rpx;"></image>
+      <view class="tip_content">
+        <view>完善详细信息</view>
+      </view>
+      <view class="title_tip_1">获得奖励</view>
+      <view class="get_sb_box" style="top:512rpx" wx:if="{{gold!=0}}">
+        <view class="icon_box">
+          <image src="../../images/sb.png" style="width:100rpx;height:84rpx"></image>
+        </view>
+        <view class="get_sb_num_box">
+          <view style="font-size:40rpx">X</view>
+          <view>{{gold}}</view>
+        </view>
+      </view>
+      <view style="top:620rpx" class="go_bk_btn" bindtap="goOnBK">确定</view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,83 @@
+<!--pages/lookAnimation/lookAnimation.wxml-->
+<import src="../../temp/tip.wxml"/>
+<view wx:if="{{animationInfo}}" class="look_ani relative">
+  <!--上课  -->
+  <view class="coin_and_zs" wx:if="{{true}}">
+    <view class="box_item" wx:if="{{false}}">
+      <view class="icon_box">
+        <image style="width:41rpx;height:40rpx" src="../../images/coin.png"></image>
+      </view>
+      <view>15</view>
+    </view>
+    <view class="box_item" wx:if="{{false}}">
+      <view class="icon_box">
+        <image style="width:42rpx;height:38rpx" src="../../images/zs.png"></image>
+      </view>
+      <view>15</view>
+    </view>
+  </view>
+  <!--备课  -->
+  <view class="title" wx:if="{{src=='bk'}}">
+    <view>{{animationInfo.e_name}}</view>
+    <view>{{animationInfo.c_name}}</view>
+  </view>
+  <!--上课  -->
+  <view wx:else class="title" style="height:250rpx;padding-top:100rpx;">
+     <view>{{animationInfo.e_name}}</view>
+    <view>{{animationInfo.c_name}}</view>
+  </view>
+  <!--视频  -->
+  <view class="video_box" style="{{showMark?'background:#000':''}}">
+    <video initial-time="1" binderror="error" bindtimeupdate="updateEvent" bindended="vidioEnd" id="myVideo" wx:if="{{!showMark}}" src="{{animationInfo.course_url}}" controls></video>
+  </view>
+  <!--查看小贴士  -->
+  <view class="look_tip" wx:if="{{src=='sk'}}" bindtap="openTip" >查看小贴士</view>
+  <!--动画内容 上课false -->
+  <view  wx:if="{{src=='bk'}}" class="ani_content relative" style="margin-top:{{src=='bk'?'86rpx':'0rpx'}}">
+    <view class="sign_label icon_box">
+      <image style="width:65rpx;height:73rpx" src="../../images/sign_top.png"></image>
+    </view>
+    {{animationInfo.tip}}
+  </view>
+  <view wx:else class="only_read_content_detail RemoveRollCar">
+    <view wx:if="{{showTip}}">
+      <!--关闭  -->
+      <view bindtap="closeTipX" class="icon_box cancel_btn">
+        <image src="../../images/cancel.png" style="width:35rpx;height:35rpx"></image>
+      </view>
+      <view class="one_bg"></view>
+      <view class="two_bg">
+        <view class="header_bg">
+          <view wx:for="{{[1,2]}}" wx:key="index_{{index}}" class="icon_box" style="width:23rpx;height:42rpx">
+            <image style="width:23rpx;height:42rpx" src="../../images/label_t.png"></image>
+          </view>
+        </view>
+        <view class="read_only_box">
+          <view>
+          {{animationInfo.content}}
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!--结束动画  -->
+  <view hidden class="end_ani" style="background:#85D238" bindtap="endAni" wx:if="{{src!='bk'}}">
+    结束观看
+  </view>
+  <!--85D238  b7b7b7-->
+  <view  wx:else bindtap="endAni" class="end_ani" wx:else style="background-color:#85D238;margin-top:{{false?'85rpx':'45rpx'}}">
+    结束动画
+  </view>
+</view>
+<view class="no_info" wx:else>
+  网络不给力呦，请检查网络连接并稍后再试！
+</view>
+<!--备课提示 showMark -->
+<view hidden="{{!(src=='bk' && showMark)}}">
+ <template  data="{{staticUrl}}" is="bk_ok"/>
+</view>
+<!-- 上课提示 -->
+<view hidden="{{!(src=='sk' && showMark)}}">
+ <template  data="{{staticUrl,gold}}" is="sk_ok"/>
+</view>

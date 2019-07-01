@@ -1,0 +1,158 @@
+/* pages/lookAnimation/lookAnimation.wxss */
+page
+{
+  height: 100%;
+  background-color: white;
+}
+.look_ani 
+{
+  padding-bottom: 30rpx;
+}
+.look_ani .coin_and_zs
+{ 
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 750rpx;
+  height: 96rpx;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.look_ani .box_item
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content:center;
+}
+.look_ani .title
+{
+  width: 750rpx;
+  height: 170rpx;
+  margin: 0 auto;
+  color:#646464;
+  font-size: 34rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 60rpx;
+}
+
+.look_ani .video_box
+{
+  width: 750rpx;
+  height: 425rpx;
+  margin: 0 auto;
+}
+.look_ani .video_box video
+{
+   width: 750rpx;
+  height: 425rpx;
+  margin: 0 auto;
+}
+/*动画内容  */
+.look_ani .ani_content
+{
+  width: 710rpx;
+  margin:0 auto;
+  margin-top: 86rpx;
+  color:#6b6b6b;
+  font-size: 34rpx;
+  box-sizing: border-box;
+  padding: 0 36rpx;
+  padding-top:68rpx;
+  padding-bottom: 28rpx;
+  background-color: #daedf3;
+  text-indent:68rpx;
+  border-radius: 10rpx;
+}
+.look_ani .sign_label
+{
+  position: absolute;
+  top:0;
+  left: 18rpx;
+}
+.look_ani .end_ani
+{
+  width: 600rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  background-color: #84d237;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color:#ffffff;
+  line-height: 80rpx;
+  margin-top: 85rpx;
+  letter-spacing: 6rpx;
+}
+.look_ani .look_tip
+{
+  color:#8e8e8e;
+  font-size: 25rpx;
+  text-align: center;
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 0 auto;
+}
+.look_ani .only_read_content_detail
+{
+  width: 680rpx;
+  height: 340rpx;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 14rpx;
+  color:#959595;
+  font-size:34rpx;
+  position: relative;
+}
+.look_ani .one_bg
+{
+  position: absolute;
+  background-color:#81cbe8;
+  top:10rpx;
+  left:4rpx;
+  width: 676rpx;
+  height: 340rpx;
+  border-radius: 14rpx;
+}
+.look_ani .two_bg
+{
+   position: absolute;
+   width: 676rpx;
+  height: 340rpx;
+  background-color:#d3f3ff;
+  border-radius: 14rpx;
+}
+.look_ani .read_only_box
+{
+  width: 676rpx;
+  height: 258rpx;
+  box-sizing: border-box;
+   padding:30rpx 30rpx;
+  overflow-y: scroll;
+}
+.look_ani .header_bg
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+  position: relative;
+  top:-10rpx;
+}
+.look_ani .cancel_btn
+{
+  position: absolute;
+  width: 66rpx;
+  height: 66rpx;
+  right: 0;
+  top:0;
+  z-index: 1;
+}

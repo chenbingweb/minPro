@@ -1,0 +1,39 @@
+{
+  "pages": [
+
+    "pages/index/index",
+    "pages/schoolTeport/schoolTeport",
+     "pages/post/post",
+    "pages/myWallet/myWallet",
+    "pages/userToLogin/userToLogin",
+    "pages/editBabyInfo/editBabyInfo",
+    "pages/editMumInfo/editMumInfo",
+    "pages/toBaby/toBaby",
+    "pages/toMum/toMum",
+    "pages/shop/shop",
+    "pages/lessonList/lessonList",
+    "pages/signPage/signPage",
+    "pages/userToLesson/userToLesson",
+    "pages/lookAnimation/lookAnimation",
+    "pages/exersiceBK/exersiceBK",
+    "pages/exersiceSK/exersiceSK",
+    "pages/listenStory/listenStory",
+    "pages/readRecord/readRecord",
+    "pages/userLesson/userLesson",
+    "pages/selectBook/selectBook"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f49ac1",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false
+}

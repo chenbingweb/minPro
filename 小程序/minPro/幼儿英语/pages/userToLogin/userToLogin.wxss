@@ -1,0 +1,129 @@
+/* pages/userToLogin/userToLogin.wxss */
+page
+{
+  background-color: #f0eff5;
+}
+.header_box
+{
+  position: relative;
+  width: 750rpx;
+  margin: 0 auto;
+  height: 345rpx;
+}
+.adver
+{
+  width: 116rpx;
+  height: 116rpx;
+  position: absolute;
+  right: 12rpx;
+  top: 12rpx;
+}
+.content
+{
+  position: absolute;
+  right: 0;
+  bottom: 15rpx;
+  width: 430rpx;
+  height: 110rpx;
+  background-color: rgba(255, 255,255, 0.3);
+  font-size: 34rpx;
+  color:#fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form_box
+{
+  width: 750rpx;
+  display: block;
+   margin-top:18rpx;
+}
+.form
+{
+  width: 750rpx;
+  height: 180rpx;
+  background-color: white;
+  margin: 0 auto;
+}
+.item
+{
+  height: 90rpx;
+  display: flex;
+  width: 710rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #bababa;
+  align-items: center;
+  color:#545454;
+  font-size: 34rpx;
+}
+.item:nth-of-type(2)
+{
+  border:none;
+}
+.get_code
+{
+  width: 235rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color:#bababa;
+  border-left: 2rpx solid #bababa;
+}
+.input
+{
+  width:300rpx;
+  margin-left: 40rpx;
+}
+.start
+{
+  width: 670rpx;
+  height: 84rpx;
+  background-color: #11bb06;
+  border:2rpx solid #139b0c;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 84rpx;
+  color:#fff;
+  font-size: 34rpx;
+  position: relative;
+}
+.btn-area
+{
+  margin-top: 90rpx;
+}
+.user_select_login
+{
+  width:670rpx;
+  height: 86rpx;
+  margin: 0 auto;
+  background-color: #10ba05;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 56rpx;
+  margin-bottom:25rpx;
+  border-radius: 10rpx;
+  color:#fff;
+  font-size: 34rpx;
+}
+.user_select_login .wx_login
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.use_phone
+{
+  text-align: center;
+  width: 430rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#545454;
+  margin: 0 auto;
+  font-size: 34rpx;
+}

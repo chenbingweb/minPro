@@ -1,0 +1,26 @@
+<import src="../../temp/question.wxml" />
+<import src="../../temp/tip.wxml" />
+<view wx:if="{{practiceItem}}">
+<template is="question" data="{{imgUrl:staticUrl,practiceItem:practiceItem,isplay,img_url:imgUrl,StudyQuestionPageTip:StudyQuestionPageTip,currentQ:currentQ,total:total}}" />
+<!-- 提示 -->
+<view class="mark_tip_box">
+  <view class="mark_tip">
+    <view class="icon_box right" hidden="{{showStatue!=1}}">
+      <image src="{{staticUrl}}answer_right.png" style="width:532rpx;height:311rpx"></image>
+    </view>
+    <view hidden="{{showStatue!=2}}" class="icon_box right">
+      <image src="{{staticUrl}}answer_wrong.png" style="width:410rpx;height:311rpx"></image>
+    </view>
+    <view hidden="{{showStatue!=0}}" class="icon_box right" style="top:24rpx;">
+      <image src="{{staticUrl}}answer_comm.png" style="width:330rpx;height:345rpx"></image>
+    </view>
+  </view>
+</view>
+<!--透明遮罩  -->
+<view class="fixed" style="top:220rpx" wx:if="{{showEvent}}"></view>
+<!-- 上课提示 -->
+<view hidden="{{!(showMark)}}">
+  <template data="{{staticUrl,gold}}" is="sk_ok" />
+</view>
+</view>
+ <view wx:else class="no_info" >网络不给力呦，请检查网络连接并稍后再试！</view> 

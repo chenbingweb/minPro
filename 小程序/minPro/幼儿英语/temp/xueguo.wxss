@@ -1,0 +1,35 @@
+.result_box
+{
+  width: 750rpx;
+  height: 195rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result_item
+{
+  width: 350rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+ .types
+{
+  color:#898989;
+  font-size: 26rpx;
+  text-align: center;
+}
+.result_box .bottom
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.result_box .xf
+{
+  color:#898989;
+  font-size: 67rpx;
+  padding-left: 10rpx;
+}

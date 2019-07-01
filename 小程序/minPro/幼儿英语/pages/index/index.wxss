@@ -1,0 +1,215 @@
+/* pages/index/index.wxss */
+/*引入模板样式*/
+@import '../../temp/userheader.wxss';
+@import '../../temp/lesson.wxss';
+page
+{
+  display: table;
+ 
+  background-color: #e2ebf2;
+ 
+}
+.index_page
+{
+  box-sizing: border-box;
+}
+/*签到和金币  */
+.index_page .coin_box
+{
+  width: 750rpx;
+  height: 167rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f3f7fa;
+  position: relative;
+  background-color: white;
+}
+/*签到  */
+.index_page .sign_box
+{
+  position: absolute;
+  left:0;
+  top:8rpx;
+  width: 114rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+  border:6rpx solid #f49ac1;
+  border-left: none;
+  border-radius: 0 35rpx 35rpx 0;
+  font-size: 24rpx;
+  color:#707070;
+  display: inline-flex;
+  align-items:  baseline;
+  padding-top:10rpx;
+
+}
+.index_page .sign_box view:nth-of-type(1)
+{
+  padding: 0 8rpx;
+}
+/*金币  */
+/* .index_page .coin_counts
+{
+  position: absolute;
+  right: 0;
+  top:0;
+  left: 0;
+  bottom: 0;
+
+} */
+.index_page .coin_item
+{
+  width: 170rpx;
+  height: 130rpx;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
+}
+.index_page .coin_img_box
+{
+   display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+}
+.index_page .coin_name
+{
+  color:#707070;
+  font-size: 24rpx;
+  /* padding-left: 10rpx; */
+  text-align: center;
+}
+.index_page .count_num
+{
+  text-align: center;
+  color:#707070;
+  font-size: 60rpx;
+  font-weight: bold;
+  line-height: 66rpx;
+}
+.index_page .pos_1
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.index_page .pos_2
+{
+  position: absolute;
+  left:103rpx;
+  top:30rpx
+}
+.index_page .pos_3
+{
+  position: absolute;
+  left: 503rpx;
+  top:20rpx;
+  height:140rpx;
+}
+/*新用户课程  */
+.index_page .lesson_box
+{
+  width: 750rpx;
+  margin: 0 auto;
+  /* height: 370rpx; */
+  background: white;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+/*  */
+.index_page .title
+{
+  color:#565656;
+  font-size: 22rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.index_page .more
+{
+  width: 100rpx;
+  height: 74rpx;
+  text-align: center;
+}
+/*教学大纲  */
+.index_page .teach_box
+{
+  width: 750rpx;
+  min-height: 350rpx;
+  background: white;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-bottom: 20rpx;
+}
+.index_page .teach_title
+{
+  line-height: 68rpx;
+  color:#565656;
+  font-size: 22rpx;
+
+}
+.index_page .container
+{
+  position:relative;
+  height:250rpx;
+  margin-bottom:20rpx
+}
+.index_page .teach_item
+{
+  position: relative;
+  width: 690rpx;
+  margin: 0 auto;
+  height: 250rpx;
+  border-radius: 20rpx;
+}
+.index_page .teach_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  border-radius: 20rpx;
+}
+.index_page .teach_info
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color:white;
+   font-size: 26rpx;
+   display: flex;
+  justify-content: center;
+   flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+
+.index_page .teach_info view:nth-of-type(2)
+{
+  font-size: 60rpx;
+  font-weight: bold;
+  line-height: 66rpx;
+}
+.sign_statue
+{
+  /* position:absolute;
+  width:18rpx;
+  height:18rpx;
+  border-radius:50%;
+  background-color:#ed1c24;
+  right:-4rpx;
+  top:-4rpx;
+  padding: 0; */
+  position:absolute;
+
+height:18rpx;
+border-radius:50%;
+background-color:#ed1c24;
+right:-10rpx;
+top:-10rpx;
+padding:0;
+
+}

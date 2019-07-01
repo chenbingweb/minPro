@@ -1,0 +1,9 @@
+.template_photo_box
+{
+  border:8rpx solid white;
+  border-radius:50%;
+  overflow: hidden;
+  width: 126rpx;
+  height: 126rpx;
+  box-sizing: border-box;
+} 

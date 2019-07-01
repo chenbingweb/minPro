@@ -1,0 +1,182 @@
+/* pages/signPage/signPage.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #e2ebf2;
+}
+.sign_page_index
+{
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.sign_total {
+  position: absolute;
+  left: 50%;
+  top: -1150rpx;
+  transform: translateX(-50%);
+  height: 1300rpx;
+  width: 1400rpx;
+  border-radius: 50%;
+  background-color: #ffa0ca;
+  z-index: 111;
+}
+.total_sign
+{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom:25rpx;
+  color:#4c4c4c;
+  font-size: 26rpx;
+}
+.total_num
+{
+  color:#4c4c4c;
+  font-size: 42rpx;
+  text-align: center;
+}
+.uer_sign_box
+{
+ 
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  height:609rpx;
+  padding-top:186rpx;
+  color:#909090;
+  font-size:34rpx;
+  width:750rpx;
+  background-color:white;
+
+}
+.sign_top
+{
+ display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:  center;
+}
+.sign_item
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 36rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  width: 142rpx;
+  height: 194rpx;
+}
+.sign_child
+{
+  width: 143rpx;
+  height: 143rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border:8rpx solid #7961d8;
+  background-color: #d1bcf3;
+}
+.second
+{
+  line-height: 52rpx;
+  height: 52rpx;
+}
+.signed
+{
+   border:8rpx solid #ffc002;
+  background-color: #fff467;
+}
+.sign_ok
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6rpx;
+  color:#7961d8;
+  font-size: 30rpx;
+}
+.uer_sign_box .tip
+{
+  text-align: center;
+  color:#bebebe;
+  font-size: 25rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+}
+.uer_sign_box .sign_btn
+{
+  width: 600rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  background: #b7b7b7;
+  border-radius: 8rpx;
+  font-size: 34rpx;
+  color:#ffffff;
+}
+/*签到记录  */
+.sign_record
+{
+  position: absolute;
+  left: 0;
+  width: 750rpx;
+  top:790rpx;
+  bottom: 0;
+  background: white;
+  margin-top: 24rpx;
+  box-sizing: border-box;
+  padding-top: 12rpx;
+}
+.sign_record .sign_title
+{
+  width: 700rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+  color:#565656;
+  font-size: 22rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom:2rpx solid #e1e1e1;
+}
+.sign_record .sign_page
+{
+  width: 700rpx;
+  margin: 0 auto;
+  height: 320rpx;
+}
+.sign_record .sign_page_item
+{
+  width: 700rpx;
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 34rpx;
+  color:#bcbcbc;
+  height: 83rpx;
+  border-bottom:2rpx solid #e1e1e1;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+.sign_record .get_fen
+{
+  color:#af98df;
+}
+.sign_top .img_absolute
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}

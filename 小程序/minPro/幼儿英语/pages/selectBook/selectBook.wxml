@@ -1,0 +1,82 @@
+<view wx:if="{{lesson.length}}" class="select_book_page">
+  <!--书籍  -->
+  <view class="book_box">
+    <swiper previous-margin="50rpx" next-margin="50rpx" bindanimationfinish="animationFinish" bindchange="swiperChange" current="{{current}}" style="width:100%;height:100%" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{lesson}}" wx:key="s_{{index}}" wx:key="s_{{index}}">
+        <swiper-item class="swiper_item" >
+          <view class="book_item_box" id="{{index}}" data-current="{{current}}" bindtap="navTo">
+            <view class="icon_box relative">
+              <image  src="{{item.status!=3?imgUrl+item.cover_img:item.cover_img}}" class="slide-image" style="width:608rpx;height:590rpx" />
+              <!--状态  -->
+              <view class="absolute lesson_status" wx:if="{{item.status!=3}}">
+                <view class="icon_box status_pos">
+                  <image wx:if="{{item.status==0||item.status==1}}" src="../../images/status_1.png" style="width:108rpx;height:62rpx"></image>
+                  <image wx:else src="../../images/status.png" style="width:103rpx;height:62rpx"></image>
+                </view>
+                <view wx:if="{{item.status==0}}" style="color:white" class="status_type">
+                  去备课
+                </view>
+                <view wx:if="{{item.status==1}}" style="color:white" class="status_type">
+                  去上课
+                </view>
+                <view wx:if="{{item.status==2}}" class="status_type">
+                  已结课
+                </view>
+              </view>
+            </view>
+            <view class="anthor " wx:if="{{item.author}}">
+              作者  {{item.author}}
+            </view>
+          </view>
+          
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view wx:if="{{lessonInfo.words}}">
+    <!--当前书籍信息  -->
+    <view class="book_info">
+      <view class="left_1 ">
+        <view class="icon_box relative">
+          <image src="../../images/lingxi.png" style="width:128rpx;height:110rpx"></image>
+          <view class="info_num absolute">
+              <view>单词数</view>
+              <view>{{lessonInfo.words}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="left_1 ">
+        <view class="icon_box relative">
+          <image src="../../images/lingxi.png" style="width:128rpx;height:110rpx"></image>
+          <view class="info_num absolute">
+              <view>重点词</view>
+              <view>{{lessonInfo.key_words}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--用户操作  -->
+    <view class="user_control">
+      <!--备课  -->
+        <view bindtap="userControl" data-btn="bk" data-status="{{lessonInfo.status}}" data-url="../userLesson/userLesson?src=bk&uid={{lessonInfo.uid}}&lid={{lessonInfo.lid}}&cid={{lessonInfo.courseid}}" data-cid="{{lessonInfo.courseid}}">
+        {{lessonInfo.status==1||lessonInfo.status==2?'重新备课':'备课'}} 
+        </view>
+      <!--上课  -->
+      <view bindtap="userControl" style="background-color:{{lessonInfo.status==1||lessonInfo.status==2?'#84d237':'#b7b7b7'}}"   data-btn="sk" data-status="{{lessonInfo.status}}" data-url="../userToLesson/userToLesson?src=sk&uid={{lessonInfo.uid}}&lid={{lessonInfo.lid}}&cid={{lessonInfo.courseid}}" data-cid="{{lessonInfo.courseid}}">
+          上课
+      </view>
+      <!--成绩-->
+      <view bindtap="userControl" style="background-color:{{lessonInfo.status==2?'#84d237':'#b7b7b7'}}" data-btn="cj" data-status="{{lessonInfo.status}}" data-url="../schoolTeport/schoolTeport?src=cj&uid={{lessonInfo.uid}}&lid={{lessonInfo.lid}}&cid={{lessonInfo.courseid}}" data-cid="{{lessonInfo.courseid}}">
+        成绩
+      </view>
+    </view>
+  </view>
+  <!--选择其他课程  -->
+  <view bindtap="navToOther"  wx:if="{{lessonInfo.words}}" class="to_other">点击选择其他课程</view>
+  <view bindtap="navToOther" class="btn_box icon_box" wx:if="{{lessonInfo.words==null}}">
+    <image src="../../images/btn_pic.png" style="width:339rpx;height:97rpx"></image>
+  </view>
+</view>
+<view wx:else class="no_info">
+网络不给力呦，请检查网络连接并稍后再试！
+</view>

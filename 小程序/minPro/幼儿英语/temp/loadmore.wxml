@@ -1,0 +1,8 @@
+<template name="loadmore">
+  <view class="load_more_box" wx:if="{{showMore}}">
+    <view class="icon_box">
+      <image src="../../images/loader.png" style="width:34rpx;height:34rpx" ></image>
+    </view>
+    <view style="padding-left:20rpx;">加载更多</view>
+  </view>
+</template>

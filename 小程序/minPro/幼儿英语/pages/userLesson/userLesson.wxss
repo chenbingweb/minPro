@@ -1,0 +1,112 @@
+/* pages/userLesson/userLesson.wxss */
+.user_lesson_page
+{
+  padding-bottom: 30rpx;
+}
+.user_lesson_page .header
+{
+  width: 750rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items:  flex-end;
+  box-sizing: border-box;
+  padding-left:36rpx;
+}
+.user_lesson_page .coin_zs
+{
+  /* position: absolute;
+  left:-110rpx;
+  top:-12rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_lesson_page .coin_zs_item
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 30rpx;
+  color:#43474d;
+  margin-right:30rpx;
+
+}
+.user_lesson_page .total_style
+{
+  padding-left: 10rpx;
+  font-weight:  900;
+}
+.user_lesson_page .title_box
+{
+  font-size: 34rpx;
+  color:#666666;
+  font-weight:  900;
+  text-align: center;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+.user_lesson_page .lesson_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.user_lesson_page .lesson_box .lesson_item
+{
+  width: 620rpx;
+  height: 180rpx;
+  border-radius: 38rpx;
+  position: relative;
+  margin-top: 24rpx;
+}
+.user_lesson_page .lesson_ok_btn
+{
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #b7b7b7;
+  font-size: 34rpx;
+  color:#fff;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  margin: 0 auto;
+  margin-top: 80rpx;
+}
+.user_lesson_page .lesson_bg
+{
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.user_lesson_page .step
+{
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color:white;
+}
+.user_lesson_page .step_content
+{
+  padding-left: 16rpx;
+}
+.user_lesson_page .no_ok
+{
+  position: absolute;
+  top:6rpx;
+  right: -8rpx;
+}
+.user_lesson_page .ok
+{
+   position: absolute;
+  top:120rpx;
+  right: 14rpx;
+}

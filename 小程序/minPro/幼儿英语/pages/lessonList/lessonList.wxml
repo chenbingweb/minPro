@@ -1,0 +1,38 @@
+<import src="../../temp/lesson.wxml" />
+
+<view class="lesson_list_page">
+  <!--banner  -->
+  <navigator url="../shop/shop" class="header icon_box">
+    <image style="width:750rpx;height:333rpx;" mode="aspectFill" src="{{staticUrl}}banner.png"></image>
+  </navigator>
+  <!--选择  -->
+  <view class="select_box">
+    <view bindtap="selectBtn" class="item {{selected=='lesson'?'selected':''}}" id="lesson">课程</view>
+    <view bindtap="selectBtn" class="item {{selected=='my'?'selected':''}}" id="my">我的</view>
+  </view>
+  <view class="page_list" style="{{selected=='lesson'?'border:none':''}}">
+    <paging
+        contentTip="网络不给力呦，请检查网络连接并稍后再试！"
+        dataObj="{{dataObj}}"
+        reload="{{reload}}"
+        bindpageData="pageData" 
+    >
+      <!--我的课程  -->
+      <view wx:if="{{selected=='my'}}" slot="list" class="list">
+        <template wx:for="{{lessonList}}" data="{{lesson:item,imgUrl:imgUrl}}" wx:key="lesson_{{index}}" is="lesson_img" />
+      </view>
+      <!--课程列表  -->
+      <view wx:if="{{selected=='lesson'}}" slot="list" class="list_2" style="border:none;">
+        <view wx:for="{{lessonList}}" wx:for-item="unit_list" wx:key="unit_{{index}}" class="lesson_bx">
+          <view class="label" style="background-color:{{unit_list.class_type=='low'?'#7accc8':'#ffcc00'}}">
+            {{unit_list.class_name}}
+          </view>
+          <view wx:for="{{unit_list.unitList}}" wx:key="book_{{index}}">
+            <view class="unit">{{item.unit}} {{item.unit_name}}</view>
+            <template wx:for="{{item.lesson_list}}" data="{{lesson:item,imgUrl}}"  wx:key="le_{{index}}" is="lesson_img" />
+          </view>
+        </view>
+      </view>
+    </paging>
+  </view>
+</view>

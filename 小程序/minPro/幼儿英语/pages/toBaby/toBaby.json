@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#ffa0ca",
+  "navigationBarTitleText": "宝贝信息",
+  "usingComponents": {
+    "cropper": "/components/cropper/cropper"
+  }
+}

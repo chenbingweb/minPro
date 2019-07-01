@@ -1,0 +1,111 @@
+/* pages/toMum/toMum.wxss */
+@import '../../temp/xueguo.wxss';
+@import '../../temp/process.wxss';
+page
+{
+  background-color: #e2ebf2;
+}
+.mum_page .base_info
+{
+  width: 750rpx;
+  height: 404rpx;
+}
+.mum_page .base_info .user_info
+{
+  position: absolute;
+  left: 0;
+  top:126rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:#efefef;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+.mum_page .base_info .photo
+{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border:6rpx solid white;
+  overflow: hidden;
+}
+.mum_page .base_info .to_edit
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mum_page .to_user_info
+{
+  position: absolute;
+  /* top:10rpx;
+  right: 0; */
+  top:30rpx;
+  right:30rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 154rpx;
+  color:#fff;
+  font-size: 22rpx;
+}
+/*s等级  */
+.leve_box
+{
+  width: 750rpx;
+  position: absolute;
+  top:622rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+.leve_box .name
+{
+  color:#565656;
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 55rpx;
+}
+.leve_box .leve_1
+{
+  text-align: center;
+  color:#de6492;
+  font-size: 38rpx;
+  margin-top: 30rpx;
+}
+
+
+.leve_box .leve_tip
+{
+   text-align: center;
+   color:#b5b5b5;
+   font-size: 25rpx;
+   margin-top: 40rpx;
+}
+.leve_box .out_login
+{
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  background-color: #ff6300;
+  text-align: center;
+  color:white;
+  font-size: 33rpx;
+  margin: 0 auto;
+  line-height: 80rpx;
+  margin-top: 126rpx;
+}
+.edit_statue
+{
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #ed1c24;
+  right: -4rpx;
+  top:2rpx;
+}

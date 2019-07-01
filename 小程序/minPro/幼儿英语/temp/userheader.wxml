@@ -1,0 +1,39 @@
+ <template name="user_header">
+  <view class="temp_header_box">
+    <!--用户上传头像  -->
+    <view class="img_box">
+        <image mode="aspectFill" class="header_img" style="width:750rpx;height:450rpx;" src="{{img_url==''?staticUrl+'header.jpg':img_url}}">
+           <button open-type="getUserInfo" class="login_btn" data-btn="changeImg" catchgetuserinfo="toLogin"></button>
+        </image>  
+      
+    </view>
+    <!--用户头像和宝宝头像  -->
+    <view class="user_info_box">
+        <!--妈妈头像  -->
+        <view class="left_one items">
+          <!--等级  -->
+          <view class="leve one_line">{{motherInfo.user_level?motherInfo.user_level:''}}</view>
+          <view class="icon_box img_container">
+            <image mode="aspectFill" src="{{motherInfo.head_img?motherInfo.head_img:'../../images/mum_photo.png'}}" style="width:100rpx;height:100rpx;border-radius:50%"></image>
+          </view>
+          <view class="name one_line">{{motherInfo.nickname?motherInfo.nickname:'妈妈昵称'}}</view>
+          <button open-type="getUserInfo" class="login_btn" data-btn="tomum" bindgetuserinfo="toLogin"></button> 
+        </view>
+        <!--宝宝头像  -->
+         <view class="right_one items">
+           <!--等级  -->
+          <view class="leve one_line">{{babyInfo.baby_level?babyInfo.baby_level:''}}</view>
+          <view class="icon_box img_container">
+            <image mode="aspectFill" src="{{babyInfo.baby_img?babyInfo.baby_img:'../../images/body.png'}}" style="width:100rpx;height:100rpx;border-radius:50%"></image>
+          </view>
+          <view class="name one_line">{{babyInfo.baby_name?babyInfo.baby_name:'宝宝昵称'}}</view>
+          <button open-type="getUserInfo" class="login_btn" data-btn="tobaby" bindgetuserinfo="toLogin"></button> 
+        </view>
+        <button style="width:326rpx;height:163rpx;" open-type="getUserInfo" class="login_btn" data-btn="changeImg" catchgetuserinfo="toLogin"></button> 
+    </view>
+    <!--提示  -->
+    <view class="tip" wx:if="{{(staticUrl+'header.jpg'!=img_url) && img_url==''}}">点击更换图片
+       <button open-type="getUserInfo" class="login_btn" data-btn="changeImg" catchgetuserinfo="toLogin"></button> 
+    </view>
+  </view>
+ </template>

@@ -1,0 +1,96 @@
+<view class="shop_page" wx:if="{{shopInfo}}">
+  <swiper-base height="409" bindtoDlogin="toDlogin" baseSet="{{baseSet}}" imgsData="{{shopInfo.banner}}" />
+  <!--学果  -->
+  <view class="result_box">
+    <navigator url="../myWallet/myWallet?src=xb">
+    <view class="result_item">
+      <view class="types">总学贝</view>
+      <view class="bottom">
+        <view class="icon_box">
+          <image src="../../images/sb_2.png" style="width:85rpx;height:66rpx"></image>
+        </view>
+        <view class="xf">{{userIntegral.gold}}</view>
+      </view>
+    </view>
+    </navigator>
+     <navigator url="../myWallet/myWallet?src=my">
+    <view class="result_item">
+      <view class="types">学习魔药</view>
+      <view class="bottom">
+        <view class="icon_box">
+          <image src="../../images/mo_fa_ping.png" style="width:53rpx;height:81rpx"></image>
+        </view>
+        <view class="xf">{{userIntegral.diamonds}}</view>
+      </view>
+    </view>
+     </navigator>
+  </view>
+
+  <!--商城  -->
+  <view class="shopping">
+    <view class="shopping_tip">
+      <view style="color:#4d4d4d;font-size:25rpx;">学贝商城</view>
+      <view style="color:#bebebe;font-size:22rpx">{{StorePageTip}}</view>
+      <!-- <view style="color:#bebebe;font-size:22rpx">一瓶魔药可以兑换1节课程</view> -->
+    </view>
+    <!--商品列表  bindtap="doBuyEvent"-->
+    <view class="icon_box relative"  style="margin-bottom:20rpx">
+      <image mode="aspectFill"  data-id="{{shopInfo.adver_top.id}}" wx:if="{{shopInfo.adver_top.img_url}}" src="{{imgUrl+shopInfo.adver_top.img_url}}" style="width:700rpx;height:312rpx"></image>
+ <button open-type="getUserInfo" bindgetuserinfo="doBuyEvent" class="login_btn" data-id="{{shopInfo.adver_top.id}}"></button>
+    </view>
+    <!--bindtap="doBuyEvent"  -->
+    <view class="good_box">
+      <view  data-id="{{item.id}}" class="shop_list_box relative" wx:for="{{shopInfo.exchangeList}}" wx:key="shop_{{index}}">
+        <view class="icon_box good_item">
+          <image mode="aspectFill"  src="{{imgUrl+item.img_url}}" style="width:214rpx;height:300rpx"></image>
+        </view>
+        <view class="price_box price_db"></view>
+        <view class="price_box">
+          <view wx:if="{{false}}" class="icon_box" style="margin-right:10rpx">
+            <image  style="width:42rpx;height:50rpx" src="../../images/sign_bg_2.png"></image>
+          </view>
+          <view wx:else class="icon_box" style="margin-right:10rpx">
+            <image style="width:21rpx;height:29rpx" src="../../images/rmb.png"></image>
+          </view>
+          <view>{{item.price}}</view>
+        </view>
+        <button open-type="getUserInfo" bindgetuserinfo="doBuyEvent" class="login_btn" data-id="{{item.id}}"></button>
+      </view>   
+    </view>
+    <!-- bindtap="exchangeMY"  -->
+    <view class="icon_box relative" data-id="{{shopInfo.adver_floor.id}}">
+      <image wx:if="{{shopInfo.adver_floor.img_url}}" mode="aspectFill" src="{{imgUrl+shopInfo.adver_floor.img_url}}" style="width:720rpx;height:215rpx"></image>
+      <button open-type="getUserInfo" bindgetuserinfo="exchangeMY" class="login_btn" data-id="{{shopInfo.adver_floor.id}}"></button>
+    </view>
+  </view>
+    <!--兑换  -->
+  <view class="exchange_box">
+    <view class="exchange_name">
+      <view>兑换码兑换</view>
+      <view wx:if="{{showTip}}" class="icon_box" style="width:128rpx;height:94rpx" bindtap="tip">
+        <image src="../../images/tip.png" style="width:40rpx;height:40rpx"></image>
+      </view>
+    </view>
+    <view class="input_box">
+      <view class="input_box_item">
+        <!-- <view class="items">
+          <input maxlength="1" type="number" wx:for="{{inputBox}}" wx:key="f_{{index}}" bindinput="inputEvent" bindfocus="focusEvent" focus="{{item.focuse}}" data-id="{{item.id}}"></input>
+  
+        </view> -->
+        <view class="items relative">
+          <!-- <view class="{{item.focuse?'input_lines':'input'}}" bindtap="doInputEvent" wx:for="{{inputBox}}" wx:key="f_{{index}}" data-id="{{item.id}}">{{item.focuse?'':item.content}}</view>
+          <input maxlength="8" focus="{{focus}}"  style="opacity:0;height:0;width:0;position:absolute;left:0;top:0" bindinput="inputEvent" type="text"  ></input> -->
+          <input class="code_1" id='code1' value="{{code_1}}" type='text' bindinput='bindCodeBoxInput' maxlength='4' confirm-type='next' focus='{{ code1focus }}'></input>
+        <view class="midd_line"></view>
+        <input class="code_2" id='code2' value="{{code_2}}" bindinput='bindCodeBoxInput' bindfocus='bindCheckFocus' maxlength='4' confirm-type='done' focus='{{ code2focus }}'></input>
+        </view>
+        
+      </view>
+      <!-- <input class="input" /> -->
+      <view class="exchange_btn" bindtap="exchangeCode">兑换</view>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>
+<view class="no_info" wx:else>加载中...</view>

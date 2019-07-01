@@ -1,0 +1,63 @@
+<import src="../../temp/tip.wxml"/>
+<form class="edit_page fixed" bindsubmit="formSubmit" bindreset="formReset">
+  <view class="user_file_box">
+    <!-- 宝宝昵称 -->
+    <view class="item">
+      <view>宝宝昵称</view>
+      <view class="input_box">
+        <input name="nickname" value="{{info.nickname}}" placeholder-class="placeholder" placeholder="请输入宝宝昵称"></input>
+      </view>
+    </view>
+    <!-- 性别 -->
+    <view class="item">
+      <view>宝宝性别</view>
+      <radio-group class="radio_group" name="gender" bindchange="radioChange">
+        <label class="radio">
+          <view class="icon_box">
+            <image wx:if="{{info.gender=='boy'}}" src="../../images/sex_select.png" style="width:40rpx;height:40rpx"></image>
+            <image wx:else src="../../images/sex_no.png" style="width:40rpx;height:40rpx"></image>
+          </view>
+          <view>
+            男
+          </view>
+          <radio hidden value="boy" checked="{{info.gender=='boy'}}" />
+        </label>
+        <label class="radio" style="margin-left:55rpx;">
+          <view class="icon_box">
+            <image wx:if="{{info.gender=='girl'}}" src="../../images/sex_select.png" style="width:40rpx;height:40rpx"></image>
+            <image wx:else src="../../images/sex_no.png" style="width:40rpx;height:40rpx"></image>
+          </view>
+          <view>
+            女
+          </view>
+          <radio hidden value="girl" checked="{{info.gender=='girl'}}" />
+        </label>
+      </radio-group>
+    </view>
+    <!-- 宝宝生日 -->
+    <view class="item">
+      <view>宝宝生日</view>
+        <picker class="input_box" mode="date" value="{{info.birth}}" name="birth" bindchange="bindDateChange">
+          <view class="picker {{info.birth==null?'placeholder':''}}" >
+            {{info.birth==null?'请选择宝宝生日':info.birth}}
+          </view>
+        </picker>
+
+    </view>
+  </view>
+  <view class="btn_area">
+    <view class="control">
+      <!-- <view style="margin-bottom:40rpx">完善宝宝资料后可获得+10学贝奖励</view> -->
+      <view style="margin-bottom:40rpx">{{BabyInformationPageTip}}</view>
+      <view class="save">
+        保存
+        <button class="absolute" formType="submit" style="opacity:0"></button>
+      </view>
+
+    </view>
+  </view>
+</form>
+<!-- 完善信息t提示"-->
+<view hidden="{{!showTip}}">
+ <template  data="{{gold,staticUrl}}" is="finish_ok"/>
+</view>

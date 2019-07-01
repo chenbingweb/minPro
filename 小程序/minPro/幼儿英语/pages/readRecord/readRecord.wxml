@@ -1,0 +1,154 @@
+<import src="../../temp/photo.wxml" />
+<import src="../../temp/tip.wxml" />
+<!--fixed  -->
+<view class="read_record_page " style="overflow:scroll" wx:if="{{imgsData.length}}">
+  <!--课本拖图片  -->
+  <view class="book_list">
+    <book-swiper bindchangeEvent="changeEvent" bindleftArrow="leftArrow" bindrightArrow="rightArrow" baseSet="{{baseSet}}" imgsData="{{imgsData}}" />
+  </view>
+  <!--课本内容  -->
+  <view class="leason_content" bindtap="playSystem"  data-play="default"  data-url="{{imgUrl+readInfo.default_dub_url}}">
+    <!--播放  -->
+    <view class="icon_box play_icon" data-play="default"  data-url="{{imgUrl+readInfo.default_dub_url}}">
+      <image wx:if="{{!audioPlay}}" style="width:76rpx;height:76rpx" src="../../images/sound.png"></image>
+      <image wx:else style="width:58rpx;height:58rpx" src="../../images/play.gif"></image>
+    </view>
+     <view class="lesson_detail absolute">
+      <view class="" >{{readInfo.sentence[0]}}</view>
+      <view class="">{{readInfo.sentence[1]}}</view>
+      <view class="">{{readInfo.chinese_sentence}}</view>
+    </view>
+    <!--内容  修改前
+    <view class="lesson_detail">
+      <view class="one_line" style="height:44rpx">{{readInfo.sentence[0]}}</view>
+      <view class="one_line">{{readInfo.sentence[1]}}</view>
+      <view class="one_line">{{readInfo.chinese_sentence}}</view>
+    </view>-->
+    <!--当前位置  -->
+    <view class="current_pos">{{baseSet.current+1}}/{{imgsData.length}}</view>
+  </view>
+  <!--用户录音操作  absolute-->
+  <view class=" user_control">
+    <view class="control_btn">
+      <!--妈妈音频  -->
+      <view class="mum_recoord" bindtap="playSystem" data-play="record" data-url="{{imgUrl+readInfo.self_dub_url}}" wx:if="{{readInfo.self_dub_url!=''&&readInfo.self_dub_url!=null&&src=='sk'}}">
+        <!--头像 data="{{headImg:recordDetail.head_img}}" -->
+        <template is="mum" data="{{headImg:recordDetail.head_img}}" />
+        <view class="icon_box play_mark">
+          <image wx:if="{{!numAudioPlay}}" src="../../images/laba.png" style="width:49rpx;height:48rpx"></image>
+          <image wx:else style="width:58rpx;height:58rpx" src="../../images/play.gif"></image>
+        </view>
+      </view>
+    </view>
+    <!--录音备课  -->
+    <view wx:if="{{src=='bk'}}" class="record_control">
+      <!--未配音  -->
+      <view class="tip" wx:if="{{!recordDetail.self_dub_url}}">
+        <view wx:if="{{src=='bk'}}">
+          <view>{{PlanningReadPageTip1.Value_1}}</view>
+          <view>{{PlanningReadPageTip1.Value_2}}</view>
+          <view>{{PlanningReadPageTip1.Value_3}}</view>
+            <!-- <view>PK原版标准美音</view>
+            <view>让宝宝在上课时听到您的朗读</view>  -->
+            <!-- <view>可以高度激发Ta的学习热情</view>  -->
+          </view>
+        <view wx:else>
+          <view> 鼓励您的宝宝大声反复跟读，</view>
+          <view>有什么比和妈妈一起配音玩儿更有趣呢？</view>
+          
+        </view>
+      </view>
+      <!--已配音  -->
+      <view wx:else>
+        <view wx:if="{{src=='bk'}}" class="recorded_box">
+          <!--头像  -->
+          <template is="mum" data="{{headImg:recordDetail.head_img}}" />
+          <!--音频 -->
+          <view bindtap="playRecord" class="audio_box" data-src="{{imgUrl+recordDetail.self_dub_url}}">
+            <view class="icon_box">
+              <image wx:if="{{showRecord}}" src="../../images/playing.gif" style="width:28rpx;height:40rpx"></image>
+              <image wx:else src="../../images/playing.png" style="width:28rpx;height:40rpx"></image>
+            </view>
+            <view>{{recordDetail.duration}}
+              <text>'</text>
+              <text>'</text> </view>
+          </view>
+          <!--删除  -->
+          <view class="icon_box" bindtap="deleteFile">
+            <image src="../../images/cancel_sound.png" style="width:45rpx;height:45rpx"></image>
+          </view>
+        </view>
+        <view wx:if="{{src=='bk'}}" class="record_tip">
+         <view>{{PlanningReadPageTip2.Value_1}}</view>
+          <view>{{PlanningReadPageTip2.Value_2}}</view>
+          <!-- <view>感觉不够专业的话，可以反复尝试。</view>
+          <view>删除配音，宝宝在上课时将听到标准美音</view> -->
+        </view>
+      </view>
+      <!--开始录音  -->
+
+      <view class="recording">
+        按住录音
+        <recorder bindrecordStop="recordStop" bindstatus="reStatus" />
+      </view>
+    </view>
+    <!--录音上课 -->
+    <view wx:if="{{src=='sk'}}" class="record_control">
+      <!--未配音  -->
+      <view class="tip" wx:if="{{recordDetail.baby_dub_url==null||recordDetail.baby_dub_url==''}}">
+        <view>
+          <!-- <view> 鼓励您的宝宝大声反复跟读，</view>
+          <view>有什么比和妈妈一起配音玩儿更有趣呢？</view> -->
+           <view> {{StudyReadPageTip.Value_1}}</view>
+          <view>{{StudyReadPageTip.Value_2}}</view>
+        </view>
+      </view>
+      <!--已配音  -->
+      <view wx:else style="margin-top:40rpx">
+        <view class="recorded_box">
+          <!--头像  -->
+          <template is="mum" data="{{headImg:recordDetail.baby_img==null?'../../images/body.png':recordDetail.baby_img}}" />
+          <!--音频 -->
+          <view bindtap="playRecord" class="audio_box" data-src="{{imgUrl+recordDetail.baby_dub_url}}">
+            <view class="icon_box">
+              <image wx:if="{{showRecord}}" src="../../images/playing.gif" style="width:28rpx;height:40rpx"></image>
+              <image wx:else src="../../images/playing.png" style="width:28rpx;height:40rpx"></image>
+            </view>
+            <view>{{recordDetail.baby_dub_duration}}
+              <text>'</text>
+              <text>'</text> </view>
+          </view>
+          <!--删除  -->
+          <view class="icon_box" bindtap="deleteFile" data-retype="bobyRecord">
+            <image src="../../images/cancel_sound.png" style="width:45rpx;height:45rpx"></image>
+          </view>
+        </view>
+      </view>
+      <!--开始录音  -->
+
+      <view class="recording">
+        {{src=='bk'?'按住录音':'宝宝录音'}}
+        <recorder bindrecordStop="recordStop" bindstatus="reStatus" />
+      </view>
+    </view>
+  </view>
+  <!--录音提示  -->
+  <view wx:if="{{showTip}}" class="record_tips_box">
+    <view class="icon_box">
+      <image wx:if="{{status=='start'||status=='recording'}}" src="../../images/start_record.gif" style="width:255rpx;height:255rpx"></image>
+      <image wx:if="{{status=='cancel'}}" src="../../images/stop_record.png" style="width:255rpx;height:255rpx;"></image>
+      <image wx:if="{{status=='up'}}" src="../../images/record_up.png" style="width:100rpx;height:100rpx"></image>
+    </view>
+  </view>
+</view>
+<view class="no_info" wx:else>
+   网络不给力呦，请检查网络连接并稍后再试！
+</view>
+<!--备课提示 showMark -->
+<view hidden="{{!(src=='bk' && showMark)}}">
+  <template data="{{staticUrl}}" is="bk_ok" />
+</view>
+<!-- 上课提示 -->
+<view hidden="{{!(src=='sk' && showMark)}}">
+  <template data="{{staticUrl,gold}}" is="sk_ok" />
+</view>

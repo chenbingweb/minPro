@@ -1,0 +1,64 @@
+<import src="../../temp/tip.wxml"/>
+<view wx:if="{{selectNumList.length}}" class="fixed exersice_page">
+  <view class="title">题型示例</view>
+  <!--范例  -->
+  <view class="example">
+    <view class="question_box">
+      <!--音频  -->
+      <view class="audio">
+        <view class="icon_box">
+          <image src="../../images/play_question.png" style="width:75rpx;height:75rpx;"></image>
+        </view>
+        <view class="question">
+          <view style="color:#464444;font-size:42rpx">I Have a mum</view>
+          <view style="color:#464444;font-size:26rpx">我有一个妈妈</view>
+        </view>
+      </view>
+      <view class="note">请选择与语音内容相符合的图片</view>
+      <radio-group class="radio_group">
+        <label class="question_item" wx:for="{{['a','b','c','d']}}" wx:key="q_{{index}}">
+          <view wx:if="{{item=='a'}}" class="select">A.</view>
+          <view wx:elif="{{item=='b'}}" class="select">B.</view>
+          <view wx:elif="{{item=='c'}}" class="select">C.</view>
+          <view wx:elif="{{item=='d'}}" class="select">D.</view>
+          <view class="icon_box">
+            <image src="{{staticUrl+item}}.jpg" style="width:248rpx;height:248rpx"></image>
+          </view>
+          <!--选择正确  -->
+          <view class="icon_box select_ok" wx:if="{{false}}">
+            <image src="../../images/select_ok.png" style="width:69rpx;height:49rpx"></image>
+          </view>
+          <!--选择错误 -->
+          <view class="icon_box select_err" wx:if="{{false}}">
+            <image src="../../images/select_no.png" style="width:52rpx;height:50rpx"></image>
+          </view>
+          <radio hidden value="{{item}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="mark">
+    <!--选择题型  -->
+    <view class="select_box">
+      <view class="title_tip">请选择所需题目数量</view>
+      <!--选择数量  -->
+      <radio-group class="select_items" bindchange="radioChange">
+        <label class="radio_item {{item.select?'radio_select':''}}"  wx:for="{{selectNumList}}" wx:key="it_{{index}}" style="background-color:{{item.num<item.num_question?'#ddd':''}}">
+            {{item.num_question}}道题目
+          <radio value="{{item.num<item.num_question?'':item.num_question}}"  data-id="{{item.num_question}}" hidden  />
+          <view class="icon_box choice" wx:if="{{item.select}}">
+            <image src="../../images/selected.png" style="width:36rpx;height:31rpx;"></image>
+          </view>
+        </label>
+      </radio-group>
+      <view class="explain_text">{{explain}}</view>
+      <view class="sure" bindtap="userSure">确认</view>
+    </view>
+
+  </view>
+</view>
+<view class="no_info" wx:else >网络不给力呦，请检查网络连接并稍后再试！</view>
+<!--备课提示 showMark -->
+<view hidden="{{!showMark}}">
+ <template  data="{{staticUrl}}" is="bk_ok"/>
+</view>

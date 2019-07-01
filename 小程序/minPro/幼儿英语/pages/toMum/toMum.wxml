@@ -1,0 +1,71 @@
+<import src="../../temp/xueguo.wxml" />
+<import src="../../temp/process"/>
+<view wx:if="{{info}}" class="mum_page">
+  <!--妈妈基本信息  -->
+  <view class="base_info relative">
+    <!--背景  -->
+    <view class="absolute icon_box">
+      <image src="{{staticUrl}}/mb.jpg" style="width:750rpx;height:404rpx"></image>
+    </view>
+    <!--用户信息  -->
+    <view class="user_info ">
+        <view class="icon_box photo" bindtap="updatePhoto">
+          <image wx:if="{{info.head_img}}" src="{{info.head_img}}" style="width:150rpx;height:150rpx"></image>
+        </view>
+        <view>{{info.nickname}}</view>
+         <navigator url="../userToLogin/userToLogin?src=mother">
+          <view class="to_edit">
+            <view >{{info.mobile}}</view>
+            <view class="icon_box" style="padding-left:38rpx">
+              <image src="../../images/efit.png" style="width:32rpx;height:31rpx"></image>
+            </view>
+          </view>
+        </navigator>
+    </view>
+    <!--查看基本信息  -->
+    <view class="to_user_info relative">
+      <view class="icon_box relative">
+        <image style="width:28rpx;height:28rpx" src="../../images/user_info.png"></image>
+        <view class="edit_statue" wx:if="{{dflag}}"></view>
+      </view>
+      <navigator url="../editMumInfo/editMumInfo">
+      <view style="padding-left:10rpx">详情信息</view>
+      </navigator>
+    </view>
+  </view>
+  <!--学果  -->
+  <view style="margin-bottom:20rpx;">
+    <template is="xg" data="{{gold:info.gold,diamonds:info.diamonds}}"/>
+  </view>
+  <!--等级  -->
+  <view class="leve_box">
+    <view class="name">当前等级</view>
+    <view class="leve_1">{{info.user_level}}</view>
+    <template is="process" data="{{process:info.level_per}}"/>
+     <!-- <view class="leve_star" >
+      <view  class="process">
+        <progress percent="20" activeColor="#f49ac1" active backgroundColor="#ffffff"/> 
+      </view>
+       
+      <view class="leve_star_box">
+        <view class="icon_box">
+          <image style="width:80rpx;height:74rpx" src="../../images/leve_2.png"></image>
+        </view>
+        <view class="icon_box">
+          <image style="width:80rpx;height:74rpx" src="../../images/leve_1.png"></image>
+        </view>
+        <view class="icon_box">
+          <image style="width:80rpx;height:74rpx" src="../../images/leve_1.png"></image>
+        </view>
+      </view>
+    </view>  -->
+    <!-- <view class="leve_tip">妈妈完成备课可获得等级提升</view> -->
+    <view class="leve_tip">{{ParentPageTip}}</view>
+     <!--退出  -->
+     <view bindtap="signOut" open-type="redirect" data-url="../userToLogin/userToLogin?src=outSign">
+     <view class="out_login">退出登录</view>
+    </view>
+  </view>
+ 
+</view>
+<view wx:else class="no_info"> 网络不给力呦，请检查网络连接并稍后再试！</view>

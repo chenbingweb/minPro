@@ -1,0 +1,5 @@
+<template name="mum">
+  <view class="icon_box template_photo_box" >
+    <image src="{{headImg}}" style="height:118rpx;width:118rpx;"></image>
+  </view>
+</template>

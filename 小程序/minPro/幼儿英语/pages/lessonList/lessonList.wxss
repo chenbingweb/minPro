@@ -1,0 +1,102 @@
+/* pages/lessonList/lessonList.wxss */
+@import '../../temp/lesson.wxss';
+.lesson_list_page .header
+{
+  width: 750rpx;
+  height: 333rpx;
+}
+.lesson_list_page .select_box
+{
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.lesson_list_page .item
+{
+  text-align: center;
+  color:#565656;
+  font-size: 38rpx;
+  line-height: 80rpx;
+  width: 50%;
+  position: relative;
+}
+.lesson_list_page .item.selected
+{
+  color: #74c74e;
+}
+.lesson_list_page .item.selected::after
+{
+  content: '';
+  display: block;
+  width: 215rpx;
+  height: 10rpx;
+  background-color: #73c74e;
+  border-radius: 5rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+} 
+.lesson_list_page .page_list
+{
+  position: absolute;
+  left: 0;
+  width: 750rpx;
+  top:473rpx;
+  right: 0;
+  bottom:0;
+  box-sizing: border-box;
+    border-top:2rpx solid #e5e5e5;
+}
+/*我的  */
+.lesson_list_page .page_list .list
+{
+  width: 750rpx;
+  margin: 0 auto;
+
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  
+}
+.lesson_list_page .label
+{
+  width: 210rpx;
+  height: 75rpx;
+  background-color: #7accc8;
+  text-align: center;
+  border-radius: 0 38rpx 38rpx 0;
+  position: absolute;
+  left: -30rpx;
+  top:0rpx;
+  line-height: 75rpx;
+  color:#ffffff;
+  font-size: 38rpx;
+}
+.lesson_list_page .page_list .list_2
+{
+  width: 750rpx;
+  margin: 0 auto;
+  border-top:2rpx solid #e5e5e5;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  /* padding-top: 75rpx; */
+}
+.lesson_list_page .page_list .list_2 .unit
+{
+  color:#565656;
+  font-size: 22rpx;
+  padding-top: 43rpx;
+  border-bottom:2rpx solid #e7e7e7;
+  box-sizing: border-box;
+  padding-left: 26rpx;
+  line-height: 44rpx;
+}
+.lesson_list_page .page_list .lesson_bx
+{
+  padding-top:75rpx;
+  position:relative;
+  margin-bottom:30rpx;
+}

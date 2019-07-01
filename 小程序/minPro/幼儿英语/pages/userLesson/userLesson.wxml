@@ -1,0 +1,157 @@
+<import src="../../temp/tip.wxml"/>
+<view wx:if="{{BKInfo}}" class="user_lesson_page">
+  <!--头部  -->
+  <view class="header">
+    <!--返回首页  -->
+    <view bindtap="goIndex" class="back_home icon_box">
+        <image src="../../images/home.png" style="width:60rpx;height:51rpx"></image>
+    </view>
+    <!--提示  -->
+    <view class="icon_box relative">
+        <!-- <image  src="../../images/tip.png" style="width:53rpx;height:52rpx"></image> -->
+        <!--钻石和金币  -->
+        <view class="coin_zs">
+          <view class="coin_zs_item">
+            <view class="icon_box">
+              <image mode="aspectFit" src="../../images/sb_2.png" style="width:60rpx;height:47rpx"></image>
+            </view>
+            <view class="total_style">{{BKInfo.m_gold||0}}</view>
+          </view>
+           <view class="coin_zs_item">
+            <view class="icon_box">
+              <image mode="aspectFit" src="../../images/mo_fa_ping.png" style="width:37rpx;height:55rpx"></image>
+            </view>
+            <view class="total_style">{{BKInfo.m_diamonds||0}}</view>
+          </view>
+        </view>
+    </view>
+  </view> 
+  <!--标题  -->
+  <view class="title_box">
+      <view style="font-size:40rpx">{{BKInfo.e_name}}</view>
+      <view>{{BKInfo.c_name}}</view>
+  </view>
+  <!--备课步骤  -->
+  <view class="lesson_box ">
+    <!--读绘本  -->
+    <view class="lesson_item relative">
+      <!--背景  -->
+      <view class="icon_box lesson_bg">
+          <image src="{{staticUrl}}duhuiben.png" style="width:620rpx;height:180rpx"></image>
+      </view>
+      <!--步骤  -->
+      <view class="absolute step">
+        <view class="icon_box ">
+            <image src="../../images/read.png" style="width:96rpx;height:96rpx;"></image>
+        </view>
+        <view class="step_content">
+          <view style="font-size:40rpx;line-height:70rpx;">读绘本</view>
+          <!-- <view style="font-size:21rpx">让宝宝上课时可以听到妈妈的朗读配音</view> -->
+          <view style="font-size:21rpx">{{PlanningPageBanner1}}</view>
+        </view>
+        <!--未备课  -->
+        <view class="no_ok icon_box" wx:if="{{!BKInfo.is_read_book}}">
+          <image src="../../images/no_ok.png" style="width:30rpx;height:31rpx;"></image>
+        </view>
+         <!--已备课  -->
+        <view wx:else class="ok icon_box">
+          <image src="../../images/ok.png" style="width:48rpx;height:48rpx;"></image>
+        </view>
+      </view>
+       <button open-type="getUserInfo"  data-url="../readRecord/readRecord?src=bk" class="login_btn" data-btn="bkPageRead" bindgetuserinfo="doBK"></button>      
+    </view>
+    <!--看动画  -->
+    <view class="lesson_item relative">
+      <!--背景  -->
+      <view class="icon_box lesson_bg">
+          <image src="{{staticUrl}}kandonghua.png" style="width:620rpx;height:180rpx"></image>
+      </view>
+      <!--步骤  -->
+      <view class="absolute step">
+        <view class="icon_box ">
+            <image src="../../images/animation.png" style="width:97rpx;height:116rpx;"></image>
+        </view>
+        <view class="step_content">
+          <view style="font-size:40rpx;line-height:70rpx;">看动画 </view>
+          <!-- <view style="font-size:21rpx">准备好陪宝宝一起观看的动画片</view> -->
+          <view style="font-size:21rpx">{{PlanningPageBanner2}}</view>
+        </view>
+        <!--未备课  -->
+        <view class="no_ok icon_box" wx:if="{{!BKInfo.is_cartoon}}">
+          <image src="../../images/no_ok.png" style="width:30rpx;height:31rpx;"></image>
+        </view>
+         <!--已备课  -->
+        <view wx:else class="ok icon_box">
+          <image src="../../images/ok.png" style="width:48rpx;height:48rpx;"></image>
+        </view>
+      </view>
+     <button open-type="getUserInfo"  data-url="../lookAnimation/lookAnimation?src=bk" class="login_btn" data-btn="bkPagelook" bindgetuserinfo="doBK"></button>    
+    </view>
+    <!--听故事  -->
+    <view  class="lesson_item relative">
+      <!--背景  -->
+      <view class="icon_box lesson_bg">
+          <image src="{{staticUrl}}jianggushi.png" style="width:620rpx;height:180rpx"></image>
+      </view>
+      <!--步骤  -->
+      <view class="absolute step">
+        <view class="icon_box ">
+            <image src="../../images/story.png" style="width:97rpx;height:97rpx;"></image>
+        </view>
+        <view class="step_content">
+          <view style="font-size:40rpx;line-height:70rpx;">讲故事 </view>
+          <!-- <view style="font-size:21rpx">准备好和宝宝一起讲述绘本故事的教案</view> -->
+           <view style="font-size:21rpx">{{PlanningPageBanner3}}</view>
+        </view>
+        <!--未备课  -->
+        <view class="no_ok icon_box" wx:if="{{!BKInfo.is_story}}">
+          <image src="../../images/no_ok.png" style="width:30rpx;height:31rpx;"></image>
+        </view>
+         <!--已备课  -->
+        <view wx:else class="ok icon_box">
+          <image src="../../images/ok.png" style="width:48rpx;height:48rpx;"></image>
+        </view>
+      </view>
+     <button open-type="getUserInfo" data-url="../listenStory/listenStory?src=bk"  class="login_btn" data-btn="bkPageStory" bindgetuserinfo="doBK"></button>  
+    </view>
+    <!--做练习  -->
+    <view  class="lesson_item relative">
+      <!--背景  -->
+      <view class="icon_box lesson_bg">
+          <image src="{{staticUrl}}zuolianxi.png" style="width:620rpx;height:180rpx"></image>
+      </view>
+      <!--步骤  -->
+      <view class="absolute step">
+        <view class="icon_box ">
+            <image src="../../images/pencel.png" style="width:105rpx;height:106rpx;"></image>
+        </view>
+        <view class="step_content">
+          <view style="font-size:40rpx;line-height:70rpx;">做练习 </view>
+          <!-- <view style="font-size:21rpx">安排适量随堂练习题给宝宝</view> -->
+           <view style="font-size:21rpx">{{PlanningPageBanner4}}</view>
+        </view>
+        <!--未备课  -->
+        <view class="no_ok icon_box" wx:if="{{!BKInfo.is_practice}}">
+          <image src="../../images/no_ok.png" style="width:30rpx;height:31rpx;"></image>
+        </view>
+         <!--已备课  -->
+        <view wx:else class="ok icon_box">
+          <image src="../../images/ok.png" style="width:48rpx;height:48rpx;"></image>
+        </view>
+      </view>
+     <button open-type="getUserInfo" data-url="../exersiceBK/exersiceBK?src=bk"  class="login_btn" data-btn="bkPagePractice" bindgetuserinfo="doBK"></button>  
+    </view>
+  </view>
+  <!--完成备课  -->
+  <view class="lesson_ok_btn" bindtap="BKIsOver" style="background-color:{{BKOK?'rgb(132,210,55)':'#b7b7b7'}}">完成备课</view>
+</view>
+<view wx:else class="no_info">
+  网络不给力呦，请检查网络连接并稍后再试！
+</view>
+<!--   -->
+<template wx:if="{{showTip}}" data="{{staticUrl,diamonds:BKInfo.diamonds,UnlockPopup1:UnlockPopup1}}" is="open_ok"/>
+
+
+<view hidden="{{!showBKTip}}">
+  <template data="{{staticUrl,gold}}" is="bk_all_ok" />
+</view>

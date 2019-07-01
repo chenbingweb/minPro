@@ -1,0 +1,67 @@
+.question_box 
+{
+  padding-top: 34rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.question_box .audio
+{ 
+  width: 690rpx;
+  margin: 0 auto;
+  min-height: 130rpx;
+  background-color: #f5f5f5;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  border:2rpx solid #d7d7d7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.question_box .question
+{
+  text-align: center;
+  width: 560rpx;
+}
+.question_box .note
+{
+  text-align: center;
+  font-size: 34rpx;
+  color:#959595;
+  height: 74rpx;
+  line-height: 74rpx;
+}
+.question_box .radio_group
+{
+  display: flex;
+  justify-content:space-between;
+  flex-wrap:  wrap;
+  width: 585rpx;
+  margin: 0 auto;
+}
+.question_box .question_item
+{
+  width: 248rpx;
+  margin-bottom: 34rpx;
+  position: relative;
+}
+.question_box .select
+{
+  color:#5a5858;
+  font-size: 34rpx;
+  text-align: center;
+  padding-bottom: 10rpx;
+}
+.question_box .select_ok
+{
+  position: absolute;
+  bottom:4rpx;
+  right: 4rpx;
+}
+.question_box .select_err
+{
+  position: absolute;
+  bottom:7rpx;
+  right: 10rpx;
+}

@@ -1,0 +1,120 @@
+<!--引入模板-->
+<import src="../../temp/userheader.wxml" />
+<import src="../../temp/lesson.wxml" />
+<view wx:if="{{loading}}" class=" icon_box">
+  <image  src="{{staticUrl+'qd.jpg'}}" style="width:750rpx;height:100vh"></image>
+</view>
+<view wx:else class="index_page">
+  <!--头部  -->
+  <view style=" margin-bottom: 23rpx;">
+    <template is="user_header" data="{{staticUrl,motherInfo,babyInfo,img_url}}"/>
+    <!--签到和金币  -->
+    <view class="coin_box  ">
+      <!--签到  -->
+    
+      <view class="sign_box" bindtap="toSign">
+        <view>签到</view>
+        <view class="icon_box relative">
+          <image src="../../images/sign_pen.png" style="height:36rpx;width:36rpx;"></image>
+          <view class="sign_statue" wx:if="{{!is_sign}}"></view>  
+        </view>
+        <button open-type="getUserInfo" class="login_btn" data-btn="sign" bindgetuserinfo="toLogin"></button>   
+          
+      </view>
+
+      <!--金币信息  -->
+      <view class="coin_counts">
+        <view class="coin_item pos_1" style="height:144rpx;" bindtap="toMyShop">
+          <!--金币类型  -->
+          <view class="coin_img_box">
+            <view class="icon_box">
+              <image src="../../images/sb.png" style="width:74rpx;height:60rpx"></image>
+            </view>
+          </view>
+          <!--金币数量  -->
+          <view class="count_num one_line">{{userIntegral.gold?userIntegral.gold:0}}</view>
+           <view class="coin_name">周学贝</view>
+           <button open-type="getUserInfo" class="login_btn" data-btn="xb" bindgetuserinfo="toLogin"></button>    
+        </view>
+
+        <view class="coin_item pos_2" bindtap="toMyShop">
+          <!--金币类型  -->
+          <view class="coin_img_box">
+            <view class="icon_box">
+              <image src="../../images/sb.png" style="width:68rpx;height:53rpx"></image>
+            </view>
+           <button open-type="getUserInfo" class="login_btn" data-btn="xb" bindgetuserinfo="toLogin"></button>    
+          </view>
+          <!--金币数量  -->
+          <view class="count_num one_line" style="font-size:46rpx">{{userIntegral.total_gold?userIntegral.total_gold:0}}</view>
+           <view class="coin_name">总学贝</view>
+           <button open-type="getUserInfo" class="login_btn" data-btn="xb"  bindgetuserinfo="toLogin"></button>    
+        </view>
+
+        <view class="coin_item pos_3" bindtap="toMyShop">
+          <!--金币类型  -->
+          <view class="coin_img_box">
+            <view class="icon_box">
+              <image src="../../images/mo_fa_ping.png" style="width:42rpx;height:66rpx"></image>
+            </view>
+            <button open-type="getUserInfo" class="login_btn" data-btn="xb"  bindgetuserinfo="toLogin"></button>    
+          </view>
+          <!--金币数量  -->
+          <view class="count_num one_line" style="font-size:46rpx">{{userIntegral.diamonds?userIntegral.diamonds:0}}</view>
+          <view class="coin_name">学习魔药</view>
+          <button open-type="getUserInfo" class="login_btn" data-btn="xb"  bindgetuserinfo="toLogin"></button>    
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--课程信息  -->
+  <view style=" margin-bottom: 23rpx;">
+    <view class="lesson_box" style="padding-bottom:{{lessonType?50:0}}rpx">
+      <!--新用户  -->
+      <view class="title" wx:if="{{lessonType}}">
+        免费课程
+      </view>
+      <!--老用户  -->
+      <view class="title" wx:else>
+        <view>最近课程</view>
+        <navigator url="../lessonList/lessonList?src=mylesson" class="more">更多</navigator>
+      </view>
+      <!--课程列表  -->
+      <view wx:if="{{lessonList.length}}">
+        <template is="lesson" wx:for="{{lessonList}}" data="{{lesson:item}}" wx:key="key_{{index}}" />
+      </view>
+      <!--  -->
+      <view wx:else class="no_info" style="margin:10rpx 0">
+        暂无课程
+      </view>
+    </view>
+  </view>
+  <!--教学大纲  -->
+  <view>
+    <view class="teach_box">
+      <view class="teach_title">教学大纲</view>
+      <view wx:for="{{[1]}}" class="container" wx:key="index_{{index}}">
+        <navigator url="../lessonList/lessonList?src=all">
+        <view class="teach_item" >
+          <!--背景图片  -->
+          <view class="teach_bg icon_box">
+            <image src="../../images/img/b.jpg" style="width:690rpx;height:250rpx;border-radius:20rpx"></image>
+          </view>
+          <!--大纲信息  -->
+          <view class="teach_info">
+              <view style="margin-top:10rpx">全部课程</view>
+              <view>{{totalLesson}}</view>
+              <view style="margin-top:35rpx;margin-bottom:10rpx;">家长已备课 {{bknum}}</view>
+              <view>孩子已上课 {{sknum}}</view>
+          </view>
+        </view>
+        </navigator>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+
+
+

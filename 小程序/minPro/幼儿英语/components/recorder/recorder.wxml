@@ -1,0 +1,3 @@
+<view class="component">
+  <view id="rec"  class="btn" bindtouchstart="start" bindtouchend="endRecord" bindtouchmove="move" bindlongpress="startRecord" bindtouchcancel='cancelEvent' bindtap="cancelEvent" ></view>
+</view>

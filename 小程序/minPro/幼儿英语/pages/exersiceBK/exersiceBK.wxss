@@ -1,0 +1,96 @@
+/* pages/exersiceBK/exersiceBK.wxss */
+@import "../../temp/question.wxss";
+.exersice_page .title
+{
+  height: 90rpx;
+  text-align: center;
+  color:#535353;
+  font-size: 38rpx;
+  line-height: 90rpx;
+}
+.exersice_page .example
+{
+ transform:scale(0.62) translateY(-310rpx);
+}
+.exersice_page .mark
+{
+  position: absolute;
+  width: 1500rpx;
+  height: 1000rpx;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -500rpx;
+  background-color: #f5f5f5;
+}
+.exersice_page .select_box
+{
+  width: 740rpx;
+  height: 450rpx;
+  margin: 0 auto;
+}
+.exersice_page .title_tip
+{
+  text-align: center;
+  color:#464444;
+  font-size: 34rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+}
+.exersice_page .select_items
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 750rpx;
+  margin-top:74rpx;
+  margin-bottom: 60rpx;
+}
+.exersice_page .radio_item
+{
+  width: 214rpx;
+  height: 84rpx;
+  line-height: 76rpx;
+  box-sizing: border-box;
+  border:5rpx solid #b7b7b7;
+  text-align: center;
+  color:#b8b8b8;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+.exersice_page .radio_select
+{
+  border-color: #84d237;
+  color:#84d237;
+}
+.exersice_page .choice
+{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.exersice_page .radio_item:nth-of-type(2)
+{
+  margin: 0 16rpx;
+}
+.exersice_page .sure
+{
+  width: 600rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin: 0 auto;
+  background-color: #84d237;
+  border-radius: 10rpx;
+  color:#ffffff;
+  font-size: 34rpx;
+}
+.exersice_page .explain_text
+{
+  color:#9f9f9f;
+  font-size: 25rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  height: 30rpx;
+}
