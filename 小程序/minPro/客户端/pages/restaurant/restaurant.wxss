@@ -1,0 +1,32 @@
+/* pages/restaurant/restaurant.wxss */
+.border_top
+{
+  border-top:2rpx solid #e5e5e5;
+}
+.item_res
+{
+  width: 695rpx;
+  margin: 0 auto;
+  height: 238rpx;
+  border-bottom:2rpx solid #e5e5e5;
+}
+.info_box
+{
+  width: 470rpx;
+  height: 168rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.title
+{
+  color:#001300;
+  font-size: 32rpx;
+}
+.address
+{
+  color:#999999;
+  font-size: 26rpx;
+}

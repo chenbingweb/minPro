@@ -1,0 +1,158 @@
+/* pages/index/index.wxss */
+/*引入模板样式*/
+/* @import '../../temp/userheader.wxss';*/
+@import '../../temp/temp.wxss'; 
+page
+{
+  display: table;
+  padding-bottom: 100rpx; 
+  background-color: #fff;
+}
+.index_page
+{
+  box-sizing: border-box;
+}
+.swiper_box
+{
+  height: 410rpx;
+}
+.order_btn
+{
+  position: absolute;
+  left: 50%;
+  bottom: -66rpx;
+  transform: translateX(-50%);
+
+}
+/*菜品排行*/
+.recommont_buld_box
+{
+  width:750rpx;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+  overflow: hidden;
+  padding-top:90rpx;
+  
+}
+.title
+{
+   color:#333333;
+   font-size: 26rpx;
+   padding-left: 10rpx;
+   margin-bottom: 30rpx;
+  
+}
+.title::before,.title::after
+{
+  content:'';
+  display: block;
+  width:38rpx;
+  height: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.font_zi
+{
+  padding: 0 20rpx;
+  font-size: 32rpx;
+  color:#000000;
+}
+
+.scroll_view_box
+{
+  display: inline-flex;
+  padding-right: 25rpx;
+  box-sizing: border-box;
+}
+.recommont_title_box
+{
+  display: flex;
+  justify-content: center;
+}
+.item_box
+{
+  width: 256rpx;
+  height: 290rpx;
+  box-sizing: border-box;
+  border:2rpx solid #f1f1f1;
+  margin-right: 30rpx;
+  overflow: hidden;
+}
+
+.food_img
+{
+ 
+ margin: 0 auto; 
+}
+.food_info
+{
+  padding-top:24rpx;
+}
+.food_title
+{
+  width: 100%;
+  text-align: center;
+  color:#333;
+  font-size: 28rpx;
+}
+.month_count
+{
+  width: 100%;
+  text-align: center;
+  color:#999;
+  font-size: 24rpx;
+}
+.hot_mark
+{
+  width: 140rpx;
+  height: 30rpx;
+  background-color: #e26161;
+  position: absolute;
+  left:-40rpx;
+  top:17rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color:#ffffff;
+  font-size: 16rpx;
+  transform: rotate(-45deg);
+}
+.recommont_food
+{
+  padding: 0 28rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  width: 750rpx;
+}
+.recom_item
+{
+  width: 343rpx;
+  height: 323rpx;
+}
+.recom_img
+{
+  box-sizing: border-box;
+  border:2rpx solid #e5e5e5;
+}
+.recom_name
+{
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color:#333;
+  line-height: 72rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+.re_box
+{
+  flex-wrap: wrap;
+}
+.logo_img
+{
+  position: fixed;
+  top:133rpx;
+  left:50%;
+  transform: translateX(-50%);
+  
+}

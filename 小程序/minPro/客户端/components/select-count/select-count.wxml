@@ -1,0 +1,21 @@
+<view class="btn_box">
+  <!-- <view class="icon_box">
+    <image src="./img/reduce.png" style="width:40rpx;height:40rpx;"></image>
+  </view> -->
+  <view class="icon_box "  style="width:40rpx;height:40rpx;opacity:{{quantity?1:0}}">
+    <view class="reduce_btn" bindtap="onReduce">
+      <text class="line"></text>
+    </view>
+  </view>
+  <view class="icon_box" style="width:40rpx;;height:40rpx;">
+  {{quantity?quantity:''}}
+  </view>
+  <view class="icon_box" bindtap="onAdd">
+   <view class="add_btn"></view>
+  </view>
+  <!-- <view class="icon_box" wx:if="{{false}}">
+    <image src="./img/add.png" style="width:40rpx;height:40rpx;"></image>
+     <image src="./img/add_red.png" style="width:40rpx;height:40rpx;"></image>
+  </view> -->
+ 
+</view>

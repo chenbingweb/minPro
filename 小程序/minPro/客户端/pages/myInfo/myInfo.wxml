@@ -1,0 +1,28 @@
+<view>
+  <view class="title">手机号码</view>
+  <view class="item">
+    {{mobile}}
+  </view>
+  <view class="title">出生日期</view>
+  <view class="item" wx:if="{{birthday ==''}}">
+    <picker mode="date" bindchange="onChange" >
+      <view class="flex_between" wx:if="{{birth==''}}">
+        <view>请选择您的生日</view>
+        <view class="icon_box arr">
+          <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx"></image>
+        </view>
+      </view>
+      <view class="flex_between" wx:else>
+        <view>{{birth}}</view>
+         <view class="icon_box arr">
+          <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx"></image>
+        </view>
+      </view>
+    </picker>
+  </view>
+   <view wx:else class="item" >{{birth}}</view>
+
+</view>
+<view class="btn_box" bindtap="onDo" wx:if="{{birthday ==''}}">
+  完成
+</view>

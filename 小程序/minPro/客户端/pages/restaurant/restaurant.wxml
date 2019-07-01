@@ -1,0 +1,24 @@
+<!-- <nav-bar/> style="bottom:100rpx;"-->
+<view class="fixed border_top" >
+  <paging dataObj="{{dataObj}}" bindpageData="onPageData">
+    <view slot="list">
+      <view  wx:if="{{item.id}}" open-type="{{navTy}}" data-ot="{{navTy}}" bindtap="onUpdata" data-restaurant_id="{{item.id}}" data-url="../restaurantDetail/restaurantDetail?rid={{item.id}}" data-isvip="{{item.is_vip}}" data-status="{{item.status}}" wx:for="{{shopList}}"  wx:key="nav_{{index}}" class="item_res flex_between">
+        <view class="icon_box"> 
+          <image mode='aspectFill' wx:if="{{item.img_url}}" src="{{item.img_url}}" style="width:224rpx;height:168rpx;"></image>
+        </view>
+        <view class="info_box">
+          <view class="title one_line">{{item.name}}</view>
+          <view class="address two_line">{{item.address}}</view>
+          <view class="address one_line flex_start" style="{{!item.distance?'visibility: hidden':''}}">
+            <view class="icon_box">
+              <image src="../../images/local_address.png" style="width:21rpx;height:27rpx"></image>
+            </view>
+            <view style="padding-left:10rpx">
+              {{item.distance}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </paging>
+</view>

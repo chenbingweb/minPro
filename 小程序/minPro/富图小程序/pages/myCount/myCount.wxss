@@ -1,0 +1,19 @@
+/* pages/myCount/myCount.wxss */
+.count
+{
+  text-align: center;
+  line-height: 50rpx;
+  color:#fff;
+  font-size: 24rpx;
+}
+.club
+{
+  flex-direction: column;
+}
+.money
+{
+   text-align: center;
+  color:#fff;
+  font-size: 32rpx;
+  line-height: 1;
+}

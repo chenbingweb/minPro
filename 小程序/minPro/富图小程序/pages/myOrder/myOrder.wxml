@@ -1,0 +1,40 @@
+<!-- <nav-bar/> -->
+<view class="fixed">
+  <paging  dataObj="{{dataObj}}" bindpageData="onPageData">
+    <view slot="list">
+      <navigator url="../orderDetail/orderDetail?oid={{item.id}}" class="order_item" wx:for="{{list}}" wx:key="item_{{index}}">
+        <!-- 订单状态 -->
+        <view class="status flex_between">
+          <view class="flex_start">
+            <view style="margin-right:20rpx;">订单时间</view>
+             <view>{{item.create_at}}</view>
+          </view>
+
+          <view class="status_type" style="{{(item.status=='wait_pay' && item.is_cancel==false) ?'color:#e26161':''}};{{item.status=='wait_take'?'color:#1aad19;font-weight:600':''}}" >{{item.status_name}}</view>
+          <!-- <view class="status_type" wx:if="{{item.status=='wait_confirm'}}">已完成</view>
+          <view class="status_type" wx:if="{{item.status=='has_refund'}}">已取消</view> -->
+        </view>
+        <!-- 店铺信息 -->
+        <view class="flex_start shop">
+          <view class="icon_box">
+            <image src="{{item.restaurant_logo_url}}" style="width:103rpx;height:74rpx"></image>
+          </view>
+          <view>
+            <view class="shop_name flex_start">
+              <view style="margin:0 20rpx;">{{item.restaurant_name}}</view>
+              <view class="icon_box">
+                <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx"></image>
+              </view>
+            </view>
+            <!-- <view class="cg_num">餐柜号码：2323</view> -->
+          </view>
+        </view>
+        <!-- 菜品信息 -->
+        <view class="flex_between food_detail">
+          <view class="title">{{item.food_names}} 等{{item.quantity}}件商品</view>
+          <view class="price"><text style="font-size:22rpx;padding-right:5rpx">¥</text><text>{{item.total_amount}}</text></view>
+        </view>
+      </navigator>
+    </view>
+  </paging>
+</view>

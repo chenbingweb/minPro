@@ -1,0 +1,13 @@
+<nav-bar/>
+<view class="count_box relative">
+  <view class="icon_box">
+    <image src="../../images/count_bg.png" style="width:695rpx;height:242rpx"></image>
+  </view>
+  <view class="absolute flex_center club">
+    <view class="icon_box">
+      <image src="../../images/count.png" style="width:58rpx;height:58rpx;"></image>    
+    </view>
+    <view class="count">账户余额</view>
+    <view class="money">{{amount}}</view>
+  </view>
+</view>

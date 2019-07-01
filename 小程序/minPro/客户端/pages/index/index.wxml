@@ -1,0 +1,75 @@
+<view wx:if="{{isLogn}}">
+  <nav-bar/>
+  <view class="index_page">
+   
+    <!--轮播图  -->
+    <view style=" pointer-events:{{events?'all':'none'}};" class="swiper_box relative">
+      <swiper-base wx:if="{{banner.length}}" height="410" imgsData="{{banner}}" baseSet="{{baseSet}}" />
+      <view wx:else style="background-color:#fff" class="absolute">
+
+      </view>
+      <!-- 点餐按钮 -->
+      <view wx:if="{{isPower}}" class="order_btn" catchtap="onToRestaurant">
+        <image src="../../images/order_btn.png" style="width:417rpx;height:112rpx;"></image>
+      </view>
+      <view wx:if="{{!isPower}}" class="order_btn relative">
+        <image src="../../images/order_btn.png" style="width:417rpx;height:112rpx;"></image>
+        <button open-type="openSetting" bindopensetting="onOpenSetting" class="opacity"></button>
+      </view>
+    </view>
+
+    <!-- 菜品排行 -->
+    <view class="recommont_buld_box" style="{{foodRange.length==0?'height: 240rpx;':''}}">
+      <!--标题  -->
+      <view class="recommont_title_box">
+        <view class="title flex_center"> <view class="font_zi">菜品排行</view> </view>
+      </view>
+      <view class="no_info" style="margin-top:0" wx:if="{{foodRange.length==0}}">
+        暂无菜品排行
+      </view>
+      <!-- -->
+      <scroll-view wx:else class="scroll_view" scroll-x>
+        <view class="scroll_view_box">
+          <navigator style="pointer-events:{{events?'all':'none'}};"  url="../foodDetail/foodDetail?fid={{item.id}}&quantity=0"  class="item_box relative" wx:for="{{foodRange}}" wx:key="item_{{index}}">
+            <view class="icon_box food_img">
+              <image src="{{item.img_url}}" style=" width: 256rpx;height: 175rpx;"></image>
+            </view>
+            <view class="food_info">
+              <view class="food_title one_line">{{item.name}}</view>
+              <view class="month_count one_line">售量 <text style="font-size:26rpx">{{item.sales}}</text></view>
+            </view>
+            <!-- hot信息 -->
+            <view class="hot_mark">
+              TOP{{index+1}}
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 推荐菜品 -->
+    <view class="recommont_food">
+      <!--标题  -->
+      <view class="recommont_title_box">
+        <view class="title flex_center"> <view class="font_zi">推荐菜品</view> </view>
+      </view>
+      <view class="flex_between re_box" wx:if="{{recommendFood.length!=0}}">
+        <view class="recom_item" wx:for="{{recommendFood}}" wx:key="item_{{index}}">
+          <view class="icon_box recom_img">
+            <image  src="{{item.img_url}}" style=" width: 343rpx;height: 247rpx;"></image>
+          </view>
+          <view class="recom_name one_line">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+      <view class="no_info" style="margin-top:0" wx:else  >
+        暂无推荐菜品
+      </view>
+    </view>
+    <!-- logo -->
+     <view class="icon_box logo_img">
+      <image src="../../images/logo.png" style="width:120rpx;height:120rpx"></image>
+    </view>
+  </view>
+</view>
+<login-page bindisLogin="onIsLogin" wx:else/>

@@ -1,0 +1,41 @@
+/* pages/myInfo/myInfo.wxss */
+.title
+{
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  font-size: 28rpx;
+  color:#333;
+}
+.item
+{
+  width: 750rpx;
+  height: 104rpx;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+  background-color: white;
+  line-height: 104rpx;
+  font-size: 28rpx;
+  color:#999999;
+}
+.btn_box
+{
+   width: 626rpx;
+  height: 80rpx;
+  background-color: #e26161;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color:#fff;
+  position: relative;
+  margin: 0 auto;
+ margin-top: 50rpx;
+}
+.arr
+{
+  transform: rotate(90deg)
+}

@@ -1,0 +1,157 @@
+/* pages/restaurantDetail/restaurantDetail.wxss */
+.header
+{
+  width: 750rpx;
+  height: 120rpx;
+  position: relative;
+}
+.change_btn
+{
+  /* color:#ffffff; */
+  font-size: 22rpx;
+  line-height: 100rpx;
+}
+.btn_box
+{
+  box-sizing: border-box;
+  padding:0 28rpx;
+}
+.dis
+{
+  color:#ffffff;
+  font-size: 22rpx;
+  padding-left: 10rpx;
+}
+.introduce
+{
+  width: 750rpx;
+  height: 250rpx;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+  padding-top: 60rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.logo
+{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:-50rpx;
+  overflow: hidden;
+}
+.title
+{
+  text-align: center;
+  font-size: 36rpx;
+  color:#333;
+}
+.address
+{
+  color:#333;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+.detail
+{
+  text-align: center;
+  font-size: 22rpx;
+  color:#999;
+  padding: 0 14rpx;
+ 
+}
+.list_box
+{
+  width: 750rpx;
+  position: absolute;
+  top:370rpx;
+  /* bottom: 100rpx; */
+  bottom:0rpx;
+  left: 0;
+}
+.left_scroll
+{
+  width: 160rpx;
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 80rpx;
+  background-color: #f8f8f8;
+}
+.right_scroll
+{
+  position:absolute;
+  left: 160rpx;
+  right: 0;
+  top:0;
+  bottom: 80rpx;
+  background-color: #ffffff;
+}
+.bottom_btn
+{
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom: 0;
+  height: 80rpx;
+  box-sizing: border-box;
+  /* border-top:2rpx solid #e5e5e5; */
+  background-color:#fff;
+}
+.select_btn
+{
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 90rpx;
+  padding:0 10rpx;
+  font-size: 24rpx;
+  color:#333;
+}
+.select_btn_ok
+{
+   background-color: white;
+   position: relative;
+}
+.select_btn_ok::before
+{
+  content: '';
+  display: block;
+  width: 4rpx;
+  height: 28rpx;
+  background-color: #605858;
+  position: absolute;
+  left: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.canvas
+{
+  position: absolute;
+  left: -1000rpx;
+  top:-1000rpx;
+  
+}
+.change_btn_nav
+{
+ 
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30rpx;
+  align-items: center;
+  color:#333;
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 210rpx;
+  height: 60rpx;
+  text-align: center;
+}

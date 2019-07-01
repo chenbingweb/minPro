@@ -1,0 +1,76 @@
+/* components/food-info/food-info.wxss */
+.item
+{
+  height: 164rpx;
+  width: 750rpx;
+  background-color: white;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-top: 2rpx solid #e5e5e5;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.info_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title
+{
+  color:#333;
+  font-size: 28rpx;
+  width: 400rpx;
+}
+.info_content
+{
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20rpx;
+}
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.num
+{
+  font-size: 30rpx;
+  color:#333;
+  transform: translateY(20rpx);
+  text-align: right;
+}
+.label
+{
+  width: 112rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border:2rpx solid #e26161;
+  font-size: 22rpx;
+  color:#e26161;
+  border-radius: 4rpx;
+  margin-left: 18rpx;
+  padding: 0 10rpx;
+}
+.flex_between
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pd_cg
+{
+  font-size: 22rpx;
+  color:#37c570;
+}

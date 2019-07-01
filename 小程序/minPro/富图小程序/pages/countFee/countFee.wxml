@@ -1,0 +1,25 @@
+<view class="fixed">
+  <view class="title flex_between">
+    <view>累计消费 {{list[0].total_consume_amount}}</view>
+    <view class="piker flex_start">
+      <picker end="{{end}}" mode="date" bindchange="onStart">
+        <view>{{start==''?'请选择开始时间':start}}</view>
+      </picker>
+      <view style="padding:0 10rpx;">至</view>
+      <picker start="{{start}}" mode="date"  bindchange="onEnd">
+        <view>{{end==''?'请选择结束时间':end}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="list">
+    <paging dataObj="{{dataObj}}" bindpageData="onPageData">
+      <view slot="list">
+        <view bindtap="onToDetail" data-tid="{{item.id}}" class="item relative" wx:for="{{list}}" wx:key="item_{{index}}">
+          <view class="one_line" style="width:80%">{{item.source}}</view>
+          <view class="time">{{item.create_at}}</view>
+          <view class="fee">{{(item.type=='add'?'+':'-')+item.total_amount}}</view>
+        </view>
+      </view>
+    </paging>
+  </view>
+</view>

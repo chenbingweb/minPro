@@ -1,0 +1,52 @@
+/* pages/countFee/countFee.wxss */
+.title
+{
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  font-size: 28rpx;
+  color:#333;
+}
+.piker
+{
+  font-size: 24rpx;
+  color:#999;
+}
+.list
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:70rpx;
+  bottom: 0;
+}
+.item
+{
+  height: 130rpx;
+  width:750rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+  font-size: 28rpx;
+  color:#333;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.time
+{
+  font-size: 24rpx;
+  color:#999;
+}
+.fee
+{
+  font-size: 28rpx;
+  color:#333;
+  position: absolute;
+  top:30rpx;
+  right: 28rpx;
+}

@@ -1,0 +1,86 @@
+/* components/food-item/food-item.wxss */
+.item_box
+{
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info
+{
+  width: 330rpx;
+  min-height: 166rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 16rpx 0;
+}
+.title
+{
+  color:#333;
+  font-size: 28rpx;
+}
+.sell
+{
+  color:#999;
+  font-size: 22rpx;
+}
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+.money
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 33rpx;
+  color:#333;
+}
+.select_box
+{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 140rpx;
+  height: 44rpx;
+  font-size: 28rpx;
+  color:#333;
+}
+.time_box
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.time_item
+{
+  width: 110rpx;
+  /* height: 38rpx; */
+  line-height: 34rpx;
+  color:#e26161;
+  font-size: 22rpx;
+  border:2rpx solid #e26161;
+  border-radius: 4rpx;text-align: center;
+  margin-right: 10rpx;
+  margin-top:10rpx;
+}
+.time_d
+{
+  font-size: 22rpx;
+  color:#333333;
+  margin-top:10rpx;
+
+}

@@ -1,0 +1,61 @@
+/* pages/myCenter/myCenter.wxss */
+.photo_box
+{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user_ava
+{
+   width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.user_name
+{
+  color:#fff;
+  font-size: 32rpx;
+  padding-top: 20rpx;
+  line-height: 1;
+}
+.user_info_box
+{
+  flex-direction: column;
+}
+.nav_item
+{
+  width: 695rpx;
+  margin: 0 auto;
+  height: 100rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.img_icon
+{
+  width: 66rpx;
+}
+.item_title
+{
+  color:#333333;
+  font-size: 28rpx;
+  padding-left: 14rpx;
+}
+.call
+{
+  width: 364rpx;
+  height: 64rpx;
+  border:2rpx solid #e26161;
+  text-align: center;
+  line-height: 64rpx;
+  border-radius: 32rpx;
+  margin: 0 auto;
+  color:#e26161;
+  font-size: 28rpx;
+}
+.call_title
+{
+  text-align: center;
+  color:#999;
+  font-size: 24rpx;
+  padding-bottom: 15rpx;
+}

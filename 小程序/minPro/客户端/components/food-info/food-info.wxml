@@ -1,0 +1,30 @@
+<!--components/food-info/food-info.wxml-->
+<view class="item" style="{{index==0?'border:none':''}}">
+  <view class="info_box">
+    <view class="icon_box">
+      <image src="{{food.img_url}}" style="width:140rpx;height:94rpx"></image>
+    </view>
+    <view class="info_content">
+      <view class='flex_between'>
+        <view class="title one_line">{{food.name}}</view>
+        
+      </view>
+      
+      <view class="title">
+        <text style="font-size:22rpx;">¥</text>
+        <text style="width:40rpx;display:inline-block">{{food.price}}</text>
+        
+        <text class='label' wx:if="{{food.activity_type=='xs'}}">限时秒杀</text>
+        <text class='label' wx:if="{{food.activity_type=='xl'}}">限时拼单</text>
+      </view>
+    </view>
+  </view>
+  <view>
+  <!-- 拼单成功后退回差价 -->
+    <view class="pd_cg" wx:if="{{food.activity_id!=''}}" style="text-align:center">{{food.activity_msg}}</view>
+    <!-- <view class="pd_cg" style="color:#999999;text-align:center" wx:if="{{food.activity_type=='xl'}}">拼单成功后退回差价</view> -->
+
+    <view class="num">X {{food.quantity}}</view>
+  </view>
+  
+</view>

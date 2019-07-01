@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "food-item": "/components/food-item/food-item"
+  }
+  
+}

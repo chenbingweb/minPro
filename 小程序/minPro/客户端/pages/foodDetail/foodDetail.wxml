@@ -1,0 +1,76 @@
+  <!-- <nav-bar/> -->
+
+<import src="../../wxParse/wxParse.wxml"/>
+  <view  class="fixed" wx:if="{{foodDetail.name}}">
+    <scroll-view scroll-y class="absolute box RemoveRollCar">
+      <view class="relative">
+         <swiper-base wx:if="{{foodDetail.food_img.length}}" height="556" imgsData="{{foodDetail.food_img}}" baseSet="{{baseSet}}" />
+        <view wx:else style="background-color:#eee" class="absolute"></view>
+      </view>
+     
+      <view class="food_info flex_between">
+        <view class="food_detail">
+          <view class="title">{{foodDetail.name}}</view>
+          <view class="sell ">
+            <text wx:if="{{false}}" style="padding-right:24rpx;">售量 {{foodDetail.sales}}</text>
+            <text>剩余 {{foodDetail.stock}}</text>
+          </view>
+        </view>
+        <!-- 点赞 dian_zan_ok-->
+        <view class="flex_between dian_zan">
+          <view class="dian_box" bindtap="onThumb" data-status="{{love}}" data-voteid="{{foodDetail.vote_log_id}}" data-thumbs="love" data-ty="{{love?2:1}}">
+            <view class="icon_box">
+              <image wx:if="{{love}}" src="../../images/dian_zan_ok.png" style="width:30rpx;height:30rpx"></image>
+              <image  wx:else src="../../images/dian_zan_no.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+            <view style="{{love?'color:#e26161':''}}">{{foodDetail.love_count}}</view>
+          </view>
+          <view class="dian_box" bindtap="onThumb"  data-voteid="{{foodDetail.vote_log_id}}"  data-status="{{hate}}" data-thumbs="hate" data-ty="{{hate?2:1}}">
+            <view class="icon_box">
+            <image wx:if="{{hate}}" src="../../images/no_dian_zan_yes.png" style="width:30rpx;height:30rpx"></image>
+              <image wx:else src="../../images/no_dian_zan.png" style="width:30rpx;height:30rpx"></image>
+            </view>
+            <view style="{{hate?'color:#e26161':''}}">{{foodDetail.hate_count}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 秒杀时间 -->
+      <view class="active_time" wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xs'}}">秒杀时间 {{foodDetail.activity.start_time}}-{{foodDetail.activity.end_time}}</view>
+      <view class="active_time" wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xl'}}">拼单时间 {{foodDetail.activity.start_time}}-{{foodDetail.activity.end_time}}</view>
+      <view class="food_info flex_between">
+        <view><text style="font-size:22rpx;">¥</text><text>{{foodDetail.price}}</text></view>
+        <select-count wx:if="{{!foodDetail.activity.type}}" quantity="{{quantity}}" fd="{{foodDetail.id}}"/>
+      </view>
+      <!-- 秒杀时间 -->
+       <view class="food_info_ms flex_between"  wx:if="{{foodDetail.activity}}">
+        <view>
+          <text wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xs'}}" style="font-size:22rpx;color:#e26161;padding-right:10rpx">秒杀价</text>
+           <text wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xl'}}" style="font-size:22rpx;color:#e26161;padding-right:10rpx">拼单价</text>
+          <text  style="font-size:22rpx;color:#e26161">¥</text>
+          <text wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xs'}}" style="font-size:33rpx;color:#e26161">{{foodDetail.activity.price}}</text>
+          <text wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xl'}}" style="font-size:33rpx;color:#e26161">{{foodDetail.activity.price}}</text>
+          <text wx:if="{{!foodDetail.activity}}" style="font-size:33rpx;color:#e26161">{{foodDetail.price}}</text>
+        </view>
+        <select-count  quantity="{{quantity2}}" ad="{{foodDetail.activity?foodDetail.activity.id:''}}" fd="{{foodDetail.id}}"/>
+      </view>
+      <!-- 拼单规则 -->
+        <view wx:if="{{foodDetail.activity&&foodDetail.activity.type=='xl'}}">
+          <view class="title_box">拼单规则</view>
+          <view class="tip_pt">不足拼单数按原价购买，到拼单数量时购买为拼单价，并给原价购买的用户退回差价。         </view>
+      </view>
+      <view class="title_box">商品描述</view>
+      
+      <view class="detail">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+          <!-- {{foodDetail.detail}} -->
+      </view>
+
+      
+    </scroll-view>
+    <view class="count_box">
+      <accounts title="{{title}}"/>
+    </view>
+  </view>
+  <view wx:else  class="no_info">
+    暂无菜品信息
+  </view>

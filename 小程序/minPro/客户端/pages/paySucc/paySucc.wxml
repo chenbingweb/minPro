@@ -1,0 +1,7 @@
+<view class="icon_box logo">
+  <image src="../../images/pay_succ.png" style="width:150rpx;height:150rpx;"></image>
+</view>
+<view class="succ">支付成功</view>
+<view class="tip">菜品制作中，稍后我们会微信通知您，注意查看</view>
+<navigator url="../orderDetail/orderDetail?oid={{oid}}" open-type="redirect" class="btn_1">查看订单</navigator>
+<navigator url="../index/index" open-type="reLaunch" class="btn_2">返回首页</navigator>

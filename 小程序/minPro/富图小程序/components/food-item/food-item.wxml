@@ -1,0 +1,58 @@
+<view  class="item_box">
+  <navigator url="../foodDetail/foodDetail?fid={{food.id}}&quantity={{food.quantity}}" class="icon_box">
+    <image wx:if="{{food.img_url}}"  src="{{food.img_url}}" style="width:170rpx;height:130rpx;"></image>
+  </navigator>
+  <view class="info">
+    <view class="title one_line">{{food.name}}</view>
+    <!-- 普通 -->
+    <view class="sell one_line" wx:if="{{!food.activity}}">
+      <text wx:if="{{false}}" style="padding-right:30rpx">售量{{food.sales}}</text><text>剩余 {{food.stock}}</text>
+    </view>
+    <!-- 拼团 -->
+    <view wx:if="{{food.activity && food.activity.type=='xl'}}" >
+      <view class="sell one_line">
+        <text style="padding-right:30rpx">已拼{{food.activity.today_sales+'('+food.activity.min_count}}成团)</text>
+      </view>
+      <view class="time_box">
+        <view class="time_item">限时拼单 </view>
+        <view class='time_d'>{{food.activity.start_time}}-{{food.activity.end_time}}</view>
+      </view>
+    </view>
+    <!-- 秒杀 -->
+    <view wx:if="{{food.activity && food.activity.type=='xs'}}" >
+      <view class="sell one_line">
+        <text style="padding-right:30rpx">已秒{{food.activity.today_sales}}</text>
+      </view>
+      <view class="time_box">
+        <view class="time_item">限时秒杀 </view>
+        <view class='time_d'>{{food.activity.start_time}}-{{food.activity.end_time}}</view>
+      </view>
+    </view>
+    <view class="money one_line">
+      <view>
+        <text wx:if="{{food.activity && food.activity.type=='xs'}}" style="font-size:22rpx;">秒杀价:</text>
+        <text wx:if="{{food.activity && food.activity.type=='xl'}}"  style="font-size:22rpx;">拼单价:</text>
+        <text style="font-size:22rpx;">¥</text>
+        <text wx:if="{{!food.activity}}">{{food.price}}</text>
+        <text wx:if="{{food.activity && food.activity.type=='xl'}}" >{{food.activity.price}}</text>
+        <text  wx:if="{{food.activity && food.activity.type=='xs'}}">{{food.activity.price}}</text>
+
+      </view>
+      <select-count quantity="{{food.quantity}}" ad="{{food.activity?food.activity.id:''}}" fd="{{food.id}}"/>
+      <!-- <view class="select_box">
+        <view class="icon_box">
+          <image src="./img/reduce.png" style="width:40rpx;height:40rpx;"></image>
+        </view>
+        <view class="icon_box">
+          99
+        </view>
+        <view class="icon_box" wx:if="{{false}}">
+          <image src="./img/add.png" style="width:40rpx;height:40rpx;"></image>
+        </view>
+        <view class="icon_box" wx:else>
+          <image src="./img/add_red.png" style="width:40rpx;height:40rpx;"></image>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view> 

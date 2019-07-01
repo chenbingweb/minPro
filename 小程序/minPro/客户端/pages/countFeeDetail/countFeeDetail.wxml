@@ -1,0 +1,27 @@
+<view class="title flex_between">
+  <view>出账金额</view>
+  <view class="money">{{detail.total_amount}}</view>
+</view>
+<view class="flex_between item">
+  <view>类型</view>
+  <view class="right" wx:if="{{detail.type=='add'}}">消费 </view>
+   <view class="right" wx:else>退费</view>
+</view>
+<view class="flex_between item">
+  <view>余额</view>
+  <view class="right">{{detail.balance}}</view>
+</view>
+<view class="flex_between item">
+  <view>微信
+</view>
+  <view class="right">{{detail.amount}}</view>
+</view>
+<!-- <view class="flex_between item">
+  <view>交易单号</view>
+  <view class="right">{{detail.order_id}}</view>
+</view> -->
+<view class="flex_between item">
+  <view>时间</view>
+  <view class="right">{{detail.create_at}}</view>
+</view>
+

@@ -1,0 +1,6 @@
+{
+ "usingComponents": {
+  "select-count": "/components/select-count/select-count"
+ }
+  
+}

@@ -1,0 +1,57 @@
+/* pages/myOrder/myOrder.wxss */
+.order_item
+{
+  width: 750rpx;
+  background-color: white;
+}
+.status
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  height: 70rpx;
+  padding:0 28rpx;
+  background-color: #f8f8f8;
+  color:#333;
+  font-size: 26rpx;
+}
+.status_type
+{
+  font-size: 26rpx;
+  color:#999
+}
+.shop
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 28rpx 30rpx;
+}
+.shop_name
+{
+  color:#001300;
+  font-size: 28rpx;
+}
+.title
+{
+  color:#999;
+  font-size: 26rpx;
+}
+.food_detail
+{
+  padding: 0 28rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+.price
+{
+  color:#333;
+  font-size: 26rpx;
+}
+.cg_num
+{
+  font-size:28rpx;
+padding-left:20rpx;
+color:#333;
+margin-top:10rpx;
+
+}

@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/paySucc/paySucc",
+    "pages/countFeeDetail/countFeeDetail",
+    "pages/countFee/countFee",
+    "pages/orderDetail/orderDetail",
+    "pages/myOrder/myOrder",
+    "pages/myInfo/myInfo",
+    "pages/myCount/myCount",
+    "pages/remarkPage/remarkPage",
+    "pages/confirmOrder/confirmOrder",
+    "pages/foodDetail/foodDetail",
+    "pages/restaurantDetail/restaurantDetail",
+    "pages/myCenter/myCenter",
+    "pages/restaurant/restaurant"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false,
+  "usingComponents": {
+    "swiper-base": "/components/swiper-base/swiper-base",
+    "paging": "/components/paging/paging",
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "food-info": "/components/food-info/food-info",
+    "accounts": "/components/accounts/accounts"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取附近餐厅信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

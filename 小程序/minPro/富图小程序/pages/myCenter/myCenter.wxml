@@ -1,0 +1,77 @@
+<nav-bar/>
+<view class="fixed" style='overflow:auto;'>
+  <view class="header relative">
+    <view class="icon_box">
+      <image src="../../images/center_bg.png" style="width:750rpx;height:333rpx;"></image>
+    </view>
+    <!-- 用户信息 -->
+    <view class="absolute flex_center user_info_box">
+      <view class="photo_box">
+        <open-data class="user_ava" type="userAvatarUrl"></open-data>
+      </view>
+      <view class="user_name">
+        <open-data class="user_name" type="userNickName"></open-data>
+      </view>
+       <view class="user_name">
+        {{mobile}}
+      </view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view >
+    <navigator url="../myInfo/myInfo" class="nav_item flex_between">
+      <view class="flex_start">
+       <view class="icon_box img_icon">
+        <image src="../../images/info.png" style="width:37rpx;height:36rpx"></image>
+       </view>
+       <view class="item_title">个人信息</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx;"></image>
+      </view>
+    </navigator>
+    <navigator url="../myOrder/myOrder" class="nav_item flex_between">
+      <view class="flex_start">
+       <view class="icon_box img_icon">
+        <image src="../../images/my_order.png" style="width:30rpx;height:37rpx"></image>
+       </view>
+       <view class="item_title">我的订单</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx;"></image>
+      </view>
+    </navigator>
+    <navigator url="../myCount/myCount" class="nav_item flex_between">
+      <view class="flex_start">
+       <view class="icon_box img_icon">
+        <image src="../../images/my_money.png" style="width:37rpx;height:37rpx"></image>
+       </view>
+       <view class="item_title">我的账户</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx;"></image>
+      </view>
+    </navigator>
+    <navigator url="../countFee/countFee" class="nav_item flex_between">
+      <view class="flex_start">
+       <view class="icon_box img_icon">
+        <image src="../../images/my_count.png" style="width:34rpx;height:34rpx"></image>
+       </view>
+       <view class="item_title">消费统计</view>
+      </view>
+      <view class="icon_box">
+        <image src="../../images/arrow_right.png" style="width:14rpx;height:26rpx;"></image>
+      </view>
+    </navigator>
+     <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{['已选中','未选中','未选中','未选中','未选中','已选中','未选中','未选中','未选中','未选中']}}">
+      <view class="picker">
+        当前选择：{{array[index]}}
+        </view>
+    </picker> -->
+  </view>
+  <!-- 客服电话 -->
+  <view style="padding-top:175rpx;padding-bottom:120rpx">
+    <view class="call_title" >客服电话</view>
+    <view class="call" data-phone="{{phone}}" bindtap="onCall">{{phone}}</view>
+  </view>
+</view>

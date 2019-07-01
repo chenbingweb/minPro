@@ -1,0 +1,63 @@
+<!--pages/restaurantDetail/restaurantDetail.wxml-->
+<!-- <nav-bar/> -->
+<view class="fixed" wx:if="{{restaurantInfo.name}}">
+ 
+  <view class="header icon_box h_1">
+    <image mode="aspectFill"  wx:if="{{restaurantInfo.logo_url}}"  style="width:750rpx;height:120rpx;" src="{{restaurantInfo.logo_url}}"></image>
+    <view class="absolute flex_between btn_box">
+    <!-- bindtap="onChangeShop"切换餐厅 2019-1-15修改-->
+      <view class="change_btn h_1" style="color:rgb({{rgb}})"  ></view>
+      <view class="flex_start"  wx:if="{{false}}">
+        <view class="icon_box">
+          <image src="../../images/local_address.png" style="width:21rpx;height:27rpx"></image>
+        </view>
+        <view class="dis">{{restaurantInfo.distance}}</view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 店铺介绍 -->
+  <view class="introduce">
+    <!-- logo -->
+    <view class="icon_box logo">
+      <image wx:if="{{restaurantInfo.img_url}}" src="{{restaurantInfo.img_url}}" style="width:110rpx;height:110rpx;"></image>
+    </view>
+    <view style="height:180rpx;overflow-y:scroll;">
+      <view class="title one_line">{{restaurantInfo.name}}</view>
+      <view class="address one_line">{{restaurantInfo.address}}</view>
+      <view class="detail">{{restaurantInfo.summary}}</view>
+    </view>
+    <view bindtap="onChangeShop" class="change_btn_nav flex_center hot_more">
+
+      切换餐厅
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view wx:if="{{foodList.length}}" class="list_box">
+    <scroll-view scroll-y class="left_scroll">
+      <view>
+        <view wx:for="{{restaurantInfo.food_category}}" bindtap="onSelect" data-category="{{item.id}}" wx:key="btn_{{index}}" class="select_btn {{item.selected?'select_btn_ok':''}}">
+         {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y class="right_scroll">
+      <!-- <paging></paging> -->
+        <view style="width:586rpx">
+          <food-item wx:for="{{foodList}}" food="{{item}}" wx:key="item_{{index}}"/>
+        </view>
+      
+    </scroll-view>
+    <view class="bottom_btn">
+      <accounts  title="{{restaurantInfo.name}}"/>
+    </view>
+  </view>
+  <view wx:else  class="no_info">
+  暂无菜品信息，请切换到其他餐厅
+  </view>
+
+</view>
+<view wx:else  class="no_info">
+  暂无餐厅信息
+</view>
+<canvas style="width:{{cw}}rpx; height:{{ch}}rpx;" class="canvas" canvas-id="firstCanvas"></canvas>

@@ -1,0 +1,72 @@
+.btn_box
+{
+  display: flex;
+  justify-content: space-betweenfe;
+  align-items: center;
+  width: 140rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color:#333;
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reduce_btn
+{
+  width:40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  /* border:2rpx solid #e26161 */
+  border:2rpx solid #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line
+{
+  
+  display: block;
+  width: 20rpx;
+  height: 4rpx;
+  background-color: #999;
+}
+.add_btn
+{
+   width:40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border:2rpx solid #e26161;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.add_btn::after
+{
+  content: "";
+  display: block;
+  width: 20rpx;
+  height: 4rpx;
+  background-color: #e26161;
+}
+.add_btn::before
+{
+  content: "";
+  display: block;
+  width: 4rpx;
+  height: 20rpx;
+  background-color: #e26161;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.selected
+{
+  border-color:#e26161
+}

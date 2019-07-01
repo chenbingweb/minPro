@@ -1,0 +1,83 @@
+<!-- <nav-bar/> -->
+<!-- 订单状态 -->
+<view wx:if="{{detail.status}}" class="fixed scroll">
+  <view class="status flex_between">
+    <view class="flex_start">
+      <view>订单状态</view>
+    </view>
+  
+    <view class="status_type" style="{{detail.status=='wait_pay'?'color:#e26161':''}};{{detail.status=='wait_take'?'color:#1aad19;font-weight:600':''}}">{{detail.status_name}}</view>
+    <!-- <view class="status_type" wx:if="{{detail.pay_status=='has_pay'}}">已完成</view>
+    <view class="status_type" wx:if="{{detail.pay_status=='has_refund'}}">已取消</view> -->
+  </view>
+  <view class="item flex_between">
+    <view>订单时间</view>
+    <view>{{detail.create_at}}</view>
+  </view>
+  <view class="item flex_between" wx:if="{{detail.lattice!=''}}">
+    <view>餐柜号</view>
+    <view>{{detail.cabinet}}({{detail.lattice}}号餐柜)</view>
+  </view>
+  <!-- <view class="item flex_between">
+    <view>餐柜号码</view>
+    <view>2323</view>
+  </view> -->
+  <view class="item flex_between" style="border:none">
+    <view>订单编号</view>
+    <view>{{detail.order_no}}</view>
+  </view>
+  <view class="status flex_between">
+    <view class="flex_start">
+      <view>点餐信息</view>
+    </view>
+  </view>
+  <!--点餐信息  -->
+  <view>
+    <food-info wx:for="{{detail.items}}" food="{{item}}" wx:key="f_{{index}}"/>
+  </view>
+  <view class="status flex_between">
+    <view class="flex_start">
+      <view>其他信息</view>
+    </view>
+  </view>
+  <view>
+    <view class="item flex_between">
+      <view>订单总额</view>
+      <view><text style="font-size:22rpx;padding-right:5rpx">¥</text><text>{{detail.total_amount}}</text></view>
+    </view>
+    <view class="item flex_between">
+      <view>余额支付</view>
+      <view><text style="font-size:22rpx;padding-right:5rpx">¥</text><text>{{detail.balance}}</text></view>
+    </view>
+    <view class="item flex_between">
+      <view>微信支付</view>
+      <view style="color:#e26161;"><text style="font-size:22rpx;padding-right:5rpx">¥</text><text>{{detail.amount}}</text></view>
+    </view>
+    <view class="item flex_between" wx:if="{{detail.refund_amount>0}}">
+      <view>退款金额</view>
+      <view style="color:#e26161;"><text style="font-size:22rpx;padding-right:5rpx">¥</text><text>{{detail.refund_amount}}</text></view>
+    </view>
+    <!-- <view class="flex_between remark">
+      <view class="remark_title">备注信息</view>
+      <view class="re_con">
+        {{detail.remark}}
+      </view>
+    </view> -->
+  </view>
+  <!-- 立即支付 -->
+  <view class="cancel_box" wx:if="{{detail.status=='wait_pay' && detail.is_cancel==false }}">
+    <view class="cancel" bindtap="onPay" >立即支付</view>
+    <!-- <view class="tip">5分钟内可取消订单，超时将无法取消</view> -->
+  </view>
+  <!-- 取消订单  (detail.status=='wait_confirm' && detail.cancel) ||(detail.status=='wait_pay' &&  detail.is_cancel==false)   (detail.status=='producing' &&  detail.is_cancel==false)-->
+  <view class="cancel_box" wx:if="{{detail.is_can_cancel}}">
+    <view class="cancel" style="background-color:#e26161"  bindtap="onCancelOrder" >取消订单</view>
+    <view class="tip">2分钟内可取消订单，超时将无法取消</view>
+  </view>
+  <!-- 开柜取餐 -->
+   <view class="cancel_box" wx:if="{{detail.status=='wait_take'}}">
+    <view class="cancel" bindtap="openCG" data-fid="{{detail.id}}">开柜取餐</view>
+    <!-- <view class="tip">5分钟内可取消订单，超时将无法取消</view> -->
+  </view>
+</view>
+<view wx:else class="no_info">暂无订单详情</view>

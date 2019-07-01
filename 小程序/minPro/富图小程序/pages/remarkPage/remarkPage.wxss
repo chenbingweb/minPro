@@ -1,0 +1,58 @@
+/* pages/remarkPage/remarkPage.wxss */
+.remark_box
+{
+  width: 750rpx;
+  height: 220rpx;
+  background-color: #f8f8f8;
+}
+.re_title
+{
+  color:#333;
+  font-size: 28rpx;
+  width: 750rpx;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+}
+.textarea
+{
+  width: 690rpx;
+  height: 120rpx;
+  font-size: 22rpx;
+  color:#999999;
+  margin: 0 auto;
+}
+.tag_list
+{
+  width: 750rpx;
+  display:inline-flex;
+  padding: 20rpx 30rpx;
+  flex-wrap: wrap;
+}
+.item_mark
+{
+  font-size: 22rpx;
+  color:#999;
+  padding: 10rpx;
+  border:2rpx solid #e5e5e5;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+}
+.btn_box
+{
+   width: 626rpx;
+  height: 80rpx;
+  background-color: #e26161;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color:#fff;
+  position: relative;
+  margin: 0 auto;
+ 
+}
+.select
+{
+  background-color:#e26161;
+  color:#fff;
+}

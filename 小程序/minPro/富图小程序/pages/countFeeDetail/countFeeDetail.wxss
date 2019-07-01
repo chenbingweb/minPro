@@ -1,0 +1,31 @@
+/* pages/countFeeDetail/countFeeDetail.wxss */
+.title
+{
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  font-size: 28rpx;
+  color:#333;
+}
+.money
+{
+  color:#e26161;
+
+}
+.item
+{
+  height: 90rpx;
+  box-sizing: border-box;
+  width: 750rpx;
+  padding: 0 28rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  font-size: 28rpx;
+  color:#333;
+}
+.right
+{
+  color:#999;
+}

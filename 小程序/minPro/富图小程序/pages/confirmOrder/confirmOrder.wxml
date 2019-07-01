@@ -1,0 +1,39 @@
+<!-- <nav-bar/> -->
+<view class="fixed box RemoveRollCar">
+  <view class="title">点餐信息</view>
+  <view>
+    <food-info wx:for="{{cartList}}" food="{{item}}" index="{{index}}" wx:key="f_{{index}}"/>
+  </view>
+  <view class="title">其他信息</view>
+  <view>
+    <view class="other_info flex_between">
+      <view>订单总额</view>
+       <view>
+        <text style="font-size:22rpx;">¥ </text>
+        <text>{{totalPrce}}</text>
+       </view>
+    </view>
+    <view class="other_info flex_between" style="border:none">
+      <view>余额支付（{{amount}}）</view>
+       <checkbox-group  bindchange="onChangeBox">
+        <label for="amount" class="icon_box radio" >
+          <image wx:if="{{!checked}}" src="../../images/radio_no.png" style="width:24rpx;height:24rpx"></image>
+          <image wx:else src="../../images/radio_ok.png" style="width:24rpx;height:24rpx"></image>
+          <radio hidden/>
+           <checkbox hidden id="amount" checked="{{checked}}"/>
+        </label>
+       </checkbox-group>
+    </view>
+  </view>
+  <!-- <view class="remark" bindtap="onToMark">
+    <view class="re_title">备注信息</view>
+    <view class="remark_info">{{remark}}</view>
+  </view> -->
+</view>
+<view class="pay_box">
+  <view class="pay_count">
+    <view>待支付</view>
+    <view class="waite_pay"><text style="font-size:22rpx">¥ </text><text>{{pay}}</text></view>
+  </view>
+  <view bindtap="onPay" class="pay">立即支付</view>
+</view>

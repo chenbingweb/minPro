@@ -1,0 +1,97 @@
+/* pages/confirmOrder/confirmOrder.wxss */
+.title
+{
+  width: 750rpx;
+  height: 70rpx;
+  background-color: #f8f8f8;
+  font-size: 28rpx;
+  color:#333;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  line-height: 70rpx;
+}
+.box
+{
+  overflow-y: scroll;
+  padding-bottom: 100rpx;
+  /* padding-bottom: 180rpx; */
+}
+.other_info
+{
+  height: 90rpx;
+  width: 750rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color:#333;
+  font-size: 28rpx;
+}
+.pay_box
+{
+  width: 750rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  /* bottom: 100rpx; */
+  bottom: 0;
+}
+.pay
+{
+  background-color: #e26161;
+  width: 180rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#fff;
+  font-size: 28rpx;
+}
+.pay_count
+{
+  width: calc(750rpx - 180rpx);
+  height: 80rpx;
+  border-top: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+  padding-left: 28rpx;
+  color:#333;
+  font-size: 22rpx;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+.waite_pay
+{
+  color:#e26161;
+  font-size: 33rpx;
+  padding-left: 14rpx;
+}
+.remark
+{
+  width: 750rpx;
+  min-height: 140rpx;
+  border-top:2rpx solid #e5e5e5;
+  border-bottom:2rpx solid #e5e5e5;
+  font-size: 28rpx;
+  color:#333;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-bottom:20rpx;
+
+}
+.re_title
+{
+  line-height: 80rpx;
+}
+.remark_info
+{
+  color:#999;
+  font-size: 22rpx;
+}
+.radio
+{
+  width: 50rpx;
+  height: 50rpx;
+}

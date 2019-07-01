@@ -1,0 +1,128 @@
+/* pages/foodDetail/foodDetail.wxss */
+@import "../../wxParse/wxParse.wxss";
+view
+{
+   overflow:visible !important;
+}
+.food_info
+{
+  width: 750rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 33rpx;
+  color:#333;
+  
+}
+.food_info_ms
+{
+  width: 750rpx;
+  height: 90rpx;
+  border-top:5rpx solid #f4f4f4;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 33rpx;
+  color:#333;
+  
+}
+.title
+{
+  color:#333;
+  font-size: 36rpx;
+  line-height: 1;
+}
+.food_detail
+{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 80rpx;
+}
+.sell
+{
+  font-size: 22rpx;
+  color:#999;
+}
+.dian_zan
+{
+  width: 106rpx;
+  height: 70rpx;
+  font-size: 22rpx;
+  color:#a1a1a1;
+}
+.dian_box
+{
+  width: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.count_box
+{
+  width: 750rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 0;
+  /* bottom: 100rpx; */
+  bottom: 0rpx;
+  background-color: white;
+}
+.title_box
+{
+  width: 750rpx;
+  height: 60rpx;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#333333;
+  font-size: 26rpx;
+  /* margin-top: 20rpx; */
+}
+.title_box::before
+{
+  content:"";
+  display: block;
+  width: 6rpx;
+  height: 28rpx;
+  background-color:#605858;
+  position: absolute;
+  left: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.detail
+{
+  color:#999999;
+  font-size: 30rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  /* padding-bottom:220rpx; */
+  padding-bottom:120rpx;
+}
+.box
+{
+  overflow-y: scroll;
+}
+.active_time
+{
+  font-size: 22rpx;
+  color:#333333;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+.tip_pt
+{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  margin: 0 auto;
+  color:#999;
+  font-size: 30rpx;
+}
