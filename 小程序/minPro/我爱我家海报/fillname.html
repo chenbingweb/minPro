@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>经纪人海报</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="./js/fabric.js"></script>
+    <script src="./js/zrender.min.js"></script>
+    <script src="./js/konva.js"></script>
+    <script src="./js/common/vconsole.min.js"></script>
+</head>
+
+<body >
+    <!-- 加载页面-->
+    <div id="loading">
+        <p class="logo_loading"></p>
+        <div class="loading_box">
+          <p class="yi"></p>
+          <p class="jiu"></p>
+          <p class="bu"></p>
+          <p class="fan"></p>
+           <!-- 进度条 -->
+            <p class="process">
+                <!-- 进度条 -->
+                <span class="process_bar" >
+                    <span class="per" id="per">0%</span>
+                </span>
+            </p>
+        </div>
+    </div> 
+    <!-- 开始海报制作 -->
+    <div id="start_make"  style="display:none">
+        <img class="logo_img" src="./images/startpage/logo.png"/>
+        <div class="sq_box">
+            <span class="sq_1"></span>
+            <span class="sq_2"></span>
+            <span class="sq_3"></span>
+            <span class="sq_4"></span>
+            <span class="sq_5"></span>
+            <span class="sq_6"></span>
+        </div>
+        <p class="start_btn">制作海报</p>
+    </div>
+    <div id="fill_info" style="display:none">
+        <div class="title"></div>
+        <div class="pannel">
+            <p class="top_bg"></p>
+            <form class="fill_panel" id="writeOrder">
+                <p class="fill_item name_item active">
+                    <input class="name" name="user_name" placeholder="请输入姓名"/>
+                </p>
+                <p class="fill_item address_item" style="border-color:#a0a0a0">
+                    <input class="name" name="user_address" placeholder="请输入所在城市"/>
+                </p>
+                <p class="fill_item date_item" style="border-color:#a0a0a0">
+                    <span class="fill_date" id="fill_date">请选择入职时间</span>
+                    <input type="date" name="user_date" class="date"/>
+                </p>
+                <p class="tip">请上传个人照片</p>
+                <div class="add_img">
+                   
+                    <div id="add_img" class="add_img_box" style="overflow: hidden"></div>
+                    <span class="del"></span>
+                </div>
+                <div class="btn">预览海报
+                    <input type="submit"  class="btn_submit">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+  //new VConsole()
+    $(function () {
+        $.BUG()
+        //预加载
+        LoadImg(function(res){
+            $('.process_bar').css('width',res+'%');
+            $('.per').text(parseInt(res)+'%')
+            if(res>=100)
+            {
+                $('#start_make').fadeIn();   
+                $('#loading').fadeOut()
+            }
+            console.log(res)
+        })()
+        var photoImg = '';
+        if(photoImg=='')
+        {
+            $('.del').fadeOut()
+        }
+        $('.fill_item').click(function(){
+            //$.vibrateFun()
+            $(this).addClass('active').css('border-color','#000').siblings().removeClass('active').css('border-color','#a0a0a0')
+            //return false
+        })
+        //开始制作海报
+        $('.start_btn').click(function(){
+            $('#start_make').fadeOut();   
+            $('#fill_info').fadeIn();
+        })
+    
+        //日期选择
+        $('.date_item').click(function(e){
+          
+            $('.date').focus().change(function(){
+                console.log(2)
+                $('#fill_date').html($(this).val()).css({color:'#333'})
+               
+            })
+            
+        })
+        //删除
+        $('.del').click(function(){
+            $('#add_img>img').remove();
+            $('.del').hide()
+            return false
+        })
+        //添加图片
+        $('.add_img').click(function(){
+            $.showLoading('正在加载图片')
+            $('.del').show()
+            $('.add_img img').remove();
+            var img = new Image()
+            img.src="./images/6.png";
+            img.onload=function(){
+                $.hideLoading()
+                $('#add_img').append(img)
+                photoImg=img.src
+            }
+            //微信
+            $.wxChooseImg(function(img){
+                $.hideLoading()
+                $('.add_img').append(img)
+            })
+       
+        })
+        //预览海报
+        $('#writeOrder').submit(function(event){
+            event.preventDefault();
+            var _orderData = $.serializeObj($(this).serializeArray())
+            if(_orderData.user_name=='')
+            {
+                $.toptip("请输入姓名", "error");
+                return 
+            }
+            if(_orderData.user_address=='')
+            {
+                $.toptip("请输入所在城市", "error");
+                return 
+            }
+            if(_orderData.user_date=='')
+            {
+                $.toptip("请选择入职时间", "error");
+                return 
+            }
+            var getds=(new Date().getTime()-new Date(_orderData.user_date).getTime())/(3600*24*1000);
+            if(getds<0){
+                $.toptip("请选择小于当前的日期", "error");
+                return;
+            }
+            _orderData.days=Math.ceil(getds) 
+            if(photoImg=='')
+            {
+                $.toptip("请添加个人照片", "error");
+                return
+            }
+            $.showLoading('正在加载...')
+            _orderData.photoImg=photoImg
+            SaveInfo(_orderData)
+        })
+        function getDays(date1,date2){
+   
+            var getd=(date2.getTime()-date1.getTime())/(3600*24*1000);
+            if(getd<0){
+                console.log("时间大小存在问题");
+                return;
+            }
+            return getd;
+        }
+        //缓存本地数据
+        function SaveInfo(data){
+            
+            window.sessionStorage.setItem('info',JSON.stringify({
+                    photoImg:data.photoImg,
+                    user_name:data.user_name,
+                    user_date:data.user_date,
+                    user_days:data.days,
+                    user_address:data.user_address
+                }))
+            window.location.href="/createImg.html"
+        }
+         //图片预加载
+         function LoadImg(callBack){
+             var path='../images/';
+             var i=0;
+             var imgs=[
+                        'bg.jpg',
+                        'btn_newxt.png',
+                        'del.png',
+                        'down_arrow.png',
+                        'down_arrow_1.png',
+                        'img_1.png',
+                        'img_2.png',
+                        'img_3.png',
+                        'index_bg.jpg',
+                        'logo.png',
+                        'name.png',
+                        'photo_1.png',
+                        'reset.png',
+                        'ri.png',
+                        'address.png',
+                        'address_yes.png',
+                        'btn_newxt.png',
+                        'name_no.png',
+                        'ri_yes.png',
+                        'top_bg.png',
+                        'reset.png',
+                        'poster_title_1.png',
+                        '/startpage/btn.png',
+                        '/startpage/gb1.jpg',
+                        '/startpage/hbfm.png',
+                        '/startpage/logo.png',
+                        '/poster/temp_1/f1.png',
+                        '/poster/temp_1/f2.png',
+                        '/poster/temp_1/f3.png',
+                        '/poster/temp_1/f4.png',
+                        '/poster/temp_1/f5.png',
+                        '/poster/temp_1/f6.png',
+                        '/poster/temp_1/logo.png',
+                        '/poster/temp_1/logo_1.png',
+                        '/poster/temp_1/qrcode.png',
+                        '/poster/temp_2/bg_2.png',
+                        '/poster/temp_2/bu_fan.png',
+                        '/poster/temp_2/f1.png',
+                        '/poster/temp_2/f2.png',
+                        '/poster/temp_2/f3.png',
+                        '/poster/temp_2/f4.png',
+                        '/poster/temp_2/f5.png',
+                        '/poster/temp_2/f6.png',
+                        '/poster/temp_2/logo_1.png',
+                        '/hong_bao/bottom.png',
+                        '/hong_bao/close.png',
+                        '/hong_bao/h_b_bg.png',
+                        '/hong_bao/kai.png',
+                        '/hong_bao/logo.png',
+                        '/hong_bao/logo_kai.png'
+                        
+                    ]
+                
+            return function(){
+                
+                var img =new Image();
+                img.src=path+imgs[i];
+                console.log(path+imgs[i])
+                var next=arguments
+                img.onload=function(){
+                    if(i>=imgs.length)
+                    {
+                        callBack(100)
+                        return 
+                    }
+                    
+                    callBack((i)/imgs.length * 100)
+                    // console.log((i)/imgs.length * 100)
+                    setTimeout(function(){
+                        next.callee()
+                        ++i
+                    },5)
+                    
+                   
+                }
+            }
+        }
+    })
+</script>
+
+</html>

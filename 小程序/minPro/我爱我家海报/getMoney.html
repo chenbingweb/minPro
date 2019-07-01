@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预览海报</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="./js/fabric.js"></script>
+    <script src="./js/zrender.min.js"></script>
+    <script src="./js/konva.js"></script>
+    <script src="./js/common/vconsole.min.js"></script>
+</head>
+
+<body >
+    <div id="moneyPage" >
+        <p class="poster_title"></p>
+        <img class="img"/>
+        <p class="tip_1">长按图片保存至相册</p>
+        <p class="get_money" >领取红包</p>
+        <div class="mask" id="mask" style="display: none">
+            <div class="box">
+                <div id="open" >
+                    <p class="kai_title_bg"></p>
+                    <p class="kai_bg"></p>
+                    <p class="bottom_title"></p>
+                </div>
+                <div id="success" style="display: none">
+                    <p class="num_box"><span>3.7</span><span class="yuan">元</span></p>
+                    <p class="h_b_tip">领取成功</p>
+                    <p class="bottom_logo"></p>
+                </div>
+                <!-- 关闭 -->
+                <p class="close_hb"></p>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+  
+<script type="text/javascript">
+    $(function () {
+        var img =  window.sessionStorage.getItem('imgdata');
+        var info=window.sessionStorage.getItem('info');
+        if(img)
+        {
+            $('.img').attr('src',img)
+        }
+        //领取红包
+        $('.get_money').click(function(){
+             $('#mask').fadeIn();
+             $(this).hide()
+           
+            
+           
+        })
+        // 开红包
+        $('.kai_bg').click(function(){
+            
+            var that=this;
+            var data=JSON.parse(info);
+            $.showLoading("正在领取中...")
+            $.Ajax({
+                "user_name":data.user_name,//姓名
+                "user_date":data.user_date,//入职日期
+                "user_days":data.user_days,//天数
+                "user_address":data.user_address,//地址
+            }, function(res){
+                $.hideLoading()
+              
+                if(res.errcode)
+                {
+                    $('#success').fadeIn()
+                     $('#open').hide()
+                }
+                else
+                {
+                    $.toptip(res.msg, "error");
+                }
+            }, function(){
+                $.hideLoading()
+                $.toptip('网络繁忙', "error");
+                $('#success').fadeIn()
+                     $('#open').hide()
+            }, 'http:baidu.com')
+        })
+        //关闭
+        $('.close_hb').click(function(){
+            
+            $('#mask').fadeOut()
+        })
+    })
+</script>
+
+</html>

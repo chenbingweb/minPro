@@ -1,0 +1,42 @@
+<view class="ticket_box">
+  <view class="info_1" catchtap="onToShopDetail" data-shop="{{cardInfo.shop_id}}">
+    <view class="icon_box">
+      <image mode="aspectFill" src="{{cardInfo.img_url}}" style="width:120rpx;height:120rpx;border-radius:6rpx"></image>
+    </view>
+    <!--1  -->
+    <view wx:if="{{ticket}}"  class="info" style="padding-left:20rpx">
+      <view class="name">{{cardInfo.title}}</view>
+      <view class="tip">{{cardInfo.start_time}}至{{cardInfo.end_time}}</view>
+      <view class="tip_2" wx:if="{{false}}">专属优惠</view>
+    </view>
+    <!--2  
+    <view wx:else class="info" style="padding-left:20rpx">
+      <view class="name inline_flex">
+        <view class="card_name">健身</view>
+        领取60元无门槛优惠卷
+        </view>
+      <view class="tip inline_flex" style="color:#ff5363">
+        <text>人气 88</text>
+        <view class="inline_flex" style="margin-left:24rpx">
+          <view class="icon_box" style="margin-right:4rpx" wx:for="{{[{hot:true},{hot:true},{hot:false}]}}">
+            <image wx:if="{{item.hot}}" src="../../images/hot_y.png" style="width:14rpx;height:18rpx"></image>
+            <image wx:else src="../../images/hot_n.png" style="width:14rpx;height:18rpx"></image>
+          </view>
+        </view>
+      </view>
+      <view class="tip_3">100元代金券一张</view>
+    </view> bindtap="onAddCard" data-cid="{{cardInfo.id}}"-->
+  </view>
+  <view class="btn_box" style="position:relative" >
+    <view class="btn" wx:if="{{cardInfo.status=='0'}}">
+      
+      <text wx:if="{{cardInfo.price=='0'}}">立即领取</text>
+      <text wx:else>{{cardInfo.price}}积分兑换</text>
+    </view>
+    <view class="btn" wx:if="{{cardInfo.status=='1'}}">
+      已领取
+    </view>
+    <button open-type="getUserInfo" class="login_btn" bindgetuserinfo="onAddCard" data-cid="{{cardInfo.id}}" data-price="{{cardInfo.price}}" data-status="{{cardInfo.status}}"></button>
+    <view class="num">{{cardInfo.count}}人领取</view>
+  </view>
+</view>

@@ -1,0 +1,123 @@
+/* components/ticket/ticket.wxss */
+.ticket_box
+{
+  width: 678rpx;
+  height: 196rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #f2f0f0;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.icon_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name
+{
+  font-size: 28rpx;
+  color:#282828;
+  font-weight: bold;
+}
+.tip
+{
+  color:#5293e1;
+  font-size: 24rpx;
+}
+.info
+{
+  display: inline-flex;
+  justify-content:space-around;
+  flex-direction: column;
+  height: 120rpx;
+}
+.tip_2
+{
+  width: 115rpx;
+  height: 34rpx;
+  background-color: #ff5363;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 34rpx;
+  color:#fff;
+  font-size: 24rpx;
+  
+}
+.info_1
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.btn_box
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn
+{
+  width: 140rpx;
+  height: 50rpx;
+  background-color: #5293e1;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color:#fff;
+  font-size: 24rpx;
+}
+.num
+{
+  color:#7e9096;
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 15rpx;
+}
+.card_name
+{
+  width: 66rpx;
+  height: 30rpx;
+  color:#29a1f7;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border:2rpx solid #29a1f7;
+  border-radius: 6rpx;
+  font-weight: normal;
+  margin-right: 12rpx;
+}
+
+
+
+.inline_flex
+{
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start
+
+}
+.tip_3
+{
+  color:#ff5363;
+  width: 234rpx;
+  height: 34rpx;
+  background-color: #f8ebed;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  border:2rpx solid #fdd7dc;
+}
+.login_btn
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}

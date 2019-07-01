@@ -1,0 +1,86 @@
+/* pages/index/index.wxss */
+/*引入模板样式*/
+/* @import '../../temp/userheader.wxss';*/
+@import '../../temp/temp.wxss'; 
+page
+{
+  display: table;
+  padding-bottom: 100rpx; 
+  background-color: #f8f8f8;
+}
+.index_page
+{
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.btn
+{
+  width: 250rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border:2rpx solid #cca27e;
+  font-size: 30rpx;
+  color:#cca27e;
+  margin-bottom: 100rpx;
+  border-radius: 6rpx;
+}
+.sign_box
+{
+  position: fixed;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.fill_content
+{
+  position: absolute;
+  width: 690rpx;
+  height: 330rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-200rpx);
+  flex-direction: column;
+}
+.input_item
+{
+  width: 580rpx;
+  height: 100rpx;
+  border-bottom: 2rpx solid #d1d1d1;
+  color:#606060;
+  font-size: 24rpx;
+}
+.input
+{
+  padding-left: 24rpx;
+  width: 310rpx;
+}
+.do_btn
+{
+  color:#a68171;
+  font-size: 24rpx;
+  width: 156rpx;
+  height: 58rpx;
+  border-radius: 5rpx;
+  border:2rpx solid #a68171;
+  line-height:  58rpx;
+  box-shadow: beige;
+  text-align: center;
+}
+.close_btn
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:410rpx;
+}
+.ok_active
+{
+  background-color: #cca27e;
+  color:#fff;
+}

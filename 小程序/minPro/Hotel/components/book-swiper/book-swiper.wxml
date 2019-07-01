@@ -1,0 +1,52 @@
+<view 
+   wx:if="{{show}}"
+    class="swiper_component"
+    style="height:{{height}}rpx;width:{{width}}rpx;position:relative">
+    
+  <swiper 
+      bindchange="swiperChange"
+      class="swiper_size"
+      style="height:{{height}}rpx"
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      indicator-color="{{indicatorColor}}"
+      indicator-active-color="{{indicatorActiveColor}}"
+      vertical="{{vertical}}"
+      circular="{{circular}}"
+      current="{{current}}"
+      
+      >
+    <block wx:for="{{imgsData}}" wx:key="index_{{index}}">
+      <swiper-item 
+        class="sw_item"
+          style="position:relative;width:530rpx;height:{{height}}rpx"
+         >
+         <!--{{imgUrl+item.ImgUrl}}  -->
+        <image mode="{{mode}}" src="{{imgUrl+item.img_url}}" style="width:530rpx;height:{{height}}rpx" bindtap="navToDetail" 
+          data-detail="{{item.id}}"  class="defult_img"/>
+          <!-- <button class="btn_login"  data-detail="{{item.BookId}}" open-type="getUserInfo" bindgetuserinfo="login"></button> -->
+      </swiper-item>
+    </block>
+  </swiper>
+  <view style="height:{{height}}rpx" class="left_btn btn_item" bindtap="leftArrow">
+    <view class="icon_box" wx:if="{{!current}}">
+      <image src="../../images/left_no.png" style="width:72rpx;height:72rpx"></image>
+    </view>
+    <view wx:else class="icon_box rotate">
+      <image src="../../images/right_ok.png" style="width:72rpx;height:72rpx"></image>
+    </view>
+  </view>
+  <view style="height:{{height}}rpx" class="right_btn btn_item" bindtap="rightArrow">
+  <view  class="icon_box">
+      <image src="../../images/right_ok.png" style="width:72rpx;height:72rpx"></image>
+    </view>
+    <!--<view  wx:if="{{current<(imgsData.length-1)}}" class="icon_box">
+      <image src="../../images/right_ok.png" style="width:72rpx;height:72rpx"></image>
+    </view>
+     <view wx:else class="icon_box rotate">
+      <image src="../../images/left_no.png" style="width:72rpx;height:72rpx"></image>
+    </view> -->
+  </view>
+</view>

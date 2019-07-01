@@ -1,0 +1,69 @@
+/* components/swiper-base/swiper-base.wxss */
+.swiper_component
+{
+  margin: 0 auto;
+  position: relative;
+}
+.swiper_component .swiper_size
+{
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.btn_login
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.swiper_component .defult_img
+{
+  /* display:inline;
+  width:100%; */
+
+}
+.sw_item
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left_btn
+{
+  position: absolute;
+  width: 106rpx;
+  height: 530rpx;
+  left: 0rpx;
+  top:0;
+  z-index: 999;
+}
+.right_btn
+{
+  position: absolute;
+  width: 106rpx;
+  height: 530rpx;
+  right: 0rpx;
+  top:0;
+   z-index: 999;
+}
+.btn_item
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rotate
+{
+  transform: rotateY(180deg)
+}

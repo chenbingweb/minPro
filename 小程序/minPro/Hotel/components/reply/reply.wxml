@@ -1,0 +1,20 @@
+<form bindsubmit="onSend">
+  <view class="re_content">
+    <view class="btn_box">
+      <view class="reply" bindtap="onShowReply">回复</view>
+    </view>
+    
+    <view class="re_box" wx:if="{{showBox}}">
+      <view>
+        <textarea fixed="true" placeholder="请输入回复内容" class="text_area" name="replay">
+        
+        </textarea>
+        <view class="btn_box">
+          <view class="fb_btn">发表
+            <button form-type="submit" class="sb"></button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>

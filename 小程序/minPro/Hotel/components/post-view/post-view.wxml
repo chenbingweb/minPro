@@ -1,0 +1,21 @@
+<view class="fixed" wx:if="{{showHB}}">
+  <view class="hb_img">
+    <!-- <image src="{{img}}" customStyle='margin-left:40rpx' style="width:710rpx;height:926rpx;"></image> -->
+    <painter showBtn="{{showBtn}}" bind:fighting="OnFight" bindback="OnBack" bindsaveHB="OnSaveHB" palette="{{template}}" bind:imgOK="onImgOK" />
+    
+  </view>
+  <!-- <view class="control">
+
+    <view class="icon_box" bindtap="OnFight">
+       <image src="./img/hb.png" style="width:340rpx;height:120rpx;"></image>
+    </view>
+
+    <view class="icon_box">
+       <image src="./img/save_hb.png" style="width:340rpx;height:120rpx;"></image>
+    </view>
+  </view> -->
+  <!-- <view class="back" bindtap="OnBack">
+      <image src="../../../../imgs/ready/back.png" style="width:66rpx;height:72rpx"></image>
+  </view> -->
+    
+</view>

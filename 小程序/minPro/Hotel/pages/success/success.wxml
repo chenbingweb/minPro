@@ -1,0 +1,17 @@
+<view class="header flex_center">
+  <view class="icon_box">
+    <image src="../../images/sign_tip.png" style="width:60rpx;height:60rpx"></image>
+  </view>
+  <view class="tip">{{goodsInfo.msg}}</view>
+</view>
+<view class="box_list">
+  <view url="../inShopDetail/inShopDetail" class="item_box flex_start">
+    <view class="icon_box img_box">
+      <image style="width:244rpx;height:144rpx;" src="{{goodsInfo.data.img}}"></image>
+    </view>
+    <view class="good_info">
+      <view class="good_name two_line">{{goodsInfo.data.name}}</view>
+      <view class="good_jf">积分{{goodsInfo.data.price}}</view>
+    </view>
+  </view>
+</view>

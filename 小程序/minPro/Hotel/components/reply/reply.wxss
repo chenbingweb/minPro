@@ -1,0 +1,67 @@
+/* components/reply/reply.wxss */
+.re_content
+{
+  position: relative;
+}
+.reply
+{
+  width: 80rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border:2rpx solid #f6f6f6;
+  border-radius: 6rpx;
+}
+.re_box
+{
+  width: 678rpx;
+  /* height: 260rpx; */
+  border:2rpx solid #f6f6f6;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+.btn_box
+{
+  display:flex;
+  justify-content: flex-end;
+  margin-bottom: 10rpx;
+}
+.text_area
+{
+  width: 638rpx;
+  height: 180rpx;
+  background-color: #f5f5f5;
+  /* display: block; */
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.btn_box
+{
+  height: 80rpx;
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+   width: 638rpx;
+    margin: 0 auto;
+}
+.fb_btn
+{
+  width: 80rpx;
+  height: 50rpx;
+   border:2rpx solid #f6f6f6;
+  border-radius: 6rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: relative;
+
+}
+.sb
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}

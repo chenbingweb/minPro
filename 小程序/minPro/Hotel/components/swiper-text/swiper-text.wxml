@@ -1,0 +1,47 @@
+<view 
+   wx:if="{{show}}"
+    class="swiper_component"
+    style="height:{{height}}rpx;width:{{width}}rpx;position:relative">
+    
+  <swiper 
+      bindchange="swiperChange"
+      class="swiper_size"
+      style="height:{{height}}rpx"
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      indicator-color="{{indicatorColor}}"
+      indicator-active-color="{{indicatorActiveColor}}"
+      vertical="{{vertical}}"
+      circular="{{circular}}"
+      bindanimationfinish="animationfinish"
+      previous-margin="25rpx"
+      next-margin="25rpx"
+      >
+    <block wx:for="{{imgsData}}" wx:key="index_{{index}}">
+      <swiper-item style="position:relative" bindchange="swiperChange">
+        <navigator class="icon_box"  url="../shoppingDetail/shoppingDetail?sid={{item.id}}">
+          <image mode="{{mode}}"  src="{{item.logo}}"  bindtap="navToDetail" 
+          data-detail="{{item.id}}" style="width:680rpx;height:320rpx" class="defult_img"/>
+        </navigator>
+        <view class="info">
+          <view class="text_1">
+            {{item.name}}
+          </view>
+          <view class="address">
+            <view class="icon_box">
+              <image src="../../images/address_icon.png" style="width:20rpx;height:26rpx"></image>
+            </view>
+            <view style="padding-left:14rpx;">{{item.address}} <text style="padding-left:20rpx">{{item.distance}}</text> </view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--自定义点  -->
+  <view class="indicator" wx:if="{{!indicatorDots}}" >
+    <view class="p_1 {{current==index?'active':''}}" hidden="{{hiddDefinedDots}}" wx:for="{{imgsData}}" wx:key="in_{{index}}"></view>
+  </view>
+</view>
+

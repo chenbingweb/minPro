@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "paging": "../../components/paging/paging"
+  }
+}

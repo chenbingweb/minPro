@@ -1,0 +1,246 @@
+/* @import "temp/tip.wxss"; */
+@import "animation.wxss";
+@import "animate.wxss";
+/*两行省略*/
+.ellipsis
+{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.navigator-hover
+{
+  background-color: rgba(0, 0, 0, 0);
+  opacity:1;
+}
+/*一行省略*/
+.one_line
+{
+  overflow:hidden; 
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+/*图片盒子*/
+.icon_box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.box_shadow
+{
+  box-shadow: 0px 6rpx 20rpx 6rpx #e7e7e7;
+  /*box-shadow: 0 -4rpx 6rpx 6rpx #eee;
+  box-shadow: 水平阴影 垂直阴影 模糊距离 阴影大小 阴影颜色  内部阴影;*/
+}
+
+/*取消滑动条样式*/
+::-webkit-scrollbar {
+  width: 0rpx;
+  height: 0rpx;  
+  color: transparent;
+}
+::-webkit-scrollbar-track {
+  width: 0rpx;
+  height: 0rpx;  
+  color: transparent;
+}
+/*加载更多  */
+.load_more_box
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color:#333;
+  width: 750rpx;
+}
+/*背景图片*/
+.bg
+{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/*箭头**/
+.hot_more
+{
+  font-size: 30rpx;
+  color:#333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hot_more::after
+{
+  content: '';
+  display: block;
+  width: 16rpx;
+  height: 16rpx;
+  border-top:2rpx solid #9a9a9a;
+  border-right: 2rpx solid #9a9a9a;
+  transform: rotateZ(45deg);
+}
+.no_info
+{
+  text-align: center;
+  color:#ddd;
+  font-size: 26rpx;
+  margin-top:50rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+
+}
+.RemoveRollCar{-webkit-overflow-scrolling: touch;}
+.btn_class
+{
+  text-align: center;
+  font-size: 28rpx;
+  color:#eee;
+}
+.btn_login
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.relative{
+  position: relative;
+  /* padding-bottom:30rpx; */
+}
+/*铺满  */
+.absolute
+{
+  position:absolute;
+  left: 0;
+  right:0;
+  top:0;
+  bottom:0;
+}
+.fixed
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/*手动登录  */
+.login_btn
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.inline_flex
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex_start
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex_end
+{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.flex_between
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.flex_around
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+/*字体  */
+.f_30_333
+{
+  color:#333;
+  font-size: 30rpx;
+}
+.f_30_999
+{
+  color:#999;
+  font-size: 30rpx;
+}
+.f_28_666
+{
+  color:#666;
+  font-size: 28rpx;
+}
+.f_26_666
+{
+  color:#666;
+  font-size: 26rpx;
+}
+.f_28_333
+{
+  color:#333;
+  font-size: 28rpx;
+}
+/*间距  */
+.padding_top_10
+{
+    padding-top: 10rpx
+}
+.padding_bottom_10
+{
+    padding-bottom: 10rpx
+}
+.padding_left_10
+{
+    padding-top: 10rpx
+}
+.padding_right_10
+{
+    padding-right: 10rpx;
+   
+}
+/*margin间距  */
+/*间距  */
+.margin_top_10
+{
+   margin-top: 10rpx
+}
+.margin_bottom_10
+{
+    margin-bottom: 10rpx
+}
+.margin_left_10
+{
+    margin-top: 10rpx
+}
+.margin_right_10
+{
+    margin-right: 10rpx
+}
+

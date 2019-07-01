@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="fixed">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>经纪人海报</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <script src="./js/zrender.min.js"></script>
+    <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+    <script src="./js/common/vconsole.min.js"></script>
+</head>
+
+<body   >
+    <div id="posterPage" class="wrapper">
+        <div style="padding-bottom: 0.4rem;padding-top: 0.4rem">
+            <div id="poster" class="poster_box"> </div>
+           
+            <div class="img_box">
+                <div class="img_scroll">
+                    <div class="img active">
+                        <img src="./images/img_1.png"/>
+                    </div>
+                    <div class="img">
+                        <img src="./images/img_2.png"/>
+                    </div>
+                    <div class="img">
+                        <img src="./images/img_3.png"/>
+                    </div>
+                    
+                </div>
+            </div>
+            <p class="xz_title">选择标语</p>
+            <select class="select_box">
+                <option value="0">因为年轻，所以才要赢</option>
+                <option value="1">最快乐的事，莫过于为实现理想而奋斗</option>
+                <option value="2">风雨兼程，爱家相伴</option>
+                <option value="3">凝聚爱家的力量</option>
+                <option value="4">初心不易，携手致久</option>
+                <option value="5">用爱筑家，赢天下</option>
+            </select>
+            <!-- 重新设置 -->
+            <div class="reset">重新上传</div>
+            <!-- 生成海报 -->
+            <div class="create_poster">生成海报</div>
+            
+        </div>
+    </div>
+</body>
+<script src="./js/poser.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+      
+      $.BUG()
+      var scroll =  new BScroll('.wrapper',{
+            scrollY: true,
+            click: true,
+            bounce:false
+        })
+        console.log(scroll)
+        new VConsole()
+        var p = new Poster('poster',scroll);
+        
+        //选择海报
+        $('.img_scroll>.img').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+            p.tempArr($(this).index())
+        })
+        //选择标语
+        $('.select_box').change(function(){
+            p.changeBY($(this).val())
+            return false
+        })
+        // 生成海报
+        $('.create_poster').click(function(){
+            $.showLoading('正在生成海报...')
+            p.canvasToImg($('canvas')[0],function(img){
+                SaveInfo(img.src)
+               // $(img).addClass('poster')
+            })
+            return false
+        })
+      
+        //添加图片
+        $('.reset').click(function(){
+            
+            var img = new Image()
+            img.src="./images/6.png";
+            img.onload=function(){
+                photoImg=img.src
+                p.resetImg(img.src)
+            }
+             //微信
+            $.wxChooseImg(function(img){
+                p.resetImg(img.src)
+            })
+        })
+
+        //缓存本地数据
+        function SaveInfo(data){
+            $.hideLoading()
+            window.sessionStorage.setItem('imgdata',data);
+            window.location.replace('/getMoney.html')
+            
+        }
+       
+    })
+</script>
+
+</html>

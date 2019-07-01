@@ -1,0 +1,53 @@
+/* pages/success/success.wxss */
+.header
+{
+  width: 750rpx;
+  height: 300rpx;
+  flex-direction: column;
+}
+.tip
+{
+  font-size: 35rpx;
+  font-weight: 500;
+  color:#aa8070;
+  padding-top: 16rpx;
+}
+.box_list
+{
+  width: 690rpx;
+  margin: 0 auto;
+  border-top: 10rpx solid #eef0ef;
+}
+.item_box
+{
+  width: 690rpx;
+  height: 180rpx;
+  border-bottom: 2rpx solid #dcdcdc;
+  margin: 0 auto;
+
+}
+.img_box
+{
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.good_info
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 30rpx;
+  height: 144rpx;
+  width: 364rpx;
+}
+.good_name
+{
+  font-size: 30rpx;
+  color:#484848;
+}
+.good_jf
+{
+  font-size: 26rpx;
+  color:#a58070;
+}

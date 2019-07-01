@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="fixed ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机型号</title>
+    <script src="js/common/jquery.min.js"></script>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="/css/common/weui.min.css">
+    <link rel="stylesheet" href="/css/common/jquery-weui.css">
+    <link rel="stylesheet" href="/css/common/dropload.css">
+    <link rel="stylesheet" href="/css/common/swiper.min.css">
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/js/common/jquery-weui.js"></script>
+    <script src="/js/common/dropload.min.js"></script>
+    <script src="/js/common/swiper.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="./js/fabric.js"></script>
+    <script src="./js/zrender.min.js"></script>
+    <script src="./js/konva.js"></script>
+    <script src="./js/common/vconsole.min.js"></script>
+</head>
+
+<body class="absolute rr">
+    <div id="poster" class="poster_box">
+
+    </div>
+    <p id="finish" style="color:#333;line-height: 100px"> 上传图片</p>
+    <p id="finish" style="color:#333;line-height: 100px"> 选择图片</p>
+    <p id="finish" style="color:#333;line-height: 100px"> 完成</p>
+    <!-- <div id="container"></div>
+    <p id="finish" style="color:#333;line-height: 100px"> 完成</p>
+    <img/> -->
+</body>
+    <script>
+        new VConsole()
+        var Poster={
+            width: window.innerWidth,
+            height:window.innerHeight*0.9,
+            stage:{},
+            init:function(){
+                var that =this;
+              this.stage= new Konva.Stage({
+                    container: 'container',
+                    width: that.width,
+                    height: that.height
+                }),
+                this.drawBg()
+               this.event()
+            },
+            drawBg:function(){
+                var that =this;
+                var layerBg =this.layerBg = new Konva.Layer()
+               
+                var imageObj = new Image();
+                imageObj.onload = function() {
+                    var image = new Konva.Image({
+                        x: 0,
+                        y: 0,
+                        image: imageObj,
+                        width: that.width,
+                        height: that.height,
+                      
+                    });
+                   
+                    layerBg.add(image)
+                    image.zIndex(233)
+                    that.drawPhoto()
+                   
+                   
+                }
+                imageObj.src = './images/6.png'
+            
+            },
+            drawPhoto:function(){
+                var that =this;
+            //    this.blobLayer =blobLayer  = new Konva.Layer({
+              
+            //    })
+        
+                var photoImg = new Image();
+                photoImg.onload = function() {
+                    var image =that.photoImg  = that.blobLayer = new Konva.Image({
+                        x: 0,
+                        y: 0,
+                        image: photoImg,
+                        // width:300,
+                       
+                    
+                    });
+                   
+                    that.layerBg.add(image);
+                    image.zIndex(-12)
+                    that.stage.add(that.layerBg)
+                    //  that.drawBg()
+                    // that.stage.add(blobLayer)
+                }
+                
+                photoImg.src = './images/2.jpg'
+               
+            },
+            clientX:0,
+            clientY:0,
+            blobX:0,
+            blobY:0,
+            blobScaleX:0,
+            blobScaleY:0,
+            isGesture:false,
+            
+             num :0,
+             startDis :0,
+             getPiontScale:function(Piont1,Piont2){
+                // 勾股定理.
+                var x = Piont1.pageX - Piont2.pageX,
+                    y = Piont1.pageY - Piont2.pageY;
+                return Math.sqrt(Math.pow(x, 2) + Math.pow(y,2));
+            },
+            event:function(){
+                var that=this;
+                container.addEventListener('touchstart', function(e){
+                    console.log(e.targetTouches)
+                    var touches = e.targetTouches;
+                    if(touches.length>=2)
+                    {
+                       
+                        that.isGesture=true;
+                        that.startDis = that.getPiontScale(touches[0],touches[1]);
+                        that.blobScaleX=that.blobLayer.scale().x
+                        that.blobScaleY=that.blobLayer.scale().y
+                    }
+                    else
+                    {
+                        that.isGesture=false;
+                        
+                        that.clientX = touches[0].clientX;
+                        that.clientY = touches[0].clientY;
+                        that.blobX = that.blobLayer.position().x;
+                        that.blobY = that.blobLayer.position().y;
+                       
+                      
+                    }
+                  //  that.blobLayer.zIndex(-12)
+                   
+                }, false);
+                container.addEventListener('touchmove', function(e){
+                   
+                    var touches = e.targetTouches;
+                    that.layerBg.clear();
+                    
+                    if(touches.length>=2 && that.isGesture==true)
+                    {
+                        
+                        that.isGesture = true;
+             
+                        // 缩放后两指的距离
+                        var nowDis = that.getPiontScale(touches[0],touches[1]);
+                        // 比例.
+                        var scale=(nowDis-that.startDis)/that.startDis;
+                        
+                      console.log(scale)
+                        var x1 = scale+that.blobScaleX;
+                        var y1 = scale + that.blobScaleY;
+                        if(x1<=0||y1<=0)
+                        {
+                            x1=0;
+                            y1=0
+                        }
+                   
+                        that.blobLayer.scale({
+                        x: x1,
+                        y: y1
+                        })
+                        console.log()
+                       // that.layerBg.draw()
+                    }
+                    else
+                    {
+                        
+                        var x= touches[0].clientX-that.clientX;
+                        var y = touches[0].clientY-that.clientY;
+                        x=that.blobX+x
+                        y=that.blobY+y
+                        that.isGesture = false;
+                        // that.blobLayer.offsetX(-x);
+                        // that.blobLayer.offsetY(-y);
+                        
+                        that.blobLayer.position({
+                            x:x,
+                            y:y
+                        });
+                      
+                       
+                    
+                       
+                    }
+                 
+                        that.layerBg.draw()
+                    
+                  console.log(that.blobLayer.position())
+                }, false);
+                container.addEventListener('touchend', function(e){
+                    console.log(e.targetTouches.length)
+                        if(e.targetTouches.length==0)
+                        {
+                            that.clientX= 0;
+                            that.clientY=0;
+                            that.isGesture=false;
+                        }
+                        else
+                        {
+                            
+                        }
+                      
+                }, false);
+                finish.addEventListener('click',function(){
+                    $('img').attr('src',that.stage.toDataURL())
+               
+                    var fillPatternImage = that.photoImg.fillPatternImage();
+                    // set fill pattern image
+                    var imageObj = new Image();
+                    imageObj.onload = function() {
+                       
+
+                       that.photoImg.setImage(this)
+                        
+                        that.layerBg.draw()
+                    
+                    };
+                    imageObj.src = './images/3.jpg';
+                },false)
+            }
+            
+        }
+      //  Poster.init()
+    </script>
+    <!-- <script>
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+
+      var stage = new Konva.Stage({
+        container: 'container',
+        width: width,
+        height: height
+      });
+    //   var layer_img  = new Konva.Layer();
+      var layer = new Konva.Layer();
+      var imageObj = new Image();
+        imageObj.onload = function() {
+        var image = new Konva.Image({
+            x: 0,
+            y: 0,
+            image: imageObj,
+            width: width,
+            height: height,
+           
+        });
+       
+        layer.add(image)
+        stage.add(layer);
+        };
+        imageObj.src = './images/1.jpg'
+       
+      
+      
+
+      var blob = new Konva.Line({
+        // points: [23, 20, 23, 160, 70, 93, 150, 109, 290, 139, 270, 93],
+        points:[],
+        fill: '#00D2FF',
+        stroke: 'black',
+        strokeWidth:1,
+       // closed: true,
+        tension: 0.3
+      });
+
+      // add the shape to the layer
+     
+      layer.add(blob);
+
+      // add the layer to the stage
+     
+      console.log(blob.points())
+      var clientX='';
+      var clientY=''
+    //  blob.points(blob.points().concat([70, 80]));
+     
+      container.addEventListener('touchstart', function(e){
+          blob.closed(false)
+         
+           clientX = e.targetTouches[0].clientX;
+          clientY = e.targetTouches[0].clientY;
+      }, false);
+      container.addEventListener('touchmove', function(e){
+        console.log(e)
+      }, false);
+      container.addEventListener('touchend', function(e){
+      
+        
+          blob.points(blob.points().concat([clientX, clientY]));
+        // blob.closed(true)
+      
+          blob.draw()
+      }, false);
+    </script> -->
+<script src="./js/poser.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+      var p = new Poster('poster')
+        $('#finish').click(function(){
+        p.canvasToImg($('canvas')[0])
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,89 @@
+/* components/regiser/regiser.wxss */
+.sign_box
+{
+  position: fixed;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.fill_content
+{
+  position: absolute;
+  width: 690rpx;
+  height: 330rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-200rpx);
+  flex-direction: column;
+}
+.input_item
+{
+  width: 580rpx;
+  height: 100rpx;
+  border-bottom: 2rpx solid #d1d1d1;
+  color:#606060;
+  font-size: 24rpx;
+}
+.input
+{
+  padding-left: 24rpx;
+  width: 310rpx;
+}
+.do_btn
+{
+  color:#cca27e;
+  font-size: 24rpx;
+  width: 156rpx;
+  height: 58rpx;
+  border-radius: 5rpx;
+  border:2rpx solid #cca27e;
+  line-height:  58rpx;
+  box-shadow: beige;
+  text-align: center;
+  position: relative;
+}
+.close_btn
+{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:410rpx;
+
+}
+.ok_active
+{
+  background-color: #a7806f;
+  color:#fff;
+}
+.icon_box
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex_center
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex_start
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.opacity
+{
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom:0;
+  right: 0;
+  opacity:0;
+}

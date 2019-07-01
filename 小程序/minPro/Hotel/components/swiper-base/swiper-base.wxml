@@ -1,0 +1,36 @@
+<view 
+   wx:if="{{show}}"
+    class="swiper_component"
+    style="height:{{height}}rpx;width:{{width}}rpx;position:relative">
+    
+  <swiper 
+      bindchange="swiperChange"
+      class="swiper_size"
+      style="height:{{height}}rpx"
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      indicator-color="{{indicatorColor}}"
+      indicator-active-color="{{indicatorActiveColor}}"
+      vertical="{{vertical}}"
+      circular="{{circular}}"
+      bindanimationfinish="animationfinish"
+      >
+    <block wx:for="{{imgsData}}" wx:key="index_{{index}}">
+      <swiper-item 
+          style="position:relative"
+         >
+        <image mode="{{mode}}"  src="{{imgUrl+item.img_url}}"  bindtap="navToDetail" 
+          data-detail="{{item.id}}"  class="defult_img"/>
+          <!-- <button class="btn_login"  data-detail="{{item.id}}" open-type="getUserInfo" bindgetuserinfo="login"></button> 
+          <view class="btn_login"  data-uid="{{item.uid}}"  data-cid="{{item.cid}}" open-type="getUserInfo" bindtap="login"></view> -->
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--自定义点  -->
+  <view class="indicator" wx:if="{{!indicatorDots}}" >
+    <view class="p_1 {{current==index?'active':''}}" hidden="{{hiddDefinedDots}}" wx:for="{{imgsData}}" wx:key="in_{{index}}"></view>
+  </view>
+</view>
+

@@ -1,0 +1,15 @@
+<view class="fixed">
+  <paging dataObj="{{dataObj}}" bindpageData="onPageData">
+    <view slot="list">
+      <view  class="item_box flex_start" wx:for="{{list}}" wx:key="g_{{index}}">
+        <view class="icon_box img_box">
+          <image style="width:244rpx;height:144rpx;" src="{{item.img}}"></image>
+        </view>
+        <view class="good_info">
+          <view class="good_name two_line">{{item.name}}</view>
+          <view class="good_jf">积分{{item.score}}</view>
+        </view>
+      </view>
+    </view>
+  </paging>
+</view>
