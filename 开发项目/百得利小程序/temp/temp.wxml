@@ -1,0 +1,114 @@
+<!--全局通用模板（貌似有数量限制，建议不要写太多，可能会调用模板失败）--->
+
+<!--轮播组件-->
+<!--
+  轮播数据结构(具体配置信息，查看相关文档)
+    https://mp.weixin.qq.com/debug/wxadoc/dev/component/swiper.html
+  {
+    //图片地址，（需网络图片）
+    imgUrls: [
+
+    ],
+    indicatorDots: false,//是否显示面板指示点	
+    autoplay: true,//autoplay
+    interval: 5000,//自动切换时间间隔
+    duration: 1000,//滑动动画时长
+    circular:true//是否采用衔接滑动	
+  }
+
+-->
+<template name="swiper">
+  <swiper class="swiper_box" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}"  indicator-color="{{swiper.indicatorColor}}" indicator-active-color="{{swiper.indicatorActiveColor}}"
+    circular="{{swiper.circular}}">
+    <block wx:for="{{swiper.imgUrls}}" wx:key="item_{{index}}">
+      <swiper-item>
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+
+<!--导航-->
+<!--
+  数据结构就是导航中的的配置信息
+  -->
+<template name="nav_bar">
+  <view class="nav_box">
+    <view class="nav_item" bindtap="selectNav" id="{{item.nid}}" wx:for="{{navBar}}" wx:key="nav_{{index}}">
+      <view class="icon_box">
+        <image class="nav_img" src="../../images/{{item.selected?item.icon_s:item.icon}}"></image>
+      </view>
+      <view style="text-align:center" class="{{item.selected?'select_nav':''}}">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</template>
+<!--加载更多-->
+<!--
+  {
+    showImg:true/false,//是否显示加载图片
+    text:'提示信息'
+  }
+  -->
+<template name="loader">
+  <view class="loader_box">
+    <view class="icon_box" wx:if="{{note.showImg}}">
+      <image style="width:38rpx;height:38rpx" src="../../images/loader.png"></image>
+    </view>
+    <view>
+      {{note.text}}
+    </view>
+  </view>
+</template>
+
+<!--省/市-->
+<template name="pro_city">
+  <view class="picker_mark">
+    <view class="picker_view_box">
+      <view class="control_button">
+        <view catchtap="hiddenPicker">取消</view>
+        <view bindtap="selectCity">确认</view>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;" class="picker_view" value="{{value}}" bindchange="bindChange">
+
+        <picker-view-column>
+          <view wx:for="{{province}}" wx:key="pro_{{index}}" class="item">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{getCity}}" wx:key="pro_{{index}}" class="item">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</template>
+<!--省/市/区-->
+<template name="pro_city_country">
+  <view class="picker_mark">
+    <view class="picker_view_box">
+      <view class="control_button">
+        <view catchtap="hiddenPicker">取消</view>
+        <view bindtap="selectCity">确认</view>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;" class="picker_view" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{province}}" wx:key="pro_{{index}}" class="item">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{getCity}}" wx:key="city_{{index}}" class="item">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{country}}" wx:key="country_{{index}}" class="item">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</template>
+
+<!---没有找到相关数据-->
+<template name="no_date">
+  <view class="no_info">
+    没有找到相关数据....
+  </view>
+</template>
+

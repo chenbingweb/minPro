@@ -1,0 +1,58 @@
+/* pages/myMember/myMember.wxss */
+.member_pag
+{
+  width: 750rpx;
+  padding: 0 30rpx;
+  padding-top: 42rpx;
+  box-sizing: border-box;
+  padding-bottom: 120rpx;
+}
+.member_item
+{
+   margin: 0 auto;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  position:relative;
+height:180rpx;
+  width:670rpx;
+  overflow: hidden;
+ 
+}
+.member_bg
+{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+}
+.card_info
+{
+  position: absolute;
+  left: 24rpx;
+  top:38rpx;
+  height: 100rpx;
+  display: inline-flex;
+  align-items: center;
+  color:white;
+  
+}
+.logo
+{
+  border:4rpx solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.name_box
+{
+  padding-left: 25rpx;
+}
+.name_box view:nth-of-type(1)
+{
+  font-size: 25rpx;
+}
+.name_box view:nth-of-type(2)
+{
+  font-size:46rpx;
+}

@@ -1,0 +1,6 @@
+<!--车牌选择  -->
+<view  class="select_plate_box {{showBoxFlag?'show_box':'hide_box'}}" style="{{showBoxFlag?'display:inline-flex':'display:none'}}" bindtap="showBox">
+  <view wx:for="{{pro}}" bindtap="selectBtn" data-plate="{{item.name}}" data-id="{{item.id}}" class="btn_item {{item.select?'selected':''}}" wx:key="address_{{index}}">
+    {{item.name}}
+  </view>
+</view>

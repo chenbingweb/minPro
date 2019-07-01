@@ -1,0 +1,120 @@
+<!--引入模板-->
+<import src="../../temp/coupon.wxml" />
+<!--导航
+<template is="nav_bar" data="{{navBar}}" />-->
+<nav-bar login="{{login}}"/>
+<!--城市选择
+<template is="pro_city" wx:if="{{false}}" data="{{province:province,getCity:getCity,value:values}}" />
+-->
+<view class="page_box index_page" wx:if="{{showIndex}}">
+  <!--轮播图  bindtoDetail="toDetail" -->
+  <view style="position:relative;opacity:0"  hidden="{{!imgsData}}" class="{{imgsData?'opaciy_an':''}}">
+    <swiper-base bindtoDlogin="toDetail" id="toArticle" baseSet="{{baseSet}}" imgsData="{{imgsData}}" height="390" />
+  </view>
+  <!--会员卡-->
+  <view hidden="{{!companyMember}}" style="animation-delay:40ms;" class="{{companyMember?'opaciy_an':''}}">
+    <view class="menber_title">
+      <!--背景  -->
+      <view class="icon_box menber_line_bg">
+        <image src="../../images/menber_bg_line.png" style="width:460rpx;height:2rpx;"></image>
+      </view>
+      <!--标题  -->
+      <view class="title_style">品牌会员卡</view>
+    </view>
+    <!--会员卡卡牌  -->
+    <scroll-view class="card_list RemoveRollCar" scroll-x>
+      <view class="scroll_box">
+        <view class="icon_box menber_card" wx:for="{{companyMember}}" style="width:334rpx" wx:key="list_{{index}}">
+          <!--会员卡背景图 -->
+          <view class="icon_box menber_card_item">
+            <image mode="aspectFill" src="{{imgUrl+item.BackUrl}}" style="width:334rpx;height:202rpx;border-radius:10rpx"></image>
+          </view>
+          <!--会员卡信息  -->
+          <view class="member_info">
+            <view class="icon_box member_logo_box">
+              <image  mode="aspectFill"  src="{{imgUrl+item.LogoUrl}}" style="width:44rpx;height:44rpx"></image>
+            </view>
+            <view style="padding-left:10rpx;">
+              <view>{{item.Name}}</view>
+              <view>{{item.CardTitle}}</view>
+            </view>
+          </view>
+          <button class="btn_login" id="toMember" data-outstr="{{item.Id}}" data-encryptcardid="{{item.EncryptCardId}}" data-cardbiz="{{item.CardBiz}}" open-type="getUserInfo" bindgetuserinfo="toMember"></button>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!--附近店铺  -->
+  <view style="padding-bottom:20rpx;" >
+    <view class="near_shop_title opaciy_an">
+      <view>附近店铺</view>
+      <view class="relative" wx:if="{{neareShopList}}">
+        <view class="hot_more more">全部</view>
+        <button class="btn_login" open-type="getUserInfo"  data-url="../shopeList/shopeList"  bindgetuserinfo="toAllShop"></button>
+      </view>
+    </view>
+    <!--附近店铺列表  -->
+    <view class="shop_list opaciy_an"  style="animation-delay:40ms;"  wx:if="{{neareShopList}}">
+      <view class="shop_box box_shadow relative" data-id="{{item.Id}}" style="{{index==1?'margin:0 25rpx':''}};" wx:for="{{neareShopList}}" wx:key="item_{{index}}">
+        <!--图片  -->
+        <view class="top icon_box">
+          <image mode="aspectFill" style="width:214rpx" src="{{imgUrl+item.ImgUrl}}"></image>
+        </view>
+        <!--地理信息  -->
+        <view class="address_info ">
+          <view class="one_line" style="padding-top:10rpx;width:180rpx;margin:0 auto;">{{item.Name}}</view>
+          <view class="address_dis">
+            <view class="icon_box" style="margin-right:10rpx;">
+              <image src="../../images/local.png" style="width:22rpx;height:26rpx;"></image>
+            </view>
+            <view>距你{{item.Distance}}km</view>
+          </view>
+        </view>
+        <button class="btn_login" id="toMember" data-appid="{{item.AppId}}" data-id="{{item.Id}}" data-polid="{{item.PolId}}" open-type="getUserInfo" bindgetuserinfo="toShopingDetail"></button>
+      </view>
+    </view>
+    <!--用户手动获取附近店铺  -->
+    <view wx:else class="btn_class no_info" bindtap="getNearShop">
+      <view class="icon_box">
+        <image src="../../images/click.png" style="width:48rpx;height:48rpx"></image>
+      </view>
+      <view>获取附近店铺</view>
+      </view>
+  </view>
+  <!--推荐优惠券  -->
+  <view hidden="{{!couponList}}" style="opacity:0;animation-delay:120ms;" class="{{couponList?'opaciy_an':''}}">
+    <view class="menber_title">
+      <!--背景  -->
+      <view class="icon_box menber_line_bg">
+        <image src="../../images/menber_bg_line.png" style="width:460rpx;height:2rpx;"></image>
+      </view>
+      <!--标题  -->
+      <view class="title_style">推荐优惠券</view>
+    </view>
+    <view class="coupon_list_box">
+      <view wx:for="{{couponList}}" wx:key="coup_{{index}}">
+        <template is="coupon" data="{{couponItem:item,imgUrl:imgUrl}}" />
+      </view>
+      <!-- 更优惠券 -->
+      <navigator open-type="reLaunch" url="../find/find" class="more_coupon hot_more">更多优惠券</navigator>
+    </view>
+  </view>
+</view>
+<view class="no_info"  wx:if="{{!showIndex}}">
+  没有找到相关数据....
+</view>
+
+
+
+
+
+
+<!--使用轮播组件
+      <template is="swiper" wx:if="{{swiperList}}" data="{{swiper:swiper,testUrl:testUrl}}"></template>-->
+
+<!--
+    <view class="no_info" wx:if="{{!beadhouse}}">
+      没有找到相关数据....
+    </view>-->
+<!--加载更多 无更多
+    <template wx:if="{{showLoading}}" is="loader" data="{{note:note}}"/>-->

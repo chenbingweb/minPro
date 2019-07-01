@@ -1,0 +1,16 @@
+<view class="nav_bar_component">
+  <view class="nav_box">
+  <!--bindtap="selectNav"  -->
+    <view class="nav_item" bindtap="selectNav" id="{{index}}" wx:for="{{navBar}}" wx:key="nav_{{index}}">
+      <view class="icon_box" >
+        <image class="nav_img" style="width:{{item.width}}rpx;height:{{item.height}}rpx" src="{{item.selected?item.icon_s:item.icon}}"></image>
+      </view>
+      <view style="text-align:center;color:{{item.selected?color:''}}"  class="{{item.selected?'select_nav':''}}">
+        {{item.name}}
+      </view>
+      <!--登录按钮 -->
+      <button wx:if="{{!login}}" open-type="getUserInfo" bindgetuserinfo="selectNav" data-login="login" id="{{item.nid}}" class="login_btn" ></button> 
+    </view>
+    
+  </view>
+</view>

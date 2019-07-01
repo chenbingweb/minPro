@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "品牌",
+  "usingComponents": {
+    "swiper-base": "/components/swiper-base/swiper-base",
+    "nav-bar": "/components/nav-bar/nav-bar"
+  },
+  "enablePullDownRefresh": false
+}

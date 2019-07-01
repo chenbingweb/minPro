@@ -1,0 +1,5 @@
+<!-- <view class="hh" 
+style="width:{{width}}px;height:{{height}}px;margin-left:{{-width/2}}px;margin-top:{{-height/2}}px;  transform:rotateZ({{deg}}deg); " wx:if="{{false}}">
+  
+</view> -->
+<view>激活中</view>

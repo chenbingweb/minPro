@@ -1,0 +1,26 @@
+<!--引入模板-->
+<import src="../../temp/coupon.wxml" />
+<!--引入模板-->
+<import src="../../temp/loadmore.wxml" />
+<!--底部导航  -->
+<nav-bar/>
+<!-- 选项卡  {{!userCard?'checked':''}}-->
+<view class="select_card">
+  <view class="checked_mark {{userCard?'checked':''}}"></view>
+  <view bindtap="checkMyCoupon" data-bt="no_use" class="item ">我的优惠券</view>
+  <view bindtap="checkMyCoupon" data-bt="used" class="item " style="left:50%;">已核销的券</view>
+  
+</view>
+<!--我的优惠券列表  -->
+
+  <scroll-view style="height:84vh" scroll-y bindscrolltolower="scrolltolower">
+    <view class="my_coupon_list" >
+     <view class="opaciy_an" style="opacity:0;animation-delay:{{index*40}}ms;" wx:for="{{couponList}}" wx:key="coup_{{index}}">
+         <template is="coupon" data="{{couponItem:item,type:types,imgUrl:imgUrl}}" />
+      </view>
+       <!--没有数据  -->
+      <view class="no_info" style="margin:20rpx;" wx:if="{{showTip}}">没有数据</view>
+      <!--加载更多  -->
+        <template is="loadmore" data="{{showMore}}"/>
+    </view>
+  </scroll-view>

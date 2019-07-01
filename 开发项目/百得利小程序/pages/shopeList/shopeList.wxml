@@ -1,0 +1,88 @@
+<!--pages/find/find.wxml-->
+<!--引入模板-->
+<import src="../../temp/coupon.wxml" />
+<!--引入模板-->
+<import src="../../temp/loadmore.wxml" />
+<!--导航  -->
+<nav-bar/>
+<!--自定义城市选择  -->
+<city-piker shows="{{show}}" bindcitySelect="citySelect" bindcancelCity="cancelCity" cityList="{{cityList}}" />
+<!--发现   bindfocus="focus" bindblur="blurEvents"-->
+<view class="find_page">
+  <view class="search_box">
+    <input wx:if="{{hiddenMark}}" bindinput="bindKeyInput" style="border-radius:{{!hiddenMark?'10rpx':'10rpx 0 0 10rpx'}};" disabled="{{!hiddenMark}}" focus="{{hiddenMark}}" value="{{searchContent}}" bindconfirm="confirmSearch" />
+    <!--用户提示  -->
+    <view class="tip_mark" catchtap="hideSearchMark"wx:else="{{!hiddenMark}}">
+      <view class="icon_box">
+        <image style="width:28rpx;height:31rpx" src="../../images/search.png"></image>
+      </view>
+      <view class="tip_margin">请输入门店名称</view>
+    </view>
+    <!--取消搜索  -->
+    <!-- <view class="cancel_search" hidden="{{!hiddenMark}}" capture-catch:tap="cancleSearch">取消</view> -->
+    <view class="cancel_search icon_box" hidden="{{!hiddenMark}}" capture-catch:tap="cancleSearch">
+      <image style="width:48rpx;height:48rpx" src="../../images/cancel.png"></image>
+     </view>
+  </view>
+  <view class="select_bar RemoveRollCar">
+    <view class="bar_item">
+      <view class="bar_item" bindtap="showPicker" style="width:50%">
+        <view>{{showCity}}</view>
+        <view class="down_arraw icon_box" style="transform:rotate({{cityDeg}}deg); ">
+          <image src="../../images/arrow_select.png" style="width:31rpx;height:17rpx"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker> -->
+    <picker class="bar_item" disabled="{{disabled}}" bindcancel="cancleCity" bindchange="bindPickerChange" value="{{index}}" range-key="Name" range="{{companyList}}">
+      <view class="bar_item" bindtap="openComList">
+
+        <view>{{value?value:'全部'}}</view>
+
+        <view class="down_arraw icon_box" style="transform:rotate({{allDeg}}deg); ">
+          <image src="../../images/arrow_select.png" style="width:31rpx;height:17rpx"></image>
+        </view>
+
+      </view>
+    </picker>
+    <view class="line"></view>
+  </view>
+  <scroll-view style="height:74.5vh" bindscrolltolower="paginationEvent" scroll-y>
+    <view class="find_coupon_box">
+      <!-- 店面列表 -->
+      <view class="shop_item box_shadow relative opaciy_an" 
+      style="opacity:0;animation-delay: {{index*10}}ms;"
+       wx:for="{{shopList}}" wx:key="shop_{{index}}">
+        <view class="icon_box">
+          <image mode="aspectFill" src="{{imgUrl+item.ImgUrl}}" style="width:210rpx;height:150rpx"></image>
+        </view>
+        <view class="shop_info_box">
+          <view class="company_name one_line">{{item.FullName}}</view>
+          <view class="local_box" wx:if="{{item.ProvinceName||item.CityName||item.DistrictName||item.Address}}">
+            <!-- <view class="icon_box local_pic">
+              <image style="width:22rpx;height:26rpx" src="../../images/local.png"></image>
+            </view> -->
+            <view style="max-height:65rpx; " class="ellipsis">
+              {{(item.ProvinceName?item.ProvinceName:'')+(item.CityName?item.CityName:'')+(item.DistrictName?item.DistrictName:'')+(item.Address?item.Address:'')}}</view>
+          </view>
+          <view class="local_box">
+            <view class="icon_box local_pic">
+                <image style="width:22rpx;height:26rpx" src="../../images/local.png"></image>
+            </view>
+            <view style="color:#aeaeae">{{item.Distance}}km</view>
+          </view>
+        </view>
+        <button class="btn_login" data-appid="{{item.AppId}}" data-id="{{item.Id}}" data-polid="{{item.PolId}}" open-type="getUserInfo" bindgetuserinfo="toShopingDetail"></button>
+      </view>
+      <!--没有数据  -->
+      <view class="no_info" style="margin:20rpx;" wx:if="{{showTip}}">没有更多</view>
+      <!--加载更多  -->
+      <template is="loadmore" data="{{showMore}}"/>
+    </view>
+  </scroll-view>
+
+</view>

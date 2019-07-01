@@ -1,0 +1,188 @@
+/* pages/couponDetail/couponDetail.wxss */
+page
+{
+  background-color: #4f72b4
+}
+.detail_box
+{
+  width: 710rpx;
+
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10rpx;
+  margin-top: 46rpx;
+  position: relative;
+  padding-bottom: 30rpx;
+}
+.logo
+{
+  position: absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%)
+  
+}
+.item
+{
+   margin: 0 auto;
+ 
+  text-align: center;
+ 
+}
+.title
+{
+  padding-top:70rpx;
+   color:#919191;
+  font-size: 26rpx;
+  margin-bottom: 40rpx;
+}
+.content
+{
+  font-size: 46rpx;
+  color:#000000;
+}
+.btn
+{
+  width: 670rpx;
+  height: 80rpx;
+  background: #5886d1;
+  line-height: 80rpx;
+  color:white;
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}
+.price
+{
+  text-align: center;
+  color:#999;
+  font-size:26rpx;
+  margin-top:34rpx;
+}
+.price .rmb
+{
+  color:#fb5757;
+  font-size: 52rpx;
+}
+.explain
+{
+  width: 650rpx;
+  border-top:2rpx solid #ebebeb;
+  margin-top: 40rpx;
+  /* height: 100rpx; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 48rpx;
+}
+.title_name
+{
+  color:#999;
+  font-size: 28rpx;
+  width: 140rpx;
+}
+.explain_item
+{
+  display: inline-flex;
+  font-size: 26rpx;
+  color:#585858;
+  margin-bottom: 40rpx;
+}
+.contents
+{
+  width: 500rpx;
+}
+/*弹层 */
+.mark_box
+{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
+.select_box
+{
+  width: 570rpx;
+  height: 420rpx;
+  position: absolute;
+  top:50%;
+  transform:translateX(-50%) translateY(-50%);
+  left: 50%;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding-top: 70rpx;
+}
+.plate_select
+{
+  width: 456rpx;
+  height: 70rpx;
+  border:2rpx solid #dcdcdc;
+  border-radius: 6rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #666;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding: 0 26rpx;
+}
+.input_box
+{
+  width: 400rpx;
+  height: 70rpx;
+}
+.tip_line
+{
+  font-size: 24rpx;
+  color:#999;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.control_box
+{
+   width: 300rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.btn_item
+{
+  width: 132rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #6385cc;
+  font-size: 28rpx;
+  color:#ffffff;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.picker_1
+{
+  width: 456rpx;
+  margin: 0 auto;
+  
+}
+.login_btn
+{
+  width: 200rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align:center;
+  line-height:100rpx;
+  background-color:white;
+  border-radius:10rpx;
+  font-size:36rpx;
+  color:#4f72b4;
+}

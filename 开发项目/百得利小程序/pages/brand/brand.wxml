@@ -1,0 +1,26 @@
+<!--pages/brand/brand.wxml-->
+<!--导航-->
+<nav-bar login="{{login}}"/>
+<!--品牌 展示 -->
+<view class="brand_page">
+  <!--图片展示  -->
+  <view class="icon_box opaciy_an" style="opacity:0;  animation-delay:40ms;">
+    <!-- <image wx:if="{{ImgUrl}}" src="{{imgUrl+ImgUrl}}" style="width:750rpx;height:372rpx;"></image> -->
+    <swiper-base bindtoDlogin="toDetail" id="toArticle" baseSet="{{baseSet}}" imgsData="{{ImgUrl}}" height="390" />
+  </view>
+  <!--  品牌列表-->
+  <view class="brand_list" wx:if="{{logoList.length}}">
+     <view class="title">已入驻品牌</view>
+     <!--列表  -->
+     <view class="list_brand">
+        <view bindtap="navTo" data-id="{{item.Id}}" data-url="../find/find?src=brand&id={{item.Id}}" class="icon_box item_box opaciy_an" style="opacity:0;  animation-delay:{{index*30}}ms;"  wx:for="{{logoList}}" wx:key="index_{{index}}">
+          <image mode="aspectFit" wx:if="{{item.LogoUrl}}" src="{{imgUrl+item.LogoUrl}}" style="width:226rpx;height:196rpx"></image>
+        </view>
+     </view>
+  </view>
+</view>
+<view class="no_info" style="transform:translateY(-500rpx);" wx:if="{{!showBrand}}">
+  没有找到相关数据....
+</view>
+
+

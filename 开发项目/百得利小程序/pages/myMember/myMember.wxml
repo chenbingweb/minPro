@@ -1,0 +1,23 @@
+<!--导航  -->
+<nav-bar/>
+<!--会员卡列表  -->
+<view class="member_pag">
+    <view bindtap="checkMyMember" wx:if="{{memberList.length!=0}}" wx:key="member_{{index}}" class="member_item opaciy_an" wx:for="{{memberList}}" data-id="{{item.Id}}" data-outstr="{{item.Id}}" data-encryptcardid="{{item.EncryptCardId}}" data-cardbiz="{{item.CardBiz}}" style="opacity:0;animation-delay: {{index*40}}ms;">
+      <!--背景  -->
+      <view class="icon_box member_bg" >
+        <image mode="widthFix" style="width:670rpx;height:180rpx;border-radius:10rpx" src="{{imgUrl+item.BackUrl}}"></image>
+      </view>
+      <!--卡牌信息  -->
+      <view class="card_info">
+        <view class="icon_box logo">
+          <image  style="width:90rpx;height:90rpx;border-radius:50%" src="{{imgUrl+item.LogoUrl}}"></image>
+        </view>
+        <view class="name_box">
+          <view>{{item.Name}}</view>
+          <view>{{item.CardTitle}}</view>
+        </view>
+      </view>
+    </view>
+     <!--没有数据  -->
+      <view class="no_info" style="margin:20rpx 0;" wx:if="{{showTip}}">没有数据</view>
+</view>
