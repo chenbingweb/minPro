@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="js/clipboard.min.js"></script>
+</head>
+<style>
+    html {
+        overflow-y: scroll;
+    }
+
+    body {
+        background: url('images/lottery_bg.jpg')no-repeat !important;
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        /* height: 100%; */
+        overflow: hidden;
+
+    }
+</style>
+
+<body>
+    <div id="lottery" class="lottery">
+        <div class="select_shop right">
+            <select class="iconcenter">
+                <option value="test1">test1test1test1</option>
+                <option value="test1">test2</option>
+            </select>
+        </div>
+        <div class="title" id="d">
+            我的门店ID：10000010
+        </div>
+        <div class="line_box"></div>
+        <!-- 抽奖转盘 -->
+        <div class="lottery_turntable_position">
+            <div class="lottery_turntable iconcenter">
+                <img class="lottery_content_article" src="images/lottery_content_article.png" alt="">
+                <img class="lottery_content_btn" id="btn" src="images/lottery_content_btn.png" alt="">
+            </div>
+        </div>
+        <!-- 说明 -->
+        <div class="explanation">
+            <img class="explanation_title" src="images/explanation_title.png" alt=""> 礼品分为实物礼品及兑换券礼品两种：
+
+            <br/> 抽中实物礼品者：
+            <br/> 会由工作人员联系门店，进行线下核发
+            <br/> 抽中兑换券礼品者：
+            <br/> 实时发放兑换码，需要抽奖者自行兑换
+            <br/>
+        </div>
+
+    </div>
+    <div class="model" onclick="hideModel()">
+
+    </div>
+    <div class="model_box">
+      
+        <div class="first_binggo">
+            <img src="images/bingo_title.png" class="title" alt="">
+            <p>恭喜您中了奖！</p>
+            <span>限量版i7-8086k一颗</span>
+            <img class="shop_head" src="" alt="">
+            <button onclick="hideModel()">确定</button>
+        </div>
+        <div class="first_card">
+            <img src="images/bingo_title.png" class="title" alt="">
+            <p>恭喜您获得！</p>
+            <span class="content">京东10元E卡一张</span>
+            <img class="model_card" src="images/model_card.png" alt="">
+            <div class="box">
+                <span class="txt">兑换码</span>
+                <span class="num " id="copyNum">null</span>
+            </div>
+            <button id="copyBtn" class="copyBtn" data-clipboard-target="#copyNum">复制兑换码</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- <script>
+     alert(1)
+
+    $(function(){
+
+    
+    var oPointer = document.getElementsByClassName("lottery_content_btn")[0];
+    var oTurntable = document.getElementsByClassName("lottery_content_article")[0];
+    var cat = 60,
+        data = {};
+    var counter = 1;
+    oPointer.onclick = function () {
+        alert(1)
+        counter = 0;
+        Obj.n=0
+       // $('.lottery_content_article').addClass('rot')
+       Obj.start()
+       // ajax()
+    }
+    // $("#btn").click(function(){
+    //       alert(1)
+    //     counter = 0;
+    //     Obj.n=0
+    //    // $('.lottery_content_article').addClass('rot')
+    //    Obj.start()
+    // })
+
+    var Obj={
+        add:2,
+        n:0,
+        cat:60,
+        deg:0,
+        timer:null,
+        timer_2:null,
+        callBack:null,
+        flag:false,
+        i:0,
+        init:function(){
+            clearInterval(this.timer)
+           
+            this.rotate()
+        },
+        start:function(){
+        
+            var t=this.random(3000,5000);
+            console.log(t)
+            setTimeout(function(){
+                ajax()
+            },t)
+            
+            this.init()
+        },
+        random(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        },
+        setN(n){
+            this.n=n; 
+        },
+        rotate:function(){
+            var that=this;
+           
+            this.timer= setInterval(function(){
+                that.i++
+
+               if(that.flag&&that.i%100==0)
+               {
+
+                   that.reduce()
+               }
+                
+                that.deg+=that.add;
+                that.checkDeg(that.n)
+                
+                if(that.deg>=360)
+                {
+                    that.deg=0
+                }
+                $("#d").html(that.deg)
+               // console.log(that.deg)
+                oTurntable.style.transform='rotate(' +that.deg+'deg)'
+                
+            })
+        },
+        checkDeg:function(){
+            var that=this;
+            if(this.n&& parseInt(this.deg)==this.n*this.cat)
+            {
+                clearInterval(this.timer)
+                that.add=2;
+                that.flag=false
+                setTimeout(function(){
+                    
+                    this.timer=null
+                    that.callBack()
+                },1000)
+                
+            }
+        },
+        setSucc:function(res){
+            this.flag=true
+            setTimeout(function(){
+                Obj.setN(res.data.id)
+                  Obj.callBack=function(){
+                    this.flag=false
+                      pd(res.data.id, res.data.value || '')
+                  }
+            },5000)
+        },
+        reduce:function(){
+            var that=this;
+            if(that.add<0.3||that.add<0)
+            {
+                that.add=0.3
+                clearInterval(that.timer_2)
+            }
+            that.add-=0.1;
+           console.log(that.add)
+        }
+    }
+ 
+     
+
+    function ajax() {
+        
+            Obj.setSucc({data:{id:'2',value:22}})
+                   
+           return
+        $.ajax({
+            url: 'https://www.easy-mock.com/mock/5b56f1b1838693275efb08fd/mr/buyMember',
+            data: data,
+            type: 'post',
+            success: function (res) {
+                console.log(res.errcode)
+                var counter = 0;
+                if (res.errcode == 0) {
+                    console.log(123)
+                    // var time = setInterval(function () {
+                    //     console.log(counter)
+                    //     if(res.data.id == 3){
+                    //         // res.data.id = 
+                    //     }
+                    //     if (counter >= 3) {
+                    //         clearInterval(time)
+                    //         oTurntable.style.transform = "rotate(0deg)"
+                    //         $('.lottery_content_article').removeClass('rot')
+                            
+                    //         setTimeout(function () {
+                    //             oTurntable.style.transform = "rotate(" + res.data.id * cat +
+                    //                 "deg)"
+                    //             console.log(counter)
+                    //         }, 50)
+                    //         setTimeout(function(){
+                    //             pd(res.data.id, res.data.value || '')
+                    //         },2500)
+                    //     }
+                    //     counter += 1
+                    // }, 2000)
+                    // Obj.start(res.data.id,function(){
+                    //     setTimeout(function(){
+                    //         pd(res.data.id, res.data.value || '')
+                    //     },2000)
+                        
+                    // })
+                    
+                   // Obj.n=res.data.id;
+                  
+                   Obj.setSucc(res)
+                   
+                //    Obj.setN(res.data.id)
+                  
+                //     Obj.callBack=function(){
+                //         pd(res.data.id, res.data.value || '')
+                //     }
+                }else{
+                    $('.lottery_content_article').removeClass('rot')
+                    alert('网络不稳定')
+                }
+
+            },
+            error: function (err) {
+                $('.lottery_content_article').removeClass('rot')
+                alert('网络不稳定')
+            }
+        })
+    }
+    // 判断是几等奖
+    function pd(id, value) {
+        if (id == 0) {
+            $('.first_binggo p').html('恭喜您中了一等奖！')
+            $('.first_binggo span').html('限量版i7-8086k')
+            $('.first_binggo .shop_head').attr('src', 'images/jp_1.png')
+            firstShow()
+        } else if (id == 1 || id == 3 || id == 5) {
+            $('#copyNum').html(value)
+            lastShow()
+        } else if (id == 2) {
+            $('.first_binggo p').html('恭喜您中了二等奖！')
+            $('.first_binggo span').html('博朗料理机')
+            $('.first_binggo .shop_head').attr('src', 'images/jp_2.png')
+            firstShow()
+
+        } else if (id == 4) {
+            $('.first_binggo p').html('恭喜您中了三等奖！')
+            $('.first_binggo span').html('小米蓝牙音箱')
+            $('.first_binggo .shop_head').attr('src', 'images/jp_3.png')
+            firstShow()
+
+        } else {
+            alert('网络不稳定')
+        }
+    }
+    //实体奖励
+    function firstShow() {
+        document.getElementsByClassName("model")[0].className += ' show'
+        document.getElementsByClassName("model_box")[0].className += ' show'
+        document.getElementsByClassName("first_binggo")[0].className += ' show'
+        document.getElementsByTagName("html")[0].style.overflow = 'hidden'
+    }
+    //10元卡
+    function lastShow() {
+        document.getElementsByClassName("model")[0].className += ' show'
+        document.getElementsByClassName("model_box")[0].className += ' show'
+        document.getElementsByClassName("first_card")[0].className += ' show'
+        document.getElementsByTagName("html")[0].style.overflow = 'hidden'
+        var clipboard = new Clipboard('.copyBtn');
+    }
+
+    function hideModel() {
+        document.getElementsByTagName("html")[0].style.overflow = ''
+        $('.model').removeClass('show')
+        $('.first_card').removeClass('show')
+        $('.model_box').removeClass('show')
+        $('.first_binggo').removeClass('show')
+    }
+        })
+</script> -->
+<script>
+    try{
+    $(document).ready(function(){
+        // if(<?= $is_null?>){
+        //     repeatModel()
+        // }
+    });
+    alert('最新一版，')
+    var oPointer = document.getElementsByClassName("lottery_content_btn")[0];
+    var oTurntable = document.getElementsByClassName("lottery_content_article")[0];
+    var cat = 60,
+        data = {"shopId":1};
+    var counter = 1;
+    var nowCli = false
+    // oPointer.onclick = function () {
+    //     checkLucky();
+    //     if(nowCli){
+    //         return
+    //     }
+    //     nowCli = true
+    //     counter = 0;
+    //     Obj.n = 0
+    //     // $('.lottery_content_article').addClass('rot')
+    //     Obj.start()
+    // }
+    $('.lottery_turntable').on('click','.lottery_content_btn',function(){
+        alert('进入点击事件')
+        checkLucky();
+        if(nowCli){
+            return
+        }
+        nowCli = true
+        counter = 0;
+        Obj.n = 0
+        Obj.start()
+    })
+    var Obj = {
+        n: 0,
+        cat: 60,
+        deg: 0,
+        timer: null,
+        callBack: null,
+        rot: 3,
+        i: 0,
+        flag: false,
+        init: function () {
+            clearInterval(this.timer)
+            this.rotate()
+        },
+        start: function () {
+            this.init()
+            var t = this.random(800, 1000);
+            console.log(t)
+            setTimeout(function () {
+                ajax()
+            }, t)
+        },
+        rotate: function () {
+            var that = this;
+
+            this.timer = setInterval(function () {
+                //console.log(that.rot)
+                that.i++
+                    if (that.flag && that.i % 30 == 0) {
+                        that.reduce()
+                    }
+                that.deg += that.rot;
+
+                that.checkDeg(that.n)
+
+                if (that.deg >= 360) {
+                    that.deg = 0
+                }
+                // console.log(that.deg)
+                oTurntable.style.transform = 'rotate(-' + that.deg + 'deg)'
+            }, 0.5)
+        },
+        reduce: function () {
+            var that = this;
+
+            if (that.rot < 0.3 ) {
+                that.rot = 0.3;
+                               
+                // clearInterval(that.timer_2)
+            }
+            that.rot -= 0.1;
+
+            // that.add=Math.floor
+            console.log(that.rot)
+        },
+        checkDeg: function () {
+            var that = this;
+            if (this.n && parseInt(this.deg) == this.n * this.cat) {
+                clearInterval(this.timer)
+                that.rot=3
+                that.i = 0;
+                that.flag = false;
+                setTimeout(function () {
+                    this.timer = null
+                    that.callBack()
+                }, 1000)
+            }
+        },
+        random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        },
+    }
+    function ajax() {
+         Obj.n = 1;
+                    Obj.callBack = function () {
+                        nowCli = true
+                        pd(1,'')
+                    }
+        return
+        $.ajax({
+            url: '/lucky/index/go',
+            data: data,
+            type: 'post',
+            dataType:'json',
+            success: function (res) {
+                console.log(res)
+                var counter = 0;
+                Obj.flag = true
+                setTimeout(() => {
+                    if (res.errcode == 0) {
+                    res.lucky_id = changeId(res.lucky_id)
+                    console.log(res)
+                    Obj.n = res.lucky_id;
+                    Obj.callBack = function () {
+                        nowCli = true
+                        pd(res.lucky_id, res.code || '')
+                    }
+                } else {
+                    Obj.n = 6
+                    Obj.callBack = function () {
+                        console.log(res.msg);
+                        nowCli = false
+                        errorModel(res.msg)
+                    }
+                }
+                }, 2200);
+                
+
+            },
+            error: function (err) {
+                Obj.n = 6
+                Obj.callBack = function () {
+                    nowCli = false
+                    errorModel('当前活动太火爆')
+                }
+            }
+        })
+    }
+    // 判断是几等奖
+    function pd(id, value) {
+        if (id == 6) {
+            $('.first_binggo p').html('恭喜您中了一等奖！')
+            $('.first_binggo span').html('限量版i7-8086k一颗')
+            $('.first_binggo .shop_head').attr('src', '/lucky/images/jp_1.png')
+            firstShow()
+
+        } else if (id == 1 || id == 3 || id == 5) {
+            $('#copyNum').html(value)
+            lastShow()
+        } else if (id == 2) {
+            $('.first_binggo p').html('恭喜您中了二等奖！')
+            $('.first_binggo span').html('博朗料理机一台')
+            $('.first_binggo .shop_head').attr('src', '/lucky/images/jp_2.png')
+            firstShow()
+
+        } else if (id == 4) {
+            $('.first_binggo p').html('恭喜您中了三等奖！')
+            $('.first_binggo span').html('小米蓝牙音箱一台')
+            $('.first_binggo .shop_head').attr('src', '/lucky/images/jp_3.png')
+            firstShow()
+
+        } else {
+            errorModel('当前活动太火爆')
+        }
+    }
+    //实体奖励
+    function firstShow() {
+        $('.model,.model_box,.first_success').addClass('show')
+        document.getElementsByTagName("html")[0].style.overflow = 'hidden'
+    }
+    //10元卡
+    function lastShow() {
+        $('.model,.model_box,.first_card').addClass('show')
+        document.getElementsByTagName("html")[0].style.overflow = 'hidden'
+        var clipboard = new Clipboard('.copyBtn');
+        clipboard.on('success', function () {
+            $.toast("复制成功");
+        })
+    }
+
+    function hideModel() {
+        document.getElementsByTagName("html")[0].style.overflow = ''
+        $('.model,.first_card,.model_box,.first_error').removeClass('show')
+        $('.first_success').removeClass('show');
+    }
+    function hideModelCB(id,value) {
+        document.getElementsByTagName("html")[0].style.overflow = ''
+        $('.model,.first_card,.model_box,.first_error').removeClass('show')
+        pd(id, value)
+    }
+    function errorModel(msg){
+        $('.first_error p').html(msg)
+        if(msg == '该店铺已抽过奖品'){
+            $('.first_error span').html('&nbsp;')
+        }else{
+            $('.first_error span').html('请点击重试')
+        }
+        $('.model,.model_box,.first_error').addClass('show')
+        document.getElementsByTagName("html")[0].style.overflow = 'hidden'
+    }
+    function repeatModel(){
+        $('.model').attr('onclick','javascript:void(0);');
+        $('.model,.model_box,.first_repeat').addClass('show')
+        document.getElementsByTagName("html")[0].style.overflow = 'hidden'
+    }
+
+    function changeId(id) {
+        switch (id+'') {
+            case "1":
+                return 6;
+                break;
+            case "2":
+                return 2;
+                break;
+            case "3":
+                return 4;
+                break;
+            default:
+                return 1;
+                break;
+        }
+    }
+    function changeShopId() {
+        var id =$("#shopSelect").children('option:selected').val();
+        $("#showShop").html(" 我的门店ID："+id);
+        data = {"shopId":id};
+        checkLucky();
+    }
+    function checkLucky() {
+        return
+        $.ajax({
+            url:'/lucky/index/check-lucky',
+            data:data,
+            dataType:'json',
+            type:'post',
+            success:function (res) {
+                if(res.errcode == 2){
+                    nowCli = true;
+                    errorModel('该店铺已抽过奖品');
+                    $("#errorBtn").attr('onclick','hideModelCB('+changeId(res.lucky_id)+',\''+res.code +'\')')
+                }else if(res.errcode == 1){
+                    nowCli = true;
+                    errorModel('该店铺已抽过奖品');
+                }else{
+                    nowCli = false;
+                }
+            }
+        });
+    }
+    checkLucky();
+    }catch(e){
+        alert(JONS.stringify(e))
+    }
+</script>

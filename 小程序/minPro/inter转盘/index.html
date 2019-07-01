@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>活动须知</title>
+    <script src="js/common/flexible_css.js"></script>
+    <script src="js/common/flexible.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+
+<body>
+    <div id="doNotice" class="doNotice">
+        <div class="title">
+            <img src="images/notice_title_ico.png" alt="">
+            <p>活动须知</p>
+        </div>
+        <div class="richTxt">
+            富文本
+        </div>
+        <a href="javascript:;" class="btn isTrue iconcenter">我已完全了解，现在开始抽奖</a>
+        <a href="javascript:;" class="btn isFalse iconcenter">我还未准备好，下次再来抽奖</a>
+    </div>
+
+</body>
+
+</html>
+<script>
+    wx.config({
+        debug: false,
+        appId: '',
+        timestamp: '',
+        nonceStr: '',
+        signature: '',
+        jsApiList: ['closeWindow']
+    });
+    wx.ready(function () {
+        $('.isFalse').on('click', function () {
+            wx.closeWindow();
+        })
+    });
+    wx.error(function (err) {
+        $('.isFalse').on('click', function () {
+            window.close()
+        })
+    });
+    
+</script>
