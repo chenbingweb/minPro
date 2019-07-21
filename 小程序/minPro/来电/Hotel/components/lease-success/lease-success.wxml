@@ -1,0 +1,9 @@
+<view class="fixed" wx:if="{{show}}">
+  <view class="icon_box" style="margin-top:116rpx">
+    <image src="../../images/success.png" style="width:97rpx;height:97rpx"></image>
+  </view>
+  <view class="tip_content">租赁成功</view>
+  <view class="icon_box banner">
+     <image src="../../images/img/demo.png" style="width:715rpx;height:200rpx"></image>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<!--pages/doRecharge/doRecharge.wxml-->
+<view class="fixed" style="padding-top:76rpx">
+  <view class="f_30_000 title">选择充值金额</view>
+  <view class="flex_start r_box " >
+    <view onTap="onSelect" class="r_item f_30_000 {{item.select?'select':''}}"  a:for="{{rechange}}" a:key="index" data-rid="{{item.id}}">￥{{item.fee}}</view>
+  </view>
+  <view class="f_24_666 tip">充值金额可随时提现</view>
+  <view class="select_box flex_between box_cz">
+    <view class="flex_start ">
+      <view class="icon_box">
+        <image src="../../images/wp.png" style="width:44rpx;height:44rpx"></image>
+      </view>
+      <view class="f_30_333" style="margin-left:30rpx;">支付宝</view>
+    </view>
+    <view class="icon_box">
+      <image src="../../images/select.png" style="width:34rpx;height:34rpx;"></image>
+    </view>
+  </view>
+  <view class="btn">
+      <view class="icon_box">
+        <image src="../../images/btn.png" style="width：700rpx;height:90rpx;"></image>
+      </view>
+      <view class="absolute sure">支付</view>
+    </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="fixed">
+  <view class="search_bar flex_center">
+    <view class="search_bar_box flex_start">
+      <view class="icon_box">
+        <image src="../../images/search_icon.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <input class="search_input" placeholder=""></input>
+    </view>
+    <view class="cancel_btn">取消</view>
+  </view>
+  <view class="paging_box">
+    <paging   ref="onPage"  dataObj="{{dataObj}}" >
+      <view slot="list" style="padding-top:20rpx;">
+          <shop-item a:for="{{list}}" a:key="{{index}}"/>
+      </view>
+    </paging>
+
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="fixed" style=" padding-top: 20rpx;" wx:if="{{detail.shop_name}}">
+  <view class="detail_box">
+    <view class="icon_box img_box">
+      <image src="{{detail.banner}}" style="width:715rpx;height:385rpx;"></image>
+    </view>
+    <view class="detail">
+      <view class="title one_line">{{detail.shop_name}}</view>
+      <view class="detail_info flex_between">
+        <view class="detail_2">
+          <view class="two_line">{{detail.address}}</view>
+          <view>营业时间 {{detail.time}}</view>
+        </view>
+        <view class="icon_box scanl_box relative">
+          <image src="../../images/sao_miao.png" style="width:44rpx;height:44rpx;"></image>
+          <button bindgetuserinfo="onGetUserInfo" bindgetphonenumber="onSign" open-type="{{isSign || loginPhone?'getUserInfo':'getPhoneNumber'}}" class="opacity"></button>
+        </view>
+      </view>
+    </view>
+    <view class="status_box flex_between">
+      <view class="flex_start">
+        <view class="icon_box"> 
+          <image src="../../images/dian_chi.png" style="width:16rpx;height:33rpx"></image>
+        </view>
+        <view class="status_title">{{detail.left_status}}  </view>
+      </view>
+      <view class="f_28_33">{{detail.right_status}}</view>
+    </view>
+  </view>
+  <!-- 导航 -->
+  <view class="nav_btn relative" bindtap="onDH">
+    <view class="icon_box absolute">
+      <image src="../../images/btn.png" style="width:700rpx;height:83rpx"></image>
+    </view>
+    <view class="absolute to_that">
+      去这里约{{detail.dis}}km
+    </view>
+    <view class="icon_box nav_1">
+      <image src="../../images/dao_hang.png" style="width:36rpx;height:36rpx;"></image>
+    </view>
+  </view>
+</view>

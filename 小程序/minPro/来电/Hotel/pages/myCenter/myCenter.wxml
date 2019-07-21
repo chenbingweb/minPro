@@ -1,0 +1,52 @@
+<!-- <nav-bar/> -->
+<view class="fixed">
+  <view class="header relative">
+    <view class="bg icon_box">
+      <image src="../../images/bg_1.jpg" style="width:750rpx;height:156rpx"></image>
+    </view>
+    <view class="absolute">
+      <view class="user_info_box flex_start">
+        <view class="icon_box photo_box">
+          <open-data class="photo_img" type="userAvatarUrl"></open-data>
+        </view>
+        <view style="margin-left:10rpx;">
+          <view class="f_32_fff" style="margin-bottom:40rpx;">来电账号：26998555</view>
+          <view class="flex_start">
+            <view class="f_30_666">手机号：{{mobile}}</view>
+            <view class="icon_box" style="margin-left:47rpx;">
+              <image src="../../images/edit.png" style="width:33rpx;height:34rpx"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="money_box flex_center">
+        <view class="flex_center item_1">
+          <view class="item_2">余额：</view>
+          <view class="money">￥{{balance}}</view>
+        </view>
+        <view class="midd"></view>
+        <view class="flex_center item_1">
+          <view class="item_2">押金：</view>
+          <view class="money">￥{{deposit}}</view>
+        </view>
+      </view>
+      <view class="control_box flex_start">
+        <navigator url="../doRecharge/doRecharge" class="cz">充值</navigator>
+         <navigator url="../cash/cash" class="cz tx">提现</navigator>
+         <navigator url="../transDetail/transDetail" class="jy">交易明细</navigator>
+      </view>
+      <navigator url="../myOrder/myOrder" class="flex_between nav_item">
+        <view class="title_5">我的订单</view>
+        <view class="icon_box">
+          <image src="../../images/right_arrow.png" style="width:14rpx;height:25rpx"></image>
+        </view>
+      </navigator>
+      <navigator url="../help/help" class="flex_between nav_item">
+        <view class="title_5">帮助中心</view>
+        <view class="icon_box">
+          <image src="../../images/right_arrow.png" style="width:14rpx;height:25rpx"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

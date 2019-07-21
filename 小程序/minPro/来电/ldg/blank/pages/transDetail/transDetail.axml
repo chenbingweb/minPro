@@ -1,0 +1,20 @@
+<!--pages/transDetail/transDetail.wxml-->
+<view class="fixed" style="padding-bottom:50rpx">
+  <paging ref="onPage"  dataObj="{{dataObj}}">
+      <view slot="list" style="padding-top:25rpx;">
+        <navigator url="../detailFee/detailFee" class="item flex_between" a:for="{{list}}" a:key="{{index}}">
+          <view>
+            <view class="f_32_333" style="margin-bottom:30rpx">提现</view>
+            <view class="f_24_999">2019-03-05 10:12:10</view>
+          </view>
+          <view class="flex_start">
+          <!-- f_32_1bdb49 -->
+            <view class="f_32_ff0000">-￥10.00</view>
+            <view class="icon_box" style="margin-left:26rpx;">
+              <image src="../../images/right_arrow.png" style="width:14rpx;height:25rpx;"></image>
+            </view>
+          </view>
+        </navigator>
+      </view>
+  </paging>
+</view>

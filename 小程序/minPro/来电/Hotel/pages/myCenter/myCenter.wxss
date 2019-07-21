@@ -1,0 +1,120 @@
+
+page
+{
+ background-color: #fff; 
+}
+.header
+{
+  width: 750rpx;
+  margin: 0 auto;
+  height: 400rpx;
+  box-sizing: border-box;
+ 
+}
+.user_info_box
+{
+  width: 750rpx;
+  height: 160rpx;
+  margin-top: 73rpx;
+  box-sizing: border-box;
+  padding-left: 56rpx;
+}
+.photo_box
+{
+  overflow: hidden;
+  border-radius: 50%;
+}
+.photo_img
+{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.f_32_fff
+{
+  font-size: 32rpx;
+  color:#fff;
+
+}
+.f_30_666
+{
+  font-size: 32rpx;
+  color:#666;
+
+}
+.money_box
+{
+  width: 715rpx;
+  height: 168rpx;
+  border-bottom: 2rpx solid #eaeaea;
+  margin: 0 auto;
+}
+.midd
+{
+  width: 2rpx;
+  height: 63rpx;
+  background-color: #eaeaea;
+ 
+}
+.item_1
+{
+  width: 50%;
+}
+.item_2
+{
+  font-size: 32rpx;
+  color:#000000;
+}
+.money
+{
+  font-size: 42rpx;
+  color:#4ac453;
+}
+.control_box
+{
+  width: 715rpx;
+  height: 143rpx;
+  border-bottom: 2rpx solid #eaeaea;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 36rpx;
+}
+.cz
+{
+  width: 182rpx;
+  height: 62rpx;
+  border-radius: 31rpx;
+  background-color: #7cc538;
+  text-align: center;
+  line-height: 62rpx;
+  font-size: 30rpx;
+  color:#ffffff;
+}
+.jy
+{
+  font-size: 30rpx;
+  color:#0c8fd2;
+  width: 200rpx;
+  height: 62rpx;
+  text-align: center;
+  line-height: 62rpx;
+}
+.tx
+{
+  margin: 0 43rpx;
+  background-color:#41b9f6;
+}
+.title_5
+{
+  font-size: 32rpx;
+  color:#333333;
+}
+.nav_item
+{
+  width: 715rpx;
+  height: 86rpx;
+  border-bottom: 2rpx solid #eaeaea;
+  box-sizing: border-box;
+  padding: 0 24rpx 0 36rpx;
+  margin: 0 auto;
+}

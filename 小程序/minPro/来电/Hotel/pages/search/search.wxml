@@ -1,0 +1,21 @@
+<view class="fixed" tyle="padding-top:20rpx;">
+  <view class="search_bar flex_center">
+    <view class="search_bar_box flex_start">
+      <view class="icon_box">
+        <image src="../../images/search_icon.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <input bindconfirm="onCom" class="search_input" placeholder="搜索附近的商家" value="{{content}}"></input>
+    </view>
+    <view class="cancel_btn">取消</view>
+  </view>
+  <view class="paging_box scroll" wx:if="{{list.length}}">
+    <shop-item wx:for="{{list}}" item="{{item}}" wx:key="{{index}}"/>
+    <!-- <paging  dataObj="{{dataObj}}" bindpageData="onPageData">
+      <view slot="list" style="padding-top:20rpx;">
+         
+      </view>
+    </paging> -->
+
+  </view>
+  <view wx:else class="no_info">暂无数据</view>
+</view>

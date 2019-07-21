@@ -1,0 +1,46 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/help/help",
+    "pages/doRecharge/doRecharge",
+    "pages/cash/cash",
+    "pages/myOrder/myOrder",
+    "pages/detailFee/detailFee",
+    "pages/myCenter/myCenter",
+    "pages/shopDetail/shopDetail",
+    "pages/nearShop/nearShop",
+    "pages/search/search",
+    "pages/recharge/recharge",
+    "pages/transDetail/transDetail"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "来电狗",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 0,
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "uploadFile": 100000
+  },
+  "debug": false,
+  "usingComponents": {
+    "swiper-base": "/components/swiper-base/swiper-base",
+    "paging": "/components/paging/paging",
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "tab": "/components/tab/tab",
+    "calendar": "/components/calendar/calendar",
+    "lease-success": "/components/lease-success/lease-success",
+    "shop-item": "/components/shop-item/shop-item"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取附近充电信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,60 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.4",
+	"appid": "wx4e45734d868963d1",
+	"projectname": "zyq_pro",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "活动详情",
+					"pathName": "pages/activeDetail/activeDetail",
+					"query": "income=4&cid=28",
+					"scene": 1007
+				},
+				{
+					"id": 1,
+					"name": "商品详情",
+					"pathName": "pages/shopDetail/shopDetail",
+					"query": "income=4&sid=5&src=undefine",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+<!--pages/help/help.wxml-->
+<view class="fixed">
+  <view class="tab flex_center" >
+    <view class="f_30_666 {{item.select?'active':''}}"  wx:for="{{tabs}}" wx:key="{{index}}" data-sid="{{item.id}}" bindtap="onSelect">{{item.name}}</view>
+  </view>
+  <view class="s_box">
+    <view wx:for="{{question}}" wx:key="{{index}}">
+      <view class="s_item flex_between" bindtap="onSelectQ" data-qid="{{item.id}}">
+        <view class="f_32_333">{{item.q}}</view>
+        <view class="icon_box tran" style="transform: {{item.select?' rotateZ(180deg)':'rotateZ(0deg)'}}">
+          <image src="../../images/down_arr.png" style="width:22rpx;height:12rpx"></image>
+        </view>
+      </view>
+      <view class="f_28_999 content" style="{{item.select?'padding: 20rpx 83rpx;overflow:visible':'overflow:hidden'}};height:{{item.select?'auto':'0rpx'}}">{{item.jieda}}</view>
+    </view>
+  </view>
+</view>

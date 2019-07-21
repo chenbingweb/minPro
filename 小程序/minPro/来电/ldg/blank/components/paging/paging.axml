@@ -1,0 +1,10 @@
+<scroll-view 
+ scroll-y
+ class="absolute"
+  onScrollToLower="onScrollToLower"
+ >
+  <slot name="list"></slot>
+  <view a:if="{{showMore}}" class="no_data">加载更多</view>
+  <view a:if="{{showNoData}}" class="no_data">没有更多</view>
+  <view a:if="{{showNoContent}}" class="no_data">{{contentTip}}</view>
+</scroll-view >

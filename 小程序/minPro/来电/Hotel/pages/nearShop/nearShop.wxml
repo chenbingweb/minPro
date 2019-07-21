@@ -1,0 +1,8 @@
+<view class="fixed scroll" style="padding-top:20rpx">
+    <shop-item wx:for="{{list}}" item="{{item}}" wx:key="{{index}}"/>
+   <!-- <paging  dataObj="{{dataObj}}" bindpageData="onPageData">
+      <view slot="list" style="padding-top:20rpx">
+        <shop-item wx:for="{{4}}" wx:key="{{index}}"/>
+      </view>
+    </paging> -->
+</view>

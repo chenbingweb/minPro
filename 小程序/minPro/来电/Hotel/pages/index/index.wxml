@@ -1,0 +1,79 @@
+<view class="fixed">
+<!-- 搜索框 -->
+  <view class="search_bar flex_start relative">
+    <view class="icon_box" bindtap="onNavToCenter">
+      <image src="../../images/no_photo.png" style="width:59rpx;height:59rpx"></image>
+    </view>
+    <view class="search_bar_box flex_start">
+      <view class="icon_box">
+        <image src="../../images/search_icon.png" style="width:32rpx;height:32rpx"></image>
+      </view>
+      <input class="search_input" bindconfirm="onConfirm" placeholder='搜索附近的商家'></input>
+    </view>
+  </view>
+  <!--   
+  include-points="{{includePoints}}"
+     bindcontroltap="controltap" 
+     bindregionchange="regionchange" getCenterLocation -->
+    <map id="map"
+     show-compass
+     class="map_box relative"
+     longitude="{{longitude}}" 
+     latitude="{{latitude}}" 
+     scale="14" 
+     
+     bindregionchange="onRegionchange"
+     bindmarkertap="onMarkertap" 
+     bindtap="onTab"
+     markers="{{markers}}" 
+  
+     show-location >
+     <!-- 中心位置 -->
+     <cover-view class="center_pos" bindtap="onNavTo" >
+        <cover-image src="../../images/location_1.png" style="width:192rpx;height:139rpx"></cover-image>
+        <cover-view class="nav_to">附近网点</cover-view>
+     </cover-view>
+     <!-- 帮助 -->
+    <cover-view class="icon_box help_icon" bindtap="onHelp">
+      <cover-image class="img" src="../../images/help.png" style="width:82rpx;height:80rpx;"/>
+    </cover-view>
+    <!-- 移动到地图中心 -->
+    <cover-view class="icon_box move_icon" bindtap="onMoveCenter">
+      <cover-image  src="../../images/move_to_center.png" style="width:82rpx;height:80rpx;"/>
+    </cover-view>
+    <!-- 扫描 -->
+    <!-- <cover-view class="scanle">
+      <button class="sc_button" bindgetuserinfo="onGetUserInfo2" open-type='getUserInfo'> </button>
+    </cover-view> -->
+    <button  bindgetuserinfo="onGetUserInfo" bindgetphonenumber="onSign" open-type="{{isSign || loginPhone?'getUserInfo':'getPhoneNumber'}}" style="background-color:transparent" class="scanle">
+      <cover-view class="scan_img">
+        <cover-image  src="../../images/smld.png" style="width:640rpx;height:100rpx;"></cover-image>
+      </cover-view>
+    </button>
+    <!-- 店铺信息 -->
+    <cover-view bindtap ="onNavToShop" data-sid="{{shopInfo.id}}"  class="shop_info" style=" transform:translateX(-50%) translateY({{top}}rpx);">
+      <cover-image class="shop_bg" src="../../images/shop_info_1.png" style="width:727rpx;height:300rpx;"></cover-image>
+      <cover-view class="shop_info_box flex_start">
+        <cover-image class="cover_img" src="{{shopInfo.img_url}}" style="width:150rpx;height:150rpx;"></cover-image>
+        <cover-view class="info_box flex_center">
+          <cover-view class="title">{{shopInfo.shop_name}}</cover-view>
+          <cover-view class="dis two_line">{{shopInfo.address}}</cover-view>
+          <cover-view class="time">营业时间 {{shopInfo.time}}</cover-view>
+        </cover-view>
+        <cover-view class="distance">{{shopInfo.dis}}km</cover-view>
+      </cover-view>
+      <!-- 状态 -->
+      <cover-view class="status flex_between">
+        <cover-view class="flex_start">
+          <cover-image src="../../images/dian_chi.png" style="width:16rpx;height:33rpx"></cover-image>
+          <cover-view style="margin-left:13rpx;">{{shopInfo.left_status}}</cover-view>
+        </cover-view>
+        <cover-view>{{shopInfo.right_status}}</cover-view>
+      </cover-view>
+
+    </cover-view>
+    </map>
+
+ 
+ 
+</view>

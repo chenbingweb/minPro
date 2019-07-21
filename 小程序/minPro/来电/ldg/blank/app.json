@@ -1,0 +1,21 @@
+{
+  "pages": [
+     
+    "pages/index/index",
+    "pages/recharge/recharge",
+    "pages/transDetail/transDetail",
+    "pages/doRecharge/doRecharge",
+    "pages/myCenter/myCenter",
+    "pages/cash/cash",
+    "pages/myOrder/myOrder",
+    "pages/help/help",
+    "pages/nearShop/nearShop",
+    "pages/search/search",
+    "pages/shopDetail/shopDetail",
+    "pages/detailFee/detailFee"
+   
+  ],
+  "window": {
+    "defaultTitle": "来电狗"
+  }
+}

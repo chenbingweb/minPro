@@ -1,0 +1,14 @@
+<!--pages/cash/cash.wxml-->
+<view class="fixed flex_center box">
+    <view class="f_30_000 tx_1">提现金额</view>
+    <view class="f_48_08d639">￥100.00</view>
+    <view class="f_24_666">可提现余额￥0.00+押金0</view>
+    <view  class="f_24_666">（赠送余额不可提现）</view>
+    <view class="f_30_333">预计0-5个工作日到账</view>
+    <view class="btn">
+      <view class="icon_box">
+        <image src="../../images/btn.png" style="width：700rpx;height:90rpx;"></image>
+      </view>
+      <view class="absolute sure">确认</view>
+    </view>
+</view>

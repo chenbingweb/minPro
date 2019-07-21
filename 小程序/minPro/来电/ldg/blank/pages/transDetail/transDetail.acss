@@ -1,0 +1,39 @@
+/* pages/transDetail/transDetail.wxss */
+page
+{
+  background-color: #f5f5f5;
+}
+.item
+{
+  width: 715rpx;
+  height: 150rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-bottom: 25rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.f_24_999
+{
+  font-size: 24rpx;
+  color:#999;
+  line-height: 1;
+}
+.f_32_333
+{
+  font-size: 32rpx;
+  color:#333;
+  line-height: 1;
+}
+.f_32_ff0000
+{
+  font-size: 32rpx;
+  color:#ff0000;
+  font-weight: 600;
+}
+.f_32_1bdb49
+{
+  font-size: 32rpx;
+  color:#1bdb49;
+  font-weight: 600;
+}

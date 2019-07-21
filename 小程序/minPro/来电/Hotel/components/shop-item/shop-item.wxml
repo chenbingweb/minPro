@@ -1,0 +1,27 @@
+<!--components/shop-item/shop-item.wxml-->
+<navigator class="item_box" url="../shopDetail/shopDetail?sid={{item.id}}">
+  <view class="item_top">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/img/demo.png" style="width:150rpx;height:150rpx;border-radius:15rpx"></image>
+      </view>
+      <view class="shop_info_1">
+        <view class="title">{{item.shop_name}}</view>
+        <view class="detail">{{item.address}}</view>
+        <view class="time">营业时间 {{item.time}}</view>
+      </view>
+    </view>
+    
+    <view class="distance_1">{{item.dis}}km</view>
+  </view>
+  <view class="item_bottom">
+    <view class="flex_start">
+      <view class="icon_box">
+        <image src="../../images/dian_chi.png" style="width:16rpx;height:33rpx;"></image>
+      </view>
+      <view class="f_24_333" style="margin-left:13rpx">{{item.left_status}}</view>
+    </view>
+    <view class="f_24_333">{{item.right_status}}</view>
+  </view>
+
+</navigator>

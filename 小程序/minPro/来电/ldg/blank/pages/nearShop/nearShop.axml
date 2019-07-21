@@ -1,0 +1,8 @@
+<view class="fixed scroll " style="padding-top:20rpx">
+    <shop-item a:for="{{list}}" item="{{item}}" a:key="{{index}}"/>
+   <!-- <paging  ref="onPage"  dataObj="{{dataObj}}">
+      <view slot="list" style="padding-top:20rpx">
+        <shop-item a:for="{{list}}" a:key="{{index}}"/>
+      </view>
+    </paging> -->
+</view>

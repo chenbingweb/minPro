@@ -1,0 +1,8 @@
+{
+  
+  "usingComponents": {
+    "lease-success": "../../components/lease-success/lease-success"
+  },
+  "allowsBounceVertical":"NO"
+
+}

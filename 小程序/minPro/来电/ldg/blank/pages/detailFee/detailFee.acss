@@ -1,0 +1,97 @@
+/* pages/detailFee/detailFee.wxss */
+page
+{
+  background-color: #f5f5f5;
+}
+.cz_box
+{
+  width: 715rpx;
+  /* height: 391rpx; */
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+ 
+}
+.item
+{
+  width: 684rpx;
+  height: 90rpx;
+  border-bottom: 2rpx solid #eaeaea;
+  margin: 0 auto;
+}
+.f_32_333
+{
+  font-size: 32rpx;
+  color:#333;
+}
+.f_32_ff0000
+{
+  font-size: 32rpx;
+  color:#ff0000;
+  font-weight: 600;
+}
+.f_30_22c047
+{
+  font-size: 30rpx;
+  color:#22c047;
+}
+.tx_status
+{
+  height: 380rpx;
+}
+.lines
+{
+  width: 40rpx;
+   flex-direction: column;
+}
+.line_itme
+{
+  flex-direction: column;
+}
+.line_itme::before
+{
+  content: "";
+  display: block;
+  width: 11rpx;
+  height: 11rpx;
+  border-radius: 50%;
+  background-color: #dddddd;
+
+}
+.line_itme::after
+{
+  content: "";
+  display: block;
+  width: 3rpx;
+  height: 127rpx;
+  border-radius: 50%;
+  background-color: #dddddd;
+}
+.line_itme:nth-of-type(3)::after
+{
+  display: none;
+}
+.active::before
+{
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #08d639;
+}
+.f_18_999
+{
+  font-size: 18rpx;
+  color:#999;
+}
+.right_box
+{
+  height: 340rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 10rpx;
+}
+.first
+{
+  position: relative;
+  top:15rpx;
+}

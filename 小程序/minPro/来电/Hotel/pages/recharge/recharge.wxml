@@ -1,0 +1,27 @@
+<view class="fixed pages">
+  <view class="header">押金充值</view>
+  <!-- 金额 -->
+  <view class="charge flex_between">
+    <view>￥100</view>
+    <view class="icon_box">
+      <image src="../../images/select.png" style="width:38rpx;height:38rpx"></image>
+    </view>
+  </view>
+  <!-- 提示 -->
+  <view class="tip_title">推押金流程</view>
+  <view class="tip_content">
+    <text>1、订单结束后，请到个人中心-我的钱包，申请押金
+      提现；
+    </text>
+    <text>2、预计0-5个工作日退还到支付账号，平均3分钟到账。</text>
+  </view>
+  <view class="recharge_btn relative" bindtap="onPay">
+    <view class="absolute icon_box">
+      <image src="../../images/btn.png" style="width:700rpx;height:83rpx"></image>
+    </view>
+    <view class="absolute pay">支付</view>
+  </view>
+  <!--  -->
+
+</view>
+<lease-success show="{{show}}"/>

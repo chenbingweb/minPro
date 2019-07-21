@@ -1,0 +1,62 @@
+<view class="fixed" style="padding-top:26rpx;">
+  <!-- 充值 借用中-->
+  <view class="cz_box" a:if="{{false}}">
+    <view class="item flex_between">
+      <view class="f_32_333">余额充值</view>
+      <view class="f_32_ff0000">￥10.00</view>
+    </view>
+    <view class="item flex_between">
+      <view class="f_32_333">当前状态：</view>
+      <view a:if="{{false}}" class="f_30_22c047">充值成功</view>
+      <view wx:else class="f_30_22c047">借用中</view>
+    </view>
+    <view class="item flex_between">
+      <view class="f_32_333">交易时间：</view>
+      <view class="f_30_999">2019-05-05 12:00</view>
+    </view>
+    <view class="item flex_between" style="border:none">
+      <view class="f_32_333">交易单号：</view>
+      <view class="f_30_999">2015788554774444</view>
+    </view>
+  </view>
+  <!-- 提现 -->
+  <view class="cz_box">
+    <view class="item flex_between">
+      <view class="f_32_333">提现</view>
+      <view class="f_32_ff0000">￥10.00</view>
+    </view>
+    <!-- 提现状态 -->
+    <view class="tx_status flex_start">
+      <view class="lines flex_center">
+        <view class="line_itme flex_center {{index==1?'active':''}}" a:for="{{3}}" a:key="{{index}}"></view>
+      </view>
+      <view class="right_box">
+        <view class="first">
+          <view class="f_28_333">已到账</view>
+          <view class="f_18_999">2019-05-05 15：00</view>
+        </view>
+         <view>
+          <view class="f_28_333">微信正在处理</view>
+          <view class="f_18_999">微信将退款原路返回到您的支付宝账号中</view>
+        </view>
+         <view>
+          <view class="f_28_333">来电狗正在处理</view>
+          <view class="f_18_999">已将退款申请提交至微信</view>
+        </view>
+      </view>
+    </view>
+    <view class="item flex_between">
+      <view class="f_32_333">当前状态：</view>
+      <view wx:if="{{false}}" class="f_30_22c047">充值成功</view>
+      <view wx:else class="f_30_22c047">提现成功</view>
+    </view>
+    <view class="item flex_between">
+      <view class="f_32_333">交易时间：</view>
+      <view class="f_30_999">2019-05-05 12:00</view>
+    </view>
+    <view class="item flex_between" style="border:none">
+      <view class="f_32_333">交易单号：</view>
+      <view class="f_30_999">2015788554774444</view>
+    </view>
+  </view>
+</view>

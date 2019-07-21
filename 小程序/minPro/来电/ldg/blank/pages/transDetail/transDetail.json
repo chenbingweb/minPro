@@ -1,0 +1,8 @@
+{
+  
+  "usingComponents": {
+    "paging": "../../components/paging/paging"
+  },
+  "allowsBounceVertical":"NO"
+
+}

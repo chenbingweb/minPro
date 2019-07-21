@@ -1,0 +1,9 @@
+{
+  
+  "usingComponents": {
+    "paging": "../../components/paging/paging",
+    "shop-item":"../../components/shop-item/shop-item"
+  },
+  "allowsBounceVertical":"NO"
+
+}
